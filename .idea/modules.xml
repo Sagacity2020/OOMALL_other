@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/OOMALL_other.iml" filepath="$PROJECT_DIR$/.idea/OOMALL_other.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/otherservice/otherservice.iml" filepath="$PROJECT_DIR$/otherservice/otherservice.iml" />
+    </modules>
+  </component>
+</project>
