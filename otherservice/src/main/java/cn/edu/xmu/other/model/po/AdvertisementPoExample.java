@@ -765,63 +765,63 @@ public class AdvertisementPoExample {
             return (Criteria) this;
         }
 
-        public Criteria andRepeatIsNull() {
-            addCriterion("repeat is null");
+        public Criteria andRepeatsIsNull() {
+            addCriterion("repeats is null");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatIsNotNull() {
-            addCriterion("repeat is not null");
+        public Criteria andRepeatsIsNotNull() {
+            addCriterion("repeats is not null");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatEqualTo(Byte value) {
-            addCriterion("repeat =", value, "repeat");
+        public Criteria andRepeatsEqualTo(Byte value) {
+            addCriterion("repeats =", value, "repeats");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatNotEqualTo(Byte value) {
-            addCriterion("repeat <>", value, "repeat");
+        public Criteria andRepeatsNotEqualTo(Byte value) {
+            addCriterion("repeats <>", value, "repeats");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatGreaterThan(Byte value) {
-            addCriterion("repeat >", value, "repeat");
+        public Criteria andRepeatsGreaterThan(Byte value) {
+            addCriterion("repeats >", value, "repeats");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatGreaterThanOrEqualTo(Byte value) {
-            addCriterion("repeat >=", value, "repeat");
+        public Criteria andRepeatsGreaterThanOrEqualTo(Byte value) {
+            addCriterion("repeats >=", value, "repeats");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatLessThan(Byte value) {
-            addCriterion("repeat <", value, "repeat");
+        public Criteria andRepeatsLessThan(Byte value) {
+            addCriterion("repeats <", value, "repeats");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatLessThanOrEqualTo(Byte value) {
-            addCriterion("repeat <=", value, "repeat");
+        public Criteria andRepeatsLessThanOrEqualTo(Byte value) {
+            addCriterion("repeats <=", value, "repeats");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatIn(List<Byte> values) {
-            addCriterion("repeat in", values, "repeat");
+        public Criteria andRepeatsIn(List<Byte> values) {
+            addCriterion("repeats in", values, "repeats");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatNotIn(List<Byte> values) {
-            addCriterion("repeat not in", values, "repeat");
+        public Criteria andRepeatsNotIn(List<Byte> values) {
+            addCriterion("repeats not in", values, "repeats");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatBetween(Byte value1, Byte value2) {
-            addCriterion("repeat between", value1, value2, "repeat");
+        public Criteria andRepeatsBetween(Byte value1, Byte value2) {
+            addCriterion("repeats between", value1, value2, "repeats");
             return (Criteria) this;
         }
 
-        public Criteria andRepeatNotBetween(Byte value1, Byte value2) {
-            addCriterion("repeat not between", value1, value2, "repeat");
+        public Criteria andRepeatsNotBetween(Byte value1, Byte value2) {
+            addCriterion("repeats not between", value1, value2, "repeats");
             return (Criteria) this;
         }
 
@@ -955,63 +955,63 @@ public class AdvertisementPoExample {
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreatedIsNull() {
-            addCriterion("gmt_created is null");
+        public Criteria andGmtCreateIsNull() {
+            addCriterion("gmt_create is null");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreatedIsNotNull() {
-            addCriterion("gmt_created is not null");
+        public Criteria andGmtCreateIsNotNull() {
+            addCriterion("gmt_create is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreatedEqualTo(LocalDateTime value) {
-            addCriterion("gmt_created =", value, "gmtCreated");
+        public Criteria andGmtCreateEqualTo(LocalDateTime value) {
+            addCriterion("gmt_create =", value, "gmtCreate");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreatedNotEqualTo(LocalDateTime value) {
-            addCriterion("gmt_created <>", value, "gmtCreated");
+        public Criteria andGmtCreateNotEqualTo(LocalDateTime value) {
+            addCriterion("gmt_create <>", value, "gmtCreate");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreatedGreaterThan(LocalDateTime value) {
-            addCriterion("gmt_created >", value, "gmtCreated");
+        public Criteria andGmtCreateGreaterThan(LocalDateTime value) {
+            addCriterion("gmt_create >", value, "gmtCreate");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreatedGreaterThanOrEqualTo(LocalDateTime value) {
-            addCriterion("gmt_created >=", value, "gmtCreated");
+        public Criteria andGmtCreateGreaterThanOrEqualTo(LocalDateTime value) {
+            addCriterion("gmt_create >=", value, "gmtCreate");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreatedLessThan(LocalDateTime value) {
-            addCriterion("gmt_created <", value, "gmtCreated");
+        public Criteria andGmtCreateLessThan(LocalDateTime value) {
+            addCriterion("gmt_create <", value, "gmtCreate");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreatedLessThanOrEqualTo(LocalDateTime value) {
-            addCriterion("gmt_created <=", value, "gmtCreated");
+        public Criteria andGmtCreateLessThanOrEqualTo(LocalDateTime value) {
+            addCriterion("gmt_create <=", value, "gmtCreate");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreatedIn(List<LocalDateTime> values) {
-            addCriterion("gmt_created in", values, "gmtCreated");
+        public Criteria andGmtCreateIn(List<LocalDateTime> values) {
+            addCriterion("gmt_create in", values, "gmtCreate");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreatedNotIn(List<LocalDateTime> values) {
-            addCriterion("gmt_created not in", values, "gmtCreated");
+        public Criteria andGmtCreateNotIn(List<LocalDateTime> values) {
+            addCriterion("gmt_create not in", values, "gmtCreate");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreatedBetween(LocalDateTime value1, LocalDateTime value2) {
-            addCriterion("gmt_created between", value1, value2, "gmtCreated");
+        public Criteria andGmtCreateBetween(LocalDateTime value1, LocalDateTime value2) {
+            addCriterion("gmt_create between", value1, value2, "gmtCreate");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreatedNotBetween(LocalDateTime value1, LocalDateTime value2) {
-            addCriterion("gmt_created not between", value1, value2, "gmtCreated");
+        public Criteria andGmtCreateNotBetween(LocalDateTime value1, LocalDateTime value2) {
+            addCriterion("gmt_create not between", value1, value2, "gmtCreate");
             return (Criteria) this;
         }
 

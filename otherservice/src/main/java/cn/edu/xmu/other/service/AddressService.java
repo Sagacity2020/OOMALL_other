@@ -5,11 +5,13 @@ import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
 import cn.edu.xmu.other.dao.AddressDao;
 import cn.edu.xmu.other.model.bo.Address;
-import cn.edu.xmu.other.model.vo.AddressVo;
+import cn.edu.xmu.other.model.vo.NewAddressVo;
+import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class AddressService {
@@ -19,18 +21,30 @@ public class AddressService {
     @Autowired
     private AddressDao addressDao;
 
-    public ReturnObject<Address> insertAddress(Address address)
+    /**
+     * @author zrh
+     * @Created at 11/30 23:51
+     * @param address
+     * @return ReturnObject
+     */
+    @Transactional
+    public ReturnObject insertAddress(Address address)
     {
-        /**
-        ReturnObject<Address> returnObject=addressDao.insertAddress(address);
-        ReturnObject<Object> retAddress;
-        if(returnObject.getCode().equals(ResponseCode.OK))
-            retAddress=new ReturnObject<>(returnObject.getData());
-        else retAddress=new ReturnObject<>(returnObject.getCode(),returnObject.getErrmsg());
-       */
-        return addressDao.insertAddress(address);
+        ReturnObject<NewAddressVo> returnObject=addressDao.insertAddress(address);
+        return returnObject;
+
     }
 
-
-
+    /**
+     * @author zrh
+     * @Created at 12/1 0:22
+     * @param userId
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    public ReturnObject<PageInfo<VoObject>> selectAllAddreses(Long userId, Integer page, Integer pageSize) {
+        ReturnObject<PageInfo<VoObject>> returnObject= addressDao.selectAllAddress(userId,page,pageSize);
+        return returnObject;
+    }
 }

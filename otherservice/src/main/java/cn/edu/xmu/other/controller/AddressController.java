@@ -7,7 +7,9 @@ import cn.edu.xmu.ooad.util.Common;
 import cn.edu.xmu.ooad.util.ReturnObject;
 import cn.edu.xmu.other.model.bo.Address;
 import cn.edu.xmu.other.model.vo.AddressVo;
+import cn.edu.xmu.other.model.vo.NewAddressVo;
 import cn.edu.xmu.other.service.AddressService;
+import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.*;
 import org.aspectj.apache.bcel.generic.LineNumberGen;
 import org.slf4j.Logger;
@@ -22,6 +24,7 @@ import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDateTime;
+import java.util.concurrent.LinkedTransferQueue;
 
 
 @Api(value="地址", tags = "Address")
@@ -38,7 +41,7 @@ public class AddressController {
     private HttpServletResponse httpServletResponse;
 
     /**
-     * Created at 2020/11/30 10:36
+     * @Created at 2020/11/30 10:36
      * @author zrh
      * @param vo
      * @param bindingResult
@@ -68,10 +71,41 @@ public class AddressController {
         Address address = vo.createAddress();
         address.setCustomer_id(userId);
         address.setGmtCreate(LocalDateTime.now());
-        ReturnObject<Address> retObject = addressService.insertAddress(address);
-        httpServletResponse.setStatus(HttpStatus.CREATED.value());
-        return Common.decorateReturnObject(retObject);
+        ReturnObject retObject = addressService.insertAddress(address);
+        if (retObject.getData() != null) {
+            httpServletResponse.setStatus(HttpStatus.CREATED.value());
+            return Common.getRetObject(retObject);
+        } else {
+            return Common.getNullRetObj(new ReturnObject<>(retObject.getCode(), retObject.getErrmsg()), httpServletResponse);
+        }
     }
+
+    /**
+     * @Created at 12/1 0:20
+     * @author zrh
+     * @param page 页数
+     * @param pageSize 每页大小
+     */
+    @ApiOperation(value = "查询地址",produces = "application/json")
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
+            @ApiImplicitParam(paramType = "query", dataType = "int", name = "page", value = "页码",required = true),
+            @ApiImplicitParam(paramType = "query", dataType = "int", name = "pageSize", value = "每页数量", required = true)
+    })
+    @ApiResponses({
+            @ApiResponse(code = 0, message = "成功")
+    })
+    @Audit
+    @GetMapping("/addresses")
+    public Object seleteAllAddress(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId,
+        @RequestParam(required = true, defaultValue = "1") Integer page,
+    @RequestParam(required = true,defaultValue = "10") Integer pageSize){
+        logger.debug("seleteAllAddress: page= "+page+"  pageSize = "+pageSize);
+        ReturnObject<PageInfo<VoObject>> returnObject= addressService.selectAllAddreses(userId,page,pageSize);
+        return Common.getPageRetObject(returnObject);
+    }
+
+
 
 
 
