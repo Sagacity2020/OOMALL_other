@@ -25,7 +25,7 @@ public class RedisConfig  {
 
     @Bean
     public RedisTemplate<String, Serializable> redisTemplate(LettuceConnectionFactory factory) {
-        RedisTemplate<String, Serializable> template = new RedisTemplate<>();
+        RedisTemplate<String, Serializable> template = new RedisTemplate();
         template.setConnectionFactory(factory);
 
         //使用Jackson2JsonRedisSerializer来序列化和反序列化redis的value值

@@ -36,7 +36,7 @@ public class BeSharePoExample {
      * @mbg.generated
      */
     public BeSharePoExample() {
-        oredCriteria = new ArrayList<>();
+        oredCriteria = new ArrayList();
     }
 
     /**
@@ -159,7 +159,7 @@ public class BeSharePoExample {
 
         protected GeneratedCriteria() {
             super();
-            criteria = new ArrayList<>();
+            criteria = new ArrayList();
         }
 
         public boolean isValid() {

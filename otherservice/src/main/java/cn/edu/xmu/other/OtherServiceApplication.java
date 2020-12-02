@@ -22,11 +22,11 @@ public class OtherServiceApplication implements ApplicationRunner {
     /**
      * 是否初始化，生成signature和加密
      */
-    @Value("${Otherservice.initialization}")
-    private Boolean initialization;
+//    @Value("${Otherservice.initialization}")
+//    private Boolean initialization;
 
-    @Autowired
-    private CartDao cartDao;
+//    @Autowired
+//    private CartDao cartDao;
 
     public static void main(String[] args) {
         SpringApplication.run(OtherServiceApplication.class, args);
@@ -34,10 +34,10 @@ public class OtherServiceApplication implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        if (initialization){
-            logger.debug("Initialize......");
-            cartDao.initialize();
-
-        }
+//        if (initialization){
+//            logger.debug("Initialize......");
+//            cartDao.initialize();
+//
+//        }
     }
 }

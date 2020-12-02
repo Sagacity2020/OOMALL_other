@@ -156,10 +156,11 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
+                <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
-                    <source>6</source>
-                    <target>6</target>
+                    <includes>
+                        <include>**/OtherControllerTest.java</include>
+                    </includes>
                 </configuration>
             </plugin>
 

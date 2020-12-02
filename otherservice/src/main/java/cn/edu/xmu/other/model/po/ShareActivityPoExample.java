@@ -36,7 +36,7 @@ public class ShareActivityPoExample {
      * @mbg.generated
      */
     public ShareActivityPoExample() {
-        oredCriteria = new ArrayList<>();
+        oredCriteria = new ArrayList();
     }
 
     /**
@@ -159,7 +159,7 @@ public class ShareActivityPoExample {
 
         protected GeneratedCriteria() {
             super();
-            criteria = new ArrayList<>();
+            criteria = new ArrayList();
         }
 
         public boolean isValid() {

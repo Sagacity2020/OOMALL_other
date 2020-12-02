@@ -25,13 +25,13 @@ import java.util.List;
  */
 public class  Swagger2Configuration {
 
-    public static final String SWAGGER_SCAN_BASE_PACKAGE = "cn.edu.xmu.privilege.controller";
+    public static final String SWAGGER_SCAN_BASE_PACKAGE = "cn.edu.xmu.other.controller";
 
     public static final String VERSION = "1.0.0";
 
     @Bean
     public Docket createRestApi() {
-        List<ResponseMessage> responseMessageList = new ArrayList<>();
+        List<ResponseMessage> responseMessageList = new ArrayList();
         responseMessageList.add(new ResponseMessageBuilder().code(0).message("成功").build());
         return new Docket(DocumentationType.SWAGGER_2)
                 .globalResponseMessage(RequestMethod.GET, responseMessageList)
@@ -50,15 +50,15 @@ public class  Swagger2Configuration {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 //页面标题
-                .title("权限模块")
+                .title("其他模块")
                 //描述
-                .description("权限模块 Restful API接口")
+                .description("其他模块 Restful API接口")
                 //创建人
-                .contact(new Contact("Ming Qiu", "http://software.xmu.edu.cn", "mingqiu@xmu.edu.cn"))
+                //.contact(new Contact("Ming Qiu", "http://software.xmu.edu.cn", "mingqiu@xmu.edu.cn"))
                 //版本号
                 .version("1.0")
                 //license
-                .termsOfServiceUrl("http://software.xmu.edu.cn")
+                //.termsOfServiceUrl("http://software.xmu.edu.cn")
                 .build();
     }
 }

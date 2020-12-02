@@ -36,7 +36,7 @@ public class CustomerPoExample {
      * @mbg.generated
      */
     public CustomerPoExample() {
-        oredCriteria = new ArrayList<>();
+        oredCriteria = new ArrayList();
     }
 
     /**
@@ -159,7 +159,7 @@ public class CustomerPoExample {
 
         protected GeneratedCriteria() {
             super();
-            criteria = new ArrayList<>();
+            criteria = new ArrayList();
         }
 
         public boolean isValid() {

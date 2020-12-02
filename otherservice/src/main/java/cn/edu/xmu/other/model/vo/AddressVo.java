@@ -29,6 +29,11 @@ public class AddressVo {
         this.detail=address.getDetail();
         this.mobile=address.getMobile();
     }
+
+    public AddressVo() {
+
+    }
+
     public Address createAddress()
     {
         Address address= new Address();

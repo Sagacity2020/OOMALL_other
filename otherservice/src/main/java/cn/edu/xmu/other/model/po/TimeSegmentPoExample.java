@@ -36,7 +36,7 @@ public class TimeSegmentPoExample {
      * @mbg.generated
      */
     public TimeSegmentPoExample() {
-        oredCriteria = new ArrayList<>();
+        oredCriteria = new ArrayList();
     }
 
     /**
@@ -159,7 +159,7 @@ public class TimeSegmentPoExample {
 
         protected GeneratedCriteria() {
             super();
-            criteria = new ArrayList<>();
+            criteria = new ArrayList();
         }
 
         public boolean isValid() {

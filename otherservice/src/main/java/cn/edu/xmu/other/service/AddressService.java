@@ -47,4 +47,16 @@ public class AddressService {
         ReturnObject<PageInfo<VoObject>> returnObject= addressDao.selectAllAddress(userId,page,pageSize);
         return returnObject;
     }
+
+
+    /**
+     * @Created at 12/2 14:07
+     * @author zrh
+     * @param id
+     * @return
+     */
+    @Transactional
+    public ReturnObject setDefaultAddress(Long id) {
+        return addressDao.cancelDefaultAddress(id);
+    }
 }

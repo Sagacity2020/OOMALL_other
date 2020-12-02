@@ -6,13 +6,14 @@ management:
 
 server:
   port: 8080
-  tomcat:
+  servlet:
     threads:
       max: 1000
+    context-path:
 
 spring:
   application:
-    name: privilege-service
+    name: other-service
   profiles:
     active: dev
   datasource:
@@ -64,7 +65,7 @@ mybatis:
     #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
 
-privilegeservice:
+otherservice:
   #是否对数据库中的未初始化的数据初始化
   initialization: true
   #分布式锁失效时间（秒）

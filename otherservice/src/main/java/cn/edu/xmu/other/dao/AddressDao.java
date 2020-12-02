@@ -56,12 +56,12 @@ public class AddressDao {
         catch (Exception e)
         {
             logger.error("other exception :"+e.getMessage());
-            returnObject= new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR,String.format("严重错误",e.getMessage()));
+            returnObject= new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("严重错误",e.getMessage()));
         }
         int length=retObj.size();
         if(length==20){
             logger.error("地址簿达到上限");
-            returnObject= new ReturnObject<>(ResponseCode.ADDRESS_OUTLIMIT,String.format("地址簿达到上限"));
+            returnObject= new ReturnObject(ResponseCode.ADDRESS_OUTLIMIT,String.format("地址簿达到上限"));
         }
         else {
             try{
@@ -69,22 +69,22 @@ public class AddressDao {
                 if(ret==0)
                 {
                     logger.debug("insertAddress: insert address fail "+addressPo.toString());
-                    returnObject= new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("新增失败："+addressPo.getCustomerId()));
+                    returnObject= new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("新增失败："+addressPo.getCustomerId()));
                 }
                 else {
                     logger.debug("insertAddree: insert address="+addressPo.toString());
-                    returnObject= new ReturnObject<>(address.retAddressPo());
+                    returnObject= new ReturnObject(address.retAddressPo());
                 }
             }
             catch (DataAccessException e) {
 
                     logger.debug("other sql exception : " + e.getMessage());
-                    returnObject= new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
+                    returnObject= new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
             }
             catch (Exception e) {
                 // 其他Exception错误
                 logger.error("other exception : " + e.getMessage());
-                returnObject= new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
+                returnObject= new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
             }
         }
         return returnObject;
@@ -112,9 +112,9 @@ public class AddressDao {
         try {
             //不加限定条件查询所有
             addressPos = addressPoMapper.selectByExample(example);
-            List<VoObject> ret = new ArrayList<>(addressPos.size());
+            List<VoObject> ret = new ArrayList(addressPos.size());
             for (AddressPo po : addressPos) {
-                Address address = new address(po);
+                Address address = new Address(po);
                 ret.add(address);
             }
             PageInfo<VoObject> addressPage = PageInfo.of(ret);
@@ -129,5 +129,42 @@ public class AddressDao {
             logger.error("other exception : " + e.getMessage());
             return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
         }
+    }
+
+    /**
+     * @Created at 12/2 14:04
+     * @author zrh
+     * @param id
+     * @return
+     */
+    public ReturnObject cancelDefaultAddress(Long id) {
+        AddressPo po = addressPoMapper.selectByPrimaryKey(id);
+        if (po == null) {
+            logger.debug("不存在 address id:" + id);
+            return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST);
+        } else {
+            po.setBeDefault((byte) 1);
+        }
+
+        ReturnObject returnObject;
+        int ret;
+        try {
+            ret = addressPoMapper.updateByPrimaryKeySelective(po);
+            if (ret == 0) {
+                logger.info("地址不存在或已被删除，id =" + id);
+                returnObject = new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST);
+
+            } else {
+                logger.info("地址 id =" + id + "的默认地址被设为普通地址");
+                returnObject = new ReturnObject(ResponseCode.OK);
+            }
+        } catch (DataAccessException e) {
+            logger.error("数据库错误： " + e.getMessage());
+            returnObject = new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
+        } catch (Exception e) {
+            logger.error("严重错误： " + e.getMessage());
+            returnObject = new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生未知错误： %s", e.getMessage()));
+        }
+        return returnObject;
     }
 }

@@ -215,7 +215,7 @@
     <distributionManagement>
         <site>
             <id>siteserver</id>
-            <url>dav:http://127.0.0.1:8080/test</url>
+            <url>dav:http://127.0.0.1:8080/other</url>
         </site>
     </distributionManagement>
 

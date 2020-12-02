@@ -36,7 +36,7 @@ public class FootPrintPoExample {
      * @mbg.generated
      */
     public FootPrintPoExample() {
-        oredCriteria = new ArrayList<>();
+        oredCriteria = new ArrayList();
     }
 
     /**
@@ -159,7 +159,7 @@ public class FootPrintPoExample {
 
         protected GeneratedCriteria() {
             super();
-            criteria = new ArrayList<>();
+            criteria = new ArrayList();
         }
 
         public boolean isValid() {

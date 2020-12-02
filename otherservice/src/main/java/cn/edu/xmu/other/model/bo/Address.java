@@ -40,6 +40,11 @@ public class Address implements VoObject {
         return new AddressVo(this);
     }
 
+    @Override
+    public Object createSimpleVo() {
+        return null;
+    }
+
     public AddressPo getAddressPo(){
         AddressPo po=new AddressPo();
         po.setCustomerId(this.customer_id);
@@ -62,6 +67,9 @@ public class Address implements VoObject {
         po.setGmtCreate(this.gmtCreate);
         po.setGmtModified(this.gmtModified);
         return po;
+    }
+
+    public Address() {
     }
 
     public Address(AddressPo po) {
