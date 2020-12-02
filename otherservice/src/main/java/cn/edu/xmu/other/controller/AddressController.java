@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/address",produces = "application/json;charset=UTF-8")
 public class AddressController {
-
+/*
     private static final Logger logger = LoggerFactory.getLogger(AddressController.class);
 
     @Autowired
@@ -27,6 +27,8 @@ public class AddressController {
             @ApiImplicitParam(paramType = "header", dataType = "String", name = "authrization", value = "Token", required = true),
             @ApiImplicitParam(paramType = "body",dataType ="AddressVo", name = "vo",value = "可修改的地址信息"，required = true)
     })
+
+ */
 
 
 

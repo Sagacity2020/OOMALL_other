@@ -9,6 +9,7 @@ import javax.mail.Address;
 @Data
 @ApiModel(description = "地址视图对象")
 public class AddressVo {
+    /*
     @ApiModelProperty(value = "地区id")
     private Long regionId;
 
@@ -28,4 +29,6 @@ public class AddressVo {
         this.detail=address.getDetail();
         this.mobile=address.getMobile();
     }
+
+     */
 }

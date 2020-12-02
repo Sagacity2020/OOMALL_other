@@ -1,5 +1,6 @@
 package cn.edu.xmu.other;
 
+import cn.edu.xmu.other.dao.AftersaleDao;
 import cn.edu.xmu.other.dao.CartDao;
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
@@ -14,30 +15,41 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @author Ming Qiu
  **/
-@SpringBootApplication(scanBasePackages = {"cn.edu.xmu.other"})
+@SpringBootApplication(scanBasePackages = {"cn.edu.xmu.ooad","cn.edu.xmu.other"})
 @MapperScan("cn.edu.xmu.other.mapper")
+//@EnableDiscoveryClient
 public class OtherServiceApplication implements ApplicationRunner {
 
     private  static  final Logger logger = LoggerFactory.getLogger(OtherServiceApplication.class);
     /**
      * 是否初始化，生成signature和加密
      */
+    /*
     @Value("${Otherservice.initialization}")
     private Boolean initialization;
 
+     */
+
     @Autowired
     private CartDao cartDao;
+
+    @Autowired
+    private AftersaleDao aftersaleDao;
 
     public static void main(String[] args) {
         SpringApplication.run(OtherServiceApplication.class, args);
     }
 
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        if (initialization){
+        /*if (initialization) {
             logger.debug("Initialize......");
-            cartDao.initialize();
+            //cartDao.initialize();
 
         }
+
+         */
     }
+
 }

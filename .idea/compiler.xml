@@ -13,7 +13,7 @@
     <bytecodeTargetLevel>
       <module name="core" target="11" />
       <module name="OOMALL_other" target="11" />
-      <module name="otherservice" target="6" />
+      <module name="otherservice" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
