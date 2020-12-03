@@ -52,7 +52,7 @@ public class AddressControllerTest {
         String expectedResponse = "";
         try {
             responseString = this.mvc.perform(post("/address/address").header("authorization", token).contentType("application/json;charset=UTF-8").content(requireJson))
-                    .andExpect(status().isOk())
+                    .andExpect(status().isCreated())
                     .andExpect(content().contentType("application/json;charset=UTF-8"))
                     .andReturn().getResponse().getContentAsString();
         } catch (Exception e) {

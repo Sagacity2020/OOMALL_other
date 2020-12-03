@@ -72,7 +72,7 @@ public class AddressController {
         address.setGmtCreate(LocalDateTime.now());
         ReturnObject retObject = addressService.insertAddress(address);
         if (retObject.getData() != null) {
-            httpServletResponse.setStatus(HttpStatus.OK.value());
+            httpServletResponse.setStatus(HttpStatus.CREATED.value());
             logger.debug(retObject.getData().toString());
             return Common.getRetObject(retObject);
         } else {
