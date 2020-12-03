@@ -1,11 +1,10 @@
 package cn.edu.xmu.other.service;
 
 import cn.edu.xmu.ooad.model.VoObject;
-import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
 import cn.edu.xmu.other.dao.AddressDao;
 import cn.edu.xmu.other.model.bo.Address;
-import cn.edu.xmu.other.model.vo.NewAddressVo;
+import cn.edu.xmu.other.model.vo.AddressRetVo;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,7 +29,7 @@ public class AddressService {
     @Transactional
     public ReturnObject insertAddress(Address address)
     {
-        ReturnObject<NewAddressVo> returnObject=addressDao.insertAddress(address);
+        ReturnObject<Address> returnObject=addressDao.insertAddress(address);
         return returnObject;
 
     }

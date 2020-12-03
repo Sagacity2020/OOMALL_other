@@ -8,7 +8,7 @@ import cn.edu.xmu.other.mapper.AddressPoMapper;
 import cn.edu.xmu.other.model.bo.Address;
 import cn.edu.xmu.other.model.po.AddressPo;
 import cn.edu.xmu.other.model.po.AddressPoExample;
-import cn.edu.xmu.other.model.vo.NewAddressVo;
+import cn.edu.xmu.other.model.vo.AddressRetVo;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
@@ -17,10 +17,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Repository
 public class AddressDao {
@@ -37,10 +35,10 @@ public class AddressDao {
      * @return
      */
 
-    public ReturnObject<NewAddressVo> insertAddress(Address address){
+    public ReturnObject<Address> insertAddress(Address address){
         AddressPo addressPo = address.getAddressPo();
         List<AddressPo> retObj=null;
-        ReturnObject<NewAddressVo> returnObject;
+        ReturnObject<Address> returnObject;
         AddressPoExample addressPoExample= new AddressPoExample();
         AddressPoExample.Criteria criteria=addressPoExample.createCriteria();
         criteria.andCustomerIdEqualTo(address.getCustomer_id());
@@ -73,7 +71,7 @@ public class AddressDao {
                 }
                 else {
                     logger.debug("insertAddree: insert address="+addressPo.toString());
-                    returnObject= new ReturnObject(address.retAddressPo());
+                    returnObject= new ReturnObject(address);
                 }
             }
             catch (DataAccessException e) {

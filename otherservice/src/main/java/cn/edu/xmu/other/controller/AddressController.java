@@ -7,11 +7,9 @@ import cn.edu.xmu.ooad.util.Common;
 import cn.edu.xmu.ooad.util.ReturnObject;
 import cn.edu.xmu.other.model.bo.Address;
 import cn.edu.xmu.other.model.vo.AddressVo;
-import cn.edu.xmu.other.model.vo.NewAddressVo;
 import cn.edu.xmu.other.service.AddressService;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.*;
-import org.aspectj.apache.bcel.generic.LineNumberGen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +22,6 @@ import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDateTime;
-import java.util.concurrent.LinkedTransferQueue;
 
 
 @Api(value="地址", tags = "Address")
@@ -60,8 +57,10 @@ public class AddressController {
     @Audit
     @PostMapping("/address")
     public Object createAddress(@Validated @RequestBody AddressVo vo, BindingResult bindingResult,
-                                @LoginUser @ApiIgnore @RequestParam(required = false)Long userId){
-        logger.debug("insert address by userId"+ userId);
+                                @LoginUser @ApiIgnore Long userId){
+//        JwtHelper.UserAndDepart userAndDepart = new JwtHelper.UserAndDepart(token);
+
+        logger.debug("insert address by userId "+ userId);
 
         Object returnObject = Common.processFieldErrors(bindingResult,httpServletResponse);
         if(null != returnObject){
@@ -73,7 +72,8 @@ public class AddressController {
         address.setGmtCreate(LocalDateTime.now());
         ReturnObject retObject = addressService.insertAddress(address);
         if (retObject.getData() != null) {
-            httpServletResponse.setStatus(HttpStatus.CREATED.value());
+            httpServletResponse.setStatus(HttpStatus.OK.value());
+            logger.debug(retObject.getData().toString());
             return Common.getRetObject(retObject);
         } else {
             return Common.getNullRetObj(new ReturnObject(retObject.getCode(), retObject.getErrmsg()), httpServletResponse);
@@ -131,29 +131,29 @@ public class AddressController {
         return Common.decorateReturnObject(returnObject);
     }
 
-
-    @ApiOperation(value = "修改地址信息",produces = "application/json")
-    @ApiImplicitParams({
-            @ApiImplicitParam(paramType = "header",dataType = "String",name = "authorization",value = "Token",required = true),
-            @ApiImplicitParam(paramType = "path",dataType = "Integer",name = "id",value = "地址id",required = true),
-            @ApiImplicitParam(paramType = "body",dataType = "AddressVo",name = "vo",value = "可修改的地址信息",required = true)
-    })
-    @ApiResponses({
-            @ApiResponse(code=0,message = "成功")
-    })
-    @Audit
-    @PutMapping("addresses/{id}")
-    public Object modifyAddressInfo(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId,
-                                    @PathVariable("id") Long id,@Validated @RequestBody AddressVo vo,BindingResult bindingResult)
-    {
-        logger.debug("update Address by Addressid: "+id);
-
-        Object returnObject=Common.processFieldErrors(bindingResult,httpServletResponse);
-        if(returnObject!=null){
-            return returnObject;
-        }
-
-    }
+//
+//    @ApiOperation(value = "修改地址信息",produces = "application/json")
+//    @ApiImplicitParams({
+//            @ApiImplicitParam(paramType = "header",dataType = "String",name = "authorization",value = "Token",required = true),
+//            @ApiImplicitParam(paramType = "path",dataType = "Integer",name = "id",value = "地址id",required = true),
+//            @ApiImplicitParam(paramType = "body",dataType = "AddressVo",name = "vo",value = "可修改的地址信息",required = true)
+//    })
+//    @ApiResponses({
+//            @ApiResponse(code=0,message = "成功")
+//    })
+//    @Audit
+//    @PutMapping("addresses/{id}")
+//    public Object modifyAddressInfo(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId,
+//                                    @PathVariable("id") Long id,@Validated @RequestBody AddressVo vo,BindingResult bindingResult)
+//    {
+//        logger.debug("update Address by Addressid: "+id);
+//
+//        Object returnObject=Common.processFieldErrors(bindingResult,httpServletResponse);
+//        if(returnObject!=null){
+//            return returnObject;
+//        }
+//
+//    }
 
 
 

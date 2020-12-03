@@ -14,7 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @author Ming Qiu
  **/
-@SpringBootApplication(scanBasePackages = {"cn.edu.xmu.other"})
+@SpringBootApplication(scanBasePackages = {"cn.edu.xmu.other","cn.edu.xmu.ooad"})
 @MapperScan("cn.edu.xmu.other.mapper")
 public class OtherServiceApplication implements ApplicationRunner {
 

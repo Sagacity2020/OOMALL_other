@@ -2,16 +2,13 @@ package cn.edu.xmu.other.controller;
 
 import cn.edu.xmu.ooad.util.JacksonUtil;
 import cn.edu.xmu.ooad.util.JwtHelper;
-import cn.edu.xmu.ooad.util.ResponseCode;
-import cn.edu.xmu.ooad.util.ReturnObject;
 import cn.edu.xmu.other.OtherServiceApplication;
 
 import cn.edu.xmu.other.model.vo.AddressVo;
-import cn.edu.xmu.other.model.vo.NewAddressVo;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONException;
+import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.engine.TestExecutionResult;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -54,14 +51,23 @@ public class AddressControllerTest {
         String token=creatTestToken(1L,0L,100);
         String expectedResponse = "";
         try {
-            responseString = this.mvc.perform(post("address").header("authorization", token).contentType("application/json;charset=UTF-8").content(requireJson))
-                    .andExpect(status().isCreated())
+            responseString = this.mvc.perform(post("/address/address").header("authorization", token).contentType("application/json;charset=UTF-8").content(requireJson))
+                    .andExpect(status().isOk())
                     .andExpect(content().contentType("application/json;charset=UTF-8"))
                     .andReturn().getResponse().getContentAsString();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        expectedResponse=requireJson;
+        JSONObject responseData = new JSONObject();
+        responseData.put("regionId",1L);
+        responseData.put("detail","abc");
+        responseData.put("consignee","a");
+        responseData.put("mobile","1234567");
+        JSONObject expectedJson = new JSONObject();
+        expectedJson.put("errno", 0);
+        expectedJson.put("errmsg", "成功");
+        expectedJson.put("data", responseData);
+        expectedResponse = expectedJson.toString();
         try {
             JSONAssert.assertEquals(expectedResponse, responseString, false);
         } catch (JSONException e) {

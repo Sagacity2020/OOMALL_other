@@ -3,7 +3,7 @@ package cn.edu.xmu.other.model.bo;
 import cn.edu.xmu.ooad.model.VoObject;
 import cn.edu.xmu.other.model.po.AddressPo;
 import cn.edu.xmu.other.model.vo.AddressVo;
-import cn.edu.xmu.other.model.vo.NewAddressVo;
+import cn.edu.xmu.other.model.vo.AddressRetVo;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -36,8 +36,8 @@ public class Address implements VoObject {
         return mobile;
     }
     @Override
-    public AddressVo createVo() {
-        return new AddressVo(this);
+    public AddressRetVo createVo() {
+        return new AddressRetVo(this);
     }
 
     @Override
@@ -53,17 +53,6 @@ public class Address implements VoObject {
         po.setMobile(this.mobile);
         po.setRegionId(this.regionId);
         po.setBeDefault(this.be_default);
-        po.setGmtCreate(this.gmtCreate);
-        po.setGmtModified(this.gmtModified);
-        return po;
-    }
-    public NewAddressVo retAddressPo(){
-        NewAddressVo po=new NewAddressVo();
-        po.setRegionId(this.regionId);
-        po.setDetail(this.detail);
-        po.setConsignee(this.consignee);
-        po.setMobile(this.mobile);
-        po.setBe_default(this.be_default);
         po.setGmtCreate(this.gmtCreate);
         po.setGmtModified(this.gmtModified);
         return po;
