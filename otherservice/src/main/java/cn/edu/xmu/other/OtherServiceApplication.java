@@ -1,7 +1,7 @@
 package cn.edu.xmu.other;
 
 import cn.edu.xmu.other.dao.AftersaleDao;
-import cn.edu.xmu.other.dao.CartDao;
+//import cn.edu.xmu.other.dao.CartDao;
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,11 +11,13 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+
 
 /**
  * @author Ming Qiu
  **/
-@SpringBootApplication(scanBasePackages = {"cn.edu.xmu.ooad","cn.edu.xmu.other"})
+@SpringBootApplication(scanBasePackages = {"cn.edu.xmu.ooad","cn.edu.xmu.other"},exclude={DataSourceAutoConfiguration.class})
 @MapperScan("cn.edu.xmu.other.mapper")
 //@EnableDiscoveryClient
 public class OtherServiceApplication implements ApplicationRunner {
@@ -30,8 +32,8 @@ public class OtherServiceApplication implements ApplicationRunner {
 
      */
 
-    @Autowired
-    private CartDao cartDao;
+  //  @Autowired
+  //  private CartDao cartDao;
 
     @Autowired
     private AftersaleDao aftersaleDao;

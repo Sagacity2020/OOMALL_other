@@ -1,7 +1,7 @@
 package cn.edu.xmu.other.dao;
 
 
-
+/*
 import cn.edu.xmu.ooad.util.ReturnObject;
 import cn.edu.xmu.other.mapper.ShoppingCartPoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,3 +21,5 @@ public class CartDao {
 
 
 }
+
+ */

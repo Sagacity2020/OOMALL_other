@@ -5,10 +5,7 @@ import cn.edu.xmu.ooad.util.Common;
 import cn.edu.xmu.ooad.util.encript.AES;
 import cn.edu.xmu.ooad.util.encript.SHA256;
 import cn.edu.xmu.other.model.po.AftersaleServicePo;
-import cn.edu.xmu.other.model.vo.AftersaleDeliverVo;
-import cn.edu.xmu.other.model.vo.AftersaleRetVo;
-import cn.edu.xmu.other.model.vo.AftersaleSendbackVo;
-import cn.edu.xmu.other.model.vo.AftersaleVo;
+import cn.edu.xmu.other.model.vo.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -24,7 +21,7 @@ public class Aftersale implements VoObject {
      * 后台用户状态
      */
     public enum State {
-        CHECK(0, "待审核"),
+        CHECK(0, "待管理员审核"),
         SENDBACKWAIT(1, "待买家发货"),
         SENDBACKING(2, "买家已发货"),
         REFUNDWAIT(3, "待店家退款"),
@@ -53,40 +50,6 @@ public class Aftersale implements VoObject {
 
         public static Aftersale.State getTypeByCode(Integer code) {
             return stateMap.get(code);
-        }
-
-        public Integer getCode() {
-            return code;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-    }
-
-    public enum Type{
-        BACK(0,"换货"),
-        RETURN(1,"退货");
-
-        private static final Map<Integer, Aftersale.Type> typeMap;
-
-        static { //由类加载机制，静态块初始加载对应的枚举属性到map中，而不用每次取属性时，遍历一次所有枚举值
-            typeMap = new HashMap();
-            for (Aftersale.Type enum1 : values()) {
-                typeMap.put(enum1.code, enum1);
-            }
-        }
-
-        private int code;
-        private String description;
-
-        Type(int code, String description) {
-            this.code = code;
-            this.description = description;
-        }
-
-        public static Aftersale.Type getTypeByCode(Integer code) {
-            return typeMap.get(code);
         }
 
         public Integer getCode() {
@@ -152,7 +115,7 @@ public class Aftersale implements VoObject {
         this.regionId=po.getRegionId();
         this.detail=po.getDetail();
         this.consignee=po.getConsignee();
-        this.mobile = AES.decrypt(po.getMobile(),AESPASS);
+        this.mobile = po.getMobile();
         this.customerLogSn=po.getCustomerLogSn();
         this.shopLogSn=po.getShopLogSn();
         this.state=po.getState();
@@ -162,7 +125,6 @@ public class Aftersale implements VoObject {
     }
 
     public AftersaleServicePo createUpdatePo(AftersaleVo vo) {
-        String newMobile = vo.getMobile() == null ? null : AES.encrypt(vo.getMobile(), Aftersale.AESPASS);
 
         Long refunds=(refund/quantity)*vo.getQuantity();
 
@@ -175,7 +137,7 @@ public class Aftersale implements VoObject {
         po.setRegionId(vo.getRegionId());
         po.setDetail(vo.getDetail());
         po.setConsignee(vo.getConsignee());
-        po.setMobile(newMobile);
+        po.setMobile(vo.getMobile());
         po.setState(State.CHECK.getCode().byteValue());
         po.setGmtCreate(null);
         po.setGmtModified(LocalDateTime.now());
@@ -212,6 +174,57 @@ public class Aftersale implements VoObject {
         po.setId(id);
         po.setCustomerLogSn(vo.getShopLogSn());
         po.setState(State.DELIVERING.getCode().byteValue());
+        po.setGmtCreate(null);
+        po.setGmtModified(LocalDateTime.now());
+
+        return po;
+    }
+
+    public AftersaleServicePo createCancelOrDeletePo(){
+        AftersaleServicePo po=new AftersaleServicePo();
+
+        po.setId(id);
+        if(State.getTypeByCode(state.intValue()) == State.SENDBACKWAIT || State.getTypeByCode(state.intValue()) == State.CHECK) {
+            po.setState(State.CANCEL.getCode().byteValue());
+        }
+        if(State.getTypeByCode(state.intValue())== State.SUCESS){
+            po.setBeDeleted((byte)1);
+        }
+        po.setGmtCreate(null);
+        po.setGmtModified(LocalDateTime.now());
+
+        return po;
+    }
+
+    public AftersaleServicePo createConfirmPo(AftersaleConfirmVo vo){
+        AftersaleServicePo po=new AftersaleServicePo();
+
+        po.setId(id);
+        po.setConclusion(vo.getConclusion());
+        if(vo.getConfrim().equals(1)){
+            po.setState(State.SENDBACKWAIT.getCode().byteValue());
+        }
+        else {
+            po.setState(State.DISAGREE.getCode().byteValue());
+        }
+        po.setGmtCreate(null);
+        po.setGmtModified(LocalDateTime.now());
+
+        return po;
+    }
+
+    public AftersaleServicePo createRecievePo(AftersaleConfirmVo vo){
+        AftersaleServicePo po=new AftersaleServicePo();
+
+        po.setId(id);
+        po.setConclusion(vo.getConclusion());
+        if(vo.getConfrim().equals(1) && type.intValue()==0){
+            po.setState(State.DILIVERWAIT.getCode().byteValue());
+        }
+        else if(vo.getConfrim().equals(1) && type.intValue()==1){
+            po.setState(State.REFUNDWAIT.getCode().byteValue());
+        }
+        else po.setState(State.SENDBACKWAIT.getCode().byteValue());
         po.setGmtCreate(null);
         po.setGmtModified(LocalDateTime.now());
 
