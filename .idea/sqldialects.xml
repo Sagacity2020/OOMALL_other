@@ -3,5 +3,7 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/../../../OOAD/数据库设计/sql-1.0.4/other/data.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/../../../OOAD/数据库设计/sql-1.0.4/other/schema.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../../../OOAD/数据库设计/sql-1.0.9/other/data.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../../../OOAD/数据库设计/sql-1.0.9/other/schema.sql" dialect="MySQL" />
   </component>
 </project>

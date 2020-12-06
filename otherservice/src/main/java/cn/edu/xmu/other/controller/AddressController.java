@@ -123,11 +123,11 @@ public class AddressController {
     })
     @Audit
     @PutMapping("/addresses/{id}/default")
-    public Object setDefaultAddress(@PathVariable("id") Long id){
+    public Object setDefaultAddress(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId,@PathVariable("id") Long id){
         if(logger.isDebugEnabled()) {
             logger.debug("set default address by id" + id);
         }
-        ReturnObject returnObject=addressService.setDefaultAddress(id);
+        ReturnObject returnObject=addressService.setDefaultAddress(userId,id);
         return Common.decorateReturnObject(returnObject);
     }
 
@@ -194,6 +194,8 @@ public class AddressController {
         return Common.decorateReturnObject(returnObject);
 
     }
+
+
 
 
 

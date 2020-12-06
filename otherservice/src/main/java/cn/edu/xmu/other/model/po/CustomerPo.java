@@ -1,5 +1,6 @@
 package cn.edu.xmu.other.model.po;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class CustomerPo {
@@ -55,7 +56,7 @@ public class CustomerPo {
      *
      * @mbg.generated
      */
-    private LocalDateTime birthday;
+    private LocalDate birthday;
 
     /**
      *
@@ -248,7 +249,7 @@ public class CustomerPo {
      *
      * @mbg.generated
      */
-    public LocalDateTime getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
@@ -260,7 +261,7 @@ public class CustomerPo {
      *
      * @mbg.generated
      */
-    public void setBirthday(LocalDateTime birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 

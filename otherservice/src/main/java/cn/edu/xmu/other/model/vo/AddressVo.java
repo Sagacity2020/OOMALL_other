@@ -31,7 +31,6 @@ public class AddressVo {
     }
 
     public AddressVo() {
-
     }
 
     public Address createAddress()

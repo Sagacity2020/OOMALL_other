@@ -119,7 +119,7 @@ public class AddressControllerTest {
 
         }catch (JSONException e){
             e.printStackTrace();
-        }
+       }
     }
 
     /**

@@ -36,7 +36,7 @@ public class ShareActivityPoExample {
      * @mbg.generated
      */
     public ShareActivityPoExample() {
-        oredCriteria = new ArrayList();
+        oredCriteria = new ArrayList<>();
     }
 
     /**
@@ -159,7 +159,7 @@ public class ShareActivityPoExample {
 
         protected GeneratedCriteria() {
             super();
-            criteria = new ArrayList();
+            criteria = new ArrayList<>();
         }
 
         public boolean isValid() {
@@ -742,6 +742,66 @@ public class ShareActivityPoExample {
 
         public Criteria andGmtModifiedNotBetween(LocalDateTime value1, LocalDateTime value2) {
             addCriterion("gmt_modified not between", value1, value2, "gmtModified");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateIsNull() {
+            addCriterion("state is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateIsNotNull() {
+            addCriterion("state is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateEqualTo(Byte value) {
+            addCriterion("state =", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateNotEqualTo(Byte value) {
+            addCriterion("state <>", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateGreaterThan(Byte value) {
+            addCriterion("state >", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateGreaterThanOrEqualTo(Byte value) {
+            addCriterion("state >=", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateLessThan(Byte value) {
+            addCriterion("state <", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateLessThanOrEqualTo(Byte value) {
+            addCriterion("state <=", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateIn(List<Byte> values) {
+            addCriterion("state in", values, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateNotIn(List<Byte> values) {
+            addCriterion("state not in", values, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateBetween(Byte value1, Byte value2) {
+            addCriterion("state between", value1, value2, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateNotBetween(Byte value1, Byte value2) {
+            addCriterion("state not between", value1, value2, "state");
             return (Criteria) this;
         }
     }

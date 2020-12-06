@@ -11,7 +11,7 @@
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="real_name" jdbcType="VARCHAR" property="realName" />
     <result column="gender" jdbcType="TINYINT" property="gender" />
-    <result column="birthday" jdbcType="TIMESTAMP" property="birthday" />
+    <result column="birthday" jdbcType="DATE" property="birthday" />
     <result column="point" jdbcType="INTEGER" property="point" />
     <result column="state" jdbcType="TINYINT" property="state" />
     <result column="email" jdbcType="VARCHAR" property="email" />
@@ -154,7 +154,7 @@
       be_deleted, gmt_create, gmt_modified
       )
     values (#{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, 
-      #{gender,jdbcType=TINYINT}, #{birthday,jdbcType=TIMESTAMP}, #{point,jdbcType=INTEGER}, 
+      #{gender,jdbcType=TINYINT}, #{birthday,jdbcType=DATE}, #{point,jdbcType=INTEGER}, 
       #{state,jdbcType=TINYINT}, #{email,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
       #{beDeleted,jdbcType=TINYINT}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}
       )
@@ -220,7 +220,7 @@
         #{gender,jdbcType=TINYINT},
       </if>
       <if test="birthday != null">
-        #{birthday,jdbcType=TIMESTAMP},
+        #{birthday,jdbcType=DATE},
       </if>
       <if test="point != null">
         #{point,jdbcType=INTEGER},
@@ -278,7 +278,7 @@
         gender = #{record.gender,jdbcType=TINYINT},
       </if>
       <if test="record.birthday != null">
-        birthday = #{record.birthday,jdbcType=TIMESTAMP},
+        birthday = #{record.birthday,jdbcType=DATE},
       </if>
       <if test="record.point != null">
         point = #{record.point,jdbcType=INTEGER},
@@ -317,7 +317,7 @@
       password = #{record.password,jdbcType=VARCHAR},
       real_name = #{record.realName,jdbcType=VARCHAR},
       gender = #{record.gender,jdbcType=TINYINT},
-      birthday = #{record.birthday,jdbcType=TIMESTAMP},
+      birthday = #{record.birthday,jdbcType=DATE},
       point = #{record.point,jdbcType=INTEGER},
       state = #{record.state,jdbcType=TINYINT},
       email = #{record.email,jdbcType=VARCHAR},
@@ -349,7 +349,7 @@
         gender = #{gender,jdbcType=TINYINT},
       </if>
       <if test="birthday != null">
-        birthday = #{birthday,jdbcType=TIMESTAMP},
+        birthday = #{birthday,jdbcType=DATE},
       </if>
       <if test="point != null">
         point = #{point,jdbcType=INTEGER},
@@ -385,7 +385,7 @@
       password = #{password,jdbcType=VARCHAR},
       real_name = #{realName,jdbcType=VARCHAR},
       gender = #{gender,jdbcType=TINYINT},
-      birthday = #{birthday,jdbcType=TIMESTAMP},
+      birthday = #{birthday,jdbcType=DATE},
       point = #{point,jdbcType=INTEGER},
       state = #{state,jdbcType=TINYINT},
       email = #{email,jdbcType=VARCHAR},

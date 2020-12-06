@@ -56,8 +56,8 @@ public class AddressService {
      * @return
      */
     @Transactional
-    public ReturnObject setDefaultAddress(Long id) {
-        return addressDao.cancelDefaultAddress(id);
+    public ReturnObject setDefaultAddress(Long userId,Long id) {
+        return addressDao.cancelDefaultAddress(userId,id);
     }
 
 

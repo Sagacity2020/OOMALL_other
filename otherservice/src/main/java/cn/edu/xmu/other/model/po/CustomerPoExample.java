@@ -1,5 +1,6 @@
 package cn.edu.xmu.other.model.po;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +37,7 @@ public class CustomerPoExample {
      * @mbg.generated
      */
     public CustomerPoExample() {
-        oredCriteria = new ArrayList();
+        oredCriteria = new ArrayList<>();
     }
 
     /**
@@ -159,7 +160,7 @@ public class CustomerPoExample {
 
         protected GeneratedCriteria() {
             super();
-            criteria = new ArrayList();
+            criteria = new ArrayList<>();
         }
 
         public boolean isValid() {
@@ -535,52 +536,52 @@ public class CustomerPoExample {
             return (Criteria) this;
         }
 
-        public Criteria andBirthdayEqualTo(LocalDateTime value) {
+        public Criteria andBirthdayEqualTo(LocalDate value) {
             addCriterion("birthday =", value, "birthday");
             return (Criteria) this;
         }
 
-        public Criteria andBirthdayNotEqualTo(LocalDateTime value) {
+        public Criteria andBirthdayNotEqualTo(LocalDate value) {
             addCriterion("birthday <>", value, "birthday");
             return (Criteria) this;
         }
 
-        public Criteria andBirthdayGreaterThan(LocalDateTime value) {
+        public Criteria andBirthdayGreaterThan(LocalDate value) {
             addCriterion("birthday >", value, "birthday");
             return (Criteria) this;
         }
 
-        public Criteria andBirthdayGreaterThanOrEqualTo(LocalDateTime value) {
+        public Criteria andBirthdayGreaterThanOrEqualTo(LocalDate value) {
             addCriterion("birthday >=", value, "birthday");
             return (Criteria) this;
         }
 
-        public Criteria andBirthdayLessThan(LocalDateTime value) {
+        public Criteria andBirthdayLessThan(LocalDate value) {
             addCriterion("birthday <", value, "birthday");
             return (Criteria) this;
         }
 
-        public Criteria andBirthdayLessThanOrEqualTo(LocalDateTime value) {
+        public Criteria andBirthdayLessThanOrEqualTo(LocalDate value) {
             addCriterion("birthday <=", value, "birthday");
             return (Criteria) this;
         }
 
-        public Criteria andBirthdayIn(List<LocalDateTime> values) {
+        public Criteria andBirthdayIn(List<LocalDate> values) {
             addCriterion("birthday in", values, "birthday");
             return (Criteria) this;
         }
 
-        public Criteria andBirthdayNotIn(List<LocalDateTime> values) {
+        public Criteria andBirthdayNotIn(List<LocalDate> values) {
             addCriterion("birthday not in", values, "birthday");
             return (Criteria) this;
         }
 
-        public Criteria andBirthdayBetween(LocalDateTime value1, LocalDateTime value2) {
+        public Criteria andBirthdayBetween(LocalDate value1, LocalDate value2) {
             addCriterion("birthday between", value1, value2, "birthday");
             return (Criteria) this;
         }
 
-        public Criteria andBirthdayNotBetween(LocalDateTime value1, LocalDateTime value2) {
+        public Criteria andBirthdayNotBetween(LocalDate value1, LocalDate value2) {
             addCriterion("birthday not between", value1, value2, "birthday");
             return (Criteria) this;
         }

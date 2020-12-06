@@ -1,5 +1,6 @@
 package cn.edu.xmu.other.model.po;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class AdvertisementPo {
@@ -73,7 +74,7 @@ public class AdvertisementPo {
      *
      * @mbg.generated
      */
-    private LocalDateTime beginDate;
+    private LocalDate beginDate;
 
     /**
      *
@@ -82,7 +83,7 @@ public class AdvertisementPo {
      *
      * @mbg.generated
      */
-    private LocalDateTime endDate;
+    private LocalDate endDate;
 
     /**
      *
@@ -305,7 +306,7 @@ public class AdvertisementPo {
      *
      * @mbg.generated
      */
-    public LocalDateTime getBeginDate() {
+    public LocalDate getBeginDate() {
         return beginDate;
     }
 
@@ -317,7 +318,7 @@ public class AdvertisementPo {
      *
      * @mbg.generated
      */
-    public void setBeginDate(LocalDateTime beginDate) {
+    public void setBeginDate(LocalDate beginDate) {
         this.beginDate = beginDate;
     }
 
@@ -329,7 +330,7 @@ public class AdvertisementPo {
      *
      * @mbg.generated
      */
-    public LocalDateTime getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
@@ -341,7 +342,7 @@ public class AdvertisementPo {
      *
      * @mbg.generated
      */
-    public void setEndDate(LocalDateTime endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 

@@ -36,7 +36,7 @@ public class AddressPoExample {
      * @mbg.generated
      */
     public AddressPoExample() {
-        oredCriteria = new ArrayList();
+        oredCriteria = new ArrayList<>();
     }
 
     /**
@@ -159,7 +159,7 @@ public class AddressPoExample {
 
         protected GeneratedCriteria() {
             super();
-            criteria = new ArrayList();
+            criteria = new ArrayList<>();
         }
 
         public boolean isValid() {

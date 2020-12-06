@@ -139,12 +139,15 @@ public class AddressDao {
      * @param id
      * @return
      */
-    public ReturnObject cancelDefaultAddress(Long id) {
+    public ReturnObject cancelDefaultAddress(Long userId,Long id) {
         AddressPo po = addressPoMapper.selectByPrimaryKey(id);
         if (po == null) {
             logger.debug("不存在 address id:" + id);
             return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST);
-        } else {
+        } else if (po.getCustomerId()!=userId){
+            logger.debug("用户id不拥有该地址id");
+            return  new ReturnObject(ResponseCode.RESOURCE_ID_OUTSCOPE);
+        }else {
             po.setBeDefault((byte) 1);
         }
 

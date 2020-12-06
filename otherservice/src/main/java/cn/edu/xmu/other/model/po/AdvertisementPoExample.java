@@ -1,5 +1,6 @@
 package cn.edu.xmu.other.model.po;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +37,7 @@ public class AdvertisementPoExample {
      * @mbg.generated
      */
     public AdvertisementPoExample() {
-        oredCriteria = new ArrayList();
+        oredCriteria = new ArrayList<>();
     }
 
     /**
@@ -159,7 +160,7 @@ public class AdvertisementPoExample {
 
         protected GeneratedCriteria() {
             super();
-            criteria = new ArrayList();
+            criteria = new ArrayList<>();
         }
 
         public boolean isValid() {
@@ -655,52 +656,52 @@ public class AdvertisementPoExample {
             return (Criteria) this;
         }
 
-        public Criteria andBeginDateEqualTo(LocalDateTime value) {
+        public Criteria andBeginDateEqualTo(LocalDate value) {
             addCriterion("begin_date =", value, "beginDate");
             return (Criteria) this;
         }
 
-        public Criteria andBeginDateNotEqualTo(LocalDateTime value) {
+        public Criteria andBeginDateNotEqualTo(LocalDate value) {
             addCriterion("begin_date <>", value, "beginDate");
             return (Criteria) this;
         }
 
-        public Criteria andBeginDateGreaterThan(LocalDateTime value) {
+        public Criteria andBeginDateGreaterThan(LocalDate value) {
             addCriterion("begin_date >", value, "beginDate");
             return (Criteria) this;
         }
 
-        public Criteria andBeginDateGreaterThanOrEqualTo(LocalDateTime value) {
+        public Criteria andBeginDateGreaterThanOrEqualTo(LocalDate value) {
             addCriterion("begin_date >=", value, "beginDate");
             return (Criteria) this;
         }
 
-        public Criteria andBeginDateLessThan(LocalDateTime value) {
+        public Criteria andBeginDateLessThan(LocalDate value) {
             addCriterion("begin_date <", value, "beginDate");
             return (Criteria) this;
         }
 
-        public Criteria andBeginDateLessThanOrEqualTo(LocalDateTime value) {
+        public Criteria andBeginDateLessThanOrEqualTo(LocalDate value) {
             addCriterion("begin_date <=", value, "beginDate");
             return (Criteria) this;
         }
 
-        public Criteria andBeginDateIn(List<LocalDateTime> values) {
+        public Criteria andBeginDateIn(List<LocalDate> values) {
             addCriterion("begin_date in", values, "beginDate");
             return (Criteria) this;
         }
 
-        public Criteria andBeginDateNotIn(List<LocalDateTime> values) {
+        public Criteria andBeginDateNotIn(List<LocalDate> values) {
             addCriterion("begin_date not in", values, "beginDate");
             return (Criteria) this;
         }
 
-        public Criteria andBeginDateBetween(LocalDateTime value1, LocalDateTime value2) {
+        public Criteria andBeginDateBetween(LocalDate value1, LocalDate value2) {
             addCriterion("begin_date between", value1, value2, "beginDate");
             return (Criteria) this;
         }
 
-        public Criteria andBeginDateNotBetween(LocalDateTime value1, LocalDateTime value2) {
+        public Criteria andBeginDateNotBetween(LocalDate value1, LocalDate value2) {
             addCriterion("begin_date not between", value1, value2, "beginDate");
             return (Criteria) this;
         }
@@ -715,52 +716,52 @@ public class AdvertisementPoExample {
             return (Criteria) this;
         }
 
-        public Criteria andEndDateEqualTo(LocalDateTime value) {
+        public Criteria andEndDateEqualTo(LocalDate value) {
             addCriterion("end_date =", value, "endDate");
             return (Criteria) this;
         }
 
-        public Criteria andEndDateNotEqualTo(LocalDateTime value) {
+        public Criteria andEndDateNotEqualTo(LocalDate value) {
             addCriterion("end_date <>", value, "endDate");
             return (Criteria) this;
         }
 
-        public Criteria andEndDateGreaterThan(LocalDateTime value) {
+        public Criteria andEndDateGreaterThan(LocalDate value) {
             addCriterion("end_date >", value, "endDate");
             return (Criteria) this;
         }
 
-        public Criteria andEndDateGreaterThanOrEqualTo(LocalDateTime value) {
+        public Criteria andEndDateGreaterThanOrEqualTo(LocalDate value) {
             addCriterion("end_date >=", value, "endDate");
             return (Criteria) this;
         }
 
-        public Criteria andEndDateLessThan(LocalDateTime value) {
+        public Criteria andEndDateLessThan(LocalDate value) {
             addCriterion("end_date <", value, "endDate");
             return (Criteria) this;
         }
 
-        public Criteria andEndDateLessThanOrEqualTo(LocalDateTime value) {
+        public Criteria andEndDateLessThanOrEqualTo(LocalDate value) {
             addCriterion("end_date <=", value, "endDate");
             return (Criteria) this;
         }
 
-        public Criteria andEndDateIn(List<LocalDateTime> values) {
+        public Criteria andEndDateIn(List<LocalDate> values) {
             addCriterion("end_date in", values, "endDate");
             return (Criteria) this;
         }
 
-        public Criteria andEndDateNotIn(List<LocalDateTime> values) {
+        public Criteria andEndDateNotIn(List<LocalDate> values) {
             addCriterion("end_date not in", values, "endDate");
             return (Criteria) this;
         }
 
-        public Criteria andEndDateBetween(LocalDateTime value1, LocalDateTime value2) {
+        public Criteria andEndDateBetween(LocalDate value1, LocalDate value2) {
             addCriterion("end_date between", value1, value2, "endDate");
             return (Criteria) this;
         }
 
-        public Criteria andEndDateNotBetween(LocalDateTime value1, LocalDateTime value2) {
+        public Criteria andEndDateNotBetween(LocalDate value1, LocalDate value2) {
             addCriterion("end_date not between", value1, value2, "endDate");
             return (Criteria) this;
         }
