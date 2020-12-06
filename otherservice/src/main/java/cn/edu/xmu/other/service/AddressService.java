@@ -59,4 +59,26 @@ public class AddressService {
     public ReturnObject setDefaultAddress(Long id) {
         return addressDao.cancelDefaultAddress(id);
     }
+
+
+    /**
+     * @Created at 12/3 15:30
+     * @author zrh
+     * @param address
+     * @return
+     */
+    public ReturnObject updateAddress(Address address) {
+        return addressDao.updateAddressInfo(address);
+
+    }
+
+    /**
+     * @Created at 12/3 19:26
+     * @author zrh
+     * @param id
+     * @return
+     */
+    public ReturnObject deleteAddress(Long id) {
+        return addressDao.deleteAddress(id);
+    }
 }

@@ -6,8 +6,10 @@ import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
 import cn.edu.xmu.other.mapper.AddressPoMapper;
 import cn.edu.xmu.other.model.bo.Address;
+import cn.edu.xmu.other.model.bo.AddressPage;
 import cn.edu.xmu.other.model.po.AddressPo;
 import cn.edu.xmu.other.model.po.AddressPoExample;
+import cn.edu.xmu.other.model.vo.AddressPageVo;
 import cn.edu.xmu.other.model.vo.AddressRetVo;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -17,6 +19,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
+import javax.mail.internet.AddressException;
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -112,8 +116,8 @@ public class AddressDao {
             addressPos = addressPoMapper.selectByExample(example);
             List<VoObject> ret = new ArrayList(addressPos.size());
             for (AddressPo po : addressPos) {
-                Address address = new Address(po);
-                ret.add(address);
+                AddressPage addressPage = new AddressPage(po);
+                ret.add(addressPage);
             }
             PageInfo<VoObject> addressPage = PageInfo.of(ret);
             return new ReturnObject<>(addressPage);
@@ -164,5 +168,75 @@ public class AddressDao {
             returnObject = new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生未知错误： %s", e.getMessage()));
         }
         return returnObject;
+    }
+
+    /**
+     * @Created at 12/3 15:28
+     * @author zrh
+     * @param address
+     * @return
+     */
+    public ReturnObject updateAddressInfo(Address address) {
+         AddressPo addressPo = address.getAddressPo();
+         ReturnObject returnObject=null;
+         AddressPoExample addressPoExample=new AddressPoExample();
+         AddressPoExample.Criteria criteria= addressPoExample.createCriteria();
+         criteria.andIdEqualTo(address.getId());
+         criteria.andCustomerIdEqualTo(address.getCustomer_id());
+         try{
+             int ret =addressPoMapper.updateByExampleSelective(addressPo,addressPoExample);
+             if(ret == 0){
+                 logger.debug("updateAddress: update address fail: "+addressPo.toString());
+                 returnObject=new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("地址id不存在："+address.getId()));
+
+             }
+             else {
+                 logger.debug("update address = "+addressPo.toString());
+                 returnObject =new ReturnObject(ResponseCode.OK);
+             }
+         }catch (DataAccessException e){
+             logger.debug("sql exception : "+e.getMessage());
+             returnObject =new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误, %s",e.getMessage()));
+
+         }catch (Exception e){
+             logger.error("other exception : "+e.getMessage());
+             returnObject =new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("其他错误：%s",e.getMessage()));
+         }
+         return returnObject;
+    }
+
+    /**
+     * @Created at 12/3 19:26
+     * @author zrh
+     * @param id
+     * @return
+     */
+    public ReturnObject deleteAddress(Long id) {
+            ReturnObject returnObject=null;
+            try{
+                int ret=addressPoMapper.deleteByPrimaryKey(id);
+                if(ret==0)
+                {
+                    logger.debug("delete address :id is not exist ="+id);
+                    returnObject= new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("地址id不存在："+id));
+
+                }
+                else {
+                    logger.debug("delete address id= " + id);
+                    returnObject = new ReturnObject(ResponseCode.OK);
+                }
+            }
+            catch (DataAccessException e){
+                logger.error("delete Address DataAccessException:"+e.getMessage());
+                returnObject = new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误："+e.getMessage()));
+
+            }
+            catch (Exception e)
+            {
+                logger.error("other exception:"+e.getMessage());
+                returnObject=new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("其他错误："+e.getMessage()));
+            }
+            return  returnObject;
+
     }
 }

@@ -55,7 +55,7 @@ public class AddressController {
             @ApiResponse(code = 601,message = "达到地址簿上限")
     })
     @Audit
-    @PostMapping("/address")
+    @PostMapping("/addresses")
     public Object createAddress(@Validated @RequestBody AddressVo vo, BindingResult bindingResult,
                                 @LoginUser @ApiIgnore Long userId){
 //        JwtHelper.UserAndDepart userAndDepart = new JwtHelper.UserAndDepart(token);
@@ -131,29 +131,69 @@ public class AddressController {
         return Common.decorateReturnObject(returnObject);
     }
 
-//
-//    @ApiOperation(value = "修改地址信息",produces = "application/json")
-//    @ApiImplicitParams({
-//            @ApiImplicitParam(paramType = "header",dataType = "String",name = "authorization",value = "Token",required = true),
-//            @ApiImplicitParam(paramType = "path",dataType = "Integer",name = "id",value = "地址id",required = true),
-//            @ApiImplicitParam(paramType = "body",dataType = "AddressVo",name = "vo",value = "可修改的地址信息",required = true)
-//    })
-//    @ApiResponses({
-//            @ApiResponse(code=0,message = "成功")
-//    })
-//    @Audit
-//    @PutMapping("addresses/{id}")
-//    public Object modifyAddressInfo(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId,
-//                                    @PathVariable("id") Long id,@Validated @RequestBody AddressVo vo,BindingResult bindingResult)
-//    {
-//        logger.debug("update Address by Addressid: "+id);
-//
-//        Object returnObject=Common.processFieldErrors(bindingResult,httpServletResponse);
-//        if(returnObject!=null){
-//            return returnObject;
-//        }
-//
-//    }
+    /**
+     * @Created at 12/3 15:30
+     * @author zrh
+     * @param userId
+     * @param id
+     * @param vo
+     * @param bindingResult
+     * @return
+     */
+    @ApiOperation(value = "修改地址信息",produces = "application/json")
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType = "header",dataType = "String",name = "authorization",value = "Token",required = true),
+            @ApiImplicitParam(paramType = "path",dataType = "Integer",name = "id",value = "地址id",required = true),
+            @ApiImplicitParam(paramType = "body",dataType = "AddressVo",name = "vo",value = "可修改的地址信息",required = true)
+    })
+    @ApiResponses({
+            @ApiResponse(code=0,message = "成功")
+    })
+    @Audit
+    @PutMapping("addresses/{id}")
+    public Object modifyAddressInfo(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId,
+                                    @PathVariable("id") Long id,@Validated @RequestBody AddressVo vo,BindingResult bindingResult)
+    {
+        logger.debug("update Address by Addressid: "+id);
+
+        Object returnObject=Common.processFieldErrors(bindingResult,httpServletResponse);
+        if(returnObject!=null) {
+            return returnObject;
+        }
+        Address address=vo.createAddress();
+        address.setCustomer_id(userId);
+        address.setId(id);
+        address.setGmtModified(LocalDateTime.now());
+
+        ReturnObject retObject=addressService.updateAddress(address);
+        return Common.decorateReturnObject(retObject);
+
+    }
+
+
+    /**
+     * @Created at 12/3 19:27
+     * @author zrh
+     * @param id
+     * @return
+     */
+    @ApiOperation(value = "删除地址")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "authorization",value = "Token",required = true,dataType = "String",paramType = "header"),
+            @ApiImplicitParam(name = "id",value = "地址id",required = true, dataType = "Integer",paramType = "path")
+
+    })
+    @ApiResponses({
+            @ApiResponse(code = 0,message = "成功"),
+    })
+    @Audit
+    @DeleteMapping("/addresses/{id}")
+    public Object deleteAddress(@PathVariable Long id){
+        logger.debug("delete address id = "+id);
+        ReturnObject returnObject= addressService.deleteAddress(id);
+        return Common.decorateReturnObject(returnObject);
+
+    }
 
 
 
