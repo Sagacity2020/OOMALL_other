@@ -1,0 +1,17 @@
+2020-12-07 21:40:28.221 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 1 vo = AftersaleVo(quantity=2, reason=test, regionId=null, detail=null, consignee=test, mobile=null)
+2020-12-07 21:40:28.428 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 1 的信息已更新
+2020-12-07 21:42:29.449 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 3 vo = AftersaleVo(quantity=2, reason=test, regionId=null, detail=null, consignee=test, mobile=null)
+2020-12-07 21:42:29.642 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 无法修改此售后单信息：id = 3
+2020-12-07 21:43:10.044 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - sendbackAftersale: id = 2 vo = AftersaleSendbackVo(customerLogSn=20201203)
+2020-12-07 21:43:10.662 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 2 的信息已更新,买家发货成功
+2020-12-07 21:43:57.892 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - deliverAftersale: id = 1 vo = AftersaleDeliverVo(shopLogSn=20201203)
+2020-12-07 21:43:58.048 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 无法修改此售后单信息：id = 1
+2020-12-07 21:51:38.274 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 1 vo = AftersaleVo(quantity=2, reason=test, regionId=null, detail=null, consignee=test, mobile=null)
+2020-12-07 21:51:38.457 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 1 的信息已更新
+2020-12-07 21:52:24.058 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Starting AftersaleControllerTest on DESKTOP-ICK6KH9 with PID 27416 (started by asus in D:\OOMALL_other\aftersale)
+2020-12-07 21:52:24.063 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-07 21:52:24.064 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-07 21:52:35.856 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 12.317 seconds (JVM running for 14.268)
+2020-12-07 21:52:36.498 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA3MjE1MjM2NDFDIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3MzQ5MjU2LCJ1c2VySWQiOjEsImlhdCI6MTYwNzM0OTE1Nn0.2JDp5DRdP1oQn740U1x0mjS2C3wj7S59r1R8zfyQtgA
+2020-12-07 21:52:36.718 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 1 vo = AftersaleVo(quantity=2, reason=test, regionId=null, detail=null, consignee=test, mobile=null)
+2020-12-07 21:52:36.883 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 1 的信息已更新
