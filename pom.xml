@@ -16,12 +16,14 @@
 
     <modules>
         <module>core</module>
-        <module>otherservice</module>
+        <module>address</module>
     </modules>
     <name>other</name>
 
     <properties>
         <java.version>11</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <dependencyManagement>
@@ -187,7 +189,7 @@
                         ${project.reporting.outputEncoding}
                     </encoding>
                     <excludePackageNames>
-                        cn.edu.xmu.other.model.po:cn.edu.xmu.other.mapper
+                        cn.edu.xmu.address.model.po:cn.edu.xmu.address.mapper
                     </excludePackageNames>
                 </configuration>
                 <reportSets>
