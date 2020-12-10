@@ -268,6 +268,15 @@ public class AddressController {
 
     }
 
+    /**
+     * @Created at 12/10 18:10
+     * @author zrh
+     * @param departId
+     * @param id
+     * @param vo
+     * @param bindingResult
+     * @return
+     */
 
     @ApiOperation(value = "修改地区")
     @ApiImplicitParams({
@@ -288,13 +297,13 @@ public class AddressController {
             return returnObject;
         }
         logger.debug("修改地区id："+id);
-        ReturnObject<Integer> retObject=regionService.isRegion(id);
-        Integer ret=retObject.getData();
-        logger.debug(ret.toString());
-        if(ret.equals(0)){
-            ReturnObject returnObject1=new ReturnObject(retObject.getCode(),retObject.getErrmsg());
-            return Common.getNullRetObj(returnObject1,httpServletResponse);
-        }
+//        ReturnObject<Integer> retObject=regionService.isRegion(id);
+//        Integer ret=retObject.getData();
+//        logger.debug(ret.toString());
+//        if(!ret.equals(1)){
+//            ReturnObject returnObject1=new ReturnObject(retObject.getCode(),retObject.getErrmsg());
+//            return Common.decorateReturnObject(returnObject1);
+//        }
         Region region=new Region();
         region.setName(vo.getName());
         region.setId(id);
@@ -303,6 +312,26 @@ public class AddressController {
         return  Common.decorateReturnObject(returnObject1);
 
     }
+
+    @ApiOperation(value = "管理员让地区无效")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "authorization",value = "Tokem",required = true,paramType = "header",dataType = "String"),
+            @ApiImplicitParam(name = "id",value = "地区id",required = true,dataType = "Integer",paramType = "path")
+    })
+    @ApiResponses({
+            @ApiResponse(code=0,message = "成功"),
+            @ApiResponse(code=602,message = "地区已废弃")
+    })
+    @Audit
+    @DeleteMapping("/regions/{id}")
+    public Object deleteRegion(@Depart @ApiIgnore @RequestParam(required = false) Long departId,@PathVariable Long id){
+            logger.debug("delete region id  = "+id);
+
+            ReturnObject returnObject=regionService.deleteRegion(id);
+            return Common.decorateReturnObject(returnObject);
+    }
+
+
 
 
 

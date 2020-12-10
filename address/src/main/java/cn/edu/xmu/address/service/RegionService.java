@@ -53,4 +53,9 @@ public class RegionService {
         ReturnObject returnObject=regionDao.updateRegion(region);
         return returnObject;
     }
+
+    public ReturnObject deleteRegion(Long id) {
+        ReturnObject returnObject=regionDao.deleteRegion(id);
+        return returnObject;
+    }
 }

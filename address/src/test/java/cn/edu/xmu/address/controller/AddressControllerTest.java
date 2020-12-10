@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -585,6 +586,12 @@ public class AddressControllerTest {
         }
     }
 
+    /**
+     * @Created at 12/10 17:25
+     * @author zrh
+     * 更新成功
+     * @throws Exception
+     */
     @Test
     public void updateRegion()throws Exception{
         String token = creatTestToken(1L,0L,100);
@@ -615,6 +622,89 @@ public class AddressControllerTest {
 
     }
 
+    /**
+     * @Created at 12/10 18:10
+     * @author zrh
+     * 地区id不存在
+     * @throws Exception
+     */
+    @Test
+    public void updateRegion1()throws Exception{
+        String token = creatTestToken(1L,0L,100);
+        String responseString ="";
+        RegionVo vo=new RegionVo();
+        vo.setName("999");
+        vo.setPostalCode(99L);
+        String requireJson=JacksonUtil.toJson(vo);
+        try{
+            responseString=this.mvc.perform(put("/address/regions/5").header("authorization",token)
+                    .contentType("application/json;charset=UTF-8")
+                    .content(requireJson))
+                    .andExpect(status().isNotFound())
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
+        JSONObject expectedJSON=new JSONObject();
+        expectedJSON.put("errno",504);
+        expectedJSON.put("errmsg","地区id不存在");
+        String expectedString = expectedJSON.toString();
+        try{
+            JSONAssert.assertEquals(expectedString,responseString,true);
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
+
+    }
+
+    @Test
+    public void cancleRegion()throws Exception{
+        String token=creatTestToken(1L,0L,100);
+        String responseString="";
+        try{
+            responseString=this.mvc.perform(delete("/address/regions/1").header("authorization",token))
+                    .andExpect(status().isOk())
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        JSONObject expectedJSON=new JSONObject();
+        expectedJSON.put("errno",0);
+        expectedJSON.put("errmsg","成功");
+        String expectedString = expectedJSON.toString();
+        try{
+            JSONAssert.assertEquals(expectedString,responseString,true);
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
+
+    }
+
+    @Test
+    public void cancleRegion1()throws Exception{
+        String token=creatTestToken(1L,0L,100);
+        String responseString="";
+        try{
+            responseString=this.mvc.perform(delete("/address/regions/3").header("authorization",token))
+                    .andExpect(status().isOk())
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        JSONObject expectedJSON=new JSONObject();
+        expectedJSON.put("errno",602);
+        expectedJSON.put("errmsg","地区已废弃");
+        String expectedString = expectedJSON.toString();
+        try{
+            JSONAssert.assertEquals(expectedString,responseString,true);
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
+
+    }
 
 }

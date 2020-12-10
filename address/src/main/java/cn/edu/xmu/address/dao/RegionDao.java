@@ -109,7 +109,7 @@ public class RegionDao {
                 logger.debug("地区id不存在："+region.getId());
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("地区id不存在"));
 
-            }else if(regionPo.getState().equals(0))
+            }else if(regionPo.getState()==0)
             {
                 logger.debug("该地区无效: "+region.getId());
                 return new ReturnObject<>(ResponseCode.REGION_OBSOLETE);
@@ -161,14 +161,15 @@ public class RegionDao {
 
     public ReturnObject isRegion(Long id) {
         RegionPo regionPo=new RegionPo();
+
         try{
             regionPo=regionPoMapper.selectByPrimaryKey(id);
 
             if(regionPo==null){
                 logger.debug("地区id不存在："+id);
-                return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("地区id不存在"));
+                return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("地区id不存在"));
 
-            }else if(regionPo.getState().equals(0))
+            }else if(regionPo.getState()==0)
             {
                 logger.debug("该地区无效: "+id);
                 return new ReturnObject<>(ResponseCode.REGION_OBSOLETE);
@@ -196,6 +197,30 @@ public class RegionDao {
         logger.error(region.toString());
         RegionPo regionPo=region.getRegionPo();
         logger.error(regionPo.toString());
+        RegionPo Po=new RegionPo();
+
+        try{
+            Po=regionPoMapper.selectByPrimaryKey(region.getId());
+
+            if(Po==null){
+                logger.debug("地区id不存在："+region.getId());
+                return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("地区id不存在"));
+
+            }else if(Po.getState()==0)
+            {
+                logger.debug("该地区无效: "+region.getId());
+                return new ReturnObject<>(ResponseCode.REGION_OBSOLETE);
+            }
+        }catch (DataAccessException e)
+        {
+            logger.debug("数据库错误："+e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误："+e.getMessage()));
+        }
+        catch (Exception e)
+        {
+            logger.debug("服务器其他错误："+e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR,String.format("服务器其他错误："+e.getMessage()));
+        }
         ReturnObject returnObject=null;
         try{
             int ret=regionPoMapper.updateByPrimaryKeySelective(regionPo);
@@ -215,5 +240,52 @@ public class RegionDao {
         }
         return returnObject;
 
+    }
+
+    public ReturnObject deleteRegion(Long id) {
+        RegionPo Po=new RegionPo();
+        try{
+            Po=regionPoMapper.selectByPrimaryKey(id);
+
+            if(Po==null){
+                logger.debug("地区id不存在："+id);
+                return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("地区id不存在"));
+
+            }else if(Po.getState()==0)
+            {
+                logger.debug("该地区无效: "+id);
+                return new ReturnObject<>(ResponseCode.REGION_OBSOLETE);
+            }
+        }catch (DataAccessException e)
+        {
+            logger.debug("数据库错误："+e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误："+e.getMessage()));
+        }
+        catch (Exception e)
+        {
+            logger.debug("服务器其他错误："+e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR,String.format("服务器其他错误："+e.getMessage()));
+        }
+        ReturnObject returnObject;
+        int ret;
+        Po.setState((byte)0);
+        try {
+            ret = regionPoMapper.updateByPrimaryKeySelective(Po);
+            if (ret == 0) {
+                logger.info("地区不存在或已被删除，id =" + id);
+                returnObject = new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST);
+
+            } else {
+
+                returnObject = new ReturnObject(ResponseCode.OK);
+            }
+        } catch (DataAccessException e) {
+            logger.error("数据库错误： " + e.getMessage());
+            returnObject = new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
+        } catch (Exception e) {
+            logger.error("严重错误： " + e.getMessage());
+            returnObject = new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生未知错误： %s", e.getMessage()));
+        }
+        return returnObject;
     }
 }
