@@ -313,6 +313,13 @@ public class AddressController {
 
     }
 
+    /**
+     * @Created at 12/10 21:30
+     * @author zrh
+     * @param departId
+     * @param id
+     * @return
+     */
     @ApiOperation(value = "管理员让地区无效")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "authorization",value = "Tokem",required = true,paramType = "header",dataType = "String"),

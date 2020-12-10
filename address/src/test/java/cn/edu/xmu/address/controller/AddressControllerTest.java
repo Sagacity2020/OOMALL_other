@@ -659,6 +659,12 @@ public class AddressControllerTest {
 
     }
 
+    /**
+     * @Created at 12/10 21:27
+     * @author zrh
+     * 废弃地区成功
+     * @throws Exception
+     */
     @Test
     public void cancleRegion()throws Exception{
         String token=creatTestToken(1L,0L,100);
@@ -683,6 +689,12 @@ public class AddressControllerTest {
 
     }
 
+    /**
+     * @Created at 12/10 21:28
+     * @author zrh
+     * 地区已废弃 废弃失败
+     * @throws Exception
+     */
     @Test
     public void cancleRegion1()throws Exception{
         String token=creatTestToken(1L,0L,100);

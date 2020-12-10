@@ -49,11 +49,23 @@ public class RegionService {
         return returnObject;
     }
 
+    /**
+     * @Created at 12/10 21:29
+     * @author zrh
+     * @param region
+     * @return
+     */
     public ReturnObject updateRegion(Region region) {
         ReturnObject returnObject=regionDao.updateRegion(region);
         return returnObject;
     }
 
+    /**
+     * @Created at 12/10 21:29
+     * @author zrh
+     * @param id
+     * @return
+     */
     public ReturnObject deleteRegion(Long id) {
         ReturnObject returnObject=regionDao.deleteRegion(id);
         return returnObject;

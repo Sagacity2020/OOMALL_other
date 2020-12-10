@@ -242,6 +242,12 @@ public class RegionDao {
 
     }
 
+    /**
+     * @Created at 12/10 21:29
+     * @author zrh
+     * @param id
+     * @return
+     */
     public ReturnObject deleteRegion(Long id) {
         RegionPo Po=new RegionPo();
         try{
