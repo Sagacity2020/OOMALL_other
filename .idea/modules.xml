@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/OOMALL_other.iml" filepath="$PROJECT_DIR$/.idea/OOMALL_other.iml" />
       <module fileurl="file://$PROJECT_DIR$/address/address.iml" filepath="$PROJECT_DIR$/address/address.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cart/cart.iml" filepath="$PROJECT_DIR$/cart/cart.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
     </modules>
   </component>

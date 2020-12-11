@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="core" />
+        <module name="cart" />
         <module name="addressservice" />
         <module name="address" />
       </profile>
@@ -15,6 +16,7 @@
       <module name="address" target="11" />
       <module name="addressservice" target="11" />
       <module name="addressService" target="11" />
+      <module name="cart" target="11" />
       <module name="core" target="11" />
       <module name="OOMALL_other" target="11" />
       <module name="otherservice" target="11" />
@@ -25,6 +27,7 @@
       <module name="address" options="-parameters" />
       <module name="addressService" options="-parameters" />
       <module name="addressservice" options="-parameters" />
+      <module name="cart" options="-parameters" />
       <module name="core" options="-parameters" />
       <module name="otherservice" options="-parameters" />
     </option>
