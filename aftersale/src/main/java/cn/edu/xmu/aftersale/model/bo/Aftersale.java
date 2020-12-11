@@ -19,7 +19,7 @@ public class Aftersale implements VoObject {
     public static String AESPASS = "OOAD2020-11-01";
 
     /**
-     * 后台用户状态
+     * 售后状态
      */
     public enum State {
         CHECK(0, "待管理员审核"),
@@ -305,7 +305,29 @@ public class Aftersale implements VoObject {
     }
 
     @Override
-    public Object createSimpleVo() {
-        return null;
+    public AftersaleRetSimpleVo createSimpleVo() {
+
+        AftersaleRetSimpleVo vo=new AftersaleRetSimpleVo();
+
+        vo.setId(id);
+        vo.setOrderId(orderId);
+        vo.setOrderItemId(orderItemId);
+        vo.setCustomerId(customerId);
+        vo.setShopId(shopId);
+        vo.setServiceSn(serviceSn);
+        vo.setType(type);
+        vo.setReason(reason);
+        vo.setConclusion(conclusion);
+        vo.setRefund(refund);
+        vo.setQuantity(quantity);
+        vo.setRegionId(regionId);
+        vo.setDetail(detail);
+        vo.setConsignee(consignee);
+        vo.setMobile(mobile);
+        vo.setCustomerLogSn(customerLogSn);
+        vo.setShopLogSn(shopLogSn);
+        vo.setState(state);
+
+        return vo;
     }
 }

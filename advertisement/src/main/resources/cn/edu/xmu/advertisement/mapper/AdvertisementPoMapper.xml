@@ -13,8 +13,8 @@
     <result column="image_url" jdbcType="VARCHAR" property="imageUrl" />
     <result column="state" jdbcType="TINYINT" property="state" />
     <result column="weight" jdbcType="INTEGER" property="weight" />
-    <result column="begin_date" jdbcType="TIMESTAMP" property="beginDate" />
-    <result column="end_date" jdbcType="TIMESTAMP" property="endDate" />
+    <result column="begin_date" jdbcType="DATE" property="beginDate" />
+    <result column="end_date" jdbcType="DATE" property="endDate" />
     <result column="repeats" jdbcType="TINYINT" property="repeats" />
     <result column="message" jdbcType="VARCHAR" property="message" />
     <result column="be_default" jdbcType="TINYINT" property="beDefault" />
@@ -156,7 +156,7 @@
       gmt_modified)
     values (#{segId,jdbcType=BIGINT}, #{link,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
       #{imageUrl,jdbcType=VARCHAR}, #{state,jdbcType=TINYINT}, #{weight,jdbcType=INTEGER}, 
-      #{beginDate,jdbcType=TIMESTAMP}, #{endDate,jdbcType=TIMESTAMP}, #{repeats,jdbcType=TINYINT}, 
+      #{beginDate,jdbcType=DATE}, #{endDate,jdbcType=DATE}, #{repeats,jdbcType=TINYINT}, 
       #{message,jdbcType=VARCHAR}, #{beDefault,jdbcType=TINYINT}, #{gmtCreate,jdbcType=TIMESTAMP}, 
       #{gmtModified,jdbcType=TIMESTAMP})
   </insert>
@@ -230,10 +230,10 @@
         #{weight,jdbcType=INTEGER},
       </if>
       <if test="beginDate != null">
-        #{beginDate,jdbcType=TIMESTAMP},
+        #{beginDate,jdbcType=DATE},
       </if>
       <if test="endDate != null">
-        #{endDate,jdbcType=TIMESTAMP},
+        #{endDate,jdbcType=DATE},
       </if>
       <if test="repeats != null">
         #{repeats,jdbcType=TINYINT},
@@ -291,10 +291,10 @@
         weight = #{record.weight,jdbcType=INTEGER},
       </if>
       <if test="record.beginDate != null">
-        begin_date = #{record.beginDate,jdbcType=TIMESTAMP},
+        begin_date = #{record.beginDate,jdbcType=DATE},
       </if>
       <if test="record.endDate != null">
-        end_date = #{record.endDate,jdbcType=TIMESTAMP},
+        end_date = #{record.endDate,jdbcType=DATE},
       </if>
       <if test="record.repeats != null">
         repeats = #{record.repeats,jdbcType=TINYINT},
@@ -329,8 +329,8 @@
       image_url = #{record.imageUrl,jdbcType=VARCHAR},
       state = #{record.state,jdbcType=TINYINT},
       weight = #{record.weight,jdbcType=INTEGER},
-      begin_date = #{record.beginDate,jdbcType=TIMESTAMP},
-      end_date = #{record.endDate,jdbcType=TIMESTAMP},
+      begin_date = #{record.beginDate,jdbcType=DATE},
+      end_date = #{record.endDate,jdbcType=DATE},
       repeats = #{record.repeats,jdbcType=TINYINT},
       message = #{record.message,jdbcType=VARCHAR},
       be_default = #{record.beDefault,jdbcType=TINYINT},
@@ -366,10 +366,10 @@
         weight = #{weight,jdbcType=INTEGER},
       </if>
       <if test="beginDate != null">
-        begin_date = #{beginDate,jdbcType=TIMESTAMP},
+        begin_date = #{beginDate,jdbcType=DATE},
       </if>
       <if test="endDate != null">
-        end_date = #{endDate,jdbcType=TIMESTAMP},
+        end_date = #{endDate,jdbcType=DATE},
       </if>
       <if test="repeats != null">
         repeats = #{repeats,jdbcType=TINYINT},
@@ -401,8 +401,8 @@
       image_url = #{imageUrl,jdbcType=VARCHAR},
       state = #{state,jdbcType=TINYINT},
       weight = #{weight,jdbcType=INTEGER},
-      begin_date = #{beginDate,jdbcType=TIMESTAMP},
-      end_date = #{endDate,jdbcType=TIMESTAMP},
+      begin_date = #{beginDate,jdbcType=DATE},
+      end_date = #{endDate,jdbcType=DATE},
       repeats = #{repeats,jdbcType=TINYINT},
       message = #{message,jdbcType=VARCHAR},
       be_default = #{beDefault,jdbcType=TINYINT},

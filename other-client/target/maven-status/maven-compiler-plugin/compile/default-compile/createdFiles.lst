@@ -1,0 +1,5 @@
+cn\edu\xmu\oomall\other\model\CustomerDTO.class
+cn\edu\xmu\oomall\other\model\AftersaleDTO.class
+cn\edu\xmu\oomall\other\service\ITimeService.class
+cn\edu\xmu\oomall\other\service\IAddressService.class
+cn\edu\xmu\oomall\other\service\IAftersaleService.class

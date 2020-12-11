@@ -8,6 +8,7 @@ import cn.edu.xmu.aftersale.dao.AftersaleDao;
 import cn.edu.xmu.aftersale.model.bo.Aftersale;
 import cn.edu.xmu.aftersale.model.po.AftersaleServicePo;
 import cn.edu.xmu.aftersale.model.vo.*;
+import cn.edu.xmu.oomall.other.service.IAftersaleService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
@@ -28,7 +29,7 @@ import java.util.Random;
  * @author
  */
 @Service
-public class AftersaleService {
+public class AftersaleService{
     private Logger logger = LoggerFactory.getLogger(AftersaleService.class);
 
     @Autowired

@@ -897,12 +897,12 @@ public class AftersaleControllerTest {
         vo.setMobile("15206067798");
 
         String token = creatTestToken(1L, 0L, 100);
-        String roleJson = JacksonUtil.toJson(vo);
+        String aftersaleJson = JacksonUtil.toJson(vo);
         String expectedResponse = "";
         String responseString = null;
 
         try {
-            responseString = this.mvc.perform(post("/aftersale/orderItems/17/aftersales").header("authorization", token).contentType("application/json;charset=UTF-8").content(roleJson))
+            responseString = this.mvc.perform(post("/aftersale/orderItems/17/aftersales").header("authorization", token).contentType("application/json;charset=UTF-8").content(aftersaleJson))
                     .andExpect(status().isCreated())
                     .andExpect(content().contentType("application/json;charset=UTF-8"))
                     .andReturn().getResponse().getContentAsString();
@@ -937,12 +937,12 @@ public class AftersaleControllerTest {
         vo.setMobile("15206067798");
 
         String token = creatTestToken(1L, 0L, 100);
-        String roleJson = JacksonUtil.toJson(vo);
+        String aftersaleJson = JacksonUtil.toJson(vo);
         String expectedResponse = "";
         String responseString = null;
 
         try {
-            responseString = this.mvc.perform(post("/aftersale/orderItems/1/aftersales").header("authorization", token).contentType("application/json;charset=UTF-8").content(roleJson))
+            responseString = this.mvc.perform(post("/aftersale/orderItems/1/aftersales").header("authorization", token).contentType("application/json;charset=UTF-8").content(aftersaleJson))
                     .andExpect(status().isOk())
                     .andExpect(content().contentType("application/json;charset=UTF-8"))
                     .andReturn().getResponse().getContentAsString();
@@ -1058,7 +1058,7 @@ public class AftersaleControllerTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        expectedResponse = "{\"errno\":0,\"data\":{\"total\":2,\"pages\":1,\"pageSize\":2,\"page\":1,\"list\":[{\"id\":1,\"orderId\":10,\"orderSn\":\"20201204\",\"orderItemId\":1,\"skuId\":1,\"skuName\":\"ipad\",\"customerId\":1,\"shopId\":1,\"serviceSn\":\"20200101\",\"type\":0,\"reason\":\"test1\",\"conclusion\":null,\"refund\":50,\"quantity\":5,\"regionId\":null,\"detail\":null,\"consignee\":\"江\",\"mobile\":\"15206067798\",\"customerLogSn\":null,\"shopLogSn\":null,\"state\":0},{\"id\":2,\"orderId\":10,\"orderSn\":\"20201204\",\"orderItemId\":2,\"skuId\":1,\"skuName\":\"ipad\",\"customerId\":2,\"shopId\":1,\"serviceSn\":\"20200102\",\"type\":0,\"reason\":\"test2\",\"conclusion\":null,\"refund\":50,\"quantity\":2,\"regionId\":null,\"detail\":null,\"consignee\":\"高\",\"mobile\":\"13459784977\",\"customerLogSn\":null,\"shopLogSn\":null,\"state\":1}]},\"errmsg\":\"成功\"}";
+        expectedResponse = "{\"errno\":0,\"data\":{\"total\":2,\"pages\":1,\"pageSize\":2,\"page\":1,\"list\":[{\"id\":1,\"orderId\":10,\"orderItemId\":1,\"customerId\":1,\"shopId\":1,\"serviceSn\":\"20200101\",\"type\":0,\"reason\":\"test1\",\"conclusion\":null,\"refund\":50,\"quantity\":5,\"regionId\":null,\"detail\":null,\"consignee\":\"江\",\"mobile\":\"15206067798\",\"customerLogSn\":null,\"shopLogSn\":null,\"state\":0},{\"id\":2,\"orderId\":10,\"orderItemId\":2,\"customerId\":2,\"shopId\":1,\"serviceSn\":\"20200102\",\"type\":0,\"reason\":\"test2\",\"conclusion\":null,\"refund\":50,\"quantity\":2,\"regionId\":null,\"detail\":null,\"consignee\":\"高\",\"mobile\":\"13459784977\",\"customerLogSn\":null,\"shopLogSn\":null,\"state\":1}]},\"errmsg\":\"成功\"}";
         try {
             JSONAssert.assertEquals(expectedResponse, responseString, false);
         } catch (JSONException e) {

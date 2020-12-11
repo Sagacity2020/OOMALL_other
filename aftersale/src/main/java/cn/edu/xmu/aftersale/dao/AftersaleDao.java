@@ -28,7 +28,7 @@ public class AftersaleDao {
     private static final Logger logger = LoggerFactory.getLogger(AftersaleDao.class);
 
     @Autowired
-    AftersaleServicePoMapper aftersaleMapper;
+    private AftersaleServicePoMapper aftersaleMapper;
 
     public ReturnObject<Object> updateAftersale(Long id, AftersaleVo aftersaleVo) {
 
@@ -403,7 +403,7 @@ public class AftersaleDao {
     }
 
 
-    public ReturnObject<Object>selectAftersale(Long id,Long shopId){
+    private ReturnObject<Object>selectAftersale(Long id,Long shopId){
 
         ReturnObject<Object>returnObject;
         AftersaleServicePo po;
@@ -441,7 +441,7 @@ public class AftersaleDao {
     }
 
 
-    public ReturnObject<Object>modifyAftersale(AftersaleServicePo aftersalePo,Long id){
+    private ReturnObject<Object>modifyAftersale(AftersaleServicePo aftersalePo,Long id){
         ReturnObject<Object> retObj;
         int ret;
         try {
@@ -469,7 +469,7 @@ public class AftersaleDao {
         return retObj;
     }
 
-    public ReturnObject<Object> selectAftersaleByExample(AftersaleServicePoExample example,
+    private ReturnObject<Object> selectAftersaleByExample(AftersaleServicePoExample example,
                                                              Integer page, Integer pageSize) {
         PageHelper.startPage(page, pageSize);
 
@@ -482,8 +482,8 @@ public class AftersaleDao {
                 Aftersale aftersale = new Aftersale(po);
                 ret.add(aftersale);
             }
-            PageInfo<Aftersale> rolePage = PageInfo.of(ret);
-            return new ReturnObject<>(rolePage);
+            PageInfo<Aftersale> aftersalePage = PageInfo.of(ret);
+            return new ReturnObject<>(aftersalePage);
         } catch (DataAccessException e) {
             logger.error("selectAllRole: DataAccessException:" + e.getMessage());
             return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));

@@ -18,6 +18,7 @@
         <module>core</module>
         <module>aftersale</module>
         <module>advertisement</module>
+        <module>other-client</module>
     </modules>
     <name>other</name>
 

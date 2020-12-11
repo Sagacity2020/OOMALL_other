@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="core" />
         <module name="advertisement" />
+        <module name="other-client" />
         <module name="aftersale" />
       </profile>
     </annotationProcessing>
@@ -16,7 +17,7 @@
       <module name="aftersale" target="8" />
       <module name="core" target="11" />
       <module name="OOMALL_other" target="11" />
-      <module name="otherservice" target="8" />
+      <module name="other-client" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -24,7 +25,7 @@
       <module name="advertisement" options="-parameters" />
       <module name="aftersale" options="-parameters" />
       <module name="core" options="-parameters" />
-      <module name="otherservice" options="-parameters" />
+      <module name="other-client" options="-parameters" />
     </option>
   </component>
 </project>

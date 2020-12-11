@@ -2,6 +2,7 @@ package cn.edu.xmu.aftersale.controller;
 
 import cn.edu.xmu.ooad.annotation.Audit;
 import cn.edu.xmu.ooad.annotation.LoginUser;
+import cn.edu.xmu.ooad.model.VoObject;
 import cn.edu.xmu.ooad.util.Common;
 import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ResponseUtil;
@@ -11,6 +12,7 @@ import cn.edu.xmu.aftersale.model.bo.Aftersale;
 import cn.edu.xmu.aftersale.model.po.AftersaleServicePo;
 import cn.edu.xmu.aftersale.model.vo.*;
 import cn.edu.xmu.aftersale.service.AftersaleService;
+import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +26,9 @@ import springfox.documentation.annotations.ApiIgnore;
 import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Api(value = "售后服务", tags = "Aftersale")
 @RestController /*Restful的Controller对象*/
@@ -39,7 +43,7 @@ public class AftersaleController {
     private HttpServletResponse httpServletResponse;
 
     @Autowired
-    AftersaleServicePoMapper poMapper;
+    private AftersaleServicePoMapper poMapper;
 
 
     /*
@@ -135,6 +139,7 @@ public class AftersaleController {
     @ApiResponses({
             @ApiResponse(code = 0,message = "成功")
     })
+    @Audit
     @GetMapping("aftersales/states")
     public Object getAllStates(){
         Aftersale.State[] states=Aftersale.State.class.getEnumConstants();
@@ -176,7 +181,9 @@ public class AftersaleController {
 
         ReturnObject<Object> returnObj=checkCustomerId(userId,id);
         AftersaleServicePo po=(AftersaleServicePo)returnObj.getData();
-        if(po==null)return Common.decorateReturnObject(returnObj);
+        if(po==null){
+            return Common.decorateReturnObject(returnObj);
+        }
 
         returnObj = aftersaleService.sendbackAftersale(id, vo);
         return Common.decorateReturnObject(returnObj);
@@ -205,7 +212,9 @@ public class AftersaleController {
 
         ReturnObject<Object> returnObj=checkCustomerId(userId,id);
         AftersaleServicePo po=(AftersaleServicePo)returnObj.getData();
-        if(po==null)return Common.decorateReturnObject(returnObj);
+        if(po==null){
+            return Common.decorateReturnObject(returnObj);
+        }
 
         returnObj = aftersaleService.confirmAftersaleById(id);
         return Common.decorateReturnObject(returnObj);
@@ -266,7 +275,9 @@ public class AftersaleController {
 
         ReturnObject<Object> returnObj=checkCustomerId(userId,id);
         AftersaleServicePo po=(AftersaleServicePo)returnObj.getData();
-        if(po==null)return Common.decorateReturnObject(returnObj);
+        if(po==null){
+            return Common.decorateReturnObject(returnObj);
+        }
 
 
         returnObj = aftersaleService.deleteAftersale(id);
@@ -388,7 +399,9 @@ public class AftersaleController {
         if(returnObj.getData()!=null) {
             return Common.getRetObject(returnObj);
         }
-        else return Common.getNullRetObj(new ReturnObject<>(returnObj.getCode(), returnObj.getErrmsg()), httpServletResponse);
+        else {
+            return Common.getNullRetObj(new ReturnObject<>(returnObj.getCode(), returnObj.getErrmsg()), httpServletResponse);
+        }
     }
 
 
@@ -411,14 +424,14 @@ public class AftersaleController {
     @Audit
     @GetMapping("aftersales")
     public Object getAftersaleByUserId(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId,
-                                       @RequestParam Long spuId,
-                                       @RequestParam Long skuId,
-                                       @RequestParam LocalDateTime beginTime,
-                                       @RequestParam LocalDateTime endTime,
+                                       @RequestParam (required = false)Long spuId,
+                                       @RequestParam (required = false)Long skuId,
+                                       @RequestParam (required = false)LocalDateTime beginTime,
+                                       @RequestParam (required = false)LocalDateTime endTime,
                                        @RequestParam(required = false, defaultValue = "1") Integer page,
                                        @RequestParam(required = false, defaultValue = "10") Integer pageSize,
-                                       @RequestParam Integer type,
-                                       @RequestParam Integer state){
+                                       @RequestParam (required = false)Integer type,
+                                       @RequestParam (required = false)Integer state){
         if(logger.isDebugEnabled()){
             logger.debug("getAftersaleByUserId id="+userId+",page="+page+",pageSize="+pageSize);
         }
@@ -457,14 +470,14 @@ public class AftersaleController {
     @Audit
     @GetMapping("shops/{id}/aftersales")
     public Object getAllAftersale(@PathVariable("id") Long shopId,
-                                  @RequestParam Long spuId,
-                                  @RequestParam Long skuId,
-                                  @RequestParam LocalDateTime beginTime,
-                                  @RequestParam LocalDateTime endTime,
+                                  @RequestParam (required = false)Long spuId,
+                                  @RequestParam (required = false)Long skuId,
+                                  @RequestParam (required = false)LocalDateTime beginTime,
+                                  @RequestParam (required = false)LocalDateTime endTime,
                                   @RequestParam(required = false, defaultValue = "1") Integer page,
                                   @RequestParam(required = false, defaultValue = "10") Integer pageSize,
-                                  @RequestParam Integer type,
-                                  @RequestParam Integer state){
+                                  @RequestParam (required = false)Integer type,
+                                  @RequestParam (required = false)Integer state){
         if(logger.isDebugEnabled()){
             logger.debug("getAllAftersale id="+shopId+",page="+page+",pageSize="+pageSize);
         }
@@ -475,14 +488,14 @@ public class AftersaleController {
             object = Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID), httpServletResponse);
         }
         else {
-            object=Common.getPageRetObject(aftersaleService.getAllAftersale(shopId, spuId, skuId, beginTime, endTime, page, pageSize, type, state));
+            object=getPageRetObject(aftersaleService.getAllAftersale(shopId, spuId, skuId, beginTime, endTime, page, pageSize, type, state));
         }
         return object;
     }
 
 
 
-    public ReturnObject<Object>checkCustomerId(Long userId,Long id){
+    private ReturnObject<Object>checkCustomerId(Long userId,Long id){
         AftersaleServicePo po=poMapper.selectByPrimaryKey(id);
         ReturnObject returnObj;
 
@@ -499,6 +512,36 @@ public class AftersaleController {
             }
         }
         return returnObj;
+    }
+
+
+    private Object getPageRetObject(ReturnObject<PageInfo<VoObject>> returnObject) {
+        ResponseCode code = returnObject.getCode();
+        switch (code){
+            case OK:
+
+                PageInfo<VoObject> objs = returnObject.getData();
+                if (objs != null){
+                    List<Object> voObjs = new ArrayList<>(objs.getList().size());
+                    for (Object data : objs.getList()) {
+                        if (data instanceof VoObject) {
+                            voObjs.add(((VoObject)data).createSimpleVo());
+                        }
+                    }
+
+                    Map<String, Object> ret = new HashMap<>();
+                    ret.put("list", voObjs);
+                    ret.put("total", objs.getTotal());
+                    ret.put("page", objs.getPageNum());
+                    ret.put("pageSize", objs.getPageSize());
+                    ret.put("pages", objs.getPages());
+                    return ResponseUtil.ok(ret);
+                }else{
+                    return ResponseUtil.ok();
+                }
+            default:
+                return ResponseUtil.fail(returnObject.getCode(), returnObject.getErrmsg());
+        }
     }
 }
 
