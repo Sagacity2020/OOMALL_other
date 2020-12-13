@@ -11,6 +11,17 @@ server:
       max: 1000
     context-path:
 
+dubbo:
+  application:
+     name: cart-service
+   scan:
+     base-packages: cn.edu.xmu.cart.service
+   registry:
+     address: nacos://127.0.0.1:8848
+   protocol:
+     name: dubbo
+     port: -1
+
 spring:
   application:
     name: cart-service

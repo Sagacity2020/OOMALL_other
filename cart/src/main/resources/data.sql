@@ -27,3 +27,9 @@ INSERT INTO `region`(`id`, `pid`, `name`, `postal_code`, `state`, `gmt_create`, 
 
 UNLOCK TABLES;
 
+LOCK TABLES `shopping_cart` WRITE;
+INSERT INTO `shopping_cart`(`id`, `customer_id`, `goods_sku_id`, `quantity`, `price`, `gmt_create`, `gmt_modified`) VALUES (1, 1, 1, 1, 11, '2020-12-11 17:25:27', NULL);
+INSERT INTO `shopping_cart`(`id`, `customer_id`, `goods_sku_id`, `quantity`, `price`, `gmt_create`, `gmt_modified`) VALUES (2, 1, 2, 1, 22, '2020-12-11 17:25:35', NULL);
+INSERT INTO `shopping_cart`(`id`, `customer_id`, `goods_sku_id`, `quantity`, `price`, `gmt_create`, `gmt_modified`) VALUES (3, 5, 3, 1, 33, '2020-12-11 17:25:47', NULL);
+UNLOCK TABLES;
+

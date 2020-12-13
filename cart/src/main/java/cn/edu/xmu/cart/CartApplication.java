@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Created at 12/10 22:04
  * @author zrh
  */
+
 @SpringBootApplication(scanBasePackages = {"cn.edu.xmu.cart","cn.edu.xmu.ooad"})
 @MapperScan("cn.edu.xmu.cart.mapper")
 public class CartApplication implements ApplicationRunner {

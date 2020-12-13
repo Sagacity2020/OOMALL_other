@@ -1,8 +1,5 @@
-package cn.edu.xmu.cart.model.bo;
+package cn.edu.xmu.oomall.goods.model;
 
-import cn.edu.xmu.cart.model.po.ShoppingCartPo;
-import cn.edu.xmu.ooad.model.VoObject;
-import cn.edu.xmu.oomall.goods.model.CouponActivity;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -12,7 +9,7 @@ import java.time.LocalDateTime;
  * @author zrh
  */
 @Data
-public class Cart implements VoObject {
+public class CartDTO {
     private Long id;
     private Long customerId;
     private Long goodsSkuId;
@@ -22,20 +19,6 @@ public class Cart implements VoObject {
     private LocalDateTime gmtCreate;
     private LocalDateTime gmtModified;
 
-
-    public Cart(ShoppingCartPo po) {
-        this.id=po.getId();
-        this.customerId=po.getCustomerId();
-        this.goodsSkuId=po.getGoodsSkuId();
-        this.quantity=po.getQuantity();
-        this.price=po.getPrice();
-        this.couponActivity=null;
-        this.gmtCreate=po.getGmtCreate();
-        this.gmtModified=po.getGmtModified();
-    }
-    public Cart(){
-
-    }
 
 
     public Long getId() {
@@ -100,26 +83,5 @@ public class Cart implements VoObject {
 
     public void setGmtModified(LocalDateTime gmtModified) {
         this.gmtModified = gmtModified;
-    }
-
-    @Override
-    public Object createVo() {
-        return null;
-    }
-
-    @Override
-    public Object createSimpleVo() {
-        return null;
-    }
-
-    public ShoppingCartPo createPo() {
-        ShoppingCartPo po=new ShoppingCartPo();
-        po.setId(this.getId());
-        po.setCustomerId(this.getCustomerId());
-        po.setGoodsSkuId(this.getGoodsSkuId());
-        po.setQuantity(this.getQuantity());
-        po.setPrice(this.getPrice());
-        po.setGmtCreate(this.getGmtCreate());
-        return po;
     }
 }
