@@ -318,8 +318,6 @@ public class AftersaleDao {
     /**
      * 买家查询所有售后单
      * @param userId
-     * @param spuId
-     * @param skuId
      * @param beginTime
      * @param endTime
      * @param page
@@ -328,7 +326,7 @@ public class AftersaleDao {
      * @param state
      * @return
      */
-    public ReturnObject<PageInfo<Aftersale>>getAftersaleByUserId(Long userId,Long spuId, Long skuId,
+    public ReturnObject<PageInfo<AftersaleServicePo>>getAftersaleByUserId(Long userId,
                                                                           LocalDateTime beginTime, LocalDateTime endTime,
                                                                           Integer page, Integer pageSize,
                                                                           Integer type,Integer state){
@@ -336,10 +334,6 @@ public class AftersaleDao {
         AftersaleServicePoExample.Criteria criteria=example.createCriteria();
         criteria.andCustomerIdEqualTo(userId);
 
-        if(spuId!=null){
-        }
-        if(skuId!=null){
-        }
         if(beginTime!=null){
             criteria.andGmtCreateGreaterThanOrEqualTo(beginTime);
         }
@@ -364,7 +358,7 @@ public class AftersaleDao {
 
 
 
-    public ReturnObject<PageInfo<Aftersale>>getAllAftersale(Long shopId,Long spuId, Long skuId,
+    public ReturnObject<PageInfo<AftersaleServicePo>>getAllAftersale(Long shopId,
                                                                  LocalDateTime beginTime, LocalDateTime endTime,
                                                                  Integer page, Integer pageSize,
                                                                  Integer type,Integer state){
@@ -377,10 +371,6 @@ public class AftersaleDao {
             criteria.andShopIdEqualTo(shopId);
         }
 
-        if(spuId!=null){
-        }
-        if(skuId!=null){
-        }
         if(beginTime!=null){
             criteria.andGmtCreateGreaterThanOrEqualTo(beginTime);
         }
@@ -469,21 +459,24 @@ public class AftersaleDao {
         return retObj;
     }
 
-    private ReturnObject<Object> selectAftersaleByExample(AftersaleServicePoExample example,
+    private ReturnObject<PageInfo<AftersaleServicePo>> selectAftersaleByExample(AftersaleServicePoExample example,
                                                              Integer page, Integer pageSize) {
-        PageHelper.startPage(page, pageSize);
+        //PageHelper.startPage(page, pageSize);
 
         List<AftersaleServicePo> aftersalePos = null;
         try {
             //不加限定条件查询所有
             aftersalePos = aftersaleMapper.selectByExample(example);
-            List<Aftersale> ret = new ArrayList<>(aftersalePos.size());
+            /*List<Aftersale> ret = new ArrayList<>(aftersalePos.size());
             for (AftersaleServicePo po : aftersalePos) {
                 Aftersale aftersale = new Aftersale(po);
                 ret.add(aftersale);
             }
             PageInfo<Aftersale> aftersalePage = PageInfo.of(ret);
-            return new ReturnObject<>(aftersalePage);
+
+             */
+            PageInfo<AftersaleServicePo> retObj=new PageInfo<>(aftersalePos);
+            return new ReturnObject<>(retObj);
         } catch (DataAccessException e) {
             logger.error("selectAllRole: DataAccessException:" + e.getMessage());
             return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
@@ -491,6 +484,36 @@ public class AftersaleDao {
             // 其他Exception错误
             logger.error("other exception : " + e.getMessage());
             return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
+        }
+    }
+
+
+    /**
+     * 内部api，确定订单是否进行售后
+     * @param orderItemId
+     * @return
+     */
+    public boolean checkIsAftersale(Long orderItemId){
+        AftersaleServicePoExample example=new AftersaleServicePoExample();
+        AftersaleServicePoExample.Criteria criteria=example.createCriteria();
+        criteria.andOrderItemIdEqualTo(orderItemId);
+        criteria.andTypeEqualTo((byte)1);
+        criteria.andStateNotEqualTo(Aftersale.State.CANCEL.getCode().byteValue());
+        try{
+            List<AftersaleServicePo> pos=aftersaleMapper.selectByExample(example);
+            if(pos.size()==0){
+                return true;
+            }
+            else{
+                return false;
+            }
+        } catch (DataAccessException e) {
+            logger.error("selectAllRole: DataAccessException:" + e.getMessage());
+            return false;
+        } catch (Exception e) {
+            // 其他Exception错误
+            logger.error("other exception : " + e.getMessage());
+            return false;
         }
     }
 }

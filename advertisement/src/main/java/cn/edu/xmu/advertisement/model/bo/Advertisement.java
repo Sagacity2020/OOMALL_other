@@ -3,6 +3,7 @@ package cn.edu.xmu.advertisement.model.bo;
 import cn.edu.xmu.advertisement.model.po.AdvertisementPo;
 import cn.edu.xmu.advertisement.model.vo.AdvertisementRetVo;
 import cn.edu.xmu.ooad.model.VoObject;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -58,9 +59,9 @@ public class Advertisement implements VoObject {
     private Byte state;
 
     private Integer weight;
-
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate beginDate;
-
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate endDate;
 
     private Byte repeats;
@@ -69,8 +70,9 @@ public class Advertisement implements VoObject {
 
     private Byte beDefault;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime gmtCreate;
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime gmtModified;
 
 
@@ -107,7 +109,7 @@ public class Advertisement implements VoObject {
         advertisementPo.setLink(link);
         advertisementPo.setState(State.CHECK.getCode().byteValue());
 
-        advertisementPo.setGmtCreate(LocalDateTime.now());
+        advertisementPo.setGmtCreate(LocalDateTime.now().withNano(0));
         advertisementPo.setGmtModified(null);
 
         return advertisementPo;
@@ -118,7 +120,7 @@ public class Advertisement implements VoObject {
 
         po.setId(id);
         po.setSegId(segId);
-        po.setGmtModified(LocalDateTime.now());
+        po.setGmtModified(LocalDateTime.now().withNano(0));
 
         return po;
     }

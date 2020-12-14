@@ -242,6 +242,7 @@ public class AftersaleControllerTest {
 
     /*
     获取所有状态
+    成功
      */
     @Test
     public void aftersaleStateTest()throws Exception{
@@ -259,6 +260,54 @@ public class AftersaleControllerTest {
             e.printStackTrace();
         }
         expectedResponse = "{\"errno\":0,\"data\": [ {\"name\": \"待管理员审核\", \"code\": 0 }, {\"name\": \"待买家发货\", \"code\": 1 }, {\"name\": \"买家已发货\", \"code\": 2 }, {\"name\": \"待店家退款\", \"code\": 3 }, {\"name\": \"待店家发货\", \"code\": 4 }, {\"name\": \"店家已发货\", \"code\": 5 }, {\"name\": \"审核不通过\", \"code\": 6 }, {\"name\": \"已取消\", \"code\": 7 }, {\"name\": \"已结束\", \"code\": 8 } ], \"errmsg\": \"成功\" }";
+        try {
+            JSONAssert.assertEquals(expectedResponse, responseString, true);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void aftersaleStateTest1()throws Exception{
+        String token="tokenTest";
+
+        String expectedResponse = "";
+        String responseString = null;
+
+        try {
+            responseString = this.mvc.perform(get("/aftersale/aftersales/states").header("authorization", token))
+                    .andExpect(status().isUnauthorized())
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        expectedResponse = "{\"errno\":501, \"errmsg\": \"JWT不合法\" }";
+        try {
+            JSONAssert.assertEquals(expectedResponse, responseString, true);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    @Test
+    public void aftersaleStateTest2()throws Exception{
+
+        String expectedResponse = "";
+        String responseString = null;
+
+        try {
+            responseString = this.mvc.perform(get("/aftersale/aftersales/states"))
+                    .andExpect(status().isUnauthorized())
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        expectedResponse = "{\"errno\":704, \"errmsg\": \"需要先登录\" }";
         try {
             JSONAssert.assertEquals(expectedResponse, responseString, true);
         } catch (JSONException e) {
@@ -401,6 +450,35 @@ public class AftersaleControllerTest {
     }
 
 
+    @Test
+    public void aftersaleSendBackTest4()throws Exception {
+        AftersaleSendbackVo vo = new AftersaleSendbackVo();
+        vo.setCustomerLogSn(null);
+        String aftersaleJson = JacksonUtil.toJson(vo);
+
+        String token = creatTestToken(2L, -2L, 100);
+
+        String expectedResponse = "";
+        String responseString = null;
+
+        try {
+            responseString = this.mvc.perform(put("/aftersale/aftersales/2/sendback").header("authorization", token).contentType("application/json;charset=UTF-8").content(aftersaleJson))
+                    .andExpect(status().isOk())
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        expectedResponse = "{\"errno\":503,\"errmsg\":\"运单信息不能为空\"}";
+        try {
+            JSONAssert.assertEquals(expectedResponse, responseString, true);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     /*
     买家确认售后单结束
     成功
@@ -478,7 +556,6 @@ public class AftersaleControllerTest {
         try{
             responseString=this.mvc.perform(put("/aftersale/aftersales/20/comfirm").header("authorization",token))
                     .andExpect(status().isNotFound())
-                    .andExpect(content().contentType("application/json;charset=UTF-8"))
                     .andReturn().getResponse().getContentAsString();
         } catch (Exception e) {
             e.printStackTrace();
@@ -910,7 +987,7 @@ public class AftersaleControllerTest {
             e.printStackTrace();
         }
 
-        expectedResponse = "{\"errno\":0,\"data\":{\"id\":40,\"orderId\":10,\"orderItemId\":17,\"skuId\":1,\"skuName\":\"ipad\",\"customerId\":1,\"shopId\":1,\"type\":0,\"reason\":\"test\",\"conclusion\":null,\"refund\":100,\"quantity\":1,\"regionId\":null,\"detail\":null,\"consignee\":\"江\",\"mobile\":\"15206067798\",\"customerLogSn\":null,\"shopLogSn\":null,\"state\":0},\"errmsg\":\"成功\"}";
+        expectedResponse = "{\"errno\":0,\"data\":{\"id\":19,\"orderId\":10,\"orderItemId\":17,\"skuId\":1,\"skuName\":\"ipad\",\"customerId\":1,\"shopId\":1,\"type\":0,\"reason\":\"test\",\"conclusion\":null,\"refund\":100,\"quantity\":1,\"regionId\":null,\"detail\":null,\"consignee\":\"江\",\"mobile\":\"15206067798\",\"customerLogSn\":null,\"shopLogSn\":null,\"state\":0},\"errmsg\":\"成功\"}";
         try {
             JSONAssert.assertEquals(expectedResponse, responseString, false);
         } catch (JSONException e) {
@@ -1028,14 +1105,14 @@ public class AftersaleControllerTest {
         String responseString = null;
 
         try {
-            responseString = this.mvc.perform(get("/aftersale/aftersales?spuId=&skuId=&beginTime=&endTime=&page=1&pageSize=2&type=&state=").header("authorization", token))
+            responseString = this.mvc.perform(get("/aftersale/aftersales?beginTime=&endTime=&page=1&pageSize=2&type=&state=").header("authorization", token))
                     .andExpect(status().isOk())
                     .andExpect(content().contentType("application/json;charset=UTF-8"))
                     .andReturn().getResponse().getContentAsString();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        expectedResponse = "{\"errno\":0,\"data\":{\"total\":2,\"pages\":1,\"pageSize\":2,\"page\":1,\"list\":[{\"id\":1,\"orderId\":10,\"orderSn\":\"20201204\",\"orderItemId\":1,\"skuId\":1,\"skuName\":\"ipad\",\"customerId\":1,\"shopId\":1,\"serviceSn\":\"20200101\",\"type\":0,\"reason\":\"test1\",\"conclusion\":null,\"refund\":50,\"quantity\":5,\"regionId\":null,\"detail\":null,\"consignee\":\"江\",\"mobile\":\"15206067798\",\"customerLogSn\":null,\"shopLogSn\":null,\"state\":0},{\"id\":4,\"orderId\":10,\"orderSn\":\"20201204\",\"orderItemId\":4,\"skuId\":1,\"skuName\":\"ipad\",\"customerId\":1,\"shopId\":3,\"serviceSn\":\"20200104\",\"type\":0,\"reason\":\"test4\",\"conclusion\":null,\"refund\":100,\"quantity\":1,\"regionId\":null,\"detail\":null,\"consignee\":\"江\",\"mobile\":\"15206067798\",\"customerLogSn\":null,\"shopLogSn\":null,\"state\":4}]},\"errmsg\":\"成功\"}";
+        expectedResponse = "{\"errno\":0,\"data\":{\"total\":4,\"pages\":2,\"pageSize\":2,\"page\":1,\"list\":[{\"id\":1,\"orderId\":10,\"orderSn\":\"20201204\",\"orderItemId\":1,\"skuId\":1,\"skuName\":\"ipad\",\"customerId\":1,\"shopId\":1,\"serviceSn\":\"20200101\",\"type\":0,\"reason\":\"test1\",\"conclusion\":null,\"refund\":50,\"quantity\":5,\"regionId\":null,\"detail\":null,\"consignee\":\"江\",\"mobile\":\"15206067798\",\"customerLogSn\":null,\"shopLogSn\":null,\"state\":0},{\"id\":4,\"orderId\":10,\"orderSn\":\"20201204\",\"orderItemId\":4,\"skuId\":1,\"skuName\":\"ipad\",\"customerId\":1,\"shopId\":3,\"serviceSn\":\"20200104\",\"type\":0,\"reason\":\"test4\",\"conclusion\":null,\"refund\":100,\"quantity\":1,\"regionId\":null,\"detail\":null,\"consignee\":\"江\",\"mobile\":\"15206067798\",\"customerLogSn\":null,\"shopLogSn\":null,\"state\":4}]},\"errmsg\":\"成功\"}";
         try {
             JSONAssert.assertEquals(expectedResponse, responseString, false);
         } catch (JSONException e) {
@@ -1051,14 +1128,14 @@ public class AftersaleControllerTest {
         String responseString = null;
 
         try {
-            responseString = this.mvc.perform(get("/aftersale/shops/1/aftersales?spuId=&skuId=&beginTime=&endTime=&page=1&pageSize=2&type=&state=").header("authorization", token))
+            responseString = this.mvc.perform(get("/aftersale/shops/1/aftersales?beginTime=&endTime=&page=1&pageSize=2&type=&state=").header("authorization", token))
                     .andExpect(status().isOk())
                     .andExpect(content().contentType("application/json;charset=UTF-8"))
                     .andReturn().getResponse().getContentAsString();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        expectedResponse = "{\"errno\":0,\"data\":{\"total\":2,\"pages\":1,\"pageSize\":2,\"page\":1,\"list\":[{\"id\":1,\"orderId\":10,\"orderItemId\":1,\"customerId\":1,\"shopId\":1,\"serviceSn\":\"20200101\",\"type\":0,\"reason\":\"test1\",\"conclusion\":null,\"refund\":50,\"quantity\":5,\"regionId\":null,\"detail\":null,\"consignee\":\"江\",\"mobile\":\"15206067798\",\"customerLogSn\":null,\"shopLogSn\":null,\"state\":0},{\"id\":2,\"orderId\":10,\"orderItemId\":2,\"customerId\":2,\"shopId\":1,\"serviceSn\":\"20200102\",\"type\":0,\"reason\":\"test2\",\"conclusion\":null,\"refund\":50,\"quantity\":2,\"regionId\":null,\"detail\":null,\"consignee\":\"高\",\"mobile\":\"13459784977\",\"customerLogSn\":null,\"shopLogSn\":null,\"state\":1}]},\"errmsg\":\"成功\"}";
+        expectedResponse = "{\"errno\":0,\"data\":{\"total\":6,\"pages\":3,\"pageSize\":2,\"page\":1,\"list\":[{\"id\":1,\"orderId\":10,\"orderItemId\":1,\"customerId\":1,\"shopId\":1,\"serviceSn\":\"20200101\",\"type\":0,\"reason\":\"test1\",\"conclusion\":null,\"refund\":50,\"quantity\":5,\"regionId\":null,\"detail\":null,\"consignee\":\"江\",\"mobile\":\"15206067798\",\"customerLogSn\":null,\"shopLogSn\":null,\"state\":0},{\"id\":2,\"orderId\":10,\"orderItemId\":2,\"customerId\":2,\"shopId\":1,\"serviceSn\":\"20200102\",\"type\":0,\"reason\":\"test2\",\"conclusion\":null,\"refund\":50,\"quantity\":2,\"regionId\":null,\"detail\":null,\"consignee\":\"高\",\"mobile\":\"13459784977\",\"customerLogSn\":null,\"shopLogSn\":null,\"state\":1}]},\"errmsg\":\"成功\"}";
         try {
             JSONAssert.assertEquals(expectedResponse, responseString, false);
         } catch (JSONException e) {

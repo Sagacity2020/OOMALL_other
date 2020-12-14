@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/advertisement/pom.xml" />
         <option value="$PROJECT_DIR$/aftersale/pom.xml" />
         <option value="$PROJECT_DIR$/other-client/pom.xml" />
+        <option value="$PROJECT_DIR$/timeservice/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

@@ -9,6 +9,7 @@
         <module name="core" />
         <module name="advertisement" />
         <module name="other-client" />
+        <module name="timeservice" />
         <module name="aftersale" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
       <module name="core" target="11" />
       <module name="OOMALL_other" target="11" />
       <module name="other-client" target="11" />
+      <module name="timeservice" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -26,6 +28,7 @@
       <module name="aftersale" options="-parameters" />
       <module name="core" options="-parameters" />
       <module name="other-client" options="-parameters" />
+      <module name="timeservice" options="-parameters" />
     </option>
   </component>
 </project>

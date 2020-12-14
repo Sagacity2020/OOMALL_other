@@ -275,6 +275,7 @@ public class Aftersale implements VoObject {
         return po;
     }
 
+
     @Override
     public AftersaleRetVo createVo() {
         AftersaleRetVo vo=new AftersaleRetVo();

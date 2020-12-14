@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Region.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">address</a> &gt; <a href="index.source.html" class="el_package">cn.edu.xmu.address.model.bo</a> &gt; <span class="el_source">Region.java</span></div><h1>Region.java</h1><pre class="source lang-java linenums">package cn.edu.xmu.address.model.bo;
+
+import cn.edu.xmu.ooad.model.VoObject;
+import cn.edu.xmu.address.model.po.RegionPo;
+import cn.edu.xmu.address.model.vo.RegionRetVo;
+import cn.edu.xmu.address.model.vo.RegionVo;
+import lombok.Data;
+
+import java.time.LocalDateTime;
+
+/**
+ * @author zrh
+ * @Created at 12/8 8:08
+ */
+<span class="pc bnc" id="L15" title="All 62 branches missed.">@Data</span>
+public class Region implements VoObject {
+<span class="fc" id="L17">    private Long id;</span>
+
+<span class="fc" id="L19">    private Long pid;</span>
+
+<span class="fc" id="L21">    private String  name;</span>
+
+<span class="fc" id="L23">    private Long postalCode;</span>
+
+<span class="fc" id="L25">    private Byte state;</span>
+
+<span class="fc" id="L27">    private LocalDateTime gmtCreate;</span>
+
+<span class="fc" id="L29">    private LocalDateTime gmtModified;</span>
+
+
+    @Override
+    public RegionRetVo createVo() {
+<span class="nc" id="L34">        return new RegionRetVo(this);</span>
+    }
+
+    @Override
+    public Object createSimpleVo() {
+<span class="nc" id="L39">        return null;</span>
+    }
+
+    public Region(RegionPo po)
+<span class="fc" id="L43">    {</span>
+<span class="fc" id="L44">        this.id=po.getId();</span>
+<span class="fc" id="L45">        this.pid=po.getPid();</span>
+<span class="fc" id="L46">        this.name=po.getName();</span>
+<span class="fc" id="L47">        this.postalCode=po.getPostalCode();</span>
+<span class="fc" id="L48">        this.state=po.getState();</span>
+<span class="fc" id="L49">        this.gmtCreate=po.getGmtCreate();</span>
+<span class="fc" id="L50">        this.gmtModified=po.getGmtModified();</span>
+<span class="fc" id="L51">    }</span>
+    public Region(RegionVo vo)
+<span class="nc" id="L53">    {</span>
+<span class="nc" id="L54">        this.name=vo.getName();</span>
+<span class="nc" id="L55">        this.postalCode=vo.getPostalCode();</span>
+<span class="nc" id="L56">    }</span>
+
+<span class="fc" id="L58">    public Region() {</span>
+<span class="fc" id="L59">    }</span>
+    public RegionPo getRegionPo(){
+<span class="fc" id="L61">        RegionPo po=new RegionPo();</span>
+<span class="fc" id="L62">        po.setId(this.getId());</span>
+<span class="fc" id="L63">        po.setName(this.getName());</span>
+<span class="fc" id="L64">        po.setPostalCode(this.getPostalCode());</span>
+<span class="fc" id="L65">        po.setState(this.getState());</span>
+<span class="fc" id="L66">        po.setPid(this.getId());</span>
+<span class="fc" id="L67">        po.setGmtCreate(this.getGmtCreate());</span>
+<span class="fc" id="L68">        po.setGmtModified(this.getGmtModified());</span>
+<span class="fc" id="L69">        return po;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

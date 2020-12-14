@@ -1,14 +1,13 @@
 package cn.edu.xmu.aftersale.service;
 
-import cn.edu.xmu.aftersale.model.*;
 import cn.edu.xmu.ooad.model.VoObject;
+import cn.edu.xmu.ooad.util.Common;
 import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
 import cn.edu.xmu.aftersale.dao.AftersaleDao;
 import cn.edu.xmu.aftersale.model.bo.Aftersale;
 import cn.edu.xmu.aftersale.model.po.AftersaleServicePo;
 import cn.edu.xmu.aftersale.model.vo.*;
-import cn.edu.xmu.oomall.other.service.IAftersaleService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
@@ -76,8 +75,7 @@ public class AftersaleService{
         aftersaleBo.setCustomerId(userId);
         aftersaleBo.setRefund(100L);
 
-        String serviceSn=getServiceSn(userId);
-        aftersaleBo.setServiceSn(serviceSn.substring(0,13));
+        aftersaleBo.setServiceSn(Common.genSeqNum());
 
         ReturnObject<AftersaleServicePo> returnObj=aftersaleDao.createAftersale(aftersaleBo);
         AftersaleServicePo po=returnObj.getData();
@@ -232,17 +230,21 @@ public class AftersaleService{
     买家查询所有售后单
      */
     @Transactional
-    public ReturnObject<PageInfo<VoObject>>getAftersaleByUserId(Long userId,Long spuId, Long skuId,
+    public ReturnObject<PageInfo<VoObject>>getAftersaleByUserId(Long userId,
                                                                 LocalDateTime beginTime, LocalDateTime endTime,
                                                                 Integer page, Integer pageSize,
                                                                 Integer type,Integer state){
-        ReturnObject<PageInfo<Aftersale>> returnObject=aftersaleDao.getAftersaleByUserId(userId,spuId,skuId,beginTime,endTime,page,pageSize,type,state);
+        PageHelper.startPage(page,pageSize);
+
+        ReturnObject<PageInfo<AftersaleServicePo>> returnObject=aftersaleDao.getAftersaleByUserId(userId,beginTime,endTime,page,pageSize,type,state);
 
 
-        PageInfo<Aftersale> objs = returnObject.getData();
-        List<VoObject> ret = new ArrayList<>(objs.getList().size());
-        if(objs!=null){
-            for (Aftersale aftersale : objs.getList()) {
+        PageInfo<AftersaleServicePo> pos = returnObject.getData();
+        List<VoObject> ret = new ArrayList<>(pos.getList().size());
+
+        if(pos!=null){
+            for (AftersaleServicePo aftersaleServicePo : pos.getList()) {
+                Aftersale aftersale=new Aftersale(aftersaleServicePo);
                 aftersale.setOrderId(10L);
                 aftersale.setOrderSn("20201204");
                 aftersale.setSkuId(1L);
@@ -259,7 +261,12 @@ public class AftersaleService{
          */
             }
         }
-        PageInfo<VoObject> aftersalePage = PageInfo.of(ret);
+        PageInfo<VoObject> aftersalePage = new PageInfo<>(ret);
+        aftersalePage.setPages(pos.getPages());
+        aftersalePage.setPageNum(pos.getPageNum());
+        aftersalePage.setPageSize(pos.getPageSize());
+        aftersalePage.setTotal(pos.getTotal());
+
         return new ReturnObject<>(aftersalePage);
 
     }
@@ -268,17 +275,18 @@ public class AftersaleService{
 
 
     @Transactional
-    public ReturnObject<PageInfo<VoObject>>getAllAftersale(Long shopId,Long spuId, Long skuId,
+    public ReturnObject<PageInfo<VoObject>>getAllAftersale(Long shopId,
                                                            LocalDateTime beginTime, LocalDateTime endTime,
                                                            Integer page, Integer pageSize,
                                                            Integer type,Integer state){
-        ReturnObject<PageInfo<Aftersale>> returnObject=aftersaleDao.getAllAftersale(shopId,spuId,skuId,beginTime,endTime,page,pageSize,type,state);
+        PageHelper.startPage(page,pageSize);
+        ReturnObject<PageInfo<AftersaleServicePo>> returnObject=aftersaleDao.getAllAftersale(shopId,beginTime,endTime,page,pageSize,type,state);
 
-
-        PageInfo<Aftersale> objs = returnObject.getData();
+        PageInfo<AftersaleServicePo> objs = returnObject.getData();
         List<VoObject> ret = new ArrayList<>(objs.getList().size());
         if(objs!=null){
-            for (Aftersale aftersale : objs.getList()) {
+            for (AftersaleServicePo aftersaleServicePo : objs.getList()) {
+                Aftersale aftersale=new Aftersale(aftersaleServicePo);
                 aftersale.setOrderId(10L);
                 aftersale.setOrderSn("20201204");
                 aftersale.setSkuId(1L);
@@ -295,31 +303,13 @@ public class AftersaleService{
          */
             }
         }
-        PageInfo<VoObject> aftersalePage = PageInfo.of(ret);
+        PageInfo<VoObject> aftersalePage = new PageInfo<>(ret);
+        aftersalePage.setPages(objs.getPages());
+        aftersalePage.setPageNum(objs.getPageNum());
+        aftersalePage.setPageSize(objs.getPageSize());
+        aftersalePage.setTotal(objs.getTotal());
+
         return new ReturnObject<>(aftersalePage);
 
-    }
-
-
-
-    private static String getServiceSn(Long id) {
-        int[] r = new int[]{7, 9, 6, 2, 8 , 1, 3, 0, 5, 4};
-        int maxLength = 14;
-        String idStr = id.toString();
-        StringBuilder idsbs = new StringBuilder();
-
-        long min = 1,max = 9;
-        for (int i = 1; i < maxLength - idStr.length(); i++) {
-            min *= 10;
-            max *= 10;
-        }
-        long rangeLong = (((long) (new Random().nextDouble() * (max - min)))) + min ;
-
-        for (int i = idStr.length() - 1 ; i >= 0; i--) {
-            idsbs.append(r[idStr.charAt(i)-'0']);
-        }
-
-        DateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmssSSS");
-        return sdf.format(new Date())+idsbs.append(rangeLong).toString();
     }
 }

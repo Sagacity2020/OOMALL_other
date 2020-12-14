@@ -1,0 +1,849 @@
+2020-12-10 14:58:59.110 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 15180 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 14:58:59.113 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 14:58:59.113 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 14:59:08.280 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 9.658 seconds (JVM running for 11.846)
+2020-12-10 14:59:08.883 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTQ1OTA4ODBOIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1ODM2NDgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTgzNTQ4fQ.2S8Zml3KBACNDHfA3NHIE6uc7Nc5J6ZgVjWSGkGKb6E
+2020-12-10 15:15:08.600 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 16328 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 15:15:08.605 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 15:15:08.606 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 15:15:25.412 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressController': Unsatisfied dependency expressed through field 'addressService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressService': Unsatisfied dependency expressed through field 'addressDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressDao': Unsatisfied dependency expressed through field 'addressPoMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressPoMapper' defined in file [D:\JavaEE\Project\OOMALL_other\address\target\classes\cn\edu\xmu\address\mapper\AddressPoMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.data with value 'class path resource [date.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:341)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:346)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:341)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:340)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:263)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:256)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:255)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:108)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:107)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:71)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressService': Unsatisfied dependency expressed through field 'addressDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressDao': Unsatisfied dependency expressed through field 'addressPoMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressPoMapper' defined in file [D:\JavaEE\Project\OOMALL_other\address\target\classes\cn\edu\xmu\address\mapper\AddressPoMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.data with value 'class path resource [date.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 82 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressDao': Unsatisfied dependency expressed through field 'addressPoMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressPoMapper' defined in file [D:\JavaEE\Project\OOMALL_other\address\target\classes\cn\edu\xmu\address\mapper\AddressPoMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.data with value 'class path resource [date.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 95 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressPoMapper' defined in file [D:\JavaEE\Project\OOMALL_other\address\target\classes\cn\edu\xmu\address\mapper\AddressPoMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.data with value 'class path resource [date.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1524)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1404)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 108 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.data with value 'class path resource [date.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:797)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1509)
+	... 119 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.data with value 'class path resource [date.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:884)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788)
+	... 132 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.data with value 'class path resource [date.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1794)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:227)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1175)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:420)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:350)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:343)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerPostProcessor.postProcessAfterInitialization(DataSourceInitializerPostProcessor.java:52)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:430)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1798)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	... 142 common frames omitted
+Caused by: org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.data with value 'class path resource [date.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.getResources(DataSourceInitializer.java:163)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.getScripts(DataSourceInitializer.java:146)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.initSchema(DataSourceInitializer.java:111)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:91)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:38)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:404)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:361)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.initialize(DataSourceInitializerInvoker.java:72)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.afterPropertiesSet(DataSourceInitializerInvoker.java:65)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	... 156 common frames omitted
+2020-12-10 15:15:25.433 [main] ERROR o.springframework.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@4af0c50] to prepare test instance [cn.edu.xmu.address.controller.AddressControllerTest@5ffd35dd]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:341)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:346)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:341)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:340)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:263)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:256)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:255)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:108)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:107)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:71)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressController': Unsatisfied dependency expressed through field 'addressService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressService': Unsatisfied dependency expressed through field 'addressDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressDao': Unsatisfied dependency expressed through field 'addressPoMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressPoMapper' defined in file [D:\JavaEE\Project\OOMALL_other\address\target\classes\cn\edu\xmu\address\mapper\AddressPoMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.data with value 'class path resource [date.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	... 63 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressService': Unsatisfied dependency expressed through field 'addressDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressDao': Unsatisfied dependency expressed through field 'addressPoMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressPoMapper' defined in file [D:\JavaEE\Project\OOMALL_other\address\target\classes\cn\edu\xmu\address\mapper\AddressPoMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.data with value 'class path resource [date.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 82 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressDao': Unsatisfied dependency expressed through field 'addressPoMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressPoMapper' defined in file [D:\JavaEE\Project\OOMALL_other\address\target\classes\cn\edu\xmu\address\mapper\AddressPoMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.data with value 'class path resource [date.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 95 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'addressPoMapper' defined in file [D:\JavaEE\Project\OOMALL_other\address\target\classes\cn\edu\xmu\address\mapper\AddressPoMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.data with value 'class path resource [date.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1524)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1404)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 108 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.data with value 'class path resource [date.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:797)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1509)
+	... 119 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.data with value 'class path resource [date.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:884)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788)
+	... 132 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.data with value 'class path resource [date.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1794)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:227)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1175)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:420)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:350)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:343)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerPostProcessor.postProcessAfterInitialization(DataSourceInitializerPostProcessor.java:52)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:430)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1798)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	... 142 common frames omitted
+Caused by: org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.data with value 'class path resource [date.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.getResources(DataSourceInitializer.java:163)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.getScripts(DataSourceInitializer.java:146)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.initSchema(DataSourceInitializer.java:111)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:91)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:38)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:404)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:361)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.initialize(DataSourceInitializerInvoker.java:72)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.afterPropertiesSet(DataSourceInitializerInvoker.java:65)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	... 156 common frames omitted
+2020-12-10 15:39:05.311 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 13460 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 15:39:05.317 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 15:39:05.318 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 15:39:13.357 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 8.661 seconds (JVM running for 10.471)
+2020-12-10 15:39:13.770 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTUzOTEzN1lXIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1ODYwNTMsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTg1OTUzfQ.dsd94eqM2NTK2jsvMrTXBWbKPTZLOIk2GXZ8hUshT2c
+2020-12-10 15:39:30.210 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 15836 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 15:39:30.221 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 15:39:30.223 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 15:39:38.101 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 8.387 seconds (JVM running for 10.045)
+2020-12-10 15:39:38.484 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTUzOTM4NFFQIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1ODYwNzgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTg1OTc4fQ.SW__jTDFjYnYKvTfG42wO_NQkfdNsCZitbdx8OExcDQ
+2020-12-10 15:41:30.929 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 13396 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 15:41:30.936 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 15:41:30.936 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 15:41:39.639 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 9.229 seconds (JVM running for 11.07)
+2020-12-10 15:41:40.056 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTU0MTQwME1aIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1ODYyMDAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTg2MTAwfQ.rMBsUewROVmIhomrAv9w4QCQbHS5CA0p4T5sjZSMKv4
+2020-12-10 15:43:57.417 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 10916 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 15:43:57.424 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 15:43:57.424 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 15:44:05.339 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 8.516 seconds (JVM running for 10.308)
+2020-12-10 15:44:06.062 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTU0NDA1OVNPIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1ODYzNDUsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTg2MjQ1fQ.VdBPGQVvrsd_XFb6bXhpgArmuGBST4gAgzeZ14M7F-A
+2020-12-10 15:49:49.296 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 7692 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 15:49:49.302 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 15:49:49.302 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 15:49:56.638 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 7.931 seconds (JVM running for 9.371)
+2020-12-10 15:49:57.003 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTU0OTU2OU5NIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1ODY2OTYsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTg2NTk2fQ.70TNsDsYiTemEgzfl0jiPM-F7MbSPQKNHrQsno_9hho
+2020-12-10 15:49:57.256 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：1
+2020-12-10 15:51:09.976 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 5680 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 15:51:09.979 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 15:51:09.980 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 15:51:17.298 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 7.838 seconds (JVM running for 9.634)
+2020-12-10 15:51:17.671 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTU1MTE3NjhRIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1ODY3NzcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTg2Njc3fQ.5lVJ8PogkkDwBxLXlvGzKAA0LgFPvq-a73Q_9MACjyg
+2020-12-10 15:51:17.910 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：1
+2020-12-10 15:52:00.100 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 17260 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 15:52:00.112 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 15:52:00.113 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 15:52:07.524 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 8.022 seconds (JVM running for 9.573)
+2020-12-10 15:52:07.893 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTU1MjA3OFowIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1ODY4MjcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTg2NzI3fQ.TnVVJR5Z-0LvlJu0KG0GJHlEoXVyVCtGRvLc5NIbin8
+2020-12-10 15:52:08.156 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：1
+2020-12-10 15:53:06.002 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 13640 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 15:53:06.009 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 15:53:06.009 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 15:53:13.794 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 8.406 seconds (JVM running for 9.972)
+2020-12-10 15:53:14.202 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTU1MzE0MUs3IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1ODY4OTQsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTg2Nzk0fQ.qkj2CYRIqM08lTOzxgtCL1uH3UcspOAhsJuEmv2ps7Y
+2020-12-10 15:53:14.571 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：1
+2020-12-10 15:56:10.408 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 16588 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 15:56:10.413 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 15:56:10.413 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 15:56:17.826 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 7.921 seconds (JVM running for 9.673)
+2020-12-10 15:56:18.187 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTU1NjE4MUdZIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1ODcwNzgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTg2OTc4fQ.hW3IZ1i1iHyPi_vhVDR9zf5HAHZGUAX8HyRKbMukFDo
+2020-12-10 15:56:18.362 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：1
+2020-12-10 15:56:18.380 [main] ERROR cn.edu.xmu.address.dao.RegionDao - Region(id=1, pid=null, name=999, postalCode=99, state=null, gmtCreate=null, gmtModified=null)
+2020-12-10 15:57:56.745 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 15276 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 15:57:56.749 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 15:57:56.749 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 15:58:04.665 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 8.443 seconds (JVM running for 10.273)
+2020-12-10 15:58:05.073 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTU1ODA1MFhYIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1ODcxODUsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTg3MDg1fQ.etzpXZIyRim0CdSXY8b_xpl-pu_6zNkQq3zOwuqpfWo
+2020-12-10 15:58:05.417 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：1
+2020-12-10 15:58:05.432 [main] ERROR cn.edu.xmu.address.dao.RegionDao - Region(id=1, pid=null, name=999, postalCode=99, state=null, gmtCreate=null, gmtModified=null)
+2020-12-10 15:58:05.497 [main] ERROR cn.edu.xmu.address.dao.RegionDao - cn.edu.xmu.address.model.po.RegionPo@2aec09a3
+2020-12-10 15:59:17.785 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 14572 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 15:59:17.793 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 15:59:17.793 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 15:59:25.483 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 8.333 seconds (JVM running for 10.132)
+2020-12-10 15:59:25.849 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTU1OTI1OEZDIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1ODcyNjUsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTg3MTY1fQ.LblomzaRjmCisumvQsxt-HGUsTIwQDiV0ht-wtOxJQI
+2020-12-10 15:59:26.048 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：1
+2020-12-10 15:59:26.222 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 1
+2020-12-10 15:59:26.246 [main] ERROR cn.edu.xmu.address.dao.RegionDao - Region(id=1, pid=null, name=999, postalCode=99, state=null, gmtCreate=null, gmtModified=null)
+2020-12-10 15:59:26.247 [main] ERROR cn.edu.xmu.address.dao.RegionDao - cn.edu.xmu.address.model.po.RegionPo@2aec09a3
+2020-12-10 16:02:01.211 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 13008 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 16:02:01.217 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 16:02:01.217 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 16:02:08.751 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 8.128 seconds (JVM running for 9.87)
+2020-12-10 16:02:09.170 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTYwMjA5MUxPIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1ODc0MjksInVzZXJJZCI6MSwiaWF0IjoxNjA3NTg3MzI5fQ.Bfp4gHZZr2TAzVpCnXW-5Vy6js0IQdNdVYeKuCWUUuU
+2020-12-10 17:12:31.308 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 15324 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 17:12:31.311 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 17:12:31.311 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 17:12:37.910 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 6.956 seconds (JVM running for 8.227)
+2020-12-10 17:12:38.292 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMjM4MlI3IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE2NTgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNTU4fQ.RHcPAhVpyfglNUHydmpLiP3H-gM43Jbh9ZGXkZE5iJI
+2020-12-10 17:12:38.322 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 17:12:38.456 [main] DEBUG cn.edu.xmu.address.controller.AddressController - update Address by Addressid: 1
+2020-12-10 17:12:39.128 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMjM5MUc2IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxNjU5LCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTU1OX0.2Dvt2FZCO8naHmQjOJVF0_Xx2QaFajLWeq6oG3A7yAk
+2020-12-10 17:12:39.131 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =2
+2020-12-10 17:12:39.176 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMjM5MVhLIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxNjU5LCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTU1OX0.BrXW9jrUoDnfGNXTyWk9orx4HHziNL5Mldkbr0qdGVI
+2020-12-10 17:12:39.178 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =3
+2020-12-10 17:12:39.193 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMjM5MVBDIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxNjU5LCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTU1OX0.yaoBhK7T-eyY9trWaLIRn_FFL6BKsxrM0oK-TyW4LhM
+2020-12-10 17:12:39.195 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =5
+2020-12-10 17:12:39.205 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMjM5MkNWIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE2NTksInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNTU5fQ.SgsB_aotNnoXI1xEaGdOmgmHKAZ3T5_lDQunTBbY_lY
+2020-12-10 17:12:39.206 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 17:12:39.208 [main] DEBUG cn.edu.xmu.address.controller.AddressController - update Address by Addressid: 5
+2020-12-10 17:12:39.219 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMjM5MktVIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE2NTksInVzZXJJZCI6MiwiaWF0IjoxNjA3NTkxNTU5fQ.3qHxr1nk72BkX9Xok9AuOgHgg6s6mKZHAszmruD7jus
+2020-12-10 17:12:39.220 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 17:12:39.223 [main] DEBUG cn.edu.xmu.address.controller.AddressController - update Address by Addressid: 1
+2020-12-10 17:12:39.233 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMjM5MlI4IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE2NTksInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNTU5fQ.M3ufJle_H8EtxQUmh0OOFGnJWnDEgjKz_wKbgq2mXc0
+2020-12-10 17:12:39.235 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete address id = 1
+2020-12-10 17:12:39.489 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMjM5NDc3IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE2NTksInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNTU5fQ.KiUbFiiZKOVloB6FB5LyDG1Eh6Hog5gvePNs6b3bvjA
+2020-12-10 17:12:39.495 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：1
+2020-12-10 17:12:39.496 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 1
+2020-12-10 17:12:39.507 [main] ERROR cn.edu.xmu.address.dao.RegionDao - Region(id=1, pid=null, name=999, postalCode=99, state=null, gmtCreate=null, gmtModified=null)
+2020-12-10 17:12:39.507 [main] ERROR cn.edu.xmu.address.dao.RegionDao - cn.edu.xmu.address.model.po.RegionPo@136c3a6
+2020-12-10 17:12:39.860 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMjM5OEFaIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE2NTksInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNTU5fQ.Uy0t_PtS_G-aHvZoihm18l78nAC1L-HjPGG8MZmQ0Ic
+2020-12-10 17:12:39.862 [main] DEBUG cn.edu.xmu.address.controller.AddressController - set default address by id5
+2020-12-10 17:12:39.874 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMjM5OFdEIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE2NTksInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNTU5fQ.G0n0xuCLa9y00K1YvwTnyXGLSfLclncXWS7Jb-zyESE
+2020-12-10 17:12:39.876 [main] DEBUG cn.edu.xmu.address.controller.AddressController - set default address by id1
+2020-12-10 17:12:39.881 [main] INFO  cn.edu.xmu.address.dao.AddressDao - 地址 id =1的默认地址被设为普通地址
+2020-12-10 17:12:39.888 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMjM5OEdRIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE2NTksInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNTU5fQ.JkrZ5MlC1okv41UiVEpBAqbZOIeivfOFYbYDExXjK4g
+2020-12-10 17:12:39.891 [main] DEBUG cn.edu.xmu.address.controller.AddressController - seleteAllAddress: page= 1  pageSize = 10
+2020-12-10 17:12:40.064 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMjQwMFNJIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxNjYwLCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTU2MH0.MNySJ_mHb0YqqVp3JtaBqVujXcvc2Q8S0vP2I2CZ5Bo
+2020-12-10 17:12:40.073 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMjQwMFpXIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE2NjAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNTYwfQ.zA-T3LAUQYncQOMB_5Z_YAxjO07KO2GDQJeoqaY_MZ8
+2020-12-10 17:12:40.081 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMjQwMFNXIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE2NjAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNTYwfQ.7pNc-FWPur6xvI2I7V7F0KcYEyePfGJ9uqKEot77GXE
+2020-12-10 17:12:40.088 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMjQwMFBYIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE2NjAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNTYwfQ.67xsqh6v3UNpqzgIGppTl7PWRV9mFyrC3VYMLQiIURc
+2020-12-10 17:12:40.090 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete address id = 21
+2020-12-10 17:12:40.098 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 17:12:40.099 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMjQwMEFYIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE2NjAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNTYwfQ.uBP30PEiRXGCmUObRVC7quhr4CTD5WjtJHYLvwv9lA4
+2020-12-10 17:12:40.102 [main] DEBUG cn.edu.xmu.address.controller.AddressController - insert address by userId 1
+2020-12-10 17:12:40.120 [main] DEBUG cn.edu.xmu.address.controller.AddressController - Address(id=null, customer_id=1, regionId=1, detail=abc, consignee=a, mobile=1234567, be_default=0, gmtCreate=2020-12-10T17:12:40.102955100, gmtModified=null)
+2020-12-10 17:12:40.295 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMjQwMkNLIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxNjYwLCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTU2MH0.Hlhwj11ae3WSCiDOs0wscTutPtjd5Ca-KdbppcVT-ao
+2020-12-10 17:12:40.296 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =1
+2020-12-10 17:13:40.075 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 3560 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 17:13:40.079 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 17:13:40.079 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 17:13:46.208 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 6.498 seconds (JVM running for 7.763)
+2020-12-10 17:13:46.579 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMzQ2NVMzIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE3MjYsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNjI2fQ.XcRCGqO6ZK0YM6zPl1kxxUtFkloqi0dwJlJsWPT_xFM
+2020-12-10 17:13:46.608 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 17:13:46.748 [main] DEBUG cn.edu.xmu.address.controller.AddressController - update Address by Addressid: 1
+2020-12-10 17:13:46.994 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMzQ2OUI2IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxNzI2LCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTYyNn0.nEBkVtpqDg1GCe9fvsvo3ZkVV7VNW_wlJIF8Ap6JD5o
+2020-12-10 17:13:46.996 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =2
+2020-12-10 17:13:47.031 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMzQ3MDdGIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxNzI3LCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTYyN30.OAcuye-cwJVdc7rCStbhFIJ20a5NZs8O5BzmCXfeTEk
+2020-12-10 17:13:47.033 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =3
+2020-12-10 17:13:47.053 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMzQ3MDZCIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxNzI3LCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTYyN30.BcG_yB3vWkZjXP32x-rvj5CmHWLLY5e5r24gNPF8RaU
+2020-12-10 17:13:47.055 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =5
+2020-12-10 17:13:47.065 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMzQ3MEZDIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE3MjcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNjI3fQ.TEWfZnVYBU_Jhnzr7EOKqkoht0_FdHMeDdp_UyNzsns
+2020-12-10 17:13:47.066 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 17:13:47.069 [main] DEBUG cn.edu.xmu.address.controller.AddressController - update Address by Addressid: 5
+2020-12-10 17:13:47.080 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMzQ3MFRaIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE3MjcsInVzZXJJZCI6MiwiaWF0IjoxNjA3NTkxNjI3fQ.CbZZF-OjK2tzsL1SOB5CsHxM7ELksHwR-9fBMllMdps
+2020-12-10 17:13:47.081 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 17:13:47.083 [main] DEBUG cn.edu.xmu.address.controller.AddressController - update Address by Addressid: 1
+2020-12-10 17:13:47.093 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMzQ3MDkwIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE3MjcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNjI3fQ.mD-abL0pQpD6dzsLAgp90I2TCUuS9DP8b0dl_-dnvhA
+2020-12-10 17:13:47.095 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete address id = 1
+2020-12-10 17:13:47.168 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMzQ3MVBJIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE3MjcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNjI3fQ.r0IE3mbiE7T8fQE0f6GbJS0qrnr_vIe9ikFjvpvtt_o
+2020-12-10 17:13:47.175 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：1
+2020-12-10 17:13:47.177 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 1
+2020-12-10 17:13:47.188 [main] ERROR cn.edu.xmu.address.dao.RegionDao - Region(id=1, pid=null, name=999, postalCode=99, state=null, gmtCreate=null, gmtModified=null)
+2020-12-10 17:13:47.188 [main] ERROR cn.edu.xmu.address.dao.RegionDao - cn.edu.xmu.address.model.po.RegionPo@cb03360
+2020-12-10 17:13:47.552 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMzQ3NTZPIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE3MjcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNjI3fQ.iGWMIJt1NDPBcHNjFS-T2IO899inUbjYtqxI92342Y0
+2020-12-10 17:13:47.554 [main] DEBUG cn.edu.xmu.address.controller.AddressController - set default address by id5
+2020-12-10 17:13:47.565 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMzQ3NUdYIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE3MjcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNjI3fQ.19aeOanISt4sL1JG_KBvOmDwSw0FpnTY1I3IQTnjN8Y
+2020-12-10 17:13:47.567 [main] DEBUG cn.edu.xmu.address.controller.AddressController - set default address by id1
+2020-12-10 17:13:47.571 [main] INFO  cn.edu.xmu.address.dao.AddressDao - 地址 id =1的默认地址被设为普通地址
+2020-12-10 17:13:47.579 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMzQ3NUM5IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE3MjcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNjI3fQ.vq1LWr-4qpaHzJoEGyhEBSojROGJTrOMYbychYz3KWQ
+2020-12-10 17:13:47.582 [main] DEBUG cn.edu.xmu.address.controller.AddressController - seleteAllAddress: page= 1  pageSize = 10
+2020-12-10 17:13:47.640 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMzQ3NlExIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxNzI3LCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTYyN30.cBVevxIBdntNm8Fl2T8bP5fjzg4L0yd-OqjkO2CS-cw
+2020-12-10 17:13:47.648 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMzQ3NlRNIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE3MjcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNjI3fQ._vb-ESkuQZdVnq7qpCsqnfrqOzMZtHb2jTHgSigvg70
+2020-12-10 17:13:47.656 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMzQ3NkRWIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE3MjcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNjI3fQ.RXdzyXeJX0BoidI1c2-9Xl6-IkKWEY-cM-HoKd5ZDuw
+2020-12-10 17:13:47.664 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMzQ3NkxPIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE3MjcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNjI3fQ._P4ZzDXGtSF0WxHyhPStWRr5ZSYeXXGw4z_IFEcaRH4
+2020-12-10 17:13:47.665 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete address id = 21
+2020-12-10 17:13:47.674 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 17:13:47.675 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMzQ3NjU5IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE3MjcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNjI3fQ.XtqyTTxa7rHkFhq7I_FUS05FDDZE2ua-4i7WBYhEyik
+2020-12-10 17:13:47.677 [main] DEBUG cn.edu.xmu.address.controller.AddressController - insert address by userId 1
+2020-12-10 17:13:47.696 [main] DEBUG cn.edu.xmu.address.controller.AddressController - Address(id=null, customer_id=1, regionId=1, detail=abc, consignee=a, mobile=1234567, be_default=0, gmtCreate=2020-12-10T17:13:47.677336900, gmtModified=null)
+2020-12-10 17:13:47.812 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxMzQ3OFRaIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxNzI3LCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTYyN30.EHnWLSUPES5t3My7coKrVF9oq56Wvj9thVHQFtd93Bo
+2020-12-10 17:13:47.814 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =1
+2020-12-10 17:15:24.291 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 5928 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 17:15:24.296 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 17:15:24.296 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 17:15:30.345 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 6.412 seconds (JVM running for 7.678)
+2020-12-10 17:15:30.719 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNTMwNjZQIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4MzAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzMwfQ.KDLfsRUt92aP_uhERudKsfbdsfRhcwMM90H6AXxnt34
+2020-12-10 17:15:30.750 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 17:15:30.892 [main] DEBUG cn.edu.xmu.address.controller.AddressController - update Address by Addressid: 1
+2020-12-10 17:15:31.052 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNTMxMEYyIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxODMxLCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTczMX0.MKq2lRLmdmhMWcszyFr7HmVaGw-XJ5bWCpYEsVBnWOI
+2020-12-10 17:15:31.055 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =2
+2020-12-10 17:15:31.090 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNTMxME43IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxODMxLCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTczMX0.QkGbdKINCaJaQoQHVYPko5dZY1PGsmhAGOy0NXSLNx8
+2020-12-10 17:15:31.092 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =3
+2020-12-10 17:15:31.111 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNTMxMVRGIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxODMxLCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTczMX0.tYIfRvQ3BTRFnSXQqNSthtbfHQNKpZUXL1uhVxG1z5I
+2020-12-10 17:15:31.113 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =5
+2020-12-10 17:15:31.123 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNTMxMVRYIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4MzEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzMxfQ.Cf9DeJucIfRc2clvXHOyD5JIdcaDU9M7TZGzcCtBmfc
+2020-12-10 17:15:31.124 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 17:15:31.127 [main] DEBUG cn.edu.xmu.address.controller.AddressController - update Address by Addressid: 5
+2020-12-10 17:15:31.137 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNTMxMUkxIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4MzEsInVzZXJJZCI6MiwiaWF0IjoxNjA3NTkxNzMxfQ.zbEeP0YigcumdkwijSa-yHP-FaXIS2bUZKZ4pFVWeC0
+2020-12-10 17:15:31.138 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 17:15:31.140 [main] DEBUG cn.edu.xmu.address.controller.AddressController - update Address by Addressid: 1
+2020-12-10 17:15:31.150 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNTMxMUo3IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4MzEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzMxfQ.BVeVR_mlDskeDLCbBs2K35dDuvqakVlg8yTrGrQhwUw
+2020-12-10 17:15:31.151 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete address id = 1
+2020-12-10 17:15:31.218 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNTMxMlc2IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4MzEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzMxfQ.zkqdFnk35OL9HQWevAjKvcoFPXtoCjeB_pmtHI8hJvI
+2020-12-10 17:15:31.225 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：1
+2020-12-10 17:15:31.226 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 1
+2020-12-10 17:15:31.238 [main] ERROR cn.edu.xmu.address.dao.RegionDao - Region(id=1, pid=null, name=999, postalCode=99, state=null, gmtCreate=null, gmtModified=null)
+2020-12-10 17:15:31.238 [main] ERROR cn.edu.xmu.address.dao.RegionDao - cn.edu.xmu.address.model.po.RegionPo@3edc999f
+2020-12-10 17:15:31.296 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNTMxMjROIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4MzEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzMxfQ.RvX0SvhnheXLIpjjHbJBJRg46yG1NWpFnhL3X7Mq90U
+2020-12-10 17:15:31.299 [main] DEBUG cn.edu.xmu.address.controller.AddressController - set default address by id5
+2020-12-10 17:15:31.310 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNTMxM040IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4MzEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzMxfQ.u_asFZSW6B6PDIrCeCR1JBK8g6QQXMJNcDd8QOs5B4E
+2020-12-10 17:15:31.312 [main] DEBUG cn.edu.xmu.address.controller.AddressController - set default address by id1
+2020-12-10 17:15:31.316 [main] INFO  cn.edu.xmu.address.dao.AddressDao - 地址 id =1的默认地址被设为普通地址
+2020-12-10 17:15:31.323 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNTMxM01VIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4MzEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzMxfQ.44sQlG1EaKL3fXHl2qJmcWWHuEzae8iwl6yoCE9crlE
+2020-12-10 17:15:31.326 [main] DEBUG cn.edu.xmu.address.controller.AddressController - seleteAllAddress: page= 1  pageSize = 10
+2020-12-10 17:15:31.387 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNTMxM1lMIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxODMxLCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTczMX0.Yq4JlJOY9tePXLnxOSF_eOXDfRsMiRvFqoSqS9xnflg
+2020-12-10 17:15:31.395 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNTMxM1RTIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4MzEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzMxfQ.WRSB3rddUG-2YQ6eIxQAwElaRbwY9AvyZhQWIW6hj9I
+2020-12-10 17:15:31.404 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNTMxNEJGIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4MzEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzMxfQ.JHwaLjTIHAhjQOC7mh7SQ3XkGpoQvCtVTfrqbHVQfD8
+2020-12-10 17:15:31.412 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNTMxNFJBIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4MzEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzMxfQ.ceA7dYMu9zLODHW4hyx2_9hnXl442ubKQjnitewT9jo
+2020-12-10 17:15:31.414 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete address id = 21
+2020-12-10 17:15:31.424 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 17:15:31.425 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNTMxNDFWIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4MzEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzMxfQ.bOD3OJOdv-lA3xvq0XLdNFIj3yg4u7NP0_aEssK8NJ4
+2020-12-10 17:15:31.428 [main] DEBUG cn.edu.xmu.address.controller.AddressController - insert address by userId 1
+2020-12-10 17:15:31.447 [main] DEBUG cn.edu.xmu.address.controller.AddressController - Address(id=null, customer_id=1, regionId=1, detail=abc, consignee=a, mobile=1234567, be_default=0, gmtCreate=2020-12-10T17:15:31.428258800, gmtModified=null)
+2020-12-10 17:15:31.530 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNTMxNUJVIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxODMxLCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTczMX0.VeHwLhGulKX_bQaZVYd9xAI48UH58znAcM029F8K5lk
+2020-12-10 17:15:31.530 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =1
+2020-12-10 17:16:31.342 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 11604 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 17:16:31.346 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 17:16:31.346 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 17:16:37.376 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 6.391 seconds (JVM running for 7.642)
+2020-12-10 17:16:37.759 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNjM3NzlOIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4OTcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzk3fQ.2NZSreeYNDYsK09i_6b6U0Ja7Tt0Zgw4akaR0HdTBPc
+2020-12-10 17:16:37.787 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 17:16:37.939 [main] DEBUG cn.edu.xmu.address.controller.AddressController - update Address by Addressid: 1
+2020-12-10 17:16:38.095 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNjM4MExKIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxODk4LCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTc5OH0.JzIeI2uslUspk1_WZBLm-vgsCnvXYU9o5ByZV92vnVM
+2020-12-10 17:16:38.099 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =2
+2020-12-10 17:16:38.136 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNjM4MTFKIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxODk4LCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTc5OH0.5kgPRAj8LbjV8bl3Z0T3bKH1w64e-q8tm8DlSLC1vHU
+2020-12-10 17:16:38.137 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =3
+2020-12-10 17:16:38.150 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNjM4MVI3IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxODk4LCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTc5OH0.q8VdsmQu4ROjemUx-HqrT5d3qO2sqOz8GHE-ihle98E
+2020-12-10 17:16:38.153 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =5
+2020-12-10 17:16:38.164 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNjM4MVZZIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4OTgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzk4fQ.ruYMOjiWWySGRZ1LAFr9HxXVvT8PRRu3r-1o77B15aU
+2020-12-10 17:16:38.165 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 17:16:38.167 [main] DEBUG cn.edu.xmu.address.controller.AddressController - update Address by Addressid: 5
+2020-12-10 17:16:38.179 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNjM4MTQyIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4OTgsInVzZXJJZCI6MiwiaWF0IjoxNjA3NTkxNzk4fQ.BFEr3oVk2D8zhLFAAyFf4BGc8fLRS-mCkXVEpG9FQzM
+2020-12-10 17:16:38.180 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 17:16:38.182 [main] DEBUG cn.edu.xmu.address.controller.AddressController - update Address by Addressid: 1
+2020-12-10 17:16:38.193 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNjM4MTQzIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4OTgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzk4fQ.0zWhoQrjpoVQkDD5O3fxYuPdHsucgYCzL8NrZOOcD3U
+2020-12-10 17:16:38.195 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete address id = 1
+2020-12-10 17:16:38.263 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNjM4MjdPIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4OTgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzk4fQ.h3fROSqbvI5SPKn2V5eIoO10DkQStcmcf9XIGGYPvm0
+2020-12-10 17:16:38.270 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：1
+2020-12-10 17:16:38.273 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 1
+2020-12-10 17:16:38.285 [main] ERROR cn.edu.xmu.address.dao.RegionDao - Region(id=1, pid=null, name=999, postalCode=99, state=null, gmtCreate=null, gmtModified=null)
+2020-12-10 17:16:38.285 [main] ERROR cn.edu.xmu.address.dao.RegionDao - cn.edu.xmu.address.model.po.RegionPo@25058759
+2020-12-10 17:16:38.339 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNjM4MzNGIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4OTgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzk4fQ.e6RzDua2EJ7WudbIv0Q0AUwZotPngg3ykjw1H6H9yKs
+2020-12-10 17:16:38.342 [main] DEBUG cn.edu.xmu.address.controller.AddressController - set default address by id5
+2020-12-10 17:16:38.353 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNjM4M0dJIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4OTgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzk4fQ.iES8TZyx5KXds6itSjRcKSnjNwnzdVFTYE9JmzVDRw0
+2020-12-10 17:16:38.355 [main] DEBUG cn.edu.xmu.address.controller.AddressController - set default address by id1
+2020-12-10 17:16:38.361 [main] INFO  cn.edu.xmu.address.dao.AddressDao - 地址 id =1的默认地址被设为普通地址
+2020-12-10 17:16:38.369 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNjM4M0dTIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4OTgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzk4fQ.sIQyDw8PeMPYv-_1-dMzcSJUQhi1-TbWOdvDEwtF8gk
+2020-12-10 17:16:38.373 [main] DEBUG cn.edu.xmu.address.controller.AddressController - seleteAllAddress: page= 1  pageSize = 10
+2020-12-10 17:16:38.436 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNjM4NE03IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxODk4LCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTc5OH0.qkyjsx5cvrHJuZdn_JLZi2L6m8G5P60kGkJhs6D8-dw
+2020-12-10 17:16:38.445 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNjM4NFNBIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4OTgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzk4fQ.x18Z6AX0SKnbFdvB-UkbM6RbXhu9Y4sriTgkFE-u_QQ
+2020-12-10 17:16:38.456 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNjM4NEhTIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4OTgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzk4fQ.cZ_Oux8LSZOQ7tsHEuU2NpVNAM9YrU3TvGswTlien2w
+2020-12-10 17:16:38.466 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNjM4NDk0IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4OTgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzk4fQ.9W2v8nZ_KIJsolyL4cfcL7XkobQmCiiaiN3s29YZbTk
+2020-12-10 17:16:38.467 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete address id = 21
+2020-12-10 17:16:38.477 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 17:16:38.478 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNjM4NEdCIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTE4OTgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkxNzk4fQ.VGiFD_zYXCDT509ZECySKDMaGO0Tfv2WNjE6gGt37PQ
+2020-12-10 17:16:38.480 [main] DEBUG cn.edu.xmu.address.controller.AddressController - insert address by userId 1
+2020-12-10 17:16:38.498 [main] DEBUG cn.edu.xmu.address.controller.AddressController - Address(id=null, customer_id=1, regionId=1, detail=abc, consignee=a, mobile=1234567, be_default=0, gmtCreate=2020-12-10T17:16:38.480997, gmtModified=null)
+2020-12-10 17:16:38.555 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTcxNjM4NVRCIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NTkxODk4LCJ1c2VySWQiOjEsImlhdCI6MTYwNzU5MTc5OH0._aN7zXcw53GkAUkcE3WvscLUHXnT-UQ-uPtHGt1RK24
+2020-12-10 17:16:38.557 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =1
+2020-12-10 17:40:52.817 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 1392 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 17:40:52.820 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 17:40:52.821 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 17:40:59.013 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 6.528 seconds (JVM running for 7.75)
+2020-12-10 17:40:59.355 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTc0MDU5M0Q1IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTMzNTksInVzZXJJZCI6MSwiaWF0IjoxNjA3NTkzMjU5fQ.75AHRqJ5Sl0rao-vWaZHxtpVuw0S4ep7MPdAu7afMfM
+2020-12-10 17:40:59.507 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：5
+2020-12-10 17:58:24.030 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 11976 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 17:58:24.034 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 17:58:24.034 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 17:58:31.183 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 7.528 seconds (JVM running for 9.041)
+2020-12-10 17:58:31.583 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTc1ODMxNThQIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTQ0MTEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTk0MzExfQ.s1e0Kfk8Ylb2-W9PUtk43p-SJey_lPG10l_WKvT2ME8
+2020-12-10 17:58:31.765 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：5
+2020-12-10 18:00:18.295 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 5344 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 18:00:18.299 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 18:00:18.300 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 18:00:24.472 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 6.53 seconds (JVM running for 7.768)
+2020-12-10 18:00:24.865 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTgwMDI0ODQzIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTQ1MjQsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTk0NDI0fQ.KLWiMnTbBF4SXwOGx_ez_zoTLvYYcAs1EP2cQCn84rw
+2020-12-10 18:00:25.037 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：5
+2020-12-10 18:01:20.146 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 18012 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 18:01:20.150 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 18:01:20.151 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 18:01:26.437 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 6.65 seconds (JVM running for 7.876)
+2020-12-10 18:01:26.823 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTgwMTI2NzdUIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTQ1ODYsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTk0NDg2fQ.ARYobij6M-ngHuoBHtRKwIv8eaoJOBdWIOnRZ8xvppI
+2020-12-10 18:01:27.001 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：5
+2020-12-10 18:05:56.138 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 7208 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 18:05:56.141 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 18:05:56.142 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 18:06:02.169 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 6.364 seconds (JVM running for 7.588)
+2020-12-10 18:06:02.549 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTgwNjAyNTBLIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTQ4NjIsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTk0NzYyfQ.kPyHDQ5gVO2nPHLrgpcC7arjEh-SZKu6w7mlUOKrBck
+2020-12-10 18:06:02.713 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：5
+2020-12-10 18:07:17.280 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 13876 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 18:07:17.285 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 18:07:17.285 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 18:07:23.424 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 6.486 seconds (JVM running for 7.699)
+2020-12-10 18:07:23.783 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTgwNzIzNzBVIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTQ5NDMsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTk0ODQzfQ.4DzJ30WSh0TgoOfbm91V8jLFO9W6v6ArjBHwpXRxXs0
+2020-12-10 18:07:23.932 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：5
+2020-12-10 18:08:37.520 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 5056 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 18:08:37.523 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 18:08:37.523 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 18:08:43.678 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 6.498 seconds (JVM running for 7.719)
+2020-12-10 18:08:44.027 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMTgwODQ0MEkyIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc1OTUwMjMsInVzZXJJZCI6MSwiaWF0IjoxNjA3NTk0OTIzfQ.uW2jdXJnBc9ARMZRmoX6HftF21dwFZpMUUYXOknoY88
+2020-12-10 18:08:44.193 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：5
+2020-12-10 18:08:44.217 [main] ERROR cn.edu.xmu.address.dao.RegionDao - Region(id=5, pid=null, name=999, postalCode=99, state=null, gmtCreate=null, gmtModified=null)
+2020-12-10 18:08:44.218 [main] ERROR cn.edu.xmu.address.dao.RegionDao - cn.edu.xmu.address.model.po.RegionPo@63f08f9f
+2020-12-10 20:43:06.491 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 17324 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 20:43:06.494 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 20:43:06.494 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 20:43:13.483 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 7.359 seconds (JVM running for 8.71)
+2020-12-10 20:43:13.894 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA0MzEzOEdQIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDQyOTMsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA0MTkzfQ.XoOZK0qCwc3zUXabb0fypcEubn2Aa0eZnPg6IqDk_CQ
+2020-12-10 20:43:13.923 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 20:43:14.058 [main] DEBUG cn.edu.xmu.address.controller.AddressController - update Address by Addressid: 1
+2020-12-10 20:43:14.348 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA0MzE0M1Q1IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NjA0Mjk0LCJ1c2VySWQiOjEsImlhdCI6MTYwNzYwNDE5NH0.qIn1-W6BqdqVlHj0laYjVnp_Hce8BmUGVrynX8KLFIU
+2020-12-10 20:43:14.351 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =2
+2020-12-10 20:43:14.389 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA0MzE0M0RHIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NjA0Mjk0LCJ1c2VySWQiOjEsImlhdCI6MTYwNzYwNDE5NH0.wSwUkSyc6_NK_gtVWxwHyvgxsZsutjqYKMVOHpao5uA
+2020-12-10 20:43:14.391 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =3
+2020-12-10 20:43:14.404 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA0MzE0NFcwIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NjA0Mjk0LCJ1c2VySWQiOjEsImlhdCI6MTYwNzYwNDE5NH0.rwUur2GW8KR1xfs37RcFWtj3jCLDi5SZqRq_eFSALjU
+2020-12-10 20:43:14.407 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =5
+2020-12-10 20:43:14.417 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA0MzE0NFY2IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDQyOTQsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA0MTk0fQ.bUNOvbj2W3YkIs76IrOx86Xn97z1ZA4bNoIvuGjLjsc
+2020-12-10 20:43:14.418 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 20:43:14.420 [main] DEBUG cn.edu.xmu.address.controller.AddressController - update Address by Addressid: 5
+2020-12-10 20:43:14.435 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA0MzE0NFdPIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDQyOTQsInVzZXJJZCI6MiwiaWF0IjoxNjA3NjA0MTk0fQ.km5GIGxgADdZBTbvaXcsomwBS3IZGAtoBtSoroLF3q4
+2020-12-10 20:43:14.436 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 20:43:14.438 [main] DEBUG cn.edu.xmu.address.controller.AddressController - update Address by Addressid: 1
+2020-12-10 20:43:14.451 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA0MzE0NDZCIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDQyOTQsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA0MTk0fQ.16TsoJQXsrqXhV9MTZ4K3mEyz4UkN4m3o0-CRKd0r2U
+2020-12-10 20:43:14.454 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete address id = 1
+2020-12-10 20:43:14.498 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA0MzE0NFk5IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDQyOTQsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA0MTk0fQ.VKbVfCybYM6mNVoBccfvhnFO9qqyvG5LPQSONRSAo1w
+2020-12-10 20:43:14.503 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：1
+2020-12-10 20:43:14.515 [main] ERROR cn.edu.xmu.address.dao.RegionDao - Region(id=1, pid=null, name=999, postalCode=99, state=null, gmtCreate=null, gmtModified=null)
+2020-12-10 20:43:14.515 [main] ERROR cn.edu.xmu.address.dao.RegionDao - cn.edu.xmu.address.model.po.RegionPo@3a02172a
+2020-12-10 20:43:14.565 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA0MzE0NTVKIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDQyOTQsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA0MTk0fQ.vn2xjWRKV4DUU8zJEfdvdCnBI7zQ8nNV3I3n3BHVny8
+2020-12-10 20:43:14.567 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：5
+2020-12-10 20:43:14.567 [main] ERROR cn.edu.xmu.address.dao.RegionDao - Region(id=5, pid=null, name=999, postalCode=99, state=null, gmtCreate=null, gmtModified=null)
+2020-12-10 20:43:14.567 [main] ERROR cn.edu.xmu.address.dao.RegionDao - cn.edu.xmu.address.model.po.RegionPo@67441705
+2020-12-10 20:43:14.576 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA0MzE0NVJIIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDQyOTQsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA0MTk0fQ.YDLhJiN-fjTubMvKwy65LtP0DrdzuLJvZhg9wYxDXsQ
+2020-12-10 20:43:14.579 [main] DEBUG cn.edu.xmu.address.controller.AddressController - set default address by id5
+2020-12-10 20:43:14.588 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA0MzE0NTlJIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDQyOTQsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA0MTk0fQ.yG6YLsTyV9Xi4nWR6kTpY1hOBBwiC_q6o2pGtCXTY4U
+2020-12-10 20:43:14.590 [main] DEBUG cn.edu.xmu.address.controller.AddressController - set default address by id1
+2020-12-10 20:43:14.595 [main] INFO  cn.edu.xmu.address.dao.AddressDao - 地址 id =1的默认地址被设为普通地址
+2020-12-10 20:43:14.602 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA0MzE0NjFOIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDQyOTQsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA0MTk0fQ.Cj3XfLuG2D9ejqPQqRUNfBmw9tpWSLJ-XOvzjCtd2kg
+2020-12-10 20:43:14.605 [main] DEBUG cn.edu.xmu.address.controller.AddressController - seleteAllAddress: page= 1  pageSize = 10
+2020-12-10 20:43:14.675 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA0MzE0NlVTIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NjA0Mjk0LCJ1c2VySWQiOjEsImlhdCI6MTYwNzYwNDE5NH0.tqn8Y5MO7HFoU9RdvCMH2dxV4dKe21dreKJksMpVesU
+2020-12-10 20:43:14.686 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA0MzE0NlNOIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDQyOTQsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA0MTk0fQ.tCNyLjkP-96xFey4k3LCtul-nED_7GtdD2qhTKm7b-s
+2020-12-10 20:43:14.696 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA0MzE0NlBFIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDQyOTQsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA0MTk0fQ.7qriVrB8hH6SePLUz7lHS3nAfnAriz1-XL4so24R8lc
+2020-12-10 20:43:14.705 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA0MzE0N01IIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDQyOTQsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA0MTk0fQ.PeTRVMUJMTDz4QGDUTZXH6Rqi7ir-uKAhDfRyfmP8Os
+2020-12-10 20:43:14.707 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete address id = 21
+2020-12-10 20:43:14.716 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 20:43:14.717 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA0MzE0NzJHIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDQyOTQsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA0MTk0fQ.d6bvWmi17hbQHXp_6sckMu8YuxRcboJ5G6DrkXzn-yM
+2020-12-10 20:43:14.720 [main] DEBUG cn.edu.xmu.address.controller.AddressController - insert address by userId 1
+2020-12-10 20:43:14.739 [main] DEBUG cn.edu.xmu.address.controller.AddressController - Address(id=null, customer_id=1, regionId=1, detail=abc, consignee=a, mobile=1234567, be_default=0, gmtCreate=2020-12-10T20:43:14.720823700, gmtModified=null)
+2020-12-10 20:43:14.792 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA0MzE0N1FDIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NjA0Mjk0LCJ1c2VySWQiOjEsImlhdCI6MTYwNzYwNDE5NH0.WajIuzCn3saXMn2P8-yxQkSqOqN1j8zml7I9Ct_aCvk
+2020-12-10 20:43:14.794 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =1
+2020-12-10 20:51:31.921 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 10820 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 20:51:31.925 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 20:51:31.925 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 20:51:38.297 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 6.756 seconds (JVM running for 8.088)
+2020-12-10 20:51:38.677 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA1MTM4NlA2IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDQ3OTgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA0Njk4fQ.WGJ9VyzOHVl1L17r_9jNJCTNF4kf9D9vDkqWKzKbafg
+2020-12-10 20:51:38.766 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete region id  = 1
+2020-12-10 20:51:38.868 [main] INFO  cn.edu.xmu.address.dao.RegionDao - 地址 id =1的默认地址被设为普通地址
+2020-12-10 20:53:04.992 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 17404 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 20:53:04.995 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 20:53:04.995 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 20:53:11.330 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 6.702 seconds (JVM running for 8.049)
+2020-12-10 20:53:11.735 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA1MzExN0JMIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDQ4OTEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA0NzkxfQ.M0IMRud1geGpK639xtA6lvKk0ndbUVZdWSCZZI08bJE
+2020-12-10 20:53:11.836 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete region id  = 2
+2020-12-10 20:53:11.954 [main] INFO  cn.edu.xmu.address.dao.RegionDao - 地址 id =2的默认地址被设为普通地址
+2020-12-10 20:53:32.186 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 18100 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 20:53:32.191 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 20:53:32.192 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 20:53:38.614 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 6.825 seconds (JVM running for 8.167)
+2020-12-10 20:53:39.034 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA1MzM5MFA5IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDQ5MTgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA0ODE4fQ.L7yOfc8g-H72N3b5CqqujbLrj7662MrronArszTyivg
+2020-12-10 20:53:39.121 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete region id  = 3
+2020-12-10 20:53:39.212 [main] INFO  cn.edu.xmu.address.dao.RegionDao - 地址 id =3的默认地址被设为普通地址
+2020-12-10 20:55:47.854 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 16968 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 20:55:47.858 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 20:55:47.858 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 20:55:54.194 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 6.73 seconds (JVM running for 8.092)
+2020-12-10 20:55:54.579 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjA1NTU0NVM2IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDUwNTQsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA0OTU0fQ.qqbiIrSBDaOTYMW1nmIEvTwXgYARaHAnl15OxKY1DTU
+2020-12-10 20:55:54.674 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete region id  = 3
+2020-12-10 20:55:54.767 [main] INFO  cn.edu.xmu.address.dao.RegionDao - 地址 id =3的默认地址被设为普通地址
+2020-12-10 21:00:35.046 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 19020 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 21:00:35.050 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 21:00:35.050 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 21:00:41.686 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 7.029 seconds (JVM running for 8.355)
+2020-12-10 21:00:42.100 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjEwMDQyME4zIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDUzNDIsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA1MjQyfQ._zRlke7qZeN7Gi9eKumxye9IX1GjCquKSWRnaqy7a0Y
+2020-12-10 21:00:42.189 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete region id  = 3
+2020-12-10 21:00:42.298 [main] INFO  cn.edu.xmu.address.dao.RegionDao - 地址 id =3的默认地址被设为普通地址
+2020-12-10 21:06:49.073 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 13912 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 21:06:49.077 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 21:06:49.077 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 21:06:55.937 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 7.265 seconds (JVM running for 8.645)
+2020-12-10 21:06:56.402 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjEwNjU2M1pDIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDU3MTYsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA1NjE2fQ.e0oEmOd--ZADGEvU0vZYX8dT5Jq3dF6216dqI8wgtUk
+2020-12-10 21:06:56.489 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete region id  = 1
+2020-12-10 21:06:56.597 [main] INFO  cn.edu.xmu.address.dao.RegionDao - 地址 id =1的默认地址被设为普通地址
+2020-12-10 21:07:44.080 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 16152 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 21:07:44.083 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 21:07:44.083 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 21:07:50.581 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 6.888 seconds (JVM running for 8.264)
+2020-12-10 21:07:50.982 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjEwNzUwOTNOIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDU3NzAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA1NjcwfQ.OT_FvfmkG3SHPfcADxRY-qAp9TO5mVPxDkGUsy2oMfY
+2020-12-10 21:07:51.072 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete region id  = 3
+2020-12-10 21:07:51.172 [main] INFO  cn.edu.xmu.address.dao.RegionDao - 地址 id =3的默认地址被设为普通地址
+2020-12-10 21:09:10.879 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 12688 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 21:09:10.883 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 21:09:10.883 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 21:09:17.250 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 6.766 seconds (JVM running for 8.067)
+2020-12-10 21:09:17.684 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjEwOTE3NkM4IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDU4NTcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA1NzU3fQ.zFPHz0_RGHjqlhEvPx3iQ3jTfnVgiwF_qRQfFV-P8BA
+2020-12-10 21:09:17.769 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete region id  = 3
+2020-12-10 21:09:50.396 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 9772 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 21:09:50.400 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 21:09:50.400 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 21:09:56.855 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 6.835 seconds (JVM running for 8.15)
+2020-12-10 21:09:57.276 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjEwOTU3MkhJIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDU4OTcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA1Nzk3fQ._85kgYB0B5PeBKvKmMJFfRao9jsY7AOJESxByUnBj9o
+2020-12-10 21:09:57.386 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete region id  = 3
+2020-12-10 21:11:53.391 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Starting AddressControllerTest on LAPTOP-FJACK3KC with PID 5308 (started by 张rh in D:\JavaEE\Project\OOMALL_other\address)
+2020-12-10 21:11:53.395 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 21:11:53.395 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - The following profiles are active: dev
+2020-12-10 21:11:59.816 [main] INFO  c.edu.xmu.address.controller.AddressControllerTest - Started AddressControllerTest in 6.829 seconds (JVM running for 8.245)
+2020-12-10 21:12:00.186 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAwMTlOIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDYwMjAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA1OTIwfQ.R77PAm_5GAmMN13cZfHNWz-4YhKGnD0QQKFWpJJjc9g
+2020-12-10 21:12:00.217 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 21:12:00.379 [main] DEBUG cn.edu.xmu.address.controller.AddressController - update Address by Addressid: 1
+2020-12-10 21:12:00.611 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAwNlk0IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NjA2MDIwLCJ1c2VySWQiOjEsImlhdCI6MTYwNzYwNTkyMH0.DRvQ3lFDUZC6qA_W5GrEfx8-UJfYhPt64kdPe-lQ4uE
+2020-12-10 21:12:00.613 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =2
+2020-12-10 21:12:00.651 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAwNkszIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NjA2MDIwLCJ1c2VySWQiOjEsImlhdCI6MTYwNzYwNTkyMH0.oarm5kQJm6T1iEIJbyum4TjKpTXKQ1FkuYR3_Q7Lu_4
+2020-12-10 21:12:00.653 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =3
+2020-12-10 21:12:00.666 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAwNkg1IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NjA2MDIwLCJ1c2VySWQiOjEsImlhdCI6MTYwNzYwNTkyMH0.IUv3VST1VwmirzhvPYCeqbW636obfw1BjsA5bdl-zwk
+2020-12-10 21:12:00.668 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =5
+2020-12-10 21:12:00.677 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAwNk5OIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDYwMjAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA1OTIwfQ.MVnajQa1wsJpR020GVtHYPuS1JoYm_MubZTK03Ze-TU
+2020-12-10 21:12:00.678 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 21:12:00.681 [main] DEBUG cn.edu.xmu.address.controller.AddressController - update Address by Addressid: 5
+2020-12-10 21:12:00.693 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAwNjExIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDYwMjAsInVzZXJJZCI6MiwiaWF0IjoxNjA3NjA1OTIwfQ.JQHxwPGCl-GRBcjbBsILop6LTzriKBozV4nNP44xXnw
+2020-12-10 21:12:00.694 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 21:12:00.696 [main] DEBUG cn.edu.xmu.address.controller.AddressController - update Address by Addressid: 1
+2020-12-10 21:12:00.708 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAwNzhLIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDYwMjAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA1OTIwfQ.-d112BGXn1v7TAOFq1XaDY5la6AnpsEcsJmLF5Ocnhw
+2020-12-10 21:12:00.711 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete address id = 1
+2020-12-10 21:12:00.780 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAwNzlYIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDYwMjAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA1OTIwfQ.Xi5iTeTB8t9BAjVRRRT6CHUa8zTwNHT2RZacyvSwqiE
+2020-12-10 21:12:00.787 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：1
+2020-12-10 21:12:00.798 [main] ERROR cn.edu.xmu.address.dao.RegionDao - Region(id=1, pid=null, name=999, postalCode=99, state=null, gmtCreate=null, gmtModified=null)
+2020-12-10 21:12:00.798 [main] ERROR cn.edu.xmu.address.dao.RegionDao - cn.edu.xmu.address.model.po.RegionPo@551fefe8
+2020-12-10 21:12:00.867 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAwOFM4IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDYwMjAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA1OTIwfQ.2YJAYsWSfoSXvsf7jYkXMw25I4YrB0kWQB0rDjT9OmI
+2020-12-10 21:12:00.869 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete region id  = 3
+2020-12-10 21:12:00.879 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAwOFBPIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDYwMjAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA1OTIwfQ.1cGZOOTcHfDyLSWs7AKzepY4kdcUgyRcp-Fk8nuIkhI
+2020-12-10 21:12:00.881 [main] DEBUG cn.edu.xmu.address.controller.AddressController - 修改地区id：5
+2020-12-10 21:12:00.881 [main] ERROR cn.edu.xmu.address.dao.RegionDao - Region(id=5, pid=null, name=999, postalCode=99, state=null, gmtCreate=null, gmtModified=null)
+2020-12-10 21:12:00.881 [main] ERROR cn.edu.xmu.address.dao.RegionDao - cn.edu.xmu.address.model.po.RegionPo@408573b1
+2020-12-10 21:12:00.891 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAwOEc5IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDYwMjAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA1OTIwfQ.Wbkp5hPbkqOJjOcvxHALXYRH6QQaIqWd6Fh0jHauP1o
+2020-12-10 21:12:00.894 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete region id  = 1
+2020-12-10 21:12:00.962 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAwOVlCIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDYwMjAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA1OTIwfQ.HnjGUMJbF7wmbWDGVmJUGWVcoKY0xH7URh3eWivo6eA
+2020-12-10 21:12:00.965 [main] DEBUG cn.edu.xmu.address.controller.AddressController - set default address by id5
+2020-12-10 21:12:00.975 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAwOTBUIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDYwMjAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA1OTIwfQ.KDqLCY27C6_7yq9BCpipDylKKniqFrNWrZhs0q6IVvY
+2020-12-10 21:12:00.977 [main] DEBUG cn.edu.xmu.address.controller.AddressController - set default address by id1
+2020-12-10 21:12:00.982 [main] INFO  cn.edu.xmu.address.dao.AddressDao - 地址 id =1的默认地址被设为普通地址
+2020-12-10 21:12:00.990 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAwOUJSIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDYwMjAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA1OTIwfQ.sdjv4TQLu8hn2Bodvx4MXFh0L0TNZ2cwygXGykIdHGA
+2020-12-10 21:12:00.994 [main] DEBUG cn.edu.xmu.address.controller.AddressController - seleteAllAddress: page= 1  pageSize = 10
+2020-12-10 21:12:01.053 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAxMEFRIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NjA2MDIxLCJ1c2VySWQiOjEsImlhdCI6MTYwNzYwNTkyMX0.JWH5yl4UFOI5LPCSlKhYcHqLh331r0HSq54XUmTh5Yg
+2020-12-10 21:12:01.061 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAxMDdQIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDYwMjEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA1OTIxfQ.6MLVvvfO90Wv6W4ZfC-Zk4ivX1XEdOc02qJdi7aYbK0
+2020-12-10 21:12:01.070 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAxMDNaIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDYwMjEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA1OTIxfQ.9KGhlvjtVle6SKK1pc9UT94XeRoh-ga2bn238xW56v8
+2020-12-10 21:12:01.077 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAxMDhKIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDYwMjEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA1OTIxfQ.QJwRfiYhdJx2J6YgtAJRIdwRMuEoPJ-ySo5YVQ0HZw0
+2020-12-10 21:12:01.078 [main] DEBUG cn.edu.xmu.address.controller.AddressController - delete address id = 21
+2020-12-10 21:12:01.086 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - {"regionId":1,"detail":"abc","consignee":"a","mobile":"1234567"}
+2020-12-10 21:12:01.087 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAxMFFZIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MDYwMjEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjA1OTIxfQ.rPlIIVW_23igfsIW7QM1wy5YW2QTzEmWkGIEmAJVGq8
+2020-12-10 21:12:01.090 [main] DEBUG cn.edu.xmu.address.controller.AddressController - insert address by userId 1
+2020-12-10 21:12:01.110 [main] DEBUG cn.edu.xmu.address.controller.AddressController - Address(id=null, customer_id=1, regionId=1, detail=abc, consignee=a, mobile=1234567, be_default=0, gmtCreate=2020-12-10T21:12:01.091135, gmtModified=null)
+2020-12-10 21:12:01.235 [main] DEBUG c.edu.xmu.address.controller.AddressControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjExMjAxMk9XIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NjA2MDIxLCJ1c2VySWQiOjEsImlhdCI6MTYwNzYwNTkyMX0.HEZfbrc9DL5EmSbEJTiV_jynivy1A4GRfXJB01hi1Ls
+2020-12-10 21:12:01.236 [main] DEBUG cn.edu.xmu.address.controller.AddressController - query region id =1

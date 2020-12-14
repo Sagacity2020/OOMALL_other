@@ -31,32 +31,53 @@ public class AdvertisementDao {
     @Autowired
     private AdvertisementPoMapper advertisementPoMapper;
 
-    @Autowired
-    private RedisTemplate<String, Serializable> redisTemplate;
 
-/*
-    public ReturnObject<Object>getCurrentAdvertisement(LocalDate localDate, LocalTime localTime){
+    public ReturnObject<List<AdvertisementPo>>getCurrentAdvertisement(LocalDate localDate){
         AdvertisementPoExample example=new AdvertisementPoExample();
         AdvertisementPoExample.Criteria criteria=example.createCriteria();
-
-        criteria.andBeginDateLessThan(localDate);
-        criteria.andEndDateGreaterThan(localDate);
-
+        criteria.andRepeatsEqualTo((byte)1);
+        //criteria.andBeDefaultNotEqualTo((byte)1);
+        criteria.andBeDefaultIsNull();
+        criteria.andStateEqualTo((byte)4);
 
         List<AdvertisementPo> advertisementPos=null;
         try{
             advertisementPos=advertisementPoMapper.selectByExample(example);
-            for(AdvertisementPo po:advertisementPos){
-                Long segId=po.getSegId();
-
-            }
+        }catch (DataAccessException e) {
+            logger.error("createAvertisement: DataAccessException:" + e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
+        } catch (Exception e) {
+            // 其他Exception错误
+            logger.error("other exception : " + e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
         }
+
+        example=new AdvertisementPoExample();
+        criteria=example.createCriteria();
+        localDate=LocalDate.of(2020,12,16);
+        criteria.andBeginDateLessThan(localDate);
+        criteria.andEndDateGreaterThan(localDate);
+        criteria.andRepeatsNotEqualTo((byte)1);
+        criteria.andBeDefaultIsNull();
+        criteria.andStateEqualTo((byte)4);
+
+        advertisementPos.addAll(advertisementPoMapper.selectByExample(example));
+
+        if(advertisementPos.size()==0){
+            example=new AdvertisementPoExample();
+            criteria=example.createCriteria();
+            criteria.andBeDefaultEqualTo((byte)1);
+            criteria.andStateEqualTo((byte)4);
+            advertisementPos=advertisementPoMapper.selectByExample(example);
+        }
+
+        return new ReturnObject<>(advertisementPos);
     }
 
- */
 
 
     public ReturnObject<Object>createAdvertisement(Advertisement advertisement){
+        int count=0;
         AdvertisementPoExample example=new AdvertisementPoExample();
         AdvertisementPoExample.Criteria criteria=example.createCriteria();
 
@@ -64,9 +85,6 @@ public class AdvertisementDao {
         List<AdvertisementPo> advertisementPos;
         try {
             advertisementPos = advertisementPoMapper.selectByExample(example);
-            if (advertisementPos.size() == 8) {
-                return new ReturnObject<>(ResponseCode.ADVERTISEMENT_OUTLIMIT);
-            }
         } catch (DataAccessException e) {
             logger.error("createAvertisement: DataAccessException:" + e.getMessage());
             return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
@@ -102,9 +120,6 @@ public class AdvertisementDao {
         List<AdvertisementPo> advertisementPos;
         try {
             advertisementPos = advertisementPoMapper.selectByExample(example);
-            if (advertisementPos.size() == 8) {
-                return new ReturnObject<>(ResponseCode.ADVERTISEMENT_OUTLIMIT);
-            }
         } catch (DataAccessException e) {
             logger.error("createAvertisement: DataAccessException:" + e.getMessage());
             return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
@@ -139,22 +154,16 @@ public class AdvertisementDao {
 
 
 
-    public ReturnObject<PageInfo<VoObject>>getAdvertisementBySegId(Long id,Integer page,Integer pageSize){
+    public ReturnObject<PageInfo<AdvertisementPo>>getAdvertisementBySegId(Long id,Integer page,Integer pageSize){
         AdvertisementPoExample example=new AdvertisementPoExample();
         AdvertisementPoExample.Criteria criteria=example.createCriteria();
         criteria.andSegIdEqualTo(id);
 
-        PageHelper.startPage(page,pageSize);
-
         List<AdvertisementPo>advertisementPos=null;
         try{
             advertisementPos=advertisementPoMapper.selectByExample(example);
-            List<VoObject>ret=new ArrayList<>(advertisementPos.size());
-            for(AdvertisementPo po:advertisementPos){
-                Advertisement advertisement=new Advertisement(po);
-                ret.add(advertisement);
-            }
-            PageInfo<VoObject>advertisementPage=PageInfo.of(ret);
+
+            PageInfo<AdvertisementPo>advertisementPage=new PageInfo<>(advertisementPos);
             return new ReturnObject<>(advertisementPage);
         }catch (DataAccessException e) {
             logger.error("selectAllRole: DataAccessException:" + e.getMessage());

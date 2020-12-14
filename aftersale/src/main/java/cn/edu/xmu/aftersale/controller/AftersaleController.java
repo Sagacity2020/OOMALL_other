@@ -111,6 +111,10 @@ public class AftersaleController {
             logger.debug("createAftersale: id = "+ id +" vo = " + vo);
         }
 
+        if(vo.getType()==null){
+            return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID));
+        }
+
         Object returnObject = Common.processFieldErrors(bindingResult, httpServletResponse);
         if (returnObject != null) {
             logger.info("incorrect data received while updateAftersale id = " + id);
@@ -171,6 +175,9 @@ public class AftersaleController {
                                     @LoginUser @ApiIgnore @RequestParam(required = false) Long userId) {
         if (logger.isDebugEnabled()) {
             logger.debug("sendbackAftersale: id = "+ id +" vo = " + vo);
+        }
+        if(vo.getCustomerLogSn()==null){
+            return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,String.format("运单信息不能为空")));
         }
         // 校验前端数据
         Object returnObject = Common.processFieldErrors(bindingResult, httpServletResponse);
@@ -242,6 +249,9 @@ public class AftersaleController {
             logger.debug("deliverAftersale: id = "+ id+" vo = " + vo);
         }
         // 校验前端数据
+        if(vo.getShopLogSn()==null){
+            return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,String.format("运单信息不能为空")));
+        }
         Object returnObject = Common.processFieldErrors(bindingResult, httpServletResponse);
         if (returnObject != null) {
             logger.info("incorrect data received while deliverAftersale id = " + id);
@@ -424,8 +434,6 @@ public class AftersaleController {
     @Audit
     @GetMapping("aftersales")
     public Object getAftersaleByUserId(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId,
-                                       @RequestParam (required = false)Long spuId,
-                                       @RequestParam (required = false)Long skuId,
                                        @RequestParam (required = false)LocalDateTime beginTime,
                                        @RequestParam (required = false)LocalDateTime endTime,
                                        @RequestParam(required = false, defaultValue = "1") Integer page,
@@ -442,7 +450,7 @@ public class AftersaleController {
             object = Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID), httpServletResponse);
         }
         else {
-            object=Common.getPageRetObject(aftersaleService.getAftersaleByUserId(userId, spuId, skuId, beginTime, endTime, page, pageSize, type, state));
+            object=Common.getPageRetObject(aftersaleService.getAftersaleByUserId(userId,beginTime, endTime, page, pageSize, type, state));
         }
         return object;
     }
@@ -470,8 +478,6 @@ public class AftersaleController {
     @Audit
     @GetMapping("shops/{id}/aftersales")
     public Object getAllAftersale(@PathVariable("id") Long shopId,
-                                  @RequestParam (required = false)Long spuId,
-                                  @RequestParam (required = false)Long skuId,
                                   @RequestParam (required = false)LocalDateTime beginTime,
                                   @RequestParam (required = false)LocalDateTime endTime,
                                   @RequestParam(required = false, defaultValue = "1") Integer page,
@@ -488,7 +494,7 @@ public class AftersaleController {
             object = Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID), httpServletResponse);
         }
         else {
-            object=getPageRetObject(aftersaleService.getAllAftersale(shopId, spuId, skuId, beginTime, endTime, page, pageSize, type, state));
+            object=getPageRetObject(aftersaleService.getAllAftersale(shopId, beginTime, endTime, page, pageSize, type, state));
         }
         return object;
     }

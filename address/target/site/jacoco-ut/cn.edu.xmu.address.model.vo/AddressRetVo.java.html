@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AddressRetVo.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">address</a> &gt; <a href="index.source.html" class="el_package">cn.edu.xmu.address.model.vo</a> &gt; <span class="el_source">AddressRetVo.java</span></div><h1>AddressRetVo.java</h1><pre class="source lang-java linenums">package cn.edu.xmu.address.model.vo;
+
+import cn.edu.xmu.address.model.bo.Address;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+
+import java.time.LocalDateTime;
+
+<span class="nc bnc" id="L10" title="All 64 branches missed.">@Data</span>
+@ApiModel(description = &quot;新建返回地址对象&quot;)
+public class AddressRetVo{
+<span class="fc" id="L13">    private Long id;</span>
+    @ApiModelProperty(value = &quot;地区id&quot;)
+<span class="fc" id="L15">    private Long regionId;</span>
+
+    @ApiModelProperty(value = &quot;详细地址&quot;)
+<span class="fc" id="L18">    private String  detail;</span>
+
+    @ApiModelProperty(value = &quot;联系人&quot;)
+<span class="fc" id="L21">    private String  consignee;</span>
+
+    @ApiModelProperty(value = &quot;联系方式&quot;)
+<span class="fc" id="L24">    private String  mobile;</span>
+
+<span class="fc" id="L26">    private byte  be_default;</span>
+<span class="fc" id="L27">    private LocalDateTime gmtCreate;</span>
+<span class="fc" id="L28">    private LocalDateTime gmtModified;</span>
+
+<span class="fc" id="L30">    public AddressRetVo(Address bo) {</span>
+<span class="fc" id="L31">        this.id=bo.getId();</span>
+<span class="fc" id="L32">        this.be_default=bo.getBe_default();</span>
+<span class="fc" id="L33">        this.consignee=bo.getConsignee();</span>
+<span class="fc" id="L34">        this.detail=bo.getDetail();</span>
+<span class="fc" id="L35">        this.regionId=bo.getRegionId();</span>
+<span class="fc" id="L36">        this.mobile=bo.getMobile();</span>
+<span class="fc" id="L37">        this.gmtCreate=bo.getGmtCreate();</span>
+<span class="fc" id="L38">        this.gmtModified=bo.getGmtModified();</span>
+<span class="fc" id="L39">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

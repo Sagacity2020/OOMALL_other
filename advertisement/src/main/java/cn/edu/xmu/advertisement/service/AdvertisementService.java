@@ -6,24 +6,32 @@ import cn.edu.xmu.advertisement.model.po.AdvertisementPo;
 import cn.edu.xmu.advertisement.model.vo.AdvertisementCreateVo;
 import cn.edu.xmu.ooad.model.VoObject;
 import cn.edu.xmu.ooad.util.ImgHelper;
+import cn.edu.xmu.ooad.util.JacksonUtil;
 import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
-import cn.edu.xmu.oomall.other.service.IAddressService;
-import cn.edu.xmu.oomall.other.service.IAftersaleService;
+import cn.edu.xmu.other.model.TimeSegmentDTO;
+import cn.edu.xmu.other.service.ITimeService;
+import com.alibaba.fastjson.JSONObject;
+import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 
 @Service
@@ -31,7 +39,7 @@ public class AdvertisementService{
     private Logger logger = LoggerFactory.getLogger(AdvertisementService.class);
 
     @DubboReference(version = "0.0.1-SNAPSHOT")
-    IAftersaleService iAftersaleService;
+    ITimeService iTimeService;
 
     @Autowired
     AdvertisementDao advertisementDao;
@@ -45,15 +53,62 @@ public class AdvertisementService{
     @Value("${privilegeservice.dav.baseUrl}")
     private String baseUrl;
 
+    @Autowired
+    private RedisTemplate<String, Serializable> redisTemplate;
 
-/*
+
+
     @Transactional
     public ReturnObject<Object>getCurrentAdvertisement(LocalDate localDate, LocalTime localTime){
-        ReturnObject returnObject=advertisementDao.getCurrentAdvertisement(localDate,localTime);
-        return returnObject;
+       /* ReturnObject<List<AdvertisementPo>> returnObject=advertisementDao.getCurrentAdvertisement(localDate);
+        List<AdvertisementPo> pos=returnObject.getData();
+        */
+        int count=0;
+        loadAdvertisement();
+        List<Advertisement>advertisements=new ArrayList<>();
+
+
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String dateStr = localDate.format(fmt);
+
+        List<Serializable> lists = redisTemplate.opsForList().range(dateStr,0,-1);
+        for(Serializable str:lists){
+
+            JSONObject jsStr = JSONObject.parseObject(str.toString());
+
+            Advertisement advertisement = (Advertisement) JSONObject.toJavaObject(jsStr,Advertisement.class);
+            if(advertisement.getSegId()!=null) {
+                ReturnObject<TimeSegmentDTO> returnObj = iTimeService.getTimesegmentById(advertisement.getSegId());
+                TimeSegmentDTO timeSegmentDTO = returnObj.getData();
+                if (timeSegmentDTO.getBeginTime().isBefore(localTime) && timeSegmentDTO.getEndTime().isAfter(localTime)) {
+                    advertisements.add(advertisement);
+                    count++;
+                }
+            }
+            if(count==8){
+                break;
+            }
+
+        }
+        /*for(AdvertisementPo po:pos){
+            if(po.getSegId()!=null) {
+                ReturnObject<TimeSegmentDTO> returnObj = iTimeService.getTimesegmentById(po.getSegId());
+                TimeSegmentDTO timeSegmentDTO = returnObj.getData();
+                if (timeSegmentDTO.getBeginTime().isBefore(localTime) && timeSegmentDTO.getEndTime().isAfter(localTime)) {
+                    Advertisement advertisement = new Advertisement(po);
+                    advertisements.add(advertisement);
+                }
+            }
+            else {
+                Advertisement advertisement = new Advertisement(po);
+                advertisements.add(advertisement);
+            }
+        }
+         */
+        return new ReturnObject<>(advertisements);
     }
 
- */
+
 
     @Transactional
     public ReturnObject<Object> createAdvertisement(Long id, AdvertisementCreateVo vo){
@@ -90,9 +145,27 @@ public class AdvertisementService{
 
     @Transactional
     public ReturnObject<PageInfo<VoObject>> getAdvertisementBySegId(Long id, Integer page, Integer pageSize){
-        ReturnObject<PageInfo<VoObject>>returnObject=advertisementDao.getAdvertisementBySegId(id,page,pageSize);
 
-        return returnObject;
+        PageHelper.startPage(page,pageSize);
+        ReturnObject<PageInfo<AdvertisementPo>>returnObject=advertisementDao.getAdvertisementBySegId(id,page,pageSize);
+
+        PageInfo<AdvertisementPo>pos=returnObject.getData();
+        List<VoObject> ret = new ArrayList<>(pos.getList().size());
+
+        for(AdvertisementPo advertisementPo:pos.getList()){
+            Advertisement advertisement=new Advertisement(advertisementPo);
+            ret.add(advertisement);
+        }
+
+        PageInfo<VoObject> advertisementPage = new PageInfo<>(ret);
+        advertisementPage.setPages(pos.getPages());
+        advertisementPage.setPageNum(pos.getPageNum());
+        advertisementPage.setPageSize(pos.getPageSize());
+        advertisementPage.setTotal(pos.getTotal());
+
+
+
+        return new ReturnObject<>(advertisementPage);
     }
 
 
@@ -137,5 +210,22 @@ public class AdvertisementService{
             return new ReturnObject(ResponseCode.FILE_NO_WRITE_PERMISSION);
         }
         return returnObject;
+    }
+
+
+    public void loadAdvertisement(){
+
+        LocalDate localDate=LocalDate.now();
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String dateStr = localDate.format(fmt);
+
+        ReturnObject<List<AdvertisementPo>> returnObject=advertisementDao.getCurrentAdvertisement(localDate);
+        List<AdvertisementPo> pos=returnObject.getData();
+        for(AdvertisementPo po:pos){
+            Advertisement advertisement=new Advertisement(po);
+            String advertisementJson=JacksonUtil.toJson(advertisement);
+            redisTemplate.opsForList().rightPush(dateStr,advertisementJson);
+        }
+        redisTemplate.expire(dateStr,1,TimeUnit.DAYS);
     }
 }

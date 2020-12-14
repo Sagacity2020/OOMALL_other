@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AddressService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">address</a> &gt; <a href="index.source.html" class="el_package">cn.edu.xmu.address.service</a> &gt; <span class="el_source">AddressService.java</span></div><h1>AddressService.java</h1><pre class="source lang-java linenums">package cn.edu.xmu.address.service;
+
+import cn.edu.xmu.ooad.model.VoObject;
+import cn.edu.xmu.ooad.util.ReturnObject;
+import cn.edu.xmu.address.dao.AddressDao;
+import cn.edu.xmu.address.model.bo.Address;
+import com.github.pagehelper.PageInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+<span class="fc" id="L15">public class AddressService {</span>
+
+<span class="fc" id="L17">    private Logger logger = LoggerFactory.getLogger(AddressService.class);</span>
+
+    @Autowired
+    private AddressDao addressDao;
+
+    /**
+     * @author zrh
+     * @Created at 11/30 23:51
+     * @modified at 12/3 11:43
+     * @param address
+     * @return ReturnObject
+     */
+    @Transactional
+    public ReturnObject insertAddress(Address address)
+    {
+<span class="fc" id="L32">        ReturnObject&lt;Address&gt; returnObject=addressDao.insertAddress(address);</span>
+<span class="fc" id="L33">        return returnObject;</span>
+
+    }
+
+    /**
+     * @author zrh
+     * @Created at 12/1 0:22
+     * @param userId
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    public ReturnObject&lt;PageInfo&lt;VoObject&gt;&gt; selectAllAddreses(Long userId, Integer page, Integer pageSize) {
+<span class="fc" id="L46">        ReturnObject&lt;PageInfo&lt;VoObject&gt;&gt; returnObject= addressDao.selectAllAddress(userId,page,pageSize);</span>
+<span class="fc" id="L47">        return returnObject;</span>
+    }
+
+
+    /**
+     * @Created at 12/2 14:07
+     * @author zrh
+     * @param id
+     * @return
+     */
+    @Transactional
+    public ReturnObject setDefaultAddress(Long userId,Long id) {
+<span class="fc" id="L59">        return addressDao.cancelDefaultAddress(userId,id);</span>
+    }
+
+
+    /**
+     * @Created at 12/3 15:30
+     * @author zrh
+     * @param address
+     * @return
+     */
+    public ReturnObject updateAddress(Address address) {
+<span class="fc" id="L70">        return addressDao.updateAddressInfo(address);</span>
+
+    }
+
+    /**
+     * @Created at 12/3 19:26
+     * @author zrh
+     * @param id
+     * @return
+     */
+    public ReturnObject deleteAddress(Long id) {
+<span class="fc" id="L81">        return addressDao.deleteAddress(id);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

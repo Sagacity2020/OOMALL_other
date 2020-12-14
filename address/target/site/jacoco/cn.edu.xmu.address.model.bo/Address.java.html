@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Address.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">address</a> &gt; <a href="index.source.html" class="el_package">cn.edu.xmu.address.model.bo</a> &gt; <span class="el_source">Address.java</span></div><h1>Address.java</h1><pre class="source lang-java linenums">package cn.edu.xmu.address.model.bo;
+
+import cn.edu.xmu.ooad.model.VoObject;
+import cn.edu.xmu.address.model.po.AddressPo;
+import cn.edu.xmu.address.model.vo.AddressRetVo;
+import lombok.Data;
+
+import java.time.LocalDateTime;
+
+<span class="pc bnc" id="L10" title="All 72 branches missed.">@Data</span>
+public class Address implements VoObject {
+<span class="fc" id="L12">    private Long id;</span>
+<span class="fc" id="L13">    private Long   customer_id;</span>
+    private Long  regionId;
+    private String detail;
+    private String consignee;
+    private String mobile;
+<span class="fc" id="L18">    private byte  be_default;</span>
+<span class="fc" id="L19">    private LocalDateTime gmtCreate;</span>
+<span class="fc" id="L20">    private LocalDateTime gmtModified;</span>
+
+    public Long getRegionId() {
+<span class="fc" id="L23">        return regionId;</span>
+    }
+
+    public String getDetail() {
+<span class="fc" id="L27">        return detail;</span>
+    }
+
+    public String getConsignee() {
+<span class="fc" id="L31">        return consignee;</span>
+    }
+
+    public String getMobile() {
+<span class="fc" id="L35">        return mobile;</span>
+    }
+    @Override
+    public AddressRetVo createVo() {
+<span class="fc" id="L39">        return new AddressRetVo(this);</span>
+    }
+
+    @Override
+    public Object createSimpleVo() {
+<span class="nc" id="L44">        return null;</span>
+    }
+
+    public AddressPo getAddressPo(){
+<span class="fc" id="L48">        AddressPo po=new AddressPo();</span>
+<span class="fc" id="L49">        po.setCustomerId(this.customer_id);</span>
+<span class="fc" id="L50">        po.setConsignee(this.consignee);</span>
+<span class="fc" id="L51">        po.setDetail(this.detail);</span>
+<span class="fc" id="L52">        po.setMobile(this.mobile);</span>
+<span class="fc" id="L53">        po.setRegionId(this.regionId);</span>
+<span class="fc" id="L54">        po.setBeDefault(this.be_default);</span>
+<span class="fc" id="L55">        po.setGmtCreate(this.gmtCreate);</span>
+<span class="fc" id="L56">        po.setGmtModified(this.gmtModified);</span>
+<span class="fc" id="L57">        return po;</span>
+    }
+
+<span class="fc" id="L60">    public Address() {</span>
+<span class="fc" id="L61">    }</span>
+
+<span class="nc" id="L63">    public Address(AddressPo po) {</span>
+<span class="nc" id="L64">        this.id = po.getId();</span>
+<span class="nc" id="L65">        this.customer_id = po.getCustomerId();</span>
+<span class="nc" id="L66">        this.regionId = po.getRegionId();</span>
+<span class="nc" id="L67">        this.detail = po.getDetail();</span>
+<span class="nc" id="L68">        this.consignee = po.getConsignee();</span>
+<span class="nc" id="L69">        this.mobile = po.getMobile();</span>
+<span class="nc" id="L70">        this.be_default = po.getBeDefault();</span>
+<span class="nc" id="L71">        this.gmtCreate = po.getGmtCreate();</span>
+<span class="nc" id="L72">        this.gmtModified = po.getGmtModified();</span>
+<span class="nc" id="L73">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

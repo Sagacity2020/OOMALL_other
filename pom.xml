@@ -19,6 +19,7 @@
         <module>aftersale</module>
         <module>advertisement</module>
         <module>other-client</module>
+        <module>timeservice</module>
     </modules>
     <name>other</name>
 

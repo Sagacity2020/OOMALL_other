@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AddressDao.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">address</a> &gt; <a href="index.source.html" class="el_package">cn.edu.xmu.address.dao</a> &gt; <span class="el_source">AddressDao.java</span></div><h1>AddressDao.java</h1><pre class="source lang-java linenums">package cn.edu.xmu.address.dao;
+
+
+import cn.edu.xmu.ooad.model.VoObject;
+import cn.edu.xmu.ooad.util.ResponseCode;
+import cn.edu.xmu.ooad.util.ReturnObject;
+import cn.edu.xmu.address.mapper.AddressPoMapper;
+import cn.edu.xmu.address.model.bo.Address;
+import cn.edu.xmu.address.model.bo.AddressPage;
+import cn.edu.xmu.address.model.po.AddressPo;
+import cn.edu.xmu.address.model.po.AddressPoExample;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.stereotype.Repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @author zrh
+ * @Created at 12/6 19:49
+ *
+ */
+@Repository
+<span class="fc" id="L29">public class AddressDao {</span>
+
+<span class="fc" id="L31">    private static final Logger logger = LoggerFactory.getLogger(AddressDao.class);</span>
+
+    @Autowired
+    private AddressPoMapper addressPoMapper;
+
+    /**
+     * author zrh
+     * Created at 11/31 23:52
+     * @param address
+     * @return
+     */
+
+    public ReturnObject&lt;Address&gt; insertAddress(Address address){
+<span class="fc" id="L44">        AddressPo addressPo = address.getAddressPo();</span>
+<span class="fc" id="L45">        List&lt;AddressPo&gt; retObj=null;</span>
+        ReturnObject&lt;Address&gt; returnObject;
+<span class="fc" id="L47">        AddressPoExample addressPoExample= new AddressPoExample();</span>
+<span class="fc" id="L48">        AddressPoExample.Criteria criteria=addressPoExample.createCriteria();</span>
+<span class="fc" id="L49">        criteria.andCustomerIdEqualTo(address.getCustomer_id());</span>
+        try{
+<span class="fc" id="L51">            retObj=addressPoMapper.selectByExample(addressPoExample);</span>
+
+        }
+<span class="nc" id="L54">        catch (DataAccessException e){</span>
+<span class="nc" id="L55">            logger.debug(&quot;sql exception:&quot;+e.getMessage());</span>
+<span class="nc" id="L56">            returnObject= new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format(&quot;数据库错误：%s&quot;,e.getMessage()));</span>
+
+        }
+<span class="nc" id="L59">        catch (Exception e)</span>
+        {
+<span class="nc" id="L61">            logger.error(&quot;other exception :&quot;+e.getMessage());</span>
+<span class="nc" id="L62">            returnObject= new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format(&quot;严重错误&quot;,e.getMessage()));</span>
+<span class="pc" id="L63">        }</span>
+<span class="fc" id="L64">        int length=retObj.size();</span>
+<span class="fc" id="L65">        int maxAddressNum=20;</span>
+<span class="pc bpc" id="L66" title="1 of 2 branches missed.">        if(length==maxAddressNum){</span>
+<span class="nc" id="L67">            logger.error(&quot;地址簿达到上限&quot;);</span>
+<span class="nc" id="L68">            returnObject= new ReturnObject(ResponseCode.ADDRESS_OUTLIMIT,String.format(&quot;地址簿达到上限&quot;));</span>
+        }
+        else {
+            try{
+<span class="fc" id="L72">                int ret= addressPoMapper.insertSelective(addressPo);</span>
+<span class="pc bpc" id="L73" title="1 of 2 branches missed.">                if(ret==0)</span>
+                {
+<span class="nc" id="L75">                    logger.debug(&quot;insertAddress: insert address fail &quot;+addressPo.toString());</span>
+<span class="nc" id="L76">                    returnObject= new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format(&quot;新增失败：&quot;+addressPo.getCustomerId()));</span>
+                }
+                else {
+<span class="fc" id="L79">                    logger.debug(&quot;insertAddree: insert address=&quot;+addressPo.toString());</span>
+<span class="fc" id="L80">                    returnObject= new ReturnObject(address);</span>
+                }
+            }
+<span class="nc" id="L83">            catch (DataAccessException e) {</span>
+
+<span class="nc" id="L85">                    logger.debug(&quot;other sql exception : &quot; + e.getMessage());</span>
+<span class="nc" id="L86">                    returnObject= new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format(&quot;数据库错误：%s&quot;, e.getMessage()));</span>
+            }
+<span class="nc" id="L88">            catch (Exception e) {</span>
+                // 其他Exception错误
+<span class="nc" id="L90">                logger.error(&quot;other exception : &quot; + e.getMessage());</span>
+<span class="nc" id="L91">                returnObject= new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format(&quot;发生了严重的数据库错误：%s&quot;, e.getMessage()));</span>
+<span class="pc" id="L92">            }</span>
+        }
+<span class="fc" id="L94">        return returnObject;</span>
+
+
+    }
+
+
+    /**
+     * @Created at 12/1 0:23
+     * @author zrh
+     * @param userId
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    public ReturnObject&lt;PageInfo&lt;VoObject&gt;&gt; selectAllAddress(Long userId, Integer page, Integer pageSize) {
+<span class="fc" id="L109">        AddressPoExample example = new AddressPoExample();</span>
+<span class="fc" id="L110">        AddressPoExample.Criteria criteria = example.createCriteria();</span>
+<span class="fc" id="L111">        criteria.andCustomerIdEqualTo(userId);</span>
+        //分页查询
+<span class="fc" id="L113">        PageHelper.startPage(page, pageSize);</span>
+<span class="fc" id="L114">        logger.debug(&quot;page = &quot; + page + &quot;pageSize = &quot; + pageSize);</span>
+<span class="fc" id="L115">        List&lt;AddressPo&gt; addressPos=null;</span>
+        try {
+            //不加限定条件查询所有
+<span class="fc" id="L118">            addressPos = addressPoMapper.selectByExample(example);</span>
+<span class="fc" id="L119">            List&lt;VoObject&gt; ret = new ArrayList(addressPos.size());</span>
+<span class="fc bfc" id="L120" title="All 2 branches covered.">            for (AddressPo po : addressPos) {</span>
+<span class="fc" id="L121">                AddressPage addressPage = new AddressPage(po);</span>
+<span class="fc" id="L122">                ret.add(addressPage);</span>
+<span class="fc" id="L123">            }</span>
+<span class="fc" id="L124">            PageInfo&lt;VoObject&gt; addressPage = PageInfo.of(ret);</span>
+<span class="fc" id="L125">            return new ReturnObject&lt;&gt;(addressPage);</span>
+        }
+<span class="nc" id="L127">        catch (DataAccessException e){</span>
+<span class="nc" id="L128">            logger.error(&quot;selectAllAddress: DataAccessException:&quot; + e.getMessage());</span>
+<span class="nc" id="L129">            return new ReturnObject&lt;&gt;(ResponseCode.INTERNAL_SERVER_ERR, String.format(&quot;数据库错误：%s&quot;, e.getMessage()));</span>
+        }
+<span class="nc" id="L131">        catch (Exception e) {</span>
+            // 其他Exception错误
+<span class="nc" id="L133">            logger.error(&quot;other exception : &quot; + e.getMessage());</span>
+<span class="nc" id="L134">            return new ReturnObject&lt;&gt;(ResponseCode.INTERNAL_SERVER_ERR, String.format(&quot;发生了严重的数据库错误：%s&quot;, e.getMessage()));</span>
+        }
+    }
+
+    /**
+     * @Created at 12/2 14:04
+     * @author zrh
+     * @param id
+     * @return
+     */
+    public ReturnObject cancelDefaultAddress(Long userId,Long id) {
+<span class="fc" id="L145">        AddressPo po = addressPoMapper.selectByPrimaryKey(id);</span>
+<span class="fc bfc" id="L146" title="All 2 branches covered.">        if (po == null) {</span>
+<span class="fc" id="L147">            logger.debug(&quot;不存在 address id:&quot; + id);</span>
+<span class="fc" id="L148">            return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST);</span>
+<span class="pc bpc" id="L149" title="1 of 2 branches missed.">        } else if (!po.getCustomerId().equals(userId)){</span>
+<span class="nc" id="L150">            logger.debug(&quot;用户id不拥有该地址id&quot;);</span>
+<span class="nc" id="L151">            return  new ReturnObject(ResponseCode.RESOURCE_ID_OUTSCOPE);</span>
+        }else {
+<span class="fc" id="L153">            po.setBeDefault((byte) 1);</span>
+        }
+
+        ReturnObject returnObject;
+        int ret;
+        try {
+<span class="fc" id="L159">            ret = addressPoMapper.updateByPrimaryKeySelective(po);</span>
+<span class="pc bpc" id="L160" title="1 of 2 branches missed.">            if (ret == 0) {</span>
+<span class="nc" id="L161">                logger.info(&quot;地址不存在或已被删除，id =&quot; + id);</span>
+<span class="nc" id="L162">                returnObject = new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST);</span>
+
+            } else {
+<span class="fc" id="L165">                logger.info(&quot;地址 id =&quot; + id + &quot;的默认地址被设为普通地址&quot;);</span>
+<span class="fc" id="L166">                returnObject = new ReturnObject(ResponseCode.OK);</span>
+            }
+<span class="nc" id="L168">        } catch (DataAccessException e) {</span>
+<span class="nc" id="L169">            logger.error(&quot;数据库错误： &quot; + e.getMessage());</span>
+<span class="nc" id="L170">            returnObject = new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format(&quot;数据库错误：%s&quot;, e.getMessage()));</span>
+<span class="nc" id="L171">        } catch (Exception e) {</span>
+<span class="nc" id="L172">            logger.error(&quot;严重错误： &quot; + e.getMessage());</span>
+<span class="nc" id="L173">            returnObject = new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format(&quot;发生未知错误： %s&quot;, e.getMessage()));</span>
+<span class="pc" id="L174">        }</span>
+<span class="fc" id="L175">        return returnObject;</span>
+    }
+
+    /**
+     * @Created at 12/3 15:28
+     * @author zrh
+     * @param address
+     * @return
+     */
+    public ReturnObject updateAddressInfo(Address address) {
+<span class="fc" id="L185">         AddressPo addressPo = address.getAddressPo();</span>
+<span class="fc" id="L186">         ReturnObject returnObject=null;</span>
+<span class="fc" id="L187">         AddressPoExample addressPoExample=new AddressPoExample();</span>
+<span class="fc" id="L188">         AddressPoExample.Criteria criteria= addressPoExample.createCriteria();</span>
+<span class="fc" id="L189">         criteria.andIdEqualTo(address.getId());</span>
+<span class="fc" id="L190">         criteria.andCustomerIdEqualTo(address.getCustomer_id());</span>
+         try{
+<span class="fc" id="L192">             int ret =addressPoMapper.updateByExampleSelective(addressPo,addressPoExample);</span>
+<span class="fc bfc" id="L193" title="All 2 branches covered.">             if(ret == 0){</span>
+<span class="fc" id="L194">                 logger.debug(&quot;updateAddress: update address fail: &quot;+addressPo.toString());</span>
+<span class="fc" id="L195">                 returnObject=new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format(&quot;地址id不存在：&quot;+address.getId()));</span>
+
+             }
+             else {
+<span class="fc" id="L199">                 logger.debug(&quot;update address = &quot;+addressPo.toString());</span>
+<span class="fc" id="L200">                 returnObject =new ReturnObject(ResponseCode.OK);</span>
+             }
+<span class="nc" id="L202">         }catch (DataAccessException e){</span>
+<span class="nc" id="L203">             logger.debug(&quot;sql exception : &quot;+e.getMessage());</span>
+<span class="nc" id="L204">             returnObject =new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format(&quot;数据库错误, %s&quot;,e.getMessage()));</span>
+
+<span class="nc" id="L206">         }catch (Exception e){</span>
+<span class="nc" id="L207">             logger.error(&quot;other exception : &quot;+e.getMessage());</span>
+<span class="nc" id="L208">             returnObject =new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format(&quot;其他错误：%s&quot;,e.getMessage()));</span>
+<span class="pc" id="L209">         }</span>
+<span class="fc" id="L210">         return returnObject;</span>
+    }
+
+    /**
+     * @Created at 12/3 19:26
+     * @author zrh
+     * @param id
+     * @return
+     */
+    public ReturnObject deleteAddress(Long id) {
+<span class="fc" id="L220">            ReturnObject returnObject=null;</span>
+            try{
+<span class="fc" id="L222">                int ret=addressPoMapper.deleteByPrimaryKey(id);</span>
+<span class="fc bfc" id="L223" title="All 2 branches covered.">                if(ret==0)</span>
+                {
+<span class="fc" id="L225">                    logger.debug(&quot;delete address :id is not exist =&quot;+id);</span>
+<span class="fc" id="L226">                    returnObject= new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format(&quot;地址id不存在：&quot;+id));</span>
+
+                }
+                else {
+<span class="fc" id="L230">                    logger.debug(&quot;delete address id= &quot; + id);</span>
+<span class="fc" id="L231">                    returnObject = new ReturnObject(ResponseCode.OK);</span>
+                }
+            }
+<span class="nc" id="L234">            catch (DataAccessException e){</span>
+<span class="nc" id="L235">                logger.error(&quot;delete Address DataAccessException:&quot;+e.getMessage());</span>
+<span class="nc" id="L236">                returnObject = new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format(&quot;数据库错误：&quot;+e.getMessage()));</span>
+
+            }
+<span class="nc" id="L239">            catch (Exception e)</span>
+            {
+<span class="nc" id="L241">                logger.error(&quot;other exception:&quot;+e.getMessage());</span>
+<span class="nc" id="L242">                returnObject=new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format(&quot;其他错误：&quot;+e.getMessage()));</span>
+<span class="pc" id="L243">            }</span>
+<span class="fc" id="L244">            return  returnObject;</span>
+
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

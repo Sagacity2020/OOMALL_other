@@ -61,7 +61,7 @@ public class AdvertisementControllerTest {
         String responseString = null;
 
         try {
-            responseString = this.mvc.perform(post("/advertise/timesegments/1/advertisement").header("authorization", token).contentType("application/json;charset=UTF-8").content(advertisementJson))
+            responseString = this.mvc.perform(post("/advertise/shops/0/timesegments/1/advertisement").header("authorization", token).contentType("application/json;charset=UTF-8").content(advertisementJson))
                     .andExpect(status().isCreated())
                     .andExpect(content().contentType("application/json;charset=UTF-8"))
                     .andReturn().getResponse().getContentAsString();
@@ -87,7 +87,7 @@ public class AdvertisementControllerTest {
         String responseString = null;
 
         try {
-            responseString = this.mvc.perform(post("/advertise/timesegments/1/advertisement/121").header("authorization", token))
+            responseString = this.mvc.perform(post("/advertise/shops/0/timesegments/1/advertisement/121").header("authorization", token))
                     .andExpect(status().isCreated())
                     .andExpect(content().contentType("application/json;charset=UTF-8"))
                     .andReturn().getResponse().getContentAsString();
@@ -112,7 +112,7 @@ public class AdvertisementControllerTest {
         String expectedString="";
 
         try{
-            responseString=this.mvc.perform(get("/advertise/timesegments/2/advertisement?page=1&pageSize=2").header("authorization",token))
+            responseString=this.mvc.perform(get("/advertise/shops/0/timesegments/2/advertisement?page=1&pageSize=2").header("authorization",token))
                     .andExpect(status().isOk())
                     .andExpect(content().contentType("application/json;charset=UTF-8"))
                     .andReturn().getResponse().getContentAsString();
@@ -120,7 +120,7 @@ public class AdvertisementControllerTest {
             e.printStackTrace();
         }
 
-        expectedString="{\"errno\":0,\"data\":{\"total\":1,\"pages\":1,\"pageSize\":1,\"page\":1,\"list\":[{\"id\":122,\"link\":null,\"imagePath\":\"http://47.52.88.176/file/images/201610/1476498482597274807.jpg\",\"content\":null,\"segId\":2,\"state\":4,\"weight\":null,\"beDefault\":null,\"beginDate\":\"2020-12-15\",\"endDate\":\"2021-10-10\",\"repeat\":1}]},\"errmsg\":\"成功\"}";
+        expectedString="{\"errno\":0,\"data\":{\"total\":1,\"pages\":1,\"pageSize\":2,\"page\":1,\"list\":[{\"id\":122,\"link\":null,\"imagePath\":\"http://47.52.88.176/file/images/201610/1476498482597274807.jpg\",\"content\":null,\"segId\":2,\"state\":4,\"weight\":null,\"beDefault\":null,\"beginDate\":\"2020-12-15\",\"endDate\":\"2021-10-10\",\"repeat\":1}]},\"errmsg\":\"成功\"}";
         try{
             JSONAssert.assertEquals(expectedString, responseString, false);
         } catch (JSONException e) {
@@ -137,7 +137,7 @@ public class AdvertisementControllerTest {
         MockMultipartFile firstFile = new MockMultipartFile("img", "timg.png" , "multipart/form-data", new FileInputStream(file));
 
         String responseString = mvc.perform(MockMvcRequestBuilders
-                .multipart("/advertise/advertisement/123/uploadImg")
+                .multipart("/advertise/shops/0/advertisement/123/uploadImg")
                 .file(firstFile)
                 .header("authorization", token)
                 .contentType(MediaType.MULTIPART_FORM_DATA_VALUE))
@@ -147,5 +147,30 @@ public class AdvertisementControllerTest {
                 .getContentAsString();
         String expectedResponse = "{\"errno\":0,\"errmsg\":\"成功\"}";
         JSONAssert.assertEquals(expectedResponse, responseString, true);
+    }
+
+
+
+    @Test
+    public void getCurrentTest()throws Exception{
+        String expectedResponse = "";
+        String responseString = null;
+
+        try {
+            responseString = this.mvc.perform(get("/advertise/advertisement/current"))
+                    .andExpect(status().isOk())
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        expectedResponse="{\"errno\":0,\"data\":[{\"id\":124,\"link\":null,\"imagePath\":\"http://47.52.88.176/file/images/201610/1475992167803037996.jpg\",\"content\":null,\"segId\":4,\"state\":4,\"weight\":null,\"beDefault\":null,\"beginDate\":\"2020-12-15\",\"endDate\":\"2021-10-10\",\"repeat\":1},{\"id\":125,\"link\":null,\"imagePath\":\"http://47.52.88.176/file/images/201610/1476498085799000890.jpg\",\"content\":null,\"segId\":5,\"state\":4,\"weight\":null,\"beDefault\":null,\"beginDate\":\"2020-12-15\",\"endDate\":\"2021-10-10\",\"repeat\":1},{\"id\":126,\"link\":null,\"imagePath\":\"http://47.52.88.176/file/images/201610/1477275374163106414.jpg\",\"content\":null,\"segId\":6,\"state\":4,\"weight\":null,\"beDefault\":null,\"beginDate\":\"2020-12-15\",\"endDate\":\"2021-10-10\",\"repeat\":1},{\"id\":127,\"link\":null,\"imagePath\":\"http://47.52.88.176/file/images/201610/1477249392109367112.jpg\",\"content\":null,\"segId\":7,\"state\":4,\"weight\":null,\"beDefault\":null,\"beginDate\":\"2020-12-15\",\"endDate\":\"2021-10-10\",\"repeat\":1},{\"id\":128,\"link\":null,\"imagePath\":\"http://47.52.88.176/file/images/201611/1479267660182463918.jpg\",\"content\":null,\"segId\":8,\"state\":4,\"weight\":null,\"beDefault\":null,\"beginDate\":\"2020-12-15\",\"endDate\":\"2021-10-10\",\"repeat\":1},{\"id\":130,\"link\":null,\"imagePath\":\"http://47.52.88.176/file/images/201705/1494051740110225284.png\",\"content\":null,\"segId\":10,\"state\":4,\"weight\":null,\"beDefault\":null,\"beginDate\":\"2020-12-15\",\"endDate\":\"2021-10-10\",\"repeat\":1},{\"id\":135,\"link\":null,\"imagePath\":\"http://47.52.88.176/file/images/201707/1500428162371550836.jpg\",\"content\":null,\"segId\":15,\"state\":4,\"weight\":null,\"beDefault\":null,\"beginDate\":\"2020-12-15\",\"endDate\":\"2021-10-10\",\"repeat\":1},{\"id\":137,\"link\":null,\"imagePath\":\"http://47.52.88.176/file/images/201711/1510537813167240784.png\",\"content\":null,\"segId\":17,\"state\":4,\"weight\":null,\"beDefault\":null,\"beginDate\":\"2020-12-15\",\"endDate\":\"2021-10-10\",\"repeat\":1}],\"errmsg\":\"成功\"}";
+
+        try{
+            JSONAssert.assertEquals(expectedResponse,responseString,false);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }

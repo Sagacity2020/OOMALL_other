@@ -79,7 +79,7 @@ public class AdvertisementController {
             @ApiResponse(code = 603,message = "达到广告时段上限")
     })
     @Audit
-    @PostMapping("timesegments/{id}/advertisement")
+    @PostMapping("shops/{did}/timesegments/{id}/advertisement")
     public Object createAdvertisement(@PathVariable Long id, @Validated @RequestBody AdvertisementCreateVo vo, BindingResult bindingResult){
         if(logger.isDebugEnabled()){
             logger.debug("createAdvertisement id="+id+"vo="+vo);
@@ -104,7 +104,7 @@ public class AdvertisementController {
 
 
 
-/*
+
     @ApiOperation(value = "获取当前时段广告列表")
     @ApiResponses({
             @ApiResponse(code = 0,message = "成功")
@@ -118,10 +118,10 @@ public class AdvertisementController {
         LocalDate localDate=LocalDate.now();
         LocalTime localTime=LocalTime.now();
         ReturnObject returnObject=advertisementService.getCurrentAdvertisement(localDate,localTime);
-        return returnObject;
+        return Common.getListRetObject(returnObject);
     }
 
- */
+
 
 
 
@@ -137,7 +137,7 @@ public class AdvertisementController {
             @ApiResponse(code = 603,message = "达到广告时段上限")
     })
     @Audit
-    @PostMapping("timesegments/{tid}/advertisement/{id}")
+    @PostMapping("shops/{did}/timesegments/{tid}/advertisement/{id}")
     public Object insertAdvertisement(@PathVariable Long tid,@PathVariable Long id){
         if(logger.isDebugEnabled()){
             logger.debug("insertAdvertisement id="+id+"into tid="+tid);
@@ -168,7 +168,7 @@ public class AdvertisementController {
             @ApiResponse(code = 404,message = "参数不合法")
     })
     @Audit
-    @GetMapping("timesegments/{id}/advertisement")
+    @GetMapping("shops/{did}/timesegments/{id}/advertisement")
     public Object selectAdvertisementBySegId(@PathVariable Long id,
                                          @RequestParam(required = false, defaultValue = "1") Integer page,
                                          @RequestParam(required = false, defaultValue = "10") Integer pageSize){
@@ -200,7 +200,7 @@ public class AdvertisementController {
             @ApiResponse(code = 506, message = "该目录文件夹没有写入的权限")
     })
     @Audit
-    @PostMapping("/advertisement/{id}/uploadImg")
+    @PostMapping("shops/{did}/advertisement/{id}/uploadImg")
     public Object uploadImg(@PathVariable Long id,@RequestParam("img") MultipartFile multipartFile){
         logger.debug("uploadImg: id = "+ id +" img :" + multipartFile.getOriginalFilename());
         ReturnObject returnObject = advertisementService.uploadImg(id,multipartFile);
