@@ -1,0 +1,16 @@
+2020-12-13 16:56:03.865 [main] INFO  c.e.x.footprint.controller.FootPrintControllerTest - The following profiles are active: dev
+2020-12-13 16:56:23.672 [main] INFO  c.e.x.footprint.controller.FootPrintControllerTest - Started FootPrintControllerTest in 25.201 seconds (JVM running for 29.907)
+2020-12-13 16:56:25.150 [main] DEBUG c.e.x.footprint.controller.FootPrintControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEzMTY1NjI1MVA4IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc4NDk4ODUsInVzZXJJZCI6MSwiaWF0IjoxNjA3ODQ5Nzg1fQ.83qfH5jnX4dhOZ1ClPv0cuE7PZ3bO5pS3nhbOCdNdJA
+2020-12-13 16:56:25.261 [main] DEBUG c.edu.xmu.footprint.controller.FootprintController - insert Footprint userId:1
+2020-12-13 17:02:46.089 [main] INFO  c.e.x.footprint.controller.FootPrintControllerTest - The following profiles are active: dev
+2020-12-13 17:03:07.363 [main] INFO  c.e.x.footprint.controller.FootPrintControllerTest - Started FootPrintControllerTest in 26.549 seconds (JVM running for 30.444)
+2020-12-13 17:03:08.269 [main] DEBUG c.e.x.footprint.controller.FootPrintControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEzMTcwMzA4MjE1IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc4NTAyODgsInVzZXJJZCI6MSwiaWF0IjoxNjA3ODUwMTg4fQ.wHFmvNmHE-91BN28FR0OSWWpo3Hfb6ZeJkMODWwqWrM
+2020-12-13 17:03:08.357 [main] DEBUG c.edu.xmu.footprint.controller.FootprintController - insert Footprint userId:1
+2020-12-13 17:05:51.168 [main] INFO  c.e.x.footprint.controller.FootPrintControllerTest - The following profiles are active: dev
+2020-12-13 17:06:12.931 [main] INFO  c.e.x.footprint.controller.FootPrintControllerTest - Started FootPrintControllerTest in 27.74 seconds (JVM running for 31.682)
+2020-12-13 17:06:14.100 [main] DEBUG c.e.x.footprint.controller.FootPrintControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEzMTcwNjE0MDhNIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc4NTA0NzQsInVzZXJJZCI6MSwiaWF0IjoxNjA3ODUwMzc0fQ.cUhW9oLoREub-ABk1XZ3b-mwh2NhunkGj2_zGIvxfMM
+2020-12-13 17:06:14.205 [main] DEBUG c.edu.xmu.footprint.controller.FootprintController - insert Footprint userId:1
+2020-12-13 17:08:31.180 [main] INFO  c.e.x.footprint.controller.FootPrintControllerTest - The following profiles are active: dev
+2020-12-13 17:08:55.975 [main] INFO  c.e.x.footprint.controller.FootPrintControllerTest - Started FootPrintControllerTest in 31.949 seconds (JVM running for 37.863)
+2020-12-13 17:09:04.639 [main] DEBUG c.e.x.footprint.controller.FootPrintControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEzMTcwOTA0NTRRIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc4NTA2NDQsInVzZXJJZCI6MSwiaWF0IjoxNjA3ODUwNTQ0fQ.LlofJYl5QJwUAXW5UIlkEIDGPw-5etCvR236S4H6S8c
+2020-12-13 17:09:04.792 [main] DEBUG c.edu.xmu.footprint.controller.FootprintController - insert Footprint userId:1

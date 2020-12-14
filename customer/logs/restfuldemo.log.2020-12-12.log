@@ -1,0 +1,149 @@
+2020-12-12 20:55:11.972 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 32884 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 20:55:11.976 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 20:55:11.976 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 20:55:23.560 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 13.479 seconds (JVM running for 15.632)
+2020-12-12 20:56:16.831 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 11516 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 20:56:16.836 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 20:56:16.836 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 20:56:27.019 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 11.911 seconds (JVM running for 14.084)
+2020-12-12 20:56:31.411 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMjA1NjMxM0s0IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3Nzc4OTEsInVzZXJJZCI6MSwiaWF0IjoxNjA3Nzc3NzkxfQ.Nq7m4GxUISMKGvge1cK2PzGiHukPGT5b5m7K85mDelk
+2020-12-12 20:57:54.879 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 30840 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 20:57:54.882 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 20:57:54.883 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 20:58:05.384 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 12.221 seconds (JVM running for 14.221)
+2020-12-12 20:59:06.923 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 3748 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 20:59:06.926 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 20:59:06.927 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 20:59:17.070 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 11.861 seconds (JVM running for 13.898)
+2020-12-12 21:02:07.131 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 34000 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 21:02:07.135 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 21:02:07.141 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 21:02:17.597 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 12.266 seconds (JVM running for 14.322)
+2020-12-12 21:02:18.585 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 59460469111
+2020-12-12 21:03:52.548 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 6252 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 21:03:52.551 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 21:03:52.552 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 21:04:03.472 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 12.66 seconds (JVM running for 14.684)
+2020-12-12 21:12:52.256 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 9640 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 21:12:52.260 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 21:12:52.261 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 21:13:02.087 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 11.608 seconds (JVM running for 13.71)
+2020-12-12 21:16:50.710 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 33028 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 21:16:50.714 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 21:16:50.714 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 21:17:00.510 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 11.505 seconds (JVM running for 13.499)
+2020-12-12 21:21:25.002 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 29544 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 21:21:25.004 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 21:21:25.005 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 21:21:34.874 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 11.621 seconds (JVM running for 13.547)
+2020-12-12 21:21:35.481 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMjEyMTM1NDVGIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NzkzOTUsInVzZXJJZCI6MSwiaWF0IjoxNjA3Nzc5Mjk1fQ.TsNt7wTrn0wEZT_5p4wmnje-9kFPqwcXS3np4zTRDsY
+2020-12-12 21:26:45.609 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 19784 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 21:26:45.612 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 21:26:45.612 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 21:26:55.109 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 11.169 seconds (JVM running for 12.812)
+2020-12-12 21:26:55.755 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMjEyNjU1NzM0IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3Nzk3MTUsInVzZXJJZCI6MSwiaWF0IjoxNjA3Nzc5NjE1fQ.8jxBL_uvjafkPkAyFcYuRyMxGnagKQMHwCPVU9FZDd4
+2020-12-12 21:28:29.006 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 30024 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 21:28:29.008 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 21:28:29.009 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 21:28:38.482 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 11.182 seconds (JVM running for 12.926)
+2020-12-12 21:28:38.970 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMjEyODM4OVU5IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3Nzk4MTgsInVzZXJJZCI6MSwiaWF0IjoxNjA3Nzc5NzE4fQ.IcWNngVjjtPck4CAE3V8R2DNBQBKao9tPF4UrE2mKD0
+2020-12-12 21:28:39.065 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerAll
+2020-12-12 21:31:10.570 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 33428 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 21:31:10.574 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 21:31:10.574 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 21:31:22.255 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 13.512 seconds (JVM running for 15.615)
+2020-12-12 21:31:23.034 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMjEzMTIzMDBKIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3Nzk5ODMsInVzZXJJZCI6MSwiaWF0IjoxNjA3Nzc5ODgzfQ.Hm__O_Tc2jB3FoMONfJIw8LnM0LeGdsmdxZFY4F19hg
+2020-12-12 21:35:40.569 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 11132 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 21:35:40.572 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 21:35:40.573 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 21:35:52.433 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 13.677 seconds (JVM running for 15.689)
+2020-12-12 21:35:53.225 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMjEzNTUzMllUIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3ODAyNTMsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzgwMTUzfQ.mYWhNTOheaXlFCAsW8o55tcmXmoU2Ea0N2gma5oRz4c
+2020-12-12 21:44:06.351 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 15152 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 21:44:06.355 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 21:44:06.355 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 21:44:16.916 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 12.314 seconds (JVM running for 14.426)
+2020-12-12 21:44:17.787 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMjE0NDE3N1hMIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3ODA3NTcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzgwNjU3fQ.foB4HunuY83G-hOdtCiIivtvDx4N1MMmBrR9i_r8lnA
+2020-12-12 21:51:53.610 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 34332 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 21:51:53.615 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 21:51:53.616 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 21:52:04.056 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 13.032 seconds (JVM running for 14.938)
+2020-12-12 21:52:04.907 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMjE1MjA0OFRDIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3ODEyMjQsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzgxMTI0fQ.kmJ6jNAK7FZti3j5unDIDK39RbNbpjKtHnM8115llEs
+2020-12-12 21:52:05.060 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerAll
+2020-12-12 21:53:34.813 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 17164 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 21:53:34.816 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 21:53:34.816 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 21:53:46.629 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 13.572 seconds (JVM running for 15.757)
+2020-12-12 21:53:47.444 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMjE1MzQ3NFJNIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3ODEzMjcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzgxMjI3fQ.Zr0UdTepOESQaT--TMGQ92dnYswsEy1KNuGu9W7TcSY
+2020-12-12 21:55:13.381 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 9908 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 21:55:13.385 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 21:55:13.385 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 21:55:23.557 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 11.94 seconds (JVM running for 14.346)
+2020-12-12 21:55:24.202 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMjE1NTI0MUUzIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3ODE0MjQsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzgxMzI0fQ.A-vUh1TN47EiIRVH_JhraH08cmcJymmzURX9SNWj1C4
+2020-12-12 21:56:07.820 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 24532 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 21:56:07.823 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 21:56:07.823 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 21:56:17.779 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 11.677 seconds (JVM running for 13.671)
+2020-12-12 21:56:18.339 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMjE1NjE4M1JPIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3ODE0NzgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzgxMzc4fQ.wuCnRWId9AmXbZwfM2lmbL_Xz10NF95_zdDLlXHRkfM
+2020-12-12 21:57:36.359 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 9020 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 21:57:36.363 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 21:57:36.363 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 21:57:48.193 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 13.754 seconds (JVM running for 16.894)
+2020-12-12 21:57:48.907 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMjE1NzQ4OEswIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3ODE1NjgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzgxNDY4fQ.JulqlFamAhtQXEezR1c9u9r7M0TIwLsi7CUmJ4fBQjM
+2020-12-12 21:57:52.073 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 1
+2020-12-12 22:00:03.563 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 23408 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 22:00:03.567 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 22:00:03.567 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 22:00:15.078 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 13.327 seconds (JVM running for 15.86)
+2020-12-12 22:00:15.898 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMjIwMDE1ODQ3IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3ODE3MTUsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzgxNjE1fQ.FBmcbn7Ilk6Y7c71Ez9l-YR98nnXgVTzC-0sX4mlQM0
+2020-12-12 22:03:53.948 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 9556 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 22:03:53.952 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 22:03:53.952 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 22:04:07.971 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 16.254 seconds (JVM running for 19.909)
+2020-12-12 22:04:08.940 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMjIwNDA4OUdVIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3ODE5NDgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzgxODQ4fQ.os4y6pRe-7xFb63OQEakgq1a0OytCLLQdL2IYzz4DzY
+2020-12-12 22:55:43.843 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 12608 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 22:55:43.849 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 22:55:43.849 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 22:55:59.696 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 18.226 seconds (JVM running for 21.545)
+2020-12-12 22:56:00.809 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMjI1NjAwNzFaIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3ODUwNjAsInVzZXJJZCI6MSwiaWF0IjoxNjA3Nzg0OTYwfQ.Z19a2Zh4Gqyr7vNwvTsGJtgqmDdYcSFIZ_RqDolL-YU
+2020-12-12 22:59:51.635 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 25152 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 22:59:51.642 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 22:59:51.643 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 23:00:05.500 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 16.362 seconds (JVM running for 19.45)
+2020-12-12 23:00:06.308 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMjMwMDA2MjhGIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3ODUzMDYsInVzZXJJZCI6MSwiaWF0IjoxNjA3Nzg1MjA2fQ.JPVZkouKC5ZX1do4pzAGwveM94vVKzBdaWDmT7up3Q0
+2020-12-12 23:00:08.935 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 1
+2020-12-12 23:01:41.993 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 20608 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 23:01:42.008 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 23:01:42.010 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 23:02:35.858 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 3172 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 23:02:35.865 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 23:02:35.866 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 23:02:49.211 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 15.988 seconds (JVM running for 19.718)
+2020-12-12 23:03:29.379 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 26072 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 23:03:29.383 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 23:03:29.383 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 23:03:41.999 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 15.022 seconds (JVM running for 17.778)
+2020-12-12 23:03:43.147 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 59460469111
+2020-12-12 23:04:55.888 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 31832 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 23:04:55.912 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 23:04:55.913 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 23:05:09.385 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 15.586 seconds (JVM running for 18.289)
+2020-12-12 23:05:12.350 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 1
+2020-12-12 23:07:52.827 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 35704 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 23:07:52.831 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 23:07:52.832 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 23:08:05.578 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 15.014 seconds (JVM running for 17.9)
+2020-12-12 23:08:06.573 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 59460469111
+2020-12-12 23:10:13.460 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 21424 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 23:10:13.465 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 23:10:13.466 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 23:10:25.419 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 14.406 seconds (JVM running for 16.595)
+2020-12-12 23:10:26.277 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 1
+2020-12-12 23:11:13.451 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 24024 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 23:11:13.455 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 23:11:13.455 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 23:11:24.898 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 13.5 seconds (JVM running for 15.539)
+2020-12-12 23:11:25.841 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 1
+2020-12-12 23:18:36.390 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 9368 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-12 23:18:36.394 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-12 23:18:36.394 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-12 23:18:47.672 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 13.334 seconds (JVM running for 15.542)

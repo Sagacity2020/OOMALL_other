@@ -20,6 +20,12 @@
         <module>advertisement</module>
         <module>other-client</module>
         <module>timeservice</module>
+        <module>cart</module>
+        <module>address</module>
+        <module>goods-client</module>
+        <module>customer</module>
+        <module>footprint</module>
+        <module>favoriteservice</module>
     </modules>
     <name>other</name>
 

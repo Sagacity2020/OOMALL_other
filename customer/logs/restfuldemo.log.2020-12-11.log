@@ -1,0 +1,29 @@
+2020-12-11 20:38:19.331 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 31632 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-11 20:38:19.337 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-11 20:38:19.338 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-11 20:38:32.223 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 14.317 seconds (JVM running for 17.923)
+2020-12-11 20:39:26.168 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 18420 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-11 20:39:26.175 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-11 20:39:26.175 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-11 20:39:38.053 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 13.214 seconds (JVM running for 16.007)
+2020-12-11 20:40:12.909 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - resetPassword
+2020-12-11 20:42:33.910 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 13736 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-11 20:42:33.915 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-11 20:42:33.916 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-11 20:42:45.457 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 12.597 seconds (JVM running for 15.175)
+2020-12-11 20:42:48.912 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - resetPassword
+2020-12-11 20:51:07.573 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 20360 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-11 20:51:07.577 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-11 20:51:07.578 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-11 20:51:18.596 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 12.094 seconds (JVM running for 14.712)
+2020-12-11 20:51:19.317 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - modifyPassword
+2020-12-11 20:54:06.944 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 33472 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-11 20:54:06.947 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-11 20:54:06.947 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-11 20:54:17.848 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 12.067 seconds (JVM running for 14.621)
+2020-12-11 20:54:18.623 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - resetPassword
+2020-12-11 20:54:55.858 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Starting CustomerControllerTest on LAPTOP-GCR34GQU with PID 29384 (started by 向姝可 in D:\OOMALL_other\customer)
+2020-12-11 20:54:55.862 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-11 20:54:55.863 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-11 20:55:05.964 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 11.07 seconds (JVM running for 13.672)
+2020-12-11 20:55:06.867 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - modifyPassword

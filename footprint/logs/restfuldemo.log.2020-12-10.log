@@ -1,0 +1,12 @@
+2020-12-10 23:12:04.897 [main] INFO  c.e.x.footprint.controller.FootPrintControllerTest - Starting FootPrintControllerTest on LAPTOP-GCR34GQU with PID 25580 (started by 向姝可 in D:\OOMALL_other\footprint)
+2020-12-10 23:12:04.899 [main] DEBUG c.e.x.footprint.controller.FootPrintControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 23:12:04.900 [main] INFO  c.e.x.footprint.controller.FootPrintControllerTest - The following profiles are active: dev
+2020-12-10 23:12:15.965 [main] INFO  c.e.x.footprint.controller.FootPrintControllerTest - Started FootPrintControllerTest in 13.443 seconds (JVM running for 15.576)
+2020-12-10 23:12:16.770 [main] DEBUG c.e.x.footprint.controller.FootPrintControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjMxMjE2N0RTIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MTMyMzYsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjEzMTM2fQ.HZ2f4H1Gvi90jEKV6icn47x9eXbGsRLHeGcPy-ZTsPU
+2020-12-10 23:12:16.845 [main] DEBUG c.edu.xmu.footprint.controller.FootprintController - insert Footprint userId:null
+2020-12-10 23:13:30.215 [main] INFO  c.e.x.footprint.controller.FootPrintControllerTest - Starting FootPrintControllerTest on LAPTOP-GCR34GQU with PID 21432 (started by 向姝可 in D:\OOMALL_other\footprint)
+2020-12-10 23:13:30.219 [main] DEBUG c.e.x.footprint.controller.FootPrintControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-10 23:13:30.220 [main] INFO  c.e.x.footprint.controller.FootPrintControllerTest - The following profiles are active: dev
+2020-12-10 23:13:41.826 [main] INFO  c.e.x.footprint.controller.FootPrintControllerTest - Started FootPrintControllerTest in 13.631 seconds (JVM running for 15.891)
+2020-12-10 23:13:42.958 [main] DEBUG c.e.x.footprint.controller.FootPrintControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEwMjMxMzQyOUUwIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc2MTMzMjIsInVzZXJJZCI6MSwiaWF0IjoxNjA3NjEzMjIyfQ.t4F4WDMDNO72xmOiTOTHm9z7nn5WhNl-hc4EOI9Ascg
+2020-12-10 23:13:43.074 [main] DEBUG c.edu.xmu.footprint.controller.FootprintController - insert Footprint userId:1

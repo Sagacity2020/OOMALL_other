@@ -1,0 +1,5 @@
+2020-12-14 19:51:43.411 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-14 19:52:33.889 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 55.317 seconds (JVM running for 58.676)
+2020-12-14 19:52:35.446 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE0MTk1MjM1NFpDIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc5NDY4NTUsInVzZXJJZCI6MSwiaWF0IjoxNjA3OTQ2NzU1fQ.kYk3ecKLIG-T8z0a3kX2d5rT3p61HLgbGDhEFSADG-A
+2020-12-14 19:52:35.602 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - banCustomer: id = 2
+2020-12-14 19:52:35.987 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - 用户 id = 2 的状态修改为 封禁

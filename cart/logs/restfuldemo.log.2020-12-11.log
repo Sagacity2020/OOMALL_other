@@ -1,0 +1,36 @@
+2020-12-11 17:49:09.806 [main] INFO  cn.edu.xmu.cart.controller.CartControllerTest - Starting CartControllerTest on LAPTOP-FJACK3KC with PID 8716 (started by 张rh in D:\JavaEE\Project\OOMALL_other\cart)
+2020-12-11 17:49:09.809 [main] DEBUG cn.edu.xmu.cart.controller.CartControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-11 17:49:09.809 [main] INFO  cn.edu.xmu.cart.controller.CartControllerTest - The following profiles are active: dev
+2020-12-11 17:49:16.684 [main] INFO  cn.edu.xmu.cart.controller.CartControllerTest - Started CartControllerTest in 7.245 seconds (JVM running for 8.877)
+2020-12-11 17:49:17.135 [main] DEBUG cn.edu.xmu.cart.controller.CartControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjExMTc0OTE3MUFGIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NjgwMjU3LCJ1c2VySWQiOjEsImlhdCI6MTYwNzY4MDE1N30.jphBD0hmO5L1Qsq4X14rHXLwj5SWquVvqU1j-eQ9PxM
+2020-12-11 17:49:17.220 [main] DEBUG cn.edu.xmu.cart.controller.CartController - userId: 1
+2020-12-11 17:51:13.557 [main] INFO  cn.edu.xmu.cart.controller.CartControllerTest - Starting CartControllerTest on LAPTOP-FJACK3KC with PID 6440 (started by 张rh in D:\JavaEE\Project\OOMALL_other\cart)
+2020-12-11 17:51:13.560 [main] DEBUG cn.edu.xmu.cart.controller.CartControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-11 17:51:13.560 [main] INFO  cn.edu.xmu.cart.controller.CartControllerTest - The following profiles are active: dev
+2020-12-11 17:51:19.659 [main] INFO  cn.edu.xmu.cart.controller.CartControllerTest - Started CartControllerTest in 6.463 seconds (JVM running for 7.756)
+2020-12-11 17:51:20.050 [main] DEBUG cn.edu.xmu.cart.controller.CartControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjExMTc1MTIwMFVXIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NjgwMzgwLCJ1c2VySWQiOjMsImlhdCI6MTYwNzY4MDI4MH0.Nzd0CFc26Fr5C1Lq5-5LUQwN49_JJgrQhYbyNw4WwGI
+2020-12-11 17:51:20.131 [main] DEBUG cn.edu.xmu.cart.controller.CartController - userId: 3
+2020-12-11 18:09:21.345 [main] INFO  cn.edu.xmu.cart.controller.CartControllerTest - Starting CartControllerTest on LAPTOP-FJACK3KC with PID 18752 (started by 张rh in D:\JavaEE\Project\OOMALL_other\cart)
+2020-12-11 18:09:21.349 [main] DEBUG cn.edu.xmu.cart.controller.CartControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-11 18:09:21.349 [main] INFO  cn.edu.xmu.cart.controller.CartControllerTest - The following profiles are active: dev
+2020-12-11 18:09:27.700 [main] INFO  cn.edu.xmu.cart.controller.CartControllerTest - Started CartControllerTest in 6.742 seconds (JVM running for 8.027)
+2020-12-11 18:09:28.061 [main] DEBUG cn.edu.xmu.cart.controller.CartControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjExMTgwOTI4MEpUIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NjgxNDY4LCJ1c2VySWQiOjEsImlhdCI6MTYwNzY4MTM2OH0.oq5uwRdGWHaBTlRe-UPsP6RfT3862SRgtT6BE6vF8LI
+2020-12-11 18:09:28.143 [main] DEBUG cn.edu.xmu.cart.controller.CartController - delete cart id= 1
+2020-12-11 18:09:52.388 [main] INFO  cn.edu.xmu.cart.controller.CartControllerTest - Starting CartControllerTest on LAPTOP-FJACK3KC with PID 13888 (started by 张rh in D:\JavaEE\Project\OOMALL_other\cart)
+2020-12-11 18:09:52.392 [main] DEBUG cn.edu.xmu.cart.controller.CartControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-11 18:09:52.392 [main] INFO  cn.edu.xmu.cart.controller.CartControllerTest - The following profiles are active: dev
+2020-12-11 18:09:58.642 [main] INFO  cn.edu.xmu.cart.controller.CartControllerTest - Started CartControllerTest in 6.603 seconds (JVM running for 7.878)
+2020-12-11 18:09:59.025 [main] DEBUG cn.edu.xmu.cart.controller.CartControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjExMTgwOTU4OVE0IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NjgxNDk4LCJ1c2VySWQiOjEsImlhdCI6MTYwNzY4MTM5OH0.jQM9mZeCc4UUUSu6r-58Kn4aObKE-P59JKsu7JX2lgE
+2020-12-11 18:09:59.113 [main] DEBUG cn.edu.xmu.cart.controller.CartController - delete cart id= 1
+2020-12-11 18:11:38.037 [main] INFO  cn.edu.xmu.cart.controller.CartControllerTest - Starting CartControllerTest on LAPTOP-FJACK3KC with PID 22236 (started by 张rh in D:\JavaEE\Project\OOMALL_other\cart)
+2020-12-11 18:11:38.041 [main] DEBUG cn.edu.xmu.cart.controller.CartControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-11 18:11:38.041 [main] INFO  cn.edu.xmu.cart.controller.CartControllerTest - The following profiles are active: dev
+2020-12-11 18:11:44.858 [main] INFO  cn.edu.xmu.cart.controller.CartControllerTest - Started CartControllerTest in 7.19 seconds (JVM running for 8.505)
+2020-12-11 18:11:45.235 [main] DEBUG cn.edu.xmu.cart.controller.CartControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjExMTgxMTQ1MjVIIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NjgxNjA1LCJ1c2VySWQiOjEsImlhdCI6MTYwNzY4MTUwNX0.kQHC5fvT4Of1Tb-TrhMSWvmIjqhROEoEjbyvQ2V7CzE
+2020-12-11 18:11:45.321 [main] DEBUG cn.edu.xmu.cart.controller.CartController - delete cart id= 1
+2020-12-11 18:12:34.191 [main] INFO  cn.edu.xmu.cart.controller.CartControllerTest - Starting CartControllerTest on LAPTOP-FJACK3KC with PID 20600 (started by 张rh in D:\JavaEE\Project\OOMALL_other\cart)
+2020-12-11 18:12:34.194 [main] DEBUG cn.edu.xmu.cart.controller.CartControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-11 18:12:34.194 [main] INFO  cn.edu.xmu.cart.controller.CartControllerTest - The following profiles are active: dev
+2020-12-11 18:12:40.402 [main] INFO  cn.edu.xmu.cart.controller.CartControllerTest - Started CartControllerTest in 6.565 seconds (JVM running for 7.838)
+2020-12-11 18:12:40.772 [main] DEBUG cn.edu.xmu.cart.controller.CartControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjExMTgxMjQwN1BKIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NjgxNjYwLCJ1c2VySWQiOjEsImlhdCI6MTYwNzY4MTU2MH0.RD52q4lhNfGtHbPeDB7K61oAEubAhD46GP_H_RTQJfc
+2020-12-11 18:12:40.855 [main] DEBUG cn.edu.xmu.cart.controller.CartController - delete cart id= 4

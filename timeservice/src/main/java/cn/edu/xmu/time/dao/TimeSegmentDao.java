@@ -10,6 +10,7 @@ import cn.edu.xmu.time.model.po.TimeSegmentPo;
 import cn.edu.xmu.time.model.po.TimeSegmentPoExample;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,7 @@ public class TimeSegmentDao {
      * @param pageSize 每页大小
      * @return
      * @Date:  2020/12/6 21:50
-    */
+     */
 
     public ReturnObject<PageInfo<VoObject>> selectAdTimeSegments(Integer pageNum, Integer pageSize)
     {
@@ -131,9 +132,9 @@ public class TimeSegmentDao {
 //                logger.debug("updateTimeSegment: have same timeSegment = " + timeSegmentPo.getBeginTime()+timeSegmentPo.getEndTime());
 //                retObj = new ReturnObject<>(ResponseCode.TIMESEG_CONFLICT, String.format("时间段重复：" + timeSegmentPo.getBeginTime()+timeSegmentPo.getEndTime()));
 //            } else {
-                // 其他数据库错误
-                logger.debug("other sql exception : " + e.getMessage());
-                retObj = new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
+            // 其他数据库错误
+            logger.debug("other sql exception : " + e.getMessage());
+            retObj = new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
         }
         catch (Exception e) {
             // 其他Exception错误
@@ -154,31 +155,28 @@ public class TimeSegmentDao {
         ReturnObject<Object> retObj = null;
 
         try {
+            //System.out.println("删除时间段");
+            logger.debug("deleteAdTimeSegment: " + id);
             int ret = timeSegmentPoMapper.deleteByPrimaryKey(id);
             if (ret == 0) {
                 logger.debug("deleteAdTimeSegment: id not exist = " + id);
-                retObj = new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, String.format("时间段id不存在：" + id));
+                return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, String.format("时间段id不存在：" + id));
             }
             else{
-                retObj= new ReturnObject(ResponseCode.OK);
+                //iAdService.updateAdSegId(id);
+                return new ReturnObject(ResponseCode.OK);
             }
-//        else {
-//            //这个时间段的广告。。。
-//            }
         }catch (DataAccessException e){
             logger.debug("other sql exception : " + e.getMessage());
-            retObj = new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
         }
-
         catch (Exception e) {
             // 其他Exception错误
             logger.error("other exception : " + e.getMessage());
-            retObj = new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
         }
-        return retObj;
+
     }
-
-
 
     public ReturnObject<Object> getTimesegmentById(Long id){
         TimeSegmentPo po=new TimeSegmentPo();
