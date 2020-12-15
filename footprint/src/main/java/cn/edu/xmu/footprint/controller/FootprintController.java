@@ -17,6 +17,8 @@ import springfox.documentation.annotations.ApiIgnore;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.servlet.http.HttpServletResponse;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  ** @author 向姝可
@@ -33,21 +35,21 @@ public class FootprintController {
     @Autowired
     private FootprintService footprintService;
 
-    @ApiOperation(value = "增加足迹", produces = "application/json")
-    @Audit
-    @ApiImplicitParams({
-            @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
-            @ApiImplicitParam(paramType = "path", dataType = "integer", name = "goodsSkuId", value = "skuid", required = true)
-    })
-    @ApiResponses({
-            @ApiResponse(code = 0, message = "成功"),
-    })
-    @PostMapping("skus/{id}/footprints")
-    public Object insertFootprint(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId, @PathVariable("id") Long goodsSkuId){
-        logger.debug("insert Footprint userId:" + userId);
-        ReturnObject<VoObject> retObject = footprintService.insertFootprint(userId, goodsSkuId);
-        return Common.decorateReturnObject(retObject);
-    }
+//    @ApiOperation(value = "增加足迹", produces = "application/json")
+//    @Audit
+//    @ApiImplicitParams({
+//            @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
+//            @ApiImplicitParam(paramType = "path", dataType = "integer", name = "goodsSkuId", value = "skuid", required = true)
+//    })
+//    @ApiResponses({
+//            @ApiResponse(code = 0, message = "成功"),
+//    })
+//    @PostMapping("skus/{id}/footprints")
+//    public Object insertFootprint(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId, @PathVariable("id") Long goodsSkuId){
+//        logger.debug("insert Footprint userId:" + userId);
+//        ReturnObject<VoObject> retObject = footprintService.insertFootprint(userId, goodsSkuId);
+//        return Common.decorateReturnObject(retObject);
+//    }
 
     @ApiOperation(value = "管理员查看浏览记录", produces = "application/json")
     @Audit
@@ -65,9 +67,16 @@ public class FootprintController {
                                @RequestParam(required = false, defaultValue = "1")  Integer page,
                                @RequestParam(required = false, defaultValue = "10")  Integer pageSize)  {
              Object object = null;
+             DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+             LocalDateTime beginLdt = LocalDateTime.parse(beginTime,df);
+             LocalDateTime endLdt = LocalDateTime.parse(endTime,df);
+              if(beginLdt.isAfter(endLdt)){
+                     return Common.getNullRetObj(new ReturnObject<>(ResponseCode.Log_Bigger), httpServletResponse);
+             }
              if(page<=0||pageSize<=0){
                      object = Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID), httpServletResponse);
-             }else{
+             }
+             else{
                     ReturnObject<PageInfo<VoObject>> returnObject = footprintService.getFootprint(userId,beginTime,endTime, page, pageSize);
                     //logger.debug("findUserById: getUsers = " + returnObject);
                     object = Common.getPageRetObject(returnObject);

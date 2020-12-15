@@ -112,7 +112,7 @@ public class CustomerDao {
         return retObj;
     }
 
-    public ReturnObject getCustomerById(Long userId){
+    public ReturnObject<Customer> getCustomerById(Long userId){
         CustomerPo customer=new CustomerPo();
         ReturnObject retObj=null;
         try{
@@ -425,7 +425,7 @@ public class CustomerDao {
     }
 
     public Boolean getPointFromRefund(Long userId,Integer point){
-        CustomerPo po=new CustomerPo();
+        CustomerPo po=null;
          try{
              po=customerPoMapper.selectByPrimaryKey(userId);
          }catch (DataAccessException e) {
@@ -459,5 +459,46 @@ public class CustomerDao {
              }
          }
          return true;
+    }
+
+    public Boolean minusPoint(Long userId,Integer point){
+        CustomerPo po=null;
+        try{
+            po=customerPoMapper.selectByPrimaryKey(userId);
+        }catch (DataAccessException e) {
+            // 数据库错误
+            logger.error("数据库错误：" + e.getMessage());
+            return false;
+        } catch (Exception e) {
+            // 属未知错误
+            logger.error("严重错误：" + e.getMessage());
+            return false;
+        }
+        if(po==null) {
+            logger.debug("用户不存在");
+            return false;
+        }else{
+            if(po.getPoint()<point){
+                logger.debug("返点不足");
+                return false;
+            }
+            Customer bo=new Customer(po);
+            CustomerPo newPo=bo.createUpdatePointPo(bo.getPoint()-point);
+            try{
+                int ret=customerPoMapper.updateByPrimaryKeySelective(newPo);
+                if(ret==0) {
+                    logger.debug("更新返点失败");
+                    return false;}
+            }catch (DataAccessException e) {
+                // 数据库错误
+                logger.error("数据库错误：" + e.getMessage());
+                return false;
+            } catch (Exception e) {
+                // 属未知错误
+                logger.error("严重错误：" + e.getMessage());
+                return false;
+            }
+        }
+        return true;
     }
 }

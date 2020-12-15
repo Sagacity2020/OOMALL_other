@@ -30,23 +30,22 @@ public class FootprintService {
     @Autowired
     private FootprintDao footprintDao;
 
-    //@DubboReference(version = "0.0.1-SNAPSHOT")
-   // ICustomerService iCustomerService;
 
-    public ReturnObject<VoObject> insertFootprint(Long userId, Long goodsSkuId) {
-        Footprint footprint=new Footprint();
-        footprint.setCustomerId(userId);
-        footprint.setGoodsSkuId(goodsSkuId);
-        footprint.setGmtCreate(LocalDateTime.now());
-        ReturnObject<Footprint> retObj=footprintDao.insertFootprint(footprint);
-        ReturnObject<VoObject> ret = null;
-        if (retObj.getCode().equals(ResponseCode.OK)) {
-            ret = new ReturnObject<>(retObj.getData());
-        } else {
-            ret = new ReturnObject<>(retObj.getCode(), retObj.getErrmsg());
-        }
-        return ret;
-    }
+
+//    public ReturnObject<VoObject> insertFootprint(Long userId, Long goodsSkuId) {
+//        Footprint footprint=new Footprint();
+//        footprint.setCustomerId(userId);
+//        footprint.setGoodsSkuId(goodsSkuId);
+//        footprint.setGmtCreate(LocalDateTime.now());
+//        ReturnObject<Footprint> retObj=footprintDao.insertFootprint(footprint);
+//        ReturnObject<VoObject> ret = null;
+//        if (retObj.getCode().equals(ResponseCode.OK)) {
+//            ret = new ReturnObject<>(retObj.getData());
+//        } else {
+//            ret = new ReturnObject<>(retObj.getCode(), retObj.getErrmsg());
+//        }
+//        return ret;
+//    }
 
     public ReturnObject<PageInfo<VoObject>> getFootprint(Long userId,String beginTime,String endTime,Integer page, Integer pagesize){
         PageHelper.startPage(page, pagesize);
