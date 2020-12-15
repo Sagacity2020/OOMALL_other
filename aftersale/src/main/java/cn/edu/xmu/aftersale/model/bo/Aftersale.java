@@ -234,10 +234,10 @@ public class Aftersale implements VoObject {
 
         po.setId(id);
         po.setConclusion(vo.getConclusion());
-        if(vo.getConfrim().equals(true) && type.intValue()==0){
+        if(vo.getConfrim().equals(true) && (type.intValue()==0 || type.intValue()==2)){
             po.setState(State.DILIVERWAIT.getCode().byteValue());
         }
-        else if(vo.getConfrim().equals(true) && type.intValue()==1){
+        else if(vo.getConfrim().equals(true) && (type.intValue()==1)){
             po.setState(State.REFUNDWAIT.getCode().byteValue());
         }
         else {

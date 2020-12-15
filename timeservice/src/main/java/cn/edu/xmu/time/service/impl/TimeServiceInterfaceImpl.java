@@ -1,8 +1,8 @@
 package cn.edu.xmu.time.service.impl;
 
 import cn.edu.xmu.ooad.util.ReturnObject;
-import cn.edu.xmu.other.model.TimeSegmentDTO;
-import cn.edu.xmu.other.service.ITimeService;
+import cn.edu.xmu.other.dto.TimeSegmentDTO;
+import cn.edu.xmu.other.service.TimeServiceInterface;
 import cn.edu.xmu.time.dao.TimeSegmentDao;
 import cn.edu.xmu.time.model.po.TimeSegmentPo;
 import org.apache.dubbo.config.annotation.DubboService;
@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @DubboService(version = "0.0.1-SNAPSHOT")
-public class ITimeServiceImpl implements ITimeService {
+public class TimeServiceInterfaceImpl implements TimeServiceInterface {
 
     @Autowired
     TimeSegmentDao timeSegmentDao;

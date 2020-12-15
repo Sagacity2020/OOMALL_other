@@ -154,7 +154,7 @@ public class AftersaleDao {
 
 
     /**
-     * 卖家寄出维修好（调换）的货物
+     * 卖家寄出维修好的货物
      * @param id
      * @param shopId
      * @param vo
@@ -172,6 +172,8 @@ public class AftersaleDao {
             logger.info("无法修改此售后单信息：id = " + id);
             return new ReturnObject<>(ResponseCode.AFTERSALE_STATENOTALLOW);
         }
+
+
 
         Aftersale user = new Aftersale(po);
         AftersaleServicePo aftersalePo = user.createDeliverPo(vo);

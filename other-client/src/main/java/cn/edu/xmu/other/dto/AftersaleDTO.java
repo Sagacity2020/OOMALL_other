@@ -1,4 +1,4 @@
-package cn.edu.xmu.other.model;
+package cn.edu.xmu.other.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,6 +11,18 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AftersaleDTO implements Serializable {
-    private Long shopId;
-    private Long customerId;
+
+    String consignee;
+
+    Long shopId;
+
+    Long regionId;
+
+    String address;
+
+    Integer quantity;
+
+    String mobile;
+
+    String message;
 }

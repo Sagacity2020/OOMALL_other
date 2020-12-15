@@ -4,10 +4,9 @@ import cn.edu.xmu.ooad.model.VoObject;
 import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
 
-import cn.edu.xmu.other.service.IAdService;
+import cn.edu.xmu.other.service.AdServiceInterface;
 import cn.edu.xmu.time.dao.TimeSegmentDao;
 import cn.edu.xmu.time.model.bo.TimeSegment;
-import cn.edu.xmu.time.model.vo.TimeSegmentVo;
 import com.github.pagehelper.PageInfo;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.slf4j.Logger;
@@ -25,7 +24,7 @@ public class TimeSegmentService {
     TimeSegmentDao timeSegmentDao;
 
     @DubboReference(version = "0.0.1")
-    IAdService iAdService;
+    AdServiceInterface adServiceInterface;
 
     public ReturnObject<PageInfo<VoObject>> selectAdTimeSegments(Integer pageNum, Integer pageSize)
     {
@@ -70,7 +69,7 @@ public class TimeSegmentService {
         if(ret.getCode().equals(ResponseCode.OK))
         {
             boolean updateAd;
-            updateAd=iAdService.updateAdSegId(id);
+            updateAd= adServiceInterface.updateAdSegId(id);
             if(updateAd)
             {return ret;}
             //修改对应广告的时间段失败

@@ -8,7 +8,7 @@ import cn.edu.xmu.ooad.util.ReturnObject;
  * @return
  * @Date:  2020/12/14 9:30
 */
-public interface IAdService {
+public interface AdServiceInterface {
 
     Boolean updateAdSegId(Long segId);
 }

@@ -196,7 +196,7 @@
                         ${project.reporting.outputEncoding}
                     </encoding>
                     <excludePackageNames>
-                        cn.edu.xmu.other.model.po:cn.edu.xmu.other.mapper
+                        cn.edu.xmu.other.dto.po:cn.edu.xmu.other.mapper
                     </excludePackageNames>
                 </configuration>
                 <reportSets>

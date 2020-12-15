@@ -9,8 +9,8 @@ import cn.edu.xmu.ooad.util.ImgHelper;
 import cn.edu.xmu.ooad.util.JacksonUtil;
 import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
-import cn.edu.xmu.other.model.TimeSegmentDTO;
-import cn.edu.xmu.other.service.ITimeService;
+import cn.edu.xmu.other.dto.TimeSegmentDTO;
+import cn.edu.xmu.other.service.TimeServiceInterface;
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -39,7 +39,7 @@ public class AdvertisementService{
     private Logger logger = LoggerFactory.getLogger(AdvertisementService.class);
 
     @DubboReference(version = "0.0.1-SNAPSHOT")
-    ITimeService iTimeService;
+    TimeServiceInterface timeServiceInterface;
 
     @Autowired
     AdvertisementDao advertisementDao;
@@ -78,7 +78,7 @@ public class AdvertisementService{
 
             Advertisement advertisement = (Advertisement) JSONObject.toJavaObject(jsStr,Advertisement.class);
             if(advertisement.getSegId()!=null) {
-                ReturnObject<TimeSegmentDTO> returnObj = iTimeService.getTimesegmentById(advertisement.getSegId());
+                ReturnObject<TimeSegmentDTO> returnObj = timeServiceInterface.getTimesegmentById(advertisement.getSegId());
                 TimeSegmentDTO timeSegmentDTO = returnObj.getData();
                 if (timeSegmentDTO.getBeginTime().isBefore(localTime) && timeSegmentDTO.getEndTime().isAfter(localTime)) {
                     advertisements.add(advertisement);

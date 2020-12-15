@@ -229,7 +229,7 @@ public class AftersaleController {
 
 
     /*
-    店家寄出维修好（调换）的货物
+    店家寄出维修好的货物
      */
     @ApiOperation(value = "店家寄出维修好（调换）的货物")
     @ApiImplicitParams({

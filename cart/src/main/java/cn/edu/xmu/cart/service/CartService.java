@@ -9,7 +9,7 @@ import cn.edu.xmu.cart.model.vo.CartVo;
 import cn.edu.xmu.ooad.model.VoObject;
 import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
-import cn.edu.xmu.goods.model.dto.CartDTO;
+import cn.edu.xmu.goods.dto.CartDTO;
 import cn.edu.xmu.goods.service.GoodsServiceInterface;
 import com.github.pagehelper.PageInfo;
 import org.apache.dubbo.config.annotation.DubboReference;

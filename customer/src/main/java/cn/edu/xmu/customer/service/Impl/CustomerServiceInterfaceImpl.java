@@ -1,15 +1,13 @@
 package cn.edu.xmu.customer.service.Impl;
 
 import cn.edu.xmu.customer.dao.CustomerDao;
-import cn.edu.xmu.customer.model.bo.Customer;
-import cn.edu.xmu.ooad.util.ReturnObject;
-import cn.edu.xmu.other.model.CustomerDTO;
-import cn.edu.xmu.other.service.ICustomerService;
+import cn.edu.xmu.other.dto.CustomerDTO;
+import cn.edu.xmu.other.service.CustomerServiceInterface;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @DubboService(version = "0.0.1-SNAPSHOT")
-public class ICustomerServiceImpl implements ICustomerService {
+public class CustomerServiceInterfaceImpl implements CustomerServiceInterface {
     @Autowired
     CustomerDao customerDao;
 

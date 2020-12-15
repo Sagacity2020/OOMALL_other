@@ -8,8 +8,6 @@ import cn.edu.xmu.ooad.util.ReturnObject;
 import cn.edu.xmu.footprint.dao.FootprintDao;
 import cn.edu.xmu.footprint.model.bo.Footprint;
 import cn.edu.xmu.footprint.model.po.FootPrintPo;
-import cn.edu.xmu.oomall.other.service.IAftersaleService;
-import cn.edu.xmu.oomall.other.service.ICustomerService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.dubbo.config.annotation.DubboReference;

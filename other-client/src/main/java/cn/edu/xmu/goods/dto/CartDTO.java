@@ -1,9 +1,5 @@
-package cn.edu.xmu.cart.model.bo;
+package cn.edu.xmu.goods.dto;
 
-import cn.edu.xmu.cart.model.po.ShoppingCartPo;
-import cn.edu.xmu.cart.model.vo.CartPage;
-import cn.edu.xmu.ooad.model.VoObject;
-import cn.edu.xmu.goods.dto.CouponActivity;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -13,31 +9,26 @@ import java.time.LocalDateTime;
  * @author zrh
  */
 @Data
-public class Cart implements VoObject {
+public class CartDTO {
     private Long id;
     private Long customerId;
     private Long goodsSkuId;
     private Integer quantity;
-    private String skuName;
     private Long price;
+    private String skuName;
     private CouponActivity couponActivity;
     private LocalDateTime gmtCreate;
     private LocalDateTime gmtModified;
 
-
-    public Cart(ShoppingCartPo po) {
-        this.id=po.getId();
-        this.customerId=po.getCustomerId();
-        this.goodsSkuId=po.getGoodsSkuId();
-        this.quantity=po.getQuantity();
-        this.price=po.getPrice();
-        this.couponActivity=null;
-        this.gmtCreate=po.getGmtCreate();
-        this.gmtModified=po.getGmtModified();
+    public String getSkuName() {
+        return skuName;
     }
-    public Cart(){
 
+    public void setSkuName(String skuName) {
+        this.skuName = skuName;
     }
+
+
 
 
     public Long getId() {
@@ -102,26 +93,5 @@ public class Cart implements VoObject {
 
     public void setGmtModified(LocalDateTime gmtModified) {
         this.gmtModified = gmtModified;
-    }
-
-    @Override
-    public CartPage createVo() {
-        return new CartPage(this);
-    }
-
-    @Override
-    public Object createSimpleVo() {
-        return null;
-    }
-
-    public ShoppingCartPo createPo() {
-        ShoppingCartPo po=new ShoppingCartPo();
-        po.setId(this.getId());
-        po.setCustomerId(this.getCustomerId());
-        po.setGoodsSkuId(this.getGoodsSkuId());
-        po.setQuantity(this.getQuantity());
-        po.setPrice(this.getPrice());
-        po.setGmtCreate(this.getGmtCreate());
-        return po;
     }
 }

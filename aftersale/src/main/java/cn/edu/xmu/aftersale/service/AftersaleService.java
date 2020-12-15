@@ -1,5 +1,6 @@
 package cn.edu.xmu.aftersale.service;
 
+import cn.edu.xmu.aftersale.mapper.AftersaleServicePoMapper;
 import cn.edu.xmu.ooad.model.VoObject;
 import cn.edu.xmu.ooad.util.Common;
 import cn.edu.xmu.ooad.util.ResponseCode;
@@ -8,8 +9,12 @@ import cn.edu.xmu.aftersale.dao.AftersaleDao;
 import cn.edu.xmu.aftersale.model.bo.Aftersale;
 import cn.edu.xmu.aftersale.model.po.AftersaleServicePo;
 import cn.edu.xmu.aftersale.model.vo.*;
+import cn.edu.xmu.order.dto.OrderAftersaleDTO;
+import cn.edu.xmu.order.service.OrderServiceInterface;
+import cn.edu.xmu.other.dto.AftersaleDTO;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +39,13 @@ public class AftersaleService{
     @Autowired
     private AftersaleDao aftersaleDao;
 
+
+    @Autowired
+    private AftersaleServicePoMapper aftersaleServicePoMapper;
+
+    @DubboReference(version = "0.0.1-SNAPSHOT")
+    OrderServiceInterface orderServiceInterface;
+
     /**
      * 买家修改售后单信息
      * @param id
@@ -53,27 +65,14 @@ public class AftersaleService{
     public ReturnObject<Aftersale> createAftersale(Long id, CreateAftersaleVo vo, Long userId) {
         ReturnObject<Aftersale> returnObject = null;
 
-       /* orderItemPo=orderservice.getOrderItem(id);
-       if(orderItemPo==null){
-       logger.info("订单明细不存在或已被删除：id = " + id);
-            returnObject = new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
-       }
-        orderPo=orderservice.getOrder(orderItempPo.getOrderId());
-
-
-        aftersaleBo.setShopId(orderPo.getShopId());
-
-        Long refunds=(orderItemPo.getPrice()/orderItemPo.getQuantity())*vo.getQuantity();
-        aftersaleBo.setRefund(refunds);
-
-        */
-
+       OrderAftersaleDTO orderAftersaleDTO=orderServiceInterface.getAftersaleInfo(id);
+       Long refunds=(orderAftersaleDTO.getPrice()/orderAftersaleDTO.getQuantity())*vo.getQuantity();
 
         Aftersale aftersaleBo=vo.createAftersale();
         aftersaleBo.setOrderItemId(id);
-        aftersaleBo.setShopId(1L);
+        aftersaleBo.setShopId(orderAftersaleDTO.getShopId());
         aftersaleBo.setCustomerId(userId);
-        aftersaleBo.setRefund(100L);
+        aftersaleBo.setRefund(refunds);
 
         aftersaleBo.setServiceSn(Common.genSeqNum());
 
@@ -85,17 +84,11 @@ public class AftersaleService{
         }
         else{
             Aftersale aftersale=new Aftersale(po);
-            aftersale.setOrderId(10L);
-            aftersale.setSkuId(1L);
-            aftersale.setOrderSn("20201204");
-            aftersale.setSkuName("ipad");
+            aftersale.setOrderId(orderAftersaleDTO.getOrderId());
+            aftersale.setSkuId(orderAftersaleDTO.getSkuId());
+            aftersale.setOrderSn(orderAftersaleDTO.getOrderSn());
+            aftersale.setSkuName(orderAftersaleDTO.getSkuName());
 
-            /*
-            aftersale.setOrderId(orderPo.getId());
-            aftersale.setSkuId(orderItemPo.getGoodsSkuId());
-            aftersale.setSkuName(orderItemPo.getName());
-            aftersale.setOrderSn(orderPo.getOrderSn());
-             */
             returnObject=new ReturnObject<>(aftersale);
         }
         return returnObject;
@@ -127,7 +120,21 @@ public class AftersaleService{
      */
     @Transactional
     public ReturnObject<Object> deliverAftersale(Long id, Long shopId, AftersaleDeliverVo vo) {
-        return aftersaleDao.deliverAftersale(id,shopId,vo);
+        ReturnObject returnObject= aftersaleDao.deliverAftersale(id,shopId,vo);
+
+        AftersaleServicePo po=aftersaleServicePoMapper.selectByPrimaryKey(id);
+        if(po.getType().intValue()==0){
+            AftersaleDTO aftersaleDTO=new AftersaleDTO();
+            aftersaleDTO.setConsignee(po.getConsignee());
+            aftersaleDTO.setAddress(po.getDetail());
+            aftersaleDTO.setMessage(po.getConclusion());
+            aftersaleDTO.setMobile(po.getMobile());
+            aftersaleDTO.setQuantity(po.getQuantity());
+            aftersaleDTO.setRegionId(po.getRegionId());
+            aftersaleDTO.setShopId(po.getShopId());
+            orderServiceInterface.createAftersaleOrder(aftersaleDTO);
+        }
+        return returnObject;
     }
 
     /*
@@ -171,20 +178,12 @@ public class AftersaleService{
         }
         else {
             Aftersale aftersale = new Aftersale(po);
-            aftersale.setOrderId(10L);
-            aftersale.setOrderSn("20201204");
-            aftersale.setSkuId(1L);
-            aftersale.setSkuName("ipad");
+            OrderAftersaleDTO orderAftersaleDTO=orderServiceInterface.getAftersaleInfo(po.getOrderItemId());
+            aftersale.setOrderId(orderAftersaleDTO.getOrderId());
+            aftersale.setOrderSn(orderAftersaleDTO.getOrderSn());
+            aftersale.setSkuId(orderAftersaleDTO.getSkuId());
+            aftersale.setSkuName(orderAftersaleDTO.getSkuName());
 
-        /*
-        orderItemPo=orderservice.getOrderItem(aftersale.getOrderItemId());
-        orderPo=orderservice.getOrder(orderItempPo.getOrderId());
-
-        aftersale.setOrderId(orderPo.getId());
-        aftersale.setSkuId(orderItemPo.getGoodsSkuId());
-        aftersale.setSkuName(orderItemPo.getName());
-        aftersale.setOrderSn(orderPo.getOrderSn());
-         */
             return new ReturnObject<>(aftersale);
         }
     }
@@ -205,20 +204,12 @@ public class AftersaleService{
         }
         else {
             Aftersale aftersale = new Aftersale(po);
-            aftersale.setOrderId(10L);
-            aftersale.setOrderSn("20201204");
-            aftersale.setSkuId(1L);
-            aftersale.setSkuName("ipad");
+            OrderAftersaleDTO orderAftersaleDTO=orderServiceInterface.getAftersaleInfo(po.getOrderItemId());
+            aftersale.setOrderId(orderAftersaleDTO.getOrderId());
+            aftersale.setOrderSn(orderAftersaleDTO.getOrderSn());
+            aftersale.setSkuId(orderAftersaleDTO.getSkuId());
+            aftersale.setSkuName(orderAftersaleDTO.getSkuName());
 
-        /*
-        orderItemPo=orderservice.getOrderItem(aftersale.getOrderItemId());
-        orderPo=orderservice.getOrder(orderItempPo.getOrderId());
-
-        aftersale.setOrderId(orderPo.getId());
-        aftersale.setSkuId(orderItemPo.getGoodsSkuId());
-        aftersale.setSkuName(orderItemPo.getName());
-        aftersale.setOrderSn(orderPo.getOrderSn());
-         */
             return new ReturnObject<>(aftersale);
         }
 
@@ -245,20 +236,11 @@ public class AftersaleService{
         if(pos!=null){
             for (AftersaleServicePo aftersaleServicePo : pos.getList()) {
                 Aftersale aftersale=new Aftersale(aftersaleServicePo);
-                aftersale.setOrderId(10L);
-                aftersale.setOrderSn("20201204");
-                aftersale.setSkuId(1L);
-                aftersale.setSkuName("ipad");
-                ret.add(aftersale);
-                /*
-        orderItemPo=orderservice.getOrderItem(aftersale.getOrderItemId());
-        orderPo=orderservice.getOrder(orderItempPo.getOrderId());
-
-        aftersale.setOrderId(orderPo.getId());
-        aftersale.setSkuId(orderItemPo.getGoodsSkuId());
-        aftersale.setSkuName(orderItemPo.getName());
-        aftersale.setOrderSn(orderPo.getOrderSn());
-         */
+                OrderAftersaleDTO orderAftersaleDTO=orderServiceInterface.getAftersaleInfo(aftersaleServicePo.getOrderItemId());
+                aftersale.setOrderId(orderAftersaleDTO.getOrderId());
+                aftersale.setOrderSn(orderAftersaleDTO.getOrderSn());
+                aftersale.setSkuId(orderAftersaleDTO.getSkuId());
+                aftersale.setSkuName(orderAftersaleDTO.getSkuName());
             }
         }
         PageInfo<VoObject> aftersalePage = new PageInfo<>(ret);
@@ -287,20 +269,11 @@ public class AftersaleService{
         if(objs!=null){
             for (AftersaleServicePo aftersaleServicePo : objs.getList()) {
                 Aftersale aftersale=new Aftersale(aftersaleServicePo);
-                aftersale.setOrderId(10L);
-                aftersale.setOrderSn("20201204");
-                aftersale.setSkuId(1L);
-                aftersale.setSkuName("ipad");
-                ret.add(aftersale);
-                /*
-        orderItemPo=orderservice.getOrderItem(aftersale.getOrderItemId());
-        orderPo=orderservice.getOrder(orderItempPo.getOrderId());
-
-        aftersale.setOrderId(orderPo.getId());
-        aftersale.setSkuId(orderItemPo.getGoodsSkuId());
-        aftersale.setSkuName(orderItemPo.getName());
-        aftersale.setOrderSn(orderPo.getOrderSn());
-         */
+                OrderAftersaleDTO orderAftersaleDTO=orderServiceInterface.getAftersaleInfo(aftersaleServicePo.getOrderItemId());
+                aftersale.setOrderId(orderAftersaleDTO.getOrderId());
+                aftersale.setOrderSn(orderAftersaleDTO.getOrderSn());
+                aftersale.setSkuId(orderAftersaleDTO.getSkuId());
+                aftersale.setSkuName(orderAftersaleDTO.getSkuName());
             }
         }
         PageInfo<VoObject> aftersalePage = new PageInfo<>(ret);

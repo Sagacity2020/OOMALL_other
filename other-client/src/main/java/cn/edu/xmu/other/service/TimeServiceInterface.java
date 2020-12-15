@@ -2,7 +2,7 @@ package cn.edu.xmu.other.service;
 
 
 import cn.edu.xmu.ooad.util.ReturnObject;
-import cn.edu.xmu.other.model.TimeSegmentDTO;
+import cn.edu.xmu.other.dto.TimeSegmentDTO;
 
 /**
  * 时段服务调用接口
@@ -10,7 +10,7 @@ import cn.edu.xmu.other.model.TimeSegmentDTO;
  * @date 2020/11/26 10:20
  * @version 1.0
  */
-public interface ITimeService {
+public interface TimeServiceInterface {
 
     public ReturnObject<TimeSegmentDTO> getTimesegmentById(Long id);
 }
