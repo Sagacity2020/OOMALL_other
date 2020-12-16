@@ -9,8 +9,11 @@
     <file url="file://$PROJECT_DIR$/customer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/favoriteservice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/footprint/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/goods-client/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/other-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shareservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shareservice/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/timeservice/src/main/java" charset="UTF-8" />
   </component>
 </project>
