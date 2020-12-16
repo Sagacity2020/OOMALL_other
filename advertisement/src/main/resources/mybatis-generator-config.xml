@@ -43,7 +43,7 @@
 
         <!--数据库链接URL，用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/oomall?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=GMT%2B8" userId="root" password="xzqbjt">
+                        connectionURL="jdbc:mysql://localhost:3306/oomall_other?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=GMT%2B8" userId="root" password="8883008">
         </jdbcConnection>
         <javaTypeResolver>
             <!--

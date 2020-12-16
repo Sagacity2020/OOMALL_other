@@ -24,7 +24,7 @@ public class TimeSegmentService {
     TimeSegmentDao timeSegmentDao;
 
     @DubboReference(version = "0.0.1")
-    AdServiceInterface adServiceInterface;
+    AdServiceInterface iAdService;
 
     public ReturnObject<PageInfo<VoObject>> selectAdTimeSegments(Integer pageNum, Integer pageSize)
     {
@@ -69,7 +69,7 @@ public class TimeSegmentService {
         if(ret.getCode().equals(ResponseCode.OK))
         {
             boolean updateAd;
-            updateAd= adServiceInterface.updateAdSegId(id);
+            updateAd=iAdService.updateAdSegId(id);
             if(updateAd)
             {return ret;}
             //修改对应广告的时间段失败

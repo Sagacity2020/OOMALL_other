@@ -43,13 +43,14 @@ public class TimeSegmentController {
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
             @ApiImplicitParam(paramType = "query", dataType = "int", name = "page", value = "页码", required = false),
-            @ApiImplicitParam(paramType = "query", dataType = "int", name = "pageSize", value = "每页数目", required = false)
+            @ApiImplicitParam(paramType = "query", dataType = "int", name = "pageSize", value = "每页数目", required = false),
+            @ApiImplicitParam(paramType = "path", dataType = "int", name = "did", value = "店id", required = true)
     })
     @ApiResponses({
             @ApiResponse(code = 0, message = "成功"),
     })
     @Audit
-    @GetMapping("shops/{did}/advertisement/timesegments")
+    @GetMapping("/shops/{did}/advertisement/timesegments")
     public Object selectAdTimeSegments(@RequestParam(required = false) Integer page, @RequestParam(required = false) Integer pageSize)
     {
         logger.debug("selectAdTimeSegments: page = "+ page +"  pageSize ="+pageSize);
@@ -70,14 +71,15 @@ public class TimeSegmentController {
     @ApiOperation(value = "新增广告时间段", produces = "application/json")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
-            @ApiImplicitParam(paramType = "body", dataType = "TimeSegmentVo", name = "vo", value = "新增广告时间段信息", required = true)
+            @ApiImplicitParam(paramType = "body", dataType = "TimeSegmentVo", name = "vo", value = "新增广告时间段信息", required = true),
+            @ApiImplicitParam(paramType = "path", dataType = "int", name = "did", value = "店id", required = true)
     })
     @ApiResponses({
             @ApiResponse(code = 0, message = "成功"),
             @ApiResponse(code = 610, message = "开始时间大于结束时间"),
     })
     @Audit
-    @PostMapping("shops/{did}/advertisement/timesegments")
+    @PostMapping("/shops/{did}/advertisement/timesegments")
     public Object insertAdTimeSegment(@Validated @RequestBody TimeSegmentVo vo, BindingResult bindingResult)
     {
         //logger.debug("insert AdTimeSegment by userId:" + userId);
@@ -106,13 +108,14 @@ public class TimeSegmentController {
     @ApiOperation(value = "删除时间段", produces = "application/json")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
-            @ApiImplicitParam(paramType = "path", dataType = "int", name = "id", value = "时间段id", required = true)
+            @ApiImplicitParam(paramType = "path", dataType = "int", name = "id", value = "时间段id", required = true),
+            @ApiImplicitParam(paramType = "path", dataType = "int", name = "did", value = "店id", required = true)
     })
     @ApiResponses({
             @ApiResponse(code = 0, message = "成功"),
     })
     @Audit
-    @DeleteMapping("shops/{did}/advertisement/timesegments/{id}")
+    @DeleteMapping("/shops/{did}/advertisement/timesegments/{id}")
     public Object deleteAdTimeSegment(@PathVariable("id") Long id) {
         //logger.debug("delete role");
         ReturnObject<Object> returnObject = timeSegmentService.deleteAdTimeSegment(id);

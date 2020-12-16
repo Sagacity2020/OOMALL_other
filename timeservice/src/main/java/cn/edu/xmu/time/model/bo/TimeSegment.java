@@ -80,5 +80,4 @@ public class TimeSegment implements VoObject {
         po.setGmtModified(this.getGmtModified());
         return po;
     }
-
 }

@@ -48,11 +48,15 @@ public class TimeSegmentDao {
         //分页查询
         PageHelper.startPage(pageNum, pageSize);
         logger.debug("page = " + pageNum + "pageSize = " + pageSize);
-        List<TimeSegmentPo> timeSegmentPoList =null;
+        List<TimeSegmentPo> timeSegmentPoList =new ArrayList<>() ;
         try {
             timeSegmentPoList = timeSegmentPoMapper.selectByExample(example);
         }catch (DataAccessException e){
             return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
+        } catch (Exception e) {
+            // 其他Exception错误
+            logger.error("other exception : " + e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
         }
         //logger.info("getUserRoles: userId = "+ id + "roleNum = "+ userRolePoList.size());
         if(timeSegmentPoList.isEmpty())
@@ -96,8 +100,7 @@ public class TimeSegmentDao {
             TimeSegmentPoExample example = new TimeSegmentPoExample();
             TimeSegmentPoExample.Criteria criteria = example.createCriteria();
             criteria.andTypeEqualTo((byte)0);
-            List<TimeSegmentPo> timeSegmentPoList =null;
-            timeSegmentPoList = timeSegmentPoMapper.selectByExample(example);
+            List<TimeSegmentPo> timeSegmentPoList = timeSegmentPoMapper.selectByExample(example);
 
             LocalTime poBeginTime = null;
             LocalTime poEndTime = null;
@@ -155,7 +158,11 @@ public class TimeSegmentDao {
         ReturnObject<Object> retObj = null;
 
         try {
-            //System.out.println("删除时间段");
+            TimeSegmentPo po =timeSegmentPoMapper.selectByPrimaryKey(id);
+            if(!po.getType().equals((byte)0))
+            {
+                return new ReturnObject<>(ResponseCode.RESOURCE_ID_OUTSCOPE,String.format("该时间段不是广告时段"));
+            }
             logger.debug("deleteAdTimeSegment: " + id);
             int ret = timeSegmentPoMapper.deleteByPrimaryKey(id);
             if (ret == 0) {
@@ -176,6 +183,59 @@ public class TimeSegmentDao {
             return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
         }
 
+    }
+
+    /**
+     * 获得当前秒杀时段ID
+     * @author zwl
+     * @param
+     * @return 根据当前时间，返回所有已开始且未结束且类型是秒杀时段的时段ID列表
+     * 若无则返回长度为0的列表而不是null
+     * @Date:  2020/12/15 8:43
+     */
+    @Transactional
+    public List<Long> getCurrentFlashSaleTimeSegs(){
+        List<Long> flashSaleTimeSegs= new ArrayList<>();
+        TimeSegmentPoExample example = new TimeSegmentPoExample();
+        TimeSegmentPoExample.Criteria criteria = example.createCriteria();
+        criteria.andTypeEqualTo((byte)1);
+        List<TimeSegmentPo> timeSegmentPoList =null;
+        timeSegmentPoList = timeSegmentPoMapper.selectByExample(example);
+        for (TimeSegmentPo po : timeSegmentPoList) {
+            System.out.println(po.getId());
+//                if((po.getBeginTime().isBefore(now())&&po.getEndTime().isAfter(now()))||(po.getBeginTime().equals(now())&&po.getEndTime().isAfter(now())))
+//                {flashSaleTimeSegs.add(po.getId());}
+            LocalTime beginTime = null;
+            beginTime=LocalTime.of(po.getBeginTime().getHour(),po.getBeginTime().getMinute(),po.getBeginTime().getSecond());
+            LocalTime endTime = null;
+            endTime=LocalTime.of(po.getEndTime().getHour(),po.getEndTime().getMinute(),po.getEndTime().getSecond());
+            if((LocalTime.now().isAfter(beginTime)||LocalTime.now().equals(beginTime))&&LocalTime.now().isBefore(endTime))
+            {
+                System.out.println("now"+po.getId());
+                flashSaleTimeSegs.add(po.getId());
+            }
+        }
+        //if(flashSaleTimeSegs!=null)
+        return flashSaleTimeSegs;
+    }
+    /**
+     * 根据时间段ID判断是否为秒杀时段
+     * Boolean timeSegIsFlashSale(Long id);
+     * 参数：时间段ID
+     * 返回：ID不存在或时段类型不是秒杀则返回false，否则为true
+     * @author zwl
+     * @param
+     * @return
+     * @Date:  2020/12/15 9:19
+     */
+    @Transactional
+    public Boolean timeSegIsFlashSale(Long id){
+        TimeSegmentPo po =timeSegmentPoMapper.selectByPrimaryKey(id);
+        if(po.getType().equals((byte)1))
+        {
+            return true;
+        }
+        else {return false;}
     }
 
     public ReturnObject<Object> getTimesegmentById(Long id){

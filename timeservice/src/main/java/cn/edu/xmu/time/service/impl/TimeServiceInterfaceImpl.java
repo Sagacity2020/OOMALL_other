@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.List;
 
 @DubboService(version = "0.0.1-SNAPSHOT")
 public class TimeServiceInterfaceImpl implements TimeServiceInterface {
@@ -36,4 +37,14 @@ public class TimeServiceInterfaceImpl implements TimeServiceInterface {
 
         return new ReturnObject<>(timeSegmentDTO);
     }
+
+    @Override
+    public List<Long> getCurrentFlashSaleTimeSegs(){
+        return timeSegmentDao.getCurrentFlashSaleTimeSegs();
+    }
+    @Override
+    public Boolean timeSegIsFlashSale(Long id){
+        return timeSegmentDao.timeSegIsFlashSale(id);
+    }
+
 }

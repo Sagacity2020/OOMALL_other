@@ -1,6 +1,7 @@
 package cn.edu.xmu.time;
 
 import cn.edu.xmu.time.dao.TimeSegmentDao;
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @SpringBootApplication(scanBasePackages = {"cn.edu.xmu.time"})
 @MapperScan("cn.edu.xmu.time.mapper")
+//@EnableDubbo(scanBasePackages = "cn.edu.xmu.oomall.other.service")
 public class TimeServiceApplication implements ApplicationRunner{
     private  static  final Logger logger = LoggerFactory.getLogger(TimeServiceApplication.class);
     /**

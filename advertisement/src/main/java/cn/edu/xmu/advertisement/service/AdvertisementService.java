@@ -4,6 +4,7 @@ import cn.edu.xmu.advertisement.dao.AdvertisementDao;
 import cn.edu.xmu.advertisement.model.bo.Advertisement;
 import cn.edu.xmu.advertisement.model.po.AdvertisementPo;
 import cn.edu.xmu.advertisement.model.vo.AdvertisementCreateVo;
+import cn.edu.xmu.advertisement.model.vo.AuditAdVo;
 import cn.edu.xmu.ooad.model.VoObject;
 import cn.edu.xmu.ooad.util.ImgHelper;
 import cn.edu.xmu.ooad.util.JacksonUtil;
@@ -222,5 +223,79 @@ public class AdvertisementService{
             redisTemplate.opsForValue().set(key,advertisementJson);
             redisTemplate.expire(key,1,TimeUnit.DAYS);
         }
+    }
+
+    /**
+     * 设置默认广告
+     * @author zwl
+     * @param
+     * @return
+     * @Date:  2020/12/9 9:12
+     */
+    @Transactional
+    public ReturnObject setDefaultAd(Long id){
+        ReturnObject retObj = advertisementDao.setDefaultAd(id);
+        return retObj;
+    }
+
+    /**
+     * 修改广告内容
+     * @author zwl
+     * @param
+     * @return
+     * @Date:  2020/12/9 15:13
+     */
+    @Transactional
+    public ReturnObject updateAd(Long id, Advertisement bo)
+    {
+        ReturnObject retObj = advertisementDao.updateAd(id,bo);
+        return retObj;
+    }
+    /**
+     * 上架广告
+     * @author zwl
+     * @param
+     * @return
+     * @Date:  2020/12/9 11:32
+     */
+    @Transactional
+    public ReturnObject onshelvesAd(Long id){
+        ReturnObject retObj = advertisementDao.onshelvesAd(id);
+        return retObj;
+    }
+
+    /**
+     * 下架广告
+     * @author zwl
+     * @param
+     * @return
+     * @Date:  2020/12/9 19:05
+     */
+    @Transactional
+    public ReturnObject offshelvesAd(Long id){
+        ReturnObject retObj = advertisementDao.offshelvesAd(id);
+        return retObj;
+    }
+    /**
+     * 审核广告
+     * @author zwl
+     * @param
+     * @return
+     * @Date:  2020/12/10 19:53
+     */
+    public ReturnObject auditAd(Long id, AuditAdVo auditAdVo){
+        ReturnObject retObj = advertisementDao.auditAd(id,auditAdVo);
+        return retObj;
+    }
+    /**
+     * 删除广告
+     * @author zwl
+     * @param
+     * @return
+     * @Date:  2020/12/9 15:55
+     */
+    public ReturnObject deleteAd(Long id){
+        ReturnObject retObj=advertisementDao.deleteAd(id);
+        return retObj;
     }
 }

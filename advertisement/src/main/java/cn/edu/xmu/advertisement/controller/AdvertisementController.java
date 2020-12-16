@@ -3,10 +3,11 @@ package cn.edu.xmu.advertisement.controller;
 import cn.edu.xmu.advertisement.model.bo.Advertisement;
 import cn.edu.xmu.advertisement.model.vo.AdvertisementCreateVo;
 import cn.edu.xmu.advertisement.model.vo.AdvertisementStateVo;
+import cn.edu.xmu.advertisement.model.vo.AdvertisementUpdateVo;
+import cn.edu.xmu.advertisement.model.vo.AuditAdVo;
 import cn.edu.xmu.advertisement.service.AdvertisementService;
 import cn.edu.xmu.ooad.annotation.Audit;
-import cn.edu.xmu.ooad.annotation.LoginUser;
-import cn.edu.xmu.ooad.model.VoObject;
+
 import cn.edu.xmu.ooad.util.Common;
 import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ResponseUtil;
@@ -210,5 +211,160 @@ public class AdvertisementController {
 
 
 
+    /**
+     * 设置默认广告
+     * @author zwl
+     * @param id
+     * @return
+     * @Date:  2020/12/9 8:58
+     */
+    @ApiOperation(value="管理员设置默认广告",produces = "application/json")
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
+            @ApiImplicitParam(paramType = "path", dataType = "int", name = "id", value = "广告id", required = true),
+            @ApiImplicitParam(paramType = "path", dataType = "int", name = "did", value = "店id", required = true)
+    })
+    @ApiResponses({
+            @ApiResponse(code = 0, message = "成功")
+
+    })
+    @Audit
+    @PutMapping("/shops/{did}/advertisement/{id}/default")
+    public Object setDefaultAd(@PathVariable("id") Long id){
+
+        logger.debug("set default Ad");
+
+        ReturnObject retObject = advertisementService.setDefaultAd(id);
+        return Common.decorateReturnObject(retObject);
+    }
+
+    /**
+     * 修改广告内容
+     * @author zwl
+     * @param
+     * @return
+     * @Date:  2020/12/9 11:06
+     */
+    @ApiOperation(value="管理员修改广告内容",produces = "application/json")
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
+            @ApiImplicitParam(paramType = "path", dataType = "int", name = "id", value = "广告id", required = true),
+            @ApiImplicitParam(paramType = "body", dataType = "AdvertisementUpdateVo", name = "vo", value = "可修改广告信息", required = true),
+            @ApiImplicitParam(paramType = "path", dataType = "int", name = "did", value = "店id", required = true)
+    })
+    @ApiResponses({
+            @ApiResponse(code = 0, message = "成功")
+
+    })
+    @Audit
+    @PutMapping("/shops/{did}/advertisement/{id}")
+    public Object updateAd(@PathVariable("id") Long id, @Validated @RequestBody AdvertisementUpdateVo vo, BindingResult bindingResult)
+    {
+
+        Object returnObject = Common.processFieldErrors(bindingResult, httpServletResponse);
+        if (returnObject != null) {
+            //logger.info("incorrect data received while modifyUserInfo id = " + id);
+            return returnObject;
+        }
+
+        ReturnObject retObject=advertisementService.updateAd(id,vo.createAdvertisement());
+        return Common.decorateReturnObject(retObject);
+    }
+
+    /**
+     * 上架广告
+     * @author zwl
+     * @param
+     * @return
+     * @Date:  2020/12/9 11:26
+     */
+    @ApiOperation(value="管理员上架广告",produces = "application/json")
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
+            @ApiImplicitParam(paramType = "path", dataType = "int", name = "id", value = "广告id", required = true),
+            @ApiImplicitParam(paramType = "path", dataType = "int", name = "did", value = "店id", required = true)
+    })
+    @ApiResponses({
+            @ApiResponse(code = 0, message = "成功")
+
+    })
+    @Audit
+    @PutMapping("/shops/{did}/advertisement/{id}/onshelves")
+    public Object onshelvesAd(@PathVariable("id") Long id){
+        ReturnObject retObject = advertisementService.onshelvesAd(id);
+        return Common.decorateReturnObject(retObject);
+    }
+
+    /**
+     * 下架广告
+     * @author zwl
+     * @param
+     * @return
+     * @Date:  2020/12/9 19:04
+     */
+    @ApiOperation(value="管理员下架广告",produces = "application/json")
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
+            @ApiImplicitParam(paramType = "path", dataType = "int", name = "id", value = "广告id", required = true),
+            @ApiImplicitParam(paramType = "path", dataType = "int", name = "did", value = "店id", required = true)
+    })
+    @ApiResponses({
+            @ApiResponse(code = 0, message = "成功")
+
+    })
+    @Audit
+    @PutMapping("/shops/{did}/advertisement/{id}/offshelves")
+    public Object offshelvesAd(@PathVariable("id") Long id){
+        ReturnObject retObject = advertisementService.offshelvesAd(id);
+        return Common.decorateReturnObject(retObject);
+    }
+    /**
+     * 审核广告
+     * @author zwl
+     * @param
+     * @return
+     * @Date:  2020/12/10 19:24
+     */
+    @ApiOperation(value="管理员审核广告",produces = "application/json")
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
+            @ApiImplicitParam(paramType = "path", dataType = "int", name = "id", value = "广告id", required = true),
+            @ApiImplicitParam(paramType = "body", dataType = "AuditAdVo", name = "auditAdVo", value = "审核广告", required = true),
+            @ApiImplicitParam(paramType = "path", dataType = "int", name = "did", value = "店id", required = true)
+    })
+    @ApiResponses({
+            @ApiResponse(code = 0, message = "成功")
+
+    })
+    @Audit
+    @PutMapping("/shops/{did}/advertisement/{id}/audit")
+    public Object auditAd(@PathVariable("id") Long id,@Validated @RequestBody AuditAdVo auditAdVo){
+        ReturnObject returnObject = advertisementService.auditAd(id,auditAdVo);
+        return Common.decorateReturnObject(returnObject);
+    }
+
+    /**
+     * 删除广告
+     * @author zwl
+     * @param
+     * @return
+     * @Date:  2020/12/9 15:47
+     */
+    @ApiOperation(value="管理员删除广告",produces = "application/json")
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
+            @ApiImplicitParam(paramType = "path", dataType = "int", name = "id", value = "广告id", required = true),
+            @ApiImplicitParam(paramType = "path", dataType = "int", name = "did", value = "店id", required = true)
+    })
+    @ApiResponses({
+            @ApiResponse(code = 0, message = "成功")
+
+    })
+    @Audit
+    @DeleteMapping("/shops/{did}/advertisement/{id}")
+    public Object deleteAd(@PathVariable("id")Long id){
+        ReturnObject returnObject = advertisementService.deleteAd(id);
+        return Common.decorateReturnObject(returnObject);
+    }
 
 }
