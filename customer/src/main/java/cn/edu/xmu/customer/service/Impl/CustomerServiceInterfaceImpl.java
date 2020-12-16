@@ -8,13 +8,14 @@ import cn.edu.xmu.other.service.CustomerServiceInterface;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
 
-@DubboService(version = "0.0.1-SNAPSHOT")
+@DubboService(version = "0.0.1")
 public class CustomerServiceInterfaceImpl implements CustomerServiceInterface {
     @Autowired
     CustomerDao customerDao;
 
     @Override
     public CustomerDTO getCustomerInfoById(Long id) {
+        System.out.println("id " + id);
         ReturnObject<Customer> ret=customerDao.getCustomerById(id);
         if(ret.getData()!=null){
         Customer bo=ret.getData();
