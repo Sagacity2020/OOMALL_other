@@ -104,7 +104,7 @@ public class RegionDao {
         RegionPo regionPo=new RegionPo();
         try{
             regionPo=regionPoMapper.selectByPrimaryKey(region.getId());
-
+            logger.debug(regionPo.toString());
             if(regionPo==null){
                 logger.debug("地区id不存在："+region.getId());
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("地区id不存在"));

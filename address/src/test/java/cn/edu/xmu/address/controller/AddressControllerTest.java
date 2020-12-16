@@ -489,14 +489,14 @@ public class AddressControllerTest {
      */
     @Test
     public void insertRegion() throws Exception{
-        String token=creatTestToken(1L,0L,100);
+        String token=creatTestToken(1L,3L,100);
         String responseString="";
         RegionVo regionVo=new RegionVo();
         regionVo.setName("444");
         regionVo.setPostalCode(444L);
         String requireJson= JacksonUtil.toJson(regionVo);
         try{
-            responseString=this.mvc.perform(post("regions/3/subregions").header("authorzation",token)
+            responseString=this.mvc.perform(post("/address/shops/0/regions/3/subregions").header("authorzation",token)
             .contentType("application/json;charset=UTF-8")
             .content(requireJson))
                     .andExpect(status().isOk())
@@ -531,7 +531,7 @@ public class AddressControllerTest {
         regionVo.setPostalCode(444L);
         String requireJson= JacksonUtil.toJson(regionVo);
         try{
-            responseString=this.mvc.perform(post("regions/3/subregions").header("authorzation",token)
+            responseString=this.mvc.perform(post("/address/shops/0/regions/3/subregions").header("authorzation",token)
                     .contentType("application/json;charset=UTF-8")
                     .content(requireJson))
                     .andExpect(status().isOk())
@@ -566,7 +566,7 @@ public class AddressControllerTest {
         regionVo.setPostalCode(222L);
         String requireJson= JacksonUtil.toJson(regionVo);
         try{
-            responseString=this.mvc.perform(post("regions/3/subregions").header("authorzation",token)
+            responseString=this.mvc.perform(post("/address/shops/0/regions/3/subregions").header("authorzation",token)
                     .contentType("application/json;charset=UTF-8")
                     .content(requireJson))
                     .andExpect(status().isNotFound())
@@ -601,7 +601,7 @@ public class AddressControllerTest {
         vo.setPostalCode(99L);
         String requireJson=JacksonUtil.toJson(vo);
         try{
-            responseString=this.mvc.perform(put("/address/regions/1").header("authorization",token)
+            responseString=this.mvc.perform(put("/address/shops/0/regions/1").header("authorization",token)
             .contentType("application/json;charset=UTF-8")
             .content(requireJson))
                     .andExpect(status().isOk())
@@ -637,7 +637,7 @@ public class AddressControllerTest {
         vo.setPostalCode(99L);
         String requireJson=JacksonUtil.toJson(vo);
         try{
-            responseString=this.mvc.perform(put("/address/regions/5").header("authorization",token)
+            responseString=this.mvc.perform(put("/address/shops/0/regions/5").header("authorization",token)
                     .contentType("application/json;charset=UTF-8")
                     .content(requireJson))
                     .andExpect(status().isNotFound())
@@ -670,7 +670,7 @@ public class AddressControllerTest {
         String token=creatTestToken(1L,0L,100);
         String responseString="";
         try{
-            responseString=this.mvc.perform(delete("/address/regions/1").header("authorization",token))
+            responseString=this.mvc.perform(delete("/address/shops/0/regions/1").header("authorization",token))
                     .andExpect(status().isOk())
                     .andExpect(content().contentType("application/json;charset=UTF-8"))
                     .andReturn().getResponse().getContentAsString();
@@ -700,7 +700,7 @@ public class AddressControllerTest {
         String token=creatTestToken(1L,0L,100);
         String responseString="";
         try{
-            responseString=this.mvc.perform(delete("/address/regions/3").header("authorization",token))
+            responseString=this.mvc.perform(delete("/address/shops/0/regions/3").header("authorization",token))
                     .andExpect(status().isOk())
                     .andExpect(content().contentType("application/json;charset=UTF-8"))
                     .andReturn().getResponse().getContentAsString();
