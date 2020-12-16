@@ -113,6 +113,7 @@ public class CustomerDao {
     }
 
     public ReturnObject<Customer> getCustomerById(Long userId){
+        logger.info("id"+userId);
         CustomerPo customer=new CustomerPo();
         ReturnObject retObj=null;
         try{

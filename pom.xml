@@ -26,6 +26,7 @@
         <module>customer</module>
         <module>footprint</module>
         <module>favoriteservice</module>
+        <module>gateway</module>
     </modules>
     <name>other</name>
 

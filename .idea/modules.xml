@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/customer/customer.iml" filepath="$PROJECT_DIR$/customer/customer.iml" />
       <module fileurl="file://$PROJECT_DIR$/favoriteservice/favoriteservice.iml" filepath="$PROJECT_DIR$/favoriteservice/favoriteservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/footprint/footprint.iml" filepath="$PROJECT_DIR$/footprint/footprint.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/goods-client/goods-client.iml" filepath="$PROJECT_DIR$/goods-client/goods-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/other-client/other-client.iml" filepath="$PROJECT_DIR$/other-client/other-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/timeservice/timeservice.iml" filepath="$PROJECT_DIR$/timeservice/timeservice.iml" />

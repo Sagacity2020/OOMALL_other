@@ -15,7 +15,7 @@ public class CustomerRetVo {
     private String name;
     private String mobile;
     private String email;
-    private String gender;
+    private Byte gender;
     private LocalDate birthday;
     private Byte state;
     private LocalDateTime gmtCreate;
@@ -27,7 +27,7 @@ public class CustomerRetVo {
         name=bo.getRealName();
         mobile=bo.getMobile();
         email=bo.getEmail();
-        gender=bo.getGender().toString();
+        gender=bo.getGender();
         state=bo.getState();
         birthday=bo.getBirthday();
         gmtCreate=bo.getGmtCreate();

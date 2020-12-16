@@ -11,6 +11,7 @@
         <module name="timeservice" />
         <module name="aftersale" />
         <module name="customer" />
+        <module name="gateway" />
         <module name="goods-client" />
         <module name="core" />
         <module name="address" />
