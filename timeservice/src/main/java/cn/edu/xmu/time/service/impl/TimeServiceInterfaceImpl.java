@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-@DubboService(version = "0.0.1-SNAPSHOT")
+@DubboService(version = "0.0.1")
 public class TimeServiceInterfaceImpl implements TimeServiceInterface {
 
     @Autowired
