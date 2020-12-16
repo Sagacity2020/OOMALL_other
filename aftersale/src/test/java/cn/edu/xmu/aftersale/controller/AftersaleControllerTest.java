@@ -779,7 +779,7 @@ public class AftersaleControllerTest {
     @Test
     public void aftersaleComfirmByShopTest()throws Exception{
         AftersaleConfirmVo vo=new AftersaleConfirmVo();
-        vo.setConfrim(true);
+        vo.setConfirm(true);
         vo.setConclusion("同意");
         String aftersaleJson=JacksonUtil.toJson(vo);
 
@@ -816,7 +816,9 @@ public class AftersaleControllerTest {
     @Test
     public void aftersaleConfirmByShopTest()throws Exception{
         AftersaleConfirmVo vo=new AftersaleConfirmVo();
-        vo.setConfrim(false);
+        vo.setConfirm(false);
+        vo.setPrice(20);
+        vo.setType(0);
         vo.setConclusion("不同意");
         String aftersaleJson=JacksonUtil.toJson(vo);
 
@@ -853,7 +855,7 @@ public class AftersaleControllerTest {
     @Test
     public void aftersaleRecieveTest()throws Exception{
         AftersaleConfirmVo vo=new AftersaleConfirmVo();
-        vo.setConfrim(true);
+        vo.setConfirm(true);
         vo.setConclusion("同意换货");
         String aftersaleJson=JacksonUtil.toJson(vo);
 
@@ -891,7 +893,7 @@ public class AftersaleControllerTest {
     @Test
     public void aftersaleRecieveTest1()throws Exception{
         AftersaleConfirmVo vo=new AftersaleConfirmVo();
-        vo.setConfrim(true);
+        vo.setConfirm(true);
         vo.setConclusion("同意退货");
         String aftersaleJson=JacksonUtil.toJson(vo);
 
@@ -929,7 +931,7 @@ public class AftersaleControllerTest {
     @Test
     public void aftersaleRecieveTest2()throws Exception{
         AftersaleConfirmVo vo=new AftersaleConfirmVo();
-        vo.setConfrim(false);
+        vo.setConfirm(false);
         vo.setConclusion("验收不通过");
         String aftersaleJson=JacksonUtil.toJson(vo);
 
