@@ -59,17 +59,17 @@ public class AftersaleDao {
 
 
     public ReturnObject<AftersaleServicePo> createAftersale(Aftersale aftersale){
-        AftersaleServicePoExample example=new AftersaleServicePoExample();
-        AftersaleServicePoExample.Criteria criteria=example.createCriteria();
-        criteria.andOrderItemIdEqualTo(aftersale.getOrderItemId());
-
-        List<AftersaleServicePo> pos=aftersaleMapper.selectByExample(example);
-        for(AftersaleServicePo po:pos){
-            if(Aftersale.State.getTypeByCode(po.getState().intValue())!=Aftersale.State.CANCEL || Aftersale.State.getTypeByCode(po.getState().intValue())!=Aftersale.State.DISAGREE){
-                logger.info("该订单id="+aftersale.getOrderItemId()+"已经申请过售后服务或者正在申请售后服务，无法再次申请");
-                return new ReturnObject<>(ResponseCode.AFTERSALE_STATENOTALLOW);
-            }
-        }
+//        AftersaleServicePoExample example=new AftersaleServicePoExample();
+//        AftersaleServicePoExample.Criteria criteria=example.createCriteria();
+//        criteria.andOrderItemIdEqualTo(aftersale.getOrderItemId());
+//
+//        List<AftersaleServicePo> pos=aftersaleMapper.selectByExample(example);
+//        for(AftersaleServicePo po:pos){
+//            if(Aftersale.State.getTypeByCode(po.getState().intValue())!=Aftersale.State.CANCEL || Aftersale.State.getTypeByCode(po.getState().intValue())!=Aftersale.State.DISAGREE){
+//                logger.info("该订单id="+aftersale.getOrderItemId()+"已经申请过售后服务或者正在申请售后服务，无法再次申请");
+//                return new ReturnObject<>(ResponseCode.AFTERSALE_STATENOTALLOW);
+//            }
+//        }
 
         AftersaleServicePo aftersalePo=aftersale.createInsertPo();
 
@@ -154,13 +154,13 @@ public class AftersaleDao {
 
 
     /**
-     * 卖家寄出维修好的货物
+     * 卖家寄出货物
      * @param id
      * @param shopId
      * @param vo
      * @return
      */
-    public ReturnObject<Object> deliverAftersale(Long id, Long shopId, AftersaleDeliverVo vo) {
+    public ReturnObject<Object> deliverAftersale(Long id, Long shopId, AftersaleDeliverVo vo,Long orderId) {
         ReturnObject<Object>returnObject=selectAftersale(id,shopId);
         AftersaleServicePo po=(AftersaleServicePo)returnObject.getData();
 
@@ -176,7 +176,7 @@ public class AftersaleDao {
 
 
         Aftersale user = new Aftersale(po);
-        AftersaleServicePo aftersalePo = user.createDeliverPo(vo);
+        AftersaleServicePo aftersalePo = user.createDeliverPo(vo,orderId);
 
         // 更新数据库
         ReturnObject<Object> retObj=modifyAftersale(aftersalePo,id);
@@ -422,8 +422,8 @@ public class AftersaleDao {
             logger.info("售后单已删除：id = " + id);
             returnObject= new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
         }
-        else if(!po.getShopId().equals(shopId) && shopId!=null && shopId!=0){
-            logger.info("没有权限修改售后单id="+id);
+        else if(shopId!=null && !po.getShopId().equals(shopId) && shopId!=0){
+            logger.info("没有权限修改或查看售后单id="+id);
             returnObject= new ReturnObject<>(ResponseCode.RESOURCE_ID_OUTSCOPE);
         }
         else{

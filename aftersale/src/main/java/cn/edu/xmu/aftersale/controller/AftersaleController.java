@@ -297,7 +297,7 @@ public class AftersaleController {
 
     @ApiOperation(value="管理员同意/不同意（退款，换货，维修）")
     @ApiImplicitParams({
-            @ApiImplicitParam(paramType = "header",dataType = "Stirng",name = "auhorization",value = "Token",required = true),
+            @ApiImplicitParam(paramType = "header",dataType = "String",name = "auhorization",value = "Token",required = true),
             @ApiImplicitParam(paramType = "path",dataType = "Long",name = "shopId",value = "店铺id",required = true),
             @ApiImplicitParam(paramType = "path",dataType = "Long",name = "id",value = "售后单id",required = true),
             @ApiImplicitParam(paramType = "body",dataType = "AftersaleConfirmVo",name = "vo",value = "处理意见")
@@ -326,7 +326,7 @@ public class AftersaleController {
 
     @ApiOperation(value="店家确认收到买家的退（换）货")
     @ApiImplicitParams({
-            @ApiImplicitParam(paramType = "header",dataType = "Stirng",name = "auhorization",value = "Token",required = true),
+            @ApiImplicitParam(paramType = "header",dataType = "String",name = "auhorization",value = "Token",required = true),
             @ApiImplicitParam(paramType = "path",dataType = "Long",name = "shopId",value = "店铺id",required = true),
             @ApiImplicitParam(paramType = "path",dataType = "Long",name = "id",value = "售后单id",required = true),
             @ApiImplicitParam(paramType = "body",dataType = "AftersaleConfirmVo",name = "vo",value = "处理意见")
@@ -359,14 +359,14 @@ public class AftersaleController {
      */
     @ApiOperation(value="买家根据售后单id查询售后单信息")
     @ApiImplicitParams({
-            @ApiImplicitParam(paramType = "header",dataType = "Stirng",name = "auhorization",value = "Token",required = true),
+            @ApiImplicitParam(paramType = "header",dataType = "String",name = "auhorization",value = "Token",required = true),
             @ApiImplicitParam(paramType = "path",dataType = "Long",name = "id",value = "售后单id",required = true)
     })
     @ApiResponses({
             @ApiResponse(code=0,message = "成功"),
             @ApiResponse(code = 404,message = "参数不合法")
     })
-    @Audit
+    //@Audit
     @GetMapping("aftersales/{id}")
     public Object getAftersaleById(@PathVariable("id")Long id){
         if(logger.isDebugEnabled()){
@@ -390,7 +390,7 @@ public class AftersaleController {
      */
     @ApiOperation(value="店家根据售后单id查询售后单信息")
     @ApiImplicitParams({
-            @ApiImplicitParam(paramType = "header",dataType = "Stirng",name = "auhorization",value = "Token",required = true),
+            @ApiImplicitParam(paramType = "header",dataType = "String",name = "auhorization",value = "Token",required = true),
             @ApiImplicitParam(paramType = "path",dataType = "Long",name = "id",value = "售后单id",required = true)
     })
     @ApiResponses({
@@ -418,9 +418,7 @@ public class AftersaleController {
 
     @ApiOperation(value="买家查询所有售后单信息")
     @ApiImplicitParams({
-            @ApiImplicitParam(paramType = "header",dataType = "Stirng",name = "auhorization",value = "Token",required = true),
-            @ApiImplicitParam(paramType = "query",dataType = "Long",name = "spuId",value = "SPU Id",required = false),
-            @ApiImplicitParam(paramType = "query",dataType = "Long",name = "skuId",value = "SKU Id",required = false),
+            @ApiImplicitParam(paramType = "header",dataType = "String",name = "auhorization",value = "Token",required = true),
             @ApiImplicitParam(paramType = "query",dataType = "LocalDateTime",name = "beginTime",value = "开始时间",required = false),
             @ApiImplicitParam(paramType = "query",dataType = "LocalDateTime",name = "endTime",value = "结束时间",required = false),
             @ApiImplicitParam(paramType = "query",dataType = "Integer",name = "page",value = "页码",required = false),
@@ -431,9 +429,9 @@ public class AftersaleController {
     @ApiResponses({
             @ApiResponse(code=0,message = "成功"),
     })
-    @Audit
+    //@Audit
     @GetMapping("aftersales")
-    public Object getAftersaleByUserId(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId,
+    public Object getAftersaleByUserId(@LoginUser @RequestParam(required = false) Long userId,
                                        @RequestParam (required = false)LocalDateTime beginTime,
                                        @RequestParam (required = false)LocalDateTime endTime,
                                        @RequestParam(required = false, defaultValue = "1") Integer page,
@@ -460,10 +458,8 @@ public class AftersaleController {
 
     @ApiOperation(value="管理员查询所有售后单信息")
     @ApiImplicitParams({
-            @ApiImplicitParam(paramType = "header",dataType = "Stirng",name = "auhorization",value = "Token",required = true),
+            @ApiImplicitParam(paramType = "header",dataType = "String",name = "auhorization",value = "Token",required = true),
             @ApiImplicitParam(paramType = "path",dataType = "Long",name = "id",value = "店铺id",required = true),
-            @ApiImplicitParam(paramType = "query",dataType = "Long",name = "spuId",value = "SPU Id",required = false),
-            @ApiImplicitParam(paramType = "query",dataType = "Long",name = "skuId",value = "SKU Id",required = false),
             @ApiImplicitParam(paramType = "query",dataType = "LocalDateTime",name = "beginTime",value = "开始时间",required = false),
             @ApiImplicitParam(paramType = "query",dataType = "LocalDateTime",name = "endTime",value = "结束时间",required = false),
             @ApiImplicitParam(paramType = "query",dataType = "Integer",name = "page",value = "页码",required = false),

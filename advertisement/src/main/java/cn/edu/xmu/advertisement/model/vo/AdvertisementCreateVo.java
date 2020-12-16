@@ -16,7 +16,7 @@ public class AdvertisementCreateVo {
     private String content;
 
     @ApiModelProperty(value = "权重")
-    private Integer weight;
+    private String weight;
 
     @ApiModelProperty(value = "开始日期")
     private LocalDate beginDate;
@@ -34,7 +34,7 @@ public class AdvertisementCreateVo {
         Advertisement advertisement=new Advertisement();
 
         advertisement.setContent(content);
-        advertisement.setWeight(weight);
+        advertisement.setWeight(Integer.valueOf(weight));
         advertisement.setBeginDate(beginDate);
         advertisement.setEndDate(endDate);
         advertisement.setRepeats(repeats);

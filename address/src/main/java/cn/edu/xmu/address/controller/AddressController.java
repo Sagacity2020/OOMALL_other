@@ -247,16 +247,17 @@ public class AddressController {
             @ApiResponse(code=602,message = "地区已废弃")
     })
     @Audit
-    @PostMapping("regions/{id}/subregions")
+    @PostMapping("/shops/{did}/regions/{id}/subregions")
     public Object newSubRegion(@Depart @ApiIgnore @RequestParam(required = false)Long departId,  @PathVariable Long id, @Validated @RequestBody RegionVo vo, BindingResult bindingResult){
-            if(departId.equals(-2L))
-            {
-                return Common.decorateReturnObject(new ReturnObject(ResponseCode.FIELD_NOTVALID,String.format("无权限增加地区")));
-            }
+//            if(departId.equals(-2L))
+//            {
+//                return Common.decorateReturnObject(new ReturnObject(ResponseCode.FIELD_NOTVALID,String.format("无权限增加地区")));
+//            }
             Object returnObject = Common.processFieldErrors(bindingResult,httpServletResponse);
             if(null!=returnObject){
                 return  returnObject;
             }
+            logger.debug("userId= "+id+"shopid="+departId);
             logger.debug("新建地区id："+id);
             Region region=new Region(vo);
             region.setPid(id);
@@ -290,20 +291,13 @@ public class AddressController {
             @ApiResponse(code=602,message = "地区已废弃")
     })
     @Audit
-    @PutMapping("/regions/{id}")
+    @PutMapping("/shops/{did}/regions/{id}")
     public Object changeRegion(@Depart @ApiIgnore @RequestParam(required = false)Long departId, @PathVariable Long id, @Validated @RequestBody RegionVo vo,BindingResult bindingResult){
         Object returnObject=Common.processFieldErrors(bindingResult,httpServletResponse);
         if(returnObject!=null) {
             return returnObject;
         }
         logger.debug("修改地区id："+id);
-//        ReturnObject<Integer> retObject=regionService.isRegion(id);
-//        Integer ret=retObject.getData();
-//        logger.debug(ret.toString());
-//        if(!ret.equals(1)){
-//            ReturnObject returnObject1=new ReturnObject(retObject.getCode(),retObject.getErrmsg());
-//            return Common.decorateReturnObject(returnObject1);
-//        }
         Region region=new Region();
         region.setName(vo.getName());
         region.setId(id);
@@ -330,7 +324,7 @@ public class AddressController {
             @ApiResponse(code=602,message = "地区已废弃")
     })
     @Audit
-    @DeleteMapping("/regions/{id}")
+    @DeleteMapping("/shops/{did}/regions/{id}")
     public Object deleteRegion(@Depart @ApiIgnore @RequestParam(required = false) Long departId,@PathVariable Long id){
             logger.debug("delete region id  = "+id);
 

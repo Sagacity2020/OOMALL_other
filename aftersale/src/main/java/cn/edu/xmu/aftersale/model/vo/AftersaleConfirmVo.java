@@ -6,8 +6,12 @@ import lombok.Data;
 @Data
 public class AftersaleConfirmVo {
 
-    Boolean confrim;
+    private Boolean confrim;
+
+    private Integer price;
+
+    private Integer type;
 
     @ApiModelProperty(value = "处理意见")
-    String conclusion;
+    private String conclusion;
 }

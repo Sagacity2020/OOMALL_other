@@ -41,6 +41,12 @@ public class AftersaleControllerTest {
         return token;
     }
 
+    @Test
+    public void createToken(){
+        String token=creatTestToken(3835L,-2L,1000000000);
+        System.out.println(token);
+    }
+
 
     /*
     修改售后信息
@@ -1043,7 +1049,7 @@ public class AftersaleControllerTest {
      */
     @Test
     public void aftersaleGetByIdTest()throws Exception{
-        String token = creatTestToken(1L, -2L, 100);
+        String token = creatTestToken(3835L, -2L, 100);
         String expectedResponse = "";
         String responseString = null;
 
@@ -1100,7 +1106,7 @@ public class AftersaleControllerTest {
      */
     @Test
     public void aftersaleGetByUserIdTest()throws Exception{
-        String token = creatTestToken(1L, 0L, 100);
+        String token = creatTestToken(3835L, 0L, 100);
         String expectedResponse = "";
         String responseString = null;
 
