@@ -184,12 +184,13 @@ public class Aftersale implements VoObject {
         return po;
     }
 
-    public AftersaleServicePo createDeliverPo(AftersaleDeliverVo vo){
+    public AftersaleServicePo createDeliverPo(AftersaleDeliverVo vo,Long orderId){
         AftersaleServicePo po = new AftersaleServicePo();
 
         po.setId(id);
         po.setCustomerLogSn(vo.getShopLogSn());
         po.setState(State.DELIVERING.getCode().byteValue());
+        po.setOrderId(orderId);
         po.setGmtCreate(null);
         po.setGmtModified(LocalDateTime.now());
 
@@ -223,6 +224,8 @@ public class Aftersale implements VoObject {
         else {
             po.setState(State.DISAGREE.getCode().byteValue());
         }
+        po.setRefund(vo.getPrice().longValue());
+        po.setType(vo.getType().byteValue());
         po.setGmtCreate(null);
         po.setGmtModified(LocalDateTime.now());
 

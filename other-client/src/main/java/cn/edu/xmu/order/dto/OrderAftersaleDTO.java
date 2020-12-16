@@ -15,10 +15,6 @@ public class OrderAftersaleDTO implements Serializable {
 
     String skuName;
 
-    Integer quantity;
-
-    Long price;
-
     Long orderId;
 
     String orderSn;

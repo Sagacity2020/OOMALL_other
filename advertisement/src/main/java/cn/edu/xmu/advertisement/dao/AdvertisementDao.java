@@ -54,9 +54,8 @@ public class AdvertisementDao {
 
         example=new AdvertisementPoExample();
         criteria=example.createCriteria();
-        localDate=LocalDate.of(2020,12,16);
-        criteria.andBeginDateLessThan(localDate);
-        criteria.andEndDateGreaterThan(localDate);
+        criteria.andBeginDateLessThanOrEqualTo(localDate);
+        criteria.andEndDateGreaterThanOrEqualTo(localDate);
         criteria.andRepeatsNotEqualTo((byte)1);
         criteria.andBeDefaultIsNull();
         criteria.andStateEqualTo((byte)4);

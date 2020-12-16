@@ -29,8 +29,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 
@@ -67,45 +66,42 @@ public class AdvertisementService{
         loadAdvertisement();
         List<Advertisement>advertisements=new ArrayList<>();
 
-
-        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        String dateStr = localDate.format(fmt);
-
-        List<Serializable> lists = redisTemplate.opsForList().range(dateStr,0,-1);
-        for(Serializable str:lists){
-
-            JSONObject jsStr = JSONObject.parseObject(str.toString());
-
-            Advertisement advertisement = (Advertisement) JSONObject.toJavaObject(jsStr,Advertisement.class);
-            if(advertisement.getSegId()!=null) {
+        Set<String> set=redisTemplate.keys("*");
+        for(String str:set){
+            JSONObject jsStr=JSONObject.parseObject(redisTemplate.opsForValue().get(str.toString()).toString());
+            Advertisement advertisement = (Advertisement) JSONObject.toJavaObject(jsStr, Advertisement.class);
+            if (advertisement.getSegId() != null) {
                 ReturnObject<TimeSegmentDTO> returnObj = timeServiceInterface.getTimesegmentById(advertisement.getSegId());
                 TimeSegmentDTO timeSegmentDTO = returnObj.getData();
                 if (timeSegmentDTO.getBeginTime().isBefore(localTime) && timeSegmentDTO.getEndTime().isAfter(localTime)) {
                     advertisements.add(advertisement);
-                    count++;
                 }
             }
+        }
+        /*Collections.sort(advertisements, new Comparator<Advertisement>() {
+            @Override
+            public int compare(Advertisement o1, Advertisement o2) {
+                int weights=o1.getWeight()-o2.getWeight();
+                if(weights<0){
+                    return 1;
+                }
+                else if(weights>0){
+                    return -1;
+                }
+                return 0;
+            }
+        });
+         */
+
+        List<Advertisement> advertisementList=new ArrayList<>();
+        for(Advertisement advertisement:advertisements){
+            advertisementList.add(advertisement);
+            count++;
             if(count==8){
                 break;
             }
-
         }
-        /*for(AdvertisementPo po:pos){
-            if(po.getSegId()!=null) {
-                ReturnObject<TimeSegmentDTO> returnObj = iTimeService.getTimesegmentById(po.getSegId());
-                TimeSegmentDTO timeSegmentDTO = returnObj.getData();
-                if (timeSegmentDTO.getBeginTime().isBefore(localTime) && timeSegmentDTO.getEndTime().isAfter(localTime)) {
-                    Advertisement advertisement = new Advertisement(po);
-                    advertisements.add(advertisement);
-                }
-            }
-            else {
-                Advertisement advertisement = new Advertisement(po);
-                advertisements.add(advertisement);
-            }
-        }
-         */
-        return new ReturnObject<>(advertisements);
+        return new ReturnObject<>(advertisementList);
     }
 
 
@@ -216,16 +212,15 @@ public class AdvertisementService{
     public void loadAdvertisement(){
 
         LocalDate localDate=LocalDate.now();
-        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        String dateStr = localDate.format(fmt);
 
         ReturnObject<List<AdvertisementPo>> returnObject=advertisementDao.getCurrentAdvertisement(localDate);
         List<AdvertisementPo> pos=returnObject.getData();
         for(AdvertisementPo po:pos){
             Advertisement advertisement=new Advertisement(po);
+            String key="ad_"+advertisement.getId();
             String advertisementJson=JacksonUtil.toJson(advertisement);
-            redisTemplate.opsForList().rightPush(dateStr,advertisementJson);
+            redisTemplate.opsForValue().set(key,advertisementJson);
+            redisTemplate.expire(key,1,TimeUnit.DAYS);
         }
-        redisTemplate.expire(dateStr,1,TimeUnit.DAYS);
     }
 }

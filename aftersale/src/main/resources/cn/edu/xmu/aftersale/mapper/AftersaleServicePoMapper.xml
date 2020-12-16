@@ -26,6 +26,7 @@
     <result column="be_deleted" jdbcType="TINYINT" property="beDeleted" />
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="order_id" jdbcType="BIGINT" property="orderId" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--
@@ -100,7 +101,7 @@
     -->
     id, order_item_id, customer_id, shop_id, service_sn, type, reason, conclusion, refund, 
     quantity, region_id, detail, consignee, mobile, customer_log_sn, shop_log_sn, state, 
-    be_deleted, gmt_create, gmt_modified
+    be_deleted, gmt_create, gmt_modified, order_id
   </sql>
   <select id="selectByExample" parameterType="cn.edu.xmu.aftersale.model.po.AftersaleServicePoExample" resultMap="BaseResultMap">
     <!--
@@ -162,14 +163,14 @@
       region_id, detail, consignee, 
       mobile, customer_log_sn, shop_log_sn, 
       state, be_deleted, gmt_create, 
-      gmt_modified)
+      gmt_modified, order_id)
     values (#{orderItemId,jdbcType=BIGINT}, #{customerId,jdbcType=BIGINT}, #{shopId,jdbcType=BIGINT}, 
       #{serviceSn,jdbcType=VARCHAR}, #{type,jdbcType=TINYINT}, #{reason,jdbcType=VARCHAR}, 
       #{conclusion,jdbcType=VARCHAR}, #{refund,jdbcType=BIGINT}, #{quantity,jdbcType=INTEGER}, 
       #{regionId,jdbcType=BIGINT}, #{detail,jdbcType=VARCHAR}, #{consignee,jdbcType=VARCHAR}, 
       #{mobile,jdbcType=VARCHAR}, #{customerLogSn,jdbcType=VARCHAR}, #{shopLogSn,jdbcType=VARCHAR}, 
       #{state,jdbcType=TINYINT}, #{beDeleted,jdbcType=TINYINT}, #{gmtCreate,jdbcType=TIMESTAMP}, 
-      #{gmtModified,jdbcType=TIMESTAMP})
+      #{gmtModified,jdbcType=TIMESTAMP}, #{orderId,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="cn.edu.xmu.aftersale.model.po.AftersaleServicePo">
     <!--
@@ -238,6 +239,9 @@
       <if test="gmtModified != null">
         gmt_modified,
       </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="orderItemId != null">
@@ -296,6 +300,9 @@
       </if>
       <if test="gmtModified != null">
         #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
@@ -376,6 +383,9 @@
       <if test="record.gmtModified != null">
         gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP},
       </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=BIGINT},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -406,7 +416,8 @@
       state = #{record.state,jdbcType=TINYINT},
       be_deleted = #{record.beDeleted,jdbcType=TINYINT},
       gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
-      gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP}
+      gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP},
+      order_id = #{record.orderId,jdbcType=BIGINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -475,6 +486,9 @@
       <if test="gmtModified != null">
         gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
       </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=BIGINT},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -502,7 +516,8 @@
       state = #{state,jdbcType=TINYINT},
       be_deleted = #{beDeleted,jdbcType=TINYINT},
       gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
-      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      order_id = #{orderId,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>
