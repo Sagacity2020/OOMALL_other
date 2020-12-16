@@ -6,5 +6,6 @@ public interface CustomerServiceInterface {
 
    public CustomerDTO getCustomerInfoById(Long id);
    public Boolean getPointFromRefund(Long userId,Integer point);
+   public Boolean payWithPoint(Long userId,Integer amount);
 
 }

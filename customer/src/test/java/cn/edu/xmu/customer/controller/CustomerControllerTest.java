@@ -98,7 +98,7 @@ public class CustomerControllerTest {
                 "  \"email\": \"1309339990@qq.com\",\n" +
                 "  \"userName\": \"59460469111\",\n" +
                 "  \"password\": \"000105\",\n" +
-                "  \"realName\": \"xsk\",\n" +
+                "  \"realName\": \"\",\n" +
                 "  \"gender\": 0,\n" +
                 "  \"birthday\": \"2000-01-05\"\n" +
                 "}";
