@@ -36,7 +36,7 @@ import java.util.List;
  **/
 @Api(value = "分享服务", tags = "share")
 @RestController /*Restful的Controller对象*/
-@RequestMapping(produces = "application/json;charset=UTF-8")
+@RequestMapping(value = "/share",produces = "application/json;charset=UTF-8")
 public class ShareController {
     private  static  final Logger logger = LoggerFactory.getLogger(ShareController.class);
 
