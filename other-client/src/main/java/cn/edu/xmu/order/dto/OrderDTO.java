@@ -11,6 +11,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class OrderDTO implements Serializable {
     private Long orderId;
+    private Long orderItemId;
     private Integer quantity;
     private Integer price;
     private Long beShareId;
