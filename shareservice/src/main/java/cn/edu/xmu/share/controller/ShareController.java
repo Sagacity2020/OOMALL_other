@@ -36,7 +36,7 @@ import java.util.List;
  **/
 @Api(value = "分享服务", tags = "share")
 @RestController /*Restful的Controller对象*/
-@RequestMapping(value = "/share", produces = "application/json;charset=UTF-8")
+@RequestMapping(value = "/share",produces = "application/json;charset=UTF-8")
 public class ShareController {
     private  static  final Logger logger = LoggerFactory.getLogger(ShareController.class);
 
@@ -55,7 +55,7 @@ public class ShareController {
     @ApiOperation(value = "买家查询所有分享记录",  produces="application/json")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "header", dataType = "String",  name = "authorization", value ="用户token", required = true),
-            @ApiImplicitParam(paramType = "query",  dataType = "Integer",  name = "goodsSpuId",      value ="SPU Id",    required = false),
+            @ApiImplicitParam(paramType = "query",  dataType = "Integer",  name = "skuId",      value ="SPU Id",    required = false),
             @ApiImplicitParam(paramType = "query",  dataType = "String",  name = "beginTime",        value ="开始时间",  required = false),
             @ApiImplicitParam(paramType = "query",  dataType = "String",  name = "endTime",        value ="结束时间",  required = false),
             @ApiImplicitParam(paramType = "query",  dataType = "Integer", name = "page",          value ="页码",      required = false),
@@ -67,17 +67,17 @@ public class ShareController {
     @GetMapping("/shares")
     public Object getShares(
             @LoginUser @ApiIgnore @RequestParam(required = false) Long sharerId,
-            @RequestParam(required = false) Long  goodsSpuId,
+            @RequestParam(required = false) Long  skuId,
             @RequestParam(required = false) String beginTime,
             @RequestParam(required = false) String endTime,
             @RequestParam(required = false, defaultValue = "1")  Integer page,
-            @RequestParam(required = false, defaultValue = "10")  Integer pageSize,BindingResult bindingResult) {
+            @RequestParam(required = false, defaultValue = "10")  Integer pageSize) {
         LocalDateTime begin = null, end = null;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
         if(beginTime != null)
         {
-            if(beginTime.equals("^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)\\s+([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"))
+            if(beginTime.matches("^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)\\s+([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"))
                 begin = LocalDateTime.parse(beginTime, formatter);
             else
                 return Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,"开始时间格式不正确"), httpServletResponse);
@@ -85,7 +85,7 @@ public class ShareController {
 
         if(endTime != null)
         {
-            if(endTime.equals("^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)\\s+([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"))
+            if(endTime.matches("^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)\\s+([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"))
                 end = LocalDateTime.parse(endTime, formatter);
             else
                 return Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,"结束时间格式不正确"), httpServletResponse);
@@ -93,7 +93,7 @@ public class ShareController {
         //如果不分页？？？？
         page = (page == null)?1:page;
         pageSize = (pageSize == null)?10:pageSize;
-        ReturnObject<PageInfo<VoObject>> returnObject = shareService.getShares(sharerId, goodsSpuId, begin, end, page, pageSize);
+        ReturnObject<PageInfo<VoObject>> returnObject = shareService.getShares(sharerId, skuId, begin, end, page, pageSize);
         logger.debug("getshares: sharerId = " + sharerId);
         return Common.getPageRetObject(returnObject);
     }
@@ -139,14 +139,13 @@ public class ShareController {
     @ApiOperation(value="发起分享")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
-            @ApiImplicitParam(paramType = "path", dataType = "int", name = "id", value = "商品skuId", required = true)
+            @ApiImplicitParam(paramType = "path", dataType = "Integer", name = "id", value = "商品skuId", required = true)
     })
     @ApiResponses({
             @ApiResponse(code = 0, message = "成功")
     })
    @Audit
    @PostMapping("skus/{id}/shares")
-    @ResponseBody
     public Object createShare(
             @LoginUser @ApiIgnore @RequestParam(required = false) Long sharerId,
             @PathVariable Long id){
@@ -208,7 +207,7 @@ public class ShareController {
     @ApiOperation(value = "买家查询所有分享记录",  produces="application/json")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "header", dataType = "String",  name = "authorization", value ="用户token", required = true),
-            @ApiImplicitParam(paramType = "query",  dataType = "Integer",  name = "goodsSkuId",      value ="SKU Id",    required = false),
+            @ApiImplicitParam(paramType = "query",  dataType = "Integer",  name = "skuId",      value ="SKU Id",    required = false),
             @ApiImplicitParam(paramType = "query",  dataType = "String",  name = "beginTime",        value ="开始时间",  required = false),
             @ApiImplicitParam(paramType = "query",  dataType = "String",  name = "endTime",        value ="结束时间",  required = false),
             @ApiImplicitParam(paramType = "query",  dataType = "Integer", name = "page",          value ="页码",      required = false),
@@ -220,7 +219,7 @@ public class ShareController {
     @GetMapping("/beshared")
     public Object getBeShared(
             @LoginUser @ApiIgnore @RequestParam(required = false) Long sharerId,
-            @RequestParam(required = false) Long  goodsSkuId,
+            @RequestParam(required = false) Long  skuId,
             @RequestParam(required = false) String beginTime,
             @RequestParam(required = false) String endTime,
             @RequestParam(required = false, defaultValue = "1")  Integer page,
@@ -229,7 +228,7 @@ public class ShareController {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         if(beginTime != null)
         {
-            if(beginTime.equals("^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)\\s+([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"))
+            if(beginTime.matches("^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)\\s+([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"))
                 begin = LocalDateTime.parse(beginTime, formatter);
             else
                 return Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,"开始时间格式不正确"), httpServletResponse);
@@ -237,7 +236,7 @@ public class ShareController {
 
         if(endTime != null)
         {
-            if(endTime.equals("^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)\\s+([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"))
+            if(endTime.matches("^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)\\s+([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"))
                 end = LocalDateTime.parse(endTime, formatter);
             else
                 return Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,"结束时间格式不正确"), httpServletResponse);
@@ -245,7 +244,7 @@ public class ShareController {
         //如果不分页？？？？
         page = (page == null)?1:page;
         pageSize = (pageSize == null)?10:pageSize;
-        ReturnObject<PageInfo<VoObject>> returnObject = shareService.getBeShared(sharerId, goodsSkuId, begin, end, page, pageSize);
+        ReturnObject<PageInfo<VoObject>> returnObject = shareService.getBeShared(sharerId, skuId, begin, end, page, pageSize);
         logger.debug("getshares: sharerId = " + sharerId);
         return Common.getPageRetObject(returnObject);
     }
@@ -282,7 +281,7 @@ public class ShareController {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         if(beginTime != null)
         {
-            if(beginTime.equals("^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)\\s+([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"))
+            if(beginTime.matches("^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)\\s+([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"))
                 begin = LocalDateTime.parse(beginTime, formatter);
             else
                 return Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,"开始时间格式不正确"), httpServletResponse);
@@ -290,7 +289,7 @@ public class ShareController {
 
         if(endTime != null)
         {
-            if(endTime.equals("^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)\\s+([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"))
+            if(endTime.matches("^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)\\s+([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"))
                 end = LocalDateTime.parse(endTime, formatter);
             else
                 return Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,"结束时间格式不正确"), httpServletResponse);
@@ -373,6 +372,10 @@ public class ShareController {
         if (null != returnObject) {
             return returnObject;
         }
+        if(vo.getStrategy().equals(""))
+        {
+                return Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,"分享规则不能为空"), httpServletResponse);
+        }
         Stategy s = JacksonUtil.toObj(StringEscapeUtils.unescapeJava(vo.getStrategy()), Stategy.class);
         if(s.getFirstOrAvg() == null)
             return Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,"分享规则格式不正确"), httpServletResponse);
@@ -382,6 +385,7 @@ public class ShareController {
             if(r.getNum() == null || r.getRate() == null)
                 return Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,"分享规则格式不正确"), httpServletResponse);
         }
+
         ReturnObject retObject=shareService.createShareActivity(shopId, id, vo);
         if (retObject.getData() != null) {
             httpServletResponse.setStatus(HttpStatus.CREATED.value());
@@ -426,6 +430,10 @@ public class ShareController {
         if (null != returnObject) {
             logger.debug("validate fail");
             return returnObject;
+        }
+        if(vo.getStrategy().equals(""))
+        {
+            return Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,"分享规则不能为空"), httpServletResponse);
         }
         Stategy s = JacksonUtil.toObj(StringEscapeUtils.unescapeJava(vo.getStrategy()), Stategy.class);
         if(s.getFirstOrAvg() == null)
@@ -488,7 +496,6 @@ public class ShareController {
     })
     @ApiResponses({
             @ApiResponse(code = 0, message = "成功"),
-            @ApiResponse(code = 605, message = "分享活动时段冲突")
     })
     @Audit
     @PutMapping("/shops/{shopId}/shareactivities/{id}/online")

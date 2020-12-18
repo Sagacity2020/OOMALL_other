@@ -12,6 +12,8 @@ import cn.edu.xmu.share.model.bo.Stategy;
 import cn.edu.xmu.share.model.po.ShareActivityPo;
 import cn.edu.xmu.share.model.vo.ShareActivityVo;
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.json.JSONException;
@@ -45,6 +47,40 @@ public class ShareControllerTest {
         String token = new JwtHelper().createToken(userId, departId, expireTime);
         logger.debug(token);
         return token;
+    }
+
+    @Test
+    //测试用户查找自己的分享
+    public void getShares() throws Exception{
+
+        String token = creatTestToken(2L,1L,100);
+
+        String responseString = this.mvc.perform(get("/shares/?page=1&pageSize=1").header("authorization",token))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andReturn().getResponse().getContentAsString();
+
+        String expectedResponse = "{\n" +
+                "    \"errno\": 0,\n" +
+                "    \"data\": {\n" +
+                "        \"pageSize\": 1,\n" +
+                "        \"page\": 1,\n" +
+                "        \"list\": [\n" +
+                "            {\n" +
+                "                \"id\": 442316,\n" +
+                "                \"sharerId\": 2,\n" +
+                "\"sku\": {\n" +
+                "                    \"price\": 666\n" +
+                "                }," +
+                "                \"quantity\": 1,\n" +
+                "                \"gmtCreate\": \"2020-12-07T21:47:20\"\n" +
+                "            }\n" +
+                "        ]\n" +
+                "    },\n" +
+                "    \"errmsg\": \"成功\"\n" +
+                "}";
+
+        JSONAssert.assertEquals(expectedResponse, responseString, false);
     }
 
 
@@ -115,6 +151,41 @@ public class ShareControllerTest {
 
     @Test
     //测试用户查找自己的分享
+    public void getSharesAdmin() throws Exception{
+
+        String token = creatTestToken(2L,0L,100);
+
+        String responseString = this.mvc.perform(get("/shops/0/skus/501/shares?beginTime=2020-12-06 22:00:00&endTime=2020-12-07 22:00:00&page=1&pageSize=1").header("authorization",token))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andReturn().getResponse().getContentAsString();
+
+        String expectedResponse = "{\n" +
+                "    \"errno\": 0,\n" +
+                "    \"data\": {\n" +
+                "        \"pageSize\": 1,\n" +
+                "        \"page\": 1,\n" +
+                "        \"list\": [\n" +
+                "            {\n" +
+                "                \"id\": 442327,\n" +
+                "                \"sharerId\": 1912,\n" +
+                "\"sku\": {\n" +
+                "                    \"price\": 666\n" +
+                "                }," +
+                "                \"quantity\": 720,\n" +
+                "                \"gmtCreate\": \"2020-12-07T21:47:20\"\n" +
+                "            }\n" +
+                "        ]\n" +
+                "    },\n" +
+                "    \"errmsg\": \"成功\"\n" +
+                "}";
+
+
+        JSONAssert.assertEquals(expectedResponse, responseString, false);
+    }
+
+    @Test
+    //测试用户查找自己的分享
     public void getSharesAdmin1() throws Exception{
 
         String token = creatTestToken(2L,1L,100);
@@ -128,7 +199,24 @@ public class ShareControllerTest {
         JSONAssert.assertEquals(expectedResponse, responseString, false);
     }
 
+    @Test
+    //测试用户查找自己的分享成功
+    public void getBeShared() throws Exception{
 
+        String token = creatTestToken(2L,1L,100);
+
+        String responseString = this.mvc.perform(get("/beshared?beginTime=2020-12-22:00:00&endTime=2019-12-44 :00:00").header("authorization",token))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andReturn().getResponse().getContentAsString();
+
+        String expectedResponse = "{\n" +
+                "    \"errno\": 503\n" +
+                "}";
+
+
+        JSONAssert.assertEquals(expectedResponse, responseString, false);
+    }
 
     @Test
     //测试用户查找自己的分享成功
@@ -181,6 +269,25 @@ public class ShareControllerTest {
 
     @Test
     //测试管理员查找自己店铺的分享成功
+    public void getBeSharedAdmin() throws Exception{
+
+        String token = creatTestToken(2L,0L,100);
+
+        String responseString = this.mvc.perform(get("/shops/0/skus/505/beshared?beginTime=2020-:00&endTime=2020-12-07 22:00:00").header("authorization",token))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andReturn().getResponse().getContentAsString();
+
+        String expectedResponse = "{\n" +
+                "    \"errno\": 503\n" +
+                "}";
+
+
+        JSONAssert.assertEquals(expectedResponse, responseString, false);
+    }
+
+    @Test
+    //测试管理员查找自己店铺的分享成功
     public void getBeSharedAdmin1() throws Exception{
 
         String token = creatTestToken(2L,1L,100);
@@ -191,6 +298,69 @@ public class ShareControllerTest {
                 .andReturn().getResponse().getContentAsString();
 
         String expectedResponse = "{\"errno\":0,\"data\":{\"total\":25,\"pages\":7,\"pageSize\":4,\"page\":2,\"list\":[{\"id\":434725,\"sku\":{\"price\":666}},{\"id\":434824,\"sku\":{\"price\":666}},{\"id\":434892,\"sku\":{\"price\":666}},{\"id\":434927,\"sku\":{\"price\":666}}]},\"errmsg\":\"成功\"}";
+        JSONAssert.assertEquals(expectedResponse, responseString, false);
+    }
+
+    @Test
+    //测试用户查找分享活动 shopId spuId
+    public void getShareActivities() throws Exception{
+
+        String token = creatTestToken(781L,1L,100);
+
+        String responseString = this.mvc.perform(get("/shareactivities?skuId=501&page=2&pageSize=5").header("authorization",token)
+                //.queryParam("shopId", "2"))
+        )
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andReturn().getResponse().getContentAsString();
+
+        String expectedResponse = "{\n" +
+                "    \"errno\": 0,\n" +
+                "    \"data\": {\n" +
+                "        \"pageSize\": 5,\n" +
+                "        \"page\": 2,\n" +
+                "        \"list\": [\n" +
+                "            {\n" +
+                "                \"id\": 306268,\n" +
+                "                \"shopId\": 0,\n" +
+                "                \"skuId\": 501,\n" +
+                "                \"beginTime\": \"2020-12-07T21:47:19\",\n" +
+                "                \"endTime\": \"2021-10-10T23:23:23\"\n" +
+                "            },\n" +
+                "            {\n" +
+                "                \"id\": 306288,\n" +
+                "                \"shopId\": 0,\n" +
+                "                \"skuId\": 501,\n" +
+                "                \"beginTime\": \"2020-12-07T21:47:19\",\n" +
+                "                \"endTime\": \"2021-10-10T23:23:23\"\n" +
+                "            },\n" +
+                "            {\n" +
+                "                \"id\": 306361,\n" +
+                "                \"shopId\": 0,\n" +
+                "                \"skuId\": 501,\n" +
+                "                \"beginTime\": \"2020-12-07T21:47:19\",\n" +
+                "                \"endTime\": \"2021-10-10T23:23:23\"\n" +
+                "            },\n" +
+                "            {\n" +
+                "                \"id\": 306366,\n" +
+                "                \"shopId\": 0,\n" +
+                "                \"skuId\": 501,\n" +
+                "                \"beginTime\": \"2020-12-07T21:47:19\",\n" +
+                "                \"endTime\": \"2021-10-10T23:23:23\"\n" +
+                "            },\n" +
+                "            {\n" +
+                "                \"id\": 307518,\n" +
+                "                \"shopId\": 0,\n" +
+                "                \"skuId\": 501,\n" +
+                "                \"beginTime\": \"2020-12-07T21:47:19\",\n" +
+                "                \"endTime\": \"2021-10-10T23:23:23\"\n" +
+                "            }\n" +
+                "        ]\n" +
+                "    },\n" +
+                "    \"errmsg\": \"成功\"\n" +
+                "}";
+
+
         JSONAssert.assertEquals(expectedResponse, responseString, false);
     }
 
@@ -228,6 +398,62 @@ public class ShareControllerTest {
 
     @Test
     //测试新建分享
+    public void createShare() throws Exception{
+
+        String token = creatTestToken(2L,0L,100);
+
+        String responseString1= null;
+        try{
+            responseString1 = this.mvc.perform(put("/shops/0/shareactivities/304113/online").header("authorization",token))
+                    .andExpect(status().isOk())
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        }catch (JSONException e) {
+            e.printStackTrace();
+        }
+        //Boolean flag = shareActivityDao.isShared(2L,668L);
+        //Boolean flag=true;
+        String responseString= null;
+        try{
+            responseString = this.mvc.perform(post("/skus/501/shares").header("authorization",token))
+                    .andExpect(status().isCreated())
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        }catch (JSONException e) {
+            e.printStackTrace();
+        }
+        String expectedResponse = "{\n" +
+                "    \"errno\": 0,\n" +
+                "    \"data\": {\n" +
+                "        \"sharerId\": 2," +
+                "        \"sku\": {" +
+                "            \"price\": 666\n" +
+                "        },\n" +
+                "        \"quantity\": 0\n" +
+                "    },\n" +
+                "    \"errmsg\": \"成功\"\n" +
+                "}";
+        JSONAssert.assertEquals(expectedResponse, responseString, false);
+        JSONObject jsonObject = JSONObject.parseObject(new String(responseString)).getJSONObject("data");
+        Long shareId = jsonObject.getLong("id");
+
+
+        String responseString2 = this.mvc.perform(get("/shares?skuId=501&page=1&pageSize=1").header("authorization",token))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andReturn().getResponse().getContentAsString();
+
+        JSONObject jsonObject2 = JSONObject.parseObject(new String(responseString2)).getJSONObject("data");
+        JSONArray jsonArray = jsonObject2.getJSONArray("list");
+        Long shareId2 = jsonArray.getJSONObject(0).getLong("id");
+        JSONAssert.assertEquals(shareId.toString(), shareId2.toString(), false);
+
+
+
+    }
+
+    @Test
+    //测试新建分享
     public void createShare1() throws Exception{
 
         String token = creatTestToken(781L,0L,100);
@@ -252,6 +478,58 @@ public class ShareControllerTest {
 
     @Test
     //测试管理员新建分享活动 shopId spuId
+    public void createShareActivity() throws Exception{
+
+        String token = creatTestToken(781L,0L,100);
+        //Boolean flag = shareActivityDao.isShared(2L,668L);
+
+        ShareActivityVo vo = new ShareActivityVo();
+        vo.setBeginTime("2021-12-10 21:47:19");
+        vo.setEndTime("2021-12-07 23:23:23");
+        vo.setStrategy("{\\\"rule\\\" :[{ \\\"num\\\" :0, \\\"rate\\\":1},{ \\\"num\\\" :10, \\\"rate\\\":10}],\\\"firstOrAvg\\\" : 0}\"\n" +
+                "}"
+        );
+        String responseString= null;
+//        String sset = "{\"rule\":[{\"num\":2, \"rate\":0.11},{\"num\":5, \"rate\":0.2},{\"num\":8, \"rate\":0.3}],\"firstOrAvg\":0}";
+//        String st = "{\\\"rule\\\" :[{ \\\"num\\\" :0},{ \\\"num\\\" :10, \\\"rate\\\":10}],\\\"firstOrAvg\\\" : 0}";
+//        ShareActivityPo po = shareActivityPoMapper.selectByPrimaryKey(307696L);
+//        String sst = StringEscapeUtils.unescapeJava(st);
+//        Stategy s = JacksonUtil.toObj(sst, Stategy.class);
+//
+//            System.out.println(s.getFirstOrAvg());
+//        List<Rule> rule = s.getRule();
+//        for(Rule r : rule){
+//            if(r.getNum() == null)
+//                System.out.println("num is null");
+//            else
+//                System.out.println("num is"+r.getNum());
+//            if(r.getRate() == null)
+//                System.out.println("rate is null");
+//            else
+//                System.out.println("rate is"+r.getRate());
+//        }
+
+        try{
+            responseString = this.mvc.perform(post("/shops/0/skus/501/shareactivities").header("authorization",token)
+                    .contentType("application/json;charset=UTF-8")
+                    .content(JacksonUtil.toJson(vo)))
+                    //.andExpect(status().)
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        }catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        String expectedResponse ="{\n" +
+                "    \"errno\": 610\n" +
+                "}";
+
+
+        JSONAssert.assertEquals(expectedResponse, responseString, false);
+    }
+
+    @Test
+    //测试管理员新建分享活动 shopId spuId
     public void createShareActivity1() throws Exception{
 
         String token = creatTestToken(781L,1L,100);
@@ -262,24 +540,24 @@ public class ShareControllerTest {
         vo.setEndTime("2021-12-04 15:30:50");
         vo.setStrategy("****");
         String responseString= null;
-        String sset = "{\"rule\":[{\"num\":2, \"rate\":0.11},{\"num\":5, \"rate\":0.2},{\"num\":8, \"rate\":0.3}],\"firstOrAvg\":0}";
-        String st = "{\\\"rule\\\" :[{ \\\"num\\\" :0},{ \\\"num\\\" :10, \\\"rate\\\":10}],\\\"firstOrAvg\\\" : 0}";
-        ShareActivityPo po = shareActivityPoMapper.selectByPrimaryKey(307696L);
-        String sst = StringEscapeUtils.unescapeJava(st);
-        Stategy s = JacksonUtil.toObj(sst, Stategy.class);
-
-            System.out.println(s.getFirstOrAvg());
-        List<Rule> rule = s.getRule();
-        for(Rule r : rule){
-            if(r.getNum() == null)
-                System.out.println("num is null");
-            else
-                System.out.println("num is"+r.getNum());
-            if(r.getRate() == null)
-                System.out.println("rate is null");
-            else
-                System.out.println("rate is"+r.getRate());
-        }
+//        String sset = "{\"rule\":[{\"num\":2, \"rate\":0.11},{\"num\":5, \"rate\":0.2},{\"num\":8, \"rate\":0.3}],\"firstOrAvg\":0}";
+//        String st = "{\\\"rule\\\" :[{ \\\"num\\\" :0},{ \\\"num\\\" :10, \\\"rate\\\":10}],\\\"firstOrAvg\\\" : 0}";
+//        ShareActivityPo po = shareActivityPoMapper.selectByPrimaryKey(307696L);
+//        String sst = StringEscapeUtils.unescapeJava(st);
+//        Stategy s = JacksonUtil.toObj(sst, Stategy.class);
+//
+//            System.out.println(s.getFirstOrAvg());
+//        List<Rule> rule = s.getRule();
+//        for(Rule r : rule){
+//            if(r.getNum() == null)
+//                System.out.println("num is null");
+//            else
+//                System.out.println("num is"+r.getNum());
+//            if(r.getRate() == null)
+//                System.out.println("rate is null");
+//            else
+//                System.out.println("rate is"+r.getRate());
+//        }
 
         try{
             responseString = this.mvc.perform(post("/share/shops/1/goods/666/shareactivities").header("authorization",token)
@@ -293,6 +571,63 @@ public class ShareControllerTest {
         }
 
         String expectedResponse = "{\"errno\":0,\"data\":{\"shopId\":1,\"goodsSpuId\":666,\"beginTime\":\"2020-12-04T15:30:50\",\"endTime\":\"2021-12-04T15:30:50\",\"strategy\":\"****\",\"state\":0},\"errmsg\":\"成功\"}";
+        JSONAssert.assertEquals(expectedResponse, responseString, false);
+    }
+
+    @Test
+    //测试管理员修改分享活动 shopId shareActivity
+    public void putShareActivity() throws Exception{
+
+        String token = creatTestToken(70L,0L,100);
+
+        ShareActivityVo vo1 = new ShareActivityVo();
+        vo1.setBeginTime("2022-07-30 23:59:00");
+        vo1.setEndTime("2022-08-15 23:23:23");
+        vo1.setStrategy("{\\\"rule\\\" :[{ \\\"num\\\" :0, \\\"rate\\\":1},{ \\\"num\\\" :10, \\\"rate\\\":10}],\\\"firstOrAvg\\\" : 0}\"\n" +
+                "}"
+        );
+        String responseString1= null;
+        try{
+            responseString1 = this.mvc.perform(post("/shops/0/skus/502/shareactivities").header("authorization",token)
+                    .contentType("application/json;charset=UTF-8")
+                    .content(JacksonUtil.toJson(vo1)))
+                    //.andExpect(status().)
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        }catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JSONObject jsonObject = JSONObject.parseObject(new String(responseString1)).getJSONObject("data");
+        Long shareActivityId = jsonObject.getLong("id");
+
+
+        ShareActivityVo vo = new ShareActivityVo();
+        vo.setBeginTime("2021-12-10 21:47:19");
+        vo.setEndTime("2021-12-07 23:23:23");
+        vo.setStrategy("{\\\"rule\\\" :[{ \\\"num\\\" :0, \\\"rate\\\":1},{ \\\"num\\\" :10, \\\"rate\\\":10}],\\\"firstOrAvg\\\" : 0}\"\n" +
+                "}"
+
+
+        );
+        String responseString= null;
+        try{
+            responseString = this.mvc.perform(put("/shops/0/shareactivities/"+shareActivityId).header("authorization",token)
+                    .contentType("application/json;charset=UTF-8")
+                    .content(JacksonUtil.toJson(vo)))
+                    .andExpect(status().isOk())
+                    //.andExpect(status().isNotFound())
+                    //.andExpect(status().isBadRequest())
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        }catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        String expectedResponse = "{\n" +
+                "    \"errno\": 610\n" +
+                "}";
+
         JSONAssert.assertEquals(expectedResponse, responseString, false);
     }
 
@@ -351,6 +686,29 @@ public class ShareControllerTest {
 
     @Test
     //测试管理员删除分享活动 shopId shareActivity
+    public void deleteShareActivity() throws Exception{
+
+        String token = creatTestToken(70L,0L,100);
+
+        String responseString= null;
+        try{
+            responseString = this.mvc.perform(delete("/shops/1/shareactivities/303068").header("authorization",token))
+                    //.andExpect(status().isOk())
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        }catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        String expectedResponse = "{\n" +
+                "    \"errno\": 505\n" +
+                "}";
+        ;
+        JSONAssert.assertEquals(expectedResponse, responseString, false);
+    }
+
+    @Test
+    //测试管理员删除分享活动 shopId shareActivity
     public void deleteShareActivity1() throws Exception{
 
         String token = creatTestToken(70L,0L,100);
@@ -368,6 +726,51 @@ public class ShareControllerTest {
         String expectedResponse = "{\"errno\":0,\"errmsg\":\"成功\"}";
         JSONAssert.assertEquals(expectedResponse, responseString, true);
     }
+
+    @Test
+    //测试管理员修改分享活动状态 shopId shareActivity
+    public void putShareActivityState() throws Exception{
+
+        String token = creatTestToken(70L,0L,100);
+
+        ShareActivityVo vo1 = new ShareActivityVo();
+        vo1.setBeginTime("2023-03-30 23:59:00");
+        vo1.setEndTime("2023-04-15 23:23:23");
+        vo1.setStrategy("{\\\"rule\\\" :[{ \\\"num\\\" :0, \\\"rate\\\":1},{ \\\"num\\\" :10, \\\"rate\\\":10}],\\\"firstOrAvg\\\" : 0}\"\n" +
+                "}"
+        );
+        String responseString1= null;
+        try{
+            responseString1 = this.mvc.perform(post("/shops/0/skus/502/shareactivities").header("authorization",token)
+                    .contentType("application/json;charset=UTF-8")
+                    .content(JacksonUtil.toJson(vo1)))
+                    //.andExpect(status().)
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        }catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JSONObject jsonObject = JSONObject.parseObject(new String(responseString1)).getJSONObject("data");
+        Long shareActivityId = jsonObject.getLong("id");
+
+        String responseString= null;
+        try{
+            responseString = this.mvc.perform(put("/shops/0/shareactivities/"+shareActivityId+"/online").header("authorization",token))
+                    .andExpect(status().isOk())
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        }catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        String expectedResponse = "{\n" +
+                "    \"errno\": 0\n" +
+                "}";
+
+        JSONAssert.assertEquals(expectedResponse, responseString, false);
+    }
+
 
     @Test
     //测试管理员修改分享活动状态 shopId shareActivity

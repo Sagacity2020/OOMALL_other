@@ -116,9 +116,7 @@ public class ShareActivityDao {
         ShareActivityPoExample.Criteria criteria = example.createCriteria();
         if(shopId != null)
             criteria.andShopIdEqualTo(shopId);
-        if(shopId == null)
-            criteria.andGoodsSkuIdEqualTo(skuId);
-        else if(shopId != null && shopId != 0L && skuId!= null)
+        if(skuId != null)
             criteria.andGoodsSkuIdEqualTo(skuId);
 //        criteria.andEndTimeGreaterThan(LocalDateTime.now());
 //        criteria.andBeginTimeLessThanOrEqualTo(LocalDateTime.now());
@@ -131,7 +129,7 @@ public class ShareActivityDao {
         {
             retShareActivityPos = shareActivityPoMapper.selectByExample(example);
             List<VoObject> ret = new ArrayList<>(retShareActivityPos.size());
-            if(ret != null && !ret.isEmpty()) {
+            if(retShareActivityPos != null && !retShareActivityPos.isEmpty()) {
                 for (ShareActivityPo po : retShareActivityPos) {
                     ShareActivity shareActivity = new ShareActivity(po);
                     ret.add(shareActivity);
@@ -186,6 +184,8 @@ public class ShareActivityDao {
             po.setStrategy(bo.getStrategy());
             po.setGmtCreate(LocalDateTime.now());
             po.setGmtModified(LocalDateTime.now());
+            if(isConflict(po))
+                return new ReturnObject<>(ResponseCode.SHAREACT_CONFLICT, "分享活动时段冲突");
             int flag = shareActivityPoMapper.insert(po);
             if(flag == 0)
             {
@@ -241,6 +241,8 @@ public class ShareActivityDao {
             if(po.getBeginTime().isAfter(po.getEndTime()))
                 return new ReturnObject<>(ResponseCode.Log_Bigger, String.format("开始时间大于结束时间"));
             po.setGmtModified(LocalDateTime.now());
+            if(isConflict(po))
+                return new ReturnObject<>(ResponseCode.SHAREACT_CONFLICT, "分享活动时段冲突");
             int flag = shareActivityPoMapper.updateByPrimaryKeySelective(po);
             if(flag == 0)
             {
@@ -383,7 +385,7 @@ public class ShareActivityDao {
     {
         ShareActivityPoExample example = new ShareActivityPoExample();
         ShareActivityPoExample.Criteria criteria = example.createCriteria();
-        criteria.andStateEqualTo((byte) 1);
+//        criteria.andStateEqualTo((byte) 1);
         criteria.andShopIdEqualTo(po.getShopId());
         if(po.getShopId() != 0L)
             criteria.andGoodsSkuIdEqualTo(po.getGoodsSkuId());
@@ -392,10 +394,17 @@ public class ShareActivityDao {
         {
             for(ShareActivityPo retpo : retShareActivityPos)
             {
-                if(retpo.getEndTime().isBefore(po.getBeginTime()) || retpo.getBeginTime().isAfter(po.getEndTime()))
+                //System.out.println(retpo.getShopId() + "  "+retpo.getBeginTime()+"  "+retpo.getEndTime()+"  "+retpo.getGoodsSkuId());
+                if(retpo.getEndTime().isBefore(po.getBeginTime()) || retpo.getBeginTime().isAfter(po.getEndTime()) || (po.getId() != null && retpo.getId().longValue() == po.getId().longValue()))
+                {
+                    //System.out.println(retpo.getId()+"   continure      " +po.getId());
                     continue;
-                else
+                }
+
+                else {
+                    //System.out.println(retpo.getId()+"   true      " +po.getId());
                     return true;
+                }
             }
         }
         return false;
@@ -415,6 +424,7 @@ public class ShareActivityDao {
 
         try{
             ShareActivityPo po = shareActivityPoMapper.selectByPrimaryKey(shareActivityId);
+            //System.out.println(po.getShopId() + "  "+po.getBeginTime()+"  "+po.getEndTime()+"  "+po.getGoodsSkuId());
             if(po == null)
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST,"分享活动Id不存在");
             if(po.getShopId() != shopId)
@@ -423,8 +433,8 @@ public class ShareActivityDao {
 //            if(po.getState() != null && po.getState() == (byte) 1)
 //                return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST,"该分享活动已经上线");
             //查询是否有冲突的分享活动
-            if(isConflict(po))
-                return new ReturnObject<>(ResponseCode.SHAREACT_CONFLICT,"分享活动时段冲突");
+//            if(isConflict(po))
+//                return new ReturnObject<>(ResponseCode.SHAREACT_CONFLICT,"分享活动时段冲突");
             po.setState((byte) 1);
             po.setGmtModified(LocalDateTime.now());
             int flag = shareActivityPoMapper.updateByPrimaryKeySelective(po);
