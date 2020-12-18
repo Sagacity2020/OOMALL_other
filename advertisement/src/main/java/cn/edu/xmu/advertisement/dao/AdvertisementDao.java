@@ -158,10 +158,17 @@ public class AdvertisementDao {
 
 
 
-    public ReturnObject<PageInfo<AdvertisementPo>>getAdvertisementBySegId(Long id,Integer page,Integer pageSize){
+    public ReturnObject<PageInfo<AdvertisementPo>>getAdvertisementBySegId(Long id,LocalDate beginDate,LocalDate endDate,Integer page,Integer pageSize){
         AdvertisementPoExample example=new AdvertisementPoExample();
         AdvertisementPoExample.Criteria criteria=example.createCriteria();
         criteria.andSegIdEqualTo(id);
+
+        if(beginDate!=null){
+            criteria.andBeginDateEqualTo(beginDate);
+        }
+        if(endDate!=null){
+            criteria.andEndDateEqualTo(endDate);
+        }
 
         List<AdvertisementPo>advertisementPos=null;
         try{

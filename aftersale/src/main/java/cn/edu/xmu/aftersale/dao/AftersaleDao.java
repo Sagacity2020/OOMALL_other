@@ -36,6 +36,7 @@ public class AftersaleDao {
         AftersaleServicePo po=(AftersaleServicePo)returnObject.getData();
 
         if(po==null){
+            logger.error("1");
             return returnObject;
         }
 

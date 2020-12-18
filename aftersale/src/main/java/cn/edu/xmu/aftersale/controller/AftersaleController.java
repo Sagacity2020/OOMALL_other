@@ -17,6 +17,7 @@ import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -25,6 +26,7 @@ import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -76,14 +78,21 @@ public class AftersaleController {
             return returnObject;
         }
 
+        if(vo.getQuantity()!=null && vo.getQuantity()<1){
+            httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+            return Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID), httpServletResponse);
+        }
+
         ReturnObject returnObj=checkCustomerId(userId,id);
         AftersaleServicePo po=(AftersaleServicePo)returnObj.getData();
         if(po==null){
             return Common.decorateReturnObject(returnObj);
         }
 
+
         returnObj = aftersaleService.updateAftersale(id, vo);
 
+        logger.error("4");
         return Common.decorateReturnObject(returnObj);
     }
 
@@ -104,15 +113,11 @@ public class AftersaleController {
             @ApiResponse(code = 404, message = "参数不合法")
     })
     @Audit // 需要认证
-    @PostMapping("orderItems/{id}/aftersales")
+    @PostMapping("orderitems/{id}/aftersales")
     public Object createAftersale(@PathVariable Long id, @Validated @RequestBody CreateAftersaleVo vo, BindingResult bindingResult,
                                   @LoginUser @ApiIgnore @RequestParam(required = false) Long userId){
         if (logger.isDebugEnabled()) {
             logger.debug("createAftersale: id = "+ id +" vo = " + vo);
-        }
-
-        if(vo.getType()==null){
-            return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID));
         }
 
         Object returnObject = Common.processFieldErrors(bindingResult, httpServletResponse);
@@ -121,7 +126,13 @@ public class AftersaleController {
             return returnObject;
         }
 
+        if(vo.getQuantity()<1 || vo.getReason().equals("")){
+            httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+            return Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID), httpServletResponse);
+        }
+
         ReturnObject returnObj = aftersaleService.createAftersale(id, vo,userId);
+
         if(returnObj.getData()!=null) {
             httpServletResponse.setStatus(HttpStatus.CREATED.value());
             return Common.getRetObject(returnObj);
@@ -137,13 +148,9 @@ public class AftersaleController {
     江欣霖
      */
     @ApiOperation(value="获得售后单的所有状态")
-    @ApiImplicitParams({
-            @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true)
-    })
     @ApiResponses({
             @ApiResponse(code = 0,message = "成功")
     })
-    @Audit
     @GetMapping("aftersales/states")
     public Object getAllStates(){
         Aftersale.State[] states=Aftersale.State.class.getEnumConstants();
@@ -176,9 +183,7 @@ public class AftersaleController {
         if (logger.isDebugEnabled()) {
             logger.debug("sendbackAftersale: id = "+ id +" vo = " + vo);
         }
-        if(vo.getCustomerLogSn()==null){
-            return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,String.format("运单信息不能为空")));
-        }
+
         // 校验前端数据
         Object returnObject = Common.processFieldErrors(bindingResult, httpServletResponse);
         if (returnObject != null) {
@@ -419,8 +424,8 @@ public class AftersaleController {
     @ApiOperation(value="买家查询所有售后单信息")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "header",dataType = "String",name = "auhorization",value = "Token",required = true),
-            @ApiImplicitParam(paramType = "query",dataType = "LocalDateTime",name = "beginTime",value = "开始时间",required = false),
-            @ApiImplicitParam(paramType = "query",dataType = "LocalDateTime",name = "endTime",value = "结束时间",required = false),
+            @ApiImplicitParam(paramType = "query",dataType = "String",name = "beginTime",value = "开始时间",required = false),
+            @ApiImplicitParam(paramType = "query",dataType = "String",name = "endTime",value = "结束时间",required = false),
             @ApiImplicitParam(paramType = "query",dataType = "Integer",name = "page",value = "页码",required = false),
             @ApiImplicitParam(paramType = "query",dataType = "Integer",name = "pageSize",value = "每页数目",required = false),
             @ApiImplicitParam(paramType = "query",dataType = "Integer",name = "type",value = "售后类型",required = false),
@@ -432,8 +437,8 @@ public class AftersaleController {
     //@Audit
     @GetMapping("aftersales")
     public Object getAftersaleByUserId(@LoginUser @RequestParam(required = false) Long userId,
-                                       @RequestParam (required = false)LocalDateTime beginTime,
-                                       @RequestParam (required = false)LocalDateTime endTime,
+                                       @RequestParam (required = false)String beginTime,
+                                       @RequestParam (required = false)String endTime,
                                        @RequestParam(required = false, defaultValue = "1") Integer page,
                                        @RequestParam(required = false, defaultValue = "10") Integer pageSize,
                                        @RequestParam (required = false)Integer type,
@@ -444,11 +449,31 @@ public class AftersaleController {
 
         Object object;
 
+        DateTimeFormatter df= DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime begin=null;
+        LocalDateTime end=null;
+
+
+        if(beginTime!=null){
+            try{
+                begin=LocalDateTime.parse(beginTime,df);
+            } catch (Exception e) {
+                return Common.getPageRetObject(new ReturnObject<PageInfo<VoObject>>(new PageInfo<VoObject>(new ArrayList<>())));
+            }
+        }
+        if(endTime!=null){
+            try{
+                end=LocalDateTime.parse(endTime,df);
+            } catch (Exception e) {
+                return Common.getPageRetObject(new ReturnObject<PageInfo<VoObject>>(new PageInfo<VoObject>(new ArrayList<>())));
+            }
+        }
+
         if(page <= 0 || pageSize <= 0) {
             object = Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID), httpServletResponse);
         }
         else {
-            object=Common.getPageRetObject(aftersaleService.getAftersaleByUserId(userId,beginTime, endTime, page, pageSize, type, state));
+            object=Common.getPageRetObject(aftersaleService.getAftersaleByUserId(userId,begin, end, page, pageSize, type, state));
         }
         return object;
     }
@@ -474,8 +499,8 @@ public class AftersaleController {
     @Audit
     @GetMapping("shops/{id}/aftersales")
     public Object getAllAftersale(@PathVariable("id") Long shopId,
-                                  @RequestParam (required = false)LocalDateTime beginTime,
-                                  @RequestParam (required = false)LocalDateTime endTime,
+                                  @RequestParam (required = false)String beginTime,
+                                  @RequestParam (required = false)String endTime,
                                   @RequestParam(required = false, defaultValue = "1") Integer page,
                                   @RequestParam(required = false, defaultValue = "10") Integer pageSize,
                                   @RequestParam (required = false)Integer type,
@@ -486,11 +511,31 @@ public class AftersaleController {
 
         Object object;
 
+        DateTimeFormatter df= DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime begin=null;
+        LocalDateTime end=null;
+
+
+        if(beginTime!=null){
+            try{
+                begin=LocalDateTime.parse(beginTime,df);
+            } catch (Exception e) {
+                return Common.getPageRetObject(new ReturnObject<PageInfo<VoObject>>(new PageInfo<VoObject>(new ArrayList<>())));
+            }
+        }
+        if(endTime!=null){
+            try{
+                end=LocalDateTime.parse(endTime,df);
+            } catch (Exception e) {
+                return Common.getPageRetObject(new ReturnObject<PageInfo<VoObject>>(new PageInfo<VoObject>(new ArrayList<>())));
+            }
+        }
+
         if(page <= 0 || pageSize <= 0) {
             object = Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID), httpServletResponse);
         }
         else {
-            object=getPageRetObject(aftersaleService.getAllAftersale(shopId, beginTime, endTime, page, pageSize, type, state));
+            object=getPageRetObject(aftersaleService.getAllAftersale(shopId, begin, end, page, pageSize, type, state));
         }
         return object;
     }

@@ -23,6 +23,10 @@ public class TimeServiceInterfaceImpl implements TimeServiceInterface {
         ReturnObject returnObject= timeSegmentDao.getTimesegmentById(id);
         TimeSegmentPo po=(TimeSegmentPo)returnObject.getData();
 
+        if(po==null){
+            return returnObject;
+        }
+
         TimeSegmentDTO timeSegmentDTO=new TimeSegmentDTO();
 
         timeSegmentDTO.setSegId(po.getId());

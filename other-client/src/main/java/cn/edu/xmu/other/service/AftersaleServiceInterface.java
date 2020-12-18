@@ -1,8 +1,11 @@
 package cn.edu.xmu.other.service;
 
 
+import cn.edu.xmu.other.dto.AftersaleRefundDTO;
+
 public interface AftersaleServiceInterface {
 
-    public Boolean checkIsAftersale(Long orderItemId);
+    Boolean checkIsAftersale(Long orderItemId);
 
+    AftersaleRefundDTO getAftersaleById(Long aftersaleId);
 }

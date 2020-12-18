@@ -74,8 +74,10 @@ public class AdvertisementService{
             if (advertisement.getSegId() != null) {
                 ReturnObject<TimeSegmentDTO> returnObj = timeServiceInterface.getTimesegmentById(advertisement.getSegId());
                 TimeSegmentDTO timeSegmentDTO = returnObj.getData();
-                if (timeSegmentDTO.getBeginTime().isBefore(localTime) && timeSegmentDTO.getEndTime().isAfter(localTime)) {
-                    advertisements.add(advertisement);
+                if(timeSegmentDTO!=null) {
+                    if (timeSegmentDTO.getBeginTime().isBefore(localTime) && timeSegmentDTO.getEndTime().isAfter(localTime)) {
+                        advertisements.add(advertisement);
+                    }
                 }
             }
         }
@@ -141,10 +143,15 @@ public class AdvertisementService{
 
 
     @Transactional
-    public ReturnObject<PageInfo<VoObject>> getAdvertisementBySegId(Long id, Integer page, Integer pageSize){
+    public ReturnObject<PageInfo<VoObject>> getAdvertisementBySegId(Long id,LocalDate beginDate,LocalDate endDate, Integer page, Integer pageSize){
+
+        ReturnObject<TimeSegmentDTO> returnObj=timeServiceInterface.getTimesegmentById(id);
+        if(returnObj.getData()==null){
+            return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
+        }
 
         PageHelper.startPage(page,pageSize);
-        ReturnObject<PageInfo<AdvertisementPo>>returnObject=advertisementDao.getAdvertisementBySegId(id,page,pageSize);
+        ReturnObject<PageInfo<AdvertisementPo>>returnObject=advertisementDao.getAdvertisementBySegId(id,beginDate,endDate,page,pageSize);
 
         PageInfo<AdvertisementPo>pos=returnObject.getData();
         List<VoObject> ret = new ArrayList<>(pos.getList().size());

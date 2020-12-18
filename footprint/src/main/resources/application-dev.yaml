@@ -3,11 +3,11 @@ spring:
   boot:
     admin:
       client:
-        url: http://localhost:8081
+        url: http://localhost:8087
   datasource:
-    url: jdbc:mysql://localhost:3306/oomall_other?serverTimezone=GMT%2B8
+    url: jdbc:mysql://localhost:3306/oomall?serverTimezone=GMT%2B8
     username: root
-    password: 8883008
+    password: xzqbjt
 
     druid:
       stat-view-servlet:

@@ -8,10 +8,12 @@ import cn.edu.xmu.advertisement.model.vo.AuditAdVo;
 import cn.edu.xmu.advertisement.service.AdvertisementService;
 import cn.edu.xmu.ooad.annotation.Audit;
 
+import cn.edu.xmu.ooad.model.VoObject;
 import cn.edu.xmu.ooad.util.Common;
 import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ResponseUtil;
 import cn.edu.xmu.ooad.util.ReturnObject;
+import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +30,9 @@ import javax.servlet.http.HttpServletMapping;
 import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Parameter;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,13 +53,9 @@ public class AdvertisementController {
      * @return
      */
     @ApiOperation(value = "获得广告的所有状态")
-    @ApiImplicitParams({
-            @ApiImplicitParam(paramType = "header",dataType = "String",name = "authorization",value = "Token",required = true)
-    })
     @ApiResponses({
             @ApiResponse(code = 0,message = "成功")
     })
-    @Audit
     @GetMapping("advertisement/states")
     public Object getAllStates(){
         Advertisement.State[] states=Advertisement.State.class.getEnumConstants();
@@ -161,6 +161,8 @@ public class AdvertisementController {
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "header",dataType = "String",name = "authorization",value = "Token",required = true),
             @ApiImplicitParam(paramType = "path",dataType = "Long",name = "id",value = "广告时段id",required = true),
+            @ApiImplicitParam(paramType = "query",dataType = "LocalDateTime",name = "beginDate",value = "开始时间",required = false),
+            @ApiImplicitParam(paramType = "query",dataType = "LocalDateTime",name = "endDate",value = "结束时间",required = false),
             @ApiImplicitParam(paramType = "query",dataType = "Integer",name = "page",value = "页码",required = false),
             @ApiImplicitParam(paramType = "query",dataType = "Integer",name = "pageSize",value = "每页数目",required = false)
     })
@@ -171,6 +173,8 @@ public class AdvertisementController {
     @Audit
     @GetMapping("shops/{did}/timesegments/{id}/advertisement")
     public Object selectAdvertisementBySegId(@PathVariable Long id,
+                                             @RequestParam (required = false)String beginDate,
+                                             @RequestParam (required = false)String endDate,
                                          @RequestParam(required = false, defaultValue = "1") Integer page,
                                          @RequestParam(required = false, defaultValue = "10") Integer pageSize){
         if(logger.isDebugEnabled()){
@@ -179,11 +183,36 @@ public class AdvertisementController {
 
         Object object;
 
+        DateTimeFormatter df= DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate begin=null;
+        LocalDate end=null;
+
+
+        if(beginDate!=null){
+            try{
+                begin=LocalDate.parse(beginDate,df);
+            } catch (Exception e) {
+                return Common.getPageRetObject(new ReturnObject<PageInfo<VoObject>>(new PageInfo<VoObject>(new ArrayList<>())));
+            }
+        }
+        if(endDate!=null){
+            try{
+                end=LocalDate.parse(endDate,df);
+            } catch (Exception e) {
+                return Common.getPageRetObject(new ReturnObject<PageInfo<VoObject>>(new PageInfo<VoObject>(new ArrayList<>())));
+            }
+        }
+
         if(page <= 0 || pageSize <= 0) {
             object = Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID), httpServletResponse);
         }
+
+        ReturnObject returnObject=advertisementService.getAdvertisementBySegId(id,begin,end,page,pageSize);
+        if(returnObject.getData()==null){
+            object = Common.getNullRetObj(new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST), httpServletResponse);
+        }
         else {
-            object=Common.getPageRetObject(advertisementService.getAdvertisementBySegId(id, page, pageSize));
+            object=Common.getPageRetObject(returnObject);
         }
         return object;
     }

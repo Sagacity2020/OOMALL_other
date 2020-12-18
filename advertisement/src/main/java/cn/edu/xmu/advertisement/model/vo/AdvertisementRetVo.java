@@ -17,17 +17,17 @@ public class AdvertisementRetVo {
 
     private String imagePath;
 
-    private Byte state;
+    private Integer state;
 
-    private Integer weight;
+    private String weight;
 
     private LocalDate beginDate;
 
     private LocalDate endDate;
 
-    private Byte repeat;
+    private Boolean repeat;
 
-    private Byte beDefault;
+    private Boolean beDefault;
 
     private LocalDateTime gmtCreate;
 

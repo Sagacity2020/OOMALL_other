@@ -329,7 +329,7 @@ public class AftersaleControllerTest {
     @Test
     public void aftersaleSendBackTest()throws Exception{
         AftersaleSendbackVo vo=new AftersaleSendbackVo();
-        vo.setCustomerLogSn("20201203");
+        vo.setLogSn("20201203");
         String aftersaleJson = JacksonUtil.toJson(vo);
 
         String token=creatTestToken(2L,-2L,100);
@@ -365,7 +365,7 @@ public class AftersaleControllerTest {
     @Test
     public void aftersaleSendBackTest1()throws Exception{
         AftersaleSendbackVo vo=new AftersaleSendbackVo();
-        vo.setCustomerLogSn("20201203");
+        vo.setLogSn("20201203");
         String aftersaleJson = JacksonUtil.toJson(vo);
 
         String token=creatTestToken(1L,-2L,100);
@@ -398,7 +398,7 @@ public class AftersaleControllerTest {
     @Test
     public void aftersaleSendBackTest2()throws Exception{
         AftersaleSendbackVo vo=new AftersaleSendbackVo();
-        vo.setCustomerLogSn("20201203");
+        vo.setLogSn("20201203");
         String aftersaleJson = JacksonUtil.toJson(vo);
 
         String token=creatTestToken(1L,-2L,100);
@@ -431,7 +431,7 @@ public class AftersaleControllerTest {
     @Test
     public void aftersaleSendBackTest3()throws Exception{
         AftersaleSendbackVo vo=new AftersaleSendbackVo();
-        vo.setCustomerLogSn("20201206");
+        vo.setLogSn("20201206");
         String aftersaleJson=JacksonUtil.toJson(vo);
 
         String token=creatTestToken(5L,-2L,100);
@@ -459,7 +459,7 @@ public class AftersaleControllerTest {
     @Test
     public void aftersaleSendBackTest4()throws Exception {
         AftersaleSendbackVo vo = new AftersaleSendbackVo();
-        vo.setCustomerLogSn(null);
+        vo.setLogSn(null);
         String aftersaleJson = JacksonUtil.toJson(vo);
 
         String token = creatTestToken(2L, -2L, 100);

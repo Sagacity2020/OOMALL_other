@@ -67,6 +67,9 @@ public class AftersaleService{
 
        OrderAftersaleDTO orderAftersaleDTO=orderServiceInterface.getAftersaleInfo(id);
 
+       if(orderAftersaleDTO==null){
+           return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
+       }
         Aftersale aftersaleBo=vo.createAftersale();
         aftersaleBo.setOrderItemId(id);
         aftersaleBo.setShopId(orderAftersaleDTO.getShopId());

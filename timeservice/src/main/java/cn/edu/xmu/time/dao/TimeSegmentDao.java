@@ -253,7 +253,13 @@ public class TimeSegmentDao {
             logger.error("other exception : " + e.getMessage());
             retObj = new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
         }
-        return new ReturnObject<>(po);
+        if(po==null || po.getType().intValue()==1){
+            retObj=new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST);
+        }
+        else{
+            retObj=new ReturnObject<>(po);
+        }
+        return retObj;
     }
 
 }
