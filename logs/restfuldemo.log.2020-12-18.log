@@ -1,0 +1,66 @@
+2020-12-18 00:05:16.289 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:05:16.298 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 100 vo = AftersaleVo(quantity=null, reason=null, regionId=null, detail=null, consignee=null, mobile=13912345689)
+2020-12-18 00:07:55.894 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:07:55.903 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 100 vo = AftersaleVo(quantity=null, reason=null, regionId=null, detail=null, consignee=null, mobile=13912345689)
+2020-12-18 00:10:07.672 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:10:07.685 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 100 vo = AftersaleVo(quantity=null, reason=null, regionId=null, detail=null, consignee=null, mobile=13912345689)
+2020-12-18 00:10:07.686 [http-nio-8084-exec-2] ERROR c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-18 00:10:07.793 [http-nio-8084-exec-2] ERROR c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-18 00:10:07.793 [http-nio-8084-exec-2] ERROR c.edu.xmu.aftersale.controller.AftersaleController - 3
+2020-12-18 00:14:55.725 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:14:55.733 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 100 vo = AftersaleVo(quantity=null, reason=null, regionId=null, detail=null, consignee=null, mobile=13912345689)
+2020-12-18 00:14:55.890 [http-nio-8084-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 1
+2020-12-18 00:14:55.962 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 100 的信息已更新
+2020-12-18 00:14:55.980 [http-nio-8084-exec-1] ERROR c.edu.xmu.aftersale.controller.AftersaleController - 4
+2020-12-18 00:15:21.824 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:15:21.826 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 100 vo = AftersaleVo(quantity=null, reason=null, regionId=null, detail=null, consignee=null, mobile=139123456890)
+2020-12-18 00:15:21.827 [http-nio-8084-exec-2] INFO  c.edu.xmu.aftersale.controller.AftersaleController - incorrect data received while updateAftersale id = 100
+2020-12-18 00:18:07.196 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:18:07.204 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 100 vo = AftersaleVo(quantity=0, reason=null, regionId=null, detail=null, consignee=null, mobile=null)
+2020-12-18 00:18:37.725 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:18:37.728 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 53423564 vo = AftersaleVo(quantity=null, reason=testR, regionId=null, detail=null, consignee=null, mobile=null)
+2020-12-18 00:22:24.889 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:22:24.896 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 53423564 vo = AftersaleVo(quantity=null, reason=testR, regionId=null, detail=null, consignee=null, mobile=null)
+2020-12-18 00:25:09.848 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:25:09.856 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 53423564 vo = AftersaleVo(quantity=null, reason=testR, regionId=null, detail=null, consignee=null, mobile=null)
+2020-12-18 00:25:09.946 [http-nio-8084-exec-1] INFO  c.edu.xmu.aftersale.controller.AftersaleController - 售后单不存在：id = 53423564
+2020-12-18 00:27:50.424 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:27:50.432 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - sendbackAftersale: id = 102 vo = AftersaleSendbackVo(customerLogSn=null)
+2020-12-18 00:27:50.434 [http-nio-8084-exec-1] INFO  c.edu.xmu.aftersale.controller.AftersaleController - incorrect data received while sendbackAftersale id = 102
+2020-12-18 00:32:08.120 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:32:08.147 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - deleteAftersale: id = 110
+2020-12-18 00:32:08.332 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单已删除：id = 110
+2020-12-18 00:33:01.205 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:33:01.207 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersaleById: id = 45346543
+2020-12-18 00:33:01.209 [http-nio-8084-exec-2] INFO  c.edu.xmu.aftersale.controller.AftersaleController - 售后单不存在：id = 45346543
+2020-12-18 00:33:52.539 [http-nio-8084-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:33:52.540 [http-nio-8084-exec-3] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - sendbackAftersale: id = 46546542 vo = AftersaleSendbackVo(customerLogSn=null)
+2020-12-18 00:33:52.540 [http-nio-8084-exec-3] INFO  c.edu.xmu.aftersale.controller.AftersaleController - incorrect data received while sendbackAftersale id = 46546542
+2020-12-18 00:39:29.506 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:39:29.513 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - sendbackAftersale: id = 46546542 vo = AftersaleSendbackVo(logSn=1245567)
+2020-12-18 00:39:29.582 [http-nio-8084-exec-1] INFO  c.edu.xmu.aftersale.controller.AftersaleController - 售后单不存在：id = 46546542
+2020-12-18 00:39:53.458 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:39:53.460 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - deleteAftersale: id = 465465344
+2020-12-18 00:39:53.462 [http-nio-8084-exec-2] INFO  c.edu.xmu.aftersale.controller.AftersaleController - 售后单不存在：id = 465465344
+2020-12-18 00:44:34.075 [http-nio-8084-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:46:08.707 [http-nio-8084-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:49:42.506 [http-nio-8084-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:49:42.506 [http-nio-8084-exec-4] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - createAftersale: id = 39403 vo = CreateAftersaleVo(type=0, quantity=1, reason=七天无理由退货, regionId=1, detail=详细地址, consignee=王金泰, mobile=15306987188)
+2020-12-18 00:49:43.016 [http-nio-8084-exec-4] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 新建售后单成功
+2020-12-18 00:53:15.797 [http-nio-8084-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:53:15.797 [http-nio-8084-exec-8] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - createAftersale: id = 39403 vo = CreateAftersaleVo(type=0, quantity=1, reason=七天无理由退货, regionId=1, detail=详细地址, consignee=王金泰, mobile=15306987188)
+2020-12-18 00:53:15.898 [http-nio-8084-exec-8] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 新建售后单成功
+2020-12-18 00:54:25.216 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 00:54:25.217 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - createAftersale: id = 39403 vo = CreateAftersaleVo(type=0, quantity=1, reason=七天无理由退货, regionId=1, detail=详细地址, consignee=王金泰, mobile=15306987188)
+2020-12-18 00:54:25.303 [http-nio-8084-exec-2] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 新建售后单成功
+2020-12-18 00:54:25.442 [http-nio-8084-exec-5] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=115
+2020-12-18 00:54:25.448 [http-nio-8084-exec-5] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=115成功
+2020-12-18 00:54:25.448 [http-nio-8084-exec-5] INFO  cn.edu.xmu.aftersale.service.AftersaleService - 1
+2020-12-18 00:54:25.472 [http-nio-8084-exec-5] INFO  cn.edu.xmu.aftersale.service.AftersaleService - OrderAftersaleDTO(skuId=680, skuName=null, orderId=68050, orderSn=2020022038350, shopId=1)
+2020-12-18 01:11:59.414 [http-nio-8083-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 01:12:30.422 [http-nio-8083-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 01:12:30.425 [http-nio-8083-exec-2] DEBUG c.e.x.a.controller.AdvertisementController - getAdvertisementBySegId id=299,page=1,pageSize=20
+2020-12-18 01:12:59.871 [http-nio-8083-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 01:12:59.872 [http-nio-8083-exec-5] DEBUG c.e.x.a.controller.AdvertisementController - getAdvertisementBySegId id=202,page=4,pageSize=3
+2020-12-18 01:13:47.730 [http-nio-8083-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 01:13:47.731 [http-nio-8083-exec-3] DEBUG c.e.x.a.controller.AdvertisementController - getAdvertisementBySegId id=202,page=4,pageSize=3

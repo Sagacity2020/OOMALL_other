@@ -1,0 +1,406 @@
+2020-12-16 19:46:01.501 [http-nio-8082-exec-1] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at cn.edu.xmu.ooad.annotation.AuditAspect.around(AuditAspect.java:82)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at cn.edu.xmu.aftersale.controller.AftersaleController$$EnhancerBySpringCGLIB$$cc64a8aa.confirmAftersae(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-12-16 19:52:54.961 [http-nio-8082-exec-1] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at cn.edu.xmu.ooad.annotation.AuditAspect.around(AuditAspect.java:82)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at cn.edu.xmu.aftersale.controller.AftersaleController$$EnhancerBySpringCGLIB$$ec15e7bd.confirmAftersae(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-12-16 19:55:45.692 [http-nio-8082-exec-2] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at cn.edu.xmu.ooad.annotation.AuditAspect.around(AuditAspect.java:82)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at cn.edu.xmu.aftersale.controller.AftersaleController$$EnhancerBySpringCGLIB$$ec15e7bd.confirmAftersae(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-12-16 20:02:29.129 [http-nio-8082-exec-1] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at cn.edu.xmu.ooad.annotation.AuditAspect.around(AuditAspect.java:82)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at cn.edu.xmu.aftersale.controller.AftersaleController$$EnhancerBySpringCGLIB$$cc64a8aa.confirmAftersae(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-12-16 20:11:23.909 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 20:11:23.920 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 20:11:24.396 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 数据库错误: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'order_id' in 'field list'
+### The error may exist in cn/edu/xmu/aftersale/mapper/AftersaleServicePoMapper.xml
+### The error may involve cn.edu.xmu.aftersale.mapper.AftersaleServicePoMapper.selectByPrimaryKey-Inline
+### The error occurred while setting parameters
+### SQL: select                 id, order_item_id, customer_id, shop_id, service_sn, type, reason, conclusion, refund,      quantity, region_id, detail, consignee, mobile, customer_log_sn, shop_log_sn, state,      be_deleted, gmt_create, gmt_modified, order_id         from aftersale_service     where id = ?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'order_id' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'order_id' in 'field list'
+2020-12-16 21:13:15.603 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 21:13:15.640 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 21:25:05.778 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 21:25:05.788 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 21:27:39.716 [http-nio-8082-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 21:27:39.718 [http-nio-8082-exec-3] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 21:29:00.945 [http-nio-8082-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 21:29:00.945 [http-nio-8082-exec-7] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 21:46:36.290 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 21:46:36.304 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 21:47:36.844 [http-nio-8082-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 21:47:36.845 [http-nio-8082-exec-3] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 21:50:21.310 [http-nio-8082-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 21:50:21.311 [http-nio-8082-exec-5] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:00:53.783 [http-nio-8082-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:00:53.784 [http-nio-8082-exec-7] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=100vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=同意售后)
+2020-12-16 22:18:37.577 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:18:37.594 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=28vo=AftersaleConfirmVo(confrim=null, price=100, type=0, conclusion=同意)
+2020-12-16 22:21:53.994 [http-nio-8082-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:21:53.996 [http-nio-8082-exec-3] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=29vo=AftersaleConfirmVo(confrim=null, price=0, type=null, conclusion=不符合要求)
+2020-12-16 22:27:54.595 [http-nio-8082-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:27:54.595 [http-nio-8082-exec-5] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:29:35.840 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:29:35.850 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:32:03.836 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:32:03.845 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:32:03.845 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 22:32:03.846 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 22:40:14.386 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:40:14.394 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:40:14.394 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 22:40:14.395 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 22:40:14.404 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 22:42:06.949 [http-nio-8082-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:42:06.961 [http-nio-8082-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:42:06.961 [http-nio-8082-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 22:42:06.962 [http-nio-8082-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 22:42:06.976 [http-nio-8082-exec-2] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 22:44:48.646 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:44:48.654 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:44:48.655 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 22:44:48.655 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 22:44:48.665 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 22:44:48.668 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 4
+2020-12-16 22:44:48.818 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 5
+2020-12-16 22:44:48.819 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 6
+2020-12-16 22:47:38.813 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:47:38.820 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:47:38.820 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 22:47:38.821 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 22:47:38.830 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 22:47:38.901 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 4
+2020-12-16 22:49:01.915 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:49:01.931 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:49:01.932 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 22:49:01.933 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 22:49:01.950 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 22:49:02.031 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 4
+2020-12-16 22:49:02.031 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 5
+2020-12-16 22:51:21.799 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:51:21.807 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:51:21.807 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 22:51:21.808 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 22:51:21.817 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 22:54:35.608 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:54:35.617 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:54:35.617 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 22:54:35.618 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 22:54:35.629 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 22:56:09.215 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:56:09.224 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:56:09.225 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 22:56:09.226 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 22:56:09.236 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 23:00:09.148 [http-nio-8082-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 23:00:09.156 [http-nio-8082-exec-10] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 23:00:09.156 [http-nio-8082-exec-10] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 23:00:09.157 [http-nio-8082-exec-10] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 23:00:09.173 [http-nio-8082-exec-10] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 23:01:45.162 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 23:01:45.170 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 23:01:45.170 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 23:01:45.171 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 23:01:45.181 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 23:03:44.476 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 23:03:44.484 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 23:03:44.484 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 23:03:44.485 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 23:03:44.494 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 23:06:51.504 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 23:06:51.512 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confirm=false, price=20, type=0, conclusion=不同意售后)
+2020-12-16 23:06:51.512 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 23:06:51.513 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 23:06:51.523 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 23:06:51.609 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 5
+2020-12-16 23:06:51.671 [http-nio-8082-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 101 审核成功
+2020-12-16 23:06:51.672 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 6
+2020-12-16 23:06:51.678 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 5
+2020-12-16 23:09:23.438 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 23:09:23.446 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confirm=false, price=20, type=0, conclusion=不同意售后)
+2020-12-16 23:09:23.510 [http-nio-8082-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 无法审核售后单id=101
+2020-12-16 23:13:24.316 [http-nio-8082-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 23:13:24.318 [http-nio-8082-exec-4] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confirm=false, price=20, type=0, conclusion=不同意售后)
+2020-12-16 23:13:24.367 [http-nio-8082-exec-4] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 5
+2020-12-16 23:13:24.397 [http-nio-8082-exec-4] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 101 审核成功
+2020-12-16 23:13:24.397 [http-nio-8082-exec-4] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 6
+2020-12-16 23:18:14.291 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 23:18:14.298 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confirm=false, price=20, type=0, conclusion=不同意售后)
+2020-12-16 23:18:14.362 [http-nio-8082-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 无法审核售后单id=101
+2020-12-16 23:21:48.066 [http-nio-8082-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 23:21:48.068 [http-nio-8082-exec-3] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=100vo=AftersaleConfirmVo(confirm=true, price=20, type=0, conclusion=同意售后)
+2020-12-16 23:21:48.103 [http-nio-8082-exec-3] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 100 审核成功

@@ -1,0 +1,161 @@
+2020-12-15 20:00:06.492 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 20:00:31.482 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 36.395 seconds (JVM running for 38.637)
+2020-12-15 20:00:31.999 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjAwMDMxOU41IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MDMzNzMxLCJ1c2VySWQiOjEsImlhdCI6MTYwODAzMzYzMX0.3Imd3o5n1NOdlUj8aJDZyNyMQs8y2eX5IWuKb1ujowU
+2020-12-15 20:00:32.082 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-15 20:00:32.187 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=1成功
+2020-12-15 20:01:53.885 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 20:02:21.854 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 38.568 seconds (JVM running for 40.655)
+2020-12-15 20:02:22.533 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjAwMjIyNTZRIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MDMzODQyLCJ1c2VySWQiOjEsImlhdCI6MTYwODAzMzc0Mn0.vSIUwVVdhdgfonHNj071y-UtzyMjYtUbS5fX_vJ9pOA
+2020-12-15 20:02:22.657 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-15 20:02:22.837 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=1成功
+2020-12-15 20:03:04.709 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 20:03:31.818 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 38.605 seconds (JVM running for 41.654)
+2020-12-15 20:03:32.343 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjAwMzMyM1g0IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MDMzOTEyLCJ1c2VySWQiOjEsImlhdCI6MTYwODAzMzgxMn0.xFxBN2IEM1QtMmPTTfeBX69nC2nM3k8K4tSmD6xkib4
+2020-12-15 20:03:32.434 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-15 20:03:32.571 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=1成功
+2020-12-15 20:09:46.071 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 20:10:11.040 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 36.059 seconds (JVM running for 38.314)
+2020-12-15 20:10:11.468 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjAxMDExNEFYIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MDM0MzExLCJ1c2VySWQiOjM4MzUsImlhdCI6MTYwODAzNDIxMX0.4eJ5FyzPxYiB2RV4PM5wiv_MiG-YGHZBgtCZIRGtmMg
+2020-12-15 20:10:11.554 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-15 20:10:48.875 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 20:11:16.068 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 39.174 seconds (JVM running for 41.8)
+2020-12-15 20:11:16.865 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjAxMTE2OFpLIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MDM0Mzc2LCJ1c2VySWQiOjM4MzUsImlhdCI6MTYwODAzNDI3Nn0.IMx4gciVdJSF3_aLQNYABRU4zPVProO5XY3DKzgzPII
+2020-12-15 20:11:19.925 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-15 20:17:51.970 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 20:19:17.695 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 20:19:43.925 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 37.016 seconds (JVM running for 39.689)
+2020-12-15 20:19:44.677 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjAxOTQ0NjlMIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoyNjA4MDM0Nzg0LCJ1c2VySWQiOjM4MzUsImlhdCI6MTYwODAzNDc4NH0.NHEdXALWL3LvPTj8kE_ijHtxLLMCtfKjV4CAZ32twjI
+2020-12-15 20:26:54.984 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 20:27:22.385 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 38.176 seconds (JVM running for 40.963)
+2020-12-15 20:27:23.116 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjAyNzIzMUhMIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MDM1MzQzLCJ1c2VySWQiOjM4MzUsImlhdCI6MTYwODAzNTI0M30.X8bwlQl4sc4FpAMlUFUZnyX9tze_ptGVGZe8hFLZ_ac
+2020-12-15 20:27:37.523 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-15 20:28:53.132 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 20:29:19.763 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 37.679 seconds (JVM running for 40.42)
+2020-12-15 20:29:20.284 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjAyOTIwMko4IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MDM1NDYwLCJ1c2VySWQiOjM4MzUsImlhdCI6MTYwODAzNTM2MH0.Lwyjns7O09m700zXJhiQv2GBKE6HWQ1csu34lZEf30M
+2020-12-15 20:29:23.848 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-15 20:30:15.451 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 20:30:45.117 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 41.937 seconds (JVM running for 46.208)
+2020-12-15 20:30:45.829 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjAzMDQ1OE9VIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MDM1NTQ1LCJ1c2VySWQiOjM4MzUsImlhdCI6MTYwODAzNTQ0NX0.GkTf6vLElzpQIE8tLcIjwrAH0SVAUi9996qZMR13kTA
+2020-12-15 20:31:04.065 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-15 20:33:01.191 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 20:33:29.826 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 39.295 seconds (JVM running for 41.445)
+2020-12-15 20:33:30.369 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjAzMzMwM1gzIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MDM1NzEwLCJ1c2VySWQiOjM4MzUsImlhdCI6MTYwODAzNTYxMH0.9PCx6rpwpMblQoqPxAFQAa-UqPpWwi544qomD-Cf7hc
+2020-12-15 20:33:33.005 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-15 20:34:24.761 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 20:34:51.703 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 37.556 seconds (JVM running for 40.457)
+2020-12-15 20:34:52.313 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjAzNDUyMkZNIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MDM1NzkyLCJ1c2VySWQiOjM4MzUsImlhdCI6MTYwODAzNTY5Mn0.uYWYDvAS53zZx7GXgrfoP8OgZSUgo2R0VX5WbHWL_SM
+2020-12-15 20:34:55.045 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-15 20:35:45.662 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 20:36:13.822 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 39.016 seconds (JVM running for 41.924)
+2020-12-15 20:36:14.289 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjAzNjE0MlRDIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MDM1ODc0LCJ1c2VySWQiOjM4MzUsImlhdCI6MTYwODAzNTc3NH0.J6ZyN4vCyJtfTH1LHBnwtrpOmje5krZi-hkcREOuuv0
+2020-12-15 20:36:18.982 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-15 20:36:31.429 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=1成功
+2020-12-15 20:38:17.477 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 20:38:52.594 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 46.44 seconds (JVM running for 48.628)
+2020-12-15 20:38:53.019 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjAzODUzMFNIIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MDM2MDMzLCJ1c2VySWQiOjM4MzUsImlhdCI6MTYwODAzNTkzM30.tnj_dNHQKnH6sp11GaczA3waUEk83lS2nScPH0Z6wdk
+2020-12-15 20:38:54.872 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-15 20:38:55.082 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=1成功
+2020-12-15 20:39:26.121 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 20:39:54.060 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 38.608 seconds (JVM running for 41.773)
+2020-12-15 20:39:54.670 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjAzOTU0NllDIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MDM2MDk0LCJ1c2VySWQiOjM4MzUsImlhdCI6MTYwODAzNTk5NH0.EiQep84jXXQ_JFF3OBJgdop4eLJNMEUCQJOdka_yYa4
+2020-12-15 20:39:56.827 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-15 20:39:57.027 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=1成功
+2020-12-15 20:40:01.354 [main] INFO  cn.edu.xmu.aftersale.service.AftersaleService - 1
+2020-12-15 20:41:19.387 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 20:41:48.189 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 39.95 seconds (JVM running for 42.958)
+2020-12-15 20:41:48.766 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjA0MTQ4NzMzIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MDM2MjA4LCJ1c2VySWQiOjM4MzUsImlhdCI6MTYwODAzNjEwOH0.DOYskWdSw0kYi298902ltCW-i9h3A8g_hgkJg1hC7tw
+2020-12-15 20:42:04.456 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-15 20:42:04.584 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=1成功
+2020-12-15 20:42:04.584 [main] INFO  cn.edu.xmu.aftersale.service.AftersaleService - 1
+2020-12-15 20:55:04.446 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 20:55:31.465 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 36.839 seconds (JVM running for 38.951)
+2020-12-15 20:55:32.001 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjA1NTMxOUJZIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MDM3MDMxLCJ1c2VySWQiOjM4MzUsImlhdCI6MTYwODAzNjkzMX0.ijePu2_qIaAefVrVwQhng5s9QPLDVH_at-PhEI7hRNQ
+2020-12-15 20:55:33.933 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-15 20:55:34.141 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=1成功
+2020-12-15 20:55:34.141 [main] INFO  cn.edu.xmu.aftersale.service.AftersaleService - 1
+2020-12-15 20:55:35.759 [main] INFO  cn.edu.xmu.aftersale.service.AftersaleService - OrderAftersaleDTO(skuId=680, skuName=null, orderId=38050, orderSn=2020022038350, shopId=null)
+2020-12-15 21:33:09.558 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 21:33:39.369 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 40.694 seconds (JVM running for 43.795)
+2020-12-15 21:33:40.042 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjEzMzQwMDI2IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgwMzkzMjAsInVzZXJJZCI6MzgzNSwiaWF0IjoxNjA4MDM5MjIwfQ.Xttx_2U-vN46k7ARwmyEmYIEeHt5gRuDNqddOqvqEts
+2020-12-15 21:33:40.163 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=3835,page=1,pageSize=2
+2020-12-15 21:33:51.222 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=3835的售后单成功
+2020-12-15 21:36:58.331 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 21:37:25.597 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 36.728 seconds (JVM running for 38.816)
+2020-12-15 21:37:26.242 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjEzNzI2MkdCIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgwMzk1NDYsInVzZXJJZCI6MzgzNSwiaWF0IjoxNjA4MDM5NDQ2fQ.Je4i1YetzdJWA4s2nL0hRlwP1tDLpimz7BUGBNKzefk
+2020-12-15 21:37:26.350 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=3835,page=1,pageSize=2
+2020-12-15 21:37:26.617 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=3835的售后单成功
+2020-12-15 21:38:33.282 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 21:39:00.805 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 38.597 seconds (JVM running for 41.671)
+2020-12-15 21:39:01.386 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjEzOTAxM1ZRIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgwMzk2NDEsInVzZXJJZCI6MzgzNSwiaWF0IjoxNjA4MDM5NTQxfQ.dyc3WnIwcKs8D_E8AC4d9q0VJBdgoRw9DAN8-mJQnEs
+2020-12-15 21:39:01.497 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=3835,page=1,pageSize=2
+2020-12-15 21:39:01.787 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=3835的售后单成功
+2020-12-15 21:47:09.007 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 21:48:07.139 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 69.088 seconds (JVM running for 71.873)
+2020-12-15 21:48:07.832 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjE0ODA3ODFPIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgwNDAxODcsInVzZXJJZCI6MzgzNSwiaWF0IjoxNjA4MDQwMDg3fQ.6RSF95GlMvIcl6UuKJHSXu03WGoRuncqzyGkbp-uNoI
+2020-12-15 21:48:07.945 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=3835,page=1,pageSize=2
+2020-12-15 21:48:08.201 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=3835的售后单成功
+2020-12-15 21:59:28.009 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 21:59:55.037 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 38.899 seconds (JVM running for 42.012)
+2020-12-15 21:59:55.722 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjE1OTU1N0xHIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgwNDA4OTUsInVzZXJJZCI6MzgzNSwiaWF0IjoxNjA4MDQwNzk1fQ.neXsjKej0bUvhY61HdJqFPaoAqJORQsbVceIs1zuj3Q
+2020-12-15 21:59:55.854 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=3835,page=1,pageSize=2
+2020-12-15 21:59:56.121 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=3835的售后单成功
+2020-12-15 22:02:47.689 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 22:03:14.107 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 37.651 seconds (JVM running for 40.149)
+2020-12-15 22:03:14.776 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjIwMzE0N0RDIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgwNDEwOTQsInVzZXJJZCI6MzgzNSwiaWF0IjoxNjA4MDQwOTk0fQ.ccY2--7UitXwN94Z2MDK3AWuvWPJIU3P2EyDGrFTk-g
+2020-12-15 22:03:14.903 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=3835,page=1,pageSize=2
+2020-12-15 22:03:15.240 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=3835的售后单成功
+2020-12-15 22:04:07.405 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 22:04:35.562 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 39.405 seconds (JVM running for 42.637)
+2020-12-15 22:04:36.133 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjIwNDM2MUI4IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgwNDExNzYsInVzZXJJZCI6MzgzNSwiaWF0IjoxNjA4MDQxMDc2fQ.eOo6aySN6-8u-njh7XaQFn09DFboDDeFhimNW_NgAJY
+2020-12-15 22:04:36.244 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=3835,page=1,pageSize=2
+2020-12-15 22:04:36.496 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=3835的售后单成功
+2020-12-15 22:05:54.313 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 22:06:21.312 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 37.589 seconds (JVM running for 40.801)
+2020-12-15 22:06:21.984 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjIwNjIxOVg2IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgwNDEyODEsInVzZXJJZCI6MzgzNSwiaWF0IjoxNjA4MDQxMTgxfQ.-mpLtcO7eLeXDXpKwIixJR0l3kHcHNsTf0FybSDRLuY
+2020-12-15 22:06:22.100 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=3835,page=1,pageSize=2
+2020-12-15 22:06:22.367 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=3835的售后单成功
+2020-12-15 22:07:57.812 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 22:08:26.945 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 40.339 seconds (JVM running for 43.333)
+2020-12-15 22:08:27.802 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjIwODI3N1VWIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgwNDE0MDcsInVzZXJJZCI6MzgzNSwiaWF0IjoxNjA4MDQxMzA3fQ.CRqAWWe1NtK3Apzni_e8km6_SpICvD2cGLEGY1Z77pg
+2020-12-15 22:08:27.971 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=3835,page=1,pageSize=2
+2020-12-15 22:08:28.375 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=3835的售后单成功
+2020-12-15 22:09:36.835 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 22:10:03.481 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 37.393 seconds (JVM running for 40.224)
+2020-12-15 22:10:04.119 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjIxMDA0MTNYIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgwNDE1MDQsInVzZXJJZCI6MzgzNSwiaWF0IjoxNjA4MDQxNDA0fQ.cL7anKi-vMvhtZ_bGFXQUafYIc0YmoIW9OylYuNYC-w
+2020-12-15 22:10:04.237 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=3835,page=1,pageSize=2
+2020-12-15 22:10:04.547 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=3835的售后单成功
+2020-12-15 22:11:21.545 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 22:11:48.507 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 37.881 seconds (JVM running for 40.549)
+2020-12-15 22:11:49.109 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjIxMTQ5MDU0IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgwNDE2MDksInVzZXJJZCI6MzgzNSwiaWF0IjoxNjA4MDQxNTA5fQ.64jM1pC8aEPk7p7fTGJZ2EzdBKyrFK8L8bS7jBBTEts
+2020-12-15 22:11:49.216 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=3835,page=1,pageSize=2
+2020-12-15 22:11:49.508 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=3835的售后单成功
+2020-12-15 22:12:58.374 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 22:13:26.321 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 38.931 seconds (JVM running for 41.179)
+2020-12-15 22:13:27.094 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjIxMzI3MFFVIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgwNDE3MDcsInVzZXJJZCI6MzgzNSwiaWF0IjoxNjA4MDQxNjA3fQ.xvTrC5XNdIplTro_ER_r-hK8LSyOJJV9CZpNeoi0e-I
+2020-12-15 22:13:27.235 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=3835,page=1,pageSize=2
+2020-12-15 22:13:27.582 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=3835的售后单成功
+2020-12-15 22:16:30.278 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 22:16:57.105 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 38.18 seconds (JVM running for 41.343)
+2020-12-15 22:16:57.876 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjIxNjU3OFJPIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgwNDE5MTcsInVzZXJJZCI6MzgzNSwiaWF0IjoxNjA4MDQxODE3fQ.Eg9Cy_GmdgDMaqswvLGZNNm7C5iV3FVkX6PtD6xqmN8
+2020-12-15 22:16:57.988 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=3835,page=1,pageSize=2
+2020-12-15 22:16:58.274 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=3835的售后单成功
+2020-12-15 22:16:58.597 [main] ERROR cn.edu.xmu.aftersale.service.AftersaleService - [{skuName=null, orderSn=2020022038350, orderId=38050, shopId=null, skuId=680}, {skuName=null, orderSn=2020022038350, orderId=38050, shopId=null, skuId=681}]
+2020-12-15 22:19:16.576 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 22:19:40.622 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 34.86 seconds (JVM running for 37.718)
+2020-12-15 22:19:41.226 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjIxOTQxMlg5IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgwNDIwODEsInVzZXJJZCI6MzgzNSwiaWF0IjoxNjA4MDQxOTgxfQ.pbA_Sll3ZFt_9r4tBfHqDaSa0mavBzMWgGKFCPrrP0Y
+2020-12-15 22:19:41.351 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=3835,page=1,pageSize=2
+2020-12-15 22:19:41.637 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=3835的售后单成功
+2020-12-15 22:19:41.971 [main] ERROR cn.edu.xmu.aftersale.service.AftersaleService - [{skuName=null, orderSn=2020022038350, orderId=38050, shopId=null, skuId=680}, {skuName=null, orderSn=2020022038350, orderId=38050, shopId=null, skuId=681}]
+2020-12-15 22:19:41.971 [main] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 123
+2020-12-15 22:22:13.181 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 22:22:38.116 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 37.002 seconds (JVM running for 39.612)
+2020-12-15 22:22:38.738 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjIyMjM4N0ZLIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgwNDIyNTgsInVzZXJJZCI6MzgzNSwiaWF0IjoxNjA4MDQyMTU4fQ.NQcYhCSbQnrfCisN1oO2sy2ZFYu_89H8spVgDRs-gIk
+2020-12-15 22:22:38.843 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=3835,page=1,pageSize=2
+2020-12-15 22:22:39.123 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=3835的售后单成功
+2020-12-15 22:22:39.413 [main] ERROR cn.edu.xmu.aftersale.service.AftersaleService - [{skuName=null, orderSn=2020022038350, orderId=38050, shopId=null, skuId=680}, {skuName=null, orderSn=2020022038350, orderId=38050, shopId=null, skuId=681}]
+2020-12-15 22:23:33.631 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-15 22:23:58.574 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 36.158 seconds (JVM running for 38.722)
+2020-12-15 22:23:59.126 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE1MjIyMzU5MVZUIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgwNDIzMzksInVzZXJJZCI6MzgzNSwiaWF0IjoxNjA4MDQyMjM5fQ.ufwqK8u44Z8kBfTNXSlD3B-unDumvo3RsZW6uYgA3uo
+2020-12-15 22:23:59.229 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=3835,page=1,pageSize=2
+2020-12-15 22:23:59.518 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=3835的售后单成功
+2020-12-15 22:23:59.898 [main] ERROR cn.edu.xmu.aftersale.service.AftersaleService - [{skuName=null, orderSn=2020022038350, orderId=38050, shopId=null, skuId=680}, {skuName=null, orderSn=2020022038350, orderId=38050, shopId=null, skuId=681}]

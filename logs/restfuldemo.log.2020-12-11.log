@@ -1,0 +1,183 @@
+2020-12-11 21:35:53.249 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementController': Unsatisfied dependency expressed through field 'advertisementService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'advertisementService': Injection of @DubboReference dependencies is failed; nested exception is java.lang.IllegalStateException: Failed to check the status of the service IAftersaleService. No provider available for the service IAftersaleService from the url nacos://localhost:8848/org.apache.dubbo.registry.RegistryService?application=dubbo-test&dubbo=2.0.2&init=false&interface=IAftersaleService&metadata-type=remote&methods=findAftersaleById&pid=4084&qos.enable=false&register.ip=192.168.244.1&release=2.7.8&side=consumer&sticky=false&timestamp=1607693752758 to the consumer 192.168.244.1 use dubbo version 2.7.8
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at cn.edu.xmu.advertisement.AdvertisementApplication.main(AdvertisementApplication.java:17)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'advertisementService': Injection of @DubboReference dependencies is failed; nested exception is java.lang.IllegalStateException: Failed to check the status of the service IAftersaleService. No provider available for the service IAftersaleService from the url nacos://localhost:8848/org.apache.dubbo.registry.RegistryService?application=dubbo-test&dubbo=2.0.2&init=false&interface=IAftersaleService&metadata-type=remote&methods=findAftersaleById&pid=4084&qos.enable=false&register.ip=192.168.244.1&release=2.7.8&side=consumer&sticky=false&timestamp=1607693752758 to the consumer 192.168.244.1 use dubbo version 2.7.8
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor.postProcessPropertyValues(AbstractAnnotationBeanPostProcessor.java:149)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1425)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 20 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to check the status of the service IAftersaleService. No provider available for the service IAftersaleService from the url nacos://localhost:8848/org.apache.dubbo.registry.RegistryService?application=dubbo-test&dubbo=2.0.2&init=false&interface=IAftersaleService&metadata-type=remote&methods=findAftersaleById&pid=4084&qos.enable=false&register.ip=192.168.244.1&release=2.7.8&side=consumer&sticky=false&timestamp=1607693752758 to the consumer 192.168.244.1 use dubbo version 2.7.8
+	at org.apache.dubbo.config.ReferenceConfig.checkInvokerAvailable(ReferenceConfig.java:420)
+	at org.apache.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:315)
+	at org.apache.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:205)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor.doGetInjectedBean(ReferenceAnnotationBeanPostProcessor.java:144)
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor.getInjectedObject(AbstractAnnotationBeanPostProcessor.java:362)
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor$AnnotatedFieldElement.inject(AbstractAnnotationBeanPostProcessor.java:542)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor.postProcessPropertyValues(AbstractAnnotationBeanPostProcessor.java:145)
+	... 31 common frames omitted
+2020-12-11 21:52:45.209 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementController': Unsatisfied dependency expressed through field 'advertisementService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'advertisementService': Injection of @DubboReference dependencies is failed; nested exception is java.lang.IllegalStateException: Failed to check the status of the service IAftersaleService. No provider available for the service IAftersaleService from the url nacos://localhost:8848/org.apache.dubbo.registry.RegistryService?application=dubbo-test&dubbo=2.0.2&init=false&interface=IAftersaleService&metadata-type=remote&methods=findAftersaleById&pid=37112&qos.enable=false&register.ip=192.168.244.1&release=2.7.8&side=consumer&sticky=false&timestamp=1607694764776 to the consumer 192.168.244.1 use dubbo version 2.7.8
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at cn.edu.xmu.advertisement.AdvertisementApplication.main(AdvertisementApplication.java:17)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'advertisementService': Injection of @DubboReference dependencies is failed; nested exception is java.lang.IllegalStateException: Failed to check the status of the service IAftersaleService. No provider available for the service IAftersaleService from the url nacos://localhost:8848/org.apache.dubbo.registry.RegistryService?application=dubbo-test&dubbo=2.0.2&init=false&interface=IAftersaleService&metadata-type=remote&methods=findAftersaleById&pid=37112&qos.enable=false&register.ip=192.168.244.1&release=2.7.8&side=consumer&sticky=false&timestamp=1607694764776 to the consumer 192.168.244.1 use dubbo version 2.7.8
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor.postProcessPropertyValues(AbstractAnnotationBeanPostProcessor.java:149)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1425)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 20 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to check the status of the service IAftersaleService. No provider available for the service IAftersaleService from the url nacos://localhost:8848/org.apache.dubbo.registry.RegistryService?application=dubbo-test&dubbo=2.0.2&init=false&interface=IAftersaleService&metadata-type=remote&methods=findAftersaleById&pid=37112&qos.enable=false&register.ip=192.168.244.1&release=2.7.8&side=consumer&sticky=false&timestamp=1607694764776 to the consumer 192.168.244.1 use dubbo version 2.7.8
+	at org.apache.dubbo.config.ReferenceConfig.checkInvokerAvailable(ReferenceConfig.java:420)
+	at org.apache.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:315)
+	at org.apache.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:205)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor.doGetInjectedBean(ReferenceAnnotationBeanPostProcessor.java:144)
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor.getInjectedObject(AbstractAnnotationBeanPostProcessor.java:362)
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor$AnnotatedFieldElement.inject(AbstractAnnotationBeanPostProcessor.java:542)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor.postProcessPropertyValues(AbstractAnnotationBeanPostProcessor.java:145)
+	... 31 common frames omitted
+2020-12-11 21:58:38.287 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementController': Unsatisfied dependency expressed through field 'advertisementService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'advertisementService': Injection of @DubboReference dependencies is failed; nested exception is java.lang.IllegalStateException: Failed to check the status of the service IAftersaleService. No provider available for the service IAftersaleService from the url nacos://localhost:8848/org.apache.dubbo.registry.RegistryService?application=advertisement-service&dubbo=2.0.2&init=false&interface=IAftersaleService&metadata-type=remote&methods=findAftersaleById&pid=12120&qos.enable=false&register.ip=192.168.244.1&release=2.7.8&side=consumer&sticky=false&timestamp=1607695117862 to the consumer 192.168.244.1 use dubbo version 2.7.8
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at cn.edu.xmu.advertisement.AdvertisementApplication.main(AdvertisementApplication.java:17)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'advertisementService': Injection of @DubboReference dependencies is failed; nested exception is java.lang.IllegalStateException: Failed to check the status of the service IAftersaleService. No provider available for the service IAftersaleService from the url nacos://localhost:8848/org.apache.dubbo.registry.RegistryService?application=advertisement-service&dubbo=2.0.2&init=false&interface=IAftersaleService&metadata-type=remote&methods=findAftersaleById&pid=12120&qos.enable=false&register.ip=192.168.244.1&release=2.7.8&side=consumer&sticky=false&timestamp=1607695117862 to the consumer 192.168.244.1 use dubbo version 2.7.8
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor.postProcessPropertyValues(AbstractAnnotationBeanPostProcessor.java:149)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1425)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 20 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to check the status of the service IAftersaleService. No provider available for the service IAftersaleService from the url nacos://localhost:8848/org.apache.dubbo.registry.RegistryService?application=advertisement-service&dubbo=2.0.2&init=false&interface=IAftersaleService&metadata-type=remote&methods=findAftersaleById&pid=12120&qos.enable=false&register.ip=192.168.244.1&release=2.7.8&side=consumer&sticky=false&timestamp=1607695117862 to the consumer 192.168.244.1 use dubbo version 2.7.8
+	at org.apache.dubbo.config.ReferenceConfig.checkInvokerAvailable(ReferenceConfig.java:420)
+	at org.apache.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:315)
+	at org.apache.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:205)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor.doGetInjectedBean(ReferenceAnnotationBeanPostProcessor.java:144)
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor.getInjectedObject(AbstractAnnotationBeanPostProcessor.java:362)
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor$AnnotatedFieldElement.inject(AbstractAnnotationBeanPostProcessor.java:542)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor.postProcessPropertyValues(AbstractAnnotationBeanPostProcessor.java:145)
+	... 31 common frames omitted
+2020-12-11 22:00:57.303 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field advertisementService in cn.edu.xmu.advertisement.controller.AdvertisementController required a bean of type 'cn.edu.xmu.advertisement.service.AdvertisementService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'cn.edu.xmu.advertisement.service.AdvertisementService' in your configuration.
+
+2020-12-11 22:16:11.950 [DubboServerHandler-192.168.244.1:20880-thread-2] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单不存在：id = 1
+2020-12-11 22:16:12.013 [DubboServerHandler-192.168.244.1:20880-thread-3] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单不存在：id = 1
+2020-12-11 22:16:12.022 [DubboServerHandler-192.168.244.1:20880-thread-4] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单不存在：id = 1
+2020-12-11 22:17:52.097 [DubboServerHandler-192.168.244.1:20880-thread-7] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单不存在：id = 1
+2020-12-11 22:17:52.135 [DubboServerHandler-192.168.244.1:20880-thread-8] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单不存在：id = 1
+2020-12-11 22:17:52.148 [DubboServerHandler-192.168.244.1:20880-thread-9] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单不存在：id = 1
+2020-12-11 22:20:34.785 [DubboServerHandler-192.168.244.1:20880-thread-12] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单不存在：id = 1
+2020-12-11 22:20:34.826 [DubboServerHandler-192.168.244.1:20880-thread-13] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单不存在：id = 1
+2020-12-11 22:20:34.834 [DubboServerHandler-192.168.244.1:20880-thread-14] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单不存在：id = 1
+2020-12-11 22:21:52.804 [DubboServerHandler-192.168.244.1:20880-thread-17] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单不存在：id = 1
+2020-12-11 22:21:52.828 [DubboServerHandler-192.168.244.1:20880-thread-18] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单不存在：id = 1
+2020-12-11 22:21:52.834 [DubboServerHandler-192.168.244.1:20880-thread-19] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单不存在：id = 1
+2020-12-11 22:23:47.440 [DubboServerHandler-192.168.244.1:20880-thread-22] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单不存在：id = 1
+2020-12-11 22:23:47.474 [DubboServerHandler-192.168.244.1:20880-thread-23] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单不存在：id = 1
+2020-12-11 22:23:47.481 [DubboServerHandler-192.168.244.1:20880-thread-24] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单不存在：id = 1
+2020-12-11 22:25:51.009 [DubboServerHandler-192.168.244.1:20880-thread-27] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单不存在：id = 1
+2020-12-11 22:25:51.074 [DubboServerHandler-192.168.244.1:20880-thread-28] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单不存在：id = 1
+2020-12-11 22:25:51.084 [DubboServerHandler-192.168.244.1:20880-thread-29] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单不存在：id = 1
+2020-12-11 22:30:38.947 [DubboServerHandler-192.168.244.1:20880-thread-34] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=1成功
+2020-12-11 22:30:38.992 [DubboServerHandler-192.168.244.1:20880-thread-35] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=1成功
+2020-12-11 22:30:39.002 [DubboServerHandler-192.168.244.1:20880-thread-36] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=1成功
+2020-12-11 22:34:36.882 [DubboServerHandler-192.168.244.1:20880-thread-2] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=1成功
+2020-12-11 22:34:36.949 [DubboServerHandler-192.168.244.1:20880-thread-3] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=1成功
+2020-12-11 22:34:36.960 [DubboServerHandler-192.168.244.1:20880-thread-4] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=1成功
