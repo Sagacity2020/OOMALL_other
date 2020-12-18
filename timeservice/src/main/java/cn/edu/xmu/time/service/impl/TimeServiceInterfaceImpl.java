@@ -43,7 +43,7 @@ public class TimeServiceInterfaceImpl implements TimeServiceInterface {
     }
 
     @Override
-    public List<Long> getCurrentFlashSaleTimeSegs(){
+    public String getCurrentFlashSaleTimeSegs(){
         return timeSegmentDao.getCurrentFlashSaleTimeSegs();
     }
     @Override

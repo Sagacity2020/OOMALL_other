@@ -15,6 +15,6 @@ import java.util.List;
 public interface TimeServiceInterface {
 
     public ReturnObject<TimeSegmentDTO> getTimesegmentById(Long id);
-    List<Long> getCurrentFlashSaleTimeSegs();
+    String getCurrentFlashSaleTimeSegs();
     Boolean timeSegIsFlashSale(Long id);
 }

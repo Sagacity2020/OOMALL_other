@@ -24,7 +24,11 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
+<<<<<<< HEAD
     <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
+=======
+    <orderEntry type="inheritedJdk" />
+>>>>>>> origin/master
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="core" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-aop:2.3.3.RELEASE" level="project" />
