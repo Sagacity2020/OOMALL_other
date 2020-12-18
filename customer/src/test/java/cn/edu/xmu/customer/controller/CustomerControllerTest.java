@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -42,8 +43,7 @@ public class CustomerControllerTest {
 @Test
     public void getAllStateTest()throws Exception{
 
-    String token = creatTestToken(1L, 0L, 100);
-        String responseString=this.mvc.perform(get("/user/users/states").header("authorization", token))
+        String responseString=this.mvc.perform(get("/user/users/states"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andReturn().getResponse().getContentAsString();
@@ -54,10 +54,11 @@ public class CustomerControllerTest {
 注册新用户（正常）
  */
     @Test
+    @Rollback(false)
     public void reigsterTest1()throws Exception{
       String requireJson="{\n" +
               "  \"mobile\": \"13950004260\",\n" +
-              "  \"email\": \"1309379909@qq.com\",\n" +
+              "  \"email\": \"1309339909@qq.com\",\n" +
               "  \"userName\": \"xskxsk\",\n" +
               "  \"password\": \"000105\",\n" +
               "  \"realName\": \"xsk\",\n" +
@@ -76,8 +77,8 @@ public class CustomerControllerTest {
                 "\"userName\": \"xskxsk\"," +
                 "\"name\": \"xsk\"," +
                 "\"mobile\": \"13950004260\"," +
-                "\"email\": \"1309379909@qq.com\"," +
-                "\"gender\": \"0\"," +
+                "\"email\": \"1309339909@qq.com\"," +
+                "\"gender\": 0," +
                 "\"birthday\": \"2000-01-05\"," +
                 "\"state\": 4,"+
                 //"\"gmtCreate\": \"2020-12-04T14:20:24\"," +
@@ -94,11 +95,11 @@ public class CustomerControllerTest {
     @Test
     public void registerTest2()throws Exception{
         String requireJson="{\n" +
-                "  \"mobile\": \"13950004260\",\n" +
+                "  \"mobile\": \"13955554260\",\n" +
                 "  \"email\": \"1309339990@qq.com\",\n" +
-                "  \"userName\": \"59460469111\",\n" +
+                "  \"userName\": \"xskxsk\",\n" +
                 "  \"password\": \"000105\",\n" +
-                "  \"realName\": \"\",\n" +
+                "  \"realName\": \"xsk\",\n" +
                 "  \"gender\": 0,\n" +
                 "  \"birthday\": \"2000-01-05\"\n" +
                 "}";
@@ -116,9 +117,9 @@ public class CustomerControllerTest {
     @Test
     public void registerTest4()throws Exception{
         String requireJson="{\n" +
-                "  \"mobile\": \"13959288883\",\n" +
+                "  \"mobile\": \"13950004260\",\n" +
                 "  \"email\": \"1309339990@qq.com\",\n" +
-                "  \"userName\": \"xskxsk\",\n" +
+                "  \"userName\": \"xskxkk\",\n" +
                 "  \"password\": \"000105\",\n" +
                 "  \"realName\": \"xsk\",\n" +
                 "  \"gender\": 0,\n" +
@@ -138,9 +139,9 @@ public class CustomerControllerTest {
     @Test
     public void registerTest3()throws Exception{
         String requireJson="{\n" +
-                "  \"mobile\": \"13950004260\",\n" +
+                "  \"mobile\": \"13955554260\",\n" +
                 "  \"email\": \"1309339909@qq.com\",\n" +
-                "  \"userName\": \"xskxsk\",\n" +
+                "  \"userName\": \"xskxhk\",\n" +
                 "  \"password\": \"0105Xsk;\",\n" +
                 "  \"realName\": \"xsk\",\n" +
                 "  \"gender\": 0,\n" +
@@ -155,14 +156,14 @@ public class CustomerControllerTest {
                 .andReturn().getResponse().getContentAsString();
     }
     /*
-        注册新用户（用户名格式不正确）
+        注册新用户（用户名为空）
          */
     @Test
     public void registerTest5()throws Exception{
         String requireJson="{\n" +
-                "  \"mobile\": \"13950004260\",\n" +
+                "  \"mobile\": \"13955554260\",\n" +
                 "  \"email\": \"xiangshuke@qq.com\",\n" +
-                "  \"userName\": \"xsk\",\n" +
+                "  \"userName\": \"\",\n" +
                 "  \"password\": \"0105Xsk..\",\n" +
                 "  \"realName\": \"xsk\",\n" +
                 "  \"gender\": 0,\n" +
@@ -173,7 +174,7 @@ public class CustomerControllerTest {
                 .content(requireJson)).andExpect(status().isBadRequest())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andReturn().getResponse().getContentAsString();
-        String expectedResponse="{\"errno\":503,\"errmsg\":\"用户名长度过短;\"}";
+        String expectedResponse="{\"errno\":503,\"errmsg\":\"用户名不能为空;\"}";
         JSONAssert.assertEquals(expectedResponse,responseString,false);
     }
     /*
@@ -184,7 +185,7 @@ public class CustomerControllerTest {
         String requireJson="{\n" +
                 "  \"mobile\": \"13950004260\",\n" +
                 "  \"email\": \"xiangshukeqq.com\",\n" +
-                "  \"userName\": \"xskxsk\",\n" +
+                "  \"userName\": \"xkxsk\",\n" +
                 "  \"password\": \"0105Xsk..\",\n" +
                 "  \"realName\": \"xsk\",\n" +
                 "  \"gender\": 0,\n" +
@@ -199,14 +200,36 @@ public class CustomerControllerTest {
         JSONAssert.assertEquals(expectedResponse,responseString,false);
     }
     /*
-    注册新用户（手机号格式不正确）
-     */
+        注册新用户（邮箱为空）
+         */
     @Test
     public void registerTest7()throws Exception{
         String requireJson="{\n" +
+                "  \"mobile\": \"13950004260\",\n" +
+                "  \"email\": \"\",\n" +
+                "  \"userName\": \"xkxsk\",\n" +
+                "  \"password\": \"0105Xsk..\",\n" +
+                "  \"realName\": \"xsk\",\n" +
+                "  \"gender\": 0,\n" +
+                "  \"birthday\": \"2000-01-05\"\n" +
+                "}";
+        String responseString=this.mvc.perform(post("/user/users")
+                .contentType("application/json;charset=UTF-8")
+                .content(requireJson)).andExpect(status().isBadRequest())
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andReturn().getResponse().getContentAsString();
+        String expectedResponse="{\"errno\":503,\"errmsg\":\"邮箱不能为空;\"}";
+        JSONAssert.assertEquals(expectedResponse,responseString,false);
+    }
+    /*
+    注册新用户（手机号格式不正确）
+     */
+    @Test
+    public void registerTest8()throws Exception{
+        String requireJson="{\n" +
                 "  \"mobile\": \"1abc394260\",\n" +
-                "  \"email\": \"1309339909@qq.com\",\n" +
-                "  \"userName\": \"xskxsk\",\n" +
+                "  \"email\": \"1308839909@qq.com\",\n" +
+                "  \"userName\": \"xskKsk\",\n" +
                 "  \"password\": \"0105Xsk..\",\n" +
                 "  \"realName\": \"xsk\",\n" +
                 "  \"gender\": 0,\n" +
@@ -221,12 +244,12 @@ public class CustomerControllerTest {
         JSONAssert.assertEquals(expectedResponse,responseString,false);
     }
     /*
-    注册新用户（密码格式不正确）
-
+    注册新用户（电话为空）
+*/
     @Test
-    public void registerTest8()throws Exception{
+    public void registerTest9()throws Exception{
         String requireJson="{\n" +
-                "  \"mobile\": \"1abc394260\",\n" +
+                "  \"mobile\": \"\",\n" +
                 "  \"email\": \"1309339909@qq.com\",\n" +
                 "  \"userName\": \"xskxsk\",\n" +
                 "  \"password\": \"0105xsk\",\n" +
@@ -239,17 +262,109 @@ public class CustomerControllerTest {
                 .content(requireJson)).andExpect(status().isBadRequest())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andReturn().getResponse().getContentAsString();
-        String expectedResponse="{\"errno\":503,\"errmsg\":\"密码格式不正确;\"}";
+        String expectedResponse="{\"errno\":503,\"errmsg\":\"手机号格式不正确;手机号不能为空;\"}";
         JSONAssert.assertEquals(expectedResponse,responseString,false);
     }
-    */
+
+    /*
+    注册新用户（密码为空）
+*/
+    @Test
+    public void registerTest10()throws Exception{
+        String requireJson="{\n" +
+                "  \"mobile\": \"13950004266\",\n" +
+                "  \"email\": \"1309339909@qq.com\",\n" +
+                "  \"userName\": \"xskxsk\",\n" +
+                "  \"password\": \"\",\n" +
+                "  \"realName\": \"xsk\",\n" +
+                "  \"gender\": 0,\n" +
+                "  \"birthday\": \"2000-01-05\"\n" +
+                "}";
+        String responseString=this.mvc.perform(post("/user/users")
+                .contentType("application/json;charset=UTF-8")
+                .content(requireJson)).andExpect(status().isBadRequest())
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andReturn().getResponse().getContentAsString();
+        String expectedResponse="{\"errno\":503,\"errmsg\":\"密码不能为空;\"}";
+        JSONAssert.assertEquals(expectedResponse,responseString,false);
+    }
+    /*
+       注册新用户（密码为空）
+   */
+    @Test
+    public void registerTest11()throws Exception{
+        String requireJson="{\n" +
+                "  \"mobile\": \"13950004266\",\n" +
+                "  \"email\": \"1309339909@qq.com\",\n" +
+                "  \"userName\": \"xskxsk\",\n" +
+                "  \"password\": \"\",\n" +
+                "  \"realName\": \"xsk\",\n" +
+                "  \"gender\": 0,\n" +
+                "  \"birthday\": \"2000-01-05\"\n" +
+                "}";
+        String responseString=this.mvc.perform(post("/user/users")
+                .contentType("application/json;charset=UTF-8")
+                .content(requireJson)).andExpect(status().isBadRequest())
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andReturn().getResponse().getContentAsString();
+        String expectedResponse="{\"errno\":503,\"errmsg\":\"密码不能为空;\"}";
+        JSONAssert.assertEquals(expectedResponse,responseString,false);
+    }
+
+    /*
+       注册新用户（性别为空）
+   */
+    @Test
+    public void registerTest12()throws Exception{
+        String requireJson="{\n" +
+                "  \"mobile\": \"13950004266\",\n" +
+                "  \"email\": \"1309339909@qq.com\",\n" +
+                "  \"userName\": \"xskxsk\",\n" +
+                "  \"password\": \"123456\",\n" +
+                "  \"realName\": \"xsk\",\n" +
+                "  \"gender\": \"\",\n" +
+                "  \"birthday\": \"2000-01-05\"\n" +
+                "}";
+        String responseString=this.mvc.perform(post("/user/users")
+                .contentType("application/json;charset=UTF-8")
+                .content(requireJson)).andExpect(status().isBadRequest())
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andReturn().getResponse().getContentAsString();
+        String expectedResponse="{\"errno\":503,\"errmsg\":\"性别不能为空;\"}";
+        JSONAssert.assertEquals(expectedResponse,responseString,false);
+    }
+
+    /*
+      注册新用户（生日为空）
+  */
+    @Test
+    public void registerTest13()throws Exception{
+        String requireJson="{\n" +
+                "  \"mobile\": \"13950004266\",\n" +
+                "  \"email\": \"1309339909@qq.com\",\n" +
+                "  \"userName\": \"xskxsk\",\n" +
+                "  \"password\": \"123456\",\n" +
+                "  \"realName\": \"xsk\",\n" +
+                "  \"gender\": 1,\n" +
+                "  \"birthday\": \"\"\n" +
+                "}";
+        String responseString=this.mvc.perform(post("/user/users")
+                .contentType("application/json;charset=UTF-8")
+                .content(requireJson)).andExpect(status().isBadRequest())
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andReturn().getResponse().getContentAsString();
+        String expectedResponse="{\"errno\":503,\"errmsg\":\"生日不能为空;\"}";
+        JSONAssert.assertEquals(expectedResponse,responseString,false);
+    }
+
     /*
     平台管理员封禁买家(正常）
 */
      @Test
+     @Rollback(false)
     public void banCustomerTest1()throws Exception{
          String token = creatTestToken(1L, 0L, 100);
-         String responseString=this.mvc.perform(put("/users/2/ban").header("authorization", token))
+         String responseString=this.mvc.perform(put("/user/shops/0/users/3/ban").header("authorization", token))
                          .andExpect(status().isOk())
                          .andExpect(content().contentType("application/json;charset=UTF-8"))
                          .andExpect(jsonPath("$.errno").value(ResponseCode.OK.getCode()))
@@ -263,7 +378,7 @@ public class CustomerControllerTest {
     @Test
      public void banCustomerTest2()throws Exception{
          String token = creatTestToken(1L, 0L, 100);
-         String responseString=this.mvc.perform(put("/user/users/0/ban").header("authorization", token))
+         String responseString=this.mvc.perform(put("/user/shops/0/users/0/ban").header("authorization", token))
                  .andExpect(status().isNotFound())
                  .andExpect(content().contentType("application/json;charset=UTF-8"))
                  .andExpect(jsonPath("$.errno").value(ResponseCode.RESOURCE_ID_NOTEXIST.getCode()))
@@ -277,7 +392,7 @@ public class CustomerControllerTest {
     @Test
     public void banCustomerTest3()throws Exception{
         String token = creatTestToken(1L, 0L, 100);
-        String responseString=this.mvc.perform(put("/user/users/1/ban").header("authorization", token))
+        String responseString=this.mvc.perform(put("/user/shops/0/users/1/ban").header("authorization", token))
                 .andExpect(status().isNotFound())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andExpect(jsonPath("$.errno").value(ResponseCode.RESOURCE_ID_NOTEXIST.getCode()))
@@ -291,10 +406,10 @@ public class CustomerControllerTest {
     @Test
     public void banCustomerTest4()throws Exception{
         String token = creatTestToken(1L, -2L, 100);
-        String responseString=this.mvc.perform(put("/user/users/2/ban").header("authorization", token))
+        String responseString=this.mvc.perform(put("/user/shops/0/users/2/ban").header("authorization", token))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
-                .andExpect(jsonPath("$.errno").value(ResponseCode.FIELD_NOTVALID.getCode()))
+                .andExpect(jsonPath("$.errno").value(ResponseCode.AUTH_NOT_ALLOW.getCode()))
                 .andExpect(jsonPath("$.errmsg").value("没有权限"))
                 .andReturn().getResponse().getContentAsString();
     }
@@ -304,7 +419,7 @@ public class CustomerControllerTest {
     @Test
     public void releaseCustomerTest1()throws Exception{
         String token = creatTestToken(1L, 0L, 100);
-        String responseString=this.mvc.perform(put("/user/users/2/release").header("authorization", token))
+        String responseString=this.mvc.perform(put("/user/shops/0/users/2/release").header("authorization", token))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andExpect(jsonPath("$.errno").value(ResponseCode.OK.getCode()))
@@ -319,7 +434,7 @@ public class CustomerControllerTest {
     @Test
     public void releaseCustomerTest2()throws Exception{
         String token = creatTestToken(1L, 0L, 100);
-        String responseString=this.mvc.perform(put("/user/users/0/release").header("authorization", token))
+        String responseString=this.mvc.perform(put("/user/shops/0/users/0/release").header("authorization", token))
                 .andExpect(status().isNotFound())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andExpect(jsonPath("$.errno").value(ResponseCode.RESOURCE_ID_NOTEXIST.getCode()))
@@ -333,7 +448,7 @@ public class CustomerControllerTest {
     @Test
     public void releaseCustomerTest3()throws Exception{
         String token = creatTestToken(1L, 0L, 100);
-        String responseString=this.mvc.perform(put("/user/users/1/release").header("authorization", token))
+        String responseString=this.mvc.perform(put("/user/shops/0/users/1/release").header("authorization", token))
                 .andExpect(status().isNotFound())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andExpect(jsonPath("$.errno").value(ResponseCode.RESOURCE_ID_NOTEXIST.getCode()))
@@ -347,8 +462,8 @@ public class CustomerControllerTest {
     @Test
     public void loginTest()throws Exception{
         LoginVo loginVo=new LoginVo();
-        loginVo.setUserName("59460469111");
-        loginVo.setPassword("123456");
+        loginVo.setUserName("xskxsk");
+        loginVo.setPassword("000105");
         String requireJson = JacksonUtil.toJson(loginVo);
         String responseString=this.mvc.perform(post("/user/users/login")
                          .contentType("application/json;charset=UTF-8")
@@ -366,8 +481,8 @@ public class CustomerControllerTest {
     @Test
     public void loginTest2()throws Exception{
         LoginVo loginVo=new LoginVo();
-        loginVo.setUserName("59460469111");
-        loginVo.setPassword("123457");
+        loginVo.setUserName("xskxsk");
+        loginVo.setPassword("123456");
         String requireJson = JacksonUtil.toJson(loginVo);
         String responseString=this.mvc.perform(post("/user/users/login")
                 .contentType("application/json;charset=UTF-8")
@@ -379,6 +494,29 @@ public class CustomerControllerTest {
                 .andReturn().getResponse().getContentAsString();
     }
 
+    /**
+     * 登陆（用户被封禁）
+     * @throws Exception
+     */
+    @Test
+    public void loginTest3()throws Exception{
+        LoginVo loginVo=new LoginVo();
+        loginVo.setUserName("xskxsk");
+        loginVo.setPassword("000105");
+        String requireJson = JacksonUtil.toJson(loginVo);
+        String responseString=this.mvc.perform(post("/user/users/login")
+                .contentType("application/json;charset=UTF-8")
+                .content(requireJson)).andExpect(status().isOk())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.errno").value(ResponseCode.AUTH_USER_FORBIDDEN.getCode()))
+                .andExpect(jsonPath("$.errmsg").value("用户名被禁止登录"))
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andReturn().getResponse().getContentAsString();
+    }
+
+    /*
+    获取用户信息（正常）
+     */
     @Test
     public void getUserSelfTest()throws Exception{
         String token = creatTestToken(1L, 0L, 100);
@@ -388,6 +526,20 @@ public class CustomerControllerTest {
                 .andReturn().getResponse().getContentAsString();
         String expectedResponse="{\"errno\":0,\"data\":{\"id\":1,\"userName\":\"59460469111\",\"name\":\"49741965112\",\"mobile\":\"13959288888\",\"email\":\"1309339909@qq.com\",\"gender\":\"0\",\"birthday\":\"2020-12-24\",\"state\":1,\"gmtCreate\":\"2020-12-06T22:49:24\",\"gmtModified\":\"2020-12-06T22:49:24\"},\"errmsg\":\"成功\"}";
         JSONAssert.assertEquals(expectedResponse,responseString,false);
+    }
+
+    /*
+    获取用户信息（用户id不存在）
+     */
+    @Test
+    public void getUserSelfTest1()throws Exception{
+        String token = creatTestToken(0L, 0L, 100);
+        String responseString=this.mvc.perform(get("/user/users").header("authorization", token))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.errno").value(ResponseCode.RESOURCE_ID_NOTEXIST.getCode()))
+                .andExpect(jsonPath("$.errmsg").value("操作的资源id不存在"))
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andReturn().getResponse().getContentAsString();
     }
 
     /*
@@ -403,6 +555,19 @@ public class CustomerControllerTest {
         String expectedResponse="{\"errno\":0,\"data\":{\"id\":1,\"userName\":\"59460469111\",\"name\":\"49741965112\",\"mobile\":\"13959288888\",\"email\":\"1309339909@qq.com\",\"gender\":\"0\",\"birthday\":\"2020-12-24\",\"state\":1,\"gmtCreate\":\"2020-12-06T22:49:24\",\"gmtModified\":\"2020-12-06T22:49:24\"},\"errmsg\":\"成功\"}";
         JSONAssert.assertEquals(expectedResponse,responseString,false);
     }
+/*
+   管理员获取用户信息（没有权限）
+ */
+@Test
+public void getCustomerByIdTest1()throws Exception{
+    String token = creatTestToken(1L, -2L, 100);
+    String responseString=this.mvc.perform(get("/user/users/1").header("authorization", token))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.errno").value(ResponseCode.FIELD_NOTVALID.getCode()))
+            .andExpect(jsonPath("$.errmsg").value("没有权限"))
+            .andExpect(content().contentType("application/json;charset=UTF-8"))
+            .andReturn().getResponse().getContentAsString();
+}
 
     @Test
     public void updateCustomerInfo()throws Exception{
@@ -433,46 +598,46 @@ public class CustomerControllerTest {
         JSONAssert.assertEquals(expectedResponse,responseString,false);
     }
 
-    @Test
-    public void resetPwdTest()throws Exception{
-        ResetPwdVo vo=new ResetPwdVo();
-        vo.setUserName("jxljxljxl");
-        vo.setEmail("835736795@qq.com");
-        String requireJson = JacksonUtil.toJson(vo);
-        String responseString=this.mvc.perform(put("/user/users/password/reset")
-                .contentType("application/json;charset=UTF-8")
-                .content(requireJson))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType("application/json;charset=UTF-8"))
-                .andReturn().getResponse().getContentAsString();
-        String expectedResponse="{\"errno\":0,\"errmsg\":\"成功\"}";
-        JSONAssert.assertEquals(expectedResponse,responseString,false);
-    }
+//    @Test
+//    public void resetPwdTest()throws Exception{
+//        ResetPwdVo vo=new ResetPwdVo();
+//        vo.setUserName("jxljxljxl");
+//        vo.setEmail("835736795@qq.com");
+//        String requireJson = JacksonUtil.toJson(vo);
+//        String responseString=this.mvc.perform(put("/user/users/password/reset")
+//                .contentType("application/json;charset=UTF-8")
+//                .content(requireJson))
+//                .andExpect(status().isOk())
+//                .andExpect(content().contentType("application/json;charset=UTF-8"))
+//                .andReturn().getResponse().getContentAsString();
+//        String expectedResponse="{\"errno\":0,\"errmsg\":\"成功\"}";
+//        JSONAssert.assertEquals(expectedResponse,responseString,false);
+//    }
+//
+//    @Test
+//    public void modifyPwdTest()throws Exception{
+//        ModifyPwdVo vo=new ModifyPwdVo();
+//        vo.setCaptcha("jn7MuC");
+//        vo.setNewPassword("jxl1234!");
+//        String requireJson = JacksonUtil.toJson(vo);
+//        String responseString=this.mvc.perform(put("/user/users/password")
+//                .contentType("application/json;charset=UTF-8")
+//                .content(requireJson))
+//                .andExpect(status().isOk())
+//                .andExpect(content().contentType("application/json;charset=UTF-8"))
+//                .andReturn().getResponse().getContentAsString();
+//        String expectedResponse="{\"errno\":0,\"errmsg\":\"成功\"}";
+//        JSONAssert.assertEquals(expectedResponse,responseString,false);
+//    }
 
-    @Test
-    public void modifyPwdTest()throws Exception{
-        ModifyPwdVo vo=new ModifyPwdVo();
-        vo.setCaptcha("jn7MuC");
-        vo.setNewPassword("jxl1234!");
-        String requireJson = JacksonUtil.toJson(vo);
-        String responseString=this.mvc.perform(put("/user/users/password")
-                .contentType("application/json;charset=UTF-8")
-                .content(requireJson))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType("application/json;charset=UTF-8"))
-                .andReturn().getResponse().getContentAsString();
-        String expectedResponse="{\"errno\":0,\"errmsg\":\"成功\"}";
-        JSONAssert.assertEquals(expectedResponse,responseString,false);
-    }
-
-    @Test
-    public void logoutTest()throws Exception{
-        String token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMjEwMjE4NzJWIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NzgxNzM4LCJ1c2VySWQiOjEsImlhdCI6MTYwNzc3ODEzOH0.JlX_1MAYVsjHrkRYX-62jijPAK-2V4Rf0nfQAR_uP_o";
-       String responseString = this.mvc.perform(get("/user/users/logout").header("authorization", token))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType("application/json;charset=UTF-8"))
-                .andReturn().getResponse().getContentAsString();
-        String expectedResponse="{\"errno\":0,\"errmsg\":\"成功\"}";
-        JSONAssert.assertEquals(expectedResponse,responseString,false);
-    }
+//    @Test
+//    public void logoutTest()throws Exception{
+//        String token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMjEwMjE4NzJWIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA3NzgxNzM4LCJ1c2VySWQiOjEsImlhdCI6MTYwNzc3ODEzOH0.JlX_1MAYVsjHrkRYX-62jijPAK-2V4Rf0nfQAR_uP_o";
+//       String responseString = this.mvc.perform(get("/user/users/logout").header("authorization", token))
+//                .andExpect(status().isOk())
+//                .andExpect(content().contentType("application/json;charset=UTF-8"))
+//                .andReturn().getResponse().getContentAsString();
+//        String expectedResponse="{\"errno\":0,\"errmsg\":\"成功\"}";
+//        JSONAssert.assertEquals(expectedResponse,responseString,false);
+//    }
 }

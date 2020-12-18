@@ -50,10 +50,6 @@ public class CustomerController {
     @ApiResponses({
             @ApiResponse(code = 0,message = "成功")
     })
-    @ApiImplicitParams({
-            @ApiImplicitParam(name="authorization", value="Token", required = true, dataType="String", paramType="header")
-    })
-    @Audit
     @GetMapping("users/states")
     public Object getAllStates(){
         if (logger.isDebugEnabled()) {
@@ -206,6 +202,7 @@ public class CustomerController {
             logger.debug("login fail："+jwt.getErrmsg());
             return ResponseUtil.fail(jwt.getCode(), jwt.getErrmsg());
         }else{
+            httpServletResponse.setStatus(HttpStatus.CREATED.value());
             return ResponseUtil.ok(jwt.getData());
         }
     }
@@ -270,7 +267,7 @@ public class CustomerController {
             @ApiResponse(code = 0,message = "成功")
     })
     @Audit
-    @PutMapping("users/{id}/release")
+    @PutMapping("/shops/{did}/users/{id}/release")
     public Object releaseCustomer(@PathVariable Long id,@Depart @ApiIgnore @RequestParam(required = false)Long did){
         if (logger.isDebugEnabled()) {
             logger.debug("releaseCustomer: id = "+ id);
@@ -278,7 +275,7 @@ public class CustomerController {
         if(did.equals(-2L))
         {
             logger.debug("releaseCustomer failed");
-            return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,String.format("没有权限")));
+            return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.AUTH_NOT_ALLOW,String.format("没有权限")));
         }
         ReturnObject retObject=customerService.releaseCustomer(id);
         return Common.decorateReturnObject(retObject);
@@ -293,7 +290,7 @@ public class CustomerController {
             @ApiResponse(code = 0,message = "成功")
     })
     @Audit
-    @PutMapping("users/{id}/ban")
+    @PutMapping("/shops/{did}/users/{id}/ban")
     public Object banCustomer(@PathVariable Long id, @Depart @ApiIgnore @RequestParam(required = false)Long did){
         if (logger.isDebugEnabled()) {
             logger.debug("banCustomer: id = "+ id);
@@ -301,7 +298,7 @@ public class CustomerController {
         if(did.equals(-2L))
         {
             logger.debug("banCustomer failed");
-            return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,String.format("没有权限")));
+            return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.AUTH_NOT_ALLOW,String.format("没有权限")));
         }
         ReturnObject retObject=customerService.banCustomer(id);
         return Common.decorateReturnObject(retObject);
@@ -330,7 +327,7 @@ public class CustomerController {
         if(did.equals(-2L))
         {
             logger.debug("getCustomerAll failed");
-            return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,String.format("没有权限")));
+            return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.AUTH_NOT_ALLOW,String.format("没有权限")));
         }
         Object object = null;
         if(page<=0||pageSize<=0){

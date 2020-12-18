@@ -38,13 +38,13 @@ public class Footprint implements VoObject {
      * @return FootprintVo
      */
     @Override
-    public FootprintRetVo createVo() {
-        FootprintRetVo footprintRetVo =new FootprintRetVo();
+    public Object createVo() {
+
         //footprintRetVo.setId(id);
         //footprintRetVo.setGoodsSkuId(goodsSkuId);
         //footprintRetVo.setGmtCreate(gmtCreate);
 
-        return footprintRetVo;
+        return null;
     }
 
     @Override

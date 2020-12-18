@@ -1,6 +1,7 @@
 package cn.edu.xmu.goods.service;
 
 import cn.edu.xmu.goods.dto.CartDTO;
+import cn.edu.xmu.goods.dto.GoodsSkuDTO;
 
 import java.util.List;
 
@@ -14,4 +15,6 @@ public interface GoodsServiceInterface {
     CartDTO getCouponActivityAlone(Long goodsSkuId);
 
     Boolean anbleChange(Long newGoodSkuId, Long goodSkuId);
+
+    GoodsSkuDTO getSkuById(Long skuId);
 }
