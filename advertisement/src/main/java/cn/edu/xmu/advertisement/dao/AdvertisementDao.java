@@ -429,6 +429,11 @@ public class AdvertisementDao {
             {
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
             }
+            //审核状态 禁止
+            else if(advertisementPo.getState()!=null&&advertisementPo.getState().equals((byte)0))
+            {
+                return new ReturnObject<>(ResponseCode.ADVERTISEMENT_STATENOTALLOW);
+            }
             //广告禁止--默认广告
 //            if(advertisementPo.getBeDefault()!=null&&advertisementPo.getBeDefault().equals((byte)1))
 //            {
@@ -470,6 +475,7 @@ public class AdvertisementDao {
      * @Date:  2020/12/10 19:54
      */
     public ReturnObject auditAd(Long id, AuditAdVo auditAdVo){
+
         AdvertisementPo advertisementPo =null;
         try {
             advertisementPo = advertisementPoMapper.selectByPrimaryKey(id);
@@ -528,7 +534,7 @@ public class AdvertisementDao {
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
             }
             //广告禁止--默认广告/上线的广告
-            if((advertisementPo.getBeDefault()!=null&&advertisementPo.getBeDefault().equals((byte)1))|| (advertisementPo.getState()!=null&&advertisementPo.getState().equals((byte)4)))
+            if(advertisementPo.getBeDefault()!=null&&advertisementPo.getBeDefault().equals((byte)1))
             {
                 return new ReturnObject<>(ResponseCode.ADVERTISEMENT_STATENOTALLOW);
             }

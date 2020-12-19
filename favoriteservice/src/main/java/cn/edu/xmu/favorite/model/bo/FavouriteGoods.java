@@ -4,8 +4,11 @@ import cn.edu.xmu.favorite.model.po.FavouriteGoodsPo;
 import cn.edu.xmu.favorite.model.vo.FavouriteGoodsRetVo;
 import cn.edu.xmu.favorite.model.vo.FavouriteGoodsSimpleRetVo;
 import cn.edu.xmu.favorite.model.vo.FavouriteGoodsVo;
+
+import cn.edu.xmu.goods.dto.GoodsSkuDTO;
 import cn.edu.xmu.ooad.model.VoObject;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -17,14 +20,17 @@ import java.time.LocalDateTime;
  * @param
  * @return
  * @Date:  2020/12/7 21:53
-*/
+ */
 @Data
 public class FavouriteGoods implements VoObject {
     private Long id;
     private Long customerId;
-    private Long goodsSpuId;
+    private Long goodsSkuId;
     private LocalDateTime gmtCreate;
     private LocalDateTime gmtModified;
+
+    @ApiModelProperty(value = "商品信息")
+    private GoodsSkuDTO goodsSku;
 
     /**
      *
@@ -33,7 +39,7 @@ public class FavouriteGoods implements VoObject {
      * @param
      * @return
      * @Date:  2020/12/7 21:54
-    */
+     */
 
     public FavouriteGoods(){}
 
@@ -49,7 +55,7 @@ public class FavouriteGoods implements VoObject {
     {
         this.id=po.getId();
         this.customerId=po.getCustomerId();
-        this.goodsSpuId=po.getGoodsSpuId();
+        this.goodsSkuId=po.getGoodsSkuId();
         this.gmtCreate = po.getGmtCreate();
         this.gmtModified = po.getGmtModified();
     }
@@ -64,11 +70,7 @@ public class FavouriteGoods implements VoObject {
     @Override
     public Object createVo()
     {
-//        FavouriteGoodsRetVo favouriteGoodsRetVo =new FavouriteGoodsRetVo();
-//        favouriteGoodsRetVo.setId(id);
-//        favouriteGoodsRetVo.setCustomerId(customerId);
-//        favouriteGoodsRetVo.setGoodsSpuId(goodsSpuId);
-       return new FavouriteGoodsRetVo(this);
+        return new FavouriteGoodsRetVo(this);
     }
 
     /**
@@ -88,7 +90,7 @@ public class FavouriteGoods implements VoObject {
         FavouriteGoodsPo po=new FavouriteGoodsPo();
         po.setId(this.getId());
         po.setCustomerId(vo.getCustomerId());
-        po.setGoodsSpuId(vo.getGoodsSpuId());
+        po.setGoodsSkuId(vo.getGoodsSkuId());
         po.setGmtCreate(null);
         po.setGmtModified(LocalDateTime.now());
         return po;
@@ -107,7 +109,7 @@ public class FavouriteGoods implements VoObject {
         FavouriteGoodsPo po=new FavouriteGoodsPo();
         po.setId(this.getId());
         po.setCustomerId(this.getCustomerId());
-        po.setGoodsSpuId(this.getGoodsSpuId());
+        po.setGoodsSkuId(this.getGoodsSkuId());
         po.setGmtCreate(null);
         po.setGmtModified(LocalDateTime.now());
         return po;

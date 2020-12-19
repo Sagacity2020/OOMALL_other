@@ -239,7 +239,6 @@ public class AdvertisementController {
     }
 
 
-
     /**
      * 设置默认广告
      * @author zwl
@@ -289,7 +288,18 @@ public class AdvertisementController {
     @PutMapping("/shops/{did}/advertisement/{id}")
     public Object updateAd(@PathVariable("id") Long id, @Validated @RequestBody AdvertisementUpdateVo vo, BindingResult bindingResult)
     {
-
+//        if(vo.getContent()==null&&vo.getWeight()==null&&vo.getRepeat()==null&&vo.getLink()==null&&vo.getBeginDate()==null&&vo.getEndDate()==null)
+//        {
+//            return new ReturnObject<>(ResponseCode.FIELD_NOTVALID);
+//        }
+//        if(vo.getBeginDate()!=null&&vo.getEndDate()!=null) {
+//            DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//            LocalDate begin = LocalDate.parse(vo.getBeginDate(),fmt);
+//            LocalDate end = LocalDate.parse(vo.getEndDate(),fmt);
+//            if(begin.isAfter(end)){
+//                return new ReturnObject<>(ResponseCode.FIELD_NOTVALID);
+//            }
+//        }
         Object returnObject = Common.processFieldErrors(bindingResult, httpServletResponse);
         if (returnObject != null) {
             //logger.info("incorrect data received while modifyUserInfo id = " + id);
