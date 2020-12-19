@@ -11,11 +11,11 @@ public class FavouriteGoodsSimpleRetVo {
     @ApiModelProperty(value="用户id")
     private Long customerId;
     @ApiModelProperty(value="商品id")
-    private Long goodsSpuId;
+    private Long goodsSkuId;
 
     public FavouriteGoodsSimpleRetVo(FavouriteGoods favouriteGoods){
         this.id=favouriteGoods.getId();
         this.customerId=favouriteGoods.getCustomerId();
-        this.goodsSpuId=favouriteGoods.getGoodsSpuId();
+        this.goodsSkuId=favouriteGoods.getGoodsSkuId();
     }
 }

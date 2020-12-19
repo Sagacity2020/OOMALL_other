@@ -1,0 +1,10 @@
+2020-12-08 23:20:42.319 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Starting AftersaleControllerTest on DESKTOP-ICK6KH9 with PID 13656 (started by asus in D:\OOMALL_other\aftersale)
+2020-12-08 23:20:42.327 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 23:20:42.327 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-08 23:20:56.567 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 15.052 seconds (JVM running for 17.903)
+2020-12-08 23:20:57.856 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjMyMDU3N0NMIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0NDA5NTcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDQwODU3fQ.0v1gMJ_9OCBGTOeUCOv8qwSR9cMr9xmVwVYKIP3G2YM
+2020-12-08 23:21:42.656 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Starting AftersaleControllerTest on DESKTOP-ICK6KH9 with PID 28608 (started by asus in D:\OOMALL_other\aftersale)
+2020-12-08 23:21:42.662 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 23:21:42.663 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-08 23:21:57.133 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 15.093 seconds (JVM running for 17.205)
+2020-12-08 23:21:58.134 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjMyMTU4MEdBIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0NDEwMTgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDQwOTE4fQ._Sf-tqPZbo41CoMOnJ7kPtJbScIE1lVJU8HZvN5bVIY

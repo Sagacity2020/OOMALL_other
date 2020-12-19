@@ -1,0 +1,33 @@
+2020-12-15 15:38:52.542 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-15 15:39:33.798 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 62.742 seconds (JVM running for 67.874)
+2020-12-15 15:39:35.121 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-15 15:41:01.450 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-15 15:41:46.581 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 66.697 seconds (JVM running for 72.78)
+2020-12-15 15:41:47.905 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-15 15:47:30.726 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-15 15:48:14.929 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 64.511 seconds (JVM running for 68.364)
+2020-12-15 15:48:16.146 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-15 19:26:41.184 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-15 19:27:09.577 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 39.675 seconds (JVM running for 43.723)
+2020-12-15 19:27:10.687 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-15 19:29:34.930 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-15 19:30:01.882 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 37.992 seconds (JVM running for 40.866)
+2020-12-15 19:30:02.661 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-15 19:31:23.202 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-15 19:31:48.423 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 36.152 seconds (JVM running for 38.29)
+2020-12-15 19:31:49.247 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-15 19:33:14.036 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-15 19:33:39.909 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 37.761 seconds (JVM running for 40.435)
+2020-12-15 19:33:40.475 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-15 19:37:43.905 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-15 19:38:09.553 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 36.179 seconds (JVM running for 39.475)
+2020-12-15 19:38:10.116 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-15 19:40:00.291 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-15 19:40:26.278 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 37.009 seconds (JVM running for 39.773)
+2020-12-15 19:40:26.843 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-15 19:43:51.917 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-15 19:44:19.002 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 37.773 seconds (JVM running for 40.711)
+2020-12-15 19:44:19.849 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-15 19:44:56.354 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-15 19:45:20.576 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 34.685 seconds (JVM running for 37.855)
+2020-12-15 19:45:21.205 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement

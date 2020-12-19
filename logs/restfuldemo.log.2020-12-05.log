@@ -1,0 +1,10 @@
+2020-12-05 21:01:46.138 [http-nio-8080-exec-9] DEBUG cn.edu.xmu.other.controller.AftersaleController - confirmAftersaleById: id = 20
+2020-12-05 21:01:46.451 [http-nio-8080-exec-9] INFO  cn.edu.xmu.other.dao.AftersaleDao - 售后单不存在：id = 20
+2020-12-05 21:02:00.161 [http-nio-8080-exec-10] DEBUG cn.edu.xmu.other.controller.AftersaleController - confirmAftersaleById: id = 1
+2020-12-05 21:02:00.191 [http-nio-8080-exec-10] INFO  cn.edu.xmu.other.dao.AftersaleDao - 无法修改此售后单信息：id = 1
+2020-12-05 21:02:07.123 [http-nio-8080-exec-2] DEBUG cn.edu.xmu.other.controller.AftersaleController - confirmAftersaleById: id = 3
+2020-12-05 21:02:07.133 [http-nio-8080-exec-2] INFO  cn.edu.xmu.other.dao.AftersaleDao - 无法修改此售后单信息：id = 3
+2020-12-05 21:02:15.463 [http-nio-8080-exec-7] DEBUG cn.edu.xmu.other.controller.AftersaleController - confirmAftersaleById: id = 5
+2020-12-05 21:02:15.744 [http-nio-8080-exec-7] INFO  cn.edu.xmu.other.dao.AftersaleDao - 售后单 id = 5 的信息已更新，确认售后成功
+2020-12-05 21:05:32.825 [http-nio-8080-exec-10] DEBUG cn.edu.xmu.other.controller.AftersaleController - createAftersale: id = 17 vo = CreateAftersaleVo(type=0, quantity=2, reason=test, regionId=null, detail=null, consignee=test, mobile=15206067798)
+2020-12-05 21:05:33.836 [http-nio-8080-exec-10] INFO  cn.edu.xmu.other.dao.AftersaleDao - 新建售后单成功

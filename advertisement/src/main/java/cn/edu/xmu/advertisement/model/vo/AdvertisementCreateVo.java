@@ -8,6 +8,7 @@ import lombok.Data;
 import org.springframework.validation.annotation.Validated;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @Data
 @ApiModel
@@ -16,16 +17,16 @@ public class AdvertisementCreateVo {
     private String content;
 
     @ApiModelProperty(value = "权重")
-    private String weight;
+    private Integer weight;
 
     @ApiModelProperty(value = "开始日期")
-    private LocalDate beginDate;
+    private String beginDate;
 
     @ApiModelProperty(value = "结束日期")
-    private LocalDate endDate;
+    private String endDate;
 
     @ApiModelProperty(value = "是否重复")
-    private Byte repeats;
+    private Boolean repeat;
 
     @ApiModelProperty(value = "链接")
     private String link;
@@ -34,10 +35,20 @@ public class AdvertisementCreateVo {
         Advertisement advertisement=new Advertisement();
 
         advertisement.setContent(content);
-        advertisement.setWeight(Integer.valueOf(weight));
-        advertisement.setBeginDate(beginDate);
-        advertisement.setEndDate(endDate);
-        advertisement.setRepeats(repeats);
+        advertisement.setWeight(weight);
+
+        DateTimeFormatter df= DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate begin=LocalDate.parse(beginDate,df);
+        advertisement.setBeginDate(begin);
+        LocalDate end=LocalDate.parse(endDate,df);
+        advertisement.setEndDate(end);
+
+        if(repeat) {
+            advertisement.setRepeats((byte)1);
+        }
+        else{
+            advertisement.setRepeats((byte)0);
+        }
         advertisement.setLink(link);
 
         return advertisement;

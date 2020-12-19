@@ -1,78 +1,4 @@
-2020-12-16 17:50:08.296 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 17:50:09.107 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17330, userName=1111, password=1a2B3_, realName=11111, gender=0, birthday=2020-12-09, point=0, email=11111@11111.com, mobile=12332111111, beDeleted=0, gmtCreate=2020-12-16T17:50:08.898080100, gmtModified=null, state=4)
-2020-12-16 17:54:48.542 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 17:54:48.809 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 18:01:49.647 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:01:50.133 [http-nio-8081-exec-7] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 18:03:07.039 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:03:07.439 [http-nio-8081-exec-5] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17331, userName=1111, password=1a2B3_, realName=11111, gender=0, birthday=2020-12-09, point=0, email=11111@11111.com, mobile=12332111111, beDeleted=0, gmtCreate=2020-12-16T18:03:07.149113300, gmtModified=null, state=4)
-2020-12-16 18:03:07.958 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 1111
-2020-12-16 18:03:28.976 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:03:29.106 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17332, userName=2222, password=1a2B3_, realName=22222, gender=0, birthday=2020-12-09, point=0, email=22222@22222.com, mobile=12342112222, beDeleted=0, gmtCreate=2020-12-16T18:03:29.090314, gmtModified=null, state=4)
-2020-12-16 18:03:29.197 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:03:29.235 [http-nio-8081-exec-8] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 用户名已被注册
-2020-12-16 18:03:29.253 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 2222
-2020-12-16 18:03:29.272 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 18:03:49.190 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:03:49.283 [http-nio-8081-exec-10] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17333, userName=3333, password=1a2B3_, realName=33333, gender=0, birthday=2020-12-09, point=0, email=33333@33333.com, mobile=12342113333, beDeleted=0, gmtCreate=2020-12-16T18:03:49.267770900, gmtModified=null, state=4)
-2020-12-16 18:03:49.406 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:03:49.506 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 电话已被注册
-2020-12-16 18:03:49.547 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 33333
-2020-12-16 18:03:49.608 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 18:04:07.525 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:04:07.612 [http-nio-8081-exec-7] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17334, userName=4444, password=1a2B3_, realName=44444, gender=0, birthday=2020-12-09, point=0, email=44444@44444.com, mobile=12342114444, beDeleted=0, gmtCreate=2020-12-16T18:04:07.598908500, gmtModified=null, state=4)
-2020-12-16 18:04:07.739 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:04:07.767 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 18:04:07.784 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 44444
-2020-12-16 18:04:07.803 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 18:04:28.626 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:04:28.705 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 
-2020-12-16 18:04:49.790 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:04:49.826 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 18:04:49.851 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 18:05:06.927 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:05:06.968 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 18:05:06.994 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 18:05:24.000 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:05:24.052 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 18:05:43.564 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:05:43.598 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 18:05:43.623 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 18:05:59.885 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 18:05:59.910 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 18:06:21.307 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:06:21.353 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 18:06:21.376 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 18:06:39.104 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:06:39.173 [http-nio-8081-exec-10] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17335, userName=123, password=1a2B3_, realName=321, gender=1, birthday=2020-12-05, point=0, email=123@321.com, mobile=1234567891011, beDeleted=0, gmtCreate=2020-12-16T18:06:39.164664500, gmtModified=null, state=4)
-2020-12-16 18:08:32.140 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:08:32.201 [http-nio-8081-exec-2] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 18:13:08.354 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:13:08.625 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 18:14:30.255 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:14:30.379 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 18:14:30.561 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 18:14:51.835 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:14:51.884 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 18:14:51.907 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 18:15:08.721 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:15:08.781 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 18:15:08.804 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 18:15:26.322 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:15:26.400 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 18:15:26.436 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 18:15:43.353 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:18:29.829 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:18:30.213 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17336, userName=1616, password=1a2B3_, realName=161616, gender=0, birthday=2020-12-09, point=0, email=1616@1616.com, mobile=12332116161, beDeleted=0, gmtCreate=2020-12-16T18:18:30.093300700, gmtModified=null, state=4)
-2020-12-16 18:18:30.501 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 1616
-2020-12-16 18:18:30.528 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 18:18:56.738 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:18:56.869 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17337, userName=1717, password=1a2B3_, realName=171717, gender=0, birthday=2020-12-09, point=0, email=1717@1717.com, mobile=12332117171, beDeleted=0, gmtCreate=2020-12-16T18:18:56.855382, gmtModified=null, state=4)
-2020-12-16 18:18:56.970 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 1717
-2020-12-16 18:19:22.355 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:19:22.420 [http-nio-8081-exec-5] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17338, userName=testU, password=1a2B3_, realName=testR, gender=0, birthday=2020-12-09, point=0, email=123@321.com, mobile=12332112345, beDeleted=0, gmtCreate=2020-12-16T18:19:22.409803600, gmtModified=null, state=4)
-2020-12-16 18:19:22.514 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU
-2020-12-16 18:19:22.962 [http-nio-8081-exec-7] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+2020-12-16 19:46:01.501 [http-nio-8082-exec-1] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
 java.lang.NullPointerException: null
 	at cn.edu.xmu.ooad.annotation.AuditAspect.around(AuditAspect.java:82)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -88,7 +14,7 @@ java.lang.NullPointerException: null
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
-	at cn.edu.xmu.customer.controller.CustomerController$$EnhancerBySpringCGLIB$$c8febad0.getCustomerSelf(<generated>)
+	at cn.edu.xmu.aftersale.controller.AftersaleController$$EnhancerBySpringCGLIB$$cc64a8aa.confirmAftersae(<generated>)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -102,8 +28,8 @@ java.lang.NullPointerException: null
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -143,12 +69,7 @@ java.lang.NullPointerException: null
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-2020-12-16 18:21:05.497 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:21:05.532 [http-nio-8081-exec-8] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 18:23:10.566 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:23:10.687 [http-nio-8081-exec-10] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17339, userName=testU, password=1a2B3_, realName=testR, gender=0, birthday=2020-12-09, point=0, email=123@321.com, mobile=12332112345, beDeleted=0, gmtCreate=2020-12-16T18:23:10.658075900, gmtModified=null, state=4)
-2020-12-16 18:23:11.405 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU
-2020-12-16 18:23:11.531 [http-nio-8081-exec-2] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+2020-12-16 19:52:54.961 [http-nio-8082-exec-1] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
 java.lang.NullPointerException: null
 	at cn.edu.xmu.ooad.annotation.AuditAspect.around(AuditAspect.java:82)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -164,7 +85,7 @@ java.lang.NullPointerException: null
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
-	at cn.edu.xmu.customer.controller.CustomerController$$EnhancerBySpringCGLIB$$c8febad0.getCustomerSelf(<generated>)
+	at cn.edu.xmu.aftersale.controller.AftersaleController$$EnhancerBySpringCGLIB$$ec15e7bd.confirmAftersae(<generated>)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -178,8 +99,8 @@ java.lang.NullPointerException: null
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -219,10 +140,7 @@ java.lang.NullPointerException: null
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-2020-12-16 18:40:19.461 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:40:19.680 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17340, userName=testU, password=1a2B3_, realName=testR, gender=0, birthday=2020-12-09, point=0, email=123@321.com, mobile=12332112345, beDeleted=0, gmtCreate=2020-12-16T18:40:19.610876300, gmtModified=null, state=4)
-2020-12-16 18:40:19.922 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU
-2020-12-16 18:40:20.136 [http-nio-8081-exec-5] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+2020-12-16 19:55:45.692 [http-nio-8082-exec-2] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
 java.lang.NullPointerException: null
 	at cn.edu.xmu.ooad.annotation.AuditAspect.around(AuditAspect.java:82)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -238,7 +156,7 @@ java.lang.NullPointerException: null
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
-	at cn.edu.xmu.customer.controller.CustomerController$$EnhancerBySpringCGLIB$$c8febad0.getCustomerSelf(<generated>)
+	at cn.edu.xmu.aftersale.controller.AftersaleController$$EnhancerBySpringCGLIB$$ec15e7bd.confirmAftersae(<generated>)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -252,8 +170,8 @@ java.lang.NullPointerException: null
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -293,426 +211,196 @@ java.lang.NullPointerException: null
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-2020-12-16 18:41:39.963 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:41:40.169 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 18:42:17.828 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:42:17.935 [http-nio-8081-exec-2] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17341, userName=testU, password=1a2B3_, realName=testR, gender=0, birthday=2020-12-09, point=0, email=123@321.com, mobile=12332112345, beDeleted=0, gmtCreate=2020-12-16T18:42:17.889494800, gmtModified=null, state=4)
-2020-12-16 18:42:18.060 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU
-2020-12-16 18:42:18.216 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 18:59:33.947 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 18:59:34.256 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 19:00:37.588 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 19:00:37.854 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17342, userName=testU, password=1a2B3_, realName=testR, gender=0, birthday=2020-12-09, point=0, email=123@321.com, mobile=12332112345, beDeleted=0, gmtCreate=2020-12-16T19:00:37.737391700, gmtModified=null, state=4)
-2020-12-16 19:00:38.100 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU
-2020-12-16 19:00:38.517 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 19:06:18.905 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 19:06:19.468 [http-nio-8081-exec-2] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17343, userName=testU, password=1a2B3_, realName=testR, gender=0, birthday=2020-12-09, point=0, email=123@321.com, mobile=12332112345, beDeleted=0, gmtCreate=2020-12-16T19:06:19.367415600, gmtModified=null, state=4)
-2020-12-16 19:06:19.738 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU
-2020-12-16 19:06:19.797 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.service.CustomerService - login: Jwt = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE2MTkwNjE5N0xNIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MTIwMzc5LCJ1c2VySWQiOjE3MzQzLCJpYXQiOjE2MDgxMTY3Nzl9.vvtb39UQXnrzXfeqiO0VTE5Nx-moCUa2zQe7s6QCJ0s
-2020-12-16 19:06:21.709 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 19:07:18.759 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 19:07:18.826 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17344, userName=testU, password=1a2B3_, realName=testR, gender=0, birthday=2020-12-09, point=0, email=123@321.com, mobile=12332112345, beDeleted=0, gmtCreate=2020-12-16T19:07:18.817043700, gmtModified=null, state=4)
-2020-12-16 19:07:18.920 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU
-2020-12-16 19:07:18.951 [http-nio-8081-exec-5] INFO  cn.edu.xmu.customer.service.CustomerService - login: Jwt = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE2MTkwNzE4OTVWIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MTIwNDM4LCJ1c2VySWQiOjE3MzQ0LCJpYXQiOjE2MDgxMTY4Mzh9.DqNu3ylCLdjm6yld7enEqU43zHW-uNb9JL8u19oz4ZU
-2020-12-16 19:07:19.074 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 20:22:16.720 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 20:22:16.949 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 20:25:27.476 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 20:25:27.979 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17345, userName=testU, password=1a2B3_, realName=testR, gender=0, birthday=2020-12-09, point=0, email=123@321.com, mobile=12332112345, beDeleted=0, gmtCreate=2020-12-16T20:25:27.895187500, gmtModified=null, state=4)
-2020-12-16 20:25:28.119 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU
-2020-12-16 20:25:28.180 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.service.CustomerService - login: Jwt = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE2MjAyNTI4MVpFIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MTI1MTI4LCJ1c2VySWQiOjE3MzQ1LCJpYXQiOjE2MDgxMjE1Mjh9.tHOcYmyPd0Aq3gzj3GUcO0GTDYaI8uPNCHlMCgyxCLw
-2020-12-16 20:25:28.457 [http-nio-8081-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 20:25:28.461 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 20:25:58.218 [http-nio-8081-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 20:25:58.219 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 20:30:07.879 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 20:30:07.945 [http-nio-8081-exec-7] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17346, userName=testU20, password=1a2B3_, realName=testR20, gender=0, birthday=2020-12-09, point=0, email=2020@2020.com, mobile=12332112320, beDeleted=0, gmtCreate=2020-12-16T20:30:07.933107900, gmtModified=null, state=4)
-2020-12-16 20:30:08.044 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU20
-2020-12-16 20:30:08.064 [http-nio-8081-exec-6] INFO  cn.edu.xmu.customer.service.CustomerService - login: Jwt = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE2MjAzMDA4MFkxIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MTI1NDA4LCJ1c2VySWQiOjE3MzQ2LCJpYXQiOjE2MDgxMjE4MDh9.2STXvaBjMRiQH37h7BSomNCv_XbAK7sgs5TEQ16iRB0
-2020-12-16 20:30:08.238 [http-nio-8081-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 20:30:08.238 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 20:30:08.288 [http-nio-8081-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 20:30:08.289 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17346
-2020-12-16 20:33:20.203 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 20:33:20.323 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17347, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T20:33:20.304541300, gmtModified=null, state=4)
-2020-12-16 20:33:20.410 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 20:33:20.441 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.service.CustomerService - login: Jwt = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE2MjAzMzIwNDRNIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MTI1NjAwLCJ1c2VySWQiOjE3MzQ3LCJpYXQiOjE2MDgxMjIwMDB9.CPE0Sm6hZdosS_ndPnw3fRN4IginbyqJr_wHvfeYD0s
-2020-12-16 20:33:20.541 [http-nio-8081-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 20:33:20.541 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 20:33:20.565 [http-nio-8081-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 20:33:20.565 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17347
-2020-12-16 20:33:20.592 [http-nio-8081-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 20:33:20.594 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 20:55:46.525 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 20:55:46.842 [http-nio-8081-exec-6] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17348, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T20:55:46.789856800, gmtModified=null, state=4)
-2020-12-16 20:55:46.962 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 20:55:47.010 [http-nio-8081-exec-8] INFO  cn.edu.xmu.customer.service.CustomerService - login: Jwt = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE2MjA1NTQ2OUZWIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MTI2OTQ2LCJ1c2VySWQiOjE3MzQ4LCJpYXQiOjE2MDgxMjMzNDZ9.6CvJEuXlKA77F7H4bygoa707p1ZcyoujzKNnTe-iIoY
-2020-12-16 20:55:47.352 [http-nio-8081-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 20:55:47.356 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 20:55:47.389 [http-nio-8081-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 20:55:47.389 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17348
-2020-12-16 20:55:47.424 [http-nio-8081-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 20:55:47.425 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 20:57:06.199 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 20:57:06.410 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17349, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T20:57:06.357164800, gmtModified=null, state=4)
-2020-12-16 20:57:06.504 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 20:57:06.537 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.service.CustomerService - login: Jwt = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE2MjA1NzA2NUJJIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MTI3MDI2LCJ1c2VySWQiOjE3MzQ5LCJpYXQiOjE2MDgxMjM0MjZ9.d5bM18feFEnmbrs6-z2dsGfnfuo9bFiueWFtmVp_wkY
-2020-12-16 20:57:06.901 [http-nio-8081-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 20:57:06.904 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 20:57:06.927 [http-nio-8081-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 20:57:06.927 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17349
-2020-12-16 20:57:06.962 [http-nio-8081-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 20:57:06.963 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 21:03:25.051 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 21:03:25.117 [http-nio-8081-exec-2] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17350, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T21:03:25.105558900, gmtModified=null, state=4)
-2020-12-16 21:03:25.182 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 21:03:25.196 [http-nio-8081-exec-6] INFO  cn.edu.xmu.customer.service.CustomerService - login: Jwt = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE2MjEwMzI1MUQ0IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MTI3NDA1LCJ1c2VySWQiOjE3MzUwLCJpYXQiOjE2MDgxMjM4MDV9.twxlFWgwt7xgNQohYZopz93IM4it_oMel3Q_qkh703E
-2020-12-16 21:03:25.255 [http-nio-8081-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:03:25.255 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 21:03:25.283 [http-nio-8081-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:03:25.283 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17350
-2020-12-16 21:03:25.329 [http-nio-8081-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:03:25.329 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 21:09:15.986 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 21:09:16.040 [http-nio-8081-exec-5] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17351, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T21:09:16.031421600, gmtModified=null, state=4)
-2020-12-16 21:09:16.109 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 21:09:16.126 [http-nio-8081-exec-8] INFO  cn.edu.xmu.customer.service.CustomerService - login: Jwt = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE2MjEwOTE2MU1XIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MTI3NzU2LCJ1c2VySWQiOjE3MzUxLCJpYXQiOjE2MDgxMjQxNTZ9.WscIaafubyOj2R48sOc1ZcAj_tlMag4eB9b4xA04R1s
-2020-12-16 21:09:16.178 [http-nio-8081-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:09:16.180 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 21:09:16.204 [http-nio-8081-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:09:16.205 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17351
-2020-12-16 21:09:16.240 [http-nio-8081-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:09:16.240 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 21:16:38.602 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 21:16:38.701 [http-nio-8081-exec-7] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17352, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T21:16:38.687460900, gmtModified=null, state=4)
-2020-12-16 21:16:38.794 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 21:16:38.831 [http-nio-8081-exec-10] INFO  cn.edu.xmu.customer.service.CustomerService - login: Jwt = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE2MjExNjM4OEVSIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MTI4MTk4LCJ1c2VySWQiOjE3MzUyLCJpYXQiOjE2MDgxMjQ1OTh9.Cc3arqfezt_dURM3U8BtZDLU1cMYD9OFMqFKkPBPx_0
-2020-12-16 21:19:01.755 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 21:19:01.840 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 21:19:59.922 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 21:20:00.029 [http-nio-8081-exec-5] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17353, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T21:19:59.980647300, gmtModified=null, state=4)
-2020-12-16 21:20:00.113 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 21:20:00.146 [http-nio-8081-exec-8] INFO  cn.edu.xmu.customer.service.CustomerService - login: Jwt = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE2MjEyMDAwMTQ1IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MTI4NDAwLCJ1c2VySWQiOjE3MzUzLCJpYXQiOjE2MDgxMjQ4MDB9.E-vdAJqgZJkScGg4ZZJf_D16V_o0KtG-R1SETqOSLcI
-2020-12-16 21:20:00.417 [http-nio-8081-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:20:00.427 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 21:20:00.451 [http-nio-8081-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:20:00.452 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17353
-2020-12-16 21:20:00.505 [http-nio-8081-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:20:00.506 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 21:28:02.023 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 21:28:02.105 [http-nio-8081-exec-7] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17354, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T21:28:02.072774400, gmtModified=null, state=4)
-2020-12-16 21:28:02.186 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 21:28:02.204 [http-nio-8081-exec-10] INFO  cn.edu.xmu.customer.service.CustomerService - login: Jwt = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE2MjEyODAyMjdDIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MTI4ODgyLCJ1c2VySWQiOjE3MzU0LCJpYXQiOjE2MDgxMjUyODJ9.WoXHOG7ssopp2uLMKwCjhNDXmHoJgg5Ci88z8wXM3Ss
-2020-12-16 21:28:02.366 [http-nio-8081-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:28:02.366 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 21:28:02.410 [http-nio-8081-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:28:02.411 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17354
-2020-12-16 21:28:02.448 [http-nio-8081-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:28:02.449 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 21:30:48.855 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 21:30:48.996 [http-nio-8081-exec-9] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17355, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T21:30:48.977449800, gmtModified=null, state=4)
-2020-12-16 21:30:49.105 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 21:30:49.134 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.service.CustomerService - login: Jwt = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE2MjEzMDQ5MVoxIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MTI5MDQ5LCJ1c2VySWQiOjE3MzU1LCJpYXQiOjE2MDgxMjU0NDl9.hJD9bsu0msD3YTAbnGomMmpqyeq36o4RsM42dWLEXi8
-2020-12-16 21:30:49.383 [http-nio-8081-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:30:49.386 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 21:30:49.418 [http-nio-8081-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:30:49.419 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17355
-2020-12-16 21:30:49.456 [http-nio-8081-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:30:49.457 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 21:33:34.633 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 21:33:34.698 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 21:34:13.486 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 21:34:13.552 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17356, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T21:34:13.528988600, gmtModified=null, state=4)
-2020-12-16 21:34:13.621 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 21:34:13.650 [http-nio-8081-exec-5] INFO  cn.edu.xmu.customer.service.CustomerService - login: Jwt = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE2MjEzNDEzNlNHIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MTI5MjUzLCJ1c2VySWQiOjE3MzU2LCJpYXQiOjE2MDgxMjU2NTN9.R9r7DP3o_C-knyr0-oayJHBKuX8EUyXqSEByRRsY2cc
-2020-12-16 21:40:42.178 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 21:40:42.245 [http-nio-8081-exec-9] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17357, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T21:40:42.234837900, gmtModified=null, state=4)
-2020-12-16 21:40:42.347 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 21:40:42.365 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.service.CustomerService - login: Jwt = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE2MjE0MDQyMzhUIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MTI5NjQyLCJ1c2VySWQiOjE3MzU3LCJpYXQiOjE2MDgxMjYwNDJ9.0uhCc1RW6CtVYF5ix8mSEhXTpaLYLacYSdMvR-E9-mI
-2020-12-16 21:40:42.567 [http-nio-8081-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:40:42.576 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 21:40:42.600 [http-nio-8081-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:40:42.602 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17357
-2020-12-16 21:40:42.665 [http-nio-8081-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:40:42.665 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 21:43:21.311 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 21:43:21.439 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 21:43:49.812 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 21:43:49.922 [http-nio-8081-exec-2] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17358, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T21:43:49.872904700, gmtModified=null, state=4)
-2020-12-16 21:43:50.013 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 21:43:50.050 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.service.CustomerService - login: Jwt = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE2MjE0MzUwMFhVIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MTI5ODMwLCJ1c2VySWQiOjE3MzU4LCJpYXQiOjE2MDgxMjYyMzB9.VvulF5HfaB6OCFBfn5hs1DeHM-2bLlOf2qrSANgJILY
-2020-12-16 21:43:50.242 [http-nio-8081-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:43:50.244 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 21:43:50.267 [http-nio-8081-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:43:50.267 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17358
-2020-12-16 21:43:50.310 [http-nio-8081-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:43:50.310 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 21:52:13.550 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 21:52:13.908 [http-nio-8081-exec-8] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17359, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T21:52:13.887746, gmtModified=null, state=4)
-2020-12-16 21:52:14.034 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 21:52:14.069 [http-nio-8081-exec-9] INFO  cn.edu.xmu.customer.service.CustomerService - login: Jwt = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE2MjE1MjE0MFdKIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MTMwMzM0LCJ1c2VySWQiOjE3MzU5LCJpYXQiOjE2MDgxMjY3MzR9.U_xk6qgHT5zgotl-fuA6VcepA_6ixzkOqiiQStdB4Us
-2020-12-16 21:52:14.394 [http-nio-8081-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:52:14.399 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 21:52:14.441 [http-nio-8081-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:52:14.442 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17359
-2020-12-16 21:52:14.501 [http-nio-8081-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:52:14.501 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 21:53:36.841 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 21:53:36.979 [http-nio-8081-exec-5] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17360, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T21:53:36.920302200, gmtModified=null, state=4)
-2020-12-16 21:53:37.195 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 21:53:37.240 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.service.CustomerService - login: Jwt = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE2MjE1MzM3MlA4IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MTMwNDE3LCJ1c2VySWQiOjE3MzYwLCJpYXQiOjE2MDgxMjY4MTd9.wJR-Zyu75NeIT7LnWsLq-zKpxTgmSCPeGB5ckKsxOyE
-2020-12-16 21:53:37.624 [http-nio-8081-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:53:37.628 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 21:53:37.776 [http-nio-8081-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:53:37.778 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17360
-2020-12-16 21:53:37.836 [http-nio-8081-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 21:53:37.837 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 22:33:23.989 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
-org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'customerServiceInterfaceImpl' for bean class [cn.edu.xmu.customer.service.Impl.CustomerServiceInterfaceImpl] conflicts with existing, non-compatible bean definition of same name and class [cn.edu.xmu.customer.service.Impl.CustomerServiceInterfaceImpl]
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
-	at org.apache.dubbo.config.spring.context.annotation.DubboClassPathBeanDefinitionScanner.checkCandidate(DubboClassPathBeanDefinitionScanner.java:67)
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
-	at org.apache.dubbo.config.spring.context.annotation.DubboClassPathBeanDefinitionScanner.doScan(DubboClassPathBeanDefinitionScanner.java:62)
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.scan(ClassPathBeanDefinitionScanner.java:254)
-	at org.apache.dubbo.config.spring.beans.factory.annotation.ServiceClassPostProcessor.registerServiceBeans(ServiceClassPostProcessor.java:166)
-	at org.apache.dubbo.config.spring.beans.factory.annotation.ServiceClassPostProcessor.postProcessBeanDefinitionRegistry(ServiceClassPostProcessor.java:134)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:126)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at cn.edu.xmu.customer.CustomerApplication.main(CustomerApplication.java:16)
-2020-12-16 23:01:53.628 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field customerService in cn.edu.xmu.customer.controller.CustomerController required a bean of type 'cn.edu.xmu.customer.service.CustomerService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'cn.edu.xmu.customer.service.CustomerService' in your configuration.
-
-2020-12-16 23:13:49.916 [DubboServerHandler-192.168.43.118:20880-thread-2] INFO  cn.edu.xmu.customer.dao.CustomerDao - id356
-2020-12-16 23:13:52.930 [DubboServerHandler-192.168.43.118:20880-thread-3] INFO  cn.edu.xmu.customer.dao.CustomerDao - id356
-2020-12-16 23:14:03.173 [DubboServerHandler-192.168.43.118:20880-thread-4] INFO  cn.edu.xmu.customer.dao.CustomerDao - id356
-2020-12-16 23:14:31.227 [DubboServerHandler-192.168.43.118:20880-thread-5] INFO  cn.edu.xmu.customer.dao.CustomerDao - id356
-2020-12-16 23:16:56.737 [DubboServerHandler-192.168.43.118:20880-thread-2] INFO  cn.edu.xmu.customer.dao.CustomerDao - id356
-2020-12-16 23:24:06.859 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:24:07.623 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17361, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T23:24:07.405851, gmtModified=null, state=4)
-2020-12-16 23:24:08.083 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 23:24:08.783 [http-nio-8081-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:24:08.793 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 23:24:08.795 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17361
-2020-12-16 23:24:08.839 [http-nio-8081-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:24:08.840 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17361
-2020-12-16 23:24:08.878 [http-nio-8081-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:24:08.878 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 23:24:08.880 [http-nio-8081-exec-5] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17361
-2020-12-16 23:26:17.928 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:26:18.120 [http-nio-8081-exec-7] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17362, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T23:26:18.100210100, gmtModified=null, state=4)
-2020-12-16 23:26:18.323 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 23:26:18.552 [http-nio-8081-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:26:18.554 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 23:26:18.556 [http-nio-8081-exec-9] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17362
-2020-12-16 23:26:18.652 [http-nio-8081-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:26:18.654 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17362
-2020-12-16 23:26:18.709 [http-nio-8081-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:26:18.711 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 23:26:18.714 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17362
-2020-12-16 23:31:49.558 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:31:49.983 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17363, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T23:31:49.937968300, gmtModified=null, state=4)
-2020-12-16 23:31:50.199 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 23:31:50.633 [http-nio-8081-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:31:50.715 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 23:31:50.720 [http-nio-8081-exec-5] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17363
-2020-12-16 23:31:50.775 [http-nio-8081-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:31:50.777 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17363
-2020-12-16 23:31:50.822 [http-nio-8081-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:31:50.823 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 23:31:50.824 [http-nio-8081-exec-7] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17363
-2020-12-16 23:34:23.338 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:34:23.597 [http-nio-8081-exec-9] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17364, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T23:34:23.555430100, gmtModified=null, state=4)
-2020-12-16 23:34:23.754 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 23:34:24.136 [http-nio-8081-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:34:24.140 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 23:34:24.141 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17364
-2020-12-16 23:34:24.192 [http-nio-8081-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:34:24.192 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17364
-2020-12-16 23:34:24.220 [http-nio-8081-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:34:24.220 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 23:34:24.221 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17364
-2020-12-16 23:36:37.172 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:36:37.241 [http-nio-8081-exec-5] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17365, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T23:36:37.232023900, gmtModified=null, state=4)
-2020-12-16 23:36:37.321 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 23:36:37.423 [http-nio-8081-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:36:37.423 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 23:36:37.423 [http-nio-8081-exec-7] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17365
-2020-12-16 23:36:37.451 [http-nio-8081-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:36:37.452 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17365
-2020-12-16 23:36:37.478 [http-nio-8081-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:36:37.478 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 23:36:37.479 [http-nio-8081-exec-9] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17365
-2020-12-16 23:46:31.042 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:46:31.284 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 23:47:03.835 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:03.971 [http-nio-8081-exec-2] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17366, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T23:47:03.898023, gmtModified=null, state=4)
-2020-12-16 23:47:04.124 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 23:47:04.480 [http-nio-8081-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:47:04.485 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 23:47:04.487 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17366
-2020-12-16 23:47:04.540 [http-nio-8081-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:47:04.540 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17366
-2020-12-16 23:47:30.727 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:30.752 [http-nio-8081-exec-6] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 23:47:30.924 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:30.954 [http-nio-8081-exec-7] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 23:47:30.986 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:31.014 [http-nio-8081-exec-8] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 23:47:31.043 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:31.068 [http-nio-8081-exec-9] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 23:47:31.129 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:31.188 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 
-2020-12-16 23:47:31.247 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:31.289 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:47:31.307 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:47:31.371 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:31.423 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:47:31.459 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:47:31.485 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:31.556 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:47:31.615 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:31.667 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:47:31.704 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:47:31.793 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:47:31.811 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:47:31.833 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:31.852 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:47:31.870 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:47:31.894 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:31.917 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:47:31.940 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:47:31.964 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:31.987 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:47:32.013 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:47:32.035 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:32.063 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:47:32.088 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:47:32.113 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:32.144 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:47:32.181 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:47:32.204 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:32.236 [http-nio-8081-exec-2] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 23:47:32.264 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:32.291 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 23:47:32.319 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:32.341 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 23:47:32.567 [http-nio-8081-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:47:32.567 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 23:47:32.568 [http-nio-8081-exec-5] INFO  cn.edu.xmu.customer.dao.CustomerDao - id-1
-2020-12-16 23:47:32.598 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:32.664 [http-nio-8081-exec-6] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17367, userName=testU20, password=1a2B3_, realName=testR20, gender=0, birthday=2020-12-09, point=0, email=2020@2020.com, mobile=12332112320, beDeleted=0, gmtCreate=2020-12-16T23:47:32.654663600, gmtModified=null, state=4)
-2020-12-16 23:47:32.690 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU20
-2020-12-16 23:47:32.788 [http-nio-8081-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:47:32.788 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 23:47:32.789 [http-nio-8081-exec-8] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17367
-2020-12-16 23:47:32.816 [http-nio-8081-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:47:32.816 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17367
-2020-12-16 23:47:32.853 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:47:32.874 [http-nio-8081-exec-10] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 23:48:22.896 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:22.985 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17368, userName=1111, password=1a2B3_, realName=11111, gender=0, birthday=2020-12-09, point=0, email=11111@11111.com, mobile=12332111111, beDeleted=0, gmtCreate=2020-12-16T23:48:22.973586700, gmtModified=null, state=4)
-2020-12-16 23:48:23.097 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 1111
-2020-12-16 23:48:23.218 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:23.306 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17369, userName=2222, password=1a2B3_, realName=22222, gender=0, birthday=2020-12-09, point=0, email=22222@22222.com, mobile=12342112222, beDeleted=0, gmtCreate=2020-12-16T23:48:23.295114600, gmtModified=null, state=4)
-2020-12-16 23:48:23.325 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:23.375 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 用户名已被注册
-2020-12-16 23:48:23.394 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 2222
-2020-12-16 23:48:23.423 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:48:23.453 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:23.526 [http-nio-8081-exec-6] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17370, userName=3333, password=1a2B3_, realName=33333, gender=0, birthday=2020-12-09, point=0, email=33333@33333.com, mobile=12342113333, beDeleted=0, gmtCreate=2020-12-16T23:48:23.517677300, gmtModified=null, state=4)
-2020-12-16 23:48:23.543 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:23.622 [http-nio-8081-exec-7] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 电话已被注册
-2020-12-16 23:48:23.640 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 33333
-2020-12-16 23:48:23.666 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:48:23.690 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:23.755 [http-nio-8081-exec-9] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17371, userName=4444, password=1a2B3_, realName=44444, gender=0, birthday=2020-12-09, point=0, email=44444@44444.com, mobile=12342114444, beDeleted=0, gmtCreate=2020-12-16T23:48:23.745719400, gmtModified=null, state=4)
-2020-12-16 23:48:23.769 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:23.787 [http-nio-8081-exec-10] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
-2020-12-16 23:48:23.801 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 44444
-2020-12-16 23:48:23.824 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:48:23.853 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:23.897 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 
-2020-12-16 23:48:23.951 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:23.995 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:48:24.033 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:48:24.064 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:24.105 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:48:24.134 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:48:24.156 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:24.191 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:48:24.247 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:24.289 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:48:24.326 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:48:24.369 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:48:24.389 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:48:24.409 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:24.425 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:48:24.443 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:48:24.464 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:24.482 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:48:24.504 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:48:24.538 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:24.564 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:48:24.594 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:48:24.614 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:24.628 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:48:24.646 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:48:24.663 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:24.678 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
-2020-12-16 23:48:24.695 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:48:24.714 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:24.776 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17372, userName=1616, password=1a2B3_, realName=161616, gender=0, birthday=2020-12-09, point=0, email=1616@1616.com, mobile=12332116161, beDeleted=0, gmtCreate=2020-12-16T23:48:24.766811600, gmtModified=null, state=4)
-2020-12-16 23:48:24.788 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 1616
-2020-12-16 23:48:24.813 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
-2020-12-16 23:48:24.841 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:24.942 [http-nio-8081-exec-6] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17373, userName=1717, password=1a2B3_, realName=171717, gender=0, birthday=2020-12-09, point=0, email=1717@1717.com, mobile=12332117171, beDeleted=0, gmtCreate=2020-12-16T23:48:24.934359600, gmtModified=null, state=4)
-2020-12-16 23:48:24.956 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 1717
-2020-12-16 23:48:25.016 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:25.077 [http-nio-8081-exec-8] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17374, userName=testU, password=1a2B3_, realName=testR, gender=0, birthday=2020-12-09, point=0, email=123@321.com, mobile=12332112345, beDeleted=0, gmtCreate=2020-12-16T23:48:25.071992, gmtModified=null, state=4)
-2020-12-16 23:48:25.090 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU
-2020-12-16 23:48:25.135 [http-nio-8081-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:48:25.136 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 23:48:25.136 [http-nio-8081-exec-10] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17374
-2020-12-16 23:48:25.344 [http-nio-8081-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:48:25.345 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 23:48:25.346 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.dao.CustomerDao - id-1
-2020-12-16 23:48:25.396 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:25.488 [http-nio-8081-exec-2] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17375, userName=testU20, password=1a2B3_, realName=testR20, gender=0, birthday=2020-12-09, point=0, email=2020@2020.com, mobile=12332112320, beDeleted=0, gmtCreate=2020-12-16T23:48:25.478519600, gmtModified=null, state=4)
-2020-12-16 23:48:25.503 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU20
-2020-12-16 23:48:25.558 [http-nio-8081-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:48:25.558 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 23:48:25.559 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17375
-2020-12-16 23:48:25.586 [http-nio-8081-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:48:25.587 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17375
-2020-12-16 23:48:25.619 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
-2020-12-16 23:48:25.726 [http-nio-8081-exec-6] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17376, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-16T23:48:25.717031500, gmtModified=null, state=4)
-2020-12-16 23:48:25.738 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
-2020-12-16 23:48:25.787 [http-nio-8081-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:48:25.787 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
-2020-12-16 23:48:25.787 [http-nio-8081-exec-8] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17376
-2020-12-16 23:48:25.812 [http-nio-8081-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
-2020-12-16 23:48:25.813 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17376
+2020-12-16 20:02:29.129 [http-nio-8082-exec-1] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at cn.edu.xmu.ooad.annotation.AuditAspect.around(AuditAspect.java:82)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at cn.edu.xmu.aftersale.controller.AftersaleController$$EnhancerBySpringCGLIB$$cc64a8aa.confirmAftersae(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-12-16 20:11:23.909 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 20:11:23.920 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 20:11:24.396 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 数据库错误: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'order_id' in 'field list'
+### The error may exist in cn/edu/xmu/aftersale/mapper/AftersaleServicePoMapper.xml
+### The error may involve cn.edu.xmu.aftersale.mapper.AftersaleServicePoMapper.selectByPrimaryKey-Inline
+### The error occurred while setting parameters
+### SQL: select                 id, order_item_id, customer_id, shop_id, service_sn, type, reason, conclusion, refund,      quantity, region_id, detail, consignee, mobile, customer_log_sn, shop_log_sn, state,      be_deleted, gmt_create, gmt_modified, order_id         from aftersale_service     where id = ?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'order_id' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'order_id' in 'field list'
+2020-12-16 21:13:15.603 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 21:13:15.640 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 21:25:05.778 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 21:25:05.788 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 21:27:39.716 [http-nio-8082-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 21:27:39.718 [http-nio-8082-exec-3] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 21:29:00.945 [http-nio-8082-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 21:29:00.945 [http-nio-8082-exec-7] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 21:46:36.290 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 21:46:36.304 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 21:47:36.844 [http-nio-8082-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 21:47:36.845 [http-nio-8082-exec-3] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 21:50:21.310 [http-nio-8082-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 21:50:21.311 [http-nio-8082-exec-5] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:00:53.783 [http-nio-8082-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:00:53.784 [http-nio-8082-exec-7] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=100vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=同意售后)
+2020-12-16 22:18:37.577 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:18:37.594 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=28vo=AftersaleConfirmVo(confrim=null, price=100, type=0, conclusion=同意)
+2020-12-16 22:21:53.994 [http-nio-8082-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:21:53.996 [http-nio-8082-exec-3] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=29vo=AftersaleConfirmVo(confrim=null, price=0, type=null, conclusion=不符合要求)
+2020-12-16 22:27:54.595 [http-nio-8082-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:27:54.595 [http-nio-8082-exec-5] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:29:35.840 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:29:35.850 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:32:03.836 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:32:03.845 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:32:03.845 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 22:32:03.846 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 22:40:14.386 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:40:14.394 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:40:14.394 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 22:40:14.395 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 22:40:14.404 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 22:42:06.949 [http-nio-8082-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:42:06.961 [http-nio-8082-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:42:06.961 [http-nio-8082-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 22:42:06.962 [http-nio-8082-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 22:42:06.976 [http-nio-8082-exec-2] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 22:44:48.646 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:44:48.654 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:44:48.655 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 22:44:48.655 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 22:44:48.665 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 22:44:48.668 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 4
+2020-12-16 22:44:48.818 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 5
+2020-12-16 22:44:48.819 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 6
+2020-12-16 22:47:38.813 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:47:38.820 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:47:38.820 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 22:47:38.821 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 22:47:38.830 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 22:47:38.901 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 4
+2020-12-16 22:49:01.915 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:49:01.931 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:49:01.932 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 22:49:01.933 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 22:49:01.950 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 22:49:02.031 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 4
+2020-12-16 22:49:02.031 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 5
+2020-12-16 22:51:21.799 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:51:21.807 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:51:21.807 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 22:51:21.808 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 22:51:21.817 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 22:54:35.608 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:54:35.617 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:54:35.617 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 22:54:35.618 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 22:54:35.629 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 22:56:09.215 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 22:56:09.224 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 22:56:09.225 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 22:56:09.226 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 22:56:09.236 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 23:00:09.148 [http-nio-8082-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 23:00:09.156 [http-nio-8082-exec-10] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 23:00:09.156 [http-nio-8082-exec-10] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 23:00:09.157 [http-nio-8082-exec-10] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 23:00:09.173 [http-nio-8082-exec-10] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 23:01:45.162 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 23:01:45.170 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 23:01:45.170 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 23:01:45.171 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 23:01:45.181 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 23:03:44.476 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 23:03:44.484 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confrim=null, price=20, type=0, conclusion=不同意售后)
+2020-12-16 23:03:44.484 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 23:03:44.485 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 23:03:44.494 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 23:06:51.504 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 23:06:51.512 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confirm=false, price=20, type=0, conclusion=不同意售后)
+2020-12-16 23:06:51.512 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-16 23:06:51.513 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-16 23:06:51.523 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 3
+2020-12-16 23:06:51.609 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 5
+2020-12-16 23:06:51.671 [http-nio-8082-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 101 审核成功
+2020-12-16 23:06:51.672 [http-nio-8082-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 6
+2020-12-16 23:06:51.678 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 5
+2020-12-16 23:09:23.438 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 23:09:23.446 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confirm=false, price=20, type=0, conclusion=不同意售后)
+2020-12-16 23:09:23.510 [http-nio-8082-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 无法审核售后单id=101
+2020-12-16 23:13:24.316 [http-nio-8082-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 23:13:24.318 [http-nio-8082-exec-4] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confirm=false, price=20, type=0, conclusion=不同意售后)
+2020-12-16 23:13:24.367 [http-nio-8082-exec-4] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 5
+2020-12-16 23:13:24.397 [http-nio-8082-exec-4] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 101 审核成功
+2020-12-16 23:13:24.397 [http-nio-8082-exec-4] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 6
+2020-12-16 23:18:14.291 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 23:18:14.298 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=101vo=AftersaleConfirmVo(confirm=false, price=20, type=0, conclusion=不同意售后)
+2020-12-16 23:18:14.362 [http-nio-8082-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 无法审核售后单id=101
+2020-12-16 23:21:48.066 [http-nio-8082-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-16 23:21:48.068 [http-nio-8082-exec-3] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersale id=100vo=AftersaleConfirmVo(confirm=true, price=20, type=0, conclusion=同意售后)
+2020-12-16 23:21:48.103 [http-nio-8082-exec-3] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 100 审核成功

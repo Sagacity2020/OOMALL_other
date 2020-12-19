@@ -51,9 +51,9 @@ public class AdvertisementControllerTest {
         vo.setContent("test");
         vo.setLink(null);
         vo.setWeight(null);
-        vo.setBeginDate(LocalDate.of(2020,12,8));
-        vo.setEndDate(LocalDate.of(2020,12,10));
-        vo.setRepeats((byte)0);
+        vo.setBeginDate("2020-12-18");
+        vo.setEndDate("2020-12-20");
+        vo.setRepeat(true);
 
         String token = creatTestToken(1L, 0L, 100);
         String advertisementJson = JacksonUtil.toJson(vo);

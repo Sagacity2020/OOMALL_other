@@ -1,0 +1,297 @@
+2020-12-12 12:45:27.681 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 12:45:37.911 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementController': Unsatisfied dependency expressed through field 'advertisementService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'advertisementService': Injection of @DubboReference dependencies is failed; nested exception is java.lang.IllegalStateException: Failed to check the status of the service ITimeService. No provider available for the service ITimeService:0.0.1-SNAPSHOT from the url nacos://localhost:8848/org.apache.dubbo.registry.RegistryService?application=advertisement-service&dubbo=2.0.2&init=false&interface=ITimeService&metadata-type=remote&methods=getTimesegmentById&pid=20720&qos.enable=false&register.ip=192.168.244.1&release=2.7.8&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1607748337085&version=0.0.1-SNAPSHOT to the consumer 192.168.244.1 use dubbo version 2.7.8
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:341)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:346)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:341)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:340)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:263)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:256)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:255)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:108)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:107)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:71)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'advertisementService': Injection of @DubboReference dependencies is failed; nested exception is java.lang.IllegalStateException: Failed to check the status of the service ITimeService. No provider available for the service ITimeService:0.0.1-SNAPSHOT from the url nacos://localhost:8848/org.apache.dubbo.registry.RegistryService?application=advertisement-service&dubbo=2.0.2&init=false&interface=ITimeService&metadata-type=remote&methods=getTimesegmentById&pid=20720&qos.enable=false&register.ip=192.168.244.1&release=2.7.8&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1607748337085&version=0.0.1-SNAPSHOT to the consumer 192.168.244.1 use dubbo version 2.7.8
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor.postProcessPropertyValues(AbstractAnnotationBeanPostProcessor.java:149)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1425)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 82 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to check the status of the service ITimeService. No provider available for the service ITimeService:0.0.1-SNAPSHOT from the url nacos://localhost:8848/org.apache.dubbo.registry.RegistryService?application=advertisement-service&dubbo=2.0.2&init=false&interface=ITimeService&metadata-type=remote&methods=getTimesegmentById&pid=20720&qos.enable=false&register.ip=192.168.244.1&release=2.7.8&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1607748337085&version=0.0.1-SNAPSHOT to the consumer 192.168.244.1 use dubbo version 2.7.8
+	at org.apache.dubbo.config.ReferenceConfig.checkInvokerAvailable(ReferenceConfig.java:420)
+	at org.apache.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:315)
+	at org.apache.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:205)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor.doGetInjectedBean(ReferenceAnnotationBeanPostProcessor.java:144)
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor.getInjectedObject(AbstractAnnotationBeanPostProcessor.java:362)
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor$AnnotatedFieldElement.inject(AbstractAnnotationBeanPostProcessor.java:542)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor.postProcessPropertyValues(AbstractAnnotationBeanPostProcessor.java:145)
+	... 93 common frames omitted
+2020-12-12 12:45:37.936 [main] ERROR o.springframework.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@723b8eff] to prepare test instance [cn.edu.xmu.advertisement.controller.AdvertisementControllerTest@3987a1e8]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:341)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:346)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:341)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:340)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:263)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:256)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:255)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:108)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:107)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:71)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementController': Unsatisfied dependency expressed through field 'advertisementService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'advertisementService': Injection of @DubboReference dependencies is failed; nested exception is java.lang.IllegalStateException: Failed to check the status of the service ITimeService. No provider available for the service ITimeService:0.0.1-SNAPSHOT from the url nacos://localhost:8848/org.apache.dubbo.registry.RegistryService?application=advertisement-service&dubbo=2.0.2&init=false&interface=ITimeService&metadata-type=remote&methods=getTimesegmentById&pid=20720&qos.enable=false&register.ip=192.168.244.1&release=2.7.8&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1607748337085&version=0.0.1-SNAPSHOT to the consumer 192.168.244.1 use dubbo version 2.7.8
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	... 63 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'advertisementService': Injection of @DubboReference dependencies is failed; nested exception is java.lang.IllegalStateException: Failed to check the status of the service ITimeService. No provider available for the service ITimeService:0.0.1-SNAPSHOT from the url nacos://localhost:8848/org.apache.dubbo.registry.RegistryService?application=advertisement-service&dubbo=2.0.2&init=false&interface=ITimeService&metadata-type=remote&methods=getTimesegmentById&pid=20720&qos.enable=false&register.ip=192.168.244.1&release=2.7.8&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1607748337085&version=0.0.1-SNAPSHOT to the consumer 192.168.244.1 use dubbo version 2.7.8
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor.postProcessPropertyValues(AbstractAnnotationBeanPostProcessor.java:149)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1425)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 82 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to check the status of the service ITimeService. No provider available for the service ITimeService:0.0.1-SNAPSHOT from the url nacos://localhost:8848/org.apache.dubbo.registry.RegistryService?application=advertisement-service&dubbo=2.0.2&init=false&interface=ITimeService&metadata-type=remote&methods=getTimesegmentById&pid=20720&qos.enable=false&register.ip=192.168.244.1&release=2.7.8&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1607748337085&version=0.0.1-SNAPSHOT to the consumer 192.168.244.1 use dubbo version 2.7.8
+	at org.apache.dubbo.config.ReferenceConfig.checkInvokerAvailable(ReferenceConfig.java:420)
+	at org.apache.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:315)
+	at org.apache.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:205)
+	at org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor.doGetInjectedBean(ReferenceAnnotationBeanPostProcessor.java:144)
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor.getInjectedObject(AbstractAnnotationBeanPostProcessor.java:362)
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor$AnnotatedFieldElement.inject(AbstractAnnotationBeanPostProcessor.java:542)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at com.alibaba.spring.beans.factory.annotation.AbstractAnnotationBeanPostProcessor.postProcessPropertyValues(AbstractAnnotationBeanPostProcessor.java:145)
+	... 93 common frames omitted
+2020-12-12 12:49:53.167 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 12:50:21.960 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 39.994 seconds (JVM running for 43.437)
+2020-12-12 12:50:22.862 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMTI1MDIyOERXIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NDg3MjIsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzQ4NjIyfQ.m67dkr1OEBs8h_8QsQf_niT0OW0FkYhmxmGbG2u6QhQ
+2020-12-12 12:51:07.214 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 12:51:33.573 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 36.638 seconds (JVM running for 39.945)
+2020-12-12 12:51:34.225 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMTI1MTM0MkZKIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NDg3OTQsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzQ4Njk0fQ.EFcEZgXI0EFgXN29JrsZqwLYFZAGk3v8LMyfSJYHP2Q
+2020-12-12 12:51:34.317 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-12 12:52:51.352 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 12:53:17.991 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 36.49 seconds (JVM running for 39.631)
+2020-12-12 12:53:18.847 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMTI1MzE4OFpOIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NDg4OTgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzQ4Nzk4fQ.Mc7ogHHVFEQ8CARd6xsMsqxZOMOqMfphlKxKWHU4UeY
+2020-12-12 12:53:18.957 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-12 12:58:58.290 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 12:59:26.043 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 38.976 seconds (JVM running for 42.137)
+2020-12-12 12:59:26.860 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMTI1OTI2OFRXIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NDkyNjYsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzQ5MTY2fQ.ltP6UDJvm8OFpqZ3XWxMoyrLLBF58_21XnnUbRalJ50
+2020-12-12 12:59:26.951 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-12 13:01:57.331 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 13:02:27.325 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 41.091 seconds (JVM running for 44.155)
+2020-12-12 13:02:28.209 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMTMwMjI4MVpLIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NDk0NDgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzQ5MzQ4fQ.9c8n9S_tGxPSod1DJhiTU-IYNoLGVzKz9j-AH8jrNRU
+2020-12-12 13:02:28.327 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-12 13:04:18.152 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 13:04:44.318 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 36.635 seconds (JVM running for 39.804)
+2020-12-12 13:04:45.044 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMTMwNDQ1MFpSIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NDk1ODUsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzQ5NDg1fQ.jEXSP01h44kN7g0mKHqOHiDg5VyKwHmubzETrlSPp2I
+2020-12-12 13:04:45.120 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-12 13:06:13.759 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 13:06:39.805 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 35.735 seconds (JVM running for 38.913)
+2020-12-12 13:06:40.506 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMTMwNjQwNEpSIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NDk3MDAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzQ5NjAwfQ.gslsep63qD_1L5DO1YN3qOun_eWiM9B2hMY1jCO4cus
+2020-12-12 13:06:40.608 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-12 13:10:13.543 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 13:10:40.205 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 36.431 seconds (JVM running for 39.543)
+2020-12-12 13:10:40.921 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMTMxMDQwOTBDIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NDk5NDAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzQ5ODQwfQ.OghnKaSvadMgIKTa9946pBDhL_AkZ0fTBZEXA0D6UsU
+2020-12-12 13:10:41.005 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-12 13:14:51.753 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 13:15:20.457 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 42.138 seconds (JVM running for 45.824)
+2020-12-12 13:15:21.318 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMTMxNTIxM1NGIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NTAyMjEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzUwMTIxfQ.mwfOm4lXuzdI8tntB8UuODt9EzWMWrpzgZz7eNQV20Y
+2020-12-12 13:15:21.483 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-12 13:21:23.659 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 13:21:49.351 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 35.508 seconds (JVM running for 38.612)
+2020-12-12 13:21:50.214 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMTMyMTUwMVpaIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NTA2MTAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzUwNTEwfQ.gtaWTmSluwbuFSLfvp8zpIULL1IFzfnL_PNd-ESGpto
+2020-12-12 13:21:50.317 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-12 13:24:22.354 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 13:24:52.430 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 40.772 seconds (JVM running for 43.247)
+2020-12-12 13:24:53.308 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMTMyNDUzMkM4IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NTA3OTMsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzUwNjkzfQ.0kJP1KrAY1O9wbD_U3b9fkljfD2MN15eqGX65Jl-pWU
+2020-12-12 13:24:53.412 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-12 13:26:45.944 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 13:27:12.700 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 36.971 seconds (JVM running for 40.083)
+2020-12-12 13:27:13.608 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMTMyNzEzNUxEIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NTA5MzMsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzUwODMzfQ.u-lDQbGpjYhZvR8EhG921oulqfS3yP0AIYU1_W6111c
+2020-12-12 13:27:20.831 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-12 13:29:01.680 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 13:29:27.914 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 36.19 seconds (JVM running for 39.422)
+2020-12-12 13:29:28.829 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMTMyOTI4OFdGIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NTEwNjgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzUwOTY4fQ.4VH1GPDg1chNaX3_HE_Ob-HnCZ_hJNb4jkXDXg9DTrg
+2020-12-12 13:29:31.183 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-12 13:30:30.458 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 13:30:58.036 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 38.343 seconds (JVM running for 41.655)
+2020-12-12 13:30:58.850 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMTMzMDU4ODlNIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NTExNTgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzUxMDU4fQ.Gr1ZgBJey46hVXa-nvVaxHBx12mtBLhN4tFQRKdMGmo
+2020-12-12 13:31:01.011 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-12 13:31:50.415 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 13:32:18.202 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 37.761 seconds (JVM running for 40.924)
+2020-12-12 13:32:19.048 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMTMzMjE5MExOIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NTEyMzksInVzZXJJZCI6MSwiaWF0IjoxNjA3NzUxMTM5fQ.AdIOs8KKL8EQmTG14kFiw3QuGFCguE-fqD_kv97Zpk4
+2020-12-12 13:32:19.146 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-12 13:33:21.545 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 13:33:46.690 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 35.588 seconds (JVM running for 38.833)
+2020-12-12 13:33:47.481 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMTMzMzQ3NDFSIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NTEzMjcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzUxMjI3fQ.2DF1-4GdVLyjRbJ3jGusaql3KhmPJfKW7fSzm4Jbq20
+2020-12-12 13:33:47.573 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-12 13:42:14.074 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 13:42:41.567 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 37.652 seconds (JVM running for 40.607)
+2020-12-12 13:42:42.443 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMTM0MjQyNDJUIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NTE4NjIsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzUxNzYyfQ.tFAcEZStN13NIVuzy-u_JAIvmK3DyysRabX1ewy23l4
+2020-12-12 13:42:42.536 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-12 13:45:01.760 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 13:45:27.637 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 36.68 seconds (JVM running for 39.529)
+2020-12-12 13:45:28.278 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMTM0NTI4MjZKIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NTIwMjgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NzUxOTI4fQ.ko5Eu14M299J6_N6GDpr1OkksNaf4QIg8S0W7FGWL34
+2020-12-12 13:45:28.356 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement
+2020-12-12 13:48:02.695 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-12 13:48:28.595 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 36.419 seconds (JVM running for 39.475)
+2020-12-12 13:48:29.347 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjEyMTM0ODI5M0VEIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc3NTIyMDksInVzZXJJZCI6MSwiaWF0IjoxNjA3NzUyMTA5fQ.4R_kakzFwCjhE2a2o_ZgEGjWhZPdt_jQw85GiBbVyHA
+2020-12-12 13:48:29.456 [main] DEBUG c.e.x.a.controller.AdvertisementController - getCurrentAdvertisement

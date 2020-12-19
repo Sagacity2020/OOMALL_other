@@ -28,27 +28,29 @@ public class FavouriteGoodsController {
     @Autowired
     private HttpServletResponse httpServletResponse;
     /**
-    * 买家查看收藏列表
-    * @author zwl
-    * @param customerId
-    * @param page 页数
-    * @param pageSize 每页大小
-    * @return Object
-    * @Date:  2020/12/6 21:27
-    */
+     * 买家查看收藏列表
+     * @author zwl
+     * @param customerId
+     * @param page 页数
+     * @param pageSize 每页大小
+     * @return Object
+     * @Date:  2020/12/6 21:27
+     */
     @ApiOperation(value = "查看收藏列表", produces = "application/json")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
             @ApiImplicitParam(paramType = "query", dataType = "int", name = "page", value = "页码", required = false),
-            @ApiImplicitParam(paramType = "query", dataType = "int", name = "pageSize", value = "每页数目", required = false)
+            @ApiImplicitParam(paramType = "query", dataType = "int", name = "pageSize", value = "每页数目", required = false),
+            @ApiImplicitParam(paramType = "query", dataType = "int", name = "customerId", value = "用户id", required = true)
     })
     @ApiResponses({
             @ApiResponse(code = 0, message = "成功")
     })
     @Audit
     @GetMapping("")
-    public Object getSelfFavouriteGoods(@RequestParam(required = false) Integer page, @RequestParam(required = false) Integer pageSize,@LoginUser @RequestParam Long customerId)
+    public Object getSelfFavouriteGoods(@RequestParam(required = false) Integer page, @RequestParam(required = false) Integer pageSize, @RequestParam(required = true)Long customerId)
     {
+        //@LoginUser @RequestParam
         page = (page == null)?1:page;
         pageSize = (pageSize == null)?10:pageSize;
         ReturnObject<PageInfo<VoObject>> returnObject =  favouriteGoodsService.getSelfFavouriteGoods(page, pageSize,customerId);
@@ -63,7 +65,7 @@ public class FavouriteGoodsController {
      * @param skuId
      * @return
      * @Date:  2020/12/6 21:34
-    */
+     */
 
     @ApiOperation(value = "收藏商品", produces = "application/json")
     @ApiImplicitParams({
@@ -88,7 +90,7 @@ public class FavouriteGoodsController {
      * @param id
      * @return
      * @Date:  2020/12/6 21:35
-    */
+     */
 
     @ApiOperation(value = "取消收藏商品", produces = "application/json")
     @ApiImplicitParams({

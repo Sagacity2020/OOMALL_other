@@ -1,6 +1,7 @@
 package cn.edu.xmu.favorite.model.vo;
 
 import cn.edu.xmu.favorite.model.bo.FavouriteGoods;
+import cn.edu.xmu.goods.dto.GoodsSkuDTO;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
@@ -10,23 +11,21 @@ import java.time.LocalDateTime;
 public class FavouriteGoodsRetVo {
     @ApiModelProperty(value="id")
     private Long id;
-    @ApiModelProperty(value="用户id")
-    private Long customerId;
-    @ApiModelProperty(value="商品id")
-    private Long goodsSpuId;
 
-    @ApiModelProperty(value = "创建时间")
+    @ApiModelProperty(value = "收藏时间")
     private LocalDateTime gmtCreate;
 
-    @ApiModelProperty(value = "修改时间")
-    private LocalDateTime gmtModified;
+    @ApiModelProperty(value = "商品信息")
+    private GoodsSkuDTO goodsSku;
+
+    public FavouriteGoodsRetVo(GoodsSkuDTO goodsSku){
+
+    }
 
     public FavouriteGoodsRetVo(FavouriteGoods favouriteGoods)
     {
         this.id=favouriteGoods.getId();
-        this.customerId=favouriteGoods.getCustomerId();
-        this.goodsSpuId=favouriteGoods.getGoodsSpuId();
+        this.goodsSku=favouriteGoods.getGoodsSku();
         this.gmtCreate=favouriteGoods.getGmtCreate();
-        this.gmtModified=favouriteGoods.getGmtModified();
     }
 }

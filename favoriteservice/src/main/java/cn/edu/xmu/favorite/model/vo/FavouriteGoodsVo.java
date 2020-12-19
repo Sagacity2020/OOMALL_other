@@ -9,7 +9,7 @@ import lombok.Data;
 @ApiModel(description ="收藏的商品视图对象")
 public class FavouriteGoodsVo {
     @ApiModelProperty(value = "商品id")
-    private Long goodsSpuId;
+    private Long goodsSkuId;
 
     @ApiModelProperty(value = "用户id")
     private Long customerId;
@@ -18,7 +18,7 @@ public class FavouriteGoodsVo {
     {
         FavouriteGoods favouriteGoods=new FavouriteGoods();
         favouriteGoods.setCustomerId(this.customerId);
-        favouriteGoods.setGoodsSpuId(this.goodsSpuId);
+        favouriteGoods.setGoodsSkuId(this.goodsSkuId);
         return favouriteGoods;
     }
 

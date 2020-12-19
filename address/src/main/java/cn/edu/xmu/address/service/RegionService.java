@@ -1,16 +1,28 @@
 package cn.edu.xmu.address.service;
 
+import cn.edu.xmu.address.model.po.RegionPo;
+import cn.edu.xmu.address.model.vo.RegionRetVo;
+import cn.edu.xmu.address.model.vo.RegionVo;
+import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
 import cn.edu.xmu.address.dao.RegionDao;
 import cn.edu.xmu.address.model.bo.Region;
+import cn.edu.xmu.other.service.RegionServiceInterface;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import springfox.documentation.swagger.common.Version;
 
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
 
+@DubboService(version = "0.0.1")
 @Service
-public class RegionService {
+public class RegionService implements RegionServiceInterface {
 
     private Logger logger= LoggerFactory.getLogger(RegionService.class);
 
@@ -25,17 +37,31 @@ public class RegionService {
      */
     public ReturnObject queryPreRegion(Long id) {
         ReturnObject<Region> regionReturnObject=regionDao.queryPreRegion(id);
-        return regionReturnObject;
+        List<Region> regions=new ArrayList<>();
+        if(regionReturnObject.getData()==null) {
+            return regionReturnObject;
+        }
+        regions.add(regionReturnObject.getData());
+        ReturnObject<Region> regionReturnObject1=regionDao.queryPreRegion(regionReturnObject.getData().getPid());
+        while(regionReturnObject1.getData()!=null){
+            regions.add(regionReturnObject1.getData());
+            regionReturnObject1=regionDao.queryPreRegion(regionReturnObject1.getData().getPid());
+        }
+        return new ReturnObject(regions);
+
+
     }
 
+
     /**
-     * @Created at 12/8 23:08
+     * @Created at 12/18 1:49
      * @author zrh
-     * @param region
+     * @param id
+     * @param vo
      * @return
      */
-    public ReturnObject newSubRegion(Region region) {
-        return regionDao.newSubRegion(region);
+    public ReturnObject newSubRegion(Long id, RegionVo vo) {
+        return regionDao.newSubRegion(id,vo);
     }
 
     /**
@@ -44,8 +70,8 @@ public class RegionService {
      * @param id
      * @return
      */
-    public ReturnObject<Integer> isRegion(Long id){
-        ReturnObject<Integer> returnObject=regionDao.isRegion(id);
+    public ReturnObject<Boolean> isRegion(Long id){
+        ReturnObject<Boolean> returnObject=regionDao.isRegion(id);
         return returnObject;
     }
 
@@ -67,7 +93,29 @@ public class RegionService {
      * @return
      */
     public ReturnObject deleteRegion(Long id) {
+//        Queue<Long> idQueue = new ArrayDeque<>();
         ReturnObject returnObject=regionDao.deleteRegion(id);
+        List<Long> ids=regionDao.getChildRegion(id);
+//        idQueue.addAll(ids);
+//        if(!idQueue.isEmpty()){
+//            Long childId=idQueue.poll();
+//            regionDao.deleteChildRegionOnly(childId);
+//            }
+//
         return returnObject;
+    }
+
+
+    @Override
+    public Long getParentRegionIdByChildId(Long regionId) {
+        ReturnObject<Region> returnObject=regionDao.queryPreRegion(regionId);
+        if(returnObject.getCode()== ResponseCode.REGION_OBSOLETE){
+            return  null;
+        }
+        Region region=returnObject.getData();
+        if(region!=null){
+            return region.getId();
+        }
+        return 0L;
     }
 }

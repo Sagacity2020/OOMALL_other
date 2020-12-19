@@ -35,6 +35,28 @@ spring:
             - PrefixPath=/user
             - Auth=authorization
 
+        - id: aftersale
+          uri: http://localhost:8084/
+          predicates:
+            - Path=/orderitems/{id}/aftersales,/aftersales,/aftersales/{id},/aftersales/{id}/**
+          filters:
+            - PrefixPath=/aftersale
+            - Auth=authorization
+
+        - id: aftersales
+          uri: http://localhost:8084/
+          predicates:
+            - Path=/aftersales/states
+          filters:
+            - PrefixPath=/aftersale
+
+        - id: advertise
+          uri: http://localhost:8083/
+          predicates:
+            - Path=/advertisement/current,/advertisement/states
+          filters:
+            - PrefixPath=/advertise
+
   redis:
     host: localhost
       # Redis服务器连接端口

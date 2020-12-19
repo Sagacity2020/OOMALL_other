@@ -1,0 +1,1108 @@
+2020-12-08 22:07:11.808 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 33116 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:07:11.812 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:07:11.813 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:07:15.599 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field advertisementPoMapper in cn.edu.xmu.advertisement.dao.AdvertisementDao required a bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' in your configuration.
+
+2020-12-08 22:07:15.607 [main] ERROR o.springframework.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@543fe698] to prepare test instance [cn.edu.xmu.advertisement.controller.AdvertisementControllerTest@6b2fdffc]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:341)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:346)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:341)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:340)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:263)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:256)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:255)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:108)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:107)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:71)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementController': Unsatisfied dependency expressed through field 'advertisementService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementService': Unsatisfied dependency expressed through field 'advertisementDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementDao': Unsatisfied dependency expressed through field 'advertisementPoMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	... 63 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementService': Unsatisfied dependency expressed through field 'advertisementDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementDao': Unsatisfied dependency expressed through field 'advertisementPoMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 82 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementDao': Unsatisfied dependency expressed through field 'advertisementPoMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 95 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1717)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1273)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 108 common frames omitted
+2020-12-08 22:12:08.784 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 6936 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:12:08.788 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:12:08.789 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:12:12.919 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field advertisementPoMapper in cn.edu.xmu.advertisement.dao.AdvertisementDao required a bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' in your configuration.
+
+2020-12-08 22:12:12.925 [main] ERROR o.springframework.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@3815146b] to prepare test instance [cn.edu.xmu.advertisement.controller.AdvertisementControllerTest@6de43bc1]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:341)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:346)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:341)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:340)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:263)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:256)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:255)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:108)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:107)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:71)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementController': Unsatisfied dependency expressed through field 'advertisementService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementService': Unsatisfied dependency expressed through field 'advertisementDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementDao': Unsatisfied dependency expressed through field 'advertisementPoMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	... 63 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementService': Unsatisfied dependency expressed through field 'advertisementDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementDao': Unsatisfied dependency expressed through field 'advertisementPoMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 82 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementDao': Unsatisfied dependency expressed through field 'advertisementPoMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 95 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1717)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1273)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 108 common frames omitted
+2020-12-08 22:12:33.035 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 6692 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:12:33.039 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:12:33.040 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:12:36.684 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field advertisementPoMapper in cn.edu.xmu.advertisement.dao.AdvertisementDao required a bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' in your configuration.
+
+2020-12-08 22:12:36.692 [main] ERROR o.springframework.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@50598a1a] to prepare test instance [cn.edu.xmu.advertisement.controller.AdvertisementControllerTest@14de1901]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:341)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:346)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:341)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:340)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:263)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:256)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:255)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:108)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:107)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:71)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementController': Unsatisfied dependency expressed through field 'advertisementService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementService': Unsatisfied dependency expressed through field 'advertisementDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementDao': Unsatisfied dependency expressed through field 'advertisementPoMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	... 63 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementService': Unsatisfied dependency expressed through field 'advertisementDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementDao': Unsatisfied dependency expressed through field 'advertisementPoMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 82 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementDao': Unsatisfied dependency expressed through field 'advertisementPoMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 95 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1717)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1273)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 108 common frames omitted
+2020-12-08 22:13:43.410 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 23024 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:13:43.416 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:13:43.416 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:13:46.792 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field advertisementPoMapper in cn.edu.xmu.advertisement.dao.AdvertisementDao required a bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' in your configuration.
+
+2020-12-08 22:13:46.800 [main] ERROR o.springframework.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@26f0141] to prepare test instance [cn.edu.xmu.advertisement.controller.AdvertisementControllerTest@34136bd1]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:341)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:346)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:341)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:340)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:263)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:256)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:255)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:108)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:107)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:71)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementController': Unsatisfied dependency expressed through field 'advertisementService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementService': Unsatisfied dependency expressed through field 'advertisementDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementDao': Unsatisfied dependency expressed through field 'advertisementPoMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	... 63 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementService': Unsatisfied dependency expressed through field 'advertisementDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementDao': Unsatisfied dependency expressed through field 'advertisementPoMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 82 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementDao': Unsatisfied dependency expressed through field 'advertisementPoMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 95 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1717)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1273)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 108 common frames omitted
+2020-12-08 22:14:15.229 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 36260 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:14:15.235 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:14:15.236 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:14:18.576 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field advertisementPoMapper in cn.edu.xmu.advertisement.dao.AdvertisementDao required a bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' in your configuration.
+
+2020-12-08 22:14:18.583 [main] ERROR o.springframework.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@119290b9] to prepare test instance [cn.edu.xmu.advertisement.controller.AdvertisementControllerTest@640d604]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:341)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:346)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:341)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:340)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:263)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:256)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:255)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:108)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:107)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:71)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementController': Unsatisfied dependency expressed through field 'advertisementService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementService': Unsatisfied dependency expressed through field 'advertisementDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementDao': Unsatisfied dependency expressed through field 'advertisementPoMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	... 63 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementService': Unsatisfied dependency expressed through field 'advertisementDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementDao': Unsatisfied dependency expressed through field 'advertisementPoMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 82 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementDao': Unsatisfied dependency expressed through field 'advertisementPoMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 95 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1717)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1273)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 108 common frames omitted
+2020-12-08 22:15:02.785 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 9704 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:15:02.790 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:15:02.790 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:15:06.141 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field advertisementPoMapper in cn.edu.xmu.advertisement.dao.AdvertisementDao required a bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' in your configuration.
+
+2020-12-08 22:15:06.149 [main] ERROR o.springframework.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@2ca54da9] to prepare test instance [cn.edu.xmu.advertisement.controller.AdvertisementControllerTest@34a20f16]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:341)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:346)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:341)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:340)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:263)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:256)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:255)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:108)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:107)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:71)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementController': Unsatisfied dependency expressed through field 'advertisementService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementService': Unsatisfied dependency expressed through field 'advertisementDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementDao': Unsatisfied dependency expressed through field 'advertisementPoMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	... 63 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementService': Unsatisfied dependency expressed through field 'advertisementDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementDao': Unsatisfied dependency expressed through field 'advertisementPoMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 82 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'advertisementDao': Unsatisfied dependency expressed through field 'advertisementPoMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 95 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.edu.xmu.advertisement.mapper.AdvertisementPoMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1717)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1273)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 108 common frames omitted
+2020-12-08 22:16:19.012 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 18780 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:16:19.018 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:16:19.018 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:16:32.975 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 14.567 seconds (JVM running for 16.815)
+2020-12-08 22:16:33.785 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjIxNjMzN0VVIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0MzcwOTMsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM2OTkzfQ.ELIEtQnL6cw2rK6H26KEKiiR3WJiHOL1SrianMptMRQ
+2020-12-08 22:16:34.000 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:17:25.103 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 22896 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:17:25.113 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:17:25.114 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:17:38.184 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 14.219 seconds (JVM running for 17.26)
+2020-12-08 22:17:38.904 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjIxNzM4ODFTIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0MzcxNTgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM3MDU4fQ.vywVxKo44oRRozd4NHve8Nqj7TqXgUSqm3pKJXLMKMo
+2020-12-08 22:17:47.321 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:17:57.764 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 10980 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:17:57.770 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:17:57.770 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:18:10.799 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 13.631 seconds (JVM running for 16.668)
+2020-12-08 22:18:11.561 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjIxODExNTZWIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0MzcxOTEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM3MDkxfQ.VZjlmLmUk_gyQVZXGnt32PCVlqyp2KAv7yFzd2Q8FyU
+2020-12-08 22:18:20.970 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:21:19.491 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 17316 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:21:19.496 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:21:19.496 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:21:32.496 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 13.595 seconds (JVM running for 15.576)
+2020-12-08 22:21:33.246 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjIyMTMzMkxIIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0MzczOTMsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM3MjkzfQ.KJ058IY1WYS_nwfIrZ8-ygGQ3hHzfWI2myzXSB3eD_Q
+2020-12-08 22:22:18.300 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:22:46.408 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 25564 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:22:46.414 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:22:46.415 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:22:59.706 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 13.789 seconds (JVM running for 15.584)
+2020-12-08 22:24:30.714 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjIyNDMwNlA4IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0Mzc1NzAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM3NDcwfQ.J49hutAuiwNHqGdiM2FFCbBCaRabu83SnOVSnijdt0k
+2020-12-08 22:24:38.305 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:25:07.911 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 36432 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:25:07.915 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:25:07.916 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:25:21.342 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 13.954 seconds (JVM running for 16.061)
+2020-12-08 22:25:57.216 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjIyNTU3MUlRIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0Mzc2NTcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM3NTU3fQ.Z8Xd_xQq7rimappD2Po3PxKBL8t6KDa0GxfTPyITtDc
+2020-12-08 22:25:59.847 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:26:35.758 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 25164 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:26:35.763 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:26:35.763 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:26:49.185 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 13.922 seconds (JVM running for 15.691)
+2020-12-08 22:26:51.661 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjIyNjUxNUNCIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0Mzc3MTEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM3NjExfQ.FiVzyfYsLxnnmdufcHHLXBQHE320nRiCeBcSDCtCdwg
+2020-12-08 22:27:05.832 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:32:31.992 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 9404 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:32:31.997 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:32:31.997 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:32:45.084 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 13.59 seconds (JVM running for 15.975)
+2020-12-08 22:32:47.054 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjIzMjQ3MDBTIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0MzgwNjcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM3OTY3fQ.-_SCvbkmE88Xx7w4Bn1gI6cr2_JTEFdrgk09XURY1wY
+2020-12-08 22:32:49.476 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:33:48.612 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 10596 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:33:48.618 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:33:48.619 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:34:02.274 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 14.341 seconds (JVM running for 16.115)
+2020-12-08 22:34:04.025 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjIzNDAzOUk1IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0MzgxNDMsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM4MDQzfQ.4ourj4roGfCHppwmoOrJXXb0HlhLwB-jEBzDGqzHGCA
+2020-12-08 22:34:08.095 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:35:07.998 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 8576 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:35:08.003 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:35:08.004 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:35:21.691 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 14.321 seconds (JVM running for 16.145)
+2020-12-08 22:35:24.295 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjIzNTI0MkU2IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0MzgyMjQsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM4MTI0fQ.2aHOwvP1-ho-l3PqthrRp7RJB1UhB01g9V_-308mwQo
+2020-12-08 22:35:26.695 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:35:50.100 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 28876 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:35:50.108 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:35:50.109 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:36:03.677 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 14.322 seconds (JVM running for 17.239)
+2020-12-08 22:36:05.414 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjIzNjA1M0w2IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0MzgyNjUsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM4MTY1fQ.b97CsPi1xuBD47fy2-UO3kFg2cUD8JIbtvCrTe5v4rU
+2020-12-08 22:36:06.804 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:37:41.003 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 12172 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:37:41.008 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:37:41.008 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:37:57.379 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 16.967 seconds (JVM running for 19.516)
+2020-12-08 22:37:58.139 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjIzNzU4MTc2IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0MzgzNzgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM4Mjc4fQ.zcp4x6n0jvym1g_h0O5cACd6PYDhzSzML0_rrGuIEdY
+2020-12-08 22:37:58.398 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:37:58.828 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 22:38:28.555 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 29048 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:38:28.561 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:38:28.562 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:38:41.120 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 13.268 seconds (JVM running for 16.825)
+2020-12-08 22:38:41.817 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjIzODQxN0tKIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0Mzg0MjEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM4MzIxfQ._WUxz_ycyuB1xJvKkznF9PAKYP-okCzYZnwH7-AIn_g
+2020-12-08 22:38:42.074 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:38:42.270 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 22:39:10.834 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 1728 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:39:10.841 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:39:10.842 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:39:24.159 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 14.003 seconds (JVM running for 16.85)
+2020-12-08 22:39:27.807 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjIzOTI3N05RIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0Mzg0NjcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM4MzY3fQ.O7jFl4VKAQlg8bXOEpXHOpIhLZpGz_lxSzcdXPuQFfg
+2020-12-08 22:39:30.178 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:40:37.430 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 22:43:32.349 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 2384 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:43:32.357 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:43:32.358 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:43:46.647 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 14.989 seconds (JVM running for 17.499)
+2020-12-08 22:43:47.221 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjI0MzQ3MTg1IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0Mzg3MjcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM4NjI3fQ.ThdhVw0zRS487nsaPl0ltgVU6aC9Idt5baEamOWZmHI
+2020-12-08 22:43:47.463 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:44:01.346 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 22:46:05.639 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 22668 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:46:05.645 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:46:05.646 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:46:17.665 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 12.657 seconds (JVM running for 15.148)
+2020-12-08 22:46:18.263 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjI0NjE4Mkg3IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0Mzg4NzgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM4Nzc4fQ.sD_FrEItbsFV1V6s5ddhtI1MY1AQlFKtqc7Ap3f4QoI
+2020-12-08 22:46:18.503 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:46:18.698 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 22:46:40.159 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 14580 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:46:40.168 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:46:40.168 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:46:55.951 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 16.699 seconds (JVM running for 19.175)
+2020-12-08 22:46:56.874 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjI0NjU2OEJVIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0Mzg5MTYsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM4ODE2fQ.YNU2oviHRZOgXBEsiAxLW1IgL1npFcwJPiecAwv1R44
+2020-12-08 22:46:57.252 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:46:57.555 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 22:47:49.263 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 30796 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:47:49.270 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:47:49.270 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:48:03.009 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 14.343 seconds (JVM running for 16.799)
+2020-12-08 22:48:04.154 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjI0ODAzOTNTIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0Mzg5ODMsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM4ODgzfQ.YzorojXnpNGRAc2voJ5rX5WhGzONtToZJS_CBte1kWY
+2020-12-08 22:48:04.987 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:48:05.569 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 22:48:52.439 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 23308 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:48:52.444 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:48:52.445 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:49:05.543 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 13.721 seconds (JVM running for 16.235)
+2020-12-08 22:49:06.278 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjI0OTA2MjU3IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0MzkwNDYsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM4OTQ2fQ.zmRHvQiIRAjUc2ukbSwN5rOcNG0LAX2BiZM5Ipklizo
+2020-12-08 22:49:06.638 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:49:06.910 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 22:49:26.563 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 18612 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:49:26.572 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:49:26.573 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:49:39.747 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 13.865 seconds (JVM running for 16.235)
+2020-12-08 22:49:40.509 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjI0OTQwNFFPIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0MzkwODAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM4OTgwfQ.-evh3QJt1qKajLn26Ud27ZhPNsGSeT4YCgIaLaImMBA
+2020-12-08 22:49:40.877 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:49:44.010 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 22:50:34.223 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 32608 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:50:34.228 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:50:34.229 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:50:47.846 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 14.265 seconds (JVM running for 16.344)
+2020-12-08 22:50:48.511 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjI1MDQ4NFA4IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0MzkxNDgsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM5MDQ4fQ.U0TfWY37cH5bbFkwfyG4mR00yocu5wD3z7Ns5ZgUsbc
+2020-12-08 22:50:48.835 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:51:17.093 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 27528 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:51:17.099 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:51:17.099 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:51:30.313 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 13.842 seconds (JVM running for 16.619)
+2020-12-08 22:51:31.040 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjI1MTMwOVlXIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0MzkxOTAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM5MDkwfQ.euIb5nopEp13AsrT-K9qJ7bNp0HdvOB2ikeJq7TYSXw
+2020-12-08 22:51:31.358 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:51:38.886 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 22:55:55.964 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 4892 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:55:55.977 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:55:55.977 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:56:09.901 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 14.835 seconds (JVM running for 18.072)
+2020-12-08 22:56:10.594 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjI1NjEwNVVJIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0Mzk0NzAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM5MzcwfQ.zUSnRSsHhZ3DZKtG2mBk6lFgy6wjPFNlnvsj2_wmIR8
+2020-12-08 22:56:10.866 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:56:19.309 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 22:57:28.932 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 10356 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:57:28.938 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:57:28.939 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:57:41.758 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 13.507 seconds (JVM running for 15.872)
+2020-12-08 22:57:42.523 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjI1NzQyNElYIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0Mzk1NjIsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM5NDYyfQ.DTiXlSBhC5w3CJIfvTKOkEo5EqKMA-UFP2mkdIOPIvM
+2020-12-08 22:57:42.747 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:57:42.947 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 22:58:01.648 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 31632 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 22:58:01.655 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 22:58:01.655 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 22:58:16.239 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 15.288 seconds (JVM running for 17.75)
+2020-12-08 22:58:17.151 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjI1ODE3MENPIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0Mzk1OTcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM5NDk3fQ.KqcWFzfHXG3KYfTnpDi1drAOisHu8liWNzwQghi6lcY
+2020-12-08 22:58:17.759 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 22:58:41.824 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 23:00:41.911 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 18596 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 23:00:41.917 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 23:00:41.918 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 23:00:55.183 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 13.973 seconds (JVM running for 16.286)
+2020-12-08 23:00:55.934 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjMwMDU1OE5QIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0Mzk3NTUsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM5NjU1fQ.2Vb0x1Ern8Jb67GcOLPAtNtnsUqlAdvC3YcdXNlJK3E
+2020-12-08 23:00:56.271 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 23:01:02.039 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 23:05:21.912 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 16760 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 23:05:21.920 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 23:05:21.921 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 23:05:35.670 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 14.454 seconds (JVM running for 17.621)
+2020-12-08 23:05:36.421 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjMwNTM2M0sxIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0NDAwMzYsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM5OTM2fQ.MBFcGxYA7VPbfb3L-8kop0nYHjQpvH1SgXEIxLKUEJ8
+2020-12-08 23:05:36.700 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 23:05:42.002 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 23:05:59.235 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 15676 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 23:05:59.241 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 23:05:59.242 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 23:06:12.416 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 13.835 seconds (JVM running for 16.511)
+2020-12-08 23:06:13.189 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjMwNjEzMTA5IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0NDAwNzMsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDM5OTczfQ.aiMvDWAOV118IF21owoWB_09-smvsJxotaHluxJhOrc
+2020-12-08 23:06:13.557 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 23:06:37.182 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 23:07:08.422 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 27624 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 23:07:08.426 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 23:07:08.427 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 23:07:21.313 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 13.492 seconds (JVM running for 15.963)
+2020-12-08 23:07:21.913 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjMwNzIxODNSIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0NDAxNDEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDQwMDQxfQ.7PsqRStKrrE45ntBsXpYv1YKe5yooFqoUiUSvq9BzEA
+2020-12-08 23:07:22.143 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 23:07:30.038 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 23:15:01.618 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 24408 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 23:15:01.626 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 23:15:01.627 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 23:15:14.811 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 13.867 seconds (JVM running for 16.558)
+2020-12-08 23:15:15.582 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjMxNTE1NVc1IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0NDA2MTUsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDQwNTE1fQ.vilUraJrRXTIPMCSxrVEKvlrivA_j-b76WAMe6mnT3w
+2020-12-08 23:15:15.956 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 23:15:25.078 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 23:17:23.407 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 34292 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 23:17:23.412 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 23:17:23.413 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 23:17:36.697 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 13.851 seconds (JVM running for 15.783)
+2020-12-08 23:17:37.344 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjMxNzM3MzBNIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0NDA3NTcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDQwNjU3fQ.QrubfbSEXmIaUNdpOF2gr2fgi-_vKHFqNPqO4kCfly0
+2020-12-08 23:17:37.602 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 23:17:37.791 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 23:17:58.621 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 4204 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 23:17:58.628 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 23:17:58.628 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 23:18:11.768 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 13.871 seconds (JVM running for 16.311)
+2020-12-08 23:18:12.768 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjMxODEyN0JSIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0NDA3OTIsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDQwNjkyfQ.aq0lQwNueTSL5MdUbng2TTp6Fdjdnafzq5hVJTbC0TQ
+2020-12-08 23:18:13.013 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 23:18:13.571 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 23:19:16.432 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 14404 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 23:19:16.437 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 23:19:16.438 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 23:19:30.666 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 14.908 seconds (JVM running for 18.351)
+2020-12-08 23:19:31.364 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjMxOTMxM1dSIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0NDA4NzEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDQwNzcxfQ.X5URR1CMk-_aeNuMRNVySMCw7trK0BfwFxA9262tAVM
+2020-12-08 23:19:31.593 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 23:19:31.810 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功
+2020-12-08 23:19:54.231 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Starting AdvertisementControllerTest on DESKTOP-ICK6KH9 with PID 36188 (started by asus in D:\OOMALL_other\advertisement)
+2020-12-08 23:19:54.235 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-08 23:19:54.236 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - The following profiles are active: dev
+2020-12-08 23:20:06.989 [main] INFO  c.e.x.a.controller.AdvertisementControllerTest - Started AdvertisementControllerTest in 13.3 seconds (JVM running for 15.623)
+2020-12-08 23:20:07.895 [main] DEBUG c.e.x.a.controller.AdvertisementControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA4MjMyMDA3ODRFIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0NDA5MDcsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDQwODA3fQ.9QOzfdc3qWdCZ0v6c3OhHxGdETk-7JlGmmSae_bx9SI
+2020-12-08 23:20:08.216 [main] DEBUG c.e.x.a.controller.AdvertisementController - createAdvertisement id=1vo=AdvertisementCreateVo(content=test, weight=null, beginDate=2020-12-08, endDate=2020-12-10, repeats=0, link=null)
+2020-12-08 23:20:08.525 [main] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 新增广告成功

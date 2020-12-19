@@ -1,0 +1,14 @@
+2020-12-09 10:18:42.859 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Starting AftersaleControllerTest on DESKTOP-ICK6KH9 with PID 24380 (started by asus in D:\OOMALL_other\aftersale)
+2020-12-09 10:18:42.865 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-09 10:18:42.866 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-09 10:19:00.431 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 18.421 seconds (JVM running for 21.884)
+2020-12-09 10:19:01.606 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA5MTAxOTAxNUdTIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0ODA0NDEsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDgwMzQxfQ.vpua1jW4Sgccpdrb4K4wa-MeNKiSi9eQFffI_8AN7RA
+2020-12-09 10:19:01.767 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAllAftersale id=1,page=1,pageSize=2
+2020-12-09 10:19:02.075 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取店铺id=1的售后单成功
+2020-12-09 10:19:54.257 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Starting AftersaleControllerTest on DESKTOP-ICK6KH9 with PID 9152 (started by asus in D:\OOMALL_other\aftersale)
+2020-12-09 10:19:54.262 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-12-09 10:19:54.262 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-09 10:20:09.819 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 16.312 seconds (JVM running for 18.916)
+2020-12-09 10:20:10.516 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjA5MTAyMDEwNE5NIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDc0ODA1MTAsInVzZXJJZCI6MSwiaWF0IjoxNjA3NDgwNDEwfQ.E8_8h6k_A6ReYCHydjphYcYrHX-3jT8Mhvmt19nmpPs
+2020-12-09 10:20:10.683 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAllAftersale id=1,page=1,pageSize=2
+2020-12-09 10:20:11.014 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取店铺id=1的售后单成功

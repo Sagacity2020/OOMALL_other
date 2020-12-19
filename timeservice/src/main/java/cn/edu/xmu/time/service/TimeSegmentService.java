@@ -24,7 +24,7 @@ public class TimeSegmentService {
     TimeSegmentDao timeSegmentDao;
 
     @DubboReference(version = "0.0.1")
-    AdServiceInterface adServiceInterface;
+    AdServiceInterface iAdService;
 
     public ReturnObject<PageInfo<VoObject>> selectAdTimeSegments(Integer pageNum, Integer pageSize)
     {
@@ -54,13 +54,12 @@ public class TimeSegmentService {
     }
 
     /**
-     *  * 删除时间段
+     *  * 删除广告时间段
      * @author zwl
      *  @param id 时间段id
      *  @return ReturnObject<Object> 返回视图
      */
     @Transactional
-    //@Transactional("txManagerAlpha")
     public ReturnObject<Object> deleteAdTimeSegment(Long id) {
         //return timeSegmentDao.deleteAdTimeSegment(id);
 
@@ -69,7 +68,7 @@ public class TimeSegmentService {
         if(ret.getCode().equals(ResponseCode.OK))
         {
             boolean updateAd;
-            updateAd= adServiceInterface.updateAdSegId(id);
+            updateAd=iAdService.updateAdSegId(id);
             if(updateAd)
             {return ret;}
             //修改对应广告的时间段失败
@@ -79,6 +78,68 @@ public class TimeSegmentService {
         {
             return ret;
         }
+    }
+
+    /**
+     * 获取秒杀时间段
+     * @author zwl
+     * @param
+     * @return
+     * @Date:  2020/12/17 20:27
+     */
+
+    public ReturnObject<PageInfo<VoObject>> selectFlTimeSegments(Integer pageNum, Integer pageSize)
+    {
+        ReturnObject<PageInfo<VoObject>> returnObject = timeSegmentDao.selectFlTimeSegments(pageNum, pageSize);
+        return returnObject;
+    }
+
+    /**
+     * 新增秒杀时段
+     * @author zwl
+     * @param vo
+     * @return ReturnObject<VoObject> 时间段返回视图
+     */
+    @Transactional
+    public ReturnObject<VoObject> insertFlTimeSegment(TimeSegment timeSegment)
+    {
+        timeSegment.setType((byte)1);
+        timeSegment.setGmtCreate(LocalDateTime.now());
+        ReturnObject<TimeSegment> retObj = timeSegmentDao.insertFlTimeSegment(timeSegment);
+        ReturnObject<VoObject> retTimeSegment = null;
+        if (retObj.getCode().equals(ResponseCode.OK)) {
+            retTimeSegment = new ReturnObject<>(retObj.getData());
+        } else {
+            retTimeSegment = new ReturnObject<>(retObj.getCode(), retObj.getErrmsg());
+        }
+        return retTimeSegment;
+    }
+
+    /**
+     *  * 删除时间段
+     * @author zwl
+     *  @param id 时间段id
+     *  @return ReturnObject<Object> 返回视图
+     */
+    @Transactional
+    public ReturnObject<Object> deleteFlTimeSegment(Long id) {
+
+        //       ReturnObject ret = timeSegmentDao.deleteFlTimeSegment(id);
+
+//        if(ret.getCode().equals(ResponseCode.OK))
+//        {
+//            boolean updateFl;
+//            updateFl=iFlService.updateFlSegId(id);
+//            if(updateFl)
+//            {return ret;}
+//            //修改对应广告的时间段失败
+//            else {return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR);}
+//        }
+//        else
+//        {
+//            return ret;
+//        }
+        return timeSegmentDao.deleteFlTimeSegment(id);
     }
 
 }

@@ -2,10 +2,16 @@ package cn.edu.xmu.favorite.service;
 
 import cn.edu.xmu.favorite.dao.FavouriteGoodsDao;
 import cn.edu.xmu.favorite.model.bo.FavouriteGoods;
+import cn.edu.xmu.favorite.model.po.FavouriteGoodsPo;
+
+import cn.edu.xmu.goods.dto.GoodsSkuDTO;
+import cn.edu.xmu.goods.service.GoodsServiceInterface;
 import cn.edu.xmu.ooad.model.VoObject;
 import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
+import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +19,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class FavouriteGoodsService {
     private Logger logger = LoggerFactory.getLogger(FavouriteGoodsService.class);
     @Autowired
     private FavouriteGoodsDao favouriteGoodsDao;
+
+    @DubboReference(version = "0.0.1")
+    GoodsServiceInterface iGoodsService;
 
     /**
      * 查看收藏列表
@@ -27,11 +38,25 @@ public class FavouriteGoodsService {
      * @param pageSize 每页大小
      * @return
      * @Date:  2020/12/6 21:42
-    */
+     */
     public ReturnObject<PageInfo<VoObject>> getSelfFavouriteGoods(Integer pageNum, Integer pageSize,Long customerId)
     {
-        ReturnObject<PageInfo<VoObject>> returnObject = favouriteGoodsDao.getSelfFavouriteGoods(pageNum,pageSize,customerId);
-        return returnObject;
+        PageHelper.startPage(pageNum, pageSize);
+        PageInfo<FavouriteGoodsPo> favouriteGoodsPos = favouriteGoodsDao.getSelfFavouriteGoods(pageNum,pageSize,customerId);
+        List<VoObject> favouriteGoodsList= new ArrayList<>();
+        for (FavouriteGoodsPo po:favouriteGoodsPos.getList()) {
+            FavouriteGoods favouriteGoods=new FavouriteGoods(po);
+            GoodsSkuDTO goodsSku=iGoodsService.getSkuById(po.getGoodsSkuId());
+            favouriteGoods.setGoodsSku(goodsSku);
+            favouriteGoodsList.add(favouriteGoods);
+        }
+
+        PageInfo<VoObject> returnObject= PageInfo.of(favouriteGoodsList);
+        returnObject.setPages( favouriteGoodsPos.getPages());
+        returnObject.setPageNum( favouriteGoodsPos.getPageNum());
+        returnObject.setPageSize( favouriteGoodsPos.getPageSize());
+        returnObject.setTotal( favouriteGoodsPos.getTotal());
+        return new ReturnObject<>(returnObject);
     }
 
     /**
@@ -41,13 +66,13 @@ public class FavouriteGoodsService {
      * @param skuId
      * @return
      * @Date:  2020/12/6 21:47
-    */
+     */
 
     @Transactional
     public ReturnObject<VoObject> insertFavouriteGoods(Long customerId, Long skuId)
     {
         FavouriteGoods favouriteGoods = new FavouriteGoods();
-        favouriteGoods.setGoodsSpuId(skuId);
+        favouriteGoods.setGoodsSkuId(skuId);
         favouriteGoods.setCustomerId(customerId);
         favouriteGoods.setGmtCreate(LocalDateTime.now());
         ReturnObject<FavouriteGoods> retObj =favouriteGoodsDao.insertFavouriteGoods(favouriteGoods);
@@ -66,7 +91,7 @@ public class FavouriteGoodsService {
      * @param id
      * @return
      * @Date:  2020/12/6 21:47
-    */
+     */
     public ReturnObject<Object> deleteFavouriteGoods(Long id)
     {
         return favouriteGoodsDao.deleteFavouriteGoods(id);

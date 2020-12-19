@@ -3,11 +3,11 @@ spring:
   boot:
     admin:
       client:
-        url: http://localhost:8081
+        url: http://localhost:8089
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/oomall?serverTimezone=GMT%2B8
+    url: jdbc:mysql://127.0.0.1:3306/oomall_other?serverTimezone=GMT%2B8
     username: root
-    password: xzqbjt
+    password: 8883008
     druid:
       stat-view-servlet:
         login-username: admin
@@ -20,7 +20,7 @@ spring:
     # Redis服务器连接端口
     port: 6379
     # Redis服务器连接密码
-    password: 123456
+    #password: 123456
 
   cloud:
     nacos:

@@ -60,8 +60,10 @@ public class Advertisement implements VoObject {
     private Byte state;
 
     private Integer weight;
+
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate beginDate;
+
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate endDate;
 
@@ -73,6 +75,7 @@ public class Advertisement implements VoObject {
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime gmtCreate;
+
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime gmtModified;
 
@@ -136,13 +139,22 @@ public class Advertisement implements VoObject {
         vo.setLink(link);
         vo.setContent(content);
         vo.setImagePath(imageUrl);
-        vo.setState(state);
-        vo.setState(state);
-        vo.setWeight(weight);
+        vo.setState(state.intValue());
+        vo.setWeight(weight.toString());
         vo.setBeginDate(beginDate);
         vo.setEndDate(endDate);
-        vo.setRepeat(repeats);
-        vo.setBeDefault(beDefault);
+        if(repeats.intValue()==1) {
+            vo.setRepeat(true);
+        }
+        else{
+            vo.setRepeat(false);
+        }
+        if(beDefault.intValue()==1) {
+            vo.setBeDefault(true);
+        }
+        else{
+            vo.setBeDefault(false);
+        }
         vo.setGmtCreate(gmtCreate);
         vo.setGmtModified(gmtModified);
 

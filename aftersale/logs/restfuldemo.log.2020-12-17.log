@@ -1,0 +1,30 @@
+2020-12-17 21:21:52.589 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-17 21:22:19.587 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 38.081 seconds (JVM running for 40.672)
+2020-12-17 21:22:20.083 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE3MjEyMjIwMDVGIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgyMTE0NDAsInVzZXJJZCI6MSwiaWF0IjoxNjA4MjExMzQwfQ.s_mGuW7Jm2skE9s-4pzF1VgWHmBcQxuYLtOS2oiKyHc
+2020-12-17 21:23:44.665 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-17 21:24:12.178 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 38.86 seconds (JVM running for 41.456)
+2020-12-17 21:24:12.746 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE3MjEyNDEyN05OIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgyMTE1NTIsInVzZXJJZCI6MSwiaWF0IjoxNjA4MjExNDUyfQ.RPPLQVLJ1jET-QrCQFr6DwhtFgT9Yx-5AGbNRdy1zBg
+2020-12-17 21:24:12.915 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - null
+2020-12-17 21:28:14.362 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-17 21:28:39.486 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 36.709 seconds (JVM running for 39.121)
+2020-12-17 21:28:40.056 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE3MjEyODQwMFpVIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgyMTE4MjAsInVzZXJJZCI6MSwiaWF0IjoxNjA4MjExNzIwfQ.BqZwpXb9_hji3fqz0v04mfGdksXTZe0fbVt3DxLBS8c
+2020-12-17 21:28:40.261 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - null
+2020-12-17 21:29:36.918 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-17 21:30:01.623 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 36.489 seconds (JVM running for 38.934)
+2020-12-17 21:30:02.106 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE3MjEzMDAyMFU4IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgyMTE5MDIsInVzZXJJZCI6MSwiaWF0IjoxNjA4MjExODAyfQ.qTFxY7zo1dnqAE7bmNXfiiM0wMGw1Gixk3PXC1BTw90
+2020-12-17 21:30:02.332 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 4
+2020-12-17 21:30:02.333 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - createAftersale: id = 1 vo = CreateAftersaleVo(type=0, quantity=1, reason=test, regionId=1, detail=test, consignee=江, mobile=15206067798)
+2020-12-17 21:30:02.333 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-17 21:30:02.333 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-17 21:30:02.343 [main] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 2
+2020-12-17 21:32:28.891 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-17 21:32:54.957 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 37.59 seconds (JVM running for 40.543)
+2020-12-17 21:32:55.700 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE3MjEzMjU1NklGIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgyMTIwNzUsInVzZXJJZCI6MSwiaWF0IjoxNjA4MjExOTc1fQ.-3b5VDNj0z0blFM7rJcQcKVHSCMaqpZztGSOd30rH0U
+2020-12-17 21:32:55.967 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - createAftersale: id = 1 vo = CreateAftersaleVo(type=0, quantity=1, reason=test, regionId=1, detail=test, consignee=江, mobile=15206067798)
+2020-12-17 21:35:00.476 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - The following profiles are active: dev
+2020-12-17 21:35:26.288 [main] INFO  c.e.x.aftersale.controller.AftersaleControllerTest - Started AftersaleControllerTest in 38.062 seconds (JVM running for 40.645)
+2020-12-17 21:35:27.058 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE3MjEzNTI3ME1MIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgyMTIyMjcsInVzZXJJZCI6MSwiaWF0IjoxNjA4MjEyMTI3fQ.4N8UdPDZ5Bx8JLYojZfyTSKyxMvOg7WeuC__biOQTbo
+2020-12-17 21:35:27.375 [main] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - createAftersale: id = 39403 vo = CreateAftersaleVo(type=0, quantity=1, reason=test, regionId=1, detail=test, consignee=江, mobile=15206067798)
+2020-12-17 21:35:27.727 [main] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 1
+2020-12-17 21:35:28.545 [main] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 新建售后单成功
+2020-12-17 21:35:28.575 [main] DEBUG c.e.x.aftersale.controller.AftersaleControllerTest - {"errno":0,"data":{"id":111,"orderId":68050,"orderSn":"2020022038350","orderItemId":39403,"skuId":680,"skuName":null,"customerId":1,"shopId":null,"serviceSn":"2020121721352775V","type":"换货","reason":"test","conclusion":null,"refund":null,"quantity":1,"regionId":1,"detail":"test","consignee":"江","mobile":"15206067798","customerLogSn":null,"shopLogSn":null,"state":0},"errmsg":"成功"}

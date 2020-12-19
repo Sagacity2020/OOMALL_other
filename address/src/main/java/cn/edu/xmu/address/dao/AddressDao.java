@@ -33,6 +33,8 @@ public class AddressDao {
     @Autowired
     private AddressPoMapper addressPoMapper;
 
+
+
     /**
      * author zrh
      * Created at 11/31 23:52
@@ -67,30 +69,33 @@ public class AddressDao {
             logger.error("地址簿达到上限");
             returnObject= new ReturnObject(ResponseCode.ADDRESS_OUTLIMIT,String.format("地址簿达到上限"));
         }
-        else {
-            try{
-                int ret= addressPoMapper.insertSelective(addressPo);
-                if(ret==0)
-                {
-                    logger.debug("insertAddress: insert address fail "+addressPo.toString());
-                    returnObject= new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("新增失败："+addressPo.getCustomerId()));
-                }
-                else {
-                    logger.debug("insertAddree: insert address="+addressPo.toString());
-                    returnObject= new ReturnObject(address);
-                }
-            }
-            catch (DataAccessException e) {
+        if(retObj==null){
+            addressPo.setBeDefault((byte)1);
+        }
 
-                    logger.debug("other sql exception : " + e.getMessage());
-                    returnObject= new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
+        try{
+            int ret= addressPoMapper.insertSelective(addressPo);
+            if(ret==0)
+            {
+                logger.debug("insertAddress: insert address fail "+addressPo.toString());
+                returnObject= new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("新增失败："+addressPo.getCustomerId()));
             }
-            catch (Exception e) {
-                // 其他Exception错误
-                logger.error("other exception : " + e.getMessage());
-                returnObject= new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
+            else {
+                logger.debug("insertAddree: insert address="+addressPo.toString());
+                returnObject= new ReturnObject(address);
             }
         }
+        catch (DataAccessException e) {
+
+            logger.debug("other sql exception : " + e.getMessage());
+            returnObject= new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
+        }
+        catch (Exception e) {
+            // 其他Exception错误
+            logger.error("other exception : " + e.getMessage());
+            returnObject= new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
+        }
+
         return returnObject;
 
 
@@ -138,41 +143,53 @@ public class AddressDao {
     /**
      * @Created at 12/2 14:04
      * @author zrh
-     * @param id
+     * @param userId
      * @return
      */
-    public ReturnObject cancelDefaultAddress(Long userId,Long id) {
-        AddressPo po = addressPoMapper.selectByPrimaryKey(id);
-        if (po == null) {
-            logger.debug("不存在 address id:" + id);
-            return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST);
-        } else if (!po.getCustomerId().equals(userId)){
-            logger.debug("用户id不拥有该地址id");
-            return  new ReturnObject(ResponseCode.RESOURCE_ID_OUTSCOPE);
-        }else {
-            po.setBeDefault((byte) 1);
-        }
-
-        ReturnObject returnObject;
-        int ret;
+    public ReturnObject cancelDefaultAddress(Long userId) {
+        AddressPoExample example=new AddressPoExample();
+        AddressPoExample.Criteria criteria=example.createCriteria();
+        criteria.andBeDefaultEqualTo((byte)1);
+        criteria.andCustomerIdEqualTo(userId);
+        List<AddressPo> addressPos=null;
         try {
-            ret = addressPoMapper.updateByPrimaryKeySelective(po);
-            if (ret == 0) {
-                logger.info("地址不存在或已被删除，id =" + id);
-                returnObject = new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST);
-
-            } else {
-                logger.info("地址 id =" + id + "的默认地址被设为普通地址");
-                returnObject = new ReturnObject(ResponseCode.OK);
+            addressPos=addressPoMapper.selectByExample(example);
+            if(addressPos==null){
+                return new ReturnObject(true);
             }
-        } catch (DataAccessException e) {
-            logger.error("数据库错误： " + e.getMessage());
-            returnObject = new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
-        } catch (Exception e) {
-            logger.error("严重错误： " + e.getMessage());
-            returnObject = new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生未知错误： %s", e.getMessage()));
+        }catch (DataAccessException e) {
+
+            logger.debug("other sql exception : " + e.getMessage());
+            return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
         }
-        return returnObject;
+        catch (Exception e) {
+            // 其他Exception错误
+            logger.error("other exception : " + e.getMessage());
+            return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
+        }
+        for(int i=0;i<addressPos.size();i++){
+            addressPos.get(i).setBeDefault((byte)0);
+            try{
+                int ret = addressPoMapper.updateByPrimaryKeySelective(addressPos.get(i));
+                if(ret==0){
+                    return new ReturnObject(false);
+                }
+
+            }catch (DataAccessException e) {
+
+                logger.debug("other sql exception : " + e.getMessage());
+                return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
+            }
+            catch (Exception e) {
+                // 其他Exception错误
+                logger.error("other exception : " + e.getMessage());
+                return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
+            }
+        }
+        return new ReturnObject(true);
+
+
+
     }
 
     /**
@@ -182,32 +199,48 @@ public class AddressDao {
      * @return
      */
     public ReturnObject updateAddressInfo(Address address) {
-         AddressPo addressPo = address.getAddressPo();
-         ReturnObject returnObject=null;
-         AddressPoExample addressPoExample=new AddressPoExample();
-         AddressPoExample.Criteria criteria= addressPoExample.createCriteria();
-         criteria.andIdEqualTo(address.getId());
-         criteria.andCustomerIdEqualTo(address.getCustomer_id());
-         try{
-             int ret =addressPoMapper.updateByExampleSelective(addressPo,addressPoExample);
-             if(ret == 0){
-                 logger.debug("updateAddress: update address fail: "+addressPo.toString());
-                 returnObject=new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("地址id不存在："+address.getId()));
+        AddressPo po=null;
+        try{
+            po=addressPoMapper.selectByPrimaryKey(address.getId());
+            if(po==null){
+                return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST);
+            }else if (!po.getCustomerId().equals(address.getCustomer_id())){
+                return new ReturnObject(ResponseCode.RESOURCE_ID_OUTSCOPE);
+            }
+        }catch (DataAccessException e){
+            logger.debug("sql exception : "+e.getMessage());
+            return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误, %s",e.getMessage()));
 
-             }
-             else {
-                 logger.debug("update address = "+addressPo.toString());
-                 returnObject =new ReturnObject(ResponseCode.OK);
-             }
-         }catch (DataAccessException e){
-             logger.debug("sql exception : "+e.getMessage());
-             returnObject =new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误, %s",e.getMessage()));
+        }catch (Exception e){
+            logger.error("other exception : "+e.getMessage());
+            return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("其他错误：%s",e.getMessage()));
+        }
+        AddressPo addressPo = address.getAddressPo();
+        ReturnObject returnObject=null;
+        AddressPoExample addressPoExample=new AddressPoExample();
+        AddressPoExample.Criteria criteria= addressPoExample.createCriteria();
+        criteria.andIdEqualTo(address.getId());
+        criteria.andCustomerIdEqualTo(address.getCustomer_id());
+        try{
+            int ret =addressPoMapper.updateByExampleSelective(addressPo,addressPoExample);
+            if(ret == 0){
+                logger.debug("updateAddress: update address fail: "+addressPo.toString());
+                returnObject=new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("地址id不存在："+address.getId()));
 
-         }catch (Exception e){
-             logger.error("other exception : "+e.getMessage());
-             returnObject =new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("其他错误：%s",e.getMessage()));
-         }
-         return returnObject;
+            }
+            else {
+                logger.debug("update address = "+addressPo.toString());
+                returnObject =new ReturnObject(ResponseCode.OK);
+            }
+        }catch (DataAccessException e){
+            logger.debug("sql exception : "+e.getMessage());
+            returnObject =new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误, %s",e.getMessage()));
+
+        }catch (Exception e){
+            logger.error("other exception : "+e.getMessage());
+            returnObject =new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("其他错误：%s",e.getMessage()));
+        }
+        return returnObject;
     }
 
     /**
@@ -217,31 +250,80 @@ public class AddressDao {
      * @return
      */
     public ReturnObject deleteAddress(Long id) {
-            ReturnObject returnObject=null;
-            try{
-                int ret=addressPoMapper.deleteByPrimaryKey(id);
-                if(ret==0)
-                {
-                    logger.debug("delete address :id is not exist ="+id);
-                    returnObject= new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("地址id不存在："+id));
 
-                }
-                else {
-                    logger.debug("delete address id= " + id);
-                    returnObject = new ReturnObject(ResponseCode.OK);
-                }
-            }
-            catch (DataAccessException e){
-                logger.error("delete Address DataAccessException:"+e.getMessage());
-                returnObject = new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误："+e.getMessage()));
-
-            }
-            catch (Exception e)
+        try{
+            int ret=addressPoMapper.deleteByPrimaryKey(id);
+            if(ret==0)
             {
-                logger.error("other exception:"+e.getMessage());
-                returnObject=new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("其他错误："+e.getMessage()));
-            }
-            return  returnObject;
+                logger.debug("delete address :id is not exist ="+id);
+                return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("地址id不存在："+id));
 
+            }
+            else {
+                logger.debug("delete address id= " + id);
+                return new ReturnObject(ResponseCode.OK);
+            }
+        }
+        catch (DataAccessException e){
+            logger.error("delete Address DataAccessException:"+e.getMessage());
+            return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误："+e.getMessage()));
+
+        }
+        catch (Exception e)
+        {
+            logger.error("other exception:"+e.getMessage());
+            return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("其他错误："+e.getMessage()));
+        }
+
+
+    }
+
+
+    /**
+     * @Created at 12/16 23:30
+     * @author zrh
+     * @param userId
+     * @param id
+     * @return
+     */
+    public ReturnObject setDefaultAddress(Long userId, Long id) {
+        AddressPo po=null;
+        try{
+            po=addressPoMapper.selectByPrimaryKey(id);
+            if(po==null){
+                return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST);
+
+            }
+            if(!userId.equals(po.getCustomerId())){
+                return new ReturnObject(ResponseCode.RESOURCE_ID_OUTSCOPE);
+            }
+        }catch (DataAccessException e){
+            logger.error("delete Address DataAccessException:"+e.getMessage());
+            return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误："+e.getMessage()));
+
+        }
+        catch (Exception e)
+        {
+            logger.error("other exception:"+e.getMessage());
+            return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("其他错误："+e.getMessage()));
+        }
+        po.setBeDefault((byte)1);
+        try {
+            int ret=addressPoMapper.updateByPrimaryKeySelective(po);
+            if(ret==0){
+                return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST);
+            }
+
+        }catch (DataAccessException e){
+            logger.error("delete Address DataAccessException:"+e.getMessage());
+            return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误："+e.getMessage()));
+
+        }
+        catch (Exception e)
+        {
+            logger.error("other exception:"+e.getMessage());
+            return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("其他错误："+e.getMessage()));
+        }
+        return new ReturnObject(ResponseCode.OK);
     }
 }

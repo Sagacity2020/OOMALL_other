@@ -11,3 +11,4 @@ cn\edu\xmu\other\service\IAddressService.class
 cn\edu\xmu\goods\service\GoodsServiceInterface.class
 cn\edu\xmu\other\service\TimeServiceInterface.class
 cn\edu\xmu\goods\dto\CouponActivity.class
+cn\edu\xmu\other\service\FootprintServiceInterface.class

@@ -42,7 +42,7 @@ public class CartDao {
         catch (Exception e) {
             // 其他Exception错误
             logger.error("other exception : " + e.getMessage());
-           return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
         }
         List<Cart> carts=null;
         for(ShoppingCartPo po:shoppingCartPos){
