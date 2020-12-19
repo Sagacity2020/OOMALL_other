@@ -433,8 +433,8 @@ public class ShareActivityDao {
 //            if(po.getState() != null && po.getState() == (byte) 1)
 //                return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST,"该分享活动已经上线");
             //查询是否有冲突的分享活动
-//            if(isConflict(po))
-//                return new ReturnObject<>(ResponseCode.SHAREACT_CONFLICT,"分享活动时段冲突");
+            if(isConflict(po))
+                return new ReturnObject<>(ResponseCode.SHAREACT_CONFLICT,"分享活动时段冲突");
             po.setState((byte) 1);
             po.setGmtModified(LocalDateTime.now());
             int flag = shareActivityPoMapper.updateByPrimaryKeySelective(po);
@@ -542,33 +542,33 @@ public class ShareActivityDao {
      *
      * @return 分享活动Id
      */
-    public Long getShareActivity1(int flag, Long shopId, Long goodId)
-    {
-        ShareActivityPoExample example = new ShareActivityPoExample();
-        ShareActivityPoExample.Criteria criteria = example.createCriteria();
-        if(flag != 2) //不是查商铺默认分享活动
-            criteria.andGoodsSkuIdEqualTo(goodId);
-        else
-            criteria.andGoodsSkuIdEqualTo(0L);
-        //criteria.andBeginTimeLessThanOrEqualTo(LocalDateTime.now());
-        //criteria.andEndTimeGreaterThanOrEqualTo(LocalDateTime.now());
-        criteria.andStateEqualTo((byte) 1);
-        if(flag == 1)
-            criteria.andShopIdNotEqualTo(0L);
-        else if(flag == 2)
-            criteria.andShopIdEqualTo(shopId);
-        else
-            criteria.andShopIdEqualTo(0L);
-        List<ShareActivityPo> retShareActivityPos = null;
-
-        retShareActivityPos = shareActivityPoMapper.selectByExample(example);
-        if(retShareActivityPos != null && !retShareActivityPos.isEmpty())
-        {
-            return retShareActivityPos.get(0).getId();
-        }
-        else
-            return 0L;
-    }
+//    public Long getShareActivity1(int flag, Long shopId, Long goodId)
+//    {
+//        ShareActivityPoExample example = new ShareActivityPoExample();
+//        ShareActivityPoExample.Criteria criteria = example.createCriteria();
+//        if(flag != 2) //不是查商铺默认分享活动
+//            criteria.andGoodsSkuIdEqualTo(goodId);
+//        else
+//            criteria.andGoodsSkuIdEqualTo(0L);
+//        //criteria.andBeginTimeLessThanOrEqualTo(LocalDateTime.now());
+//        //criteria.andEndTimeGreaterThanOrEqualTo(LocalDateTime.now());
+//        criteria.andStateEqualTo((byte) 1);
+//        if(flag == 1)
+//            criteria.andShopIdNotEqualTo(0L);
+//        else if(flag == 2)
+//            criteria.andShopIdEqualTo(shopId);
+//        else
+//            criteria.andShopIdEqualTo(0L);
+//        List<ShareActivityPo> retShareActivityPos = null;
+//
+//        retShareActivityPos = shareActivityPoMapper.selectByExample(example);
+//        if(retShareActivityPos != null && !retShareActivityPos.isEmpty())
+//        {
+//            return retShareActivityPos.get(0).getId();
+//        }
+//        else
+//            return 0L;
+//    }
 
     /**
     * 初始化、将分享活动全部放入Redis

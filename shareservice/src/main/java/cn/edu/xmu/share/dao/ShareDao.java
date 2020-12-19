@@ -1,15 +1,14 @@
 package cn.edu.xmu.share.dao;
 
+import cn.edu.xmu.goods.dto.GoodsSkuDTO;
 import cn.edu.xmu.ooad.model.VoObject;
 import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
 
 import cn.edu.xmu.share.mapper.SharePoMapper;
 import cn.edu.xmu.share.model.bo.Share;
-import cn.edu.xmu.share.model.po.BeSharePo;
 import cn.edu.xmu.share.model.po.SharePo;
 import cn.edu.xmu.share.model.po.SharePoExample;
-import cn.edu.xmu.share.model.vo.GoodSkuVo;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
@@ -29,12 +28,12 @@ public class ShareDao {
 
     private static final Logger logger = LoggerFactory.getLogger(ShareDao.class);
 
-    public SharePo getShare(Long sharerId, Long goodsSpuId)
+    public SharePo getShare(Long sharerId, Long goodsSkuId)
     {
         SharePoExample example = new SharePoExample();
         SharePoExample.Criteria criteria = example.createCriteria();
         criteria.andSharerIdEqualTo(sharerId);
-        criteria.andGoodsSkuIdEqualTo(goodsSpuId);
+        criteria.andGoodsSkuIdEqualTo(goodsSkuId);
         try{
             List<SharePo> sharePoList = sharePoMapper.selectByExample(example);
             return sharePoList.get(0);
@@ -119,8 +118,8 @@ public class ShareDao {
         PageInfo<Share> sharePage = PageInfo.of(ret);
         sharePage.setPages(sharePoPage.getPages());
         sharePage.setTotal(sharePoPage.getTotal());
-        sharePage.setPageNum(pageNum);
-        sharePage.setPageSize(pageSize);
+        sharePage.setPageNum(sharePoPage.getPageNum());
+        sharePage.setPageSize(sharePoPage.getPageSize());
 
         return sharePage;
     }
@@ -156,8 +155,8 @@ public class ShareDao {
         PageInfo<Share> sharePage = PageInfo.of(ret);
         sharePage.setPages(sharePoPage.getPages());
         sharePage.setTotal(sharePoPage.getTotal());
-        sharePage.setPageNum(pageNum);
-        sharePage.setPageSize(pageSize);
+        sharePage.setPageNum(sharePoPage.getPageNum());
+        sharePage.setPageSize(sharePoPage.getPageSize());
 
         return sharePage;
     }
@@ -173,7 +172,7 @@ public class ShareDao {
      * @return ReturnObject<> 新建的分享
      */
     //新建分享
-    public ReturnObject<VoObject> createShare(Long sharerId, Long skuId, Long shareActivityId, GoodSkuVo vo)
+    public ReturnObject<VoObject> createShare(Long sharerId, Long skuId, Long shareActivityId, GoodsSkuDTO vo)
     {
         SharePoExample example = new SharePoExample();
         SharePoExample.Criteria criteria = example.createCriteria();

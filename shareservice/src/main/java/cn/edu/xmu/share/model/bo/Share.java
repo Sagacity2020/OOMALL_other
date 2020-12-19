@@ -1,9 +1,9 @@
 package cn.edu.xmu.share.model.bo;
 
+import cn.edu.xmu.goods.dto.GoodsSkuDTO;
 import cn.edu.xmu.ooad.model.VoObject;
 
 import cn.edu.xmu.share.model.po.SharePo;
-import cn.edu.xmu.share.model.vo.GoodSkuVo;
 import cn.edu.xmu.share.model.vo.ShareRetVo;
 import lombok.Data;
 
@@ -14,7 +14,7 @@ public class Share implements VoObject{
     private Long id;
     private Long sharerId;
     private Long goodsSkuId;
-    private GoodSkuVo goodSkuVo = new GoodSkuVo();
+        private GoodsSkuDTO goodSkuVo = new GoodsSkuDTO();
     private Integer quantity;
     private LocalDateTime gmtCreate;
     private LocalDateTime gmtModified;

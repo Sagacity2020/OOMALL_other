@@ -1,9 +1,9 @@
 package cn.edu.xmu.share.model.bo;
 
+import cn.edu.xmu.goods.dto.GoodsSkuDTO;
 import cn.edu.xmu.ooad.model.VoObject;
 import cn.edu.xmu.share.model.po.BeSharePo;
 import cn.edu.xmu.share.model.vo.BeShareRetVo;
-import cn.edu.xmu.share.model.vo.GoodSkuVo;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 public class BeShare implements VoObject {
     private Long id;
     private Long goodsSkuId;
-    private GoodSkuVo goodSkuVo = new GoodSkuVo();
+    private GoodsSkuDTO goodSkuVo = new GoodsSkuDTO();
     private Long sharerId;
     private Long shareId;
     private Long customerId;
