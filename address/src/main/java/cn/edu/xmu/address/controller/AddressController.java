@@ -3,6 +3,7 @@ package cn.edu.xmu.address.controller;
 import cn.edu.xmu.address.model.bo.Address;
 import cn.edu.xmu.address.model.bo.Region;
 import cn.edu.xmu.address.model.vo.AddressVo;
+import cn.edu.xmu.address.model.vo.RegionRetVo;
 import cn.edu.xmu.address.model.vo.RegionVo;
 import cn.edu.xmu.address.service.AddressService;
 import cn.edu.xmu.address.service.RegionService;
@@ -27,6 +28,8 @@ import springfox.documentation.annotations.ApiIgnore;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.stream.events.Comment;
 import java.time.LocalDateTime;
+import java.util.ConcurrentModificationException;
+import java.util.List;
 
 
 @Api(value="地址", tags = "Address")
@@ -75,6 +78,11 @@ public class AddressController {
             logger.debug("validate fail");
             return returnObject;
         }
+        if(vo.getConsignee()==null||vo.getDetail()==null||vo.getMobile()==null||vo.getRegionId()==null){
+            httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+            logger.debug("某一个字段为空");
+            return Common.getRetObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID));
+        }
         Address address = vo.createAddress();
         address.setCustomer_id(userId);
         address.setGmtCreate(LocalDateTime.now());
@@ -107,8 +115,8 @@ public class AddressController {
     @Audit
     @GetMapping("/addresses")
     public Object seleteAllAddress(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId,
-        @RequestParam(required = true, defaultValue = "1") Integer page,
-    @RequestParam(required = true,defaultValue = "10") Integer pageSize){
+                                   @RequestParam(required = true, defaultValue = "1") Integer page,
+                                   @RequestParam(required = true,defaultValue = "10") Integer pageSize){
         logger.debug("seleteAllAddress: page= "+page+"  pageSize = "+pageSize);
         ReturnObject<PageInfo<VoObject>> returnObject= addressService.selectAllAddreses(userId,page,pageSize);
         return Common.getPageRetObject(returnObject);
@@ -223,7 +231,11 @@ public class AddressController {
     public Object queryParentRegion(@PathVariable Long id){
         logger.debug("query region id ="+id);
         ReturnObject returnObject=regionService.queryPreRegion(id);
-        return Common.decorateReturnObject(returnObject);
+        if(returnObject.getData()==null){
+            ReturnObject<List> returnObject1=returnObject;
+            return Common.getListRetObject(returnObject1);
+        }
+        return Common.getListRetObject(returnObject);
 
     }
 
@@ -239,6 +251,7 @@ public class AddressController {
     @ApiOperation(value = "增加子地区")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "authorization",value = "Token",required = true,paramType = "header",dataType = "String"),
+            @ApiImplicitParam(name = "did",value = "商店id",required = true,paramType = "path",dataType = "Integer"),
             @ApiImplicitParam(name = "id",value = "地区id",required = true,dataType = "Integer",paramType = "path"),
             @ApiImplicitParam(name = "vo",value = "新建地区信息",required = true,dataType = "RegionVo",paramType = "body")
     })
@@ -248,23 +261,33 @@ public class AddressController {
     })
     @Audit
     @PostMapping("/shops/{did}/regions/{id}/subregions")
-    public Object newSubRegion(@Depart @ApiIgnore @RequestParam(required = false)Long departId,  @PathVariable Long id, @Validated @RequestBody RegionVo vo, BindingResult bindingResult){
-//            if(departId.equals(-2L))
-//            {
-//                return Common.decorateReturnObject(new ReturnObject(ResponseCode.FIELD_NOTVALID,String.format("无权限增加地区")));
-//            }
-            Object returnObject = Common.processFieldErrors(bindingResult,httpServletResponse);
-            if(null!=returnObject){
-                return  returnObject;
-            }
-            logger.debug("userId= "+id+"shopid="+departId);
-            logger.debug("新建地区id："+id);
-            Region region=new Region(vo);
-            region.setPid(id);
-            region.setGmtCreate(LocalDateTime.now());
-            region.setState((byte) 1);
-            ReturnObject retObject = regionService.newSubRegion(region);
-            return Common.decorateReturnObject(retObject);
+    public Object newSubRegion(@Depart @ApiIgnore @RequestParam(required = false)Long departId, @PathVariable Long did,
+                               @PathVariable Long id, @Validated @RequestBody RegionVo vo, BindingResult bindingResult){
+
+        logger.debug("departId = "+departId+" did="+did);
+
+        Object returnObject = Common.processFieldErrors(bindingResult,httpServletResponse);
+        if(null!=returnObject){
+            return  returnObject;
+        }
+
+        if(vo.getName()==""||vo.getPostalCode()==null){
+            httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+            return Common.decorateReturnObject(new ReturnObject(ResponseCode.FIELD_NOTVALID));
+        }
+        //logger.debug("userId= "+id+"shopid="+did);
+        logger.debug("新建地区id："+id);
+        if(id<=0){
+            return Common.decorateReturnObject(new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST));
+        }
+        ReturnObject retObject = regionService.newSubRegion(id,vo);
+        if(retObject.getCode()==ResponseCode.OK){
+            httpServletResponse.setStatus(HttpStatus.CREATED.value());
+
+        }else{
+            httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+        }
+        return Common.decorateReturnObject(retObject);
 
 
     }
@@ -282,6 +305,7 @@ public class AddressController {
     @ApiOperation(value = "修改地区")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "authorization",value = "Tokem",required = true,paramType = "header",dataType = "String"),
+            @ApiImplicitParam(name = "did",value = "商店id",required = true,paramType = "path",dataType = "Integer"),
             @ApiImplicitParam(name = "id",value = "地区id",required = true,dataType = "Integer",paramType = "path"),
             @ApiImplicitParam(name="vo",value = "修改地区信息",required = true,dataType = "RegionVo",paramType = "body")
 
@@ -292,7 +316,9 @@ public class AddressController {
     })
     @Audit
     @PutMapping("/shops/{did}/regions/{id}")
-    public Object changeRegion(@Depart @ApiIgnore @RequestParam(required = false)Long departId, @PathVariable Long id, @Validated @RequestBody RegionVo vo,BindingResult bindingResult){
+    public Object changeRegion(@Depart @ApiIgnore @RequestParam(required = false)Long departId, @PathVariable Long id,@PathVariable Long did,
+                               @Validated @RequestBody RegionVo vo,BindingResult bindingResult){
+
         Object returnObject=Common.processFieldErrors(bindingResult,httpServletResponse);
         if(returnObject!=null) {
             return returnObject;
@@ -303,6 +329,9 @@ public class AddressController {
         region.setId(id);
         region.setPostalCode(vo.getPostalCode());
         ReturnObject returnObject1=regionService.updateRegion(region);
+        if(returnObject1.getCode()!=ResponseCode.OK){
+            httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+        }
         return  Common.decorateReturnObject(returnObject1);
 
     }
@@ -316,7 +345,8 @@ public class AddressController {
      */
     @ApiOperation(value = "管理员让地区无效")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "authorization",value = "Tokem",required = true,paramType = "header",dataType = "String"),
+            @ApiImplicitParam(name = "authorization",value = "Token",required = true,paramType = "header",dataType = "String"),
+            @ApiImplicitParam(name = "did",value = "商店id",required = true,paramType = "path",dataType = "Integer"),
             @ApiImplicitParam(name = "id",value = "地区id",required = true,dataType = "Integer",paramType = "path")
     })
     @ApiResponses({
@@ -325,11 +355,11 @@ public class AddressController {
     })
     @Audit
     @DeleteMapping("/shops/{did}/regions/{id}")
-    public Object deleteRegion(@Depart @ApiIgnore @RequestParam(required = false) Long departId,@PathVariable Long id){
-            logger.debug("delete region id  = "+id);
+    public Object deleteRegion(@Depart @ApiIgnore @RequestParam(required = false) Long departId,@PathVariable Long did,@PathVariable Long id){
+        logger.debug("delete region id  = "+id);
 
-            ReturnObject returnObject=regionService.deleteRegion(id);
-            return Common.decorateReturnObject(returnObject);
+        ReturnObject returnObject=regionService.deleteRegion(id);
+        return Common.decorateReturnObject(returnObject);
     }
 
 

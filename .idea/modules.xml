@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/OOMALL12-19.iml" filepath="$PROJECT_DIR$/.idea/OOMALL12-19.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/OOMALL_zrh.iml" filepath="$PROJECT_DIR$/.idea/OOMALL_zrh.iml" />
       <module fileurl="file://$PROJECT_DIR$/address/address.iml" filepath="$PROJECT_DIR$/address/address.iml" />
       <module fileurl="file://$PROJECT_DIR$/advertisement/advertisement.iml" filepath="$PROJECT_DIR$/advertisement/advertisement.iml" />
       <module fileurl="file://$PROJECT_DIR$/aftersale/aftersale.iml" filepath="$PROJECT_DIR$/aftersale/aftersale.iml" />
