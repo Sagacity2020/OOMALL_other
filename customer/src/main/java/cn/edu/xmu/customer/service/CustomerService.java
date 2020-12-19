@@ -64,6 +64,9 @@ public class CustomerService {
             return retObj;
         }
         Customer customer=(Customer) retObj.getData();
+        if(customer==null){
+            return new ReturnObject<>(ResponseCode.AUTH_INVALID_ACCOUNT);
+        }
         int state=Customer.State.NORM.getCode();
         if(customer.getState()!=(byte)state){
             retObj = new ReturnObject<>(ResponseCode.AUTH_USER_FORBIDDEN);
@@ -73,7 +76,7 @@ public class CustomerService {
             retObj = new ReturnObject<>(ResponseCode.AUTH_ID_NOTEXIST);
             return retObj;
         }
-        if(customer == null || !password.equals(customer.getPassword())){
+        if(!password.equals(customer.getPassword())){
             retObj = new ReturnObject<>(ResponseCode.AUTH_INVALID_ACCOUNT);
             return retObj;
         }

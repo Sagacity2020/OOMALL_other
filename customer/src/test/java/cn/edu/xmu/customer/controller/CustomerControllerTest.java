@@ -55,7 +55,7 @@ public class CustomerControllerTest {
 注册新用户（正常）
  */
     @Test
-    public void reigsterTest1()throws Exception{
+    public void registerTest1()throws Exception{
       String requireJson="{\n" +
               "  \"mobile\": \"13950004260\",\n" +
               "  \"email\": \"1309339909@qq.com\",\n" +
@@ -262,7 +262,7 @@ public class CustomerControllerTest {
                 .content(requireJson)).andExpect(status().isBadRequest())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andReturn().getResponse().getContentAsString();
-        String expectedResponse="{\"errno\":503,\"errmsg\":\"手机号格式不正确;手机号不能为空;\"}";
+        String expectedResponse="{\"errno\":503,\"errmsg\":\"手机号不能为空;手机号格式不正确;\"}";
         JSONAssert.assertEquals(expectedResponse,responseString,false);
     }
 
@@ -384,10 +384,10 @@ public class CustomerControllerTest {
     public void banCustomerTest4()throws Exception{
         String token = creatTestToken(1L, -2L, 100);
         String responseString=this.mvc.perform(put("/user/shops/0/users/2/ban").header("authorization", token))
-                .andExpect(status().isOk())
+                .andExpect(status().isForbidden())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
-                .andExpect(jsonPath("$.errno").value(ResponseCode.AUTH_NOT_ALLOW.getCode()))
-                .andExpect(jsonPath("$.errmsg").value("没有权限"))
+                .andExpect(jsonPath("$.errno").value(ResponseCode.FIELD_NOTVALID.getCode()))
+                .andExpect(jsonPath("$.errmsg").value("departId不匹配"))
                 .andReturn().getResponse().getContentAsString();
     }
     /*
@@ -437,15 +437,29 @@ public class CustomerControllerTest {
      * @throws Exception
      */
     @Test
-    public void loginTest()throws Exception{
+    public void loginTest1()throws Exception{
+        String requireJson1="{\n" +
+                "  \"mobile\": \"13999614260\",\n" +
+                "  \"email\": \"xskxskxsk@qq.com\",\n" +
+                "  \"userName\": \"test\",\n" +
+                "  \"password\": \"000105\",\n" +
+                "  \"realName\": \"xsk\",\n" +
+                "  \"gender\": 0,\n" +
+                "  \"birthday\": \"2000-01-05\"\n" +
+                "}";
+        String responseString1=this.mvc.perform(post("/user/users")
+                .contentType("application/json;charset=UTF-8")
+                .content(requireJson1)).andExpect(status().isCreated())
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andReturn().getResponse().getContentAsString();
         LoginVo loginVo=new LoginVo();
-        loginVo.setUserName("xskxsk");
+        loginVo.setUserName("test");
         loginVo.setPassword("000105");
         String requireJson = JacksonUtil.toJson(loginVo);
         String responseString=this.mvc.perform(post("/user/users/login")
                          .contentType("application/json;charset=UTF-8")
-                         .content(requireJson)).andExpect(status().isOk())
-                         .andExpect(status().isOk())
+                         .content(requireJson))
+                         .andExpect(status().isCreated())
                          .andExpect(content().contentType("application/json;charset=UTF-8"))
                          .andReturn().getResponse().getContentAsString();
         String expectedResponse="{\"errno\":0,\"errmsg\":\"成功\"}";
@@ -458,7 +472,7 @@ public class CustomerControllerTest {
     @Test
     public void loginTest2()throws Exception{
         LoginVo loginVo=new LoginVo();
-        loginVo.setUserName("xskxsk");
+        loginVo.setUserName("test");
         loginVo.setPassword("123456");
         String requireJson = JacksonUtil.toJson(loginVo);
         String responseString=this.mvc.perform(post("/user/users/login")
@@ -511,6 +525,25 @@ public class CustomerControllerTest {
                 .andReturn().getResponse().getContentAsString();
     }
 
+    /**
+     * 登陆（用户不存在）
+     * @throws Exception
+     */
+    @Test
+    public void loginTest5()throws Exception{
+        LoginVo loginVo=new LoginVo();
+        loginVo.setUserName("testxsk");
+        loginVo.setPassword("123456");
+        String requireJson = JacksonUtil.toJson(loginVo);
+        String responseString=this.mvc.perform(post("/user/users/login")
+                .contentType("application/json;charset=UTF-8")
+                .content(requireJson)).andExpect(status().isOk())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.errno").value(ResponseCode.AUTH_INVALID_ACCOUNT.getCode()))
+                .andExpect(jsonPath("$.errmsg").value("用户名不存在或者密码错误"))
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andReturn().getResponse().getContentAsString();
+    }
     /*
     获取用户信息（正常）
      */
