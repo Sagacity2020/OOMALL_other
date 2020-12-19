@@ -1,6 +1,6 @@
-package cn.edu.xmu.order.service;
+package cn.edu.xmu.other.service;
 
-import cn.edu.xmu.order.dto.OrderDTO;
+import cn.edu.xmu.other.dto.OrderDTO;
 
 public interface ShareServiceInterface {
 

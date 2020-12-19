@@ -140,8 +140,8 @@ public class ShareActivityDao {
             PageInfo<VoObject> shareActivityPage = PageInfo.of(ret);
             shareActivityPage.setPages(shareActivityPoPage.getPages());
             shareActivityPage.setTotal(shareActivityPoPage.getTotal());
-            shareActivityPage.setPageNum(pageNum);
-            shareActivityPage.setPageSize(pageSize);
+            shareActivityPage.setPageNum(shareActivityPoPage.getPageNum());
+            shareActivityPage.setPageSize(shareActivityPoPage.getPageSize());
 
             return new ReturnObject<>(shareActivityPage);
         }

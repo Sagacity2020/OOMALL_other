@@ -1,4 +1,4 @@
-package cn.edu.xmu.order.dto;
+package cn.edu.xmu.other.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
