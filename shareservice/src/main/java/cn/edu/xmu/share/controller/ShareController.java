@@ -34,6 +34,7 @@ import java.util.List;
  * @author zxh
  * Modified at 2020/12/1
  **/
+//value = "/share",
 @Api(value = "分享服务", tags = "share")
 @RestController /*Restful的Controller对象*/
 @RequestMapping(value = "/share",produces = "application/json;charset=UTF-8")

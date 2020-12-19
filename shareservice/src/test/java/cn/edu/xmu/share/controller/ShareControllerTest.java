@@ -484,8 +484,8 @@ public class ShareControllerTest {
         //Boolean flag = shareActivityDao.isShared(2L,668L);
 
         ShareActivityVo vo = new ShareActivityVo();
-        vo.setBeginTime("2021-12-10 21:47:19");
-        vo.setEndTime("2021-12-07 23:23:23");
+        vo.setBeginTime("2021-11-30 23:59:00");
+        vo.setEndTime("2021-12-15 23:23:23");
         vo.setStrategy("{\\\"rule\\\" :[{ \\\"num\\\" :0, \\\"rate\\\":1},{ \\\"num\\\" :10, \\\"rate\\\":10}],\\\"firstOrAvg\\\" : 0}\"\n" +
                 "}"
         );
@@ -510,10 +510,10 @@ public class ShareControllerTest {
 //        }
 
         try{
-            responseString = this.mvc.perform(post("/shops/0/skus/501/shareactivities").header("authorization",token)
+            responseString = this.mvc.perform(post("/share/shops/0/skus/501/shareactivities").header("authorization",token)
                     .contentType("application/json;charset=UTF-8")
                     .content(JacksonUtil.toJson(vo)))
-                    //.andExpect(status().)
+                    .andExpect(status().isCreated())
                     .andExpect(content().contentType("application/json;charset=UTF-8"))
                     .andReturn().getResponse().getContentAsString();
         }catch (JSONException e) {
@@ -521,9 +521,16 @@ public class ShareControllerTest {
         }
 
         String expectedResponse ="{\n" +
-                "    \"errno\": 610\n" +
+                "    \"errno\": 0,\n" +
+                "    \"data\": {\n" +
+                "        \"shopId\": 0,\n" +
+                "        \"skuId\": 501,\n" +
+                "        \"beginTime\": \"2021-11-30T23:59\",\n" +
+                "        \"endTime\": \"2021-12-15T23:23:23\",\n" +
+                "        \"state\": 1\n" +
+                "    },\n" +
+                "    \"errmsg\": \"成功\"\n" +
                 "}";
-
 
         JSONAssert.assertEquals(expectedResponse, responseString, false);
     }
