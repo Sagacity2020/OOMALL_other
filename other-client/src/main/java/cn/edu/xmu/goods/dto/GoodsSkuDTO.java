@@ -46,15 +46,4 @@ public class GoodsSkuDTO {
         return disable;
     }
 
-    public GoodsSkuDTO(){
-        id=1L;
-        shopId=1L;
-        name="xsk";
-        skuSn="123456";
-        imgUrl="1/1/1";
-        inventory=12;
-        originalPrice=12;
-        price=23;
-        disable=false;
-    }
 }
