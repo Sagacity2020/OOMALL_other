@@ -19,7 +19,7 @@ public class Advertisement implements VoObject {
      * 广告状态
      */
     public enum State{
-        CHECK(0,"审核"),
+        CHECK(0,"待审核"),
         ONSHELF(4,"上架"),
         OFFSHELF(6,"下架");
 
@@ -149,7 +149,8 @@ public class Advertisement implements VoObject {
         else{
             vo.setRepeat(false);
         }
-        if(beDefault.intValue()==1) {
+
+        if(beDefault!=null && beDefault.intValue()==1) {
             vo.setBeDefault(true);
         }
         else{

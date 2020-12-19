@@ -2,6 +2,7 @@ package cn.edu.xmu.goods.dto;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -9,7 +10,7 @@ import java.time.LocalDateTime;
  * @author zrh
  */
 @Data
-public class CartDTO {
+public class CartDTO implements Serializable {
     private Long id;
     private Long customerId;
     private Long goodsSkuId;

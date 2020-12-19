@@ -66,11 +66,11 @@ public class AftersaleService{
     public ReturnObject<Aftersale> createAftersale(Long id, CreateAftersaleVo vo, Long userId) {
         ReturnObject<Aftersale> returnObject = null;
 
-       OrderAftersaleDTO orderAftersaleDTO=orderServiceInterface.getAftersaleInfo(id);
+        OrderAftersaleDTO orderAftersaleDTO=orderServiceInterface.getAftersaleInfo(id);
 
-       if(orderAftersaleDTO==null){
-           return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
-       }
+        if(orderAftersaleDTO==null){
+            return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
+        }
 //       else if(orderAftersaleDTO.getShopId().equals(-2020L)){
 //           return new ReturnObject<>(ResponseCode.ORDER_STATENOTALLOW);
 //       }
@@ -181,7 +181,7 @@ public class AftersaleService{
 
     /**
      *
-    买家查询某个售后单
+     买家查询某个售后单
      */
     @Transactional
     public ReturnObject<Object> getAftersaleById(Long id){

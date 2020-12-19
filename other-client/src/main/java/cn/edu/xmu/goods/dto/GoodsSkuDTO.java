@@ -2,8 +2,10 @@ package cn.edu.xmu.goods.dto;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class GoodsSkuDTO {
+public class GoodsSkuDTO implements Serializable {
     private Long id;
     private String name;
     private String skuSn;

@@ -6,7 +6,7 @@ import cn.edu.xmu.other.dto.ReasonDTO;
 
 public interface AftersaleServiceInterface {
 
-    Boolean checkIsAftersale(Long orderItemId);
+    Boolean judgeNotBeingAfterSale(Long orderItemId);
 
     AftersaleRefundDTO getAftersaleById(Long aftersaleId);
 
