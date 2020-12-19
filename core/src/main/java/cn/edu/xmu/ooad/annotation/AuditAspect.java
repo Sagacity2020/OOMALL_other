@@ -63,23 +63,29 @@ public class AuditAspect {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         HttpServletResponse response = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getResponse();
         String token = request.getHeader(JwtHelper.LOGIN_TOKEN_KEY);
+        logger.error(token);
         if (token == null){
 //            什么也不做
-//            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-//            return ResponseUtil.fail(ResponseCode.AUTH_NEED_LOGIN);
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            return ResponseUtil.fail(ResponseCode.AUTH_NEED_LOGIN);
         }
 
         JwtHelper.UserAndDepart userAndDepart = new JwtHelper().verifyTokenAndGetClaims(token);
+        if(userAndDepart!=null){
+            logger.error("123"+userAndDepart.toString());
+        }
         Long userId = null;
         Long departId = null;
         if (null != userAndDepart){
             userId = userAndDepart.getUserId();
             departId = userAndDepart.getDepartId();
+            logger.error("userId="+userId+"departId="+departId);
         }
 
-
+        logger.error(request.getPathInfo());
         //检验/shop的api中传入token是否和departId一致
         String pathInfo = userAndDepart == null ? null : request.getPathInfo();
+        logger.error("132"+userAndDepart);
         if(null!=pathInfo)
         {
             logger.debug("getPathInfo = "+ pathInfo);

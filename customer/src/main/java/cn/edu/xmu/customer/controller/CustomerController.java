@@ -206,6 +206,7 @@ public class CustomerController {
             logger.debug("login fail："+jwt.getErrmsg());
             return ResponseUtil.fail(jwt.getCode(), jwt.getErrmsg());
         }else{
+            httpServletResponse.setStatus(HttpStatus.CREATED.value());
             return ResponseUtil.ok(jwt.getData());
         }
     }

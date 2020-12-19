@@ -1,9 +1,11 @@
 package cn.edu.xmu.cart.model.vo;
 
 import cn.edu.xmu.cart.model.bo.Cart;
-import cn.edu.xmu.goods.model.dto.CouponActivity;
+import cn.edu.xmu.goods.dto.CouponActivityDTO;
+
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class CartPage{
     private Long id;
@@ -11,7 +13,7 @@ public class CartPage{
     private String skuName;
     private Integer quantity;
     private Long price;
-    private CouponActivity couponActivity;
+    private List<CouponActivityDTO> couponActivity;
     private LocalDateTime gmtCreate;
     private LocalDateTime gmtModified;
 

@@ -23,13 +23,18 @@ public class AddressRetVo{
     @ApiModelProperty(value = "联系方式")
     private String  mobile;
 
-    private byte  be_default;
+    private Boolean beDefault;
     private LocalDateTime gmtCreate;
     private LocalDateTime gmtModified;
 
     public AddressRetVo(Address bo) {
         this.id=bo.getId();
-        this.be_default=bo.getBe_default();
+        if(bo.getBe_default()==1){
+            this.beDefault=true;
+        }
+        else {
+            this.beDefault=false;
+        }
         this.consignee=bo.getConsignee();
         this.detail=bo.getDetail();
         this.regionId=bo.getRegionId();

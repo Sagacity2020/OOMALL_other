@@ -3,10 +3,8 @@ package cn.edu.xmu.address.controller;
 import cn.edu.xmu.address.model.bo.Address;
 import cn.edu.xmu.address.model.bo.Region;
 import cn.edu.xmu.address.model.vo.AddressVo;
-import cn.edu.xmu.address.model.vo.RegionRetVo;
 import cn.edu.xmu.address.model.vo.RegionVo;
 import cn.edu.xmu.address.service.AddressService;
-import cn.edu.xmu.address.service.RegionService;
 import cn.edu.xmu.ooad.annotation.Audit;
 import cn.edu.xmu.ooad.annotation.Depart;
 import cn.edu.xmu.ooad.annotation.LoginUser;
@@ -26,9 +24,7 @@ import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.stream.events.Comment;
 import java.time.LocalDateTime;
-import java.util.ConcurrentModificationException;
 import java.util.List;
 
 
@@ -42,8 +38,6 @@ public class AddressController {
     @Autowired
     private AddressService addressService;
 
-    @Autowired
-    private RegionService regionService;
 
     @Autowired
     private HttpServletResponse httpServletResponse;
@@ -78,7 +72,7 @@ public class AddressController {
             logger.debug("validate fail");
             return returnObject;
         }
-        if(vo.getConsignee()==null||vo.getDetail()==null||vo.getMobile()==null||vo.getRegionId()==null){
+        if(vo.getConsignee().isEmpty()||vo.getDetail().isEmpty()||vo.getMobile().isEmpty()||vo.getRegionId()==null||vo.getMobile().length()<11){
             httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
             logger.debug("某一个字段为空");
             return Common.getRetObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID));
@@ -91,8 +85,12 @@ public class AddressController {
             httpServletResponse.setStatus(HttpStatus.CREATED.value());
             logger.debug(retObject.getData().toString());
             return Common.getRetObject(retObject);
-        } else {
-            return Common.getNullRetObj(new ReturnObject(retObject.getCode(), retObject.getErrmsg()), httpServletResponse);
+        } else if(retObject.getCode()==ResponseCode.FIELD_NOTVALID){
+            httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+            return Common.decorateReturnObject(retObject);
+        }
+        else{
+            return Common.decorateReturnObject(retObject);
         }
     }
 
@@ -182,6 +180,9 @@ public class AddressController {
         address.setGmtModified(LocalDateTime.now());
 
         ReturnObject retObject=addressService.updateAddress(address);
+        if(retObject.getCode()==ResponseCode.FIELD_NOTVALID){
+            httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+        }
         return Common.decorateReturnObject(retObject);
 
     }
@@ -230,9 +231,15 @@ public class AddressController {
     @GetMapping("region/{id}/ancestor")
     public Object queryParentRegion(@PathVariable Long id){
         logger.debug("query region id ="+id);
-        ReturnObject returnObject=regionService.queryPreRegion(id);
+
+
+        ReturnObject returnObject=addressService.queryPreRegion(id);
         if(returnObject.getData()==null){
             ReturnObject<List> returnObject1=returnObject;
+            if(returnObject.getCode()==ResponseCode.RESOURCE_ID_NOTEXIST){
+                return Common.decorateReturnObject(returnObject);
+            }
+            httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
             return Common.getListRetObject(returnObject1);
         }
         return Common.getListRetObject(returnObject);
@@ -280,7 +287,7 @@ public class AddressController {
         if(id<=0){
             return Common.decorateReturnObject(new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST));
         }
-        ReturnObject retObject = regionService.newSubRegion(id,vo);
+        ReturnObject retObject = addressService.newSubRegion(id,vo);
         if(retObject.getCode()==ResponseCode.OK){
             httpServletResponse.setStatus(HttpStatus.CREATED.value());
 
@@ -328,7 +335,7 @@ public class AddressController {
         region.setName(vo.getName());
         region.setId(id);
         region.setPostalCode(vo.getPostalCode());
-        ReturnObject returnObject1=regionService.updateRegion(region);
+        ReturnObject returnObject1=addressService.updateRegion(region);
         if(returnObject1.getCode()!=ResponseCode.OK){
             httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
         }
@@ -358,7 +365,7 @@ public class AddressController {
     public Object deleteRegion(@Depart @ApiIgnore @RequestParam(required = false) Long departId,@PathVariable Long did,@PathVariable Long id){
         logger.debug("delete region id  = "+id);
 
-        ReturnObject returnObject=regionService.deleteRegion(id);
+        ReturnObject returnObject=addressService.deleteRegion(id);
         return Common.decorateReturnObject(returnObject);
     }
 
