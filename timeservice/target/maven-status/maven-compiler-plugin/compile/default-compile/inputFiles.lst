@@ -1,0 +1,12 @@
+D:\OOMALL_other\timeservice\src\main\java\cn\edu\xmu\time\dao\TimeSegmentDao.java
+D:\OOMALL_other\timeservice\src\main\java\cn\edu\xmu\time\service\impl\TimeServiceInterfaceImpl.java
+D:\OOMALL_other\timeservice\src\main\java\cn\edu\xmu\time\model\po\TimeSegmentPoExample.java
+D:\OOMALL_other\timeservice\src\main\java\cn\edu\xmu\time\model\vo\TimeSegmentRetVo.java
+D:\OOMALL_other\timeservice\src\main\java\cn\edu\xmu\time\model\vo\TimeSegmentSimpleRetVo.java
+D:\OOMALL_other\timeservice\src\main\java\cn\edu\xmu\time\model\bo\TimeSegment.java
+D:\OOMALL_other\timeservice\src\main\java\cn\edu\xmu\time\service\TimeSegmentService.java
+D:\OOMALL_other\timeservice\src\main\java\cn\edu\xmu\time\controller\TimeSegmentController.java
+D:\OOMALL_other\timeservice\src\main\java\cn\edu\xmu\time\model\vo\TimeSegmentVo.java
+D:\OOMALL_other\timeservice\src\main\java\cn\edu\xmu\time\model\po\TimeSegmentPo.java
+D:\OOMALL_other\timeservice\src\main\java\cn\edu\xmu\time\TimeServiceApplication.java
+D:\OOMALL_other\timeservice\src\main\java\cn\edu\xmu\time\mapper\TimeSegmentPoMapper.java

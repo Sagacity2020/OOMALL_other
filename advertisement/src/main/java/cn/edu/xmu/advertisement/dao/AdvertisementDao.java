@@ -117,22 +117,6 @@ public class AdvertisementDao {
 
 
     public ReturnObject<Object>insertAdvertisement(Long tid,Long id){
-        AdvertisementPoExample example=new AdvertisementPoExample();
-        AdvertisementPoExample.Criteria criteria=example.createCriteria();
-
-        criteria.andSegIdEqualTo(tid);
-        List<AdvertisementPo> advertisementPos;
-        try {
-            advertisementPos = advertisementPoMapper.selectByExample(example);
-        } catch (DataAccessException e) {
-            logger.error("createAvertisement: DataAccessException:" + e.getMessage());
-            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
-        } catch (Exception e) {
-            // 其他Exception错误
-            logger.error("other exception : " + e.getMessage());
-            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
-        }
-
 
         AdvertisementPo advertisementPo=advertisementPoMapper.selectByPrimaryKey(id);
         if(advertisementPo==null){
@@ -164,10 +148,10 @@ public class AdvertisementDao {
         criteria.andSegIdEqualTo(id);
 
         if(beginDate!=null){
-            criteria.andBeginDateEqualTo(beginDate);
+            criteria.andBeginDateGreaterThanOrEqualTo(beginDate);
         }
         if(endDate!=null){
-            criteria.andEndDateEqualTo(endDate);
+            criteria.andEndDateLessThanOrEqualTo(endDate);
         }
 
         List<AdvertisementPo>advertisementPos=null;
@@ -214,6 +198,7 @@ public class AdvertisementDao {
         }
         return returnObject;
     }
+
 
     /**
      * 设置默认广告

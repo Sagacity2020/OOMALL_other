@@ -111,9 +111,11 @@ public class AdvertisementService{
 
     @Transactional
     public ReturnObject<Object> createAdvertisement(Long id, AdvertisementCreateVo vo){
-        ReturnObject<TimeSegmentDTO> returnObj=timeServiceInterface.getTimesegmentById(id);
-        if(returnObj.getData()==null){
-            return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
+        if(id!=0) {
+            ReturnObject<TimeSegmentDTO> returnObj = timeServiceInterface.getTimesegmentById(id);
+            if (returnObj.getData() == null) {
+                return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
+            }
         }
 
         Advertisement advertisement=vo.createAdvertisement();
@@ -121,11 +123,12 @@ public class AdvertisementService{
         ReturnObject returnObject=advertisementDao.createAdvertisement(advertisement);
         AdvertisementPo po=(AdvertisementPo)returnObject.getData();
 
+
         if(po==null){
             return returnObject;
         }
         else {
-            Advertisement advertisementBo =new Advertisement((AdvertisementPo)returnObject.getData());
+            Advertisement advertisementBo =new Advertisement(po);
             return new ReturnObject<>(advertisementBo);
         }
     }
@@ -134,9 +137,13 @@ public class AdvertisementService{
 
     @Transactional
     public ReturnObject<Object> insertAdvertisement(Long tid, Long id){
-        ReturnObject<TimeSegmentDTO> returnObj=timeServiceInterface.getTimesegmentById(id);
-        if(returnObj.getData()==null){
-            return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
+
+        if(id!=0) {
+            ReturnObject<TimeSegmentDTO> returnObj = timeServiceInterface.getTimesegmentById(tid);
+            if (returnObj.getData() == null) {
+                return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
+            }
+
         }
 
         ReturnObject returnObject=advertisementDao.insertAdvertisement(tid,id);
@@ -155,9 +162,13 @@ public class AdvertisementService{
     @Transactional
     public ReturnObject<PageInfo<VoObject>> getAdvertisementBySegId(Long id,LocalDate beginDate,LocalDate endDate, Integer page, Integer pageSize){
 
-        ReturnObject<TimeSegmentDTO> returnObj=timeServiceInterface.getTimesegmentById(id);
-        if(returnObj.getData()==null){
-            return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
+        if(id!=0) {
+            ReturnObject<TimeSegmentDTO> returnObj = timeServiceInterface.getTimesegmentById(id);
+
+            if (returnObj.getData() == null) {
+                return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
+            }
+
         }
 
         PageHelper.startPage(page,pageSize);
