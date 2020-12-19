@@ -26,6 +26,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -101,13 +103,21 @@ public class CustomerController {
             @ApiResponse(code = 0, message = "成功")
     })
     @PutMapping("users")
-    public Object updateCustomerInfo(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId, @RequestBody CustomerVo customervo, BindingResult result){
+    public Object updateCustomerInfo(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId, @Validated @RequestBody CustomerVo customervo, BindingResult result){
         if (logger.isDebugEnabled()) {
             logger.debug("updateCustomerInfo: id="+userId);
         }
         if(result.hasErrors()){
             return Common.processFieldErrors(result,httpServletResponse);
         }
+//        if(customervo.getBirthday()!=null&&!(customervo.getBirthday().isBlank())){
+//            DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//            try{
+//            LocalDate.parse(customervo.getBirthday(),df);}
+//            catch (Exception e){
+//                return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,String.format("日期格式不正确")));
+//            }
+//        }
         ReturnObject returnObject=customerService.updateCustomerInfo(userId,customervo);
         return Common.decorateReturnObject(returnObject);
     }
@@ -130,7 +140,8 @@ public class CustomerController {
             httpServletResponse.setStatus(HttpStatus.OK.value());
             return Common.getRetObject(returnObject);
         } else {
-            return Common.getNullRetObj(new ReturnObject<>(returnObject.getCode(), returnObject.getErrmsg()), httpServletResponse);
+            return Common.decorateReturnObject(returnObject);
+            //return Common.getNullRetObj(new ReturnObject<>(returnObject.getCode(), returnObject.getErrmsg()));
         }
     }
 

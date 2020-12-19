@@ -64,15 +64,20 @@ public class CustomerService {
             return retObj;
         }
         Customer customer=(Customer) retObj.getData();
-        if(customer == null || !password.equals(customer.getPassword())){
-            retObj = new ReturnObject<>(ResponseCode.AUTH_INVALID_ACCOUNT);
-            return retObj;
-        }
         int state=Customer.State.NORM.getCode();
         if(customer.getState()!=(byte)state){
             retObj = new ReturnObject<>(ResponseCode.AUTH_USER_FORBIDDEN);
             return retObj;
         }
+        if(customer.getBeDeleted().intValue()==1){
+            retObj = new ReturnObject<>(ResponseCode.AUTH_ID_NOTEXIST);
+            return retObj;
+        }
+        if(customer == null || !password.equals(customer.getPassword())){
+            retObj = new ReturnObject<>(ResponseCode.AUTH_INVALID_ACCOUNT);
+            return retObj;
+        }
+
         JwtHelper jwtHelper = new JwtHelper();
         String jwt = jwtHelper.createToken(customer.getId(),-2L, jwtExpireTime);
         logger.debug("login: Jwt = "+ jwt);
