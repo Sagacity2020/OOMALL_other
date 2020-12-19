@@ -26,6 +26,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,10 +52,6 @@ public class CustomerController {
     @ApiResponses({
             @ApiResponse(code = 0,message = "成功")
     })
-    @ApiImplicitParams({
-            @ApiImplicitParam(name="authorization", value="Token", required = true, dataType="String", paramType="header")
-    })
-    @Audit
     @GetMapping("users/states")
     public Object getAllStates(){
         if (logger.isDebugEnabled()) {
@@ -105,13 +103,21 @@ public class CustomerController {
             @ApiResponse(code = 0, message = "成功")
     })
     @PutMapping("users")
-    public Object updateCustomerInfo(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId, @RequestBody CustomerVo customervo, BindingResult result){
+    public Object updateCustomerInfo(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId, @Validated @RequestBody CustomerVo customervo, BindingResult result){
         if (logger.isDebugEnabled()) {
             logger.debug("updateCustomerInfo: id="+userId);
         }
         if(result.hasErrors()){
             return Common.processFieldErrors(result,httpServletResponse);
         }
+//        if(customervo.getBirthday()!=null&&!(customervo.getBirthday().isBlank())){
+//            DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//            try{
+//            LocalDate.parse(customervo.getBirthday(),df);}
+//            catch (Exception e){
+//                return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,String.format("日期格式不正确")));
+//            }
+//        }
         ReturnObject returnObject=customerService.updateCustomerInfo(userId,customervo);
         return Common.decorateReturnObject(returnObject);
     }
@@ -134,7 +140,8 @@ public class CustomerController {
             httpServletResponse.setStatus(HttpStatus.OK.value());
             return Common.getRetObject(returnObject);
         } else {
-            return Common.getNullRetObj(new ReturnObject<>(returnObject.getCode(), returnObject.getErrmsg()), httpServletResponse);
+            return Common.decorateReturnObject(returnObject);
+            //return Common.getNullRetObj(new ReturnObject<>(returnObject.getCode(), returnObject.getErrmsg()));
         }
     }
 
@@ -206,6 +213,7 @@ public class CustomerController {
             logger.debug("login fail："+jwt.getErrmsg());
             return ResponseUtil.fail(jwt.getCode(), jwt.getErrmsg());
         }else{
+            httpServletResponse.setStatus(HttpStatus.CREATED.value());
             return ResponseUtil.ok(jwt.getData());
         }
     }
@@ -270,7 +278,7 @@ public class CustomerController {
             @ApiResponse(code = 0,message = "成功")
     })
     @Audit
-    @PutMapping("users/{id}/release")
+    @PutMapping("/shops/{did}/users/{id}/release")
     public Object releaseCustomer(@PathVariable Long id,@Depart @ApiIgnore @RequestParam(required = false)Long did){
         if (logger.isDebugEnabled()) {
             logger.debug("releaseCustomer: id = "+ id);
@@ -278,7 +286,7 @@ public class CustomerController {
         if(did.equals(-2L))
         {
             logger.debug("releaseCustomer failed");
-            return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,String.format("没有权限")));
+            return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.AUTH_NOT_ALLOW,String.format("没有权限")));
         }
         ReturnObject retObject=customerService.releaseCustomer(id);
         return Common.decorateReturnObject(retObject);
@@ -293,7 +301,7 @@ public class CustomerController {
             @ApiResponse(code = 0,message = "成功")
     })
     @Audit
-    @PutMapping("users/{id}/ban")
+    @PutMapping("/shops/{did}/users/{id}/ban")
     public Object banCustomer(@PathVariable Long id, @Depart @ApiIgnore @RequestParam(required = false)Long did){
         if (logger.isDebugEnabled()) {
             logger.debug("banCustomer: id = "+ id);
@@ -301,7 +309,7 @@ public class CustomerController {
         if(did.equals(-2L))
         {
             logger.debug("banCustomer failed");
-            return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,String.format("没有权限")));
+            return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.AUTH_NOT_ALLOW,String.format("没有权限")));
         }
         ReturnObject retObject=customerService.banCustomer(id);
         return Common.decorateReturnObject(retObject);
@@ -330,7 +338,7 @@ public class CustomerController {
         if(did.equals(-2L))
         {
             logger.debug("getCustomerAll failed");
-            return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,String.format("没有权限")));
+            return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.AUTH_NOT_ALLOW,String.format("没有权限")));
         }
         Object object = null;
         if(page<=0||pageSize<=0){

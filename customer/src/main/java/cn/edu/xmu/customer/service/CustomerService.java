@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -63,17 +64,24 @@ public class CustomerService {
             return retObj;
         }
         Customer customer=(Customer) retObj.getData();
-        if(customer == null || !password.equals(customer.getPassword())){
-            retObj = new ReturnObject<>(ResponseCode.AUTH_INVALID_ACCOUNT);
-            return retObj;
+        if(customer==null){
+            return new ReturnObject<>(ResponseCode.AUTH_INVALID_ACCOUNT);
         }
         int state=Customer.State.NORM.getCode();
         if(customer.getState()!=(byte)state){
             retObj = new ReturnObject<>(ResponseCode.AUTH_USER_FORBIDDEN);
             return retObj;
         }
+        if(customer.getBeDeleted().intValue()==1){
+            retObj = new ReturnObject<>(ResponseCode.AUTH_ID_NOTEXIST);
+            return retObj;
+        }
+        if(!password.equals(customer.getPassword())){
+            retObj = new ReturnObject<>(ResponseCode.AUTH_INVALID_ACCOUNT);
+            return retObj;
+        }
+
         JwtHelper jwtHelper = new JwtHelper();
-        Long did=(long)-2;
         String jwt = jwtHelper.createToken(customer.getId(),-2L, jwtExpireTime);
         logger.debug("login: Jwt = "+ jwt);
         /*if(redisTemplate.hasKey("up_"+customer.getId())){
@@ -173,6 +181,13 @@ public class CustomerService {
 
    @Transactional
     public ReturnObject<Object> banCustomer(Long id){
+        if(redisTemplate.hasKey("up_"+id)){
+            Set<Serializable> resultSet =redisTemplate.opsForSet().members("up_"+id);
+            for(Serializable jwt:resultSet){
+                banJwt(jwt.toString());
+            }
+            redisTemplate.delete("up_"+id);
+        }
         return customerDao.changeCustomerState(id,Customer.State.FORBID);
     }
 

@@ -1,22 +1,28 @@
 package cn.edu.xmu.address.service;
 
-import cn.edu.xmu.address.dao.RegionDao;
-import cn.edu.xmu.address.model.po.AddressPo;
+import cn.edu.xmu.address.model.bo.Region;
+import cn.edu.xmu.address.model.vo.RegionVo;
 import cn.edu.xmu.ooad.model.VoObject;
+import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
 import cn.edu.xmu.address.dao.AddressDao;
 import cn.edu.xmu.address.model.bo.Address;
 
+import cn.edu.xmu.other.service.RegionServiceInterface;
 import com.github.pagehelper.PageInfo;
-import net.bytebuddy.asm.Advice;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@DubboService(version = "0.0.1")
 @Service
-public class AddressService {
+public class AddressService implements RegionServiceInterface {
 
 
     private Logger logger = LoggerFactory.getLogger(AddressService.class);
@@ -24,8 +30,6 @@ public class AddressService {
     @Autowired
     private AddressDao addressDao;
 
-    @Autowired
-    private RegionService regionService;
 
     /**
      * @author zrh
@@ -37,7 +41,13 @@ public class AddressService {
     @Transactional
     public ReturnObject insertAddress(Address address)
     {
-
+        ReturnObject<Boolean> booleanReturnObject=addressDao.isRegion(address.getRegionId());
+        if(booleanReturnObject.getCode()==ResponseCode.REGION_OBSOLETE||booleanReturnObject.getCode()==ResponseCode.RESOURCE_ID_NOTEXIST){
+            return new ReturnObject(ResponseCode.FIELD_NOTVALID);
+        }
+        if(booleanReturnObject.getData()==null){
+            return booleanReturnObject;
+        }
         ReturnObject<Address> returnObject=addressDao.insertAddress(address);
         return returnObject;
 
@@ -85,13 +95,16 @@ public class AddressService {
      * @return
      */
     public ReturnObject updateAddress(Address address) {
-        ReturnObject returnObject=regionService.isRegion(address.getRegionId());
+        ReturnObject<Boolean> returnObject=addressDao.isRegion(address.getRegionId());
+        if(returnObject.getCode()==ResponseCode.REGION_OBSOLETE||returnObject.getCode()==ResponseCode.RESOURCE_ID_NOTEXIST){
+            return new ReturnObject(ResponseCode.FIELD_NOTVALID);
+        }
         if(returnObject.getData()==null){
             return returnObject;
         }
-        else{
-            return addressDao.updateAddressInfo(address);
-        }
+
+        return addressDao.updateAddressInfo(address);
+
 
 
     }
@@ -106,5 +119,82 @@ public class AddressService {
         return addressDao.deleteAddress(id);
     }
 
+    public ReturnObject queryPreRegion(Long id) {
+        ReturnObject<Boolean> retObject=isRegion(id);
+        if(retObject.getData()==null){
+            return retObject;
+        }
+        ReturnObject<List<Region>> returnObject=addressDao.queryParentRegionAll(id);
+        return returnObject;
+
+
+    }
+
+
+    /**
+     * @Created at 12/18 1:49
+     * @author zrh
+     * @param id
+     * @param vo
+     * @return
+     */
+    public ReturnObject newSubRegion(Long id, RegionVo vo) {
+        return addressDao.newSubRegion(id,vo);
+    }
+
+    /**
+     * @Created at 12/9 19:40
+     * @author zrh
+     * @param id
+     * @return
+     */
+    public ReturnObject<Boolean> isRegion(Long id){
+        ReturnObject<Boolean> returnObject=addressDao.isRegion(id);
+        return returnObject;
+    }
+
+    /**
+     * @Created at 12/10 21:29
+     * @author zrh
+     * @param region
+     * @return
+     */
+    public ReturnObject updateRegion(Region region) {
+        ReturnObject returnObject=addressDao.updateRegion(region);
+        return returnObject;
+    }
+
+    /**
+     * @Created at 12/10 21:29
+     * @author zrh
+     * @param id
+     * @return
+     */
+    public ReturnObject deleteRegion(Long id) {
+//        Queue<Long> idQueue = new ArrayDeque<>();
+        ReturnObject returnObject=addressDao.deleteRegion(id);
+        List<Long> ids=addressDao.getChildRegion(id);
+//        idQueue.addAll(ids);
+//        if(!idQueue.isEmpty()){
+//            Long childId=idQueue.poll();
+//            regionDao.deleteChildRegionOnly(childId);
+//            }
+//
+        return returnObject;
+    }
+
+
+    @Override
+    public Long getParentRegionIdByChildId(Long regionId) {
+        ReturnObject<Region> returnObject=addressDao.queryPreRegion(regionId);
+        if(returnObject.getCode()== ResponseCode.REGION_OBSOLETE){
+            return  null;
+        }
+        Region region=returnObject.getData();
+        if(region!=null){
+            return region.getId();
+        }
+        return 0L;
+    }
 
 }

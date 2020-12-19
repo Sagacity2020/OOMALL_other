@@ -60,7 +60,9 @@ public class CartController {
                                  @RequestParam(required = true,defaultValue = "1")Integer page,
                                  @RequestParam(required = true,defaultValue = "10")Integer pageSize){
         logger.debug("seleteAllCart: page="+page+" pagaSize= "+pageSize);
+        logger.error(userId.toString());
         ReturnObject<PageInfo<VoObject>> returnObject= cartService.selectAllCart(userId,page,pageSize);
+        logger.error(returnObject.toString());
         return Common.getPageRetObject(returnObject);
     }
 

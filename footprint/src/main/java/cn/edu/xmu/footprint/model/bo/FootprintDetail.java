@@ -2,21 +2,21 @@ package cn.edu.xmu.footprint.model.bo;
 
 import cn.edu.xmu.footprint.model.po.FootPrintPo;
 import cn.edu.xmu.footprint.model.vo.FootprintRetVo;
-import cn.edu.xmu.footprint.model.vo.GoodsSkuDTO;
+import cn.edu.xmu.footprint.model.vo.GoodsSku;
+import cn.edu.xmu.goods.dto.GoodsSkuDTO;
 import cn.edu.xmu.ooad.model.VoObject;
 import lombok.Data;
-import org.apache.tomcat.jni.Local;
 
 import java.time.LocalDateTime;
 
 @Data
 public class FootprintDetail implements VoObject {
     private Long id;
-    private GoodsSkuDTO goodsSku;
+    private GoodsSku goodsSku;
     private LocalDateTime gmtCreate;
 
-    public void setGoodsSku(GoodsSkuDTO goodsSku) {
-        this.goodsSku = goodsSku;
+    public void setGoodsSku(GoodsSkuDTO goodsSkuDTO) {
+        this.goodsSku = new GoodsSku(goodsSkuDTO);
     }
 
     public FootprintDetail(FootPrintPo po){
@@ -38,7 +38,7 @@ public class FootprintDetail implements VoObject {
         return id;
     }
 
-    public GoodsSkuDTO getGoodsSku() {
+    public GoodsSku getGoodsSku() {
         return goodsSku;
     }
 

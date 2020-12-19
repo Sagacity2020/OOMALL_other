@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.apache.dubbo.config.annotation.DubboService;
 
 import java.time.LocalDateTime;
-@DubboService(version = "0.0.1-SNAPSHOT")
+@DubboService(version = "0.0.1")
 public class FootprintServiceInterfaceImpl implements FootprintServiceInterface {
     @Autowired
     FootprintDao footprintDao;

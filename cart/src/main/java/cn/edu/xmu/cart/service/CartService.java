@@ -8,10 +8,12 @@ import cn.edu.xmu.cart.model.vo.CartRetVo;
 import cn.edu.xmu.cart.model.vo.CartVo;
 import cn.edu.xmu.goods.dto.CouponActivityDTO;
 import cn.edu.xmu.goods.dto.GoodsSkuInfo;
+import cn.edu.xmu.goods.service.CouponServiceInterface;
 import cn.edu.xmu.ooad.model.VoObject;
 import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
 import cn.edu.xmu.goods.service.GoodsServiceInterface;
+import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.slf4j.Logger;
@@ -31,8 +33,11 @@ public class CartService {
     @Autowired
     private CartDao cartDao;
 
-    @DubboReference
-    private GoodsServiceInterface goodsService;
+    @DubboReference(version = "0.0.1")
+    public GoodsServiceInterface goodsService;
+
+    @DubboReference(version = "0.0.1")
+    public CouponServiceInterface couponService;
 
 
     /**
@@ -44,24 +49,7 @@ public class CartService {
      * @return
      */
     public ReturnObject<PageInfo<VoObject>> selectAllCart(Long userId, Integer page, Integer pageSize) {
-        ReturnObject<List<Cart>> cartList=cartDao.seleteByUserId(userId);
-        List<Cart> carts=cartList.getData();
-        for(int i=0;i<carts.size();i++){
-            ArrayList<CouponActivityDTO> couponActivityDTOS=goodsService.getCouponActivityAlone(carts.get(i).getGoodsSkuId());
-            carts.get(i).setCouponActivity(couponActivityDTOS);
-            GoodsSkuInfo goodsSkuInfo=goodsService.getGoodsSkuInfoAlone(carts.get(i).getGoodsSkuId());
-            carts.get(i).setSkuName(goodsSkuInfo.getSkuName());
-            carts.get(i).setPrice(goodsSkuInfo.getPrice());
-        }
-
-        List<VoObject> ret  = new ArrayList<>(carts.size());
-        for(Cart bo:carts){
-            ret.add(bo);
-        }
-        PageInfo<VoObject> cartPage = PageInfo.of(ret);
-        cartPage.setTotal(carts.size());
-        return new ReturnObject<>(cartPage);
-
+        return cartDao.seleteByUserId(userId,page,pageSize);
 
     }
 
@@ -94,7 +82,7 @@ public class CartService {
             return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("商品sku不存在"));
         }
 
-        cart.setCouponActivity(goodsService.getCouponActivityAlone(goodSkuId));
+        cart.setCouponActivity(couponService.getCouponActivityAlone(cart.getCustomerId(),cart.getGoodsSkuId()));
         cart.setSkuName(goodsSkuInfo.getSkuName());
         cart.setPrice(goodsSkuInfo.getPrice());
         ReturnObject<Cart> cartReturnObject=cartDao.addCart(cart);

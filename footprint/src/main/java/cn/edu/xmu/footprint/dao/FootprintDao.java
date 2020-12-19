@@ -60,13 +60,13 @@ public class FootprintDao {
     public PageInfo<FootPrintPo> getFootprint(Long userId,String beginTime,String endTime,Integer page,Integer pagesize){
         FootPrintPoExample example=new FootPrintPoExample();
         FootPrintPoExample.Criteria criteria=example.createCriteria();
-        if(userId==-1){
+        if(userId!=null){
              criteria.andCustomerIdEqualTo(userId);}
-        if(!beginTime.isBlank()){
+        if(beginTime!=null&&!beginTime.isBlank()){
             DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             LocalDateTime beginLdt = LocalDateTime.parse(beginTime,df);
             criteria.andGmtCreateGreaterThanOrEqualTo(beginLdt);}
-        if(!endTime.isBlank()){
+        if(endTime!=null&&!endTime.isBlank()){
             DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             LocalDateTime endLdt = LocalDateTime.parse(endTime,df);
             criteria.andGmtCreateLessThanOrEqualTo(endLdt);}

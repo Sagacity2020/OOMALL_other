@@ -11,7 +11,10 @@ public class CustomerVo {
     private String realName;
     //private String mobile;
     //private String email;
+
     private Byte gender;
+
+
     private LocalDate birthday;
 
     public LocalDate getBirthday() {

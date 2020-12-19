@@ -6,9 +6,16 @@ import cn.edu.xmu.cart.model.bo.Cart;
 import cn.edu.xmu.cart.model.po.ShoppingCartPo;
 import cn.edu.xmu.cart.model.po.ShoppingCartPoExample;
 import cn.edu.xmu.cart.model.vo.CartVo;
+import cn.edu.xmu.goods.service.CouponServiceInterface;
+import cn.edu.xmu.goods.service.GoodsServiceInterface;
+import cn.edu.xmu.ooad.model.VoObject;
 import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
 import cn.edu.xmu.ooad.util.encript.SHA256;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.apache.dubbo.config.annotation.DubboReference;
+import org.bouncycastle.cms.bc.BcPasswordRecipientInfoGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +24,7 @@ import org.springframework.scheduling.support.SimpleTriggerContext;
 import org.springframework.stereotype.Repository;
 
 import java.lang.annotation.Retention;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -28,29 +36,43 @@ public class CartDao {
     @Autowired
     ShoppingCartPoMapper shoppingCartPoMapper;
 
-    public ReturnObject<List<Cart>> seleteByUserId(Long userId) {
+    @DubboReference(version = "0.0.1")
+    public GoodsServiceInterface goodsService;
+
+    @DubboReference(version = "0.0.1")
+    public CouponServiceInterface couponService;
+
+    public ReturnObject<PageInfo<VoObject>> seleteByUserId(Long userId, Integer page, Integer pageSize) {
+        logger.error("userId="+userId);
         ShoppingCartPoExample example=new ShoppingCartPoExample();
         ShoppingCartPoExample.Criteria criteria=example.createCriteria();
         criteria.andCustomerIdEqualTo(userId);
+        PageHelper.startPage(page,pageSize);
         List<ShoppingCartPo> shoppingCartPos=null;
-        try{
+        try {
             shoppingCartPos=shoppingCartPoMapper.selectByExample(example);
         }catch (DataAccessException e){
-            logger.error("selectAllAddress: DataAccessException:" + e.getMessage());
-            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
+            logger.error("findAllPrivs: DataAccessException:" + e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR);
         }
-        catch (Exception e) {
-            // 其他Exception错误
-            logger.error("other exception : " + e.getMessage());
-            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
-        }
-        List<Cart> carts=null;
+
+        List<VoObject> ret= new ArrayList<>(shoppingCartPos.size());
+
         for(ShoppingCartPo po:shoppingCartPos){
             Cart cart=new Cart(po);
-            carts.add(cart);
-        }
-        return new ReturnObject<>(carts);
+            cart.setCouponActivity(couponService.getCouponActivityAlone(cart.getCustomerId(),cart.getGoodsSkuId()));
 
+            cart.setPrice(goodsService.getGoodsSkuInfoAlone(cart.getGoodsSkuId()).getPrice());
+            cart.setSkuName(goodsService.getGoodsSkuInfoAlone(cart.getGoodsSkuId()).getSkuName());
+            ret.add(cart);
+        }
+        PageInfo<ShoppingCartPo> shoppingCartPoPageInfo=PageInfo.of(shoppingCartPos);
+        PageInfo<VoObject> cartPageInfo=new PageInfo(ret);
+        cartPageInfo.setPages(shoppingCartPoPageInfo.getPages());
+        cartPageInfo.setTotal(shoppingCartPoPageInfo.getTotal());
+        cartPageInfo.setPageNum(shoppingCartPoPageInfo.getPageNum());
+        cartPageInfo.setPageSize(shoppingCartPoPageInfo.getPageSize());
+        return new ReturnObject<>(cartPageInfo);
     }
 
     /**
