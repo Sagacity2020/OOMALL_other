@@ -23,7 +23,7 @@ public class AftersaleRetVo {
 
     private String serviceSn;
 
-    private String type;
+    private Integer type;
 
     private String reason;
 

@@ -1,4 +1,4 @@
-package cn.edu.xmu.other.dto;
+package cn.edu.xmu.order.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,4 +25,6 @@ public class AftersaleDTO implements Serializable {
     String mobile;
 
     String message;
+
+    Long orderItemId;
 }

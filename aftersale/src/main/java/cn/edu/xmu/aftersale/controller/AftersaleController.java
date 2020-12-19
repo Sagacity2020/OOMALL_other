@@ -84,15 +84,14 @@ public class AftersaleController {
         }
 
         ReturnObject returnObj=checkCustomerId(userId,id);
-        AftersaleServicePo po=(AftersaleServicePo)returnObj.getData();
-        if(po==null){
+        if(returnObj.getData()==null){
             return Common.decorateReturnObject(returnObj);
         }
 
 
+
         returnObj = aftersaleService.updateAftersale(id, vo);
 
-        logger.error("4");
         return Common.decorateReturnObject(returnObj);
     }
 
@@ -138,7 +137,7 @@ public class AftersaleController {
             return Common.getRetObject(returnObj);
         }
         else {
-            return Common.getNullRetObj(new ReturnObject<>(returnObj.getCode(), returnObj.getErrmsg()), httpServletResponse);
+            return Common.decorateReturnObject(returnObj);
         }
     }
 
@@ -191,9 +190,8 @@ public class AftersaleController {
             return returnObject;
         }
 
-        ReturnObject<Object> returnObj=checkCustomerId(userId,id);
-        AftersaleServicePo po=(AftersaleServicePo)returnObj.getData();
-        if(po==null){
+        ReturnObject returnObj=checkCustomerId(userId,id);
+        if(returnObj.getData()==null){
             return Common.decorateReturnObject(returnObj);
         }
 
@@ -222,9 +220,8 @@ public class AftersaleController {
             logger.debug("confirmAftersaleById: id = "+ id);
         }
 
-        ReturnObject<Object> returnObj=checkCustomerId(userId,id);
-        AftersaleServicePo po=(AftersaleServicePo)returnObj.getData();
-        if(po==null){
+        ReturnObject returnObj=checkCustomerId(userId,id);
+        if(returnObj.getData()==null){
             return Common.decorateReturnObject(returnObj);
         }
 
@@ -254,9 +251,6 @@ public class AftersaleController {
             logger.debug("deliverAftersale: id = "+ id+" vo = " + vo);
         }
         // 校验前端数据
-        if(vo.getShopLogSn()==null){
-            return Common.decorateReturnObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID,String.format("运单信息不能为空")));
-        }
         Object returnObject = Common.processFieldErrors(bindingResult, httpServletResponse);
         if (returnObject != null) {
             logger.info("incorrect data received while deliverAftersale id = " + id);
@@ -288,9 +282,8 @@ public class AftersaleController {
             logger.debug("deleteAftersale: id = "+ id);
         }
 
-        ReturnObject<Object> returnObj=checkCustomerId(userId,id);
-        AftersaleServicePo po=(AftersaleServicePo)returnObj.getData();
-        if(po==null){
+        ReturnObject returnObj=checkCustomerId(userId,id);
+        if(returnObj.getData()==null){
             return Common.decorateReturnObject(returnObj);
         }
 
@@ -341,7 +334,7 @@ public class AftersaleController {
             @ApiResponse(code = 404,message = "参数不合法")
     })
     @Audit
-    @PutMapping("shops/{shopId}/aftersales/{id}/recieve")
+    @PutMapping("shops/{shopId}/aftersales/{id}/receive")
     public Object recieveAftersae(@PathVariable(value = "shopId")Long shopId,@PathVariable("id")Long id,@Validated @RequestBody AftersaleConfirmVo vo,BindingResult bindingResult){
         if(logger.isDebugEnabled()){
             logger.debug("confirmAftersale id="+id+"vo="+vo);
@@ -371,20 +364,30 @@ public class AftersaleController {
             @ApiResponse(code=0,message = "成功"),
             @ApiResponse(code = 404,message = "参数不合法")
     })
-    //@Audit
+    @Audit
     @GetMapping("aftersales/{id}")
-    public Object getAftersaleById(@PathVariable("id")Long id){
+    public Object getAftersaleById(@PathVariable("id")Long id,@LoginUser @ApiIgnore @RequestParam(required = false) Long userId){
         if(logger.isDebugEnabled()){
             logger.debug("getAftersaleById id="+id);
         }
 
-        ReturnObject returnObj=aftersaleService.getAftersaleById(id);
-
-        if(returnObj.getData()!=null) {
-            return Common.getRetObject(returnObj);
+        ReturnObject returnObj=checkCustomerId(userId,id);
+        if(returnObj.getData()==null){
+            return Common.decorateReturnObject(returnObj);
         }
-        else {
-            return Common.getNullRetObj(new ReturnObject<>(returnObj.getCode(), returnObj.getErrmsg()), httpServletResponse);
+
+        ReturnObject returnObject=aftersaleService.getAftersaleById(id);
+
+        if(returnObject.getData()!=null) {
+            return Common.getRetObject(returnObject);
+        }
+        else if(returnObject.getCode().equals(ResponseCode.RESOURCE_ID_NOTEXIST)){
+            httpServletResponse.setStatus(HttpStatus.NOT_FOUND.value());
+            return Common.getNullRetObj(new ReturnObject<>(returnObject.getCode(), returnObject.getErrmsg()), httpServletResponse);
+        }
+        else{
+            httpServletResponse.setStatus(HttpStatus.FORBIDDEN.value());
+            return Common.getNullRetObj(new ReturnObject<>(returnObject.getCode(), returnObject.getErrmsg()), httpServletResponse);
         }
     }
 
@@ -414,7 +417,12 @@ public class AftersaleController {
         if(returnObj.getData()!=null) {
             return Common.getRetObject(returnObj);
         }
-        else {
+        else if(returnObj.getCode().equals(ResponseCode.RESOURCE_ID_NOTEXIST)){
+            httpServletResponse.setStatus(HttpStatus.NOT_FOUND.value());
+            return Common.getNullRetObj(new ReturnObject<>(returnObj.getCode(), returnObj.getErrmsg()), httpServletResponse);
+        }
+        else{
+            httpServletResponse.setStatus(HttpStatus.FORBIDDEN.value());
             return Common.getNullRetObj(new ReturnObject<>(returnObj.getCode(), returnObj.getErrmsg()), httpServletResponse);
         }
     }
@@ -434,9 +442,9 @@ public class AftersaleController {
     @ApiResponses({
             @ApiResponse(code=0,message = "成功"),
     })
-    //@Audit
+    @Audit
     @GetMapping("aftersales")
-    public Object getAftersaleByUserId(@LoginUser @RequestParam(required = false) Long userId,
+    public Object getAftersaleByUserId(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId,
                                        @RequestParam (required = false)String beginTime,
                                        @RequestParam (required = false)String endTime,
                                        @RequestParam(required = false, defaultValue = "1") Integer page,
@@ -473,7 +481,7 @@ public class AftersaleController {
             object = Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID), httpServletResponse);
         }
         else {
-            object=Common.getPageRetObject(aftersaleService.getAftersaleByUserId(userId,begin, end, page, pageSize, type, state));
+            object=getPageRetObject(aftersaleService.getAftersaleByUserId(userId,begin, end, page, pageSize, type, state));
         }
         return object;
     }
@@ -554,7 +562,8 @@ public class AftersaleController {
             if (po.getCustomerId().equals(userId)) {
                 returnObj=new ReturnObject<>(po);
             } else {
-                logger.info("没有权限修改售后单id="+id);
+                logger.info("没有权限查看或修改售后单id="+id);
+                httpServletResponse.setStatus(HttpStatus.FORBIDDEN.value());
                 returnObj = new ReturnObject<>(ResponseCode.RESOURCE_ID_OUTSCOPE);
             }
         }

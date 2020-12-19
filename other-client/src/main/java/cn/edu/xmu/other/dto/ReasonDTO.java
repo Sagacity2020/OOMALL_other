@@ -7,15 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AftersaleRefundDTO {
+public class ReasonDTO {
+    Boolean result;
 
-    private Long id;
-
-    private Long customerId;
-
-    private Byte beDeleted;
-
-    private Long orderId;
-
-    private Long shopId;
+    Integer errno;
 }
