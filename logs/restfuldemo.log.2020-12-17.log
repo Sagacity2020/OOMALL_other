@@ -1,0 +1,373 @@
+2020-12-17 00:02:01.462 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:01.750 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
+2020-12-17 00:02:01.869 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:01.893 [http-nio-8081-exec-2] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
+2020-12-17 00:02:01.925 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:01.957 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
+2020-12-17 00:02:01.996 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:02.036 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
+2020-12-17 00:02:02.092 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:02.157 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 
+2020-12-17 00:02:02.226 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:02.275 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:02.300 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:02.375 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:02.430 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:02.473 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:02.538 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:02.606 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:02.689 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:02.729 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:02.762 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:02.906 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:02.943 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:02.971 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:02.995 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:03.029 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:03.059 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:03.082 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:03.113 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:03.138 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:03.163 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:03.191 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:03.212 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:03.233 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:03.261 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:03.284 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:03.303 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:03.325 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:03.355 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:03.387 [http-nio-8081-exec-7] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
+2020-12-17 00:02:03.418 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:03.451 [http-nio-8081-exec-8] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
+2020-12-17 00:02:03.476 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:03.506 [http-nio-8081-exec-9] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
+2020-12-17 00:02:04.118 [http-nio-8081-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 00:02:04.127 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-17 00:02:04.128 [http-nio-8081-exec-10] INFO  cn.edu.xmu.customer.dao.CustomerDao - id-1
+2020-12-17 00:02:04.159 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:04.183 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
+2020-12-17 00:02:04.212 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:04.244 [http-nio-8081-exec-2] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
+2020-12-17 00:02:42.757 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:42.911 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17377, userName=1111, password=1a2B3_, realName=11111, gender=0, birthday=2020-12-09, point=0, email=11111@11111.com, mobile=12332111111, beDeleted=0, gmtCreate=2020-12-17T00:02:42.838804200, gmtModified=null, state=4)
+2020-12-17 00:02:43.025 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 1111
+2020-12-17 00:02:43.212 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:43.283 [http-nio-8081-exec-5] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17378, userName=2222, password=1a2B3_, realName=22222, gender=0, birthday=2020-12-09, point=0, email=22222@22222.com, mobile=12342112222, beDeleted=0, gmtCreate=2020-12-17T00:02:43.271712700, gmtModified=null, state=4)
+2020-12-17 00:02:43.301 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:43.351 [http-nio-8081-exec-6] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 用户名已被注册
+2020-12-17 00:02:43.366 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 2222
+2020-12-17 00:02:43.393 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:43.416 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:43.512 [http-nio-8081-exec-8] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17379, userName=3333, password=1a2B3_, realName=33333, gender=0, birthday=2020-12-09, point=0, email=33333@33333.com, mobile=12342113333, beDeleted=0, gmtCreate=2020-12-17T00:02:43.501000800, gmtModified=null, state=4)
+2020-12-17 00:02:43.536 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:43.626 [http-nio-8081-exec-9] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 电话已被注册
+2020-12-17 00:02:43.642 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 33333
+2020-12-17 00:02:43.669 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:43.692 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:43.783 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17380, userName=4444, password=1a2B3_, realName=44444, gender=0, birthday=2020-12-09, point=0, email=44444@44444.com, mobile=12342114444, beDeleted=0, gmtCreate=2020-12-17T00:02:43.774815500, gmtModified=null, state=4)
+2020-12-17 00:02:43.796 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:43.816 [http-nio-8081-exec-2] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
+2020-12-17 00:02:43.828 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 44444
+2020-12-17 00:02:43.852 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:43.872 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:43.911 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 
+2020-12-17 00:02:43.953 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:43.985 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:44.010 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:44.036 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:44.071 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:44.094 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:44.119 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:44.153 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:44.199 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:44.237 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:44.257 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:44.300 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:44.324 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:44.343 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:44.360 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:44.379 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:44.399 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:44.418 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:44.455 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:44.504 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:44.531 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:44.575 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:44.612 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:44.633 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:44.652 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:44.673 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:44.693 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:02:44.721 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:44.743 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:44.822 [http-nio-8081-exec-6] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17381, userName=1616, password=1a2B3_, realName=161616, gender=0, birthday=2020-12-09, point=0, email=1616@1616.com, mobile=12332116161, beDeleted=0, gmtCreate=2020-12-17T00:02:44.813135800, gmtModified=null, state=4)
+2020-12-17 00:02:44.835 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 1616
+2020-12-17 00:02:44.857 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:02:44.877 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:44.974 [http-nio-8081-exec-8] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17382, userName=1717, password=1a2B3_, realName=171717, gender=0, birthday=2020-12-09, point=0, email=1717@1717.com, mobile=12332117171, beDeleted=0, gmtCreate=2020-12-17T00:02:44.960971200, gmtModified=null, state=4)
+2020-12-17 00:02:44.991 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 1717
+2020-12-17 00:02:45.060 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:45.175 [http-nio-8081-exec-10] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17383, userName=testU, password=1a2B3_, realName=testR, gender=0, birthday=2020-12-09, point=0, email=123@321.com, mobile=12332112345, beDeleted=0, gmtCreate=2020-12-17T00:02:45.164751400, gmtModified=null, state=4)
+2020-12-17 00:02:45.194 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU
+2020-12-17 00:02:45.254 [http-nio-8081-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 00:02:45.254 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-17 00:02:45.255 [http-nio-8081-exec-2] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17383
+2020-12-17 00:02:45.478 [http-nio-8081-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 00:02:45.478 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-17 00:02:45.479 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.dao.CustomerDao - id-1
+2020-12-17 00:02:45.528 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:45.586 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17384, userName=testU20, password=1a2B3_, realName=testR20, gender=0, birthday=2020-12-09, point=0, email=2020@2020.com, mobile=12332112320, beDeleted=0, gmtCreate=2020-12-17T00:02:45.579253, gmtModified=null, state=4)
+2020-12-17 00:02:45.595 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU20
+2020-12-17 00:02:45.639 [http-nio-8081-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 00:02:45.639 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-17 00:02:45.640 [http-nio-8081-exec-6] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17384
+2020-12-17 00:02:45.662 [http-nio-8081-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 00:02:45.662 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17384
+2020-12-17 00:02:45.725 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:02:45.792 [http-nio-8081-exec-8] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17385, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-17T00:02:45.783291800, gmtModified=null, state=4)
+2020-12-17 00:02:45.803 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
+2020-12-17 00:02:45.849 [http-nio-8081-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 00:02:45.849 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-17 00:02:45.850 [http-nio-8081-exec-10] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17385
+2020-12-17 00:02:45.873 [http-nio-8081-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 00:02:45.874 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17385
+2020-12-17 00:08:25.107 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:25.570 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17386, userName=1111, password=1a2B3_, realName=11111, gender=0, birthday=2020-12-09, point=0, email=11111@11111.com, mobile=12332111111, beDeleted=0, gmtCreate=2020-12-17T00:08:25.510997200, gmtModified=null, state=4)
+2020-12-17 00:08:25.823 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 1111
+2020-12-17 00:08:26.036 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:26.111 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17387, userName=2222, password=1a2B3_, realName=22222, gender=0, birthday=2020-12-09, point=0, email=22222@22222.com, mobile=12342112222, beDeleted=0, gmtCreate=2020-12-17T00:08:26.093044200, gmtModified=null, state=4)
+2020-12-17 00:08:26.141 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:26.238 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 用户名已被注册
+2020-12-17 00:08:26.265 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 2222
+2020-12-17 00:08:26.296 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:08:26.326 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:26.425 [http-nio-8081-exec-7] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17388, userName=3333, password=1a2B3_, realName=33333, gender=0, birthday=2020-12-09, point=0, email=33333@33333.com, mobile=12342113333, beDeleted=0, gmtCreate=2020-12-17T00:08:26.415993400, gmtModified=null, state=4)
+2020-12-17 00:08:26.449 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:26.554 [http-nio-8081-exec-6] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 电话已被注册
+2020-12-17 00:08:26.578 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 33333
+2020-12-17 00:08:26.617 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:08:26.652 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:26.732 [http-nio-8081-exec-9] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17389, userName=4444, password=1a2B3_, realName=44444, gender=0, birthday=2020-12-09, point=0, email=44444@44444.com, mobile=12342114444, beDeleted=0, gmtCreate=2020-12-17T00:08:26.723433, gmtModified=null, state=4)
+2020-12-17 00:08:26.747 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:26.773 [http-nio-8081-exec-10] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
+2020-12-17 00:08:26.787 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 44444
+2020-12-17 00:08:26.805 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:08:26.842 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:26.897 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 
+2020-12-17 00:08:26.951 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:27.000 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:08:27.020 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:08:27.042 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:27.092 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:08:27.117 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:08:27.138 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:27.189 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:08:27.243 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:27.290 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:08:27.328 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:08:27.454 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:08:27.473 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:08:27.495 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:27.514 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:08:27.532 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:08:27.566 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:27.596 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:08:27.635 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:08:27.664 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:27.688 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:08:27.724 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:08:27.753 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:27.785 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:08:27.818 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:08:27.850 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:27.877 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 00:08:27.914 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:08:27.937 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:27.999 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17390, userName=1616, password=1a2B3_, realName=161616, gender=0, birthday=2020-12-09, point=0, email=1616@1616.com, mobile=12332116161, beDeleted=0, gmtCreate=2020-12-17T00:08:27.991371, gmtModified=null, state=4)
+2020-12-17 00:08:28.014 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 1616
+2020-12-17 00:08:28.042 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 00:08:28.062 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:28.136 [http-nio-8081-exec-7] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17391, userName=1717, password=1a2B3_, realName=171717, gender=0, birthday=2020-12-09, point=0, email=1717@1717.com, mobile=12332117171, beDeleted=0, gmtCreate=2020-12-17T00:08:28.124292600, gmtModified=null, state=4)
+2020-12-17 00:08:28.150 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 1717
+2020-12-17 00:08:28.201 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:28.271 [http-nio-8081-exec-8] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17392, userName=testU, password=1a2B3_, realName=testR, gender=0, birthday=2020-12-09, point=0, email=123@321.com, mobile=12332112345, beDeleted=0, gmtCreate=2020-12-17T00:08:28.263272900, gmtModified=null, state=4)
+2020-12-17 00:08:28.283 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU
+2020-12-17 00:08:28.804 [http-nio-8081-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 00:08:28.813 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-17 00:08:28.816 [http-nio-8081-exec-10] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17392
+2020-12-17 00:08:28.979 [http-nio-8081-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 00:08:28.980 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-17 00:08:28.981 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.dao.CustomerDao - id-1
+2020-12-17 00:08:29.033 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:29.127 [http-nio-8081-exec-2] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17393, userName=testU20, password=1a2B3_, realName=testR20, gender=0, birthday=2020-12-09, point=0, email=2020@2020.com, mobile=12332112320, beDeleted=0, gmtCreate=2020-12-17T00:08:29.118455500, gmtModified=null, state=4)
+2020-12-17 00:08:29.264 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU20
+2020-12-17 00:08:29.311 [http-nio-8081-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 00:08:29.312 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-17 00:08:29.313 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17393
+2020-12-17 00:08:29.397 [http-nio-8081-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 00:08:29.398 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17393
+2020-12-17 00:08:29.484 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 00:08:29.597 [http-nio-8081-exec-7] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17394, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-17T00:08:29.586923300, gmtModified=null, state=4)
+2020-12-17 00:08:29.612 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
+2020-12-17 00:08:29.675 [http-nio-8081-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 00:08:29.675 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-17 00:08:29.677 [http-nio-8081-exec-8] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17394
+2020-12-17 00:08:29.707 [http-nio-8081-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 00:08:29.707 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17394
+2020-12-17 22:29:04.333 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-17 22:29:05.271 [http-nio-8082-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 22:29:05.281 [http-nio-8082-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - createAftersale: id = 1 vo = CreateAftersaleVo(type=0, quantity=5, reason=testR, regionId=1, detail=testD, consignee=testC, mobile=13912345678)
+2020-12-17 23:13:07.223 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:07.590 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17399, userName=1111, password=1a2B3_, realName=11111, gender=0, birthday=2020-12-09, point=0, email=11111@11111.com, mobile=12332111111, beDeleted=0, gmtCreate=2020-12-17T23:13:07.481789600, gmtModified=null, state=4)
+2020-12-17 23:13:07.780 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 1111
+2020-12-17 23:13:07.966 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:08.084 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17400, userName=2222, password=1a2B3_, realName=22222, gender=0, birthday=2020-12-09, point=0, email=22222@22222.com, mobile=12342112222, beDeleted=0, gmtCreate=2020-12-17T23:13:08.068197300, gmtModified=null, state=4)
+2020-12-17 23:13:08.106 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:08.174 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 用户名已被注册
+2020-12-17 23:13:08.194 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 2222
+2020-12-17 23:13:08.229 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:13:08.262 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:08.372 [http-nio-8081-exec-6] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17401, userName=3333, password=1a2B3_, realName=33333, gender=0, birthday=2020-12-09, point=0, email=33333@33333.com, mobile=12342113333, beDeleted=0, gmtCreate=2020-12-17T23:13:08.357994800, gmtModified=null, state=4)
+2020-12-17 23:13:08.395 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:08.510 [http-nio-8081-exec-7] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 电话已被注册
+2020-12-17 23:13:08.528 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 33333
+2020-12-17 23:13:08.568 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:13:08.598 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:08.709 [http-nio-8081-exec-9] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17402, userName=4444, password=1a2B3_, realName=44444, gender=0, birthday=2020-12-09, point=0, email=44444@44444.com, mobile=12342114444, beDeleted=0, gmtCreate=2020-12-17T23:13:08.698004200, gmtModified=null, state=4)
+2020-12-17 23:13:08.725 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:08.745 [http-nio-8081-exec-10] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
+2020-12-17 23:13:08.756 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 44444
+2020-12-17 23:13:08.776 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:13:08.809 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:08.855 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 
+2020-12-17 23:13:08.963 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:09.061 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:13:09.114 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:13:09.162 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:09.267 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:13:09.321 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:13:09.394 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:09.459 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:13:09.537 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:09.564 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:13:09.583 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:13:09.636 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:13:09.656 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:13:09.673 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:09.687 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:13:09.710 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:13:09.729 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:09.747 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:13:09.777 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:13:09.805 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:09.825 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:13:09.854 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:13:09.883 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:09.914 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:13:09.966 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:13:10.010 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:10.051 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:13:10.111 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:13:10.134 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:10.216 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17403, userName=1616, password=1a2B3_, realName=161616, gender=0, birthday=2020-12-09, point=0, email=1616@1616.com, mobile=12332116161, beDeleted=0, gmtCreate=2020-12-17T23:13:10.205663900, gmtModified=null, state=4)
+2020-12-17 23:13:10.230 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 1616
+2020-12-17 23:13:10.256 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:13:10.279 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:10.366 [http-nio-8081-exec-6] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17404, userName=1717, password=1a2B3_, realName=171717, gender=0, birthday=2020-12-09, point=0, email=1717@1717.com, mobile=12332117171, beDeleted=0, gmtCreate=2020-12-17T23:13:10.355333, gmtModified=null, state=4)
+2020-12-17 23:13:10.379 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 1717
+2020-12-17 23:13:10.432 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:10.522 [http-nio-8081-exec-8] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17405, userName=testU, password=1a2B3_, realName=testR, gender=0, birthday=2020-12-09, point=0, email=123@321.com, mobile=12332112345, beDeleted=0, gmtCreate=2020-12-17T23:13:10.514076300, gmtModified=null, state=4)
+2020-12-17 23:13:10.535 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU
+2020-12-17 23:13:10.710 [http-nio-8081-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 23:13:10.713 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-17 23:13:10.714 [http-nio-8081-exec-10] INFO  cn.edu.xmu.customer.dao.CustomerDao - id-1
+2020-12-17 23:13:10.747 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:10.813 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17406, userName=testU20, password=1a2B3_, realName=testR20, gender=0, birthday=2020-12-09, point=0, email=2020@2020.com, mobile=12332112320, beDeleted=0, gmtCreate=2020-12-17T23:13:10.803485200, gmtModified=null, state=4)
+2020-12-17 23:13:10.824 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU20
+2020-12-17 23:13:10.863 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:13:10.938 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17407, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-17T23:13:10.928322900, gmtModified=null, state=4)
+2020-12-17 23:13:10.950 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
+2020-12-17 23:18:04.238 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:04.772 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17408, userName=1111, password=1a2B3_, realName=11111, gender=0, birthday=2020-12-09, point=0, email=11111@11111.com, mobile=12332111111, beDeleted=0, gmtCreate=2020-12-17T23:18:04.670377800, gmtModified=null, state=4)
+2020-12-17 23:18:05.049 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 1111
+2020-12-17 23:18:05.395 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:05.574 [http-nio-8081-exec-3] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17409, userName=2222, password=1a2B3_, realName=22222, gender=0, birthday=2020-12-09, point=0, email=22222@22222.com, mobile=12342112222, beDeleted=0, gmtCreate=2020-12-17T23:18:05.555254200, gmtModified=null, state=4)
+2020-12-17 23:18:05.604 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:05.707 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 用户名已被注册
+2020-12-17 23:18:05.735 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 2222
+2020-12-17 23:18:05.795 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:18:05.844 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:05.985 [http-nio-8081-exec-6] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17410, userName=3333, password=1a2B3_, realName=33333, gender=0, birthday=2020-12-09, point=0, email=33333@33333.com, mobile=12342113333, beDeleted=0, gmtCreate=2020-12-17T23:18:05.969953200, gmtModified=null, state=4)
+2020-12-17 23:18:06.008 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:06.175 [http-nio-8081-exec-7] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 电话已被注册
+2020-12-17 23:18:06.191 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 33333
+2020-12-17 23:18:06.223 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:18:06.248 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:06.348 [http-nio-8081-exec-10] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17411, userName=4444, password=1a2B3_, realName=44444, gender=0, birthday=2020-12-09, point=0, email=44444@44444.com, mobile=12342114444, beDeleted=0, gmtCreate=2020-12-17T23:18:06.338350200, gmtModified=null, state=4)
+2020-12-17 23:18:06.363 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:06.393 [http-nio-8081-exec-9] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
+2020-12-17 23:18:06.407 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 44444
+2020-12-17 23:18:06.439 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:18:06.486 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:06.533 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 
+2020-12-17 23:18:06.586 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:06.614 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:18:06.637 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:18:06.660 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:06.689 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:18:06.721 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:18:06.740 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:06.768 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:18:06.798 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:06.827 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:18:06.861 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:18:06.923 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:18:06.952 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:18:06.971 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:06.985 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:18:07.010 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:18:07.029 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:07.045 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:18:07.066 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:18:07.083 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:07.097 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:18:07.116 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:18:07.135 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:07.148 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:18:07.167 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:18:07.182 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:07.193 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 123
+2020-12-17 23:18:07.219 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:18:07.253 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:07.433 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17412, userName=1616, password=1a2B3_, realName=161616, gender=0, birthday=2020-12-09, point=0, email=1616@1616.com, mobile=12332116161, beDeleted=0, gmtCreate=2020-12-17T23:18:07.418543800, gmtModified=null, state=4)
+2020-12-17 23:18:07.447 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 1616
+2020-12-17 23:18:07.476 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-17 23:18:07.495 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:07.620 [http-nio-8081-exec-6] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17413, userName=1717, password=1a2B3_, realName=171717, gender=0, birthday=2020-12-09, point=0, email=1717@1717.com, mobile=12332117171, beDeleted=0, gmtCreate=2020-12-17T23:18:07.599745600, gmtModified=null, state=4)
+2020-12-17 23:18:07.643 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 1717
+2020-12-17 23:18:07.734 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:07.905 [http-nio-8081-exec-8] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17414, userName=testU, password=1a2B3_, realName=testR, gender=0, birthday=2020-12-09, point=0, email=123@321.com, mobile=12332112345, beDeleted=0, gmtCreate=2020-12-17T23:18:07.889569900, gmtModified=null, state=4)
+2020-12-17 23:18:07.932 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU
+2020-12-17 23:18:08.104 [http-nio-8081-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 23:18:08.111 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-17 23:18:08.113 [http-nio-8081-exec-9] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17414
+2020-12-17 23:18:08.373 [http-nio-8081-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 23:18:08.373 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-17 23:18:08.375 [http-nio-8081-exec-1] INFO  cn.edu.xmu.customer.dao.CustomerDao - id-1
+2020-12-17 23:18:08.444 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:08.527 [http-nio-8081-exec-2] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17415, userName=testU20, password=1a2B3_, realName=testR20, gender=0, birthday=2020-12-09, point=0, email=2020@2020.com, mobile=12332112320, beDeleted=0, gmtCreate=2020-12-17T23:18:08.517960, gmtModified=null, state=4)
+2020-12-17 23:18:08.536 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU20
+2020-12-17 23:18:08.581 [http-nio-8081-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 23:18:08.581 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-17 23:18:08.582 [http-nio-8081-exec-4] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17415
+2020-12-17 23:18:08.603 [http-nio-8081-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 23:18:08.603 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17415
+2020-12-17 23:18:08.690 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-17 23:18:08.826 [http-nio-8081-exec-6] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17416, userName=testU21, password=1a2B3_, realName=testR21, gender=0, birthday=2020-12-09, point=0, email=2121@2121.com, mobile=12332112321, beDeleted=0, gmtCreate=2020-12-17T23:18:08.817683400, gmtModified=null, state=4)
+2020-12-17 23:18:08.836 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testU21
+2020-12-17 23:18:08.904 [http-nio-8081-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 23:18:08.905 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-17 23:18:08.906 [http-nio-8081-exec-8] INFO  cn.edu.xmu.customer.dao.CustomerDao - id17416
+2020-12-17 23:18:08.927 [http-nio-8081-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-17 23:18:08.927 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - logout: userId = 17416
