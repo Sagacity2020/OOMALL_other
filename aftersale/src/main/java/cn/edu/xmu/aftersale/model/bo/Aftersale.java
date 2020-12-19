@@ -119,6 +119,7 @@ public class Aftersale implements VoObject {
 
     public Aftersale(AftersaleServicePo po){
         this.id=po.getId();
+        this.orderId=po.getOrderId();
         this.orderItemId=po.getOrderItemId();
         this.customerId=po.getCustomerId();
         this.shopId=po.getShopId();
@@ -142,19 +143,11 @@ public class Aftersale implements VoObject {
 
     public AftersaleServicePo createUpdatePo(AftersaleVo vo) {
 
-        Long refunds;
-        if(vo.getQuantity()!=null) {
-            refunds = (refund / quantity) * vo.getQuantity();
-        }
-        else{
-            refunds=refund;
-        }
-
         AftersaleServicePo po = new AftersaleServicePo();
         po.setId(id);
         po.setReason(vo.getReason());
         po.setConclusion("");
-        po.setRefund(refunds);
+        po.setRefund(refund);
         po.setQuantity(vo.getQuantity());
         po.setRegionId(vo.getRegionId());
         po.setDetail(vo.getDetail());
@@ -194,7 +187,7 @@ public class Aftersale implements VoObject {
         AftersaleServicePo po = new AftersaleServicePo();
 
         po.setId(id);
-        po.setCustomerLogSn(vo.getShopLogSn());
+        po.setShopLogSn(vo.getShopLogSn());
         po.setState(State.DELIVERING.getCode().byteValue());
         po.setOrderId(orderId);
         po.setGmtCreate(null);
@@ -210,7 +203,7 @@ public class Aftersale implements VoObject {
         if(State.getTypeByCode(state.intValue()) == State.SENDBACKWAIT || State.getTypeByCode(state.intValue()) == State.CHECK) {
             po.setState(State.CANCEL.getCode().byteValue());
         }
-        if(State.getTypeByCode(state.intValue())== State.SUCESS){
+        if(State.getTypeByCode(state.intValue())== State.SUCESS || State.getTypeByCode(state.intValue())==State.CANCEL){
             po.setBeDeleted((byte)1);
         }
         po.setGmtCreate(null);
@@ -226,12 +219,12 @@ public class Aftersale implements VoObject {
         po.setConclusion(vo.getConclusion());
         if(vo.getConfirm().equals(true)){
             po.setState(State.SENDBACKWAIT.getCode().byteValue());
+            po.setRefund(vo.getPrice().longValue());
+            po.setType(vo.getType().byteValue());
         }
         else {
             po.setState(State.DISAGREE.getCode().byteValue());
         }
-        po.setRefund(vo.getPrice().longValue());
-        po.setType(vo.getType().byteValue());
         po.setGmtCreate(null);
         po.setGmtModified(LocalDateTime.now());
 
@@ -299,15 +292,7 @@ public class Aftersale implements VoObject {
         vo.setCustomerId(customerId);
         vo.setShopId(shopId);
         vo.setServiceSn(serviceSn);
-        if(type.intValue()==0) {
-            vo.setType("换货");
-        }
-        else if(type.intValue()==1){
-            vo.setType("退货");
-        }
-        else{
-            vo.setType("维修");
-        }
+        vo.setType(type.intValue());
         vo.setReason(reason);
         vo.setConclusion(conclusion);
         vo.setRefund(refund);

@@ -92,6 +92,32 @@ public class AdvertisementController {
             return returnObject;
         }
 
+        DateTimeFormatter df= DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate begin=null;
+        LocalDate end=null;
+
+
+        if(vo.getBeginDate()!=null){
+            try{
+                begin=LocalDate.parse(vo.getBeginDate(),df);
+            } catch (Exception e) {
+                return Common.getRetObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID));
+            }
+        }
+        if(vo.getEndDate()!=null){
+            try{
+                end=LocalDate.parse(vo.getEndDate(),df);
+            } catch (Exception e) {
+                return Common.getPageRetObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID));
+            }
+        }
+        if(begin!=null && end!=null && begin.isAfter(end)){
+            return Common.getPageRetObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID));
+        }
+        if(end!=null && end.isBefore(LocalDate.now())){
+            return Common.getPageRetObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID));
+        }
+
 
         ReturnObject returnObj=advertisementService.createAdvertisement(id,vo);
         if(returnObj.getData()!=null){
