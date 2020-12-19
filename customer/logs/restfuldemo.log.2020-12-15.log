@@ -1,0 +1,3 @@
+2020-12-15 19:23:06.168 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-15 19:24:05.647 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 68.573 seconds (JVM running for 75.242)
+2020-12-15 19:24:06.704 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register

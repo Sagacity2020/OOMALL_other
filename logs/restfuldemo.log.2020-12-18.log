@@ -64,3 +64,1115 @@
 2020-12-18 01:12:59.872 [http-nio-8083-exec-5] DEBUG c.e.x.a.controller.AdvertisementController - getAdvertisementBySegId id=202,page=4,pageSize=3
 2020-12-18 01:13:47.730 [http-nio-8083-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
 2020-12-18 01:13:47.731 [http-nio-8083-exec-3] DEBUG c.e.x.a.controller.AdvertisementController - getAdvertisementBySegId id=202,page=4,pageSize=3
+2020-12-18 15:53:29.264 [http-nio-8083-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 15:53:29.310 [http-nio-8083-exec-1] DEBUG c.e.x.a.controller.AdvertisementController - getAdvertisementBySegId id=299,page=1,pageSize=20
+2020-12-18 15:54:20.951 [http-nio-8083-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 16:08:00.973 [http-nio-8083-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 16:08:34.696 [http-nio-8083-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 16:09:05.464 [http-nio-8083-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 16:09:05.464 [http-nio-8083-exec-6] DEBUG c.e.x.a.controller.AdvertisementController - set default Ad
+2020-12-18 16:09:40.000 [http-nio-8083-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 16:10:30.408 [http-nio-8083-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 16:11:12.916 [http-nio-8083-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 19:45:20.187 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 19:49:59.758 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 19:50:00.576 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 19:50:00.585 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - createAftersale: id = 1 vo = CreateAftersaleVo(type=0, quantity=5, reason=testR, regionId=1, detail=testD, consignee=testC, mobile=13912345678)
+2020-12-18 19:50:01.598 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 新建售后单成功
+2020-12-18 19:52:09.414 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 19:52:09.910 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 19:52:09.919 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - createAftersale: id = 1 vo = CreateAftersaleVo(type=0, quantity=5, reason=testR, regionId=1, detail=testD, consignee=testC, mobile=13912345678)
+2020-12-18 19:52:10.523 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 新建售后单成功
+2020-12-18 19:53:38.593 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 19:53:38.772 [http-nio-8084-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 19:53:38.774 [http-nio-8084-exec-3] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - createAftersale: id = 1 vo = CreateAftersaleVo(type=0, quantity=5, reason=testR, regionId=1, detail=testD, consignee=testC, mobile=13912345678)
+2020-12-18 19:53:39.105 [http-nio-8084-exec-3] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 新建售后单成功
+2020-12-18 19:53:39.149 [http-nio-8084-exec-4] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=118
+2020-12-18 19:53:39.188 [http-nio-8084-exec-4] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=118成功
+2020-12-18 19:53:39.188 [http-nio-8084-exec-4] INFO  cn.edu.xmu.aftersale.service.AftersaleService - 1
+2020-12-18 19:53:39.274 [http-nio-8084-exec-4] INFO  cn.edu.xmu.aftersale.service.AftersaleService - OrderAftersaleDTO(skuId=185, skuName=null, orderId=1, orderSn=2016102361242, shopId=1)
+2020-12-18 19:54:08.011 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 19:54:08.151 [http-nio-8084-exec-5] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=null,page=1,pageSize=10
+2020-12-18 19:54:08.174 [http-nio-8084-exec-5] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.RuntimeException: Value for customerId cannot be null] with root cause
+java.lang.RuntimeException: Value for customerId cannot be null
+	at cn.edu.xmu.aftersale.model.po.AftersaleServicePoExample$GeneratedCriteria.addCriterion(AftersaleServicePoExample.java:186)
+	at cn.edu.xmu.aftersale.model.po.AftersaleServicePoExample$GeneratedCriteria.andCustomerIdEqualTo(AftersaleServicePoExample.java:329)
+	at cn.edu.xmu.aftersale.model.po.AftersaleServicePoExample$Criteria.andCustomerIdEqualTo(AftersaleServicePoExample.java:1545)
+	at cn.edu.xmu.aftersale.dao.AftersaleDao.getAftersaleByUserId(AftersaleDao.java:338)
+	at cn.edu.xmu.aftersale.dao.AftersaleDao$$FastClassBySpringCGLIB$$a7d73fff.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at cn.edu.xmu.aftersale.dao.AftersaleDao$$EnhancerBySpringCGLIB$$7053884.getAftersaleByUserId(<generated>)
+	at cn.edu.xmu.aftersale.service.AftersaleService.getAftersaleByUserId(AftersaleService.java:242)
+	at cn.edu.xmu.aftersale.service.AftersaleService$$FastClassBySpringCGLIB$$b65f21df.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at cn.edu.xmu.aftersale.service.AftersaleService$$EnhancerBySpringCGLIB$$6ab10453.getAftersaleByUserId(<generated>)
+	at cn.edu.xmu.aftersale.controller.AftersaleController.getAftersaleByUserId(AftersaleController.java:476)
+	at cn.edu.xmu.aftersale.controller.AftersaleController$$FastClassBySpringCGLIB$$9f3aca41.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at cn.edu.xmu.aftersale.controller.AftersaleController$$EnhancerBySpringCGLIB$$5d8bbfc5.getAftersaleByUserId(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-12-18 19:54:51.229 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 19:54:51.420 [http-nio-8084-exec-6] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=null,page=1,pageSize=10
+2020-12-18 19:54:51.423 [http-nio-8084-exec-6] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.RuntimeException: Value for customerId cannot be null] with root cause
+java.lang.RuntimeException: Value for customerId cannot be null
+	at cn.edu.xmu.aftersale.model.po.AftersaleServicePoExample$GeneratedCriteria.addCriterion(AftersaleServicePoExample.java:186)
+	at cn.edu.xmu.aftersale.model.po.AftersaleServicePoExample$GeneratedCriteria.andCustomerIdEqualTo(AftersaleServicePoExample.java:329)
+	at cn.edu.xmu.aftersale.model.po.AftersaleServicePoExample$Criteria.andCustomerIdEqualTo(AftersaleServicePoExample.java:1545)
+	at cn.edu.xmu.aftersale.dao.AftersaleDao.getAftersaleByUserId(AftersaleDao.java:338)
+	at cn.edu.xmu.aftersale.dao.AftersaleDao$$FastClassBySpringCGLIB$$a7d73fff.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at cn.edu.xmu.aftersale.dao.AftersaleDao$$EnhancerBySpringCGLIB$$7053884.getAftersaleByUserId(<generated>)
+	at cn.edu.xmu.aftersale.service.AftersaleService.getAftersaleByUserId(AftersaleService.java:242)
+	at cn.edu.xmu.aftersale.service.AftersaleService$$FastClassBySpringCGLIB$$b65f21df.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at cn.edu.xmu.aftersale.service.AftersaleService$$EnhancerBySpringCGLIB$$6ab10453.getAftersaleByUserId(<generated>)
+	at cn.edu.xmu.aftersale.controller.AftersaleController.getAftersaleByUserId(AftersaleController.java:476)
+	at cn.edu.xmu.aftersale.controller.AftersaleController$$FastClassBySpringCGLIB$$9f3aca41.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at cn.edu.xmu.aftersale.controller.AftersaleController$$EnhancerBySpringCGLIB$$5d8bbfc5.getAftersaleByUserId(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-12-18 19:57:02.623 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 19:57:02.922 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 19:57:02.930 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=1,page=1,pageSize=10
+2020-12-18 19:57:03.249 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=1的售后单成功
+2020-12-18 19:57:30.963 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 19:57:31.128 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 19:57:31.129 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=1,page=1,pageSize=10
+2020-12-18 19:57:31.145 [http-nio-8084-exec-2] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=1的售后单成功
+2020-12-18 19:58:13.795 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 19:58:14.046 [http-nio-8084-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 19:58:14.046 [http-nio-8084-exec-5] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=1,page=1,pageSize=10
+2020-12-18 19:58:48.764 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 19:58:48.983 [http-nio-8084-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 19:58:48.984 [http-nio-8084-exec-4] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=1,page=1,pageSize=10
+2020-12-18 19:59:37.743 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 19:59:37.976 [http-nio-8084-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 19:59:37.977 [http-nio-8084-exec-7] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - sendbackAftersale: id = 102 vo = AftersaleSendbackVo(logSn=87654321)
+2020-12-18 19:59:38.181 [http-nio-8084-exec-7] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 102 的信息已更新,买家发货成功
+2020-12-18 19:59:38.270 [http-nio-8084-exec-8] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=102
+2020-12-18 19:59:38.274 [http-nio-8084-exec-8] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=102成功
+2020-12-18 19:59:38.274 [http-nio-8084-exec-8] INFO  cn.edu.xmu.aftersale.service.AftersaleService - 1
+2020-12-18 19:59:38.420 [http-nio-8084-exec-8] INFO  cn.edu.xmu.aftersale.service.AftersaleService - OrderAftersaleDTO(skuId=185, skuName=null, orderId=1, orderSn=2016102361242, shopId=1)
+2020-12-18 19:59:38.470 [http-nio-8084-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 19:59:38.470 [http-nio-8084-exec-3] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - sendbackAftersale: id = 102 vo = AftersaleSendbackVo(logSn=87654321)
+2020-12-18 19:59:38.477 [http-nio-8084-exec-3] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 无法修改此售后单信息：id = 102
+2020-12-18 20:00:29.555 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 20:00:29.788 [http-nio-8084-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 20:00:29.789 [http-nio-8084-exec-6] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - sendbackAftersale: id = 102 vo = AftersaleSendbackVo(logSn=null)
+2020-12-18 20:00:29.790 [http-nio-8084-exec-6] INFO  c.edu.xmu.aftersale.controller.AftersaleController - incorrect data received while sendbackAftersale id = 102
+2020-12-18 20:01:22.236 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 20:01:22.391 [http-nio-8084-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 20:01:22.391 [http-nio-8084-exec-9] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersaleById: id = 107
+2020-12-18 20:01:22.440 [http-nio-8084-exec-9] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 107 的信息已更新,确认售后结束成功
+2020-12-18 20:01:22.479 [http-nio-8084-exec-10] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=107
+2020-12-18 20:01:22.482 [http-nio-8084-exec-10] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=107成功
+2020-12-18 20:01:22.483 [http-nio-8084-exec-10] INFO  cn.edu.xmu.aftersale.service.AftersaleService - 1
+2020-12-18 20:01:22.966 [http-nio-8084-exec-10] INFO  cn.edu.xmu.aftersale.service.AftersaleService - OrderAftersaleDTO(skuId=185, skuName=null, orderId=1, orderSn=2016102361242, shopId=1)
+2020-12-18 20:01:22.986 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 20:01:22.986 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersaleById: id = 107
+2020-12-18 20:01:22.990 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 无法修改此售后单信息：id = 107
+2020-12-18 20:02:01.527 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 20:02:01.665 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 20:02:01.665 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersaleById: id = 108
+2020-12-18 20:02:01.709 [http-nio-8084-exec-2] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 108 的信息已更新,确认售后结束成功
+2020-12-18 20:02:01.735 [http-nio-8084-exec-5] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=108
+2020-12-18 20:02:01.762 [http-nio-8084-exec-5] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=108成功
+2020-12-18 20:02:01.762 [http-nio-8084-exec-5] INFO  cn.edu.xmu.aftersale.service.AftersaleService - 1
+2020-12-18 20:02:01.833 [http-nio-8084-exec-5] INFO  cn.edu.xmu.aftersale.service.AftersaleService - OrderAftersaleDTO(skuId=185, skuName=null, orderId=1, orderSn=2016102361242, shopId=1)
+2020-12-18 20:02:01.863 [http-nio-8084-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 20:02:01.864 [http-nio-8084-exec-4] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersaleById: id = 108
+2020-12-18 20:02:01.882 [http-nio-8084-exec-4] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 无法修改此售后单信息：id = 108
+2020-12-18 20:02:30.077 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 20:02:30.256 [http-nio-8084-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 20:02:30.257 [http-nio-8084-exec-7] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - deleteAftersale: id = 109
+2020-12-18 20:02:30.298 [http-nio-8084-exec-7] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 109 已取消或已删除
+2020-12-18 20:02:30.378 [http-nio-8084-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 20:02:30.378 [http-nio-8084-exec-8] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - deleteAftersale: id = 109
+2020-12-18 20:02:30.386 [http-nio-8084-exec-8] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 109 已取消或已删除
+2020-12-18 20:11:41.142 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 20:11:41.470 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 20:11:41.481 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - deleteAftersale: id = 109
+2020-12-18 20:11:41.814 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 109 已取消或已删除
+2020-12-18 20:11:41.904 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 20:11:41.906 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - deleteAftersale: id = 109
+2020-12-18 20:11:41.911 [http-nio-8084-exec-2] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单已删除：id = 109
+2020-12-18 20:12:45.693 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 20:13:46.160 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 20:13:46.262 [http-nio-8084-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 20:13:46.263 [http-nio-8084-exec-4] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=1,page=1,pageSize=10
+2020-12-18 20:13:46.321 [http-nio-8084-exec-4] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=1的售后单成功
+2020-12-18 20:23:13.459 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 20:23:13.647 [http-nio-8084-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 20:23:13.648 [http-nio-8084-exec-6] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=1,page=1,pageSize=10
+2020-12-18 20:23:13.671 [http-nio-8084-exec-6] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=1的售后单成功
+2020-12-18 20:23:45.214 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 20:23:45.401 [http-nio-8084-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 20:23:45.402 [http-nio-8084-exec-7] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=1,page=2,pageSize=10
+2020-12-18 20:23:45.410 [http-nio-8084-exec-7] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=1的售后单成功
+2020-12-18 20:24:57.173 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 20:24:57.355 [http-nio-8084-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 20:24:57.356 [http-nio-8084-exec-9] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleByUserId id=1,page=1,pageSize=10
+2020-12-18 20:24:57.395 [http-nio-8084-exec-9] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取用户id=1的售后单成功
+2020-12-18 20:28:57.015 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 36040122840
+2020-12-18 20:28:57.139 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-18 20:28:57.145 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=1成功
+2020-12-18 20:28:57.145 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.service.AftersaleService - 1
+2020-12-18 20:28:57.448 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.service.AftersaleService - OrderAftersaleDTO(skuId=185, skuName=null, orderId=1, orderSn=2016102361242, shopId=1)
+2020-12-18 20:33:29.602 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 20:33:29.968 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=25
+2020-12-18 20:33:30.204 [http-nio-8084-exec-1] INFO  c.edu.xmu.aftersale.controller.AftersaleController - 没有权限修改售后单id=25
+2020-12-18 20:38:02.211 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 20:38:02.642 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=25
+2020-12-18 20:38:02.831 [http-nio-8084-exec-1] ERROR c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-18 20:38:02.832 [http-nio-8084-exec-1] INFO  c.edu.xmu.aftersale.controller.AftersaleController - 没有权限修改售后单id=25
+2020-12-18 20:39:25.505 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 20:40:05.200 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 20:40:05.499 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=25
+2020-12-18 20:40:05.638 [http-nio-8084-exec-1] ERROR c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-18 20:40:05.653 [http-nio-8084-exec-1] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at cn.edu.xmu.aftersale.controller.AftersaleController.checkCustomerId(AftersaleController.java:556)
+	at cn.edu.xmu.aftersale.controller.AftersaleController.getAftersaleById(AftersaleController.java:381)
+	at cn.edu.xmu.aftersale.controller.AftersaleController$$FastClassBySpringCGLIB$$9f3aca41.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at cn.edu.xmu.aftersale.controller.AftersaleController$$EnhancerBySpringCGLIB$$f81cde8a.getAftersaleById(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-12-18 20:41:46.622 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 20:41:46.959 [http-nio-8084-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 20:41:46.976 [http-nio-8084-exec-3] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=25
+2020-12-18 20:41:47.200 [http-nio-8084-exec-3] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=25成功
+2020-12-18 20:41:47.200 [http-nio-8084-exec-3] INFO  cn.edu.xmu.aftersale.service.AftersaleService - 1
+2020-12-18 20:43:13.738 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 36040122840
+2020-12-18 20:43:13.847 [http-nio-8084-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 20:43:13.852 [http-nio-8084-exec-7] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-18 20:43:13.875 [http-nio-8084-exec-7] INFO  c.edu.xmu.aftersale.controller.AftersaleController - 没有权限查看或修改售后单id=1
+2020-12-18 20:47:54.615 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 36040122840
+2020-12-18 20:47:54.870 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 20:47:54.880 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-18 20:47:55.063 [http-nio-8084-exec-2] INFO  c.edu.xmu.aftersale.controller.AftersaleController - 没有权限查看或修改售后单id=1
+2020-12-18 20:54:57.890 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 36040122840
+2020-12-18 20:54:58.079 [http-nio-8084-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 20:54:58.081 [http-nio-8084-exec-7] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-18 20:54:58.089 [http-nio-8084-exec-7] INFO  c.edu.xmu.aftersale.controller.AftersaleController - 没有权限查看或修改售后单id=1
+2020-12-18 20:57:33.342 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 36040122840
+2020-12-18 20:57:33.815 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 20:57:33.839 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-18 20:57:34.147 [http-nio-8084-exec-1] INFO  c.edu.xmu.aftersale.controller.AftersaleController - 没有权限查看或修改售后单id=1
+2020-12-18 21:44:14.164 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 21:44:18.359 [http-nio-8084-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 21:44:18.361 [http-nio-8084-exec-3] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=-1
+2020-12-18 21:44:18.680 [http-nio-8084-exec-3] INFO  c.edu.xmu.aftersale.controller.AftersaleController - 售后单不存在：id = -1
+2020-12-18 21:58:16.598 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 21:58:17.398 [http-nio-8084-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 21:58:17.399 [http-nio-8084-exec-5] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 1 vo = AftersaleVo(quantity=1, reason=无理由退款, regionId=1, detail=厦门大学, consignee=21世纪, mobile=15306987164)
+2020-12-18 22:04:45.982 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:04:47.103 [http-nio-8084-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:04:47.104 [http-nio-8084-exec-7] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 100 vo = AftersaleVo(quantity=null, reason=null, regionId=null, detail=null, consignee=null, mobile=13912345689)
+2020-12-18 22:04:47.758 [http-nio-8084-exec-7] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 100 的信息已更新
+2020-12-18 22:06:54.658 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:06:55.485 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:06:55.496 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 1 vo = AftersaleVo(quantity=1, reason=无理由退款, regionId=1, detail=厦门大学, consignee=21世纪, mobile=15306987164)
+2020-12-18 22:06:55.497 [http-nio-8084-exec-1] ERROR c.edu.xmu.aftersale.controller.AftersaleController - 1
+2020-12-18 22:06:55.846 [http-nio-8084-exec-1] ERROR c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-18 22:09:14.087 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:09:14.688 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:09:14.702 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 1 vo = AftersaleVo(quantity=1, reason=无理由退款, regionId=1, detail=厦门大学, consignee=21世纪, mobile=15306987164)
+2020-12-18 22:09:14.906 [http-nio-8084-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 1
+2020-12-18 22:09:14.911 [http-nio-8084-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 2
+2020-12-18 22:09:14.911 [http-nio-8084-exec-1] ERROR cn.edu.xmu.aftersale.dao.AftersaleDao - 3
+2020-12-18 22:13:09.037 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:13:09.617 [http-nio-8084-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:13:09.624 [http-nio-8084-exec-5] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 1 vo = AftersaleVo(quantity=1, reason=无理由退款, regionId=1, detail=厦门大学, consignee=21世纪, mobile=15306987164)
+2020-12-18 22:13:10.125 [http-nio-8084-exec-5] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 1 的信息已更新
+2020-12-18 22:13:10.310 [http-nio-8084-exec-5] ERROR c.edu.xmu.aftersale.controller.AftersaleController - 3
+2020-12-18 22:13:10.500 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:13:10.510 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-18 22:13:10.596 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=1成功
+2020-12-18 22:13:10.596 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.service.AftersaleService - 1
+2020-12-18 22:17:49.681 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:17:50.416 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:17:50.424 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 1 vo = AftersaleVo(quantity=1, reason=无理由退款, regionId=1, detail=厦门大学, consignee=21世纪, mobile=15306987164)
+2020-12-18 22:17:51.029 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 1 的信息已更新
+2020-12-18 22:17:51.034 [http-nio-8084-exec-1] ERROR c.edu.xmu.aftersale.controller.AftersaleController - 3
+2020-12-18 22:17:51.146 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:17:51.148 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-18 22:17:51.178 [http-nio-8084-exec-2] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=1成功
+2020-12-18 22:20:07.942 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:20:08.465 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:20:08.473 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 1 vo = AftersaleVo(quantity=1, reason=无理由退款, regionId=1, detail=厦门大学, consignee=21世纪, mobile=15306987164)
+2020-12-18 22:20:08.715 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 1 的信息已更新
+2020-12-18 22:20:08.730 [http-nio-8084-exec-1] ERROR c.edu.xmu.aftersale.controller.AftersaleController - 3
+2020-12-18 22:20:08.867 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:20:08.869 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-18 22:20:08.912 [http-nio-8084-exec-2] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=1成功
+2020-12-18 22:20:09.029 [http-nio-8084-exec-2] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 1
+2020-12-18 22:26:54.759 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:26:54.987 [http-nio-8084-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:26:54.987 [http-nio-8084-exec-4] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = 8 vo = AftersaleVo(quantity=1, reason=无理由退款, regionId=1, detail=厦门大学, consignee=21世纪, mobile=15306987164)
+2020-12-18 22:26:55.003 [http-nio-8084-exec-4] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 无法修改此售后单信息：id = 8
+2020-12-18 22:26:55.004 [http-nio-8084-exec-4] ERROR c.edu.xmu.aftersale.controller.AftersaleController - 3
+2020-12-18 22:26:55.183 [http-nio-8084-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:26:55.183 [http-nio-8084-exec-5] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=8
+2020-12-18 22:26:55.188 [http-nio-8084-exec-5] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=8成功
+2020-12-18 22:26:55.330 [http-nio-8084-exec-5] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 1
+2020-12-18 22:27:38.532 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:27:39.016 [http-nio-8084-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:27:39.016 [http-nio-8084-exec-6] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - updateAftersale: id = -1 vo = AftersaleVo(quantity=1, reason=无理由退款, regionId=1, detail=厦门大学, consignee=21世纪, mobile=15306987164)
+2020-12-18 22:27:39.018 [http-nio-8084-exec-6] INFO  c.edu.xmu.aftersale.controller.AftersaleController - 售后单不存在：id = -1
+2020-12-18 22:28:18.115 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:28:18.397 [http-nio-8084-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:28:18.398 [http-nio-8084-exec-7] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - deleteAftersale: id = 1
+2020-12-18 22:28:18.602 [http-nio-8084-exec-7] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 1 已取消或已删除
+2020-12-18 22:28:19.080 [http-nio-8084-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:28:19.080 [http-nio-8084-exec-8] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=1
+2020-12-18 22:28:19.083 [http-nio-8084-exec-8] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=1成功
+2020-12-18 22:28:19.190 [http-nio-8084-exec-8] ERROR cn.edu.xmu.aftersale.service.AftersaleService - 1
+2020-12-18 22:29:00.244 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:29:00.718 [http-nio-8084-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:29:00.718 [http-nio-8084-exec-9] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - deleteAftersale: id = 9
+2020-12-18 22:29:00.763 [http-nio-8084-exec-9] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 9 已取消或已删除
+2020-12-18 22:29:00.953 [http-nio-8084-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:29:00.953 [http-nio-8084-exec-10] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=9
+2020-12-18 22:29:00.961 [http-nio-8084-exec-10] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单已删除：id = 9
+2020-12-18 22:35:23.934 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:35:24.322 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:35:24.331 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - deleteAftersale: id = 9
+2020-12-18 22:35:24.671 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 9 已取消或已删除
+2020-12-18 22:35:24.815 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:35:24.817 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=9
+2020-12-18 22:35:24.824 [http-nio-8084-exec-2] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单已删除：id = 9
+2020-12-18 22:39:43.794 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:39:44.225 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:39:44.239 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - deleteAftersale: id = 9
+2020-12-18 22:39:44.563 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 9 已取消或已删除
+2020-12-18 22:39:44.773 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:39:44.775 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=9
+2020-12-18 22:39:44.781 [http-nio-8084-exec-2] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单已删除：id = 9
+2020-12-18 22:42:24.004 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:42:24.546 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:42:24.558 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - deleteAftersale: id = 9
+2020-12-18 22:42:24.772 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 9 已取消或已删除
+2020-12-18 22:42:24.932 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:42:24.938 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=9
+2020-12-18 22:42:24.959 [http-nio-8084-exec-2] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单已删除：id = 9
+2020-12-18 22:43:56.690 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:43:57.104 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:43:57.114 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - deleteAftersale: id = 9
+2020-12-18 22:43:57.346 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 9 已取消或已删除
+2020-12-18 22:43:57.640 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:43:57.642 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=9
+2020-12-18 22:43:57.647 [http-nio-8084-exec-2] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单已删除：id = 9
+2020-12-18 22:43:57.648 [http-nio-8084-exec-2] ERROR c.edu.xmu.aftersale.controller.AftersaleController - 2
+2020-12-18 22:48:35.923 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:48:36.425 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:48:36.433 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - deleteAftersale: id = 9
+2020-12-18 22:48:36.665 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 9 已取消或已删除
+2020-12-18 22:48:36.813 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:48:36.815 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=9
+2020-12-18 22:48:36.819 [http-nio-8084-exec-2] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单已删除：id = 9
+2020-12-18 22:48:36.819 [http-nio-8084-exec-2] ERROR cn.edu.xmu.aftersale.service.AftersaleService - cn.edu.xmu.ooad.util.ReturnObject@7652ab5d
+2020-12-18 22:53:07.042 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:53:07.377 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:53:07.397 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - deleteAftersale: id = 9
+2020-12-18 22:53:07.628 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 9 已取消或已删除
+2020-12-18 22:53:07.795 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:53:07.797 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=9
+2020-12-18 22:53:07.829 [http-nio-8084-exec-2] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单已删除：id = 9
+2020-12-18 22:54:18.848 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:54:19.277 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:54:19.285 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - deleteAftersale: id = 9
+2020-12-18 22:54:19.477 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 9 已取消或已删除
+2020-12-18 22:54:19.656 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:54:19.658 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=9
+2020-12-18 22:54:19.663 [http-nio-8084-exec-2] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单已删除：id = 9
+2020-12-18 22:56:14.405 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:56:14.748 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:56:14.757 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - deleteAftersale: id = 9
+2020-12-18 22:56:14.926 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 9 已取消或已删除
+2020-12-18 22:56:15.062 [http-nio-8084-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:56:15.064 [http-nio-8084-exec-3] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=9
+2020-12-18 22:56:15.069 [http-nio-8084-exec-3] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单已删除：id = 9
+2020-12-18 22:57:37.102 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:57:37.404 [http-nio-8084-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:57:37.405 [http-nio-8084-exec-4] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - deleteAftersale: id = 9
+2020-12-18 22:57:37.460 [http-nio-8084-exec-4] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 9 已取消或已删除
+2020-12-18 22:57:37.535 [http-nio-8084-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:57:37.536 [http-nio-8084-exec-5] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=9
+2020-12-18 22:57:37.540 [http-nio-8084-exec-5] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单已删除：id = 9
+2020-12-18 22:58:27.067 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 22:58:27.364 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:27.550 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:27.621 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:27.812 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:27.955 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:28.062 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:28.146 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:28.432 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:28.565 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:28.663 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 22:58:28.756 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:28.891 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:29.077 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:29.184 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:29.278 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 22:58:29.341 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:29.408 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 22:58:29.458 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:29.580 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:29.651 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 22:58:29.711 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:29.799 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:29.882 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:29.987 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 22:58:30.095 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:58:31.167 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 22:58:31.404 [http-nio-8084-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:58:31.404 [http-nio-8084-exec-6] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - deleteAftersale: id = 3
+2020-12-18 22:58:31.411 [http-nio-8084-exec-6] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 无法取消或删除此售后单信息：id = 3
+2020-12-18 22:58:31.501 [http-nio-8084-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 22:58:31.501 [http-nio-8084-exec-7] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=3
+2020-12-18 22:58:31.506 [http-nio-8084-exec-7] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=3成功
+2020-12-18 22:59:12.207 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 22:59:12.290 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:59:12.352 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:59:12.423 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:59:12.624 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:59:12.851 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:59:13.021 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:59:13.827 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:59:13.978 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:59:14.191 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:59:14.360 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 22:59:14.664 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:59:14.898 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:59:14.956 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:59:15.081 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:59:15.272 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 22:59:15.366 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:59:15.496 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 22:59:15.673 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:59:15.731 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:59:15.914 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 22:59:16.004 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:59:16.120 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:59:16.466 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 22:59:16.600 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 22:59:16.698 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:00:11.040 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 23:00:11.418 [http-nio-8084-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 23:00:11.419 [http-nio-8084-exec-8] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - sendbackAftersale: id = 2 vo = AftersaleSendbackVo(logSn=logSn)
+2020-12-18 23:00:11.473 [http-nio-8084-exec-8] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 2 的信息已更新,买家发货成功
+2020-12-18 23:00:11.591 [http-nio-8084-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 23:00:11.592 [http-nio-8084-exec-10] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=2
+2020-12-18 23:00:11.636 [http-nio-8084-exec-10] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=2成功
+2020-12-18 23:00:42.037 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 23:00:42.352 [http-nio-8084-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 23:00:42.352 [http-nio-8084-exec-1] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - sendbackAftersale: id = 19 vo = AftersaleSendbackVo(logSn=logSn)
+2020-12-18 23:00:42.380 [http-nio-8084-exec-1] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 无法修改此售后单信息：id = 19
+2020-12-18 23:00:42.500 [http-nio-8084-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 23:00:42.500 [http-nio-8084-exec-3] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=19
+2020-12-18 23:00:42.509 [http-nio-8084-exec-3] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=19成功
+2020-12-18 23:01:11.395 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 23:01:11.570 [http-nio-8084-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 23:01:11.571 [http-nio-8084-exec-2] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersaleById: id = 19
+2020-12-18 23:01:11.577 [http-nio-8084-exec-2] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 无法修改此售后单信息：id = 19
+2020-12-18 23:01:11.614 [http-nio-8084-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 23:01:11.615 [http-nio-8084-exec-4] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=19
+2020-12-18 23:01:11.620 [http-nio-8084-exec-4] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=19成功
+2020-12-18 23:01:34.110 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 23:01:34.270 [http-nio-8084-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 23:01:34.271 [http-nio-8084-exec-5] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersaleById: id = 13
+2020-12-18 23:01:34.293 [http-nio-8084-exec-5] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 13 的信息已更新,确认售后结束成功
+2020-12-18 23:01:34.381 [http-nio-8084-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 23:01:34.382 [http-nio-8084-exec-6] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=13
+2020-12-18 23:01:34.385 [http-nio-8084-exec-6] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=13成功
+2020-12-18 23:04:51.311 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:04:53.547 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-18 23:04:53.761 [http-nio-8084-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 23:04:53.761 [http-nio-8084-exec-9] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - confirmAftersaleById: id = 13
+2020-12-18 23:04:53.792 [http-nio-8084-exec-9] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 售后单 id = 13 的信息已更新,确认售后结束成功
+2020-12-18 23:04:53.850 [http-nio-8084-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-18 23:04:53.851 [http-nio-8084-exec-8] DEBUG c.edu.xmu.aftersale.controller.AftersaleController - getAftersaleById id=13
+2020-12-18 23:04:53.856 [http-nio-8084-exec-8] INFO  cn.edu.xmu.aftersale.dao.AftersaleDao - 获取售后单id=13成功
+2020-12-18 23:05:23.142 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:07:58.460 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:07:58.684 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:07:58.754 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:07:58.831 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:07:58.894 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:07:59.146 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:07:59.214 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:07:59.352 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:07:59.443 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:07:59.510 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:07:59.576 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:07:59.639 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:07:59.869 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:08:00.062 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:08:00.127 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:08:00.265 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:08:00.361 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:08:00.878 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:08:00.929 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:08:00.986 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:08:01.037 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:08:01.083 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:08:01.151 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:08:01.200 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:08:01.250 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:08:02.005 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:13:08.631 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:09.183 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 98970287664
+2020-12-18 23:13:09.272 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:09.358 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:09.425 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:09.502 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:09.576 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:09.652 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:09.713 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:09.777 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:09.854 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:10.023 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:10.103 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:10.212 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 98970287664
+2020-12-18 23:13:10.329 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:10.391 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:10.459 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:10.543 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:10.635 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:10.843 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:10.896 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:10.952 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:11.006 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:11.069 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:11.128 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:11.184 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:11.241 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:11.312 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:11.373 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:11.432 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:11.488 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:11.562 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 98970287664
+2020-12-18 23:13:11.620 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:11.807 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:11.964 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:12.022 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:12.091 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:12.143 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:12.196 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:12.246 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:12.368 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:12.417 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:12.465 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:12.521 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 98970287664
+2020-12-18 23:13:12.616 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:12.665 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:12.734 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:12.781 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:12.839 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:12.888 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:13:12.937 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 98970287664
+2020-12-18 23:19:28.526 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.apache.dubbo.rpc.RpcException: Fail to start server(url: dubbo://192.168.43.225:20880/cn.edu.xmu.other.service.CustomerServiceInterface?anyhost=true&application=customer-service&bind.ip=192.168.43.225&bind.port=20880&channel.readonly.sent=true&codec=dubbo&deprecated=false&dubbo=2.0.2&dynamic=true&generic=false&heartbeat=60000&interface=cn.edu.xmu.other.service.CustomerServiceInterface&metadata-type=remote&methods=getCustomerInfoById,payWithPoint,getPointFromRefund&pid=5320&qos.accept.foreign.ip=false&qos.enable=false&release=2.7.8&revision=0.0.1&side=provider&timestamp=1608304754817&version=0.0.1) Failed to bind NettyServer on /192.168.43.225:20880, cause: Address already in use: bind
+	at org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol.createServer(DubboProtocol.java:348)
+	at org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol.openServer(DubboProtocol.java:320)
+	at org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol.export(DubboProtocol.java:303)
+	at org.apache.dubbo.rpc.protocol.ProtocolListenerWrapper.export(ProtocolListenerWrapper.java:64)
+	at org.apache.dubbo.rpc.protocol.ProtocolFilterWrapper.export(ProtocolFilterWrapper.java:155)
+	at org.apache.dubbo.qos.protocol.QosProtocolWrapper.export(QosProtocolWrapper.java:66)
+	at org.apache.dubbo.rpc.Protocol$Adaptive.export(Protocol$Adaptive.java)
+	at org.apache.dubbo.registry.integration.RegistryProtocol.lambda$doLocalExport$2(RegistryProtocol.java:255)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705)
+	at org.apache.dubbo.registry.integration.RegistryProtocol.doLocalExport(RegistryProtocol.java:253)
+	at org.apache.dubbo.registry.integration.RegistryProtocol.export(RegistryProtocol.java:205)
+	at org.apache.dubbo.rpc.protocol.ProtocolListenerWrapper.export(ProtocolListenerWrapper.java:62)
+	at org.apache.dubbo.rpc.protocol.ProtocolFilterWrapper.export(ProtocolFilterWrapper.java:153)
+	at org.apache.dubbo.qos.protocol.QosProtocolWrapper.export(QosProtocolWrapper.java:64)
+	at org.apache.dubbo.rpc.Protocol$Adaptive.export(Protocol$Adaptive.java)
+	at org.apache.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:492)
+	at org.apache.dubbo.config.ServiceConfig.doExportUrls(ServiceConfig.java:325)
+	at org.apache.dubbo.config.ServiceConfig.doExport(ServiceConfig.java:300)
+	at org.apache.dubbo.config.ServiceConfig.export(ServiceConfig.java:206)
+	at org.apache.dubbo.config.bootstrap.DubboBootstrap.lambda$exportServices$15(DubboBootstrap.java:1103)
+	at java.base/java.util.HashMap$Values.forEach(HashMap.java:976)
+	at org.apache.dubbo.config.bootstrap.DubboBootstrap.exportServices(DubboBootstrap.java:1090)
+	at org.apache.dubbo.config.bootstrap.DubboBootstrap.start(DubboBootstrap.java:901)
+	at org.apache.dubbo.config.spring.context.DubboBootstrapApplicationListener.onContextRefreshedEvent(DubboBootstrapApplicationListener.java:59)
+	at org.apache.dubbo.config.spring.context.DubboBootstrapApplicationListener.onApplicationContextEvent(DubboBootstrapApplicationListener.java:52)
+	at org.apache.dubbo.config.spring.context.OneTimeExecutionApplicationContextEventListener.onApplicationEvent(OneTimeExecutionApplicationContextEventListener.java:40)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:404)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:361)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:898)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:554)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at cn.edu.xmu.customer.CustomerApplication.main(CustomerApplication.java:16)
+Caused by: org.apache.dubbo.remoting.RemotingException: Failed to bind NettyServer on /192.168.43.225:20880, cause: Address already in use: bind
+	at org.apache.dubbo.remoting.transport.AbstractServer.<init>(AbstractServer.java:77)
+	at org.apache.dubbo.remoting.transport.netty4.NettyServer.<init>(NettyServer.java:77)
+	at org.apache.dubbo.remoting.transport.netty4.NettyTransporter.bind(NettyTransporter.java:35)
+	at org.apache.dubbo.remoting.Transporter$Adaptive.bind(Transporter$Adaptive.java)
+	at org.apache.dubbo.remoting.Transporters.bind(Transporters.java:56)
+	at org.apache.dubbo.remoting.exchange.support.header.HeaderExchanger.bind(HeaderExchanger.java:44)
+	at org.apache.dubbo.remoting.exchange.Exchangers.bind(Exchangers.java:70)
+	at org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol.createServer(DubboProtocol.java:346)
+	... 40 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:461)
+	at java.base/sun.nio.ch.Net.bind(Net.java:453)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+	at io.netty.channel.socket.nio.NioServerSocketChannel.doBind(NioServerSocketChannel.java:134)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.bind(AbstractChannel.java:550)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.bind(DefaultChannelPipeline.java:1334)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeBind(AbstractChannelHandlerContext.java:506)
+	at io.netty.channel.AbstractChannelHandlerContext.bind(AbstractChannelHandlerContext.java:491)
+	at io.netty.channel.DefaultChannelPipeline.bind(DefaultChannelPipeline.java:973)
+	at io.netty.channel.AbstractChannel.bind(AbstractChannel.java:248)
+	at io.netty.bootstrap.AbstractBootstrap$2.run(AbstractBootstrap.java:356)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-12-18 23:21:53.309 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:54.015 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 98970287664
+2020-12-18 23:21:54.093 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:54.184 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:54.266 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:54.338 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:54.398 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:54.530 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:54.612 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:54.681 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:54.755 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:54.830 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:54.896 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:54.971 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 98970287664
+2020-12-18 23:21:55.128 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:55.193 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:55.260 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:55.320 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:55.382 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:55.446 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:55.512 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:55.618 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:55.839 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:55.900 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:55.975 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:56.048 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:56.116 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:56.255 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:56.329 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:56.388 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:56.444 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:56.502 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 98970287664
+2020-12-18 23:21:56.571 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:56.628 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:56.684 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:56.761 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:56.825 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:56.892 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:56.948 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:57.005 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:57.085 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:57.150 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:57.214 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:57.282 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 98970287664
+2020-12-18 23:21:57.336 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:57.407 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:57.583 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:57.654 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:58.089 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:58.159 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:21:58.400 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 98970287664
+2020-12-18 23:22:52.043 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:21.933 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:22.078 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 98970287664
+2020-12-18 23:40:22.144 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:22.236 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:22.308 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:22.360 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:22.424 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:22.474 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:22.523 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:22.565 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:22.620 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:22.674 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:22.735 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:22.791 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 98970287664
+2020-12-18 23:40:22.851 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:22.918 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:22.987 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:23.044 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:23.100 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:23.150 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:23.286 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:23.337 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:23.406 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:23.455 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:23.508 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:23.569 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:23.626 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:23.689 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:23.755 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:23.818 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:23.868 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:23.918 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 98970287664
+2020-12-18 23:40:23.976 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:24.032 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:24.095 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:24.147 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:24.202 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:24.258 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:24.319 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:24.376 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:24.432 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:24.489 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:24.541 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:24.595 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 98970287664
+2020-12-18 23:40:24.645 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:24.710 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:24.767 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:24.813 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:24.868 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:24.915 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 3835711724
+2020-12-18 23:40:24.963 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 98970287664
+2020-12-18 23:41:30.632 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:41:30.738 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:41:30.804 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:41:30.866 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:41:30.931 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:41:31.010 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:41:31.377 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:41:31.447 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:41:31.561 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:41:31.617 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:41:31.671 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:41:31.725 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:41:31.791 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:41:31.842 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:41:31.899 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:41:31.956 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:41:32.069 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:41:32.127 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:41:32.200 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:41:32.423 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:41:32.479 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:41:32.530 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:41:32.619 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:41:32.709 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:41:32.767 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:41:32.832 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:14.104 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:56:14.187 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:14.234 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:14.278 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:14.334 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:14.444 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:14.490 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:14.555 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:14.657 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:14.709 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:14.776 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:56:14.858 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:14.950 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:15.010 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:15.073 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:15.148 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:56:15.253 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:15.312 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:56:15.375 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:15.433 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:15.731 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:56:15.790 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:15.858 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:15.913 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:56:15.973 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:56:16.048 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:11.675 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:57:11.783 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:11.835 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:11.879 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:11.945 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:12.004 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:12.045 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:12.084 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:12.146 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:12.213 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:12.260 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:57:12.301 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:12.349 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:12.392 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:12.431 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:12.483 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:57:12.538 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:12.582 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:57:12.623 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:12.662 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:12.698 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:57:12.732 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:12.773 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:12.808 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-18 23:57:12.843 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-18 23:57:12.880 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:40.491 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:09:40.601 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:40.648 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:40.699 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:40.744 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:40.803 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:40.861 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:40.971 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:41.076 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:41.227 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:41.281 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:09:41.333 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:41.415 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:41.484 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:41.536 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:41.579 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:09:41.637 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:41.719 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:09:41.765 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:41.809 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:41.856 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:09:42.054 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:42.116 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:42.162 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:09:42.245 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:09:42.291 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:38.232 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:10:38.359 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:38.465 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:38.599 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:38.669 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:38.728 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:38.823 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:38.882 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:38.945 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:39.003 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:39.066 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:10:39.186 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:39.304 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:39.364 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:39.443 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:39.507 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:10:39.678 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:39.800 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:10:39.844 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:39.910 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:39.952 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:10:40.021 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:40.087 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:40.131 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:10:40.179 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:10:40.250 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:34.061 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:29:34.453 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:34.508 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:34.555 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:34.610 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:34.737 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:34.898 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:34.939 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:35.032 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:35.183 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:35.229 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:29:35.273 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:35.334 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:35.377 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:35.431 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:35.483 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:29:35.566 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:35.622 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:29:35.684 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:35.839 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:35.887 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:29:35.936 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:36.269 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:36.326 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:29:36.369 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:29:36.424 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:30:25.839 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:45:46.442 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:48:27.310 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:48:27.504 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:27.577 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:27.627 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:27.674 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:27.732 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:27.787 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:27.837 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:27.949 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:28.073 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:28.143 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:48:28.196 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:28.259 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:28.306 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:28.352 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:28.402 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:48:28.461 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:28.523 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:48:28.567 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:28.624 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:28.665 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:48:28.732 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:28.792 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:28.851 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:28.888 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:48:28.934 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:48:46.512 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:56:15.289 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:56:15.460 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:15.578 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:15.698 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:15.756 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:15.844 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:15.955 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:16.024 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:16.122 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:16.263 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:16.360 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:56:16.419 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:16.540 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:16.668 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:16.851 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:17.082 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:56:17.201 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:17.320 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:56:17.416 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:17.562 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:17.854 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:56:17.919 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:18.045 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:18.163 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:18.281 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 00:56:18.401 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 79734441805
+2020-12-19 00:56:37.002 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 01:00:13.572 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 01:08:04.549 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 01:09:37.064 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 01:11:32.662 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 01:12:34.237 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551
+2020-12-19 01:17:25.047 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39634362551

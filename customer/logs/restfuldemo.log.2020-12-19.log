@@ -1,0 +1,434 @@
+2020-12-19 01:34:29.873 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 01:34:46.744 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 20.629 seconds (JVM running for 23.481)
+2020-12-19 01:34:47.645 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MDEzNDQ3NkpZIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzMTI5ODcsInVzZXJJZCI6LTEsImlhdCI6MTYwODMxMjg4N30.mQixP3eCoK4WSBZZO3MFi5hUqXrYiMkoNnQUX4-f4DA
+2020-12-19 01:34:47.864 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 01:34:47.890 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id-1
+2020-12-19 01:36:02.540 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 01:36:17.755 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 18.705 seconds (JVM running for 21.319)
+2020-12-19 01:36:18.405 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MDEzNjE4M1MzIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzMTMwNzgsInVzZXJJZCI6LTEsImlhdCI6MTYwODMxMjk3OH0.8-W-oqndd1Tz3UIXkJbtOrTV4BXwp4ENJP_Qly6cHoE
+2020-12-19 01:36:18.537 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 01:36:18.563 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id-1
+2020-12-19 01:36:18.691 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - getCustomerInfo failed:customerId is not Exist
+2020-12-19 01:39:03.421 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 01:39:27.758 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 30.018 seconds (JVM running for 36.396)
+2020-12-19 01:39:29.705 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MDEzOTI5NjRMIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzMTMyNjksInVzZXJJZCI6LTEsImlhdCI6MTYwODMxMzE2OX0.bV3CFoRyRAd33SzpwpY58lxhjbbNDdSksyErgZHlJSM
+2020-12-19 01:39:30.083 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 01:39:40.200 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id-1
+2020-12-19 01:40:01.876 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - getCustomerInfo failed:customerId is not Exist
+2020-12-19 14:37:27.606 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 14:37:44.290 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 22.961 seconds (JVM running for 27.992)
+2020-12-19 14:37:45.005 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTQzNzQ0OTIwIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNTk5NjQsInVzZXJJZCI6LTEsImlhdCI6MTYwODM1OTg2NH0.ce1dvTANnqs5jUQIq42Mjb98Uie6D4f_JXq-adz9pfU
+2020-12-19 14:37:45.139 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 14:37:45.159 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id-1
+2020-12-19 14:37:45.274 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - getCustomerInfo failed:customerId is not Exist
+2020-12-19 15:02:40.606 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 15:02:57.383 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 20.512 seconds (JVM running for 23.422)
+2020-12-19 15:02:58.342 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTUwMjU4M0c4IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzYxNDc4LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2MTM3OH0.TZaaqBuiNAAGzu5RR3JEo0iJk4rJOCDoYJKmoVtBras
+2020-12-19 15:02:58.484 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 15:04:12.808 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 15:04:27.981 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 18.629 seconds (JVM running for 21.356)
+2020-12-19 15:04:28.542 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTUwNDI4NTlLIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzYxNTY4LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2MTQ2OH0.biw0P2mD_fUxdlJOsdRl4PRozY52S3Keu3dFYd_qBd8
+2020-12-19 15:04:28.692 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 15:10:21.252 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 15:10:35.719 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 18.07 seconds (JVM running for 20.62)
+2020-12-19 15:10:36.310 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTUxMDM2MlkzIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzYxOTM2LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2MTgzNn0.R61KdlSF5gYSrgNnpg0W21ODWa8Fl2qTuf8c_SEn_sg
+2020-12-19 15:10:36.451 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 15:11:01.999 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 15:11:16.913 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 18.413 seconds (JVM running for 21.036)
+2020-12-19 15:11:17.698 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTUxMTE3NlZJIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzYxOTc3LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2MTg3N30.BmFH2Ld8LYSkZ5z-SUBlDnbtqdoaUnz6ze1vAeBxTH8
+2020-12-19 15:11:17.845 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 15:11:45.091 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 15:12:00.751 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 19.107 seconds (JVM running for 21.715)
+2020-12-19 15:12:01.485 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTUxMjAxNEc3IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzYyMDIxLCJ1c2VySWQiOjEsImlhdCI6MTYwODM2MTkyMX0.ruc2ti1fcUd8m0tKsCaO_Nq134yH6bv3I8aefvINOAU
+2020-12-19 15:12:01.622 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 15:12:51.262 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 15:13:16.396 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 30.129 seconds (JVM running for 35.753)
+2020-12-19 15:13:18.310 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTUxMzE4Mjg3IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzYyMDk4LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2MTk5OH0.j2YG_AeTYeapqrM-VApA4EBIJUaxCjcmgSVqj7HOaKc
+2020-12-19 15:13:18.810 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 15:16:09.212 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 15:16:25.076 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 19.541 seconds (JVM running for 22.067)
+2020-12-19 15:16:25.714 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTUxNjI1N1g3IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzYyMjg1LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2MjE4NX0.rL_ueDPg_fQ5NSnxCpdtNkHPNu9qYqmpERthcEFGXiY
+2020-12-19 15:16:25.864 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 15:17:24.436 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 15:17:49.691 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 31.142 seconds (JVM running for 36.857)
+2020-12-19 15:17:51.451 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTUxNzUxNEJYIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzYyMzcxLCJ1c2VySWQiOjEsImlhdCI6MTYwODM2MjI3MX0.-dQVZIq1mzqrhXLp_iqmdeaOQFcRvS_keiY8FUfVfy0
+2020-12-19 15:17:52.135 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 15:19:51.792 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 15:20:16.870 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 30.746 seconds (JVM running for 36.187)
+2020-12-19 15:20:18.936 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTUyMDE4OEtKIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzYyNTE4LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2MjQxOH0.SFUxJB3AT1KGOYP-N4fWBGFlQJxQ3dwFh4wj3OcFLLA
+2020-12-19 15:20:19.444 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 15:25:16.131 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 15:25:31.275 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 19.111 seconds (JVM running for 22.197)
+2020-12-19 15:25:31.822 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTUyNTMxOEFFIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzYyODMxLCJ1c2VySWQiOjEsImlhdCI6MTYwODM2MjczMX0.F3vHOcIhOo6YPRvifEh5_tLV4CbP0IzyjVULC2nqmkU
+2020-12-19 15:25:31.984 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 15:25:32.253 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 15:25:32.254 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 15:26:49.250 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 15:27:03.564 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 17.931 seconds (JVM running for 20.353)
+2020-12-19 15:27:04.220 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTUyNzA0MlExIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzYyOTI0LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2MjgyNH0.znadfE6HixvHxk-CzmDVakoJcNdiPQ4uD37b6mFbUYA
+2020-12-19 15:27:04.351 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 15:27:04.585 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 15:27:04.585 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 15:29:25.699 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 15:29:40.803 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 19.334 seconds (JVM running for 22.338)
+2020-12-19 15:29:41.428 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTUyOTQxNDlXIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzYzMDgxLCJ1c2VySWQiOjEsImlhdCI6MTYwODM2Mjk4MX0.VkFqVhPNbx8B0-VDA32C1c1vHNLOuiMHR1h3SDmDMbA
+2020-12-19 15:29:41.558 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 15:29:41.801 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 15:29:41.802 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 15:33:41.768 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 15:34:02.222 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 24.532 seconds (JVM running for 27.537)
+2020-12-19 15:34:03.139 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTUzNDAzMTFTIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzYzMzQzLCJ1c2VySWQiOjEsImlhdCI6MTYwODM2MzI0M30.fSj40qkGEdadiSjGqv3owufD8S8y-_pjLNRkBNduv40
+2020-12-19 15:34:03.355 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 15:34:03.634 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 15:34:03.635 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 15:34:53.005 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 15:35:07.972 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 18.599 seconds (JVM running for 21.183)
+2020-12-19 15:35:08.585 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTUzNTA4NUVUIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzYzNDA4LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2MzMwOH0.x6RHPcdcfp5UkrJ-A2I8drLPw4TVdjnn1YtqGYcjBps
+2020-12-19 15:35:08.706 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 15:35:08.924 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 15:35:08.925 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 15:45:52.527 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 15:46:07.057 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 17.992 seconds (JVM running for 20.594)
+2020-12-19 15:46:07.682 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTU0NjA3NlNSIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzY0MDY3LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2Mzk2N30.J-5xdvhNaHIFsdycfviXmT5e9OQzAFkcLf5tzttLAMw
+2020-12-19 15:46:07.817 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 15:46:08.052 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 15:46:08.053 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 15:52:13.240 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 15:52:27.499 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 17.55 seconds (JVM running for 20.21)
+2020-12-19 15:52:28.363 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTU1MjI4M0lBIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzY0NDQ4LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2NDM0OH0.G9pNX01AxJGnxwZmILUPSFhtJU8wNBi_x-SpKArmT9U
+2020-12-19 16:04:59.601 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 16:05:13.936 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 17.845 seconds (JVM running for 20.345)
+2020-12-19 16:05:14.581 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTYwNTE0NUxCIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzY1MjE0LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2NTExNH0.j171VlwQxBaDad6RPDNbPWbMvvnrh7ZeHJVCJPYyNGc
+2020-12-19 16:05:14.713 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 16:06:50.602 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 16:07:05.011 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 18.158 seconds (JVM running for 20.82)
+2020-12-19 16:07:05.593 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTYwNzA1NUo3IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzY1MzI1LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2NTIyNX0.fo-iwtQd3Cv2-8uVTVXf3J6RNRW2enPY0kI7G8v1ORA
+2020-12-19 16:07:05.749 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 16:20:24.220 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 16:20:39.723 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 18.772 seconds (JVM running for 21.266)
+2020-12-19 16:20:40.322 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTYyMDQwMzM1IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNjYxNDAsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzY2MDQwfQ.HqZlnz4URhrLlsjexpK1K2O5tRhE5WW9875MyYxPxkA
+2020-12-19 16:20:40.441 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerAll
+2020-12-19 16:22:14.850 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 16:22:29.400 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 18.178 seconds (JVM running for 20.61)
+2020-12-19 16:22:30.075 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTYyMjMwMFgxIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNjYyNTAsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzY2MTUwfQ.q1GNFDqPzSz69ZxlzAyYcAOOTdR5QgjJcU5qtCjqpsM
+2020-12-19 16:22:30.208 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerAll
+2020-12-19 16:22:30.432 [main] ERROR cn.edu.xmu.customer.dao.CustomerDao - 无符合条件用户
+2020-12-19 16:28:43.518 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 16:28:58.060 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 17.925 seconds (JVM running for 20.408)
+2020-12-19 16:28:58.651 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTYyODU4NjFNIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNjY2MzgsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzY2NTM4fQ.UxdwKrfIgp2MYNsTxmtzF0grU3PruxMLjhoQkCzXM6c
+2020-12-19 16:28:58.790 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerAll
+2020-12-19 16:52:48.721 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 16:53:11.318 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 27.592 seconds (JVM running for 31.221)
+2020-12-19 16:53:12.324 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTY1MzEyMzVIIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzY4MDkyLCJ1c2VySWQiOjEsImlhdCI6MTYwODM2Nzk5Mn0.W0aQParZCJ2mEc_qm6vdCvOQo9A_LPlUtvzOge_dlp4
+2020-12-19 16:53:58.433 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 16:54:14.468 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 19.14 seconds (JVM running for 21.882)
+2020-12-19 16:54:15.130 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTY1NDE1MTRSIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzY4MTU1LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2ODA1NX0.j_tCu-k2iMm-N2v6TygrRyU6yenpUX3zRuU2vePHGHs
+2020-12-19 16:54:44.580 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 16:54:59.217 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 18.006 seconds (JVM running for 20.727)
+2020-12-19 16:54:59.990 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTY1NDU5OUlUIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzY4MTk5LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2ODA5OX0.h2TAz9rFpdrL9Ro_Rs9F13iTHVnsaynwiRIaN725kFI
+2020-12-19 16:56:20.989 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 16:56:36.160 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 18.437 seconds (JVM running for 21.11)
+2020-12-19 16:56:36.812 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTY1NjM2OE5LIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzY4Mjk2LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2ODE5Nn0.cdjlcVQYL9guXmVIsZHVze7ZaI7VIWwo8-DkkCJsQZA
+2020-12-19 16:57:37.687 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 16:57:52.306 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 18.318 seconds (JVM running for 20.942)
+2020-12-19 16:57:53.089 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTY1NzUzME1NIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzY4MzczLCJ1c2VySWQiOjEsImlhdCI6MTYwODM2ODI3M30.LCKvQIV8qKNe612hronwJxLnVxVHq5Tur6gaoRjXVSo
+2020-12-19 17:22:21.938 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 17:22:35.339 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 16.441 seconds (JVM running for 18.957)
+2020-12-19 17:22:36.183 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = xskxsk
+2020-12-19 17:22:36.496 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = xskxsk
+2020-12-19 17:22:36.545 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = xsk
+2020-12-19 17:22:36.599 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = xskxsk
+2020-12-19 17:22:36.681 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTcyMjM2NkdYIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzY5ODU2LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2OTc1Nn0.NJBWjxXel6S7jCs88O6FL-4isukQGhds1kyd7zev38Q
+2020-12-19 17:22:36.742 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerInfo: id = 1
+2020-12-19 17:22:36.742 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerInfo failed
+2020-12-19 17:22:36.825 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTcyMjM2OEtKIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNjk4NTYsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzY5NzU2fQ.5xLP5b2D2njtWg17rlyJ0KmoHVLOC0mP9j9mBL7Q6-A
+2020-12-19 17:22:36.829 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - releaseCustomer: id = 1
+2020-12-19 17:22:36.857 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - 用户 id = 1 的状态修改为 正常
+2020-12-19 17:22:36.878 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTcyMjM2OFdNIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNjk4NTYsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzY5NzU2fQ.rdEJ03YhsZDNB1luEHKHW0XTgo615jjdrg-4vIAfLu0
+2020-12-19 17:22:36.881 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - releaseCustomer: id = 0
+2020-12-19 17:22:36.884 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - 用户不存在或已被删除：id = 0
+2020-12-19 17:22:36.949 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:22:37.114 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17426, userName=xskxsk, password=000105, realName=xsk, gender=0, birthday=2000-01-05, point=0, email=1309339990@qq.com, mobile=13955554260, beDeleted=0, gmtCreate=2020-12-19T17:22:37.064644200, gmtModified=null, state=4)
+2020-12-19 17:22:37.142 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:22:37.259 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 电话已被注册
+2020-12-19 17:22:37.281 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:22:37.315 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
+2020-12-19 17:22:37.355 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:22:37.397 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:22:37.427 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:22:37.453 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:22:37.475 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:22:37.492 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTcyMjM3NDVSIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNjk4NTcsInVzZXJJZCI6LTEsImlhdCI6MTYwODM2OTc1N30.Tto_tBF3_GJcE7VUBdupTM82FryetSj9P6RnQ6_6vE0
+2020-12-19 17:22:37.496 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:22:37.497 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id-1
+2020-12-19 17:22:37.502 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - getCustomerInfo failed:customerId is not Exist
+2020-12-19 17:22:37.521 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:22:37.536 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:22:37.548 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:22:37.560 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTcyMjM3NUoyIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNjk4NTcsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzY5NzU3fQ.cm0jtiplIrD9N4RdLYG1UzUd1NIAH3ss-jS0DYjSkpw
+2020-12-19 17:22:37.563 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerInfo: id = 1
+2020-12-19 17:22:37.564 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:22:37.586 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:22:37.650 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 用户名已被注册
+2020-12-19 17:22:37.667 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTcyMjM3NkZZIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzY5ODU3LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2OTc1N30.SxenotfUsY4-pOMzZU9KywpaTBF8vEnxePMSSkO9YW0
+2020-12-19 17:22:37.676 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 17:22:37.699 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:22:37.700 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:22:37.722 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTcyMjM3N0dIIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNjk4NTcsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzY5NzU3fQ.Qnwl7jXIoDyrnkFZQZ9LsulbLCcZeBtZXVH2i7lA1Kw
+2020-12-19 17:22:37.738 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerAll
+2020-12-19 17:22:37.836 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTcyMjM3OEJGIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNjk4NTcsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzY5NzU3fQ.hQQNaL1wOuP9TWfSSH_qiN5hVw17tbIMxng9ZnEm5wo
+2020-12-19 17:22:37.842 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerAll
+2020-12-19 17:22:37.878 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTcyMjM3OFE4IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNjk4NTcsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzY5NzU3fQ.1M3nkqnrzFfeKEE4vjdH3batVZhLwWIcpY9BvH5NKgI
+2020-12-19 17:22:37.882 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - banCustomer: id = 1
+2020-12-19 17:22:38.351 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - 用户 id = 1 的状态修改为 封禁
+2020-12-19 17:22:38.365 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTcyMjM4M0FGIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNjk4NTgsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzY5NzU4fQ.pJk1GRaZxhJDQTB4W2lO3Mkxrd0W5CBbiz0tfWJjzV4
+2020-12-19 17:22:38.369 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - banCustomer: id = 0
+2020-12-19 17:22:38.374 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - 用户不存在或已被删除：id = 0
+2020-12-19 17:22:38.384 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTcyMjM4M1YzIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzY5ODU4LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2OTc1OH0.-ZebOKmrhdWgrBUzg3Wo6l9l6Lacsv-uK4pQjnzKtNU
+2020-12-19 17:22:38.398 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getAllStates
+2020-12-19 17:22:38.411 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTcyMjM4NFo3IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNjk4NTgsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzY5NzU4fQ.K7f9WygFLRapTlZgNv-h0U3fgmwLxoJZ_siZZEVEgI0
+2020-12-19 17:22:38.414 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:22:38.414 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:22:38.431 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTcyMjM4NEZQIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzY5ODU4LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2OTc1OH0.JMVRPUi6xAha6Wls3RPathXT4HZotO5PbKwTZ2T6rzg
+2020-12-19 17:22:38.433 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 17:22:38.444 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:22:38.444 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:22:38.463 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTcyMjM4NE4zIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzY5ODU4LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2OTc1OH0.RO-qzh8dHOFp17G6v96vobqEw6zM5UhSuV8ocm6KjVA
+2020-12-19 17:22:38.467 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 17:22:38.478 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:22:38.478 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:22:38.498 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTcyMjM4NFNIIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzY5ODU4LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2OTc1OH0.Q9pjHuWParq3G6Z87DWjURsAGWC9JOapLAalIhMN1T4
+2020-12-19 17:22:38.501 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 17:22:38.513 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:22:38.514 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:22:38.531 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTcyMjM4NTZQIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzY5ODU4LCJ1c2VySWQiOjEsImlhdCI6MTYwODM2OTc1OH0.MQLKt0Sf6c4urtdwg7Y3RZLySHpdZ0EshMFJkSSKiY4
+2020-12-19 17:30:21.897 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 17:30:34.040 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 15.601 seconds (JVM running for 17.927)
+2020-12-19 17:30:34.739 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = test
+2020-12-19 17:30:34.913 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = xskxsk
+2020-12-19 17:30:34.944 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = xsk
+2020-12-19 17:30:35.014 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:30:35.099 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17427, userName=test, password=000105, realName=xsk, gender=0, birthday=2000-01-05, point=0, email=1309339909@qq.com, mobile=13950004260, beDeleted=0, gmtCreate=2020-12-19T17:30:35.061322900, gmtModified=null, state=4)
+2020-12-19 17:30:35.130 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = test
+2020-12-19 17:30:35.484 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTczMDM1NFNPIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcwMzM1LCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MDIzNX0.1CTXGFnLyH5LV3XpanYBeinesAhbOFg3PfFlKCwJIJs
+2020-12-19 17:30:35.518 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerInfo: id = 1
+2020-12-19 17:30:35.519 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerInfo failed
+2020-12-19 17:30:35.549 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTczMDM1NTlFIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzAzMzUsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcwMjM1fQ.NovjU16tOTwqgmJlXPeiCpdm8wnqtQDL410IyFqCQBQ
+2020-12-19 17:30:35.553 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - releaseCustomer: id = 1
+2020-12-19 17:30:35.560 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - 用户 id = 1 的状态修改为 正常
+2020-12-19 17:30:35.574 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTczMDM1NUZDIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzAzMzUsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcwMjM1fQ.AVLfj7JJH037i15EvYTEBvjuuENrSpsHF_EymN-ieBE
+2020-12-19 17:30:35.576 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - releaseCustomer: id = 0
+2020-12-19 17:30:35.579 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - 用户不存在或已被删除：id = 0
+2020-12-19 17:30:35.595 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:30:35.614 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
+2020-12-19 17:30:35.629 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:30:35.683 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17428, userName=xskxsk, password=000105, realName=xsk, gender=0, birthday=2000-01-05, point=0, email=1309339990@qq.com, mobile=13955554260, beDeleted=0, gmtCreate=2020-12-19T17:30:35.679632400, gmtModified=null, state=4)
+2020-12-19 17:30:35.697 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:30:35.713 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
+2020-12-19 17:30:35.724 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:30:35.740 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
+2020-12-19 17:30:35.758 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:30:35.780 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:30:35.792 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:30:35.803 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:30:35.816 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:30:35.832 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTczMDM1OFg4IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzAzMzUsInVzZXJJZCI6LTEsImlhdCI6MTYwODM3MDIzNX0.27cGi8yB4qVzKsgkcRawXNRi8v4IfzseRVsAdF72gBs
+2020-12-19 17:30:35.835 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:30:35.835 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id-1
+2020-12-19 17:30:35.838 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - getCustomerInfo failed:customerId is not Exist
+2020-12-19 17:30:35.853 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:30:35.867 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:30:35.880 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:30:35.895 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTczMDM1ODZNIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzAzMzUsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcwMjM1fQ.87VEUVI4M9KrzQ5zBTGsByydQGBgLxrUw6tAEcHM_1o
+2020-12-19 17:30:35.897 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerInfo: id = 1
+2020-12-19 17:30:35.898 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:30:35.915 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTczMDM1OVZXIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcwMzM1LCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MDIzNX0.jmZdQ9cvkbHLatsFis76CjkTRCn1FzKAw2TP6a6NTks
+2020-12-19 17:30:35.922 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 17:30:35.936 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:30:35.937 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:30:35.948 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTczMDM1OTY4IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzAzMzUsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcwMjM1fQ.RYFTSJYj2BqLChtoqB9HJuXEZFT1KgeADxL2EuqxB1w
+2020-12-19 17:30:35.960 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerAll
+2020-12-19 17:30:36.046 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTczMDM2MEkxIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzAzMzYsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcwMjM2fQ.byf4pRcrRNYaT0vnMGirCmWcs6McOsqEUXAJPnwN60Y
+2020-12-19 17:30:36.052 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerAll
+2020-12-19 17:30:36.082 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTczMDM2MEdGIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzAzMzYsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcwMjM2fQ.IUKT-oG2nBiP8wQDIpXEgM_R4cpF9ujdlMJGXVtJRG8
+2020-12-19 17:30:36.085 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - banCustomer: id = 1
+2020-12-19 17:30:36.107 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - 用户 id = 1 的状态修改为 封禁
+2020-12-19 17:30:36.125 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTczMDM2MUNRIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzAzMzYsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcwMjM2fQ.NbE170SUlHKDFlFcOEOM_qYYOdJTIch7INUxC7g94a8
+2020-12-19 17:30:36.128 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - banCustomer: id = 0
+2020-12-19 17:30:36.133 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - 用户不存在或已被删除：id = 0
+2020-12-19 17:30:36.146 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTczMDM2MVFQIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcwMzM2LCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MDIzNn0.FQwAo2Q7H84opm19fCg9L_NW06cxzLXC_IYDARhhR9s
+2020-12-19 17:30:36.160 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getAllStates
+2020-12-19 17:30:36.171 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTczMDM2MVRLIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzAzMzYsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcwMjM2fQ.dHeTXnm0xCCdYAE0MQMpgNEygNabjqRknHhiqkCXXjw
+2020-12-19 17:30:36.174 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:30:36.174 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:30:36.188 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTczMDM2MVJTIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcwMzM2LCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MDIzNn0.mu61MhcZi4T2Ug3IspJmIJ21hRJN7UnyG9Fab2DPX8I
+2020-12-19 17:30:36.191 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 17:30:36.200 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:30:36.201 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:30:36.217 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTczMDM2MlowIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcwMzM2LCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MDIzNn0.-P3gtg_ivHMBkYRRqlZHHIq9kU5XfOFI-vgVyV2-BBU
+2020-12-19 17:30:36.221 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 17:30:36.230 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:30:36.231 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:30:36.249 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTczMDM2MjVJIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcwMzM2LCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MDIzNn0.46gTlyk74610uhXXz6ntiY1uZOewAYRmfXDyPiLVOz0
+2020-12-19 17:30:36.252 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 17:30:36.261 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:30:36.262 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:30:36.278 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTczMDM2MjdIIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcwMzM2LCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MDIzNn0.Rcy-G_MXSMZRLZp0oBWB3i7zQMnKTLJHqNrzlC_gVVM
+2020-12-19 17:36:49.527 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 17:37:01.267 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 14.28 seconds (JVM running for 16.526)
+2020-12-19 17:37:01.936 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:37:02.193 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17429, userName=test, password=000105, realName=xsk, gender=0, birthday=2000-01-05, point=0, email=xskxskxsk@qq.com, mobile=13999614260, beDeleted=0, gmtCreate=2020-12-19T17:37:02.136400600, gmtModified=null, state=4)
+2020-12-19 17:37:02.257 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = test
+2020-12-19 17:38:40.783 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 17:38:53.191 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 15.483 seconds (JVM running for 17.813)
+2020-12-19 17:38:53.859 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = test
+2020-12-19 17:38:54.032 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-19 17:40:03.974 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 17:40:16.091 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 14.895 seconds (JVM running for 17.272)
+2020-12-19 17:40:16.713 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = test
+2020-12-19 17:40:16.931 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = xskxsk
+2020-12-19 17:40:16.966 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = xsk
+2020-12-19 17:40:17.041 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:40:17.158 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17430, userName=test, password=000105, realName=xsk, gender=0, birthday=2000-01-05, point=0, email=xskxskxsk@qq.com, mobile=13999614260, beDeleted=0, gmtCreate=2020-12-19T17:40:17.098296300, gmtModified=null, state=4)
+2020-12-19 17:40:17.204 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = test
+2020-12-19 17:40:17.641 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0MDE3NlVJIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcwOTE3LCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MDgxN30.gDTDIsreYui0KXczTTWgQUG52KSaQjr3-Jn73gJYvZ0
+2020-12-19 17:40:17.686 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerInfo: id = 1
+2020-12-19 17:40:17.686 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerInfo failed
+2020-12-19 17:40:17.728 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0MDE3N1lOIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzA5MTcsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcwODE3fQ.JkLiuuf3XAQ1xdZWa6bAaAbQmqO6eTytEgxVQTBZgbE
+2020-12-19 17:40:17.732 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - releaseCustomer: id = 1
+2020-12-19 17:40:17.741 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - 用户 id = 1 的状态修改为 正常
+2020-12-19 17:40:17.755 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0MDE3NzdKIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzA5MTcsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcwODE3fQ.CMYBfzdIiA9uaztzHwY7p5a9WaRyLw4LJb9Hp-QUqDw
+2020-12-19 17:40:17.758 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - releaseCustomer: id = 0
+2020-12-19 17:40:17.760 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - 用户不存在或已被删除：id = 0
+2020-12-19 17:40:17.780 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:40:17.855 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17431, userName=xskxsk, password=000105, realName=xsk, gender=0, birthday=2000-01-05, point=0, email=1309339909@qq.com, mobile=13950004260, beDeleted=0, gmtCreate=2020-12-19T17:40:17.845297400, gmtModified=null, state=4)
+2020-12-19 17:40:17.874 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:40:17.915 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 用户名已被注册
+2020-12-19 17:40:17.929 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:40:17.950 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
+2020-12-19 17:40:17.964 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:40:18.032 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 电话已被注册
+2020-12-19 17:40:18.054 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:40:18.068 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:40:18.082 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:40:18.098 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:40:18.114 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:40:18.128 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0MDE4MTJNIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzA5MTgsInVzZXJJZCI6LTEsImlhdCI6MTYwODM3MDgxOH0.63CLu5fBeeOB1mwujYME9OYTwfVrbPHl29KG6WFZtjY
+2020-12-19 17:40:18.132 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:40:18.133 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id-1
+2020-12-19 17:40:18.136 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - getCustomerInfo failed:customerId is not Exist
+2020-12-19 17:40:18.158 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:40:18.174 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:40:18.187 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:40:18.198 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0MDE4MUY0IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzA5MTgsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcwODE4fQ.VFGxpp9DX1Q5cVnBwvmrGA8q7iRL4cWNbgrmUT9G_4Y
+2020-12-19 17:40:18.201 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerInfo: id = 1
+2020-12-19 17:40:18.201 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:40:18.217 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0MDE4MjdSIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcwOTE4LCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MDgxOH0.GT_rL_nAMpO6t_W6EZ6naZhU2j7zgUMZyAaeuhzqP-M
+2020-12-19 17:40:18.227 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 17:40:18.245 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:40:18.245 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:40:18.260 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0MDE4MlQ0IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzA5MTgsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcwODE4fQ.MRIHQmANEFRAEQwmpVUF-CW-efs3c-A77EWQtHd2Q64
+2020-12-19 17:40:18.272 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerAll
+2020-12-19 17:40:18.380 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0MDE4MzdFIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzA5MTgsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcwODE4fQ.T_E2NgSNNkg_NtCzLYejBJJFKVbCKkBCtQrOZxOvXdQ
+2020-12-19 17:40:18.385 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerAll
+2020-12-19 17:40:18.425 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0MDE4NEw2IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzA5MTgsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcwODE4fQ.QXYn2GBaNdp7aRyYY_5M3-uptxWVpPar86UedYyVhJc
+2020-12-19 17:40:18.429 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - banCustomer: id = 1
+2020-12-19 17:40:18.447 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - 用户 id = 1 的状态修改为 封禁
+2020-12-19 17:40:18.461 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0MDE4NFRJIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzA5MTgsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcwODE4fQ.cGfSf0YyjG_6UKfLDvmUGddCc2w0OjNKokQIgRCJySQ
+2020-12-19 17:40:18.463 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - banCustomer: id = 0
+2020-12-19 17:40:18.467 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - 用户不存在或已被删除：id = 0
+2020-12-19 17:40:18.478 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0MDE4NDZFIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcwOTE4LCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MDgxOH0._yCZQ3tCHLB_Fk1waM7UgGhaE0cbfYNNe-6Thg2duCE
+2020-12-19 17:40:18.493 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getAllStates
+2020-12-19 17:40:18.508 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0MDE4NU9NIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzA5MTgsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcwODE4fQ.UogvAermG-3gr2a-ybE1dZNEbgh12jP32KHX4jGLdig
+2020-12-19 17:40:18.512 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:40:18.513 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:40:18.543 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0MDE4NUtZIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcwOTE4LCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MDgxOH0.xSEd8MLA5KRTMkPd6sqJhg_4XnoQF-TSFExDvsz9_YM
+2020-12-19 17:40:18.546 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 17:40:18.560 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:40:18.560 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:40:18.579 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0MDE4NTZZIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcwOTE4LCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MDgxOH0.TepHVF_cEZ-BEQocHfYujb4RmtGOak-zB10yfx0RdHI
+2020-12-19 17:40:18.583 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 17:40:18.596 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:40:18.596 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:40:18.619 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0MDE4Nks0IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcwOTE4LCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MDgxOH0.sJvp7q6rlCGHs-9losx7fTGShyPOgxuzG8U7bDPx2Z4
+2020-12-19 17:40:18.622 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 17:40:18.635 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:40:18.635 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:40:18.654 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0MDE4NkkwIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcwOTE4LCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MDgxOH0.PZ5hYcUQ1ImKBM7KiZQsXGLkWXYOkwRevYkeXwyLUow
+2020-12-19 17:45:36.542 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - The following profiles are active: dev
+2020-12-19 17:45:48.423 [main] INFO  c.e.xmu.customer.controller.CustomerControllerTest - Started CustomerControllerTest in 14.378 seconds (JVM running for 16.349)
+2020-12-19 17:45:49.112 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:45:49.408 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17432, userName=test, password=000105, realName=xsk, gender=0, birthday=2000-01-05, point=0, email=xskxskxsk@qq.com, mobile=13999614260, beDeleted=0, gmtCreate=2020-12-19T17:45:49.349832100, gmtModified=null, state=4)
+2020-12-19 17:45:49.478 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = test
+2020-12-19 17:45:49.918 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = test
+2020-12-19 17:45:49.944 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-19 17:45:49.989 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = xskxsk
+2020-12-19 17:45:50.015 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-19 17:45:50.040 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = xsk
+2020-12-19 17:45:50.061 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-19 17:45:50.079 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = testxsk
+2020-12-19 17:45:50.098 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - login fail：用户名不存在或者密码错误
+2020-12-19 17:45:50.112 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0NTUwMThCIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcxMjUwLCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MTE1MH0.BC06K5zW_jpsTIWo5Qo4sLf6PjEgJ9iCNRBV02y9q5w
+2020-12-19 17:45:50.155 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerInfo: id = 1
+2020-12-19 17:45:50.155 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerInfo failed
+2020-12-19 17:45:50.169 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0NTUwMVA0IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzEyNTAsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcxMTUwfQ.pi89Uw4RK-2QsGoPGFGh98F8eXoNEfkFQN6U4ncSfw8
+2020-12-19 17:45:50.172 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - releaseCustomer: id = 1
+2020-12-19 17:45:50.181 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - 用户 id = 1 的状态修改为 正常
+2020-12-19 17:45:50.196 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0NTUwMUFVIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzEyNTAsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcxMTUwfQ.FT4TiSa5cwxPNzQwoJf2LJ1H8unosuR4sKFSVAd1CxA
+2020-12-19 17:45:50.199 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - releaseCustomer: id = 0
+2020-12-19 17:45:50.201 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - 用户不存在或已被删除：id = 0
+2020-12-19 17:45:50.216 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:45:50.307 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer: Customer(id=17433, userName=xskxsk, password=000105, realName=xsk, gender=0, birthday=2000-01-05, point=0, email=1309339909@qq.com, mobile=13950004260, beDeleted=0, gmtCreate=2020-12-19T17:45:50.298294, gmtModified=null, state=4)
+2020-12-19 17:45:50.325 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:45:50.378 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 用户名已被注册
+2020-12-19 17:45:50.393 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:45:50.410 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 邮箱已被注册
+2020-12-19 17:45:50.422 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:45:50.484 [main] INFO  cn.edu.xmu.customer.controller.CustomerController - register: insert customer fail: 电话已被注册
+2020-12-19 17:45:50.504 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:45:50.519 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:45:50.532 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:45:50.545 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:45:50.556 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:45:50.570 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0NTUwNTJZIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzEyNTAsInVzZXJJZCI6LTEsImlhdCI6MTYwODM3MTE1MH0.E22YThvfGdHlyiFvvHX6zhe-brJrUbxFuOk_a7UlJJ4
+2020-12-19 17:45:50.573 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:45:50.573 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id-1
+2020-12-19 17:45:50.575 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - getCustomerInfo failed:customerId is not Exist
+2020-12-19 17:45:50.591 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:45:50.604 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:45:50.617 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - register
+2020-12-19 17:45:50.629 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0NTUwNlo3IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzEyNTAsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcxMTUwfQ.1O1Ge4yFPbrF3OB9bnlank-ZCMB87XKQl0734KrM3MY
+2020-12-19 17:45:50.632 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerInfo: id = 1
+2020-12-19 17:45:50.632 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:45:50.649 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0NTUwNkZKIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcxMjUwLCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MTE1MH0.II77CPeepwMIPy2R4ij4AB0Dfy1f4cVe3U1g3pMAaKQ
+2020-12-19 17:45:50.657 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 17:45:50.680 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:45:50.681 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:45:50.699 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0NTUwNjJVIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzEyNTAsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcxMTUwfQ.TkdiTwkK1QE4Js2GJG-kniwlBKN_DvT-XLS-txN4wlw
+2020-12-19 17:45:50.714 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerAll
+2020-12-19 17:45:50.822 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0NTUwODdVIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzEyNTAsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcxMTUwfQ.GWDdbY9dBO9hT-m17KgO-tMjiua2q-2plAMqmSI8nSI
+2020-12-19 17:45:50.827 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerAll
+2020-12-19 17:45:50.875 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0NTUwOFZJIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzEyNTAsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcxMTUwfQ.27N4uqnDgIyyk6YDkppDacfi7eilzgWMTBvCGur5RXc
+2020-12-19 17:45:50.880 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - banCustomer: id = 1
+2020-12-19 17:45:50.898 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - 用户 id = 1 的状态修改为 封禁
+2020-12-19 17:45:50.918 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0NTUwOU0xIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzEyNTAsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcxMTUwfQ.5-P65iOy7IG93DYskzkDFrk4JHIa8zBlaPBOrOmFgu8
+2020-12-19 17:45:50.921 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - banCustomer: id = 0
+2020-12-19 17:45:50.926 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - 用户不存在或已被删除：id = 0
+2020-12-19 17:45:50.937 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0NTUwOU1RIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcxMjUwLCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MTE1MH0.gcOYdR6ockmkvkqx8sxLQhWP7Uv6j39iJ1coQjVS97k
+2020-12-19 17:45:50.952 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getAllStates
+2020-12-19 17:45:50.963 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0NTUwOTROIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjowLCJleHAiOjE2MDgzNzEyNTAsInVzZXJJZCI6MSwiaWF0IjoxNjA4MzcxMTUwfQ.N5spcWLbH32PEpoRVbpxcZm-clMlMBL04WtkMWWZrDE
+2020-12-19 17:45:50.966 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:45:50.967 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:45:50.984 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0NTUwOUZIIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcxMjUwLCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MTE1MH0.xDyrCyORFMJaRj9HOhl2WMPmsHpADmQrmHUU4rgwMCE
+2020-12-19 17:45:50.987 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 17:45:50.998 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:45:50.998 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:45:51.015 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0NTUxMDFSIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcxMjUxLCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MTE1MX0.Z6NmR188kL2XSLxKVFDCeYtqtAcgKCB_MUOh13ODJEc
+2020-12-19 17:45:51.019 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 17:45:51.035 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:45:51.035 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:45:51.054 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0NTUxMExIIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcxMjUxLCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MTE1MX0.fZAQEvhBoZ8YBkEwQHU077c226tpIHvJyOfOSbWPVFU
+2020-12-19 17:45:51.057 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - updateCustomerInfo: id=1
+2020-12-19 17:45:51.069 [main] DEBUG cn.edu.xmu.customer.controller.CustomerController - getCustomerSelfInfo
+2020-12-19 17:45:51.069 [main] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-19 17:45:51.085 [main] DEBUG c.e.xmu.customer.controller.CustomerControllerTest - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjE5MTc0NTUxMDVSIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4MzcxMjUxLCJ1c2VySWQiOjEsImlhdCI6MTYwODM3MTE1MX0.AMooWILi0iucjc2JijulOMhamJhEO3aTitwKP2D2QqE

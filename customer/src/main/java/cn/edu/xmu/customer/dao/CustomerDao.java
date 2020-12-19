@@ -27,6 +27,7 @@ import org.springframework.stereotype.Repository;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -130,7 +131,7 @@ public class CustomerDao {
             retObj = new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
         }
         if(customer==null){
-            logger.debug("getCustomerInfo failed:customerId is not Exist");
+            logger.info("getCustomerInfo failed:customerId is not Exist");
             retObj = new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, String.format("用户id不存在"));
         }
         else{
@@ -307,24 +308,23 @@ public class CustomerDao {
             return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR,
                     String.format("发生了严重的未知错误：%s", e.getMessage()));
         }
-        if(customers.isEmpty()){
-            logger.error("无符合条件用户" );
-            return new ReturnObject<>(ResponseCode.FIELD_NOTVALID,
-                    String.format("无符合条件用户"));
-        }else {
-
+       // List<VoObject> customerBos=new ArrayList<>();
+//        if(customers.isEmpty()){
+//            logger.error("无符合条件用户" );
+////            return new ReturnObject<>(ResponseCode.FIELD_NOTVALID,
+////                    String.format("无符合条件用户"));
+//
+//        }else {
             PageInfo<CustomerPo> customerPos=new PageInfo<>(customers);
-
            // logger.debug(pagesize.toString());
-            List<VoObject> customerBos=customerPos.getList().stream().map(SimpleCustomer::new).collect(Collectors.toList());
-
-            PageInfo<VoObject> returnObject=new PageInfo<>(customerBos);
-            returnObject.setPages(customerPos.getPages());
-            returnObject.setPageNum(customerPos.getPageNum());
-            returnObject.setPageSize(customerPos.getPageSize());
-            returnObject.setTotal(customerPos.getTotal());
-            return new ReturnObject<>(returnObject);
-        }
+        List<VoObject> customerBos=customerPos.getList().stream().map(SimpleCustomer::new).collect(Collectors.toList());
+        //}
+        PageInfo<VoObject> returnObject=new PageInfo<>(customerBos);
+        returnObject.setPages(customerPos.getPages());
+        returnObject.setPageNum(customerPos.getPageNum());
+        returnObject.setPageSize(customerPos.getPageSize());
+        returnObject.setTotal(customerPos.getTotal());
+        return new ReturnObject<>(returnObject);
     }
     public ReturnObject<Object> resetPassword(ResetPwdVo vo, String ip){
         if(redisTemplate.hasKey("ip_"+ip)){

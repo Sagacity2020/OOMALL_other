@@ -1,6 +1,8 @@
 package cn.edu.xmu.footprint.model.vo;
 
 import cn.edu.xmu.footprint.model.bo.FootprintDetail;
+
+import cn.edu.xmu.goods.dto.GoodsSkuDTO;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -14,12 +16,12 @@ public class FootprintRetVo {
     private Long id;
 
     @ApiModelProperty(value = "商品信息")
-    private GoodsSkuDTO goodsSku;
+    private GoodsSku goodsSku;
 
     @ApiModelProperty(value = "浏览时间")
     private LocalDateTime gmtCreate;
 
-    public FootprintRetVo(GoodsSkuDTO goodsSku){
+    public FootprintRetVo(GoodsSku goodsSku){
 
     }
 

@@ -10,6 +10,7 @@ import lombok.Data;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,6 +28,7 @@ public class Customer implements VoObject, Serializable {
         return id;
     }
 
+    public Byte getBeDeleted() { return beDeleted; }
     public String getUserName() {
         return userName;
     }
@@ -154,9 +156,17 @@ public class Customer implements VoObject, Serializable {
        Byte state=(byte)this.state.code;
 
        customerPo.setId(id);
+       if(vo.getBirthday()!=null){
+//           DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//           LocalDate birth=LocalDate.parse(vo.getBirthday(),df);
        customerPo.setBirthday(vo.getBirthday());
+       }
+       if(vo.getRealName()!=null&&!(vo.getRealName().isBlank())){
        customerPo.setRealName(vo.getRealName());
+       }
+       if(vo.getGender()!=null){
        customerPo.setGender(vo.getGender());
+       }
        customerPo.setState(state);
        customerPo.setGmtModified(LocalDateTime.now());
        return customerPo;

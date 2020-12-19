@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -40,5 +41,16 @@ public class FootPrintControllerTest {
 
     }
 
+    @Test
+    public void getFootprintTest()throws Exception{
+        String token = creatTestToken(1L, 0L, 100);
+        String responseString=this.mvc.perform(get("/footprint/shops/0/footprints?beginTime=2020-12-07 21:47:22page=1&pageSize=5").header("authorization", token))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andExpect(jsonPath("$.errno").value(ResponseCode.OK.getCode()))
+                .andExpect(jsonPath("$.errmsg").value("成功"))
+                .andReturn().getResponse().getContentAsString();
+
+    }
 
 }

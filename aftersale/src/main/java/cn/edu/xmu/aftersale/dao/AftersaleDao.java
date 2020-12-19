@@ -32,13 +32,14 @@ public class AftersaleDao {
 
     public ReturnObject<Object> updateAftersale(Long id, AftersaleVo aftersaleVo) {
 
+
         ReturnObject<Object>returnObject=selectAftersale(id,null);
         AftersaleServicePo po=(AftersaleServicePo)returnObject.getData();
 
         if(po==null){
-            logger.error("1");
             return returnObject;
         }
+
 
         if (Aftersale.State.getTypeByCode(po.getState().intValue()) != Aftersale.State.SENDBACKWAIT && Aftersale.State.getTypeByCode(po.getState().intValue()) != Aftersale.State.CHECK) {
             logger.info("无法修改此售后单信息：id = " + id);
@@ -169,7 +170,7 @@ public class AftersaleDao {
             return returnObject;
         }
 
-        if (Aftersale.State.getTypeByCode(po.getState().intValue())!=Aftersale.State.DILIVERWAIT) {
+        if (Aftersale.State.getTypeByCode(po.getState().intValue())!=Aftersale.State.DILIVERWAIT || po.getType().intValue()==1) {
             logger.info("无法修改此售后单信息：id = " + id);
             return new ReturnObject<>(ResponseCode.AFTERSALE_STATENOTALLOW);
         }

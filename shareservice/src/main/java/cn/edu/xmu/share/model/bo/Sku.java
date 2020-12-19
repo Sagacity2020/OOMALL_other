@@ -1,7 +1,7 @@
 package cn.edu.xmu.share.model.bo;
 
 
-import cn.edu.xmu.share.model.vo.GoodSkuVo;
+import cn.edu.xmu.goods.dto.GoodsSkuDTO;
 import lombok.Data;
 
 @Data
@@ -19,7 +19,7 @@ public class Sku {
 
     }
 
-    public Sku(GoodSkuVo vo){
+    public Sku(GoodsSkuDTO vo){
         this.id = vo.getId();
         this.name = vo.getName();
         this.skuSn = vo.getSkuSn();

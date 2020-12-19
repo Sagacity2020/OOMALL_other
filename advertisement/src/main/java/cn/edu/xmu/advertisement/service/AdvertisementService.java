@@ -111,6 +111,11 @@ public class AdvertisementService{
 
     @Transactional
     public ReturnObject<Object> createAdvertisement(Long id, AdvertisementCreateVo vo){
+        ReturnObject<TimeSegmentDTO> returnObj=timeServiceInterface.getTimesegmentById(id);
+        if(returnObj.getData()==null){
+            return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
+        }
+
         Advertisement advertisement=vo.createAdvertisement();
         advertisement.setSegId(id);
         ReturnObject returnObject=advertisementDao.createAdvertisement(advertisement);
@@ -129,6 +134,11 @@ public class AdvertisementService{
 
     @Transactional
     public ReturnObject<Object> insertAdvertisement(Long tid, Long id){
+        ReturnObject<TimeSegmentDTO> returnObj=timeServiceInterface.getTimesegmentById(id);
+        if(returnObj.getData()==null){
+            return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
+        }
+
         ReturnObject returnObject=advertisementDao.insertAdvertisement(tid,id);
         AdvertisementPo po=(AdvertisementPo)returnObject.getData();
 

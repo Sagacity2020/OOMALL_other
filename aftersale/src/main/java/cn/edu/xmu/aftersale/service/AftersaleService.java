@@ -10,8 +10,9 @@ import cn.edu.xmu.aftersale.model.bo.Aftersale;
 import cn.edu.xmu.aftersale.model.po.AftersaleServicePo;
 import cn.edu.xmu.aftersale.model.vo.*;
 import cn.edu.xmu.order.dto.OrderAftersaleDTO;
+import cn.edu.xmu.order.service.CreateOrderServiceInterface;
 import cn.edu.xmu.order.service.OrderServiceInterface;
-import cn.edu.xmu.other.dto.AftersaleDTO;
+import cn.edu.xmu.order.dto.AftersaleDTO;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.dubbo.config.annotation.DubboReference;
@@ -21,13 +22,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
 /**
  * @author
@@ -43,8 +40,12 @@ public class AftersaleService{
     @Autowired
     private AftersaleServicePoMapper aftersaleServicePoMapper;
 
+
     @DubboReference(version = "0.0.1")
     OrderServiceInterface orderServiceInterface;
+
+    @DubboReference(version = "0.0.1")
+    CreateOrderServiceInterface createOrderServiceInterface;
 
     /**
      * 买家修改售后单信息
@@ -70,6 +71,9 @@ public class AftersaleService{
        if(orderAftersaleDTO==null){
            return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
        }
+//       else if(orderAftersaleDTO.getShopId().equals(-2020L)){
+//           return new ReturnObject<>(ResponseCode.ORDER_STATENOTALLOW);
+//       }
         Aftersale aftersaleBo=vo.createAftersale();
         aftersaleBo.setOrderItemId(id);
         aftersaleBo.setShopId(orderAftersaleDTO.getShopId());
@@ -85,7 +89,7 @@ public class AftersaleService{
         }
         else{
             Aftersale aftersale=new Aftersale(po);
-            aftersale.setOrderId(orderAftersaleDTO.getOrderId());
+//            aftersale.setOrderId(orderAftersaleDTO.getOrderId());
             aftersale.setSkuId(orderAftersaleDTO.getSkuId());
             aftersale.setOrderSn(orderAftersaleDTO.getOrderSn());
             aftersale.setSkuName(orderAftersaleDTO.getSkuName());
@@ -121,12 +125,12 @@ public class AftersaleService{
      */
     @Transactional
     public ReturnObject<Object> deliverAftersale(Long id, Long shopId, AftersaleDeliverVo vo) {
-        ReturnObject returnObject1=aftersaleDao.getAftersaleByShopId(id,shopId);
+        ReturnObject returnObject1=aftersaleDao.getAftersaleByShopId(shopId,id);
         AftersaleServicePo po=(AftersaleServicePo)returnObject1.getData();
 
         Long orderId=null;
 
-        if(po!=null && po.getType().intValue()==0 && vo.getShopLogSn()==null){
+        if(po!=null && po.getType().intValue()==0){
             AftersaleDTO aftersaleDTO=new AftersaleDTO();
             aftersaleDTO.setConsignee(po.getConsignee());
             aftersaleDTO.setAddress(po.getDetail());
@@ -135,10 +139,12 @@ public class AftersaleService{
             aftersaleDTO.setQuantity(po.getQuantity());
             aftersaleDTO.setRegionId(po.getRegionId());
             aftersaleDTO.setShopId(po.getShopId());
-            orderId=orderServiceInterface.createAftersaleOrder(aftersaleDTO);
-        }
-        else if(po!=null && po.getType().intValue()==0 && vo.getShopLogSn()!=null){
-            return new ReturnObject<>(ResponseCode.FIELD_NOTVALID);
+            aftersaleDTO.setOrderItemId(po.getOrderItemId());
+
+            logger.error(aftersaleDTO.toString());
+            orderId=createOrderServiceInterface.createAftersaleOrder(aftersaleDTO);
+
+            vo.setShopLogSn(null);
         }
 
         ReturnObject returnObject= aftersaleDao.deliverAftersale(id,shopId,vo,orderId);
@@ -188,10 +194,9 @@ public class AftersaleService{
         }
         else {
             Aftersale aftersale = new Aftersale(po);
-            logger.info("1");
             OrderAftersaleDTO orderAftersaleDTO=orderServiceInterface.getAftersaleInfo(po.getOrderItemId());
-            logger.info(orderAftersaleDTO.toString());
-            aftersale.setOrderId(orderAftersaleDTO.getOrderId());
+
+//            aftersale.setOrderId(orderAftersaleDTO.getOrderId());
             aftersale.setOrderSn(orderAftersaleDTO.getOrderSn());
             aftersale.setSkuId(orderAftersaleDTO.getSkuId());
             aftersale.setSkuName(orderAftersaleDTO.getSkuName());
@@ -217,7 +222,7 @@ public class AftersaleService{
         else {
             Aftersale aftersale = new Aftersale(po);
             OrderAftersaleDTO orderAftersaleDTO=orderServiceInterface.getAftersaleInfo(po.getOrderItemId());
-            aftersale.setOrderId(orderAftersaleDTO.getOrderId());
+//            aftersale.setOrderId(orderAftersaleDTO.getOrderId());
             aftersale.setOrderSn(orderAftersaleDTO.getOrderSn());
             aftersale.setSkuId(orderAftersaleDTO.getSkuId());
             aftersale.setSkuName(orderAftersaleDTO.getSkuName());
@@ -249,11 +254,11 @@ public class AftersaleService{
         if(pos!=null){
             for (AftersaleServicePo aftersaleServicePo : pos.getList()) {
                 Aftersale aftersale=new Aftersale(aftersaleServicePo);
-                OrderAftersaleDTO orderAftersaleDTO=orderServiceInterface.getAftersaleInfo(aftersaleServicePo.getOrderItemId());
-                aftersale.setOrderId(orderAftersaleDTO.getOrderId());
-                aftersale.setOrderSn(orderAftersaleDTO.getOrderSn());
-                aftersale.setSkuId(orderAftersaleDTO.getSkuId());
-                aftersale.setSkuName(orderAftersaleDTO.getSkuName());
+//                OrderAftersaleDTO orderAftersaleDTO=orderServiceInterface.getAftersaleInfo(aftersaleServicePo.getOrderItemId());
+//                aftersale.setOrderId(orderAftersaleDTO.getOrderId());
+//                aftersale.setOrderSn(orderAftersaleDTO.getOrderSn());
+//                aftersale.setSkuId(orderAftersaleDTO.getSkuId());
+//                aftersale.setSkuName(orderAftersaleDTO.getSkuName());
                 ret.add(aftersale);
             }
         }
@@ -285,11 +290,11 @@ public class AftersaleService{
         if(objs!=null){
             for (AftersaleServicePo aftersaleServicePo : objs.getList()) {
                 Aftersale aftersale = new Aftersale(aftersaleServicePo);
-                OrderAftersaleDTO orderAftersaleDTO=orderServiceInterface.getAftersaleInfo(aftersale.getOrderItemId());
-                aftersale.setOrderId(orderAftersaleDTO.getOrderId());
-                aftersale.setOrderSn(orderAftersaleDTO.getOrderSn());
-                aftersale.setSkuId(orderAftersaleDTO.getSkuId());
-                aftersale.setSkuName(orderAftersaleDTO.getSkuName());
+//                OrderAftersaleDTO orderAftersaleDTO=orderServiceInterface.getAftersaleInfo(aftersale.getOrderItemId());
+//                aftersale.setOrderId(orderAftersaleDTO.getOrderId());
+//                aftersale.setOrderSn(orderAftersaleDTO.getOrderSn());
+//                aftersale.setSkuId(orderAftersaleDTO.getSkuId());
+//                aftersale.setSkuName(orderAftersaleDTO.getSkuName());
                 ret.add(aftersale);
             }
         }
