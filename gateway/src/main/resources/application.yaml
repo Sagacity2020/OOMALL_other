@@ -65,6 +65,14 @@ spring:
             - PrefixPath=/address
             - Auth=authorization
 
+        - id: cart
+          uri: http://localhost:8085/
+          predicates:
+            - Path=/carts,/carts/{id}
+          filters:
+            - PrefixPath=/cart
+            - Auth=authorization
+
   redis:
     host: localhost
       # Redis服务器连接端口

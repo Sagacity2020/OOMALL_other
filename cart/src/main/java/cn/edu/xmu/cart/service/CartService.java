@@ -49,7 +49,36 @@ public class CartService {
      * @return
      */
     public ReturnObject<PageInfo<VoObject>> selectAllCart(Long userId, Integer page, Integer pageSize) {
-        return cartDao.seleteByUserId(userId,page,pageSize);
+        PageInfo<ShoppingCartPo> shoppingCartPoPageInfo=cartDao.seleteByUserId(userId,page,pageSize);
+        List<VoObject> carts=new ArrayList<>();
+        for(ShoppingCartPo po:shoppingCartPoPageInfo.getList()){
+            Cart cart=new Cart(po);
+            logger.error("123");
+            List<CouponActivityDTO> couponActivityDTOS=new ArrayList<>();
+            try {
+                couponActivityDTOS = couponService.getCouponActivityAlone(cart.getCustomerId(), cart.getGoodsSkuId());
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            cart.setCouponActivity(couponActivityDTOS);
+            logger.error(couponActivityDTOS.toString());
+            GoodsSkuInfo goodsSkuInfo =null;
+            try {
+                goodsSkuInfo = goodsService.getGoodsSkuInfoAlone(cart.getGoodsSkuId());
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            cart.setSkuName(goodsSkuInfo.getSkuName());
+            cart.setPrice(goodsSkuInfo.getPrice());
+            logger.error(goodsSkuInfo.getSkuName()+goodsSkuInfo.getPrice());
+            carts.add(cart);
+        }
+        PageInfo<VoObject> returnObject=new PageInfo<>(carts);
+        returnObject.setPages(shoppingCartPoPageInfo.getPages());
+        returnObject.setPageSize(shoppingCartPoPageInfo.getPageSize());
+        returnObject.setPageNum(shoppingCartPoPageInfo.getPageNum());
+        returnObject.setTotal(shoppingCartPoPageInfo.getTotal());
+        return new ReturnObject<>(returnObject);
 
     }
 
