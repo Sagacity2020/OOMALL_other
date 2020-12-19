@@ -4,6 +4,7 @@ import cn.edu.xmu.ooad.model.VoObject;
 import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
 
+import cn.edu.xmu.other.dto.FlashSaleTimeSegmentDTO;
 import cn.edu.xmu.time.mapper.TimeSegmentPoMapper;
 import cn.edu.xmu.time.model.bo.TimeSegment;
 import cn.edu.xmu.time.model.po.TimeSegmentPo;
@@ -337,9 +338,8 @@ public class TimeSegmentDao {
      * 若无则返回长度为0的列表而不是null
      * @Date:  2020/12/15 8:43
      */
-    @Transactional
-    public String getCurrentFlashSaleTimeSegs(){
-        List<String> flashSaleTimeSegs= new ArrayList<>();
+    public ArrayList<Long> getCurrentFlashSaleTimeSegs(){
+        ArrayList<Long> flashSaleTimeSegs= new ArrayList<>();
         TimeSegmentPoExample example = new TimeSegmentPoExample();
         TimeSegmentPoExample.Criteria criteria = example.createCriteria();
         criteria.andTypeEqualTo((byte)1);
@@ -352,13 +352,14 @@ public class TimeSegmentDao {
             endTime=LocalTime.of(po.getEndTime().getHour(),po.getEndTime().getMinute(),po.getEndTime().getSecond());
             if((LocalTime.now().isAfter(beginTime)||LocalTime.now().equals(beginTime))&&LocalTime.now().isBefore(endTime))
             {
-                //System.out.println("now"+po.getId());
-                flashSaleTimeSegs.add(Long.toString(po.getId()));
+                System.out.println("now"+po.getId());
+                // flashSaleTimeSegs.add(Long.toString(po.getId()));
+                flashSaleTimeSegs.add(po.getId());
             }
         }
         //if(flashSaleTimeSegs!=null)
-        String flashSaleTimeSegIds=String.join("+", flashSaleTimeSegs);
-        return flashSaleTimeSegIds;
+        // String flashSaleTimeSegIds=String.join("+", flashSaleTimeSegs);
+        return flashSaleTimeSegs;
     }
     /**
      * 根据时间段ID判断是否为秒杀时段
@@ -370,7 +371,6 @@ public class TimeSegmentDao {
      * @return
      * @Date:  2020/12/15 9:19
      */
-    @Transactional
     public Boolean timeSegIsFlashSale(Long id){
         TimeSegmentPo po =timeSegmentPoMapper.selectByPrimaryKey(id);
         if(po.getType().equals((byte)1))
@@ -379,6 +379,30 @@ public class TimeSegmentDao {
         }
         else {return false;}
     }
+
+    /**
+     * 根据时间段ID获得秒杀时段信息
+     * @author zwl
+     * @param
+     * @return
+     * @Date:  2020/12/18 17:08
+     */
+
+    public FlashSaleTimeSegmentDTO getFlashSaleTimeSegmentById(Long id){
+        TimeSegmentPo po =timeSegmentPoMapper.selectByPrimaryKey(id);
+        if(po.getType().equals((byte)1))
+        {
+            FlashSaleTimeSegmentDTO ret = new FlashSaleTimeSegmentDTO();
+            ret.setId(po.getId());
+            ret.setBeginTime(po.getBeginTime());
+            ret.setEndTime(po.getEndTime());
+            ret.setGmtCreate(po.getGmtCreate());
+            ret.setGmtModified(po.getGmtModified());
+            return ret;
+        }
+        return null;
+    }
+
 
     public ReturnObject<Object> getTimesegmentById(Long id){
         TimeSegmentPo po=new TimeSegmentPo();

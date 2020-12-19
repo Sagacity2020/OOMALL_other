@@ -32,37 +32,39 @@ public class FavouriteGoodsDao {
      * @param pageSize 每页大小
      * @return
      * @Date:  2020/12/6 21:48
-    */
-    public ReturnObject<PageInfo<VoObject>> getSelfFavouriteGoods(Integer pageNum, Integer pageSize,Long customerId)
+     */
+    public PageInfo<FavouriteGoodsPo> getSelfFavouriteGoods(Integer pageNum, Integer pageSize,Long customerId)
     {
         FavouriteGoodsPoExample example = new FavouriteGoodsPoExample();
         FavouriteGoodsPoExample.Criteria criteria = example.createCriteria();
         criteria.andCustomerIdEqualTo(customerId);
         //分页查询
-        PageHelper.startPage(pageNum, pageSize);
-        logger.debug("page = " + pageNum + "pageSize = " + pageSize);
+        //PageHelper.startPage(pageNum, pageSize);
+        //logger.debug("page = " + pageNum + "pageSize = " + pageSize);
         List<FavouriteGoodsPo> favouriteGoodsPoList =null;
-        try {
-            favouriteGoodsPoList = favouriteGoodsPoMapper.selectByExample(example);
-            //logger.info("getUserRoles: userId = "+ id + "roleNum = "+ userRolePoList.size());
-        }catch (DataAccessException e){
-            logger.error("selectAllRole: DataAccessException:" + e.getMessage());
-            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
-        }
+        favouriteGoodsPoList = favouriteGoodsPoMapper.selectByExample(example);
+        return new PageInfo<FavouriteGoodsPo>(favouriteGoodsPoList);
+//        try {
+//            favouriteGoodsPoList = favouriteGoodsPoMapper.selectByExample(example);
+//            //logger.info("getUserRoles: userId = "+ id + "roleNum = "+ userRolePoList.size());
+//        }catch (DataAccessException e){
+//            logger.error("selectAllRole: DataAccessException:" + e.getMessage());
+//            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
+//        }
+//
+//        if(favouriteGoodsPoList.isEmpty())
+//        {
+//            logger.info("收藏列表为空");
+//            return new ReturnObject<>(ResponseCode.OK);
+//        }
 
-        if(favouriteGoodsPoList.isEmpty())
-        {
-            logger.info("收藏列表为空");
-            return new ReturnObject<>(ResponseCode.OK);
-        }
-
-        List<VoObject> ret = new ArrayList<>(favouriteGoodsPoList.size());
-        for (FavouriteGoodsPo po : favouriteGoodsPoList) {
-            FavouriteGoods favouriteGoods = new FavouriteGoods(po);
-            ret.add(favouriteGoods);
-        }
-        PageInfo<VoObject> favouriteGoodsPage = PageInfo.of(ret);
-        return new ReturnObject<>(favouriteGoodsPage);
+//        List<VoObject> ret = new ArrayList<>(favouriteGoodsPoList.size());
+//        for (FavouriteGoodsPo po : favouriteGoodsPoList) {
+//            FavouriteGoods favouriteGoods = new FavouriteGoods(po);
+//            ret.add(favouriteGoods);
+//        }
+//        PageInfo<VoObject> favouriteGoodsPage = PageInfo.of(ret);
+//        return new ReturnObject<>(favouriteGoodsPage);
     }
 
     /**
@@ -71,7 +73,7 @@ public class FavouriteGoodsDao {
      * @param favouriteGoods
      * @return
      * @Date:  2020/12/6 21:49
-    */
+     */
 
     public ReturnObject<FavouriteGoods> insertFavouriteGoods(FavouriteGoods favouriteGoods)
     {
@@ -89,9 +91,9 @@ public class FavouriteGoodsDao {
             }
         }
         catch(DataAccessException e){
-                logger.debug("other sql exception : " + e.getMessage());
-                retObj = new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
-            }
+            logger.debug("other sql exception : " + e.getMessage());
+            retObj = new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
+        }
 
         catch (Exception e) {
             // 其他Exception错误
@@ -107,7 +109,7 @@ public class FavouriteGoodsDao {
      * @param id
      * @return
      * @Date:  2020/12/6 21:49
-    */
+     */
     public ReturnObject<Object> deleteFavouriteGoods(Long id)
     {
         ReturnObject<Object> retObj = null;

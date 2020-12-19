@@ -54,13 +54,12 @@ public class TimeSegmentService {
     }
 
     /**
-     *  * 删除时间段
+     *  * 删除广告时间段
      * @author zwl
      *  @param id 时间段id
      *  @return ReturnObject<Object> 返回视图
      */
     @Transactional
-    //@Transactional("txManagerAlpha")
     public ReturnObject<Object> deleteAdTimeSegment(Long id) {
         //return timeSegmentDao.deleteAdTimeSegment(id);
 
@@ -87,7 +86,7 @@ public class TimeSegmentService {
      * @param
      * @return
      * @Date:  2020/12/17 20:27
-    */
+     */
 
     public ReturnObject<PageInfo<VoObject>> selectFlTimeSegments(Integer pageNum, Integer pageSize)
     {
@@ -125,7 +124,7 @@ public class TimeSegmentService {
     @Transactional
     public ReturnObject<Object> deleteFlTimeSegment(Long id) {
 
- //       ReturnObject ret = timeSegmentDao.deleteFlTimeSegment(id);
+        //       ReturnObject ret = timeSegmentDao.deleteFlTimeSegment(id);
 
 //        if(ret.getCode().equals(ResponseCode.OK))
 //        {
