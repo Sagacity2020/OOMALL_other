@@ -1,6 +1,7 @@
 package cn.edu.xmu.time.service.impl;
 
 import cn.edu.xmu.ooad.util.ReturnObject;
+import cn.edu.xmu.other.dto.FlashSaleTimeSegmentDTO;
 import cn.edu.xmu.other.dto.TimeSegmentDTO;
 import cn.edu.xmu.other.service.TimeServiceInterface;
 import cn.edu.xmu.time.dao.TimeSegmentDao;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @DubboService(version = "0.0.1")
@@ -43,7 +45,7 @@ public class TimeServiceInterfaceImpl implements TimeServiceInterface {
     }
 
     @Override
-    public String getCurrentFlashSaleTimeSegs(){
+    public ArrayList<Long> getCurrentFlashSaleTimeSegs(){
         return timeSegmentDao.getCurrentFlashSaleTimeSegs();
     }
     @Override
@@ -51,4 +53,8 @@ public class TimeServiceInterfaceImpl implements TimeServiceInterface {
         return timeSegmentDao.timeSegIsFlashSale(id);
     }
 
+    @Override
+    public FlashSaleTimeSegmentDTO getFlashSaleTimeSegmentById(Long id) {
+        return timeSegmentDao.getFlashSaleTimeSegmentById(id);
+    }
 }

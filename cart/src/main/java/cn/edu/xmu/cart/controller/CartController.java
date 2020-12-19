@@ -143,7 +143,7 @@ public class CartController {
             return Common.getNullRetObj(object,httpServletResponse);
         }
         else{
-            return Common.getRetObject(object);
+            return Common.decorateReturnObject(object);
         }
 
     }
@@ -175,7 +175,7 @@ public class CartController {
             return object;
         }
         ReturnObject returnObject=cartService.changCartGood(id,userId,vo);
-        return returnObject;
+        return Common.decorateReturnObject(returnObject);
     }
 
 

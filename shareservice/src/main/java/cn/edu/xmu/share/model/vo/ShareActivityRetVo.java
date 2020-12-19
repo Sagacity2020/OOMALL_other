@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 public class ShareActivityRetVo {
     private Long id;
     private Long shopId;
-    private Long goodsSpuId;
+    private Long skuId;
     private LocalDateTime beginTime;
     private LocalDateTime endTime;
     private String strategy;

@@ -2,8 +2,10 @@ package cn.edu.xmu.other.service;
 
 
 import cn.edu.xmu.ooad.util.ReturnObject;
+import cn.edu.xmu.other.dto.FlashSaleTimeSegmentDTO;
 import cn.edu.xmu.other.dto.TimeSegmentDTO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,6 +17,7 @@ import java.util.List;
 public interface TimeServiceInterface {
 
     public ReturnObject<TimeSegmentDTO> getTimesegmentById(Long id);
-    String getCurrentFlashSaleTimeSegs();
+    ArrayList<Long> getCurrentFlashSaleTimeSegs();
     Boolean timeSegIsFlashSale(Long id);
+    FlashSaleTimeSegmentDTO getFlashSaleTimeSegmentById(Long id);
 }

@@ -1,8 +1,10 @@
 package cn.edu.xmu.share.service.impl;
 
 import cn.edu.xmu.ooad.util.JacksonUtil;
-import cn.edu.xmu.order.dto.OrderDTO;
-import cn.edu.xmu.order.service.ShareServiceInterface;
+import cn.edu.xmu.other.dto.OrderDTO;
+import cn.edu.xmu.other.service.ShareServiceInterface;
+import cn.edu.xmu.other.service.AftersaleServiceInterface;
+import cn.edu.xmu.other.service.CustomerServiceInterface;
 import cn.edu.xmu.share.dao.BeShareDao;
 import cn.edu.xmu.share.dao.ShareActivityDao;
 import cn.edu.xmu.share.dao.ShareDao;
@@ -12,16 +14,16 @@ import cn.edu.xmu.share.model.bo.Stategy;
 import cn.edu.xmu.share.model.po.BeSharePo;
 import cn.edu.xmu.share.model.po.SharePo;
 import cn.edu.xmu.share.service.ShareService;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@DubboService(version = "0.0.1-SNAPSHOT")
+@DubboService(version = "0.0.1")
 public class IShareServiceImpl implements ShareServiceInterface {
 
     private Logger logger = LoggerFactory.getLogger(ShareService.class);
@@ -34,6 +36,12 @@ public class IShareServiceImpl implements ShareServiceInterface {
 
     @Autowired
     private ShareActivityDao shareActivityDao;
+
+    @DubboReference(version = "0.0.1")
+    AftersaleServiceInterface aftersaleServiceInterface;
+
+    @DubboReference(version = "0.0.1")
+    CustomerServiceInterface customerServiceInterface;
 
     /**
      * 计算返点
@@ -48,15 +56,12 @@ public class IShareServiceImpl implements ShareServiceInterface {
     {
         try
         {
-            //调用售后模块 判断是否有退货售后
-
-            //if(为空)
             BeSharePo beSharePo = beShareDao.getBeShareById(orderDTO.getBeShareId());
             if(beSharePo == null)
                 return 0;
             //已经返过点
             if(beSharePo.getRebate() != 0)
-                return -1;
+                return 0;
             SharePo sharePo = shareDao.getShareById(beSharePo.getShareId());
             if(sharePo == null)
                 return 0;
@@ -64,7 +69,7 @@ public class IShareServiceImpl implements ShareServiceInterface {
             float rebate = 0f; //返点数
             int quantity = sharePo.getQuantity(); //分享中的数量
             int quantityOrder = 5; //改 订单中的数量
-            float price = (orderDTO.getPrice()/100)/ orderDTO.getQuantity(); //每件商品的价格
+            float price = (orderDTO.getPrice()/100.0f)/ orderDTO.getQuantity(); //每件商品的价格
             Stategy stategy = JacksonUtil.toObj(shareActivity.getStrategy(), Stategy.class);
             List<Rule> rule = stategy.getRule();
             for(int i = 0; i < rule.size(); i++)
@@ -75,20 +80,20 @@ public class IShareServiceImpl implements ShareServiceInterface {
                 }
                 else if((quantity >= rule.get(i).getNum() * 100) && (quantity + quantityOrder <= rule.get(i+1).getNum() * 100))
                 {
-                    rebate += price * rule.get(i).getRate() * quantityOrder;
+                    rebate += price * rule.get(i).getRate() * 0.01 * quantityOrder;
                     quantity += quantityOrder;
                     break;
                 }
                 else if((quantity >= rule.get(i).getNum() * 100) && (quantity + quantityOrder > rule.get(i+1).getNum() * 100))
                 {
-                    rebate += price * rule.get(i).getRate() * (rule.get(i+1).getNum() * 100 - quantity);
+                    rebate += price * rule.get(i).getRate() * 0.01 * (rule.get(i+1).getNum() * 100 - quantity);
                     quantityOrder -= rule.get(i+1).getNum() * 100 - quantity;
                     quantity += rule.get(i+1).getNum() * 100;
                 }
             }
             int temp = (int)(rebate *100);
             //更新用户的返点
-
+            customerServiceInterface.payWithPoint(sharePo.getSharerId(), temp);
             //更新Share表的数量
             if(!shareDao.updateShareById(sharePo.getId(), quantity))
             {

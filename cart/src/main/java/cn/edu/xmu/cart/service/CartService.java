@@ -6,10 +6,11 @@ import cn.edu.xmu.cart.model.bo.Cart;
 import cn.edu.xmu.cart.model.po.ShoppingCartPo;
 import cn.edu.xmu.cart.model.vo.CartRetVo;
 import cn.edu.xmu.cart.model.vo.CartVo;
+import cn.edu.xmu.goods.dto.CouponActivityDTO;
+import cn.edu.xmu.goods.dto.GoodsSkuInfo;
 import cn.edu.xmu.ooad.model.VoObject;
 import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
-import cn.edu.xmu.goods.dto.CartDTO;
 import cn.edu.xmu.goods.service.GoodsServiceInterface;
 import com.github.pagehelper.PageInfo;
 import org.apache.dubbo.config.annotation.DubboReference;
@@ -43,23 +44,23 @@ public class CartService {
      * @return
      */
     public ReturnObject<PageInfo<VoObject>> selectAllCart(Long userId, Integer page, Integer pageSize) {
-       ReturnObject<List<Cart>> cartList=cartDao.seleteByUserId(userId);
-       List<Cart> carts=cartList.getData();
-       List<Long> goodsSkuIds=null;
-       for(Cart cart:carts){
-           goodsSkuIds.add(cart.getGoodsSkuId());
-       }
-       List<CartDTO> cartDTOS=goodsService.getCouponActivity(goodsSkuIds);
-       for(int i=0;i<carts.size();i++){
-           carts.get(i).setCouponActivity(cartDTOS.get(i).getCouponActivity());
-           carts.get(i).setSkuName(cartDTOS.get(i).getSkuName());
-       }
-       List<VoObject> ret  = new ArrayList<>(carts.size());
-       for(Cart bo:carts){
-           ret.add(bo);
-       }
-       PageInfo<VoObject> cartPage = PageInfo.of(ret);
-       return new ReturnObject<>(cartPage);
+        ReturnObject<List<Cart>> cartList=cartDao.seleteByUserId(userId);
+        List<Cart> carts=cartList.getData();
+        for(int i=0;i<carts.size();i++){
+            ArrayList<CouponActivityDTO> couponActivityDTOS=goodsService.getCouponActivityAlone(carts.get(i).getGoodsSkuId());
+            carts.get(i).setCouponActivity(couponActivityDTOS);
+            GoodsSkuInfo goodsSkuInfo=goodsService.getGoodsSkuInfoAlone(carts.get(i).getGoodsSkuId());
+            carts.get(i).setSkuName(goodsSkuInfo.getSkuName());
+            carts.get(i).setPrice(goodsSkuInfo.getPrice());
+        }
+
+        List<VoObject> ret  = new ArrayList<>(carts.size());
+        for(Cart bo:carts){
+            ret.add(bo);
+        }
+        PageInfo<VoObject> cartPage = PageInfo.of(ret);
+        cartPage.setTotal(carts.size());
+        return new ReturnObject<>(cartPage);
 
 
     }
@@ -88,15 +89,18 @@ public class CartService {
      */
     public ReturnObject addCartGood(Cart cart) {
         Long goodSkuId=cart.getGoodsSkuId();
-        CartDTO cartDTO=goodsService.getCouponActivityAlone(goodSkuId);
-        if (cart==null){
-            return  new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("商品sku不存在"));
+        GoodsSkuInfo goodsSkuInfo=goodsService.getGoodsSkuInfoAlone(goodSkuId);
+        if (goodsSkuInfo==null){
+            return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("商品sku不存在"));
         }
 
-        cart.setCouponActivity(cartDTO.getCouponActivity());
-        cart.setSkuName(cartDTO.getSkuName());
-        cart.setPrice(cartDTO.getPrice());
+        cart.setCouponActivity(goodsService.getCouponActivityAlone(goodSkuId));
+        cart.setSkuName(goodsSkuInfo.getSkuName());
+        cart.setPrice(goodsSkuInfo.getPrice());
         ReturnObject<Cart> cartReturnObject=cartDao.addCart(cart);
+        if(cartReturnObject.getData()==null){
+            return cartReturnObject;
+        }
         Cart cart1=cartReturnObject.getData();
         CartRetVo cartRetVo=new CartRetVo(cart1);
         return new ReturnObject(cartRetVo);
@@ -123,7 +127,7 @@ public class CartService {
             return cartDao.changeCartInfo(id,userId,vo);
         }
         else{
-            return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("不属于一个spu商品"));
+            return new ReturnObject(ResponseCode.FIELD_NOTVALID,String.format("不属于一个spu商品"));
         }
 
 

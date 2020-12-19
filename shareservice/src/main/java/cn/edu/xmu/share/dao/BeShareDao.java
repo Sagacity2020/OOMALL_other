@@ -81,61 +81,61 @@ public class BeShareDao {
      */
 
     //浏览分享
-    public ReturnObject createBeShare(Long customerId, Long skuId, Long sharerId)
-    {
-        BeSharePoExample example = new BeSharePoExample();
-        BeSharePoExample.Criteria criteria = example.createCriteria();
-        criteria.andCustomerIdEqualTo(customerId);
-        criteria.andGoodsSkuIdEqualTo(skuId);
-        criteria.andSharerIdEqualTo(sharerId);
-        try{
-            List<BeSharePo> retBeSharePo = beSharePoMapper.selectByExample(example);
-            if(retBeSharePo == null)
-            {
-                BeSharePo po = new BeSharePo();
-                po.setSharerId(sharerId);
-                po.setGoodsSkuId(skuId);
-                po.setCustomerId(customerId);
-                po.setGmtCreate(LocalDateTime.now());
-                po.setGmtModified(LocalDateTime.now());
-                SharePo sharePo = shareDao.getShare(sharerId,skuId);
-                po.setShareId(sharePo.getId());
-
-                /**
-                 * 调用为某个商品更新分享活动Id的函数
-                 * Long shareActivityId = shareActivityDao.getShareActivity(0L, skuId);
-                 * po.setShareActivityId(shareActivityId);
-                 */
-                po.setShareActivityId(sharePo.getShareActivityId());
-                int flag = beSharePoMapper.insertSelective(po);
-                if(flag == 0)
-                {
-                    logger.debug("createBeShare: create beShare fail.");
-                    return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, String.format("新建分享成功失败：" + po.getCustomerId()));
-                }
-                else
-                {
-                    logger.debug("createBeShare: create beShare success.");
-                    return new ReturnObject<VoObject>(new BeShare(po));
-                }
-            }
-            else
-            {
-                logger.debug("getBeShare: beShare = " + retBeSharePo.toString());
-                return new ReturnObject<VoObject>(new BeShare(retBeSharePo.get(0)));
-            }
-
-        }
-        catch (DataAccessException e){
-            logger.error("createBeShare: DataAccessException:" + e.getMessage());
-            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
-        }
-        catch (Exception e) {
-            // 其他Exception错误
-            logger.error("other exception : " + e.getMessage());
-            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
-        }
-    }
+//    public ReturnObject createBeShare(Long customerId, Long skuId, Long sharerId)
+//    {
+//        BeSharePoExample example = new BeSharePoExample();
+//        BeSharePoExample.Criteria criteria = example.createCriteria();
+//        criteria.andCustomerIdEqualTo(customerId);
+//        criteria.andGoodsSkuIdEqualTo(skuId);
+//        criteria.andSharerIdEqualTo(sharerId);
+//        try{
+//            List<BeSharePo> retBeSharePo = beSharePoMapper.selectByExample(example);
+//            if(retBeSharePo == null)
+//            {
+//                BeSharePo po = new BeSharePo();
+//                po.setSharerId(sharerId);
+//                po.setGoodsSkuId(skuId);
+//                po.setCustomerId(customerId);
+//                po.setGmtCreate(LocalDateTime.now());
+//                po.setGmtModified(LocalDateTime.now());
+//                SharePo sharePo = shareDao.getShare(sharerId,skuId);
+//                po.setShareId(sharePo.getId());
+//
+//                /**
+//                 * 调用为某个商品更新分享活动Id的函数
+//                 * Long shareActivityId = shareActivityDao.getShareActivity(0L, skuId);
+//                 * po.setShareActivityId(shareActivityId);
+//                 */
+//                po.setShareActivityId(sharePo.getShareActivityId());
+//                int flag = beSharePoMapper.insertSelective(po);
+//                if(flag == 0)
+//                {
+//                    logger.debug("createBeShare: create beShare fail.");
+//                    return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, String.format("新建分享成功失败：" + po.getCustomerId()));
+//                }
+//                else
+//                {
+//                    logger.debug("createBeShare: create beShare success.");
+//                    return new ReturnObject<VoObject>(new BeShare(po));
+//                }
+//            }
+//            else
+//            {
+//                logger.debug("getBeShare: beShare = " + retBeSharePo.toString());
+//                return new ReturnObject<VoObject>(new BeShare(retBeSharePo.get(0)));
+//            }
+//
+//        }
+//        catch (DataAccessException e){
+//            logger.error("createBeShare: DataAccessException:" + e.getMessage());
+//            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
+//        }
+//        catch (Exception e) {
+//            // 其他Exception错误
+//            logger.error("other exception : " + e.getMessage());
+//            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
+//        }
+//    }
 
     /**
      * 用户查询自己的分享成功
@@ -173,8 +173,8 @@ public class BeShareDao {
         PageInfo<BeShare> beSharePage = PageInfo.of(ret);
         beSharePage.setPages(beSharePoPage.getPages());
         beSharePage.setTotal(beSharePoPage.getTotal());
-        beSharePage.setPageNum(pageNum);
-        beSharePage.setPageSize(pageSize);
+        beSharePage.setPageNum(beSharePoPage.getPageNum());
+        beSharePage.setPageSize(beSharePoPage.getPageSize());
 
         return beSharePage;
     }
@@ -209,16 +209,16 @@ public class BeShareDao {
      * 管理员查询自己的分享成功
      *
      * @author zxh
-     * @param goosSkuId 店铺的商品列表
+     * @param goodsSkuId 店铺的商品列表
      * @param pageNum 页数
      * @param pageSize 每页大小
      * @return ReturnObject<List> 分享列表
      */
-    public PageInfo<BeShare> getBeSharedAdmin(Long goosSkuId, LocalDateTime beginTime, LocalDateTime endTime, Integer pageNum, Integer pageSize) throws Exception
+    public PageInfo<BeShare> getBeSharedAdmin(Long goodsSkuId, LocalDateTime beginTime, LocalDateTime endTime, Integer pageNum, Integer pageSize) throws Exception
     {
         BeSharePoExample example = new BeSharePoExample();
         BeSharePoExample.Criteria criteria = example.createCriteria();
-        criteria.andGoodsSkuIdEqualTo(goosSkuId);
+        criteria.andGoodsSkuIdEqualTo(goodsSkuId);
         if(beginTime != null)
             criteria.andGmtCreateGreaterThanOrEqualTo(beginTime);
         if(endTime != null)
@@ -239,8 +239,8 @@ public class BeShareDao {
         PageInfo<BeShare> beSharePage = PageInfo.of(ret);
         beSharePage.setPages(beSharePoPage.getPages());
         beSharePage.setTotal(beSharePoPage.getTotal());
-        beSharePage.setPageNum(pageNum);
-        beSharePage.setPageSize(pageSize);
+        beSharePage.setPageNum(beSharePoPage.getPageNum());
+        beSharePage.setPageSize(beSharePoPage.getPageSize());
 
         return beSharePage;
     }

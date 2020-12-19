@@ -6,19 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="gateway" />
-        <module name="favoriteservice" />
-        <module name="timeservice" />
-        <module name="aftersale" />
-        <module name="customer" />
-        <module name="shareservice" />
-        <module name="goods-client" />
-        <module name="core" />
-        <module name="other-client" />
-        <module name="advertisement" />
-        <module name="footprint" />
         <module name="address" />
+        <module name="other-client" />
+        <module name="goods-client" />
+        <module name="shareservice" />
+        <module name="favoriteservice" />
+        <module name="aftersale" />
         <module name="cart" />
+        <module name="core" />
+        <module name="footprint" />
+        <module name="timeservice" />
+        <module name="advertisement" />
+        <module name="gateway" />
+        <module name="customer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -33,6 +33,7 @@
       <module name="gateway" target="11" />
       <module name="goods-client" target="11" />
       <module name="OOMALL" target="11" />
+      <module name="OOMALL12-19" target="11" />
       <module name="other-client" target="11" />
       <module name="shareservice" target="1.8" />
       <module name="timeservice" target="8" />

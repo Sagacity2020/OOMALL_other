@@ -1,7 +1,8 @@
 package cn.edu.xmu.share.service;
 
+import cn.edu.xmu.goods.dto.GoodsSkuDTO;
+import cn.edu.xmu.goods.service.GoodsServiceInterface;
 import cn.edu.xmu.ooad.model.VoObject;
-import cn.edu.xmu.ooad.util.JacksonUtil;
 import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
 
@@ -9,12 +10,9 @@ import cn.edu.xmu.share.dao.BeShareDao;
 import cn.edu.xmu.share.dao.ShareActivityDao;
 import cn.edu.xmu.share.dao.ShareDao;
 import cn.edu.xmu.share.model.bo.*;
-import cn.edu.xmu.share.model.po.BeSharePo;
-import cn.edu.xmu.share.model.po.SharePo;
-import cn.edu.xmu.share.model.vo.GoodSkuVo;
 import cn.edu.xmu.share.model.vo.ShareActivityVo;
-import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageInfo;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,24 +37,8 @@ public class ShareService {
     @Autowired
     private ShareActivityDao shareActivityDao;
 
-
-    /**
-    * 调用其他模块根据sku信息获得商品简略信息
-    *
-    * @author zxh
-    * @param goodSkuId
-    * @return GoodSkuVo
-    * @Date 2020/12/9 19:15
-    */
-    public GoodSkuVo getGoodsSkuById(Long goodSkuId) {
-
-        GoodSkuVo goodSkuVo = new GoodSkuVo();
-        goodSkuVo.setPrice(666);
-        //调用商品模块
-        return goodSkuVo;
-
-    }
-
+    @DubboReference(version = "0.0.1")
+    GoodsServiceInterface goodsServiceInterface;
     /**
     * 查询分享明细Id
     *
@@ -87,15 +69,14 @@ public class ShareService {
             List<VoObject> ret = new ArrayList<>(retShare.size());
             for(Share share : retShare)
             {
-                //① 调用商品模块
-                share.setGoodSkuVo(getGoodsSkuById(share.getGoodsSkuId()));
+                share.setGoodSkuVo(goodsServiceInterface.getSkuById(share.getGoodsSkuId()));
                 ret.add(share);
             }
             PageInfo<VoObject> retPage = PageInfo.of(ret);
             retPage.setPages(sharePage.getPages());
             retPage.setTotal(sharePage.getTotal());
-            retPage.setPageNum(pageNum);
-            retPage.setPageSize(pageSize);
+            retPage.setPageNum(sharePage.getPageNum());
+            retPage.setPageSize(sharePage.getPageSize());
 
             return new ReturnObject<>(retPage);
         }
@@ -121,19 +102,27 @@ public class ShareService {
     public ReturnObject<PageInfo<VoObject>> getSharesAdmin(Long shopId, Long goodsSkuId, Integer pageNum, Integer pageSize) {
         try
         {
+            if(!goodsServiceInterface.hasGoodsSku(goodsSkuId))
+                return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, "skuId不存在");
+            if(shopId != 0L)
+            {
+                Long temp = goodsServiceInterface.getShopIdBySkuId(goodsSkuId);
+                if(temp.longValue() != shopId.longValue())
+                    return new ReturnObject<>(ResponseCode.RESOURCE_ID_OUTSCOPE, "该商品不属于该商店");
+            }
             PageInfo<Share> sharePage = shareDao.getSharesAdmin(goodsSkuId,  pageNum, pageSize);
             List<Share> retShare = sharePage.getList();
             List<VoObject> ret = new ArrayList<>(retShare.size());
             for(Share share : retShare)
             {
-                share.setGoodSkuVo(getGoodsSkuById(share.getGoodsSkuId()));
+                share.setGoodSkuVo(goodsServiceInterface.getSkuById(share.getGoodsSkuId()));
                 ret.add(share);
             }
             PageInfo<VoObject> retPage = PageInfo.of(ret);
             retPage.setPages(sharePage.getPages());
             retPage.setTotal(sharePage.getTotal());
-            retPage.setPageNum(pageNum);
-            retPage.setPageSize(pageSize);
+            retPage.setPageNum(sharePage.getPageNum());
+            retPage.setPageSize(sharePage.getPageSize());
 
             return new ReturnObject<>(retPage);
         }
@@ -159,13 +148,16 @@ public class ShareService {
     @Transactional
     public ReturnObject<VoObject> createShare(Long sharerId, Long skuId)
     {
+        if(!goodsServiceInterface.hasGoodsSku(skuId))
+            return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, "skuId不存在");
         //调用商品模块的查找商品的api 查询商品简略信息
         //调用ShareActivityDao查询商品的分享活动Id  shopId
-        GoodSkuVo vo = getGoodsSkuById(skuId);
+        GoodsSkuDTO vo = goodsServiceInterface.getSkuById(skuId);
         if(vo == null)
             return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, String.format("新建分享失败：商品Id不存在" + skuId));
-        //Long shareActivityId = shareActivityDao.getShareActivity(vo.getShopId(), skuId);
-        Long shareActivityId = 0L;
+        Long shopId = goodsServiceInterface.getShopIdBySkuId(skuId);
+        Long shareActivityId = shareActivityDao.getShareActivity(shopId, skuId);
+        //Long shareActivityId = 0L;
         return shareDao.createShare(sharerId, skuId, shareActivityId, vo);
     }
 
@@ -176,11 +168,11 @@ public class ShareService {
      * @return ReturnObject
      * @author zxh
      */
-    @Transactional
-    public ReturnObject createBeShare(Long customer, Long spuId, Long sharerId)
-    {
-        return beShareDao.createBeShare(customer, spuId, sharerId);
-    }
+//    @Transactional
+//    public ReturnObject createBeShare(Long customer, Long spuId, Long sharerId)
+//    {
+//        return beShareDao.createBeShare(customer, spuId, sharerId);
+//    }
 
     /**
      * 管理员查询自己店铺的分享成功
@@ -193,20 +185,28 @@ public class ShareService {
     public ReturnObject<PageInfo<VoObject>> getBeSharedAdmin(Long shopId, Long goodsSkuId, LocalDateTime beginTime, LocalDateTime endTime, Integer pageNum, Integer pageSize) {
         try
         {
+            if(!goodsServiceInterface.hasGoodsSku(goodsSkuId))
+                return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, "skuId不存在");
+            if(shopId != 0L)
+            {
+                Long temp = goodsServiceInterface.getShopIdBySkuId(goodsSkuId);
+                if(temp.longValue() != shopId.longValue())
+                    return new ReturnObject<>(ResponseCode.RESOURCE_ID_OUTSCOPE, "该商品不属于该商店");
+            }
             PageInfo<BeShare> beSharePage = beShareDao.getBeSharedAdmin( goodsSkuId, beginTime, endTime, pageNum, pageSize);
             List<BeShare> retBeShare = beSharePage.getList();
             List<VoObject> ret = new ArrayList<>(retBeShare.size());
             for(BeShare beShare : retBeShare)
             {
                 //调用商品模块
-                beShare.setGoodSkuVo(getGoodsSkuById(beShare.getGoodsSkuId()));
+                beShare.setGoodSkuVo(goodsServiceInterface.getSkuById(beShare.getGoodsSkuId()));
                 ret.add(beShare);
             }
             PageInfo<VoObject> retPage = PageInfo.of(ret);
             retPage.setPages(beSharePage.getPages());
             retPage.setTotal(beSharePage.getTotal());
-            retPage.setPageNum(pageNum);
-            retPage.setPageSize(pageSize);
+            retPage.setPageNum(beSharePage.getPageNum());
+            retPage.setPageSize(beSharePage.getPageSize());
 
             return new ReturnObject<>(retPage);
         }
@@ -238,14 +238,14 @@ public class ShareService {
             for(BeShare beShare : retBeShare)
             {
                 //调用商品模块
-                beShare.setGoodSkuVo(getGoodsSkuById(beShare.getGoodsSkuId()));
+                beShare.setGoodSkuVo(goodsServiceInterface.getSkuById(beShare.getGoodsSkuId()));
                 ret.add(beShare);
             }
             PageInfo<VoObject> retPage = PageInfo.of(ret);
             retPage.setPages(beSharePage.getPages());
             retPage.setTotal(beSharePage.getTotal());
-            retPage.setPageNum(pageNum);
-            retPage.setPageSize(pageSize);
+            retPage.setPageNum(beSharePage.getPageNum());
+            retPage.setPageSize(beSharePage.getPageSize());
 
             return new ReturnObject<>(retPage);
         }
@@ -286,6 +286,14 @@ public class ShareService {
     @Transactional
     public ReturnObject createShareActivity(Long shopId, Long skuId, ShareActivityVo vo)
     {
+        if(!goodsServiceInterface.hasGoodsSku(skuId))
+            return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, "skuId不存在");
+        if(shopId != 0L)
+        {
+            Long temp = goodsServiceInterface.getShopIdBySkuId(skuId);
+            if(temp.longValue() != shopId.longValue())
+                return new ReturnObject<>(ResponseCode.RESOURCE_ID_OUTSCOPE, "该商品不属于该商店");
+        }
         ShareActivity bo = new ShareActivity(vo);
         return shareActivityDao.createShareActivity(shopId, skuId, bo);
     }

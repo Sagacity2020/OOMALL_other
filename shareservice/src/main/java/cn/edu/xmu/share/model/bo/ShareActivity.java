@@ -77,7 +77,7 @@ public class ShareActivity implements VoObject , Serializable {
         ShareActivityRetVo shareActivityRetVo=new ShareActivityRetVo();
         shareActivityRetVo.setId(id);
         shareActivityRetVo.setShopId(shopId);
-        shareActivityRetVo.setGoodsSpuId(goodsSkuId);
+        shareActivityRetVo.setSkuId(goodsSkuId);
         shareActivityRetVo.setBeginTime(beginTime);
         shareActivityRetVo.setEndTime(endTime);
         shareActivityRetVo.setStrategy(strategy);

@@ -46,9 +46,9 @@ public class AdvertisementUpdateVo {
 
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         if(beginDate!=null)
-        advertisement.setBeginDate(LocalDate.parse(beginDate, fmt));
+            advertisement.setBeginDate(LocalDate.parse(beginDate, fmt));
         if(endDate!=null)
-        advertisement.setEndDate(LocalDate.parse(endDate, fmt));
+            advertisement.setEndDate(LocalDate.parse(endDate, fmt));
         return advertisement;
     }
 }
