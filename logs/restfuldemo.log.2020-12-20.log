@@ -1,0 +1,17 @@
+2020-12-20 00:02:08.402 [http-nio-8083-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 00:02:08.413 [http-nio-8083-exec-1] DEBUG c.e.x.a.controller.AdvertisementController - insertAdvertisement id=430into tid=102
+2020-12-20 00:04:36.223 [http-nio-8083-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 00:04:36.231 [http-nio-8083-exec-2] DEBUG c.e.x.a.controller.AdvertisementController - insertAdvertisement id=430into tid=102
+2020-12-20 00:04:36.537 [http-nio-8083-exec-2] INFO  cn.edu.xmu.advertisement.dao.AdvertisementDao - 将广告id=430添加到时间段tid=102下成功
+2020-12-20 00:07:01.312 [http-nio-8083-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 00:07:01.321 [http-nio-8083-exec-7] DEBUG c.e.x.a.controller.AdvertisementController - getAdvertisementBySegId id=4,page=1,pageSize=10
+2020-12-20 00:07:25.376 [http-nio-8083-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 00:07:25.376 [http-nio-8083-exec-10] DEBUG c.e.x.a.controller.AdvertisementController - getAdvertisementBySegId id=4,page=1,pageSize=10
+2020-12-20 00:09:21.952 [http-nio-8083-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 00:09:21.952 [http-nio-8083-exec-4] DEBUG c.e.x.a.controller.AdvertisementController - getAdvertisementBySegId id=87264,page=1,pageSize=10
+2020-12-20 00:12:26.296 [http-nio-8083-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 00:12:26.297 [http-nio-8083-exec-8] DEBUG c.e.x.a.controller.AdvertisementController - getAdvertisementBySegId id=4,page=1,pageSize=10
+2020-12-20 00:12:48.414 [http-nio-8083-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 00:12:48.415 [http-nio-8083-exec-9] DEBUG c.e.x.a.controller.AdvertisementController - getAdvertisementBySegId id=4,page=1,pageSize=10
+2020-12-20 00:14:40.897 [http-nio-8083-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 00:14:40.909 [http-nio-8083-exec-1] DEBUG c.e.x.a.controller.AdvertisementController - getAdvertisementBySegId id=4,page=1,pageSize=10

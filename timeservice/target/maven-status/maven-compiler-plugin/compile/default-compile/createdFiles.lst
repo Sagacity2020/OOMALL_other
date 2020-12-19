@@ -1,0 +1,14 @@
+cn\edu\xmu\time\model\vo\TimeSegmentVo.class
+cn\edu\xmu\time\model\po\TimeSegmentPoExample$Criterion.class
+cn\edu\xmu\time\model\po\TimeSegmentPoExample$Criteria.class
+cn\edu\xmu\time\TimeServiceApplication.class
+cn\edu\xmu\time\dao\TimeSegmentDao.class
+cn\edu\xmu\time\model\vo\TimeSegmentRetVo.class
+cn\edu\xmu\time\model\po\TimeSegmentPo.class
+cn\edu\xmu\time\controller\TimeSegmentController.class
+cn\edu\xmu\time\model\bo\TimeSegment.class
+cn\edu\xmu\time\model\po\TimeSegmentPoExample$GeneratedCriteria.class
+cn\edu\xmu\time\model\vo\TimeSegmentSimpleRetVo.class
+cn\edu\xmu\time\model\po\TimeSegmentPoExample.class
+cn\edu\xmu\time\service\TimeSegmentService.class
+cn\edu\xmu\time\mapper\TimeSegmentPoMapper.class
