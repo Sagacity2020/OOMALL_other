@@ -57,6 +57,14 @@ spring:
           filters:
             - PrefixPath=/advertise
 
+        - id: address
+          uri: http://localhost:8082/
+          predicates:
+            - Path=/addresses,/addresses/{id}/default,/addresses/{id},/region/{id}/ancestor
+          filters:
+            - PrefixPath=/address
+            - Auth=authorization
+
   redis:
     host: localhost
       # Redis服务器连接端口

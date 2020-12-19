@@ -1,110 +1,363 @@
-package cn.edu.xmu.address.service;
+package cn.edu.xmu.address.dao;
 
-import cn.edu.xmu.address.dao.RegionDao;
-import cn.edu.xmu.address.model.po.AddressPo;
-import cn.edu.xmu.ooad.model.VoObject;
+
+import cn.edu.xmu.address.mapper.RegionPoMapper;
+import cn.edu.xmu.address.model.bo.Region;
+import cn.edu.xmu.address.model.po.RegionPo;
+import cn.edu.xmu.address.model.po.RegionPoExample;
+import cn.edu.xmu.address.model.vo.RegionVo;
+import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
-import cn.edu.xmu.address.dao.AddressDao;
-import cn.edu.xmu.address.model.bo.Address;
-
-import com.github.pagehelper.PageInfo;
-import net.bytebuddy.asm.Advice;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.dao.DataAccessException;
+import org.springframework.stereotype.Repository;
 
-@Service
-public class AddressService {
+import java.util.List;
 
 
-    private Logger logger = LoggerFactory.getLogger(AddressService.class);
+/**
+ * @author zrh
+ * @Created at 12/7 0:44
+ */
+@Repository
+public class RegionDao {
+
+    private static final Logger logger= LoggerFactory.getLogger(RegionDao.class);
 
     @Autowired
-    private AddressDao addressDao;
+    RegionPoMapper regionPoMapper;
 
-    @Autowired
-    private RegionService regionService;
 
     /**
+     * @Created at 12/7 1:03
      * @author zrh
-     * @Created at 11/30 23:51
-     * @modified at 12/3 11:43
-     * @param address
-     * @return ReturnObject
+     * @param id
+     * @return
      */
-    @Transactional
-    public ReturnObject insertAddress(Address address)
-    {
+    public ReturnObject<Region> queryPreRegion(Long id) {
 
-        ReturnObject<Address> returnObject=addressDao.insertAddress(address);
+        RegionPo regionPo=new RegionPo();
+        try{
+            regionPo=regionPoMapper.selectByPrimaryKey(id);
+            logger.debug(regionPo.toString());
+            if(regionPo==null){
+                logger.debug("地区id不存在："+id);
+                return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("地区id不存在"));
+
+            }
+            if(regionPo.getState()==1)
+            {
+                logger.debug("该地区无效: "+id);
+                return new ReturnObject<>(ResponseCode.REGION_OBSOLETE);
+            }
+        }catch (DataAccessException e)
+        {
+            logger.debug("数据库错误："+e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误："+e.getMessage()));
+        }
+        catch (Exception e)
+        {
+            logger.debug("服务器其他错误："+e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR,String.format("服务器其他错误："+e.getMessage()));
+        }
+        logger.debug("查询上级地区的地区id："+id);
+        RegionPo retRegion=new RegionPo();
+        try{
+            retRegion=regionPoMapper.selectByPrimaryKey(regionPo.getPid());
+            if(regionPo==null){
+                return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
+            }
+            if(retRegion.getState()==1){
+                return new ReturnObject<>(ResponseCode.REGION_OBSOLETE);
+            }
+
+            return new ReturnObject<>(new Region(retRegion));
+
+
+        }catch (DataAccessException e)
+        {
+            logger.debug("数据库错误："+e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误："+e.getMessage()));
+        }
+        catch (Exception e)
+        {
+            logger.debug("服务器其他错误："+e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR,String.format("服务器其他错误："+e.getMessage()));
+        }
+    }
+
+    /**
+     * @Created at 12/8 22:42
+     * @author zrh
+     * @param id
+     * @param vo
+     * @return
+     */
+    public ReturnObject newSubRegion(Long id, RegionVo vo) {
+        ReturnObject returnObject;
+        logger.debug("id is "+id);
+        RegionPo regionPo=null;
+        try{
+            regionPo=regionPoMapper.selectByPrimaryKey(id);
+            logger.debug(regionPo.toString());
+            if(regionPo==null){
+                logger.debug("地区id不存在："+id);
+                return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("地区id不存在"));
+
+            }
+            if(regionPo.getState()==1)
+            {
+                logger.debug("该地区无效: "+id);
+                return new ReturnObject<>(ResponseCode.REGION_OBSOLETE);
+            }
+        }catch (DataAccessException e)
+        {
+            logger.debug("数据库错误："+e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误："+e.getMessage()));
+        }
+        catch (Exception e)
+        {
+            logger.debug("服务器其他错误："+e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR,String.format("服务器其他错误："+e.getMessage()));
+        }
+        RegionPo insertRegion=new RegionPo();
+        insertRegion.setName(vo.getName());
+        insertRegion.setPostalCode(vo.getPostalCode());
+        insertRegion.setPid(id);
+        insertRegion.setState((byte)0);
+        try{
+            int ret= regionPoMapper.insertSelective(insertRegion);
+            if(ret ==0){
+                logger.debug("insertRegion: insert region fail "+insertRegion.toString());
+                return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("新增失败："+insertRegion.getName()));
+            }
+            else{
+                logger.debug("insertRegion: insert region="+insertRegion.toString());
+                returnObject= new ReturnObject(ResponseCode.OK);
+            }
+        }catch (DataAccessException e) {
+
+            logger.debug("other sql exception : " + e.getMessage());
+            return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
+        }
+        catch (Exception e) {
+            // 其他Exception错误
+            logger.error("other exception : " + e.getMessage());
+            return  new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
+        }
         return returnObject;
 
     }
 
     /**
+     * @Created at 12/10 16:00
      * @author zrh
-     * @Created at 12/1 0:22
-     * @param userId
-     * @param page
-     * @param pageSize
+     * @param id
      * @return
      */
-    public ReturnObject<PageInfo<VoObject>> selectAllAddreses(Long userId, Integer page, Integer pageSize) {
-        ReturnObject<PageInfo<VoObject>> returnObject= addressDao.selectAllAddress(userId,page,pageSize);
+
+    public ReturnObject isRegion(Long id) {
+        RegionPo regionPo=new RegionPo();
+
+        try{
+            regionPo=regionPoMapper.selectByPrimaryKey(id);
+
+            if(regionPo==null){
+                logger.debug("地区id不存在："+id);
+                return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("地区id不存在"));
+
+            }else if(regionPo.getState()==1)
+            {
+                logger.debug("该地区无效: "+id);
+                return new ReturnObject<>(ResponseCode.REGION_OBSOLETE);
+            }
+        }catch (DataAccessException e)
+        {
+            logger.debug("数据库错误："+e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误："+e.getMessage()));
+        }
+        catch (Exception e)
+        {
+            logger.debug("服务器其他错误："+e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR,String.format("服务器其他错误："+e.getMessage()));
+        }
+        return  new ReturnObject<Boolean>(true);
+    }
+
+    /**
+     * @Created at 12/10 16:00
+     * @author zrh
+     * @param region
+     * @return
+     */
+    public ReturnObject updateRegion(Region region) {
+        logger.error(region.toString());
+        RegionPo regionPo=region.getRegionPo();
+        logger.error(regionPo.toString());
+        RegionPo Po=new RegionPo();
+
+        try{
+            Po=regionPoMapper.selectByPrimaryKey(region.getId());
+
+            if(Po==null){
+                logger.debug("地区id不存在："+region.getId());
+                return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("地区id不存在"));
+
+            }else if(Po.getState()==1)
+            {
+                logger.debug("该地区无效: "+region.getId());
+                return new ReturnObject<>(ResponseCode.REGION_OBSOLETE);
+            }
+        }catch (DataAccessException e)
+        {
+            logger.debug("数据库错误："+e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误："+e.getMessage()));
+        }
+        catch (Exception e)
+        {
+            logger.debug("服务器其他错误："+e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR,String.format("服务器其他错误："+e.getMessage()));
+        }
+        ReturnObject returnObject=null;
+        try{
+            int ret=regionPoMapper.updateByPrimaryKeySelective(regionPo);
+            if(ret==0){
+                logger.debug("updateRegion: update region fail: "+region.getId());
+                returnObject=new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("地区id不存在"));
+            }
+            else {
+                returnObject = new ReturnObject(ResponseCode.OK,String.format("成功"));
+            }
+        }catch (DataAccessException e){
+            logger.debug("sql exception :"+e.getMessage());
+            returnObject= new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误:%s",e.getMessage()));
+        }catch (Exception e){
+            logger.error("other exception : "+e.getMessage());
+            returnObject =new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("其他错误：%s",e.getMessage()));
+        }
         return returnObject;
+
     }
 
-
     /**
-     * @Created at 12/2 14:07
+     * @Created at 12/10 21:29
+     * @Modified at 12/17 20:56
      * @author zrh
      * @param id
      * @return
      */
-    @Transactional
-    public ReturnObject setDefaultAddress(Long userId,Long id) {
-        ReturnObject returnObject= addressDao.cancelDefaultAddress(userId);
-        Boolean ret= (Boolean) returnObject.getData();
-        if(ret==true){
-            return addressDao.setDefaultAddress(userId,id);
+    public ReturnObject deleteRegion(Long id) {
+        RegionPo Po=new RegionPo();
+        try{
+            Po=regionPoMapper.selectByPrimaryKey(id);
+
+            if(Po==null){
+                logger.debug("地区id不存在："+id);
+                return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("地区id不存在"));
+
+            }else if(Po.getState()==1)
+            {
+                logger.debug("该地区无效: "+id);
+                return new ReturnObject<>(ResponseCode.REGION_OBSOLETE);
+            }
+        }catch (DataAccessException e)
+        {
+            logger.debug("数据库错误："+e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误："+e.getMessage()));
         }
-        else {
-            return returnObject;
+        catch (Exception e)
+        {
+            logger.debug("服务器其他错误："+e.getMessage());
+            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR,String.format("服务器其他错误："+e.getMessage()));
         }
+
+        int ret;
+        Po.setState((byte)1);
+        try {
+            ret = regionPoMapper.updateByPrimaryKeySelective(Po);
+            if (ret == 0) {
+                logger.info("地区不存在或已被删除，id =" + id);
+                return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST);
+
+            }
+        } catch (DataAccessException e) {
+            logger.error("数据库错误： " + e.getMessage());
+            return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
+        } catch (Exception e) {
+            logger.error("严重错误： " + e.getMessage());
+            return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生未知错误： %s", e.getMessage()));
+        }
+        return new ReturnObject(ResponseCode.OK);
     }
 
-
-
-
     /**
-     * @Created at 12/3 15:30
-     * @author zrh
-     * @param address
-     * @return
-     */
-    public ReturnObject updateAddress(Address address) {
-        ReturnObject returnObject=regionService.isRegion(address.getRegionId());
-        if(returnObject.getData()==null){
-            return returnObject;
-        }
-        else{
-            return addressDao.updateAddressInfo(address);
-        }
-
-
-    }
-
-    /**
-     * @Created at 12/3 19:26
+     * @Create at 12/17 20:56
      * @author zrh
      * @param id
      * @return
      */
-    public ReturnObject deleteAddress(Long id) {
-        return addressDao.deleteAddress(id);
+    public List<Long> getChildRegion(Long id) {
+        RegionPoExample example=new RegionPoExample();
+        RegionPoExample.Criteria criteria=example.createCriteria();
+        criteria.andPidEqualTo(id);
+        List<Long> ids=null;
+        List<RegionPo> regionPos=null;
+        try {
+            regionPos=regionPoMapper.selectByExample(example);
+            if(regionPos==null) {
+                return null;
+
+            }
+            for(int i=0;i<regionPos.size();i++){
+                ids.add(regionPos.get(i).getId());
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return ids;
     }
 
+    /**
+     * @Created at 12/17 20:57
+     * @author zrh
+     * @param childId
+     * @return
+     */
+    public List<Long> deleteChildRegion(Long childId) {
+        RegionPo po=regionPoMapper.selectByPrimaryKey(childId);
+        List<Long> ids=getChildRegion(childId);
+        po.setState((byte)0);
+        try{
+            int ret = regionPoMapper.updateByPrimaryKeySelective(po);
+        }catch (DataAccessException e) {
+            logger.error("数据库错误： " + e.getMessage());
 
+        } catch (Exception e) {
+            logger.error("严重错误： " + e.getMessage());
+
+        }
+        return ids;
+    }
+
+    public void deleteChildRegionOnly(Long aLong) {
+        RegionPo po=new RegionPo();
+        try{
+            po=regionPoMapper.selectByPrimaryKey(aLong);
+            if(po==null) {
+                return;
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        po.setState((byte)0);
+        try{
+            int ret=regionPoMapper.updateByPrimaryKeySelective(po);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }
