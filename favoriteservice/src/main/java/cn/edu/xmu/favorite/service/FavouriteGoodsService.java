@@ -74,24 +74,33 @@ public class FavouriteGoodsService {
     @Transactional
     public ReturnObject insertFavouriteGoods(Long customerId, Long skuId)
     {
+        System.out.println("service1");
         //判断skuid是否存在
         if(!iGoodsService.hasGoodsSku(skuId))
         {
+            System.out.println("service2");
             return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("商品id不存在"));
         }
 
+        System.out.println("service3");
         FavouriteGoods favouriteGoods = new FavouriteGoods();
         favouriteGoods.setGoodsSkuId(skuId);
         favouriteGoods.setCustomerId(customerId);
         favouriteGoods.setGmtCreate(LocalDateTime.now());
         ReturnObject<FavouriteGoods> retObj =favouriteGoodsDao.insertFavouriteGoods(favouriteGoods);
+        System.out.println("service4"+retObj.toString());
         ReturnObject<VoObject> retFavouriteGoods=null;
         if(retObj.getCode().equals(ResponseCode.OK)){
-            FavouriteGoodsRetVo ret=null;
+            FavouriteGoodsRetVo ret= new FavouriteGoodsRetVo(retObj.getData());
+            System.out.println("service5"+ret.getId()+ret.getGmtCreate());
             GoodsSkuDTO goodsSku=iGoodsService.getSkuById(skuId);
-            ret.setGmtCreate(retObj.getData().getGmtCreate());
-            ret.setId(retObj.getData().getId());
-            ret.setGoodsSku(goodsSku);
+            System.out.println("service6");
+            System.out.println("service6.5"+goodsSku.toString());
+
+//            ret.setGmtCreate(retObj.getData().getGmtCreate());
+//            ret.setId(retObj.getData().getId());
+                ret.setGoodsSku(goodsSku);
+            System.out.println("service7"+ret.toString());
             return new ReturnObject<>(ret);
             //retFavouriteGoods=new ReturnObject<>(retObj.getData());
         }else{
@@ -108,8 +117,8 @@ public class FavouriteGoodsService {
      * @return
      * @Date:  2020/12/6 21:47
      */
-    public ReturnObject<Object> deleteFavouriteGoods(Long id)
+    public ReturnObject<Object> deleteFavouriteGoods(Long customerId,Long id)
     {
-        return favouriteGoodsDao.deleteFavouriteGoods(id);
+        return favouriteGoodsDao.deleteFavouriteGoods(customerId,id);
     }
 }

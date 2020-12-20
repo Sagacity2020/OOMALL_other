@@ -17,7 +17,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author zwl
  **/
 @EnableSwagger2
-@SpringBootApplication(scanBasePackages = {"cn.edu.xmu.favorite"})
+@SpringBootApplication(scanBasePackages = {"cn.edu.xmu.favorite", "cn.edu.xmu.ooad"})
 @MapperScan("cn.edu.xmu.favorite.mapper")
 public class FavoriteServiceApplication implements ApplicationRunner{
     private  static  final Logger logger = LoggerFactory.getLogger(FavoriteServiceApplication.class);

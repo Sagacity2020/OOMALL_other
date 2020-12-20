@@ -28,4 +28,8 @@ public class FavouriteGoodsRetVo {
         this.goodsSku=favouriteGoods.getGoodsSku();
         this.gmtCreate=favouriteGoods.getGmtCreate();
     }
+//    public void setGoodsSku(GoodsSkuDto)
+//    {
+//        this.goodsSku.
+//    }
 }
