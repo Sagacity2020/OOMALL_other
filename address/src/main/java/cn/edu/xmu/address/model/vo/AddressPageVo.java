@@ -1,9 +1,10 @@
 package cn.edu.xmu.address.model.vo;
 
 import cn.edu.xmu.address.model.bo.AddressPage;
+import lombok.Data;
 
 import java.time.LocalDateTime;
-
+@Data
 public class AddressPageVo{
     private Long id;
     private Long regionId;
