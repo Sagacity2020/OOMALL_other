@@ -14,13 +14,17 @@ server:
 dubbo:
   application:
      name: cart-service
-   scan:
+  scan:
      base-packages: cn.edu.xmu.cart.service
-   registry:
-     address: nacos://127.0.0.1:8848
-   protocol:
+  registry:
+     address: nacos://192.168.43.61:8848
+  protocol:
      name: dubbo
      port: -1
+  consumer:
+    timeout: 4000
+    check: false
+
 
 spring:
   application:

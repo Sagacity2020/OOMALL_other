@@ -54,6 +54,7 @@ public class TimeSegmentController {
     public Object selectAdTimeSegments(@RequestParam(required = false) Integer page, @RequestParam(required = false) Integer pageSize)
     {
         logger.debug("selectAdTimeSegments: page = "+ page +"  pageSize ="+pageSize);
+        System.out.println("selectAdTimeSegments: page = "+ page +"  pageSize ="+pageSize);
         page = (page == null)?1:page;
         pageSize = (pageSize == null)?10:pageSize;
 
@@ -90,12 +91,20 @@ public class TimeSegmentController {
         Object returnObject = Common.processFieldErrors(bindingResult, httpServletResponse);
         if (returnObject != null) {
             //logger.info("incorrect data received while modifyUserInfo id = " + id);
+            System.out.println("格式不正确");
             return returnObject;
         }
 
-        ReturnObject<VoObject> retObject = timeSegmentService.insertAdTimeSegment(vo.creatTimeSegment());
-        httpServletResponse.setStatus(HttpStatus.CREATED.value());
-        return Common.decorateReturnObject(retObject);
+        ReturnObject retObject = timeSegmentService.insertAdTimeSegment(vo.creatTimeSegment());
+        if (retObject.getData() != null) {
+            httpServletResponse.setStatus(HttpStatus.CREATED.value());
+            return Common.getRetObject(retObject);
+        } else {
+            return Common.getNullRetObj(new ReturnObject<>(retObject.getCode(), retObject.getErrmsg()), httpServletResponse);
+        }
+//        httpServletResponse.setStatus(HttpStatus.CREATED.value());
+//            return Common.getRetObject(retObject);
+        //return Common.decorateReturnObject(retObject);
     }
 
     /**
@@ -118,6 +127,7 @@ public class TimeSegmentController {
     @DeleteMapping("/shops/{did}/advertisement/timesegments/{id}")
     public Object deleteAdTimeSegment(@PathVariable("id") Long id) {
         //logger.debug("delete role");
+
         ReturnObject<Object> returnObject = timeSegmentService.deleteAdTimeSegment(id);
         return Common.decorateReturnObject(returnObject);
     }
@@ -154,7 +164,7 @@ public class TimeSegmentController {
     }
 
     /**
-     * 新增广告时间段
+     * 新增秒杀时间段
      * @author zwl
      * @param vo
      * @return
@@ -163,7 +173,7 @@ public class TimeSegmentController {
     @ApiOperation(value = "新增秒杀时间段", produces = "application/json")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
-            @ApiImplicitParam(paramType = "body", dataType = "TimeSegmentVo", name = "vo", value = "新增广告时间段信息", required = true),
+            @ApiImplicitParam(paramType = "body", dataType = "TimeSegmentVo", name = "vo", value = "新增秒杀时间段信息", required = true),
             @ApiImplicitParam(paramType = "path", dataType = "int", name = "did", value = "店id", required = true)
     })
     @ApiResponses({
@@ -181,8 +191,13 @@ public class TimeSegmentController {
         }
 
         ReturnObject<VoObject> retObject = timeSegmentService.insertFlTimeSegment(vo.creatTimeSegment());
-        httpServletResponse.setStatus(HttpStatus.CREATED.value());
-        return Common.decorateReturnObject(retObject);
+        if (retObject.getData() != null) {
+            httpServletResponse.setStatus(HttpStatus.CREATED.value());
+            return Common.getRetObject(retObject);
+        } else {
+            return Common.getNullRetObj(new ReturnObject<>(retObject.getCode(), retObject.getErrmsg()), httpServletResponse);
+        }
+
     }
 
     /**

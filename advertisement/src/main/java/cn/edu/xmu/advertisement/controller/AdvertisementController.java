@@ -29,6 +29,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletMapping;
 import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Parameter;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -76,8 +77,7 @@ public class AdvertisementController {
     })
     @ApiResponses({
             @ApiResponse(code=0,message = "成功"),
-            @ApiResponse(code = 404,message = "参数不合法"),
-            @ApiResponse(code = 603,message = "达到广告时段上限")
+            @ApiResponse(code = 404,message = "参数不合法")
     })
     @Audit
     @PostMapping("shops/{did}/timesegments/{id}/advertisement")
@@ -97,26 +97,28 @@ public class AdvertisementController {
         LocalDate end=null;
 
 
-        if(vo.getBeginDate()!=null){
-            try{
-                begin=LocalDate.parse(vo.getBeginDate(),df);
-            } catch (Exception e) {
-                return Common.getRetObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID));
-            }
+        try {
+            begin = LocalDate.parse(vo.getBeginDate(), df);
+            end=LocalDate.parse(vo.getEndDate(),df);
+        } catch (Exception e) {
+            httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+            return Common.getRetObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID));
         }
-        if(vo.getEndDate()!=null){
-            try{
-                end=LocalDate.parse(vo.getEndDate(),df);
-            } catch (Exception e) {
-                return Common.getPageRetObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID));
-            }
+
+        if(begin.isAfter(end)){
+            httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+            return Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID), httpServletResponse);
         }
-        if(begin!=null && end!=null && begin.isAfter(end)){
-            return Common.getPageRetObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID));
+
+        SimpleDateFormat sd=new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            sd.setLenient(false);
+            sd.parse(vo.getBeginDate());
+        }catch (Exception e) {
+            httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+            return Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID), httpServletResponse);
         }
-        if(end!=null && end.isBefore(LocalDate.now())){
-            return Common.getPageRetObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID));
-        }
+
 
 
         ReturnObject returnObj=advertisementService.createAdvertisement(id,vo);
@@ -201,8 +203,8 @@ public class AdvertisementController {
     public Object selectAdvertisementBySegId(@PathVariable Long id,
                                              @RequestParam (required = false)String beginDate,
                                              @RequestParam (required = false)String endDate,
-                                         @RequestParam(required = false, defaultValue = "1") Integer page,
-                                         @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+                                             @RequestParam(required = false, defaultValue = "1") Integer page,
+                                             @RequestParam(required = false, defaultValue = "10") Integer pageSize){
         if(logger.isDebugEnabled()){
             logger.debug("getAdvertisementBySegId id="+id+",page="+page+",pageSize="+pageSize);
         }
@@ -218,20 +220,27 @@ public class AdvertisementController {
             try{
                 begin=LocalDate.parse(beginDate,df);
             } catch (Exception e) {
-                return Common.getPageRetObject(new ReturnObject<PageInfo<VoObject>>(new PageInfo<VoObject>(new ArrayList<>())));
+                httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+                return Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID), httpServletResponse);
             }
         }
         if(endDate!=null){
             try{
                 end=LocalDate.parse(endDate,df);
             } catch (Exception e) {
-                return Common.getPageRetObject(new ReturnObject<PageInfo<VoObject>>(new PageInfo<VoObject>(new ArrayList<>())));
+                httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+                return Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID), httpServletResponse);
             }
         }
 
+        if(begin!=null && end!=null && begin.isAfter(end)){
+            httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+            return Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID), httpServletResponse);
+        }
         if(page <= 0 || pageSize <= 0) {
             object = Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID), httpServletResponse);
         }
+
 
         ReturnObject returnObject=advertisementService.getAdvertisementBySegId(id,begin,end,page,pageSize);
         if(returnObject.getData()==null){
@@ -314,18 +323,6 @@ public class AdvertisementController {
     @PutMapping("/shops/{did}/advertisement/{id}")
     public Object updateAd(@PathVariable("id") Long id, @Validated @RequestBody AdvertisementUpdateVo vo, BindingResult bindingResult)
     {
-//        if(vo.getContent()==null&&vo.getWeight()==null&&vo.getRepeat()==null&&vo.getLink()==null&&vo.getBeginDate()==null&&vo.getEndDate()==null)
-//        {
-//            return new ReturnObject<>(ResponseCode.FIELD_NOTVALID);
-//        }
-//        if(vo.getBeginDate()!=null&&vo.getEndDate()!=null) {
-//            DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-//            LocalDate begin = LocalDate.parse(vo.getBeginDate(),fmt);
-//            LocalDate end = LocalDate.parse(vo.getEndDate(),fmt);
-//            if(begin.isAfter(end)){
-//                return new ReturnObject<>(ResponseCode.FIELD_NOTVALID);
-//            }
-//        }
         Object returnObject = Common.processFieldErrors(bindingResult, httpServletResponse);
         if (returnObject != null) {
             //logger.info("incorrect data received while modifyUserInfo id = " + id);
@@ -333,6 +330,7 @@ public class AdvertisementController {
         }
 
         ReturnObject retObject=advertisementService.updateAd(id,vo.createAdvertisement());
+
         return Common.decorateReturnObject(retObject);
     }
 
@@ -431,5 +429,4 @@ public class AdvertisementController {
         ReturnObject returnObject = advertisementService.deleteAd(id);
         return Common.decorateReturnObject(returnObject);
     }
-
 }

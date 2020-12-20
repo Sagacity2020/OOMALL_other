@@ -16,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.keyvalue.repository.config.QueryCreatorType;
+import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -60,7 +61,9 @@ public class CartController {
                                  @RequestParam(required = true,defaultValue = "1")Integer page,
                                  @RequestParam(required = true,defaultValue = "10")Integer pageSize){
         logger.debug("seleteAllCart: page="+page+" pagaSize= "+pageSize);
+        logger.error(userId.toString());
         ReturnObject<PageInfo<VoObject>> returnObject= cartService.selectAllCart(userId,page,pageSize);
+        logger.error(returnObject.toString());
         return Common.getPageRetObject(returnObject);
     }
 
@@ -135,14 +138,16 @@ public class CartController {
             return returnObject;
         }
         Cart cart=new Cart();
-        cart.setGoodsSkuId(vo.getGoodSkuID());
+        cart.setGoodsSkuId(vo.getGoodsSkuId());
         cart.setCustomerId(userId);
         cart.setQuantity(vo.getQuantity());
+        logger.debug(vo.toString());
         ReturnObject object=cartService.addCartGood(cart);
         if(object==null){
             return Common.getNullRetObj(object,httpServletResponse);
         }
         else{
+            httpServletResponse.setStatus(HttpStatus.CREATED.value());
             return Common.decorateReturnObject(object);
         }
 
@@ -174,6 +179,8 @@ public class CartController {
         if(object!=null){
             return object;
         }
+        logger.debug(userId.toString());
+        logger.debug(vo.toString());
         ReturnObject returnObject=cartService.changCartGood(id,userId,vo);
         return Common.decorateReturnObject(returnObject);
     }

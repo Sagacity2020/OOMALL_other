@@ -10,7 +10,7 @@ public class AddressPageVo{
     private String detail;
     private String consignee;
     private  String mobile;
-    private byte be_default;
+    private Boolean beDefault;
     private LocalDateTime gmtCreate;
     private Long state;
 
@@ -19,7 +19,12 @@ public class AddressPageVo{
         this.regionId=bo.getRegionId();
         this.detail=bo.getDetail();
         this.consignee=bo.getConsignee();
-        this.be_default=bo.getBe_default();
+        if(bo.getBe_default()==1){
+            this.beDefault=true;
+        }
+        else {
+            this.beDefault=false;
+        }
         this.mobile=bo.getMobile();
         this.gmtCreate=bo.getGmtCreate();
         this.state=0L;

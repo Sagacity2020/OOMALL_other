@@ -3,15 +3,18 @@ package cn.edu.xmu.cart.service;
 
 import cn.edu.xmu.cart.dao.CartDao;
 import cn.edu.xmu.cart.model.bo.Cart;
+import cn.edu.xmu.cart.model.bo.CartRet;
 import cn.edu.xmu.cart.model.po.ShoppingCartPo;
 import cn.edu.xmu.cart.model.vo.CartRetVo;
 import cn.edu.xmu.cart.model.vo.CartVo;
 import cn.edu.xmu.goods.dto.CouponActivityDTO;
 import cn.edu.xmu.goods.dto.GoodsSkuInfo;
+import cn.edu.xmu.goods.service.CouponServiceInterface;
 import cn.edu.xmu.ooad.model.VoObject;
 import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
 import cn.edu.xmu.goods.service.GoodsServiceInterface;
+import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.slf4j.Logger;
@@ -31,8 +34,11 @@ public class CartService {
     @Autowired
     private CartDao cartDao;
 
-    @DubboReference
-    private GoodsServiceInterface goodsService;
+    @DubboReference(version = "0.0.1")
+    public GoodsServiceInterface goodsService;
+
+    @DubboReference(version = "0.0.1")
+    public CouponServiceInterface couponService;
 
 
     /**
@@ -44,24 +50,36 @@ public class CartService {
      * @return
      */
     public ReturnObject<PageInfo<VoObject>> selectAllCart(Long userId, Integer page, Integer pageSize) {
-        ReturnObject<List<Cart>> cartList=cartDao.seleteByUserId(userId);
-        List<Cart> carts=cartList.getData();
-        for(int i=0;i<carts.size();i++){
-            ArrayList<CouponActivityDTO> couponActivityDTOS=goodsService.getCouponActivityAlone(carts.get(i).getGoodsSkuId());
-            carts.get(i).setCouponActivity(couponActivityDTOS);
-            GoodsSkuInfo goodsSkuInfo=goodsService.getGoodsSkuInfoAlone(carts.get(i).getGoodsSkuId());
-            carts.get(i).setSkuName(goodsSkuInfo.getSkuName());
-            carts.get(i).setPrice(goodsSkuInfo.getPrice());
+        PageInfo<ShoppingCartPo> shoppingCartPoPageInfo=cartDao.seleteByUserId(userId,page,pageSize);
+        List<VoObject> carts=new ArrayList<>();
+        for(ShoppingCartPo po:shoppingCartPoPageInfo.getList()){
+            Cart cart=new Cart(po);
+            logger.error("123");
+            List<CouponActivityDTO> couponActivityDTOS=new ArrayList<>();
+            try {
+                couponActivityDTOS = couponService.getCouponActivityAlone(cart.getCustomerId(), cart.getGoodsSkuId());
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            cart.setCouponActivity(couponActivityDTOS);
+//            logger.error(couponActivityDTOS.toString());
+//            GoodsSkuInfo goodsSkuInfo =null;
+//            try {
+//                goodsSkuInfo = goodsService.getGoodsSkuInfoAlone(cart.getGoodsSkuId());
+//            }catch (Exception e){
+//                e.printStackTrace();
+//            }
+//            cart.setSkuName(goodsSkuInfo.getSkuName());
+//            cart.setPrice(goodsSkuInfo.getPrice());
+//            logger.error(goodsSkuInfo.getSkuName()+goodsSkuInfo.getPrice());
+            carts.add(cart);
         }
-
-        List<VoObject> ret  = new ArrayList<>(carts.size());
-        for(Cart bo:carts){
-            ret.add(bo);
-        }
-        PageInfo<VoObject> cartPage = PageInfo.of(ret);
-        cartPage.setTotal(carts.size());
-        return new ReturnObject<>(cartPage);
-
+        PageInfo<VoObject> returnObject=new PageInfo<>(carts);
+        returnObject.setPages(shoppingCartPoPageInfo.getPages());
+        returnObject.setPageSize(shoppingCartPoPageInfo.getPageSize());
+        returnObject.setPageNum(shoppingCartPoPageInfo.getPageNum());
+        returnObject.setTotal(shoppingCartPoPageInfo.getTotal());
+        return new ReturnObject<>(returnObject);
 
     }
 
@@ -89,12 +107,27 @@ public class CartService {
      */
     public ReturnObject addCartGood(Cart cart) {
         Long goodSkuId=cart.getGoodsSkuId();
-        GoodsSkuInfo goodsSkuInfo=goodsService.getGoodsSkuInfoAlone(goodSkuId);
+        GoodsSkuInfo goodsSkuInfo =new GoodsSkuInfo();
+        logger.error(goodSkuId.toString());
+        try {
+            goodsSkuInfo = goodsService.getGoodsSkuInfoAlone(goodSkuId);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        logger.error("查询sku信息");
+        logger.error(goodsSkuInfo.getSkuName());
+        logger.error(goodsSkuInfo.getPrice().toString());
+        logger.error("name="+goodsSkuInfo.getSkuName()+"price="+goodsSkuInfo.getPrice());
         if (goodsSkuInfo==null){
             return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("商品sku不存在"));
         }
-
-        cart.setCouponActivity(goodsService.getCouponActivityAlone(goodSkuId));
+        try {
+            List<CouponActivityDTO> couponActivityDTOS = couponService.getCouponActivityAlone(cart.getCustomerId(), cart.getGoodsSkuId());
+            cart.setCouponActivity(couponActivityDTOS);
+            logger.error("123");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         cart.setSkuName(goodsSkuInfo.getSkuName());
         cart.setPrice(goodsSkuInfo.getPrice());
         ReturnObject<Cart> cartReturnObject=cartDao.addCart(cart);
@@ -102,8 +135,8 @@ public class CartService {
             return cartReturnObject;
         }
         Cart cart1=cartReturnObject.getData();
-        CartRetVo cartRetVo=new CartRetVo(cart1);
-        return new ReturnObject(cartRetVo);
+        CartRet cartRet=cart1.getRetCart();
+        return new ReturnObject(cartRet);
     }
 
 
@@ -120,9 +153,11 @@ public class CartService {
         if(returnObject.getData()==null){
             return returnObject;
         }
-        ShoppingCartPo shoppingCartPo= returnObject.getData();
-        Boolean ret=goodsService.anbleChange(vo.getGoodSkuID(),shoppingCartPo.getGoodsSkuId());
 
+        ShoppingCartPo shoppingCartPo= returnObject.getData();
+        logger.debug(shoppingCartPo.toString());
+        Boolean ret=goodsService.anbleChange(vo.getGoodsSkuId(),shoppingCartPo.getGoodsSkuId());
+        logger.debug(ret.toString());
         if(ret==true){
             return cartDao.changeCartInfo(id,userId,vo);
         }

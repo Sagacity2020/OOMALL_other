@@ -1,14 +1,19 @@
-F:\OOAD Project\OOMALL12-26\other-client\src\main\java\cn\edu\xmu\order\service\OrderServiceInterface.java
-F:\OOAD Project\OOMALL12-26\other-client\src\main\java\cn\edu\xmu\other\dto\AftersaleDTO.java
-F:\OOAD Project\OOMALL12-26\other-client\src\main\java\cn\edu\xmu\other\service\CustomerServiceInterface.java
-F:\OOAD Project\OOMALL12-26\other-client\src\main\java\cn\edu\xmu\other\service\FootprintServiceInterface.java
-F:\OOAD Project\OOMALL12-26\other-client\src\main\java\cn\edu\xmu\goods\dto\CartDTO.java
-F:\OOAD Project\OOMALL12-26\other-client\src\main\java\cn\edu\xmu\other\service\AdServiceInterface.java
-F:\OOAD Project\OOMALL12-26\other-client\src\main\java\cn\edu\xmu\other\dto\TimeSegmentDTO.java
-F:\OOAD Project\OOMALL12-26\other-client\src\main\java\cn\edu\xmu\other\service\AftersaleServiceInterface.java
-F:\OOAD Project\OOMALL12-26\other-client\src\main\java\cn\edu\xmu\other\service\TimeServiceInterface.java
-F:\OOAD Project\OOMALL12-26\other-client\src\main\java\cn\edu\xmu\other\service\IAddressService.java
-F:\OOAD Project\OOMALL12-26\other-client\src\main\java\cn\edu\xmu\goods\service\GoodsServiceInterface.java
-F:\OOAD Project\OOMALL12-26\other-client\src\main\java\cn\edu\xmu\order\dto\OrderAftersaleDTO.java
-F:\OOAD Project\OOMALL12-26\other-client\src\main\java\cn\edu\xmu\other\dto\CustomerDTO.java
-F:\OOAD Project\OOMALL12-26\other-client\src\main\java\cn\edu\xmu\goods\dto\CouponActivity.java
+D:\JavaEE\Project\OOMALL_zrh\other-client\src\main\java\cn\edu\xmu\other\service\ShareServiceInterface.java
+D:\JavaEE\Project\OOMALL_zrh\other-client\src\main\java\cn\edu\xmu\order\dto\OrderAftersaleDTO.java
+D:\JavaEE\Project\OOMALL_zrh\other-client\src\main\java\cn\edu\xmu\other\dto\TimeSegmentDTO.java
+D:\JavaEE\Project\OOMALL_zrh\other-client\src\main\java\cn\edu\xmu\other\dto\AftersaleRefundDTO.java
+D:\JavaEE\Project\OOMALL_zrh\other-client\src\main\java\cn\edu\xmu\order\service\OrderServiceInterface.java
+D:\JavaEE\Project\OOMALL_zrh\other-client\src\main\java\cn\edu\xmu\goods\dto\CartDTO.java
+D:\JavaEE\Project\OOMALL_zrh\other-client\src\main\java\cn\edu\xmu\other\service\AdServiceInterface.java
+D:\JavaEE\Project\OOMALL_zrh\other-client\src\main\java\cn\edu\xmu\other\service\TimeServiceInterface.java
+D:\JavaEE\Project\OOMALL_zrh\other-client\src\main\java\cn\edu\xmu\other\dto\CustomerDTO.java
+D:\JavaEE\Project\OOMALL_zrh\other-client\src\main\java\cn\edu\xmu\other\dto\OrderDTO.java
+D:\JavaEE\Project\OOMALL_zrh\other-client\src\main\java\cn\edu\xmu\other\service\RegionServiceInterface.java
+D:\JavaEE\Project\OOMALL_zrh\other-client\src\main\java\cn\edu\xmu\goods\dto\GoodsSkuDTO.java
+D:\JavaEE\Project\OOMALL_zrh\other-client\src\main\java\cn\edu\xmu\goods\service\GoodsServiceInterface.java
+D:\JavaEE\Project\OOMALL_zrh\other-client\src\main\java\cn\edu\xmu\goods\dto\CouponActivity.java
+D:\JavaEE\Project\OOMALL_zrh\other-client\src\main\java\cn\edu\xmu\other\service\AftersaleServiceInterface.java
+D:\JavaEE\Project\OOMALL_zrh\other-client\src\main\java\cn\edu\xmu\other\service\FootprintServiceInterface.java
+D:\JavaEE\Project\OOMALL_zrh\other-client\src\main\java\cn\edu\xmu\other\service\CustomerServiceInterface.java
+D:\JavaEE\Project\OOMALL_zrh\other-client\src\main\java\cn\edu\xmu\other\dto\AftersaleDTO.java
+D:\JavaEE\Project\OOMALL_zrh\other-client\src\main\java\cn\edu\xmu\other\dto\FlashSaleTimeSegmentDTO.java

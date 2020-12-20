@@ -117,22 +117,6 @@ public class AdvertisementDao {
 
 
     public ReturnObject<Object>insertAdvertisement(Long tid,Long id){
-        AdvertisementPoExample example=new AdvertisementPoExample();
-        AdvertisementPoExample.Criteria criteria=example.createCriteria();
-
-        criteria.andSegIdEqualTo(tid);
-        List<AdvertisementPo> advertisementPos;
-        try {
-            advertisementPos = advertisementPoMapper.selectByExample(example);
-        } catch (DataAccessException e) {
-            logger.error("createAvertisement: DataAccessException:" + e.getMessage());
-            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
-        } catch (Exception e) {
-            // 其他Exception错误
-            logger.error("other exception : " + e.getMessage());
-            return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
-        }
-
 
         AdvertisementPo advertisementPo=advertisementPoMapper.selectByPrimaryKey(id);
         if(advertisementPo==null){
@@ -164,10 +148,10 @@ public class AdvertisementDao {
         criteria.andSegIdEqualTo(id);
 
         if(beginDate!=null){
-            criteria.andBeginDateEqualTo(beginDate);
+            criteria.andBeginDateGreaterThanOrEqualTo(beginDate);
         }
         if(endDate!=null){
-            criteria.andEndDateEqualTo(endDate);
+            criteria.andEndDateLessThanOrEqualTo(endDate);
         }
 
         List<AdvertisementPo>advertisementPos=null;
@@ -214,6 +198,7 @@ public class AdvertisementDao {
         }
         return returnObject;
     }
+
 
     /**
      * 设置默认广告
@@ -296,44 +281,50 @@ public class AdvertisementDao {
             {
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
             }
-            //默认广告不能修改
-//            if(advertisementPo.getBeDefault().equals((byte)1))
-//            {
-//                return new ReturnObject<>(ResponseCode.ADVERTISEMENT_STATENOTALLOW);
+
+            if(bo.getBeginDate().isAfter(bo.getEndDate()))
+            {return new ReturnObject<>(ResponseCode.Log_Bigger, String.format("开始日期大于结束日期"));}
+
+            advertisementPo.setContent(bo.getContent());
+            advertisementPo.setBeginDate(bo.getBeginDate());
+            advertisementPo.setEndDate(bo.getEndDate());
+            advertisementPo.setLink(bo.getLink());
+            advertisementPo.setWeight(bo.getWeight());
+            advertisementPo.setRepeats(bo.getRepeats());
+
+//            if(bo.getBeginDate()!=null) {
+//                if (bo.getEndDate()!=null) {
+//                    if(bo.getBeginDate().isAfter(bo.getEndDate()))
+//                    {return new ReturnObject<>(ResponseCode.Log_Bigger, String.format("开始日期大于结束日期"));}
+//                }
+//                else if(bo.getEndDate()==null&&bo.getBeginDate().isAfter(advertisementPo.getEndDate()))
+//                { return new ReturnObject<>(ResponseCode.Log_Bigger, String.format("开始日期大于结束日期"));}
 //            }
-            if(bo.getBeginDate()!=null) {
-                if (bo.getEndDate()!=null) {
-                    if(bo.getBeginDate().isAfter(bo.getEndDate()))
-                    {return new ReturnObject<>(ResponseCode.Log_Bigger, String.format("开始日期大于结束日期"));}
-                }
-                else if(bo.getEndDate()==null&&bo.getBeginDate().isAfter(advertisementPo.getEndDate()))
-                { return new ReturnObject<>(ResponseCode.Log_Bigger, String.format("开始日期大于结束日期"));}
-            }
-            else if(bo.getBeginDate()==null)
-            {
-                if(bo.getEndDate()!=null)
-                {
-                    if(advertisementPo.getBeginDate().isAfter(bo.getEndDate()))
-                    {return new ReturnObject<>(ResponseCode.Log_Bigger, String.format("开始日期大于结束日期"));}
-                }
-            }
-            if(bo.getContent()!=null)
-            {advertisementPo.setContent(bo.getContent());}
-
-            if(bo.getBeginDate()!=null)
-            {advertisementPo.setBeginDate(bo.getBeginDate());}
-
-            if(bo.getEndDate()!=null)
-            {advertisementPo.setEndDate(bo.getEndDate());}
-
-            if(bo.getLink()!=null)
-            {advertisementPo.setLink(bo.getLink());}
-
-            if(bo.getWeight()!=null)
-            {advertisementPo.setWeight(bo.getWeight());}
-
-            if(bo.getRepeats()!=null)
-            {advertisementPo.setRepeats(bo.getRepeats());}
+//            else if(bo.getBeginDate()==null)
+//            {
+//                if(bo.getEndDate()!=null)
+//                {
+//                    if(advertisementPo.getBeginDate().isAfter(bo.getEndDate()))
+//                    {return new ReturnObject<>(ResponseCode.Log_Bigger, String.format("开始日期大于结束日期"));}
+//                }
+//            }
+//            if(bo.getContent()!=null)
+//            {advertisementPo.setContent(bo.getContent());}
+//
+//            if(bo.getBeginDate()!=null)
+//            {advertisementPo.setBeginDate(bo.getBeginDate());}
+//
+//            if(bo.getEndDate()!=null)
+//            {advertisementPo.setEndDate(bo.getEndDate());}
+//
+//            if(bo.getLink()!=null)
+//            {advertisementPo.setLink(bo.getLink());}
+//
+//            if(bo.getWeight()!=null)
+//            {advertisementPo.setWeight(bo.getWeight());}
+//
+//            if(bo.getRepeats()!=null)
+//            {advertisementPo.setRepeats(bo.getRepeats());}
 
             int ret=advertisementPoMapper.updateByPrimaryKeySelective(advertisementPo);
             if(ret==0)
@@ -378,8 +369,8 @@ public class AdvertisementDao {
             {
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
             }
-            //广告禁止--审核状态
-            else if(advertisementPo.getState()!=null&&advertisementPo.getState().equals((byte)0))
+            //广告禁止--审核状态 上架
+            else if(!(advertisementPo.getState()!=null&&advertisementPo.getState().equals((byte)6)))
             {
                 return new ReturnObject<>(ResponseCode.ADVERTISEMENT_STATENOTALLOW);
             }
@@ -429,8 +420,8 @@ public class AdvertisementDao {
             {
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
             }
-            //审核状态 禁止
-            else if(advertisementPo.getState()!=null&&advertisementPo.getState().equals((byte)0))
+            //审核状态 禁止 下架
+            else if(!(advertisementPo.getState()!=null&&advertisementPo.getState().equals((byte)4)))
             {
                 return new ReturnObject<>(ResponseCode.ADVERTISEMENT_STATENOTALLOW);
             }

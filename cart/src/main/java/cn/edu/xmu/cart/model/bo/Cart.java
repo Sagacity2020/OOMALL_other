@@ -3,10 +3,12 @@ package cn.edu.xmu.cart.model.bo;
 import cn.edu.xmu.cart.model.po.ShoppingCartPo;
 import cn.edu.xmu.cart.model.vo.CartPage;
 import cn.edu.xmu.ooad.model.VoObject;
-import cn.edu.xmu.goods.dto.CouponActivity;
+import cn.edu.xmu.goods.dto.CouponActivityDTO;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Created at 12/11 8:50
@@ -20,7 +22,7 @@ public class Cart implements VoObject {
     private Integer quantity;
     private String skuName;
     private Long price;
-    private CouponActivity couponActivity;
+    private List<CouponActivityDTO> couponActivity;
     private LocalDateTime gmtCreate;
     private LocalDateTime gmtModified;
 
@@ -40,69 +42,7 @@ public class Cart implements VoObject {
     }
 
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
-    }
-
-    public Long getGoodsSkuId() {
-        return goodsSkuId;
-    }
-
-    public void setGoodsSkuId(Long goodsSkuId) {
-        this.goodsSkuId = goodsSkuId;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public Long getPrice() {
-        return price;
-    }
-
-    public void setPrice(Long price) {
-        this.price = price;
-    }
-
-    public CouponActivity getCouponActivity() {
-        return couponActivity;
-    }
-
-    public void setCouponActivity(CouponActivity couponActivity) {
-        this.couponActivity = couponActivity;
-    }
-
-    public LocalDateTime getGmtCreate() {
-        return gmtCreate;
-    }
-
-    public void setGmtCreate(LocalDateTime gmtCreate) {
-        this.gmtCreate = gmtCreate;
-    }
-
-    public LocalDateTime getGmtModified() {
-        return gmtModified;
-    }
-
-    public void setGmtModified(LocalDateTime gmtModified) {
-        this.gmtModified = gmtModified;
-    }
 
     @Override
     public CartPage createVo() {
@@ -123,5 +63,19 @@ public class Cart implements VoObject {
         po.setPrice(this.getPrice());
         po.setGmtCreate(this.getGmtCreate());
         return po;
+    }
+
+    public CartRet getRetCart() {
+        CartRet bo=new CartRet();
+        bo.setId(this.getId());
+        bo.setCustomerId(this.getCustomerId());
+        bo.setGoodsSkuId(this.getGoodsSkuId());
+        bo.setSkuName(this.getSkuName());
+        bo.setQuantity(this.getQuantity());
+        bo.setPrice(this.getPrice());
+        bo.setCouponActivity(this.getCouponActivity());
+        bo.setGmtCreate(this.getGmtCreate());
+        bo.setGmtModified(this.getGmtModified());
+        return bo;
     }
 }

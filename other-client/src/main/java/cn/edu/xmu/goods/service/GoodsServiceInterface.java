@@ -1,8 +1,10 @@
 package cn.edu.xmu.goods.service;
 
-import cn.edu.xmu.goods.dto.CartDTO;
+import cn.edu.xmu.goods.dto.CouponActivityDTO;
+import cn.edu.xmu.goods.dto.GoodsSkuInfo;
 import cn.edu.xmu.goods.dto.GoodsSkuDTO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,9 +12,8 @@ import java.util.List;
  * @author zrh
  */
 public interface GoodsServiceInterface {
-    List<CartDTO> getCouponActivity(List<Long> goodsSkuIds);
 
-    CartDTO getCouponActivityAlone(Long goodsSkuId);
+    GoodsSkuInfo getGoodsSkuInfoAlone(Long goodsSkuId);
 
     Boolean anbleChange(Long newGoodSkuId, Long goodSkuId);
 
@@ -20,6 +21,7 @@ public interface GoodsServiceInterface {
 
     Boolean updateFlSegId(Long segId);
 
+    Boolean setFlashSaleSegId(Long segId);
     /**
      * 查看一个skuId是否存在
      *
