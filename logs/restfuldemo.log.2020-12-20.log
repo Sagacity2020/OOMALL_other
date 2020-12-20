@@ -1412,3 +1412,829 @@ Caused by: com.alibaba.nacos.api.exception.NacosException: failed to req API:/na
 2020-12-20 01:37:27.999 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.dao.CartDao - userId=400
 2020-12-20 01:37:28.085 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 123
 2020-12-20 01:37:28.245 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 16:40:43.058 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 10101113105
+2020-12-20 16:40:43.593 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTY0MDQzMjU1IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDU3MjQzLCJ1c2VySWQiOjIwLCJpYXQiOjE2MDg0NTM2NDN9.TouVttpraHNOW27Ue-smMXFGCrvmIe-iBCQEVO82mgs
+2020-12-20 16:40:43.606 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@46617a94
+2020-12-20 16:40:43.609 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=20departId=-2
+2020-12-20 16:40:43.609 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 16:40:43.609 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@46617a94
+2020-12-20 16:40:43.609 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 16:40:43.612 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 5
+2020-12-20 16:40:43.612 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.controller.CartController - 20
+2020-12-20 16:40:43.614 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.dao.CartDao - userId=20
+2020-12-20 16:40:43.736 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 16:40:45.586 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 16:40:45.648 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - +3030
+2020-12-20 16:40:45.649 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 16:40:45.666 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 16:40:45.683 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - +299
+2020-12-20 16:40:45.683 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 16:40:45.696 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 16:40:45.708 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - +1950000
+2020-12-20 16:40:45.709 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@755324c6
+2020-12-20 16:40:45.735 [http-nio-8085-exec-1] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.http.converter.HttpMessageConversionException: Type definition error: [simple type, class cn.edu.xmu.cart.model.vo.CartPage]; nested exception is com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class cn.edu.xmu.cart.model.vo.CartPage and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.HashMap["data"]->java.util.HashMap["list"]->java.util.ArrayList[0])] with root cause
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class cn.edu.xmu.cart.model.vo.CartPage and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.HashMap["data"]->java.util.HashMap["list"]->java.util.ArrayList[0])
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:77)
+	at com.fasterxml.jackson.databind.SerializerProvider.reportBadDefinition(SerializerProvider.java:1277)
+	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:400)
+	at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.failForEmpty(UnknownSerializer.java:71)
+	at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.serialize(UnknownSerializer.java:33)
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serializeContents(IndexedListSerializer.java:119)
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:79)
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:18)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serializeFields(MapSerializer.java:726)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serializeWithoutTypeInfo(MapSerializer.java:681)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serialize(MapSerializer.java:637)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serialize(MapSerializer.java:33)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serializeFields(MapSerializer.java:726)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serializeWithoutTypeInfo(MapSerializer.java:681)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serialize(MapSerializer.java:637)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serialize(MapSerializer.java:33)
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._serialize(DefaultSerializerProvider.java:480)
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:319)
+	at com.fasterxml.jackson.databind.ObjectWriter$Prefetch.serialize(ObjectWriter.java:1516)
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1006)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:335)
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:287)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.handleReturnValue(RequestResponseBodyMethodProcessor.java:181)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:123)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-12-20 16:43:39.920 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 10101113105
+2020-12-20 16:43:40.102 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTY0MzM5OTZNIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDU3NDE5LCJ1c2VySWQiOjIwLCJpYXQiOjE2MDg0NTM4MTl9.Ok5Aizz6Mb0DwN41rL-WasDaoIHS1zazWIB2be2ciJc
+2020-12-20 16:43:40.113 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@7e2e9e58
+2020-12-20 16:43:40.115 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=20departId=-2
+2020-12-20 16:43:40.115 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 16:43:40.116 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@7e2e9e58
+2020-12-20 16:43:40.116 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 16:43:40.119 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 5
+2020-12-20 16:43:40.120 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.controller.CartController - 20
+2020-12-20 16:43:40.122 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.dao.CartDao - userId=20
+2020-12-20 16:43:40.205 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 16:43:40.284 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 16:43:40.304 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - +3030
+2020-12-20 16:43:40.304 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 16:43:40.316 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 16:43:40.330 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - +299
+2020-12-20 16:43:40.330 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 16:43:40.339 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 16:43:40.352 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - +1950000
+2020-12-20 16:43:40.353 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@631dd9ef
+2020-12-20 16:43:40.380 [http-nio-8085-exec-1] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.http.converter.HttpMessageConversionException: Type definition error: [simple type, class cn.edu.xmu.cart.model.vo.CartPage]; nested exception is com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class cn.edu.xmu.cart.model.vo.CartPage and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.HashMap["data"]->java.util.HashMap["list"]->java.util.ArrayList[0])] with root cause
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class cn.edu.xmu.cart.model.vo.CartPage and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.HashMap["data"]->java.util.HashMap["list"]->java.util.ArrayList[0])
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:77)
+	at com.fasterxml.jackson.databind.SerializerProvider.reportBadDefinition(SerializerProvider.java:1277)
+	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:400)
+	at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.failForEmpty(UnknownSerializer.java:71)
+	at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.serialize(UnknownSerializer.java:33)
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serializeContents(IndexedListSerializer.java:119)
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:79)
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:18)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serializeFields(MapSerializer.java:726)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serializeWithoutTypeInfo(MapSerializer.java:681)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serialize(MapSerializer.java:637)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serialize(MapSerializer.java:33)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serializeFields(MapSerializer.java:726)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serializeWithoutTypeInfo(MapSerializer.java:681)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serialize(MapSerializer.java:637)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serialize(MapSerializer.java:33)
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._serialize(DefaultSerializerProvider.java:480)
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:319)
+	at com.fasterxml.jackson.databind.ObjectWriter$Prefetch.serialize(ObjectWriter.java:1516)
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1006)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:335)
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:287)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.handleReturnValue(RequestResponseBodyMethodProcessor.java:181)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:123)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-12-20 16:46:09.569 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 10101113105
+2020-12-20 16:46:09.736 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTY0NjA5NVhIIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDU3NTY5LCJ1c2VySWQiOjIwLCJpYXQiOjE2MDg0NTM5Njl9.sbpkt2ydMTxneBGL2kjQ8loi13XGgybJ5Sf7uev5tSk
+2020-12-20 16:46:09.749 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@6760e4ac
+2020-12-20 16:46:09.751 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=20departId=-2
+2020-12-20 16:46:09.751 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 16:46:09.752 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@6760e4ac
+2020-12-20 16:46:09.752 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 16:46:09.755 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 5
+2020-12-20 16:46:09.755 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.controller.CartController - 20
+2020-12-20 16:46:09.757 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.dao.CartDao - userId=20
+2020-12-20 16:46:09.841 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 16:46:09.946 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 16:46:09.970 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - +3030
+2020-12-20 16:46:09.970 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 16:46:09.994 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 16:46:10.024 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - +299
+2020-12-20 16:46:10.024 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 16:46:10.067 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 16:46:10.100 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - +1950000
+2020-12-20 16:46:10.101 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@5234398b
+2020-12-20 16:49:54.648 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 35642539836
+2020-12-20 16:49:54.741 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTY0OTU0NkdaIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDU3Nzk0LCJ1c2VySWQiOjQwMCwiaWF0IjoxNjA4NDU0MTk0fQ.sb6Wd9os1wB0sPq7r8GVyjuUuyWTl51fHzj5qwjh9T8
+2020-12-20 16:49:54.743 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@36c32c13
+2020-12-20 16:49:54.743 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=400departId=-2
+2020-12-20 16:49:54.743 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 16:49:54.743 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@36c32c13
+2020-12-20 16:49:54.743 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 16:49:54.743 [http-nio-8085-exec-5] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 3
+2020-12-20 16:49:54.743 [http-nio-8085-exec-5] ERROR cn.edu.xmu.cart.controller.CartController - 400
+2020-12-20 16:49:54.744 [http-nio-8085-exec-5] ERROR cn.edu.xmu.cart.dao.CartDao - userId=400
+2020-12-20 16:49:54.752 [http-nio-8085-exec-5] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 16:49:54.782 [http-nio-8085-exec-5] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 16:49:54.808 [http-nio-8085-exec-5] ERROR cn.edu.xmu.cart.service.CartService - +1799
+2020-12-20 16:49:54.808 [http-nio-8085-exec-5] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@664cdf1a
+2020-12-20 16:50:17.635 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 28883882732
+2020-12-20 16:50:17.722 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTY1MDE3NjQ1IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDU3ODE3LCJ1c2VySWQiOjQwMDAsImlhdCI6MTYwODQ1NDIxN30.qVL7It1GmMyq6TcnjrSkM79PsN_VYTlXEH-1F8y1yag
+2020-12-20 16:50:17.722 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@436f09e5
+2020-12-20 16:50:17.722 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=4000departId=-2
+2020-12-20 16:50:17.722 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 16:50:17.723 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@436f09e5
+2020-12-20 16:50:17.723 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 16:50:17.723 [http-nio-8085-exec-6] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 20
+2020-12-20 16:50:17.723 [http-nio-8085-exec-6] ERROR cn.edu.xmu.cart.controller.CartController - 4000
+2020-12-20 16:50:17.723 [http-nio-8085-exec-6] ERROR cn.edu.xmu.cart.dao.CartDao - userId=4000
+2020-12-20 16:50:17.725 [http-nio-8085-exec-6] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@25203de
+2020-12-20 16:50:31.153 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 7912044979
+2020-12-20 16:50:31.240 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTY1MDMxMVdaIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDU3ODMxLCJ1c2VySWQiOjk3ODIsImlhdCI6MTYwODQ1NDIzMX0.WQ-ItzcjoJPjSXvI9G-oyuHLHv1v_QjRoa4M5Ek__4A
+2020-12-20 16:50:31.240 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@759bedff
+2020-12-20 16:50:31.241 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=9782departId=-2
+2020-12-20 16:50:31.241 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 16:50:31.241 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@759bedff
+2020-12-20 16:50:31.241 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 16:50:31.241 [http-nio-8085-exec-8] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 2
+2020-12-20 16:50:31.241 [http-nio-8085-exec-8] ERROR cn.edu.xmu.cart.controller.CartController - 9782
+2020-12-20 16:50:31.241 [http-nio-8085-exec-8] ERROR cn.edu.xmu.cart.dao.CartDao - userId=9782
+2020-12-20 16:50:31.243 [http-nio-8085-exec-8] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@34a6e7c4
+2020-12-20 16:50:42.327 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 29970839554
+2020-12-20 16:50:42.418 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTY1MDQyMzBTIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDU3ODQyLCJ1c2VySWQiOjk3ODEsImlhdCI6MTYwODQ1NDI0Mn0.pF_uuhMjpNPkfVkjK6eafOM7axYQlvF1WiIqr4dR7wE
+2020-12-20 16:50:42.418 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@5eb1ca85
+2020-12-20 16:50:42.418 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=9781departId=-2
+2020-12-20 16:50:42.418 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 16:50:42.418 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@5eb1ca85
+2020-12-20 16:50:42.418 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 16:50:42.419 [http-nio-8085-exec-4] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=4 pagaSize= 222
+2020-12-20 16:50:42.419 [http-nio-8085-exec-4] ERROR cn.edu.xmu.cart.controller.CartController - 9781
+2020-12-20 16:50:42.419 [http-nio-8085-exec-4] ERROR cn.edu.xmu.cart.dao.CartDao - userId=9781
+2020-12-20 16:50:42.421 [http-nio-8085-exec-4] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@2ed93cf8
+2020-12-20 16:51:00.181 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 7912044979
+2020-12-20 16:51:00.268 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTY1MTAwMUxBIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDU3ODYwLCJ1c2VySWQiOjk3ODIsImlhdCI6MTYwODQ1NDI2MH0.J-QL7XgNyBuvgBOUp0WPrzz2ccA6pggga999T1qWxrQ
+2020-12-20 16:51:00.269 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@2f328b55
+2020-12-20 16:51:00.269 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=9782departId=-2
+2020-12-20 16:51:00.269 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 16:51:00.269 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@2f328b55
+2020-12-20 16:51:00.269 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 16:51:00.269 [http-nio-8085-exec-7] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 2223
+2020-12-20 16:51:00.269 [http-nio-8085-exec-7] ERROR cn.edu.xmu.cart.controller.CartController - 9782
+2020-12-20 16:51:00.269 [http-nio-8085-exec-7] ERROR cn.edu.xmu.cart.dao.CartDao - userId=9782
+2020-12-20 16:51:00.272 [http-nio-8085-exec-7] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@6e0f816e
+2020-12-20 16:51:17.272 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 16436076738
+2020-12-20 16:51:17.389 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTY1MTE3MjdZIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDU3ODc3LCJ1c2VySWQiOjk5LCJpYXQiOjE2MDg0NTQyNzd9.FrbQLSied65C2e5P50iFi5Dr9bXhTQfWLEjP-Em7bkE
+2020-12-20 16:51:17.390 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@78808b8c
+2020-12-20 16:51:17.390 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=99departId=-2
+2020-12-20 16:51:17.390 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 16:51:17.390 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@78808b8c
+2020-12-20 16:51:17.390 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 16:51:17.390 [http-nio-8085-exec-2] DEBUG cn.edu.xmu.cart.controller.CartController - add cart userId: 99
+2020-12-20 16:56:14.308 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 16436076738
+2020-12-20 16:56:14.502 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTY1NjE0M0lVIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDU4MTc0LCJ1c2VySWQiOjk5LCJpYXQiOjE2MDg0NTQ1NzR9.0V_Tm6j1dsAWvcyXiTNAUCyYnuHoTfHXeM79nutiPlw
+2020-12-20 16:56:14.515 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@503c2479
+2020-12-20 16:56:14.517 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=99departId=-2
+2020-12-20 16:56:14.517 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 16:56:14.517 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@503c2479
+2020-12-20 16:56:14.517 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 16:56:14.521 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - add cart userId: 99
+2020-12-20 16:56:14.615 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 查询sku信息
+2020-12-20 16:59:01.305 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 16436076738
+2020-12-20 16:59:01.497 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTY1OTAxMzVFIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDU4MzQxLCJ1c2VySWQiOjk5LCJpYXQiOjE2MDg0NTQ3NDF9.KtzUZ3yLyhI615h9zfjAF269Ee7olgzAFhnnrQvlw6w
+2020-12-20 16:59:01.510 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@315af3a7
+2020-12-20 16:59:01.512 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=99departId=-2
+2020-12-20 16:59:01.512 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 16:59:01.513 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@315af3a7
+2020-12-20 16:59:01.513 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 16:59:01.516 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - add cart userId: 99
+2020-12-20 16:59:01.616 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 查询sku信息
+2020-12-20 17:00:35.285 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 16436076738
+2020-12-20 17:00:35.480 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTcwMDM1MjZZIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDU4NDM1LCJ1c2VySWQiOjk5LCJpYXQiOjE2MDg0NTQ4MzV9.CItxcuIwxEF949fXxUP1QbqoZSC-hw2vgKZmsZVdxh0
+2020-12-20 17:00:35.493 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@73e5e97a
+2020-12-20 17:00:35.495 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=99departId=-2
+2020-12-20 17:00:35.495 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 17:00:35.495 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@73e5e97a
+2020-12-20 17:00:35.495 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 17:00:35.499 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - add cart userId: 99
+2020-12-20 17:00:35.691 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 查询sku信息
+2020-12-20 17:03:55.877 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 16436076738
+2020-12-20 17:03:56.171 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTcwMzU1OElNIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDU4NjM1LCJ1c2VySWQiOjk5LCJpYXQiOjE2MDg0NTUwMzV9.ukpt2HfMAEe_bbBsv7lg8g4ORfezMWIY6ZxDbtWKQPU
+2020-12-20 17:03:56.184 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@6174e55d
+2020-12-20 17:03:56.186 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=99departId=-2
+2020-12-20 17:03:56.186 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 17:03:56.186 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@6174e55d
+2020-12-20 17:03:56.186 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 17:03:56.190 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - add cart userId: 99
+2020-12-20 17:03:56.195 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 查询sku信息
+2020-12-20 17:03:56.196 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - name=nullprice=null
+2020-12-20 17:07:59.644 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 16436076738
+2020-12-20 17:07:59.836 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTcwNzU5NlZWIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDU4ODc5LCJ1c2VySWQiOjk5LCJpYXQiOjE2MDg0NTUyNzl9.ITTiMPgJVGNi0P5AoIAp5r-QRbVZ3ZzkIF3iX6zZi-4
+2020-12-20 17:07:59.848 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@279e601
+2020-12-20 17:07:59.851 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=99departId=-2
+2020-12-20 17:07:59.851 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 17:07:59.851 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@279e601
+2020-12-20 17:07:59.851 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 17:07:59.854 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - add cart userId: 99
+2020-12-20 17:08:00.045 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 查询sku信息
+2020-12-20 17:21:59.895 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 16436076738
+2020-12-20 17:22:00.093 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTcyMTU5OUZPIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDU5NzE5LCJ1c2VySWQiOjk5LCJpYXQiOjE2MDg0NTYxMTl9.aPgxSVAIhgkYrOFejh_XeKo8JkUk7G_8NaXFjyf13hg
+2020-12-20 17:22:00.106 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@2ced72e7
+2020-12-20 17:22:00.108 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=99departId=-2
+2020-12-20 17:22:00.108 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 17:22:00.108 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@2ced72e7
+2020-12-20 17:22:00.109 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 17:22:00.112 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - add cart userId: 99
+2020-12-20 17:22:00.117 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 查询sku信息
+2020-12-20 17:22:00.118 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - name=nullprice=null
+2020-12-20 17:36:22.939 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 16436076738
+2020-12-20 17:36:23.035 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTczNjIyOUsxIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYwNTgyLCJ1c2VySWQiOjk5LCJpYXQiOjE2MDg0NTY5ODJ9.wjj_sPSAgz6uetS-SG9J3Y4flYryEMkIvGBwRgoUtGw
+2020-12-20 17:36:23.037 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@8707a23
+2020-12-20 17:36:23.037 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=99departId=-2
+2020-12-20 17:36:23.038 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 17:36:23.038 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@8707a23
+2020-12-20 17:36:23.038 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 17:36:23.038 [http-nio-8085-exec-3] DEBUG cn.edu.xmu.cart.controller.CartController - add cart userId: 99
+2020-12-20 17:36:24.003 [http-nio-8085-exec-3] ERROR cn.edu.xmu.cart.service.CartService - 查询sku信息
+2020-12-20 17:40:05.925 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 16436076738
+2020-12-20 17:40:06.117 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTc0MDA1OTRPIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYwODA1LCJ1c2VySWQiOjk5LCJpYXQiOjE2MDg0NTcyMDV9.G9grgS2hEU4u9GxdOybg6TMydakDetOPBPWaXD75R-Q
+2020-12-20 17:40:06.129 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@635b2333
+2020-12-20 17:40:06.131 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=99departId=-2
+2020-12-20 17:40:06.131 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 17:40:06.132 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@635b2333
+2020-12-20 17:40:06.132 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 17:40:06.135 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - add cart userId: 99
+2020-12-20 17:40:06.245 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 查询sku信息
+2020-12-20 17:42:59.573 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 16436076738
+2020-12-20 17:42:59.765 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTc0MjU5NUhRIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYwOTc5LCJ1c2VySWQiOjk5LCJpYXQiOjE2MDg0NTczNzl9.d1SDyibQj7cnK8eqWzHs5N4BD_Vf7cHXzGc9nc3e3Kk
+2020-12-20 17:42:59.777 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@9a822b1
+2020-12-20 17:42:59.779 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=99departId=-2
+2020-12-20 17:42:59.779 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 17:42:59.779 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@9a822b1
+2020-12-20 17:42:59.779 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 17:42:59.783 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - add cart userId: 99
+2020-12-20 17:43:00.063 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 查询sku信息
+2020-12-20 17:44:13.312 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 16436076738
+2020-12-20 17:44:13.503 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTc0NDEzM01NIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYxMDUzLCJ1c2VySWQiOjk5LCJpYXQiOjE2MDg0NTc0NTN9.fE38HWrXEATZ_GNuq1krq00bA69lS3MoTTC2fuZIdmM
+2020-12-20 17:44:13.516 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@613aeae9
+2020-12-20 17:44:13.518 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=99departId=-2
+2020-12-20 17:44:13.518 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 17:44:13.519 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@613aeae9
+2020-12-20 17:44:13.519 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 17:44:13.522 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - add cart userId: 99
+2020-12-20 17:46:25.084 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 16436076738
+2020-12-20 17:46:25.305 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTc0NjI1MTVKIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYxMTg1LCJ1c2VySWQiOjk5LCJpYXQiOjE2MDg0NTc1ODV9.sL471dOzA-Ub2we-xHaJbhGYWMiNxoO6T3cC1IXsr00
+2020-12-20 17:46:25.317 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@1f16efc3
+2020-12-20 17:46:25.320 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=99departId=-2
+2020-12-20 17:46:25.320 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 17:46:25.320 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@1f16efc3
+2020-12-20 17:46:25.320 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 17:46:25.324 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - add cart userId: 99
+2020-12-20 17:47:39.186 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 16436076738
+2020-12-20 17:47:39.584 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTc0NzM5MllSIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYxMjU5LCJ1c2VySWQiOjk5LCJpYXQiOjE2MDg0NTc2NTl9.aJwAHTi8AXX_Yb6seanRlqZI1qphxL4oKwfmDTeBZXw
+2020-12-20 17:47:39.600 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@5bf1bd6b
+2020-12-20 17:47:39.602 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=99departId=-2
+2020-12-20 17:47:39.602 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 17:47:39.602 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@5bf1bd6b
+2020-12-20 17:47:39.602 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 17:47:39.606 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - add cart userId: 99
+2020-12-20 17:47:39.607 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - CartVo(goodSkuID=null, quantity=1111)
+2020-12-20 17:50:16.238 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 16436076738
+2020-12-20 17:50:16.429 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTc1MDE2MkNYIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYxNDE2LCJ1c2VySWQiOjk5LCJpYXQiOjE2MDg0NTc4MTZ9.4pL83HNFf5Q4BLMKPtEkq4CJ0z5SpWstTVeC3RMMpsw
+2020-12-20 17:50:16.441 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@65dd9261
+2020-12-20 17:50:16.443 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=99departId=-2
+2020-12-20 17:50:16.444 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 17:50:16.444 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@65dd9261
+2020-12-20 17:50:16.444 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 17:50:16.448 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - add cart userId: 99
+2020-12-20 17:50:16.449 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - CartVo(goodsSkuId=300, quantity=1111)
+2020-12-20 17:50:16.449 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 300
+2020-12-20 17:50:16.559 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 查询sku信息
+2020-12-20 17:50:16.560 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - +
+2020-12-20 17:50:16.560 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 68000
+2020-12-20 17:50:16.560 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - name=+price=68000
+2020-12-20 17:50:16.605 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 17:50:16.668 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.dao.CartDao - other exception : Index 0 out of bounds for length 0
+2020-12-20 17:56:04.991 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 16436076738
+2020-12-20 17:56:05.190 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTc1NjA1MEVBIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYxNzY1LCJ1c2VySWQiOjk5LCJpYXQiOjE2MDg0NTgxNjV9.82EY-A6AlLzW55mH7JbAV-uOHwov5eO5yPWQwqEeXh0
+2020-12-20 17:56:05.203 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@460c6e97
+2020-12-20 17:56:05.205 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=99departId=-2
+2020-12-20 17:56:05.205 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 17:56:05.205 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@460c6e97
+2020-12-20 17:56:05.205 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 17:56:05.209 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - add cart userId: 99
+2020-12-20 17:56:05.210 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - CartVo(goodsSkuId=300, quantity=1111)
+2020-12-20 17:56:05.210 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 300
+2020-12-20 17:56:05.837 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 查询sku信息
+2020-12-20 17:56:05.837 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - +
+2020-12-20 17:56:05.837 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 68000
+2020-12-20 17:56:05.837 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - name=+price=68000
+2020-12-20 17:56:05.857 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 17:56:05.919 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.dao.CartDao - other exception : Index 0 out of bounds for length 0
+2020-12-20 17:58:59.631 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 16436076738
+2020-12-20 17:58:59.826 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTc1ODU5NldYIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYxOTM5LCJ1c2VySWQiOjk5LCJpYXQiOjE2MDg0NTgzMzl9.__QcQN1yddlVRbzIvAfInBl2Zz2Yw-xA9TSwtlxZtq0
+2020-12-20 17:58:59.838 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@710f97b1
+2020-12-20 17:58:59.840 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=99departId=-2
+2020-12-20 17:58:59.841 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 17:58:59.841 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@710f97b1
+2020-12-20 17:58:59.841 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 17:58:59.844 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - add cart userId: 99
+2020-12-20 17:58:59.845 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - CartVo(goodsSkuId=300, quantity=1111)
+2020-12-20 17:58:59.845 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 300
+2020-12-20 17:58:59.979 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 查询sku信息
+2020-12-20 17:58:59.979 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - +
+2020-12-20 17:58:59.979 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 68000
+2020-12-20 17:58:59.979 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - name=+price=68000
+2020-12-20 17:58:59.999 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 17:59:00.065 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.dao.CartDao - other exception : Index 0 out of bounds for length 0
+2020-12-20 18:02:19.891 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 16436076738
+2020-12-20 18:02:20.083 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwMjE5OVBQIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyMTM5LCJ1c2VySWQiOjk5LCJpYXQiOjE2MDg0NTg1Mzl9.HMy8HxGaC8rKK79UyNuFKUBN3-lKfOIwm54O-o_vRXw
+2020-12-20 18:02:20.095 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@300d1e9c
+2020-12-20 18:02:20.097 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=99departId=-2
+2020-12-20 18:02:20.097 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:02:20.098 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@300d1e9c
+2020-12-20 18:02:20.098 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:02:20.101 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - add cart userId: 99
+2020-12-20 18:02:20.102 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - CartVo(goodsSkuId=300, quantity=1111)
+2020-12-20 18:02:20.102 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 300
+2020-12-20 18:02:20.145 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 查询sku信息
+2020-12-20 18:02:20.145 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - +
+2020-12-20 18:02:20.145 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 68000
+2020-12-20 18:02:20.145 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - name=+price=68000
+2020-12-20 18:02:20.160 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 18:02:20.162 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.dao.CartDao - 300
+2020-12-20 18:02:20.230 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.dao.CartDao - other exception : Index 0 out of bounds for length 0
+2020-12-20 18:04:34.013 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 16436076738
+2020-12-20 18:04:34.226 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwNDM0MDEzIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyMjc0LCJ1c2VySWQiOjk5LCJpYXQiOjE2MDg0NTg2NzR9.UvaD-2ivr7W39XIq216b8P2w6qMU11jSnKDZRrhojxA
+2020-12-20 18:04:34.239 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@1beaf42d
+2020-12-20 18:04:34.242 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=99departId=-2
+2020-12-20 18:04:34.242 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:04:34.242 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@1beaf42d
+2020-12-20 18:04:34.242 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:04:34.246 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - add cart userId: 99
+2020-12-20 18:04:34.247 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - CartVo(goodsSkuId=300, quantity=1111)
+2020-12-20 18:04:34.247 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 300
+2020-12-20 18:04:34.351 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 查询sku信息
+2020-12-20 18:04:34.351 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - +
+2020-12-20 18:04:34.351 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 68000
+2020-12-20 18:04:34.352 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - name=+price=68000
+2020-12-20 18:04:34.367 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 18:04:34.369 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.dao.CartDao - 300
+2020-12-20 18:04:34.434 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.dao.CartDao - 300
+2020-12-20 18:04:34.613 [http-nio-8085-exec-1] ERROR cn.edu.xmu.cart.dao.CartDao - 1081
+2020-12-20 18:04:34.651 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwNDM0MDEzIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyMjc0LCJ1c2VySWQiOjk5LCJpYXQiOjE2MDg0NTg2NzR9.UvaD-2ivr7W39XIq216b8P2w6qMU11jSnKDZRrhojxA
+2020-12-20 18:04:34.653 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@12b953b9
+2020-12-20 18:04:34.653 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=99departId=-2
+2020-12-20 18:04:34.653 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:04:34.653 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@12b953b9
+2020-12-20 18:04:34.653 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:04:34.653 [http-nio-8085-exec-2] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 10
+2020-12-20 18:04:34.654 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.controller.CartController - 99
+2020-12-20 18:04:34.654 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.dao.CartDao - userId=99
+2020-12-20 18:04:34.684 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 18:04:34.726 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 18:04:34.759 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.service.CartService - +68000
+2020-12-20 18:04:34.759 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@1533aac0
+2020-12-20 18:04:56.474 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 59506839941
+2020-12-20 18:04:56.558 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwNDU2NElWIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyMjk2LCJ1c2VySWQiOjk5OSwiaWF0IjoxNjA4NDU4Njk2fQ.T4Ny4k5_L_4gfy1R6ddl8M3RzQlHw7Kmuazl9tvGhKU
+2020-12-20 18:04:56.558 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@6863c2c8
+2020-12-20 18:04:56.559 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=999departId=-2
+2020-12-20 18:04:56.559 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:04:56.559 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@6863c2c8
+2020-12-20 18:04:56.559 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:04:56.559 [http-nio-8085-exec-3] DEBUG cn.edu.xmu.cart.controller.CartController - add cart userId: 999
+2020-12-20 18:04:56.559 [http-nio-8085-exec-3] DEBUG cn.edu.xmu.cart.controller.CartController - CartVo(goodsSkuId=300, quantity=111)
+2020-12-20 18:04:56.559 [http-nio-8085-exec-3] ERROR cn.edu.xmu.cart.service.CartService - 300
+2020-12-20 18:04:56.576 [http-nio-8085-exec-3] ERROR cn.edu.xmu.cart.service.CartService - 查询sku信息
+2020-12-20 18:04:56.576 [http-nio-8085-exec-3] ERROR cn.edu.xmu.cart.service.CartService - +
+2020-12-20 18:04:56.576 [http-nio-8085-exec-3] ERROR cn.edu.xmu.cart.service.CartService - 68000
+2020-12-20 18:04:56.576 [http-nio-8085-exec-3] ERROR cn.edu.xmu.cart.service.CartService - name=+price=68000
+2020-12-20 18:04:56.585 [http-nio-8085-exec-3] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 18:04:56.585 [http-nio-8085-exec-3] ERROR cn.edu.xmu.cart.dao.CartDao - 300
+2020-12-20 18:04:56.587 [http-nio-8085-exec-3] ERROR cn.edu.xmu.cart.dao.CartDao - 300
+2020-12-20 18:04:56.691 [http-nio-8085-exec-3] ERROR cn.edu.xmu.cart.dao.CartDao - 1082
+2020-12-20 18:04:56.709 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwNDU2NElWIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyMjk2LCJ1c2VySWQiOjk5OSwiaWF0IjoxNjA4NDU4Njk2fQ.T4Ny4k5_L_4gfy1R6ddl8M3RzQlHw7Kmuazl9tvGhKU
+2020-12-20 18:04:56.710 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@7aca9339
+2020-12-20 18:04:56.710 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=999departId=-2
+2020-12-20 18:04:56.710 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:04:56.710 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@7aca9339
+2020-12-20 18:04:56.710 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:04:56.710 [http-nio-8085-exec-4] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 10
+2020-12-20 18:04:56.710 [http-nio-8085-exec-4] ERROR cn.edu.xmu.cart.controller.CartController - 999
+2020-12-20 18:04:56.710 [http-nio-8085-exec-4] ERROR cn.edu.xmu.cart.dao.CartDao - userId=999
+2020-12-20 18:04:56.714 [http-nio-8085-exec-4] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 18:04:56.732 [http-nio-8085-exec-4] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 18:04:56.760 [http-nio-8085-exec-4] ERROR cn.edu.xmu.cart.service.CartService - +68000
+2020-12-20 18:04:56.760 [http-nio-8085-exec-4] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@5c60db4a
+2020-12-20 18:05:16.564 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8606245097
+2020-12-20 18:05:16.646 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwNTE2NTI1IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyMzE2LCJ1c2VySWQiOjEsImlhdCI6MTYwODQ1ODcxNn0.ECXYAYR2wXeq_uDHAfdcnx0QVCQo_nr7iKUq6MK_7qI
+2020-12-20 18:05:16.647 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@4153f070
+2020-12-20 18:05:16.647 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=1departId=-2
+2020-12-20 18:05:16.647 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:05:16.647 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@4153f070
+2020-12-20 18:05:16.647 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:05:16.647 [http-nio-8085-exec-5] DEBUG cn.edu.xmu.cart.controller.CartController - userId: 1
+2020-12-20 18:05:16.935 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwNTE2NTI1IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyMzE2LCJ1c2VySWQiOjEsImlhdCI6MTYwODQ1ODcxNn0.ECXYAYR2wXeq_uDHAfdcnx0QVCQo_nr7iKUq6MK_7qI
+2020-12-20 18:05:16.936 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@25ffafc1
+2020-12-20 18:05:16.936 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=1departId=-2
+2020-12-20 18:05:16.936 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:05:16.936 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@25ffafc1
+2020-12-20 18:05:16.936 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:05:16.936 [http-nio-8085-exec-6] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 10
+2020-12-20 18:05:16.936 [http-nio-8085-exec-6] ERROR cn.edu.xmu.cart.controller.CartController - 1
+2020-12-20 18:05:16.937 [http-nio-8085-exec-6] ERROR cn.edu.xmu.cart.dao.CartDao - userId=1
+2020-12-20 18:05:16.939 [http-nio-8085-exec-6] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@55ec6490
+2020-12-20 18:05:32.677 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 36040122840
+2020-12-20 18:05:32.762 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwNTMyNkxaIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyMzMyLCJ1c2VySWQiOjIsImlhdCI6MTYwODQ1ODczMn0.flGXcwnTDIDkeMBwd1zAAt9LhY0csuY_0-oUdjej2E0
+2020-12-20 18:05:32.763 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@5b5071ea
+2020-12-20 18:05:32.763 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=2departId=-2
+2020-12-20 18:05:32.763 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:05:32.763 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@5b5071ea
+2020-12-20 18:05:32.763 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:05:32.763 [http-nio-8085-exec-7] DEBUG cn.edu.xmu.cart.controller.CartController - userId: 2
+2020-12-20 18:05:32.991 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwNTMyNkxaIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyMzMyLCJ1c2VySWQiOjIsImlhdCI6MTYwODQ1ODczMn0.flGXcwnTDIDkeMBwd1zAAt9LhY0csuY_0-oUdjej2E0
+2020-12-20 18:05:32.992 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@1d7101
+2020-12-20 18:05:32.992 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=2departId=-2
+2020-12-20 18:05:32.992 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:05:32.992 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@1d7101
+2020-12-20 18:05:32.992 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:05:32.992 [http-nio-8085-exec-8] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 10
+2020-12-20 18:05:32.992 [http-nio-8085-exec-8] ERROR cn.edu.xmu.cart.controller.CartController - 2
+2020-12-20 18:05:32.992 [http-nio-8085-exec-8] ERROR cn.edu.xmu.cart.dao.CartDao - userId=2
+2020-12-20 18:05:32.995 [http-nio-8085-exec-8] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@41207b3a
+2020-12-20 18:05:45.872 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 7306155755
+2020-12-20 18:05:45.957 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwNTQ1OFZDIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyMzQ1LCJ1c2VySWQiOjMsImlhdCI6MTYwODQ1ODc0NX0.mOZVNMLEUX2Hi6myjPoU4xwCtt5erRBNiv2uM9gae4c
+2020-12-20 18:05:45.957 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@718d2714
+2020-12-20 18:05:45.958 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=3departId=-2
+2020-12-20 18:05:45.958 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:05:45.958 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@718d2714
+2020-12-20 18:05:45.958 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:05:45.958 [http-nio-8085-exec-9] DEBUG cn.edu.xmu.cart.controller.CartController - userId: 3
+2020-12-20 18:07:17.231 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 14455881448
+2020-12-20 18:07:17.326 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwNzE3MlVQIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyNDM3LCJ1c2VySWQiOjQsImlhdCI6MTYwODQ1ODgzN30.6uAEkaRK0mB72w6oupIA2L7bLzQdzU71_xAucUBCjj0
+2020-12-20 18:07:17.327 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@56a7f280
+2020-12-20 18:07:17.327 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=4departId=-2
+2020-12-20 18:07:17.327 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:07:17.327 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@56a7f280
+2020-12-20 18:07:17.327 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:07:17.327 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - userId: 4
+2020-12-20 18:07:17.543 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwNzE3MlVQIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyNDM3LCJ1c2VySWQiOjQsImlhdCI6MTYwODQ1ODgzN30.6uAEkaRK0mB72w6oupIA2L7bLzQdzU71_xAucUBCjj0
+2020-12-20 18:07:17.543 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@699428e8
+2020-12-20 18:07:17.543 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=4departId=-2
+2020-12-20 18:07:17.544 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:07:17.544 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@699428e8
+2020-12-20 18:07:17.544 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:07:17.544 [http-nio-8085-exec-2] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 10
+2020-12-20 18:07:17.544 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.controller.CartController - 4
+2020-12-20 18:07:17.544 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.dao.CartDao - userId=4
+2020-12-20 18:07:17.546 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@4e339f9a
+2020-12-20 18:07:30.993 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 8906373389
+2020-12-20 18:07:31.076 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwNzMxMFc3IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyNDUxLCJ1c2VySWQiOjUsImlhdCI6MTYwODQ1ODg1MX0.3VkCzlBp28UEUFzshBGIvPnbreaoBLHjmHtpBip6QIc
+2020-12-20 18:07:31.077 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@16377cd9
+2020-12-20 18:07:31.077 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=5departId=-2
+2020-12-20 18:07:31.077 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:07:31.077 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@16377cd9
+2020-12-20 18:07:31.077 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:07:31.077 [http-nio-8085-exec-3] DEBUG cn.edu.xmu.cart.controller.CartController - userId: 5
+2020-12-20 18:07:31.266 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwNzMxMFc3IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyNDUxLCJ1c2VySWQiOjUsImlhdCI6MTYwODQ1ODg1MX0.3VkCzlBp28UEUFzshBGIvPnbreaoBLHjmHtpBip6QIc
+2020-12-20 18:07:31.267 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@4764359b
+2020-12-20 18:07:31.267 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=5departId=-2
+2020-12-20 18:07:31.267 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:07:31.267 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@4764359b
+2020-12-20 18:07:31.267 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:07:31.267 [http-nio-8085-exec-4] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 10
+2020-12-20 18:07:31.267 [http-nio-8085-exec-4] ERROR cn.edu.xmu.cart.controller.CartController - 5
+2020-12-20 18:07:31.267 [http-nio-8085-exec-4] ERROR cn.edu.xmu.cart.dao.CartDao - userId=5
+2020-12-20 18:07:31.269 [http-nio-8085-exec-4] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@2a6c11bd
+2020-12-20 18:07:48.096 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39118189028
+2020-12-20 18:07:48.180 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwNzQ4MUpPIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyNDY4LCJ1c2VySWQiOjYsImlhdCI6MTYwODQ1ODg2OH0.C-aov1thwjHx1jUxYj60FA9yuIoSzZKgcsyaavyHk4o
+2020-12-20 18:07:48.181 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@31a47bc6
+2020-12-20 18:07:48.181 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=6departId=-2
+2020-12-20 18:07:48.181 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:07:48.181 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@31a47bc6
+2020-12-20 18:07:48.181 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:07:48.181 [http-nio-8085-exec-5] DEBUG cn.edu.xmu.cart.controller.CartController - userId: 6
+2020-12-20 18:08:27.150 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 63088258694
+2020-12-20 18:08:27.239 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwODI3MTBaIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyNTA3LCJ1c2VySWQiOjcsImlhdCI6MTYwODQ1ODkwN30.EsbNjBiFVH0gIwGveYlSrNdbSoGk54XaJsebyK-E1rc
+2020-12-20 18:08:27.240 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@4ed5ab5
+2020-12-20 18:08:27.240 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=7departId=-2
+2020-12-20 18:08:27.240 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:08:27.240 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@4ed5ab5
+2020-12-20 18:08:27.240 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:08:27.241 [http-nio-8085-exec-6] DEBUG cn.edu.xmu.cart.controller.CartController - userId: 7
+2020-12-20 18:08:27.416 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwODI3MTBaIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyNTA3LCJ1c2VySWQiOjcsImlhdCI6MTYwODQ1ODkwN30.EsbNjBiFVH0gIwGveYlSrNdbSoGk54XaJsebyK-E1rc
+2020-12-20 18:08:27.416 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@7a42849e
+2020-12-20 18:08:27.416 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=7departId=-2
+2020-12-20 18:08:27.417 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:08:27.417 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@7a42849e
+2020-12-20 18:08:27.417 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:08:27.417 [http-nio-8085-exec-7] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 10
+2020-12-20 18:08:27.417 [http-nio-8085-exec-7] ERROR cn.edu.xmu.cart.controller.CartController - 7
+2020-12-20 18:08:27.417 [http-nio-8085-exec-7] ERROR cn.edu.xmu.cart.dao.CartDao - userId=7
+2020-12-20 18:08:27.426 [http-nio-8085-exec-7] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@70d3a5a
+2020-12-20 18:08:30.982 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 46613241589
+2020-12-20 18:08:31.133 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwODMxMEgyIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyNTExLCJ1c2VySWQiOjgsImlhdCI6MTYwODQ1ODkxMX0.2TOQyuNTgw2EWQ8_wG8VLg3K2muwW0ROBnLmfbFjGyY
+2020-12-20 18:08:31.134 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@702b7d68
+2020-12-20 18:08:31.134 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=8departId=-2
+2020-12-20 18:08:31.134 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:08:31.134 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@702b7d68
+2020-12-20 18:08:31.134 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:08:31.134 [http-nio-8085-exec-8] DEBUG cn.edu.xmu.cart.controller.CartController - userId: 8
+2020-12-20 18:08:31.287 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwODMxMEgyIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyNTExLCJ1c2VySWQiOjgsImlhdCI6MTYwODQ1ODkxMX0.2TOQyuNTgw2EWQ8_wG8VLg3K2muwW0ROBnLmfbFjGyY
+2020-12-20 18:08:31.289 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@76865c42
+2020-12-20 18:08:31.289 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=8departId=-2
+2020-12-20 18:08:31.289 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:08:31.289 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@76865c42
+2020-12-20 18:08:31.289 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:08:31.289 [http-nio-8085-exec-9] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 10
+2020-12-20 18:08:31.289 [http-nio-8085-exec-9] ERROR cn.edu.xmu.cart.controller.CartController - 8
+2020-12-20 18:08:31.289 [http-nio-8085-exec-9] ERROR cn.edu.xmu.cart.dao.CartDao - userId=8
+2020-12-20 18:08:31.293 [http-nio-8085-exec-9] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@7af3bfba
+2020-12-20 18:08:39.958 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39288437216
+2020-12-20 18:08:40.059 [http-nio-8085-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgwODM5OVhBIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYyNTE5LCJ1c2VySWQiOjEwMDAwLCJpYXQiOjE2MDg0NTg5MTl9.yTnpKgTcCdlSHg6H8mGfssrnM1lzO4OPPuVh1r9_bb8
+2020-12-20 18:08:40.059 [http-nio-8085-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@35386b97
+2020-12-20 18:08:40.059 [http-nio-8085-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=10000departId=-2
+2020-12-20 18:08:40.059 [http-nio-8085-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:08:40.060 [http-nio-8085-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@35386b97
+2020-12-20 18:08:40.060 [http-nio-8085-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:08:40.060 [http-nio-8085-exec-10] DEBUG cn.edu.xmu.cart.controller.CartController - change cart by id= 1041
+2020-12-20 18:20:19.272 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 39288437216
+2020-12-20 18:20:19.465 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgyMDE5Mk9RIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYzMjE5LCJ1c2VySWQiOjEwMDAwLCJpYXQiOjE2MDg0NTk2MTl9.RnUS8AsCgjSaIHFc95LOeSIHNUryR7AMCsn6O6JIFMY
+2020-12-20 18:20:19.477 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@547d4f6d
+2020-12-20 18:20:19.479 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=10000departId=-2
+2020-12-20 18:20:19.479 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:20:19.479 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@547d4f6d
+2020-12-20 18:20:19.479 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:20:19.483 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - change cart by id= 1041
+2020-12-20 18:20:19.483 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - 10000
+2020-12-20 18:20:19.483 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - CartVo(goodsSkuId=367, quantity=111)
+2020-12-20 18:20:19.944 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgyMDE5Mk9RIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYzMjE5LCJ1c2VySWQiOjEwMDAwLCJpYXQiOjE2MDg0NTk2MTl9.RnUS8AsCgjSaIHFc95LOeSIHNUryR7AMCsn6O6JIFMY
+2020-12-20 18:20:19.946 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@64c2a5fa
+2020-12-20 18:20:19.946 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=10000departId=-2
+2020-12-20 18:20:19.946 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:20:19.946 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@64c2a5fa
+2020-12-20 18:20:19.946 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:20:19.946 [http-nio-8085-exec-2] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 10
+2020-12-20 18:20:19.946 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.controller.CartController - 10000
+2020-12-20 18:20:19.947 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.dao.CartDao - userId=10000
+2020-12-20 18:20:19.985 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 18:20:20.031 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 18:20:20.057 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.service.CartService - +24120
+2020-12-20 18:20:20.057 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 18:20:20.066 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 18:20:20.090 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.service.CartService - +299
+2020-12-20 18:20:20.091 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 18:20:20.101 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 18:20:20.115 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.service.CartService - +1950000
+2020-12-20 18:20:20.115 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@3a5dc900
+2020-12-20 18:20:40.366 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 41372695510
+2020-12-20 18:20:40.449 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgyMDQwM0VSIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYzMjQwLCJ1c2VySWQiOjEwMDAxLCJpYXQiOjE2MDg0NTk2NDB9.aVaq0F4hChoonkrmd5px0MCMZxw-x7swXrz4dnT7Hrg
+2020-12-20 18:20:40.450 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@5b5071ea
+2020-12-20 18:20:40.450 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=10001departId=-2
+2020-12-20 18:20:40.450 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:20:40.450 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@5b5071ea
+2020-12-20 18:20:40.450 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:20:40.450 [http-nio-8085-exec-3] DEBUG cn.edu.xmu.cart.controller.CartController - change cart by id= 1044
+2020-12-20 18:20:40.450 [http-nio-8085-exec-3] DEBUG cn.edu.xmu.cart.controller.CartController - 10001
+2020-12-20 18:20:40.450 [http-nio-8085-exec-3] DEBUG cn.edu.xmu.cart.controller.CartController - CartVo(goodsSkuId=446, quantity=101)
+2020-12-20 18:20:40.638 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgyMDQwM0VSIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYzMjQwLCJ1c2VySWQiOjEwMDAxLCJpYXQiOjE2MDg0NTk2NDB9.aVaq0F4hChoonkrmd5px0MCMZxw-x7swXrz4dnT7Hrg
+2020-12-20 18:20:40.639 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@1f7d26e3
+2020-12-20 18:20:40.639 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=10001departId=-2
+2020-12-20 18:20:40.639 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:20:40.639 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@1f7d26e3
+2020-12-20 18:20:40.639 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:20:40.639 [http-nio-8085-exec-7] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 10
+2020-12-20 18:20:40.639 [http-nio-8085-exec-7] ERROR cn.edu.xmu.cart.controller.CartController - 10001
+2020-12-20 18:20:40.639 [http-nio-8085-exec-7] ERROR cn.edu.xmu.cart.dao.CartDao - userId=10001
+2020-12-20 18:20:40.643 [http-nio-8085-exec-7] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 18:20:40.660 [http-nio-8085-exec-7] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 18:20:40.682 [http-nio-8085-exec-7] ERROR cn.edu.xmu.cart.service.CartService - +1799
+2020-12-20 18:20:40.682 [http-nio-8085-exec-7] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 18:20:40.719 [http-nio-8085-exec-7] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 18:20:40.730 [http-nio-8085-exec-7] ERROR cn.edu.xmu.cart.service.CartService - +6980
+2020-12-20 18:20:40.730 [http-nio-8085-exec-7] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@19e8225e
+2020-12-20 18:20:56.481 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 32485307410
+2020-12-20 18:20:56.568 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgyMDU2NDFKIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYzMjU2LCJ1c2VySWQiOjEwMDAyLCJpYXQiOjE2MDg0NTk2NTZ9.9UAWtEF1hNdw-h6tFlnqB4cqNat4LBAfg_gh4xQhmEU
+2020-12-20 18:20:56.568 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@718d2714
+2020-12-20 18:20:56.568 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=10002departId=-2
+2020-12-20 18:20:56.568 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:20:56.569 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@718d2714
+2020-12-20 18:20:56.569 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:20:56.569 [http-nio-8085-exec-5] DEBUG cn.edu.xmu.cart.controller.CartController - change cart by id= 1046
+2020-12-20 18:20:56.569 [http-nio-8085-exec-5] DEBUG cn.edu.xmu.cart.controller.CartController - 10002
+2020-12-20 18:20:56.569 [http-nio-8085-exec-5] DEBUG cn.edu.xmu.cart.controller.CartController - CartVo(goodsSkuId=522, quantity=100)
+2020-12-20 18:21:10.024 [http-nio-8081-exec-3] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 32485307410
+2020-12-20 18:21:10.113 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgyMTEwMEhOIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYzMjcwLCJ1c2VySWQiOjEwMDAyLCJpYXQiOjE2MDg0NTk2NzB9.rq0YW0yuaKbCb-SJf-pzieCKjrYAhmtIXdFMZlynaQI
+2020-12-20 18:21:10.114 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@3bdb2653
+2020-12-20 18:21:10.114 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=10002departId=-2
+2020-12-20 18:21:10.114 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:21:10.114 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@3bdb2653
+2020-12-20 18:21:10.114 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:21:10.114 [http-nio-8085-exec-9] DEBUG cn.edu.xmu.cart.controller.CartController - change cart by id= 1047
+2020-12-20 18:21:10.114 [http-nio-8085-exec-9] DEBUG cn.edu.xmu.cart.controller.CartController - 10002
+2020-12-20 18:21:10.114 [http-nio-8085-exec-9] DEBUG cn.edu.xmu.cart.controller.CartController - CartVo(goodsSkuId=322, quantity=101)
+2020-12-20 18:21:26.001 [http-nio-8081-exec-2] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 44866608870
+2020-12-20 18:21:26.086 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgyMTI2MEtKIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYzMjg2LCJ1c2VySWQiOjEwMDAzLCJpYXQiOjE2MDg0NTk2ODZ9.jp6s7z5xT6rQnN2Hly7SzQTFDzBP8WIuEcMX_tmDvW0
+2020-12-20 18:21:26.087 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@1d7101
+2020-12-20 18:21:26.087 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=10003departId=-2
+2020-12-20 18:21:26.087 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:21:26.087 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@1d7101
+2020-12-20 18:21:26.087 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:21:26.087 [http-nio-8085-exec-4] DEBUG cn.edu.xmu.cart.controller.CartController - change cart by id= 1048
+2020-12-20 18:21:26.087 [http-nio-8085-exec-4] DEBUG cn.edu.xmu.cart.controller.CartController - 10003
+2020-12-20 18:21:26.087 [http-nio-8085-exec-4] DEBUG cn.edu.xmu.cart.controller.CartController - CartVo(goodsSkuId=6810, quantity=150)
+2020-12-20 18:21:26.295 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgyMTI2MEtKIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYzMjg2LCJ1c2VySWQiOjEwMDAzLCJpYXQiOjE2MDg0NTk2ODZ9.jp6s7z5xT6rQnN2Hly7SzQTFDzBP8WIuEcMX_tmDvW0
+2020-12-20 18:21:26.296 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@6aa6b95b
+2020-12-20 18:21:26.296 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=10003departId=-2
+2020-12-20 18:21:26.296 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:21:26.296 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@6aa6b95b
+2020-12-20 18:21:26.296 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:21:26.296 [http-nio-8085-exec-8] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 10
+2020-12-20 18:21:26.296 [http-nio-8085-exec-8] ERROR cn.edu.xmu.cart.controller.CartController - 10003
+2020-12-20 18:21:26.296 [http-nio-8085-exec-8] ERROR cn.edu.xmu.cart.dao.CartDao - userId=10003
+2020-12-20 18:21:26.300 [http-nio-8085-exec-8] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 18:21:26.317 [http-nio-8085-exec-8] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 18:21:26.337 [http-nio-8085-exec-8] ERROR cn.edu.xmu.cart.service.CartService - +6697
+2020-12-20 18:21:26.337 [http-nio-8085-exec-8] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@45c9e9c7
+2020-12-20 18:21:44.225 [http-nio-8081-exec-4] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 97142877706
+2020-12-20 18:21:44.386 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgyMTQ0Mlk2IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYzMzA0LCJ1c2VySWQiOjEwMDAsImlhdCI6MTYwODQ1OTcwNH0.UoubqmWTz2OJ-aXm-BIH6faww8ephQyKCLEkL0gyGGo
+2020-12-20 18:21:44.387 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@7b17a521
+2020-12-20 18:21:44.387 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=1000departId=-2
+2020-12-20 18:21:44.388 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:21:44.388 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@7b17a521
+2020-12-20 18:21:44.388 [http-nio-8085-exec-6] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:21:44.388 [http-nio-8085-exec-6] DEBUG cn.edu.xmu.cart.controller.CartController - delete cart id= 1061
+2020-12-20 18:21:45.117 [http-nio-8085-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgyMTQ0Mlk2IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYzMzA0LCJ1c2VySWQiOjEwMDAsImlhdCI6MTYwODQ1OTcwNH0.UoubqmWTz2OJ-aXm-BIH6faww8ephQyKCLEkL0gyGGo
+2020-12-20 18:21:45.118 [http-nio-8085-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@7009eb10
+2020-12-20 18:21:45.118 [http-nio-8085-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=1000departId=-2
+2020-12-20 18:21:45.118 [http-nio-8085-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:21:45.118 [http-nio-8085-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@7009eb10
+2020-12-20 18:21:45.118 [http-nio-8085-exec-10] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:21:45.118 [http-nio-8085-exec-10] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 10
+2020-12-20 18:21:45.118 [http-nio-8085-exec-10] ERROR cn.edu.xmu.cart.controller.CartController - 1000
+2020-12-20 18:21:45.118 [http-nio-8085-exec-10] ERROR cn.edu.xmu.cart.dao.CartDao - userId=1000
+2020-12-20 18:21:45.123 [http-nio-8085-exec-10] ERROR cn.edu.xmu.cart.controller.CartController - cn.edu.xmu.ooad.util.ReturnObject@3134e12b
+2020-12-20 18:21:50.206 [http-nio-8081-exec-5] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 10153144607
+2020-12-20 18:21:50.423 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgyMTUwMlk3IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYzMzEwLCJ1c2VySWQiOjEwMDEsImlhdCI6MTYwODQ1OTcxMH0.t4TiWRca4lITUGpnWH5SgN6tkJVYlTmYqYlAdPglo_A
+2020-12-20 18:21:50.424 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@208ecdfe
+2020-12-20 18:21:50.424 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=1001departId=-2
+2020-12-20 18:21:50.424 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:21:50.424 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@208ecdfe
+2020-12-20 18:21:50.424 [http-nio-8085-exec-1] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:21:50.425 [http-nio-8085-exec-1] DEBUG cn.edu.xmu.cart.controller.CartController - delete cart id= 1062
+2020-12-20 18:21:50.782 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgyMTUwMlk3IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYzMzEwLCJ1c2VySWQiOjEwMDEsImlhdCI6MTYwODQ1OTcxMH0.t4TiWRca4lITUGpnWH5SgN6tkJVYlTmYqYlAdPglo_A
+2020-12-20 18:21:50.783 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@1fad61bd
+2020-12-20 18:21:50.783 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=1001departId=-2
+2020-12-20 18:21:50.783 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:21:50.783 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@1fad61bd
+2020-12-20 18:21:50.783 [http-nio-8085-exec-2] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:21:50.784 [http-nio-8085-exec-2] DEBUG cn.edu.xmu.cart.controller.CartController - seleteAllCart: page=1 pagaSize= 10
+2020-12-20 18:21:50.784 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.controller.CartController - 1001
+2020-12-20 18:21:50.784 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.dao.CartDao - userId=1001
+2020-12-20 18:21:50.791 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.service.CartService - 123
+2020-12-20 18:21:50.793 [http-nio-8085-exec-2] ERROR cn.edu.xmu.cart.service.CartService - []
+2020-12-20 18:21:55.711 [http-nio-8081-exec-6] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 19769355952
+2020-12-20 18:21:55.869 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgyMTU1N0I5IiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYzMzE1LCJ1c2VySWQiOjEwLCJpYXQiOjE2MDg0NTk3MTV9.IKLvTj8E3GCfl-R5d-gPUmW14mFkuUUqV3lz6Ja5484
+2020-12-20 18:21:55.870 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@7a42849e
+2020-12-20 18:21:55.870 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=10departId=-2
+2020-12-20 18:21:55.870 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:21:55.870 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@7a42849e
+2020-12-20 18:21:55.870 [http-nio-8085-exec-3] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:21:55.871 [http-nio-8085-exec-3] DEBUG cn.edu.xmu.cart.controller.CartController - delete cart id= 45
+2020-12-20 18:22:02.485 [http-nio-8081-exec-8] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 14902184265
+2020-12-20 18:22:02.661 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgyMjAyNVZBIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYzMzIyLCJ1c2VySWQiOjExLCJpYXQiOjE2MDg0NTk3MjJ9.5lwIs8UQ65ssy77q-P-e8H23N7d0Y8lT4hdVcUfFv6o
+2020-12-20 18:22:02.662 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@61160581
+2020-12-20 18:22:02.662 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=11departId=-2
+2020-12-20 18:22:02.662 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:22:02.662 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@61160581
+2020-12-20 18:22:02.662 [http-nio-8085-exec-7] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:22:02.663 [http-nio-8085-exec-7] DEBUG cn.edu.xmu.cart.controller.CartController - delete cart id= 1080
+2020-12-20 18:22:07.624 [http-nio-8081-exec-9] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 5217325133
+2020-12-20 18:22:07.730 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgyMjA3NjgyIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYzMzI3LCJ1c2VySWQiOjEyLCJpYXQiOjE2MDg0NTk3Mjd9._ydRB0M7cqAiZgxga0huDBCmD9qECtzAGC8VVNaytmc
+2020-12-20 18:22:07.732 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@7af3bfba
+2020-12-20 18:22:07.732 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=12departId=-2
+2020-12-20 18:22:07.732 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:22:07.732 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@7af3bfba
+2020-12-20 18:22:07.732 [http-nio-8085-exec-5] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:22:07.733 [http-nio-8085-exec-5] DEBUG cn.edu.xmu.cart.controller.CartController - delete cart id= 1080
+2020-12-20 18:22:11.061 [http-nio-8081-exec-7] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 19769355952
+2020-12-20 18:22:11.150 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgyMjExMFgwIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYzMzMxLCJ1c2VySWQiOjEwLCJpYXQiOjE2MDg0NTk3MzF9.imomTj9d1fNXNPJHfPNCrBkh8ewBI5f1FP0Za64T7tg
+2020-12-20 18:22:11.151 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@1ac9d327
+2020-12-20 18:22:11.151 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=10departId=-2
+2020-12-20 18:22:11.151 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:22:11.151 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@1ac9d327
+2020-12-20 18:22:11.151 [http-nio-8085-exec-9] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:22:11.151 [http-nio-8085-exec-9] DEBUG cn.edu.xmu.cart.controller.CartController - delete cart id= 523
+2020-12-20 18:22:37.339 [http-nio-8081-exec-10] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 19769355952
+2020-12-20 18:22:37.539 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgyMjM3M1FXIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYzMzU3LCJ1c2VySWQiOjEwLCJpYXQiOjE2MDg0NTk3NTd9.8KSYKp9niePjSyjZ3aYHTdXPjC30SG58_T7nLLPCYbM
+2020-12-20 18:22:37.539 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@254159d3
+2020-12-20 18:22:37.539 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=10departId=-2
+2020-12-20 18:22:37.539 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:22:37.539 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@254159d3
+2020-12-20 18:22:37.539 [http-nio-8085-exec-4] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:22:37.539 [http-nio-8085-exec-4] DEBUG cn.edu.xmu.cart.controller.CartController - delete cart id= 544
+2020-12-20 18:23:06.279 [http-nio-8081-exec-1] DEBUG cn.edu.xmu.customer.controller.CustomerController - login: userName = 10153144607
+2020-12-20 18:23:06.371 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGlzIGlzIGEgdG9rZW4iLCJhdWQiOiJNSU5JQVBQIiwidG9rZW5JZCI6IjIwMjAxMjIwMTgyMzA2MkEzIiwiaXNzIjoiT09BRCIsImRlcGFydElkIjotMiwiZXhwIjoxNjA4NDYzMzg2LCJ1c2VySWQiOjEwMDEsImlhdCI6MTYwODQ1OTc4Nn0.YNXo0DHvsdEpQLMEheOdMlMo1hqfPtCx2a-v1knNRtQ
+2020-12-20 18:23:06.372 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 123cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@3dc2f844
+2020-12-20 18:23:06.372 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - userId=1001departId=-2
+2020-12-20 18:23:06.372 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - null
+2020-12-20 18:23:06.372 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - 132cn.edu.xmu.ooad.util.JwtHelper$UserAndDepart@3dc2f844
+2020-12-20 18:23:06.372 [http-nio-8085-exec-8] ERROR cn.edu.xmu.ooad.annotation.AuditAspect - the api path is null
+2020-12-20 18:23:06.372 [http-nio-8085-exec-8] DEBUG cn.edu.xmu.cart.controller.CartController - delete cart id= 1062

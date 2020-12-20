@@ -2,18 +2,20 @@ package cn.edu.xmu.cart.model.vo;
 
 import cn.edu.xmu.cart.model.bo.Cart;
 import cn.edu.xmu.goods.dto.CouponActivityDTO;
+import lombok.Data;
 
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
-
-public class CartPage{
+@Data
+public class CartPage implements Serializable {
     private Long id;
     private Long goodsSkuId;
     private String skuName;
     private Integer quantity;
     private Long price;
-    private List<CouponActivityDTO> couponActivity;
+    public List<CouponActivityDTO> couponActivity;
     private LocalDateTime gmtCreate;
     private LocalDateTime gmtModified;
 

@@ -6,6 +6,6 @@ import lombok.Data;
 @Data
 @ApiModel(value = "可填写的信息")
 public class CartVo {
-    private Long goodSkuID;
+    private Long goodsSkuId;
     private Integer quantity;
 }

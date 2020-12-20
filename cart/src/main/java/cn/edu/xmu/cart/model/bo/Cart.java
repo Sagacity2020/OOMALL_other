@@ -64,4 +64,18 @@ public class Cart implements VoObject {
         po.setGmtCreate(this.getGmtCreate());
         return po;
     }
+
+    public CartRet getRetCart() {
+        CartRet bo=new CartRet();
+        bo.setId(this.getId());
+        bo.setCustomerId(this.getCustomerId());
+        bo.setGoodsSkuId(this.getGoodsSkuId());
+        bo.setSkuName(this.getSkuName());
+        bo.setQuantity(this.getQuantity());
+        bo.setPrice(this.getPrice());
+        bo.setCouponActivity(this.getCouponActivity());
+        bo.setGmtCreate(this.getGmtCreate());
+        bo.setGmtModified(this.getGmtModified());
+        return bo;
+    }
 }

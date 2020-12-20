@@ -158,24 +158,28 @@ public class CartDao {
         ShoppingCartPoExample.Criteria criteria = cartPoExample.createCriteria();
         criteria.andCustomerIdEqualTo(cart.getCustomerId());
         criteria.andGoodsSkuIdEqualTo(cart.getGoodsSkuId());
-        List<ShoppingCartPo> po=null;
+        List<ShoppingCartPo> po;
+        logger.error(cart.getGoodsSkuId().toString());
         try{
             po=shoppingCartPoMapper.selectByExample(cartPoExample);
-            if(po!=null) {
+            if(po!=null&&po.size()!=0) {
                 Integer num = po.get(0).getQuantity();
                 po.get(0).setQuantity(num + cart.getQuantity());
-
+                logger.error(po.toString());
                 int ret = shoppingCartPoMapper.updateByPrimaryKey(po.get(0));
                 if (ret == 0) {
                     return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST, String.format("购物车商品不存在"));
                 }
+                cart.setId(po.get(0).getId());
                 cart.setQuantity(po.get(0).getQuantity());
-                return new ReturnObject(cart);
             }else{
+                logger.error(cart.getGoodsSkuId().toString());
                 ShoppingCartPo shoppingCartPo=cart.createPo();
                 int ret= shoppingCartPoMapper.insertSelective(shoppingCartPo);
-                return new ReturnObject(cart);
+                logger.error(shoppingCartPo.getId().toString());
+                cart.setId(shoppingCartPo.getId());
             }
+            return new ReturnObject(cart);
         }catch (DataAccessException e){
             logger.error("addCarts: DataAccessException:" + e.getMessage());
             return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
@@ -196,9 +200,9 @@ public class CartDao {
      * @return
      */
     public ReturnObject<ShoppingCartPo> seleteById(Long id,Long userId) {
-        ShoppingCartPo po=null;
+
         try{
-            po=shoppingCartPoMapper.selectByPrimaryKey(id);
+            ShoppingCartPo po=shoppingCartPoMapper.selectByPrimaryKey(id);
             if (po==null)
             {
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, String.format("购物车id不存在"));
@@ -206,6 +210,7 @@ public class CartDao {
             else if (!po.getCustomerId().equals(userId)){
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_OUTSCOPE,String.format("用户未拥有"));
             }
+            return new ReturnObject(po);
         }catch (DataAccessException e){
             logger.error("addCarts: DataAccessException:" + e.getMessage());
             return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
@@ -215,7 +220,6 @@ public class CartDao {
             logger.error("other exception : " + e.getMessage());
             return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
         }
-        return new ReturnObject(po);
     }
 
     /**
@@ -227,15 +231,12 @@ public class CartDao {
      * @return
      */
     public ReturnObject changeCartInfo(Long id, Long userId, CartVo vo) {
-        ShoppingCartPoExample example=new ShoppingCartPoExample();
-        ShoppingCartPoExample.Criteria criteria=example.createCriteria();
-        criteria.andCustomerIdEqualTo(userId);
-        criteria.andIdEqualTo(id);
-        criteria.andGoodsSkuIdEqualTo(vo.getGoodSkuID());
-        criteria.andQuantityEqualTo(vo.getQuantity());
+
         try {
             ShoppingCartPo po=shoppingCartPoMapper.selectByPrimaryKey(id);
-            int ret=shoppingCartPoMapper.updateByExampleSelective(po,example);
+            po.setGoodsSkuId(vo.getGoodsSkuId());
+            po.setQuantity(vo.getQuantity());
+            int ret=shoppingCartPoMapper.updateByPrimaryKeySelective(po);
             if(ret==0){
                 return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("购物车商品不存在"));
             }
