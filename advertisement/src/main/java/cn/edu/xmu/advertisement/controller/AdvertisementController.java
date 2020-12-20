@@ -107,7 +107,7 @@ public class AdvertisementController {
 
         if(begin.isAfter(end)){
             httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
-            return Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID), httpServletResponse);
+            return Common.getNullRetObj(new ReturnObject<>(ResponseCode.Log_Bigger), httpServletResponse);
         }
 
         SimpleDateFormat sd=new SimpleDateFormat("yyyy-MM-dd");

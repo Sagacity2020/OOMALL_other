@@ -171,7 +171,7 @@ public class AdvertisementService{
 
         }
 
-        PageHelper.startPage(page,pageSize);
+        PageHelper.startPage(page,pageSize,true,true,null);
         ReturnObject<PageInfo<AdvertisementPo>>returnObject=advertisementDao.getAdvertisementBySegId(id,beginDate,endDate,page,pageSize);
 
         PageInfo<AdvertisementPo>pos=returnObject.getData();

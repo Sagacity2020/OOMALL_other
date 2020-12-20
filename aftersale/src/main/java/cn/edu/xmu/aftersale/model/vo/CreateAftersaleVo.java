@@ -22,7 +22,6 @@ public class CreateAftersaleVo {
     @ApiModelProperty(value = "商品数量")
     private Integer quantity;
 
-    @NotBlank(message = "原因不能为空")
     @ApiModelProperty(value = "申请原因")
     private String reason;
 
@@ -30,7 +29,6 @@ public class CreateAftersaleVo {
     @ApiModelProperty(value = "地区Id")
     private Long regionId;
 
-    @NotBlank(message = "详细地址不能为空")
     @ApiModelProperty(value = "详细地址")
     private String detail;
 

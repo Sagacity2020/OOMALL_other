@@ -125,7 +125,7 @@ public class AftersaleController {
             return returnObject;
         }
 
-        if(vo.getQuantity()<1 || vo.getReason().equals("")){
+        if(vo.getQuantity()<1){
             httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
             return Common.getNullRetObj(new ReturnObject<>(ResponseCode.FIELD_NOTVALID), httpServletResponse);
         }
@@ -215,7 +215,7 @@ public class AftersaleController {
     })
     @Audit // 需要认证
     @PutMapping("aftersales/{id}/confirm")
-    public Object confirmAftersaleById(@PathVariable Long id,@LoginUser @ApiIgnore @RequestParam(required = false) Long userId) {
+    public Object confirmAftersaleById(@PathVariable Long id,@LoginUser @ApiIgnore @RequestParam(required = false) Long userId,@Validated @RequestBody(required = false) AftersaleConfirmVo vo,BindingResult bindingResult) {
         if (logger.isDebugEnabled()) {
             logger.debug("confirmAftersaleById: id = "+ id);
         }
@@ -238,7 +238,7 @@ public class AftersaleController {
             @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
             @ApiImplicitParam(paramType = "path", dataType = "Long", name = "shopId", value = "店铺id", required = true),
             @ApiImplicitParam(paramType = "path", dataType = "Long", name = "id", value = "售后单id", required = true),
-            @ApiImplicitParam(paramType = "body", dataType = "AftersaleDeliverVo", name = "vo", value = "运单号", required = true)
+            @ApiImplicitParam(paramType = "body", dataType = "AftersaleDeliverVo", name = "vo", value = "运单号", required = false)
     })
     @ApiResponses({
             @ApiResponse(code = 0, message = "成功"),
@@ -246,7 +246,7 @@ public class AftersaleController {
     })
     @Audit // 需要认证
     @PutMapping("shops/{shopId}/aftersales/{id}/deliver")
-    public Object deliverAftersale(@PathVariable Long id, @PathVariable Long shopId,@Validated @RequestBody AftersaleDeliverVo vo,BindingResult bindingResult) {
+    public Object deliverAftersale(@PathVariable Long id, @PathVariable Long shopId,@Validated @RequestBody(required = false) AftersaleDeliverVo vo,BindingResult bindingResult) {
         if (logger.isDebugEnabled()) {
             logger.debug("deliverAftersale: id = "+ id+" vo = " + vo);
         }
@@ -316,6 +316,7 @@ public class AftersaleController {
             logger.info("incorrect data received while confirmAftersale id ="+id);
             return returnObject;
         }
+
 
         ReturnObject returnObj=aftersaleService.confirmAftersale(shopId,id,vo);
         return Common.decorateReturnObject(returnObj);

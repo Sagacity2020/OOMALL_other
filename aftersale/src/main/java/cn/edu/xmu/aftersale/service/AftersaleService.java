@@ -9,8 +9,10 @@ import cn.edu.xmu.aftersale.dao.AftersaleDao;
 import cn.edu.xmu.aftersale.model.bo.Aftersale;
 import cn.edu.xmu.aftersale.model.po.AftersaleServicePo;
 import cn.edu.xmu.aftersale.model.vo.*;
+import cn.edu.xmu.order.dto.InsertRefundDTO;
 import cn.edu.xmu.order.dto.OrderAftersaleDTO;
 import cn.edu.xmu.order.service.CreateOrderServiceInterface;
+import cn.edu.xmu.order.service.InsertAftersaleRefundInterface;
 import cn.edu.xmu.order.service.OrderServiceInterface;
 import cn.edu.xmu.order.dto.AftersaleDTO;
 import com.github.pagehelper.PageHelper;
@@ -47,6 +49,9 @@ public class AftersaleService{
     @DubboReference(version = "0.0.1")
     CreateOrderServiceInterface createOrderServiceInterface;
 
+    @DubboReference(version = "0.0.1")
+    InsertAftersaleRefundInterface insertAftersaleRefundInterface;
+
     /**
      * 买家修改售后单信息
      * @param id
@@ -71,9 +76,12 @@ public class AftersaleService{
         if(orderAftersaleDTO==null){
             return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
         }
-//       else if(orderAftersaleDTO.getShopId().equals(-2020L)){
-//           return new ReturnObject<>(ResponseCode.ORDER_STATENOTALLOW);
-//       }
+        else if(!orderAftersaleDTO.getCustomerId().equals(userId)){
+            return new ReturnObject<>(ResponseCode.RESOURCE_ID_OUTSCOPE);
+        }
+        else if(orderAftersaleDTO.getShopId().equals(-2020L)){
+            return new ReturnObject<>(ResponseCode.ORDER_STATENOTALLOW);
+        }
         Aftersale aftersaleBo=vo.createAftersale();
         aftersaleBo.setOrderItemId(id);
         aftersaleBo.setShopId(orderAftersaleDTO.getShopId());
@@ -116,6 +124,20 @@ public class AftersaleService{
      */
     @Transactional
     public ReturnObject<Object> confirmAftersaleById(Long id) {
+        ReturnObject returnObject1=aftersaleDao.getAftersaleById(id);
+        AftersaleServicePo po=(AftersaleServicePo)returnObject1.getData();
+
+        if(po!=null && po.getType().intValue()==1) {
+            InsertRefundDTO insertRefundDTO=new InsertRefundDTO();
+            insertRefundDTO.setAftersaleId(id);
+            insertRefundDTO.setOrderItemId(po.getOrderItemId());
+            insertRefundDTO.setAmount(po.getRefund());
+            logger.error("1");
+            logger.error(insertRefundDTO.toString());
+            Boolean ret=insertAftersaleRefundInterface.insertRefund(insertRefundDTO);
+            logger.error("2");
+        }
+
         return aftersaleDao.confirmAftersaleById(id);
     }
 
@@ -125,7 +147,7 @@ public class AftersaleService{
      */
     @Transactional
     public ReturnObject<Object> deliverAftersale(Long id, Long shopId, AftersaleDeliverVo vo) {
-        ReturnObject returnObject1=aftersaleDao.getAftersaleByShopId(shopId,id);
+        ReturnObject returnObject1=aftersaleDao.getAftersaleById(id);
         AftersaleServicePo po=(AftersaleServicePo)returnObject1.getData();
 
         Long orderId=null;
@@ -140,11 +162,10 @@ public class AftersaleService{
             aftersaleDTO.setRegionId(po.getRegionId());
             aftersaleDTO.setShopId(po.getShopId());
             aftersaleDTO.setOrderItemId(po.getOrderItemId());
+            aftersaleDTO.setCustomerId(po.getCustomerId());
 
             logger.error(aftersaleDTO.toString());
             orderId=createOrderServiceInterface.createAftersaleOrder(aftersaleDTO);
-
-            vo.setShopLogSn(null);
         }
 
         ReturnObject returnObject= aftersaleDao.deliverAftersale(id,shopId,vo,orderId);
@@ -166,6 +187,23 @@ public class AftersaleService{
      */
     @Transactional
     public ReturnObject<Object> confirmAftersale(Long shopId, Long id, AftersaleConfirmVo vo){
+
+        ReturnObject returnObject1=aftersaleDao.getAftersaleById(id);
+        AftersaleServicePo po=(AftersaleServicePo)returnObject1.getData();
+
+        OrderAftersaleDTO orderAftersaleDTO=orderServiceInterface.getAftersaleInfo(po.getOrderItemId());
+
+        if(orderAftersaleDTO==null){
+            return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
+        }
+
+        if(vo.getPrice()==null || vo.getPrice()==0){
+            vo.setPrice(orderAftersaleDTO.getActualPaidPrice());
+        }
+        else if(vo.getPrice()>orderAftersaleDTO.getActualPaidPrice()){
+            return new ReturnObject<>(ResponseCode.FIELD_NOTVALID);
+        }
+
         return aftersaleDao.confirmAftersale(shopId,id,vo);
     }
 

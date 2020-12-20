@@ -180,6 +180,7 @@ public class AftersaleDao {
         Aftersale user = new Aftersale(po);
         AftersaleServicePo aftersalePo = user.createDeliverPo(vo,orderId);
 
+
         // 更新数据库
         ReturnObject<Object> retObj=modifyAftersale(aftersalePo,id);
         if(retObj.getCode().equals(ResponseCode.OK)){
@@ -243,10 +244,12 @@ public class AftersaleDao {
             return new ReturnObject<>(ResponseCode.AFTERSALE_STATENOTALLOW);
         }
 
+
         Aftersale aftersale=new Aftersale(po);
         AftersaleServicePo aftersalePo=aftersale.createConfirmPo(vo);
 
         ReturnObject<Object> retObj=modifyAftersale(aftersalePo,id);
+
         if(retObj.getCode().equals(ResponseCode.OK)){
             logger.info("售后单 id = " + id + " 审核成功");
         }
@@ -363,9 +366,9 @@ public class AftersaleDao {
 
 
     public ReturnObject<PageInfo<AftersaleServicePo>>getAllAftersale(Long shopId,
-                                                                 LocalDateTime beginTime, LocalDateTime endTime,
-                                                                 Integer page, Integer pageSize,
-                                                                 Integer type,Integer state){
+                                                                     LocalDateTime beginTime, LocalDateTime endTime,
+                                                                     Integer page, Integer pageSize,
+                                                                     Integer type,Integer state){
         AftersaleServicePoExample example=new AftersaleServicePoExample();
         AftersaleServicePoExample.Criteria criteria=example.createCriteria();
         if(shopId==0){
@@ -464,7 +467,7 @@ public class AftersaleDao {
     }
 
     private ReturnObject<PageInfo<AftersaleServicePo>> selectAftersaleByExample(AftersaleServicePoExample example,
-                                                             Integer page, Integer pageSize) {
+                                                                                Integer page, Integer pageSize) {
         //PageHelper.startPage(page, pageSize);
 
         List<AftersaleServicePo> aftersalePos = null;
