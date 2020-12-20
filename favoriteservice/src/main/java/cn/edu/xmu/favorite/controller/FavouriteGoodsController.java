@@ -59,6 +59,7 @@ public class FavouriteGoodsController {
         pageSize = (pageSize == null)?10:pageSize;
         ReturnObject<PageInfo<VoObject>> returnObject =  favouriteGoodsService.getSelfFavouriteGoods(page, pageSize,customerId);
         logger.debug("getSelfFavouriteGoods: customer = " + customerId );
+
         return Common.getPageRetObject(returnObject);
     }
 
@@ -87,10 +88,13 @@ public class FavouriteGoodsController {
         logger.info("post FavouriteGoods: customer = " + customerId +"skuId"+skuId);
         ReturnObject<VoObject> retObject =  favouriteGoodsService.insertFavouriteGoods(customerId,skuId);
         logger.debug("getSelfFavouriteGoods: customer = " + customerId );
-        logger.info("post FavouriteGoods: customer = " + customerId );
+        logger.error("post FavouriteGoods: customer = " + customerId );
+        System.out.println("return"+retObject.toString());
+        System.out.println("return"+retObject.getData());
+
         if (retObject.getData() != null) {
             httpServletResponse.setStatus(HttpStatus.CREATED.value());
-            return Common.getRetObject(retObject);
+            return Common.decorateReturnObject(retObject);
         } else {
             return Common.getNullRetObj(new ReturnObject<>(retObject.getCode(), retObject.getErrmsg()), httpServletResponse);
         }

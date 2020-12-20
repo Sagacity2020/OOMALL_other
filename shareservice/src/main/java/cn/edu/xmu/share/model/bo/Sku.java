@@ -23,7 +23,10 @@ public class Sku {
         this.id = vo.getId();
         this.name = vo.getName();
         this.skuSn = vo.getSkuSn();
-        this.imageUrl = vo.getImageUrl();
+        if(vo.getImageUrl()==null)
+            this.imageUrl = "";
+        else
+            this.imageUrl = vo.getImageUrl();
         this.inventory =vo.getInventory();
         this.originalPrice = vo.getOriginalPrice();
         this.price = vo.getPrice();

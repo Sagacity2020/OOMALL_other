@@ -16,7 +16,7 @@ public class FavouriteGoodsRetVo {
     private LocalDateTime gmtCreate;
 
     @ApiModelProperty(value = "商品信息")
-    private GoodsSkuDTO goodsSku;
+    private GoodsSkuDTO goodsSku = new GoodsSkuDTO();
 
     public FavouriteGoodsRetVo(GoodsSkuDTO goodsSku){
 
@@ -24,9 +24,14 @@ public class FavouriteGoodsRetVo {
 
     public FavouriteGoodsRetVo(FavouriteGoods favouriteGoods)
     {
-        this.id=favouriteGoods.getId();
-        this.goodsSku=favouriteGoods.getGoodsSku();
-        this.gmtCreate=favouriteGoods.getGmtCreate();
+        try {
+            this.id = favouriteGoods.getId();
+            this.goodsSku = favouriteGoods.getGoodsSku();
+            this.gmtCreate = favouriteGoods.getGmtCreate();
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 //    public void setGoodsSku(GoodsSkuDto)
 //    {

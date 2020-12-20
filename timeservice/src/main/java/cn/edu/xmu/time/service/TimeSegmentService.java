@@ -136,19 +136,20 @@ public class TimeSegmentService {
 
         ReturnObject ret = timeSegmentDao.deleteFlTimeSegment(id);
 
-        if(ret.getCode().equals(ResponseCode.OK))
-        {
-            boolean updateFl;
-            updateFl=iGoodsService.setFlashSaleSegId(id);
-            if(updateFl)
-            {return ret;}
-            //修改对应秒杀的时间段失败
-            else {return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR);}
-        }
-        else
-        {
-            return ret;
-        }
+        return ret;
+//        if(ret.getCode().equals(ResponseCode.OK))
+//        {
+//            boolean updateFl;
+//            updateFl=iGoodsService.setFlashSaleSegId(id);
+//            if(updateFl)
+//            {return ret;}
+//            //修改对应秒杀的时间段失败
+//            else {return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR);}
+//        }
+//        else
+//        {
+//            return ret;
+//        }
     }
 
 }

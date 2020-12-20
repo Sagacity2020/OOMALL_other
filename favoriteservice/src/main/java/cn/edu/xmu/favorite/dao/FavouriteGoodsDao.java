@@ -145,7 +145,12 @@ public class FavouriteGoodsDao {
         ReturnObject<Object> retObj = null;
         try {
             FavouriteGoodsPo po =favouriteGoodsPoMapper.selectByPrimaryKey(id);
-            if(po.getCustomerId().longValue() == customerId.longValue())
+            if(po==null)
+            {
+                System.out.println("null"+id);
+                return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, String.format("收藏id不存在：" + id));
+            }
+            if(!(po.getCustomerId().longValue() == customerId.longValue()))
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_OUTSCOPE);
             int ret = favouriteGoodsPoMapper.deleteByPrimaryKey(id);
             if (ret == 0) {
