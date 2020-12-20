@@ -85,7 +85,8 @@ public class FavouriteGoodsDao {
                 logger.debug("insert fail");
                 retObj=new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, String.format("收藏商品失败：" + favouriteGoodsPo.getGoodsSkuId()));
             }else{
-                logger.debug(" insert favouriteGoods = " + favouriteGoodsPo.toString());
+                logger.info(" insert favouriteGoods = " + favouriteGoodsPo.toString());
+                System.out.println(" insert favouriteGoods = " + favouriteGoodsPo.toString());
                 favouriteGoods.setId(favouriteGoodsPo.getId());
                 retObj=new ReturnObject<>(favouriteGoods);
             }
@@ -103,6 +104,35 @@ public class FavouriteGoodsDao {
         return retObj;
     }
 
+//    public ReturnObject<VoObject> insertFavouriteGoods(FavouriteGoods favouriteGoods)
+//    {
+//        FavouriteGoodsPo favouriteGoodsPo=favouriteGoods.gotFavouriteGoodsPo();
+//        ReturnObject<VoObject> retObj =null;
+//        try{
+//            int ret = favouriteGoodsPoMapper.insertSelective(favouriteGoodsPo);
+//            if(ret==0){
+//                logger.debug("insert fail");
+//                retObj=new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, String.format("收藏商品失败：" + favouriteGoodsPo.getGoodsSkuId()));
+//            }else{
+//                logger.info(" insert favouriteGoods = " + favouriteGoodsPo.toString());
+//                System.out.println(" insert favouriteGoods = " + favouriteGoodsPo.toString());
+//                favouriteGoods.setId(favouriteGoodsPo.getId());
+//                retObj=new ReturnObject<VoObject>(favouriteGoods);
+//            }
+//        }
+//        catch(DataAccessException e){
+//            logger.debug("other sql exception : " + e.getMessage());
+//            retObj = new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
+//        }
+//
+//        catch (Exception e) {
+//            // 其他Exception错误
+//            logger.error("other exception : " + e.getMessage());
+//            retObj = new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
+//        }
+//        return retObj;
+//    }
+
     /**
      * 取消收藏
      * @author zwl
@@ -110,13 +140,22 @@ public class FavouriteGoodsDao {
      * @return
      * @Date:  2020/12/6 21:49
      */
-    public ReturnObject<Object> deleteFavouriteGoods(Long id)
+    public ReturnObject<Object> deleteFavouriteGoods(Long customerId,Long id)
     {
         ReturnObject<Object> retObj = null;
         try {
+            FavouriteGoodsPo po =favouriteGoodsPoMapper.selectByPrimaryKey(id);
+            if(po==null)
+            {
+                System.out.println("null"+id);
+                return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, String.format("收藏id不存在：" + id));
+            }
+            if(!(po.getCustomerId().longValue() == customerId.longValue()))
+                return new ReturnObject<>(ResponseCode.RESOURCE_ID_OUTSCOPE);
             int ret = favouriteGoodsPoMapper.deleteByPrimaryKey(id);
             if (ret == 0) {
                 logger.debug("deleteFavouriteGoods: id not exist = " + id);
+                System.out.println("deleteFavouriteGoods: id not exist = " + id);
                 retObj = new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, String.format("收藏id不存在：" + id));
             } else {
                 retObj= new ReturnObject(ResponseCode.OK);

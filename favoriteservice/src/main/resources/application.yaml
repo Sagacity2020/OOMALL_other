@@ -21,7 +21,7 @@ dubbo:
   scan:
     base-packages: cn.edu.xmu.favorite.service.impl
   registry:
-    address: nacos://localhost:8848
+    address: nacos://192.168.43.61:8848
   # 设置协议-协议由提供方指定消费方被动接受
   protocol:
     name: dubbo

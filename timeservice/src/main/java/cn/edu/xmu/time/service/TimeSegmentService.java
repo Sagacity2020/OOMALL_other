@@ -1,5 +1,6 @@
 package cn.edu.xmu.time.service;
 
+import cn.edu.xmu.goods.service.GoodsServiceInterface;
 import cn.edu.xmu.ooad.model.VoObject;
 import cn.edu.xmu.ooad.util.ResponseCode;
 import cn.edu.xmu.ooad.util.ReturnObject;
@@ -26,6 +27,9 @@ public class TimeSegmentService {
     @DubboReference(version = "0.0.1")
     AdServiceInterface iAdService;
 
+    @DubboReference(version = "0.0.1")
+    GoodsServiceInterface iGoodsService;
+
     public ReturnObject<PageInfo<VoObject>> selectAdTimeSegments(Integer pageNum, Integer pageSize)
     {
         ReturnObject<PageInfo<VoObject>> returnObject = timeSegmentDao.selectAdTimeSegments(pageNum, pageSize);
@@ -35,22 +39,23 @@ public class TimeSegmentService {
     /**
      * 新增广告时段
      * @author zwl
-     * @param vo
+     * @param
      * @return ReturnObject<VoObject> 时间段返回视图
      */
     @Transactional
-    public ReturnObject<VoObject> insertAdTimeSegment(TimeSegment timeSegment)
+    public ReturnObject insertAdTimeSegment(TimeSegment timeSegment)
     {
         timeSegment.setType((byte)0);
         timeSegment.setGmtCreate(LocalDateTime.now());
         ReturnObject<TimeSegment> retObj = timeSegmentDao.insertAdTimeSegment(timeSegment);
-        ReturnObject<VoObject> retTimeSegment = null;
-        if (retObj.getCode().equals(ResponseCode.OK)) {
-            retTimeSegment = new ReturnObject<>(retObj.getData());
-        } else {
-            retTimeSegment = new ReturnObject<>(retObj.getCode(), retObj.getErrmsg());
-        }
-        return retTimeSegment;
+        return retObj;
+//        ReturnObject<VoObject> retTimeSegment = null;
+//        if (retObj.getCode().equals(ResponseCode.OK)) {
+//            retTimeSegment = new ReturnObject<>(retObj.getData());
+//        } else {
+//            retTimeSegment = new ReturnObject<>(retObj.getCode(), retObj.getErrmsg());
+//        }
+//        return retTimeSegment;
     }
 
     /**
@@ -97,22 +102,27 @@ public class TimeSegmentService {
     /**
      * 新增秒杀时段
      * @author zwl
-     * @param vo
+     * @param
      * @return ReturnObject<VoObject> 时间段返回视图
      */
     @Transactional
-    public ReturnObject<VoObject> insertFlTimeSegment(TimeSegment timeSegment)
+    public ReturnObject insertFlTimeSegment(TimeSegment timeSegment)
     {
         timeSegment.setType((byte)1);
         timeSegment.setGmtCreate(LocalDateTime.now());
         ReturnObject<TimeSegment> retObj = timeSegmentDao.insertFlTimeSegment(timeSegment);
-        ReturnObject<VoObject> retTimeSegment = null;
-        if (retObj.getCode().equals(ResponseCode.OK)) {
-            retTimeSegment = new ReturnObject<>(retObj.getData());
-        } else {
-            retTimeSegment = new ReturnObject<>(retObj.getCode(), retObj.getErrmsg());
-        }
-        return retTimeSegment;
+        return retObj;
+
+//        timeSegment.setType((byte)1);
+//        timeSegment.setGmtCreate(LocalDateTime.now());
+//        ReturnObject<TimeSegment> retObj = timeSegmentDao.insertFlTimeSegment(timeSegment);
+//        ReturnObject<VoObject> retTimeSegment = null;
+//        if (retObj.getCode().equals(ResponseCode.OK)) {
+//            retTimeSegment = new ReturnObject<>(retObj.getData());
+//        } else {
+//            retTimeSegment = new ReturnObject<>(retObj.getCode(), retObj.getErrmsg());
+//        }
+//        return retTimeSegment;
     }
 
     /**
@@ -124,22 +134,22 @@ public class TimeSegmentService {
     @Transactional
     public ReturnObject<Object> deleteFlTimeSegment(Long id) {
 
-        //       ReturnObject ret = timeSegmentDao.deleteFlTimeSegment(id);
+        ReturnObject ret = timeSegmentDao.deleteFlTimeSegment(id);
 
+        return ret;
 //        if(ret.getCode().equals(ResponseCode.OK))
 //        {
 //            boolean updateFl;
-//            updateFl=iFlService.updateFlSegId(id);
+//            updateFl=iGoodsService.setFlashSaleSegId(id);
 //            if(updateFl)
 //            {return ret;}
-//            //修改对应广告的时间段失败
+//            //修改对应秒杀的时间段失败
 //            else {return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR);}
 //        }
 //        else
 //        {
 //            return ret;
 //        }
-        return timeSegmentDao.deleteFlTimeSegment(id);
     }
 
 }

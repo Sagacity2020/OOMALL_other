@@ -14,7 +14,7 @@ public class Share implements VoObject{
     private Long id;
     private Long sharerId;
     private Long goodsSkuId;
-        private GoodsSkuDTO goodSkuVo = new GoodsSkuDTO();
+    private GoodsSkuDTO goodSkuVo = new GoodsSkuDTO();
     private Integer quantity;
     private LocalDateTime gmtCreate;
     private LocalDateTime gmtModified;

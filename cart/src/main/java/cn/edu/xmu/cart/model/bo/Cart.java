@@ -8,6 +8,7 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Created at 12/11 8:50
@@ -21,7 +22,7 @@ public class Cart implements VoObject {
     private Integer quantity;
     private String skuName;
     private Long price;
-    private ArrayList<CouponActivityDTO> couponActivity;
+    private List<CouponActivityDTO> couponActivity;
     private LocalDateTime gmtCreate;
     private LocalDateTime gmtModified;
 
@@ -62,5 +63,19 @@ public class Cart implements VoObject {
         po.setPrice(this.getPrice());
         po.setGmtCreate(this.getGmtCreate());
         return po;
+    }
+
+    public CartRet getRetCart() {
+        CartRet bo=new CartRet();
+        bo.setId(this.getId());
+        bo.setCustomerId(this.getCustomerId());
+        bo.setGoodsSkuId(this.getGoodsSkuId());
+        bo.setSkuName(this.getSkuName());
+        bo.setQuantity(this.getQuantity());
+        bo.setPrice(this.getPrice());
+        bo.setCouponActivity(this.getCouponActivity());
+        bo.setGmtCreate(this.getGmtCreate());
+        bo.setGmtModified(this.getGmtModified());
+        return bo;
     }
 }

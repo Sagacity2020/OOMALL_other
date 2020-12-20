@@ -3,6 +3,7 @@ package cn.edu.xmu.cart.service;
 
 import cn.edu.xmu.cart.dao.CartDao;
 import cn.edu.xmu.cart.model.bo.Cart;
+import cn.edu.xmu.cart.model.bo.CartRet;
 import cn.edu.xmu.cart.model.po.ShoppingCartPo;
 import cn.edu.xmu.cart.model.vo.CartRetVo;
 import cn.edu.xmu.cart.model.vo.CartVo;
@@ -49,7 +50,36 @@ public class CartService {
      * @return
      */
     public ReturnObject<PageInfo<VoObject>> selectAllCart(Long userId, Integer page, Integer pageSize) {
-        return cartDao.seleteByUserId(userId,page,pageSize);
+        PageInfo<ShoppingCartPo> shoppingCartPoPageInfo=cartDao.seleteByUserId(userId,page,pageSize);
+        List<VoObject> carts=new ArrayList<>();
+        for(ShoppingCartPo po:shoppingCartPoPageInfo.getList()){
+            Cart cart=new Cart(po);
+            logger.error("123");
+            List<CouponActivityDTO> couponActivityDTOS=new ArrayList<>();
+            try {
+                couponActivityDTOS = couponService.getCouponActivityAlone(cart.getCustomerId(), cart.getGoodsSkuId());
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            cart.setCouponActivity(couponActivityDTOS);
+            logger.error(couponActivityDTOS.toString());
+            GoodsSkuInfo goodsSkuInfo =null;
+            try {
+                goodsSkuInfo = goodsService.getGoodsSkuInfoAlone(cart.getGoodsSkuId());
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            cart.setSkuName(goodsSkuInfo.getSkuName());
+//            cart.setPrice(goodsSkuInfo.getPrice());
+            logger.error(goodsSkuInfo.getSkuName()+goodsSkuInfo.getPrice());
+            carts.add(cart);
+        }
+        PageInfo<VoObject> returnObject=new PageInfo<>(carts);
+        returnObject.setPages(shoppingCartPoPageInfo.getPages());
+        returnObject.setPageSize(shoppingCartPoPageInfo.getPageSize());
+        returnObject.setPageNum(shoppingCartPoPageInfo.getPageNum());
+        returnObject.setTotal(shoppingCartPoPageInfo.getTotal());
+        return new ReturnObject<>(returnObject);
 
     }
 
@@ -77,12 +107,27 @@ public class CartService {
      */
     public ReturnObject addCartGood(Cart cart) {
         Long goodSkuId=cart.getGoodsSkuId();
-        GoodsSkuInfo goodsSkuInfo=goodsService.getGoodsSkuInfoAlone(goodSkuId);
+        GoodsSkuInfo goodsSkuInfo =new GoodsSkuInfo();
+        logger.error(goodSkuId.toString());
+        try {
+            goodsSkuInfo = goodsService.getGoodsSkuInfoAlone(goodSkuId);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        logger.error("查询sku信息");
+        logger.error(goodsSkuInfo.getSkuName());
+        logger.error(goodsSkuInfo.getPrice().toString());
+        logger.error("name="+goodsSkuInfo.getSkuName()+"price="+goodsSkuInfo.getPrice());
         if (goodsSkuInfo==null){
             return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("商品sku不存在"));
         }
-
-        cart.setCouponActivity(couponService.getCouponActivityAlone(cart.getCustomerId(),cart.getGoodsSkuId()));
+        try {
+            List<CouponActivityDTO> couponActivityDTOS = couponService.getCouponActivityAlone(cart.getCustomerId(), cart.getGoodsSkuId());
+            cart.setCouponActivity(couponActivityDTOS);
+            logger.error("123");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         cart.setSkuName(goodsSkuInfo.getSkuName());
         cart.setPrice(goodsSkuInfo.getPrice());
         ReturnObject<Cart> cartReturnObject=cartDao.addCart(cart);
@@ -90,8 +135,8 @@ public class CartService {
             return cartReturnObject;
         }
         Cart cart1=cartReturnObject.getData();
-        CartRetVo cartRetVo=new CartRetVo(cart1);
-        return new ReturnObject(cartRetVo);
+        CartRet cartRet=cart1.getRetCart();
+        return new ReturnObject(cartRet);
     }
 
 
@@ -108,11 +153,19 @@ public class CartService {
         if(returnObject.getData()==null){
             return returnObject;
         }
-        ShoppingCartPo shoppingCartPo= returnObject.getData();
-        Boolean ret=goodsService.anbleChange(vo.getGoodSkuID(),shoppingCartPo.getGoodsSkuId());
 
+        ShoppingCartPo shoppingCartPo= returnObject.getData();
+        logger.debug(shoppingCartPo.toString());
+        Boolean ret=goodsService.anbleChange(vo.getGoodsSkuId(),shoppingCartPo.getGoodsSkuId());
+        logger.debug(ret.toString());
         if(ret==true){
-            return cartDao.changeCartInfo(id,userId,vo);
+            Cart cart=new Cart();
+            cart.setId(id);
+            cart.setCustomerId(userId);
+            cart.setGoodsSkuId(vo.getGoodsSkuId());
+            cart.setQuantity(vo.getQuantity());
+            cart.setPrice(goodsService.getGoodsSkuInfoAlone(vo.getGoodsSkuId()).getPrice());
+            return cartDao.changeCartInfo(cart);
         }
         else{
             return new ReturnObject(ResponseCode.FIELD_NOTVALID,String.format("不属于一个spu商品"));

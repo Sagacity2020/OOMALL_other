@@ -21,6 +21,7 @@ public interface GoodsServiceInterface {
 
     Boolean updateFlSegId(Long segId);
 
+    Boolean setFlashSaleSegId(Long segId);
     /**
      * 查看一个skuId是否存在
      *

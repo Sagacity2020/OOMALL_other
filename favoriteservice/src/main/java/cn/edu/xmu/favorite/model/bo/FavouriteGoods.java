@@ -30,7 +30,7 @@ public class FavouriteGoods implements VoObject {
     private LocalDateTime gmtModified;
 
     @ApiModelProperty(value = "商品信息")
-    private GoodsSkuDTO goodsSku;
+    private GoodsSkuDTO goodsSku = new GoodsSkuDTO();
 
     /**
      *

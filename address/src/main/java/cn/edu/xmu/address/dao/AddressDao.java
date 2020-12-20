@@ -50,8 +50,7 @@ public class AddressDao {
 
     public ReturnObject<Address> insertAddress(Address address){
         AddressPo addressPo = address.getAddressPo();
-        List<AddressPo> retObj=null;
-        ReturnObject<Address> returnObject;
+        List<AddressPo> retObj;
         AddressPoExample addressPoExample= new AddressPoExample();
         AddressPoExample.Criteria criteria=addressPoExample.createCriteria();
         criteria.andCustomerIdEqualTo(address.getCustomer_id());
@@ -61,19 +60,19 @@ public class AddressDao {
         }
         catch (DataAccessException e){
             logger.debug("sql exception:"+e.getMessage());
-            returnObject= new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误：%s",e.getMessage()));
+            return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("数据库错误：%s",e.getMessage()));
 
         }
         catch (Exception e)
         {
             logger.error("other exception :"+e.getMessage());
-            returnObject= new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("严重错误",e.getMessage()));
+            return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR,String.format("严重错误",e.getMessage()));
         }
         int length=retObj.size();
         int maxAddressNum=20;
         if(length==maxAddressNum){
             logger.error("地址簿达到上限");
-            returnObject= new ReturnObject(ResponseCode.ADDRESS_OUTLIMIT,String.format("地址簿达到上限"));
+            return new ReturnObject(ResponseCode.ADDRESS_OUTLIMIT,String.format("地址簿达到上限"));
         }
         if(retObj==null){
             addressPo.setBeDefault((byte)1);
@@ -84,25 +83,24 @@ public class AddressDao {
             if(ret==0)
             {
                 logger.debug("insertAddress: insert address fail "+addressPo.toString());
-                returnObject= new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("新增失败："+addressPo.getCustomerId()));
+                return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("新增失败："+addressPo.getCustomerId()));
             }
             else {
                 logger.debug("insertAddree: insert address="+addressPo.toString());
-                returnObject= new ReturnObject(address);
+                return new ReturnObject(address);
             }
         }
         catch (DataAccessException e) {
 
             logger.debug("other sql exception : " + e.getMessage());
-            returnObject= new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
+            return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
         }
         catch (Exception e) {
             // 其他Exception错误
             logger.error("other exception : " + e.getMessage());
-            returnObject= new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
+            return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
         }
 
-        return returnObject;
 
 
     }
@@ -116,23 +114,18 @@ public class AddressDao {
      * @param pageSize
      * @return
      */
-    public ReturnObject<PageInfo<VoObject>> selectAllAddress(Long userId, Integer page, Integer pageSize) {
+    public ReturnObject<PageInfo<AddressPo>> selectAllAddress(Long userId, Integer page, Integer pageSize) {
         AddressPoExample example = new AddressPoExample();
         AddressPoExample.Criteria criteria = example.createCriteria();
         criteria.andCustomerIdEqualTo(userId);
         //分页查询
-        PageHelper.startPage(page, pageSize);
+
         logger.debug("page = " + page + "pageSize = " + pageSize);
         List<AddressPo> addressPos=null;
         try {
             //不加限定条件查询所有
             addressPos = addressPoMapper.selectByExample(example);
-            List<VoObject> ret = new ArrayList(addressPos.size());
-            for (AddressPo po : addressPos) {
-                AddressPage addressPage = new AddressPage(po);
-                ret.add(addressPage);
-            }
-            PageInfo<VoObject> addressPage = PageInfo.of(ret);
+            PageInfo<AddressPo> addressPage=new PageInfo<>(addressPos);
             return new ReturnObject<>(addressPage);
         }
         catch (DataAccessException e){
@@ -662,7 +655,6 @@ public class AddressDao {
         RegionPo regionPo=regionPoMapper.selectByPrimaryKey(id);
         List<Region> regions=new ArrayList<>();
         Region region=new Region(regionPo);
-        regions.add(region);
         Long ret=region.getPid();
         while(ret!=0){
             RegionPo regionPo1=regionPoMapper.selectByPrimaryKey(ret);

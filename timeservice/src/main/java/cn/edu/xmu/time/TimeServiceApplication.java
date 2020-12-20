@@ -17,7 +17,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @author zwl
  **/
 @EnableSwagger2
-@SpringBootApplication(scanBasePackages = {"cn.edu.xmu.time"})
+@SpringBootApplication(scanBasePackages = {"cn.edu.xmu.time","cn.edu.xmu.ooad"})
 @MapperScan("cn.edu.xmu.time.mapper")
 //@EnableDubbo(scanBasePackages = "cn.edu.xmu.oomall.other.service")
 public class TimeServiceApplication implements ApplicationRunner{

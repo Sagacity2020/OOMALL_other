@@ -8,7 +8,7 @@ public class GoodsSku {
     private Long id;
     private String name;
     private String skuSn;
-    private String imgUrl;
+    private String imageUrl;
     private Integer inventory;
     private Integer originalPrice;
     private Integer price;
@@ -18,7 +18,7 @@ public class GoodsSku {
         id=dto.getId();
         name=dto.getName();
         skuSn=dto.getSkuSn();
-        imgUrl=dto.getImgUrl();
+        imageUrl=dto.getImageUrl();
         inventory=dto.getInventory();
         originalPrice=dto.getOriginalPrice();
         price=dto.getPrice();

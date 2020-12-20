@@ -289,4 +289,23 @@ public class ShareDao {
             return null;
         }
     }
+    /**
+     * 根据分享id获得skuid
+     * @author zxh
+     * @param sid 分享id
+     * @return Long skuId
+     * @Date 2020/12/20 19:40
+     */
+    public Long getSkuIdByShareId(Long sid)
+    {
+        SharePo sharePo = sharePoMapper.selectByPrimaryKey(sid);
+        if(sharePo == null)
+        {
+            return 0L;
+        }
+        else
+        {
+            return sharePo.getGoodsSkuId();
+        }
+    }
 }

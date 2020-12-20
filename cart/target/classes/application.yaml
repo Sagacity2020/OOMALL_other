@@ -5,11 +5,26 @@ management:
         include: "*"
 
 server:
-  port: 8080
+  port: 8085
   servlet:
     threads:
       max: 1000
     context-path:
+
+dubbo:
+  application:
+     name: cart-service
+  scan:
+     base-packages: cn.edu.xmu.cart.service
+  registry:
+     address: nacos://192.168.43.61:8848
+  protocol:
+     name: dubbo
+     port: -1
+  consumer:
+    timeout: 4000
+    check: false
+
 
 spring:
   application:

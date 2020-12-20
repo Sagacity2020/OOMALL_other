@@ -132,7 +132,7 @@ public class CustomerDao {
         }
         if(customer==null){
             logger.info("getCustomerInfo failed:customerId is not Exist");
-            retObj = new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, String.format("用户id不存在"));
+            retObj = new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("用户id不存在"));
         }
         else{
             Customer bo=new Customer(customer);
@@ -283,6 +283,7 @@ public class CustomerDao {
 
         return retObj;
     }
+
 
     public ReturnObject<PageInfo<VoObject>> getCustomerAll(String userName, String email, String mobile, Integer page, Integer pageSize){
         PageHelper.startPage(page, pageSize);

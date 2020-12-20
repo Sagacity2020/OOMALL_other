@@ -4,6 +4,7 @@ import cn.edu.xmu.favorite.dao.FavouriteGoodsDao;
 import cn.edu.xmu.favorite.model.bo.FavouriteGoods;
 import cn.edu.xmu.favorite.model.po.FavouriteGoodsPo;
 
+import cn.edu.xmu.favorite.model.vo.FavouriteGoodsRetVo;
 import cn.edu.xmu.goods.dto.GoodsSkuDTO;
 import cn.edu.xmu.goods.service.GoodsServiceInterface;
 import cn.edu.xmu.ooad.model.VoObject;
@@ -43,6 +44,7 @@ public class FavouriteGoodsService {
     {
         PageHelper.startPage(pageNum, pageSize);
         PageInfo<FavouriteGoodsPo> favouriteGoodsPos = favouriteGoodsDao.getSelfFavouriteGoods(pageNum,pageSize,customerId);
+        System.out.println(favouriteGoodsPos);
         List<VoObject> favouriteGoodsList= new ArrayList<>();
         for (FavouriteGoodsPo po:favouriteGoodsPos.getList()) {
             FavouriteGoods favouriteGoods=new FavouriteGoods(po);
@@ -51,6 +53,7 @@ public class FavouriteGoodsService {
             favouriteGoodsList.add(favouriteGoods);
         }
 
+        System.out.println("goods"+favouriteGoodsList);
         PageInfo<VoObject> returnObject= PageInfo.of(favouriteGoodsList);
         returnObject.setPages( favouriteGoodsPos.getPages());
         returnObject.setPageNum( favouriteGoodsPos.getPageNum());
@@ -69,20 +72,42 @@ public class FavouriteGoodsService {
      */
 
     @Transactional
-    public ReturnObject<VoObject> insertFavouriteGoods(Long customerId, Long skuId)
+    public ReturnObject insertFavouriteGoods(Long customerId, Long skuId)
     {
+        System.out.println("service1");
+        //判断skuid是否存在
+        if(!iGoodsService.hasGoodsSku(skuId))
+        {
+            System.out.println("service2");
+            return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("商品id不存在"));
+        }
+
+        System.out.println("service3");
         FavouriteGoods favouriteGoods = new FavouriteGoods();
         favouriteGoods.setGoodsSkuId(skuId);
         favouriteGoods.setCustomerId(customerId);
         favouriteGoods.setGmtCreate(LocalDateTime.now());
         ReturnObject<FavouriteGoods> retObj =favouriteGoodsDao.insertFavouriteGoods(favouriteGoods);
+        System.out.println("service4"+retObj.toString());
         ReturnObject<VoObject> retFavouriteGoods=null;
         if(retObj.getCode().equals(ResponseCode.OK)){
-            retFavouriteGoods=new ReturnObject<>(retObj.getData());
+            FavouriteGoodsRetVo ret= new FavouriteGoodsRetVo(retObj.getData());
+            System.out.println("service5"+ret.getId()+ret.getGmtCreate());
+            GoodsSkuDTO goodsSku=iGoodsService.getSkuById(skuId);
+            System.out.println("service6");
+            System.out.println("service6.5"+goodsSku.toString());
+
+//            ret.setGmtCreate(retObj.getData().getGmtCreate());
+//            ret.setId(retObj.getData().getId());
+                ret.setGoodsSku(goodsSku);
+            System.out.println("service7"+ret.toString());
+            return new ReturnObject<>(ret);
+            //retFavouriteGoods=new ReturnObject<>(retObj.getData());
         }else{
             retFavouriteGoods=new ReturnObject<>(retObj.getCode(),retObj.getErrmsg());
+            return  retFavouriteGoods;
         }
-        return  retFavouriteGoods;
+
     }
 
     /**
@@ -92,8 +117,8 @@ public class FavouriteGoodsService {
      * @return
      * @Date:  2020/12/6 21:47
      */
-    public ReturnObject<Object> deleteFavouriteGoods(Long id)
+    public ReturnObject<Object> deleteFavouriteGoods(Long customerId,Long id)
     {
-        return favouriteGoodsDao.deleteFavouriteGoods(id);
+        return favouriteGoodsDao.deleteFavouriteGoods(customerId,id);
     }
 }
