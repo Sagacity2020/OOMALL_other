@@ -1,0 +1,8 @@
+2020-12-20 17:23:55.673 [DubboServerHandler-192.168.43.96:20880-thread-2] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-20 17:23:56.033 [DubboServerHandler-192.168.43.96:20880-thread-3] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-20 17:25:47.808 [DubboServerHandler-192.168.43.96:20880-thread-4] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-20 17:25:47.839 [DubboServerHandler-192.168.43.96:20880-thread-5] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-20 17:27:07.162 [DubboServerHandler-192.168.43.96:20880-thread-8] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-20 17:27:07.205 [DubboServerHandler-192.168.43.96:20880-thread-9] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-20 17:29:38.778 [DubboServerHandler-192.168.43.96:20880-thread-12] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
+2020-12-20 17:29:38.841 [DubboServerHandler-192.168.43.96:20880-thread-13] INFO  cn.edu.xmu.customer.dao.CustomerDao - id1
