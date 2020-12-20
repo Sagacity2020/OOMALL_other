@@ -4,6 +4,7 @@ import cn.edu.xmu.favorite.dao.FavouriteGoodsDao;
 import cn.edu.xmu.favorite.model.bo.FavouriteGoods;
 import cn.edu.xmu.favorite.model.po.FavouriteGoodsPo;
 
+import cn.edu.xmu.favorite.model.vo.FavouriteGoodsRetVo;
 import cn.edu.xmu.goods.dto.GoodsSkuDTO;
 import cn.edu.xmu.goods.service.GoodsServiceInterface;
 import cn.edu.xmu.ooad.model.VoObject;
@@ -43,6 +44,7 @@ public class FavouriteGoodsService {
     {
         PageHelper.startPage(pageNum, pageSize);
         PageInfo<FavouriteGoodsPo> favouriteGoodsPos = favouriteGoodsDao.getSelfFavouriteGoods(pageNum,pageSize,customerId);
+        System.out.println(favouriteGoodsPos);
         List<VoObject> favouriteGoodsList= new ArrayList<>();
         for (FavouriteGoodsPo po:favouriteGoodsPos.getList()) {
             FavouriteGoods favouriteGoods=new FavouriteGoods(po);
@@ -51,6 +53,7 @@ public class FavouriteGoodsService {
             favouriteGoodsList.add(favouriteGoods);
         }
 
+        System.out.println("goods"+favouriteGoodsList);
         PageInfo<VoObject> returnObject= PageInfo.of(favouriteGoodsList);
         returnObject.setPages( favouriteGoodsPos.getPages());
         returnObject.setPageNum( favouriteGoodsPos.getPageNum());
@@ -69,8 +72,14 @@ public class FavouriteGoodsService {
      */
 
     @Transactional
-    public ReturnObject<VoObject> insertFavouriteGoods(Long customerId, Long skuId)
+    public ReturnObject insertFavouriteGoods(Long customerId, Long skuId)
     {
+        //判断skuid是否存在
+        if(!iGoodsService.hasGoodsSku(skuId))
+        {
+            return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("商品id不存在"));
+        }
+
         FavouriteGoods favouriteGoods = new FavouriteGoods();
         favouriteGoods.setGoodsSkuId(skuId);
         favouriteGoods.setCustomerId(customerId);
@@ -78,11 +87,18 @@ public class FavouriteGoodsService {
         ReturnObject<FavouriteGoods> retObj =favouriteGoodsDao.insertFavouriteGoods(favouriteGoods);
         ReturnObject<VoObject> retFavouriteGoods=null;
         if(retObj.getCode().equals(ResponseCode.OK)){
-            retFavouriteGoods=new ReturnObject<>(retObj.getData());
+            FavouriteGoodsRetVo ret=null;
+            GoodsSkuDTO goodsSku=iGoodsService.getSkuById(skuId);
+            ret.setGmtCreate(retObj.getData().getGmtCreate());
+            ret.setId(retObj.getData().getId());
+            ret.setGoodsSku(goodsSku);
+            return new ReturnObject<>(ret);
+            //retFavouriteGoods=new ReturnObject<>(retObj.getData());
         }else{
             retFavouriteGoods=new ReturnObject<>(retObj.getCode(),retObj.getErrmsg());
+            return  retFavouriteGoods;
         }
-        return  retFavouriteGoods;
+
     }
 
     /**

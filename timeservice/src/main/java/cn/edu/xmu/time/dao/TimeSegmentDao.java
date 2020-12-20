@@ -68,7 +68,14 @@ public class TimeSegmentDao {
             TimeSegment timeSegment = new TimeSegment(po);
             ret.add(timeSegment);
         }
+        PageInfo<TimeSegmentPo> timeSegmentPoPage = PageInfo.of(timeSegmentPoList);
         PageInfo<VoObject> timeSegmentPage = PageInfo.of(ret);
+        timeSegmentPage.setPageNum(timeSegmentPoPage.getPageNum());
+        timeSegmentPage.setPageSize(timeSegmentPoPage.getPageSize());
+        timeSegmentPage.setPages(timeSegmentPoPage.getPages());
+        timeSegmentPage.setTotal(timeSegmentPoPage.getTotal());
+        //最后一页没设置
+
         return new ReturnObject<>(timeSegmentPage);
     }
 
@@ -114,7 +121,7 @@ public class TimeSegmentDao {
                 {return new ReturnObject<>(ResponseCode.TIMESEG_CONFLICT,String.format("时间段重复：" + po.getBeginTime()+"  "+po.getEndTime()));}
 
                 //冲突
-                if(!((beginTime.isBefore(poBeginTime)&&endTime.isBefore(poEndTime))||(beginTime.isAfter(poEndTime)&& endTime.isAfter(poEndTime))))
+                if(!((beginTime.isBefore(poBeginTime)&&(endTime.isBefore(poEndTime)||endTime.equals(poBeginTime)))||((beginTime.isAfter(poEndTime)||beginTime.equals(poEndTime))&& endTime.isAfter(poEndTime))))
                 { return new ReturnObject<>(ResponseCode.TIMESEG_CONFLICT, String.format("时间段冲突：" + po.getBeginTime()+"  "+po.getEndTime()));}
             }
 
@@ -153,6 +160,7 @@ public class TimeSegmentDao {
         ReturnObject<Object> retObj = null;
 
         try {
+            System.out.println("删除时间段");
             TimeSegmentPo po =timeSegmentPoMapper.selectByPrimaryKey(id);
             if(!po.getType().equals((byte)0))
             {
@@ -166,6 +174,7 @@ public class TimeSegmentDao {
             }
             else{
                 //iAdService.updateAdSegId(id);
+
                 return new ReturnObject(ResponseCode.OK);
             }
         }catch (DataAccessException e){
@@ -208,7 +217,7 @@ public class TimeSegmentDao {
             logger.error("other exception : " + e.getMessage());
             return new ReturnObject<>(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
         }
-        //logger.info("getUserRoles: userId = "+ id + "roleNum = "+ userRolePoList.size());
+
         if(timeSegmentPoList.isEmpty())
         {logger.info("秒杀时间段列表为空");}
 
@@ -218,6 +227,11 @@ public class TimeSegmentDao {
             ret.add(timeSegment);
         }
         PageInfo<VoObject> timeSegmentPage = PageInfo.of(ret);
+        PageInfo<TimeSegmentPo> timeSegmentPoPage = PageInfo.of(timeSegmentPoList);
+        timeSegmentPage.setPageNum(timeSegmentPoPage.getPageNum());
+        timeSegmentPage.setPageSize(timeSegmentPoPage.getPageSize());
+        timeSegmentPage.setPages(timeSegmentPoPage.getPages());
+        timeSegmentPage.setTotal(timeSegmentPoPage.getTotal());
         return new ReturnObject<>(timeSegmentPage);
     }
 
@@ -306,7 +320,7 @@ public class TimeSegmentDao {
             TimeSegmentPo po =timeSegmentPoMapper.selectByPrimaryKey(id);
             if(!po.getType().equals((byte)1))
             {
-                return new ReturnObject<>(ResponseCode.RESOURCE_ID_OUTSCOPE,String.format("该时间段不是广告时段"));
+                return new ReturnObject<>(ResponseCode.RESOURCE_ID_OUTSCOPE,String.format("该时间段不是秒杀时段"));
             }
             logger.debug("deleteAdTimeSegment: " + id);
             int ret = timeSegmentPoMapper.deleteByPrimaryKey(id);

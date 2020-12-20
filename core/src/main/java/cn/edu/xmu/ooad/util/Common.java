@@ -182,6 +182,10 @@ public class Common {
             case RESOURCE_ID_OUTSCOPE:
                 httpServletResponse.setStatus(HttpStatus.FORBIDDEN.value());
                 return ResponseUtil.fail(returnObject.getCode());
+            case TIMESEG_CONFLICT:
+                httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+                return ResponseUtil.fail(returnObject.getCode());
+
             default:
                 return ResponseUtil.fail(returnObject.getCode(), returnObject.getErrmsg());
         }
@@ -233,6 +237,8 @@ public class Common {
                 return new ResponseEntity(
                         ResponseUtil.fail(returnObject.getCode(), returnObject.getErrmsg()),
                         HttpStatus.FORBIDDEN);
+
+
             case OK:
                 // 200: 无错误
                 Object data = returnObject.getData();
