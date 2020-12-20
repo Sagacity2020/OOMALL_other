@@ -140,6 +140,9 @@ public class CustomerController {
             httpServletResponse.setStatus(HttpStatus.OK.value());
             return Common.getRetObject(returnObject);
         } else {
+            if(returnObject.getCode()==ResponseCode.INTERNAL_SERVER_ERR){
+                httpServletResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
+            }
             return Common.decorateReturnObject(returnObject);
             //return Common.getNullRetObj(new ReturnObject<>(returnObject.getCode(), returnObject.getErrmsg()));
         }
