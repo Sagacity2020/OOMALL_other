@@ -9,7 +9,7 @@ public class Sku {
     private Long id;
     private String name;
     private String skuSn;
-    private String imgUrl;
+    private String imageUrl;
     private Integer inventory;
     private Integer originalPrice;
     private Integer price;
@@ -23,7 +23,7 @@ public class Sku {
         this.id = vo.getId();
         this.name = vo.getName();
         this.skuSn = vo.getSkuSn();
-        this.imgUrl = vo.getImgUrl();
+        this.imageUrl = vo.getImgUrl();
         this.inventory =vo.getInventory();
         this.originalPrice = vo.getOriginalPrice();
         this.price = vo.getPrice();
