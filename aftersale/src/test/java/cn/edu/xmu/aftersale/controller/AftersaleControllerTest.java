@@ -48,9 +48,10 @@ public class AftersaleControllerTest {
     }
 
 
-    /*
-    修改售后信息
-    修改成功
+    /**
+     * 修改售后信息
+     *     修改成功
+     * @throws Exception
      */
     @Test
     public void aftersaleUpdateTest() throws Exception{
@@ -91,9 +92,10 @@ public class AftersaleControllerTest {
     }
 
 
-    /*
-    修改售后信息
-    当前状态不能进行修改
+    /**
+     * 修改售后信息
+     *     当前状态不能进行修改
+     * @throws Exception
      */
     @Test
     public void aftersaleUpdateTest1() throws Exception{
@@ -128,9 +130,10 @@ public class AftersaleControllerTest {
     }
 
 
-    /*
-    修改售后信息
-    售后单不存在
+    /**
+     * 修改售后信息
+     *     售后单不存在
+     * @throws Exception
      */
     @Test
     public void aftersaleUpdateTest2() throws Exception{
@@ -165,11 +168,10 @@ public class AftersaleControllerTest {
     }
 
 
-
-
-    /*
-    修改售后信息
-    售后单已删除
+    /**
+     * 修改售后信息
+     *     售后单已删除
+     * @throws Exception
      */
     @Test
     public void aftersaleUpdateTest3() throws Exception{
@@ -204,11 +206,10 @@ public class AftersaleControllerTest {
     }
 
 
-
-
-    /*
-    修改售后信息
-    没有权限修改
+    /**
+     * 修改售后信息
+     *     没有权限修改
+     * @throws Exception
      */
     @Test
     public void aftersaleUpdateTest4() throws Exception{
@@ -243,22 +244,19 @@ public class AftersaleControllerTest {
     }
 
 
-
-
-
-    /*
-    获取所有状态
-    成功
+    /**
+     * 获取所有状态
+     *     成功
+     * @throws Exception
      */
     @Test
     public void aftersaleStateTest()throws Exception{
-        String token=creatTestToken(1L,0L,100);
 
         String expectedResponse = "";
         String responseString = null;
 
         try {
-            responseString = this.mvc.perform(get("/aftersale/aftersales/states").header("authorization", token))
+            responseString = this.mvc.perform(get("/aftersale/aftersales/states"))
                     .andExpect(status().isOk())
                     .andExpect(content().contentType("application/json;charset=UTF-8"))
                     .andReturn().getResponse().getContentAsString();
@@ -274,57 +272,10 @@ public class AftersaleControllerTest {
     }
 
 
-    @Test
-    public void aftersaleStateTest1()throws Exception{
-        String token="tokenTest";
-
-        String expectedResponse = "";
-        String responseString = null;
-
-        try {
-            responseString = this.mvc.perform(get("/aftersale/aftersales/states").header("authorization", token))
-                    .andExpect(status().isUnauthorized())
-                    .andExpect(content().contentType("application/json;charset=UTF-8"))
-                    .andReturn().getResponse().getContentAsString();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        expectedResponse = "{\"errno\":501, \"errmsg\": \"JWT不合法\" }";
-        try {
-            JSONAssert.assertEquals(expectedResponse, responseString, true);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-
-    @Test
-    public void aftersaleStateTest2()throws Exception{
-
-        String expectedResponse = "";
-        String responseString = null;
-
-        try {
-            responseString = this.mvc.perform(get("/aftersale/aftersales/states"))
-                    .andExpect(status().isUnauthorized())
-                    .andExpect(content().contentType("application/json;charset=UTF-8"))
-                    .andReturn().getResponse().getContentAsString();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        expectedResponse = "{\"errno\":704, \"errmsg\": \"需要先登录\" }";
-        try {
-            JSONAssert.assertEquals(expectedResponse, responseString, true);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    /*
-    买家填写售后的运单信息
-    成功
+    /**
+     * 买家填写售后的运单信息
+     *     成功
+     * @throws Exception
      */
     @Test
     public void aftersaleSendBackTest()throws Exception{
@@ -358,9 +309,10 @@ public class AftersaleControllerTest {
     }
 
 
-    /*
-    买家填写售后运单信息
-    当前状态不能修改
+    /**
+     * 买家填写售后运单信息
+     *     当前状态不能修改
+     * @throws Exception
      */
     @Test
     public void aftersaleSendBackTest1()throws Exception{
@@ -391,9 +343,10 @@ public class AftersaleControllerTest {
     }
 
 
-    /*
-    买家填写售后运单信息
-    售后单不存在
+    /**
+     * 买家填写售后运单信息
+     *     售后单不存在
+     * @throws Exception
      */
     @Test
     public void aftersaleSendBackTest2()throws Exception{
@@ -424,9 +377,10 @@ public class AftersaleControllerTest {
     }
 
 
-    /*
-    买家填写运单号
-    售后单已删除
+    /**
+     * 买家填写运单号
+     * 售后单已删除
+     * @throws Exception
      */
     @Test
     public void aftersaleSendBackTest3()throws Exception{
@@ -456,6 +410,11 @@ public class AftersaleControllerTest {
     }
 
 
+    /**
+     * 买家填写运单信息
+     * 运单信息为空
+     * @throws Exception
+     */
     @Test
     public void aftersaleSendBackTest4()throws Exception {
         AftersaleSendbackVo vo = new AftersaleSendbackVo();
@@ -485,9 +444,10 @@ public class AftersaleControllerTest {
     }
 
 
-    /*
-    买家确认售后单结束
-    成功
+    /**
+     * 买家确认售后单结束
+     *     成功
+     * @throws Exception
      */
     @Test
     public void aftersaleConfirmTest()throws Exception{
@@ -517,9 +477,10 @@ public class AftersaleControllerTest {
     }
 
 
-    /*
-    买家确认售后结束
-    当前状态不能修改
+    /**
+     * 买家确认售后结束
+     *     当前状态不能修改
+     * @throws Exception
      */
     @Test
     public void aftersaleConfirmTest1()throws Exception{
@@ -547,9 +508,10 @@ public class AftersaleControllerTest {
     }
 
 
-    /*
-    买家确认售后结束
-    售后单不存在
+    /**
+     * 买家确认售后结束
+     *     售后单不存在
+     * @throws Exception
      */
     @Test
     public void aftersaleConfirmTest2()throws Exception{
@@ -576,10 +538,11 @@ public class AftersaleControllerTest {
     }
 
 
-    /*
-    店家寄出维修好（调换）的货物
-    成功
- */
+    /**
+     * 店家寄出维修好的货物
+     *     成功
+     * @throws Exception
+     */
     @Test
     public void aftersaleDeliverTest()throws Exception{
         AftersaleDeliverVo vo=new AftersaleDeliverVo();
@@ -611,12 +574,49 @@ public class AftersaleControllerTest {
     }
 
 
-    /*
-    店家寄出维修好（调换）的货物
-    当前状态不能修改
+    /**
+     * 卖家寄出换货
+     * 成功
+     * @throws Exception
      */
     @Test
     public void aftersaleDeliverTest1()throws Exception{
+        AftersaleDeliverVo vo=new AftersaleDeliverVo();
+        vo.setShopLogSn("20201203");
+        String aftersaleJson = JacksonUtil.toJson(vo);
+
+        String token=creatTestToken(5L,0L,100);
+
+        String expectedResponse = "";
+        String responseString = null;
+
+        try{
+            responseString=this.mvc.perform(put("/aftersale/shops/3/aftersales/4/deliver").header("authorization",token).contentType("application/json;charset=UTF-8").content(aftersaleJson))
+                    .andExpect(status().isOk())
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        expectedResponse = "{\"errno\":0,\"errmsg\":\"成功\"}";
+        try {
+            JSONAssert.assertEquals(expectedResponse, responseString, true);
+            AftersaleServicePo updatedPo = aftersalePoMapper.selectByPrimaryKey(4L);
+            Assert.state(Aftersale.State.getTypeByCode(updatedPo.getState().intValue()).equals(Aftersale.State.DELIVERING), "店家寄出货物失败");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * 店家寄出货物
+     *     当前状态不能修改
+     * @throws Exception
+     */
+    @Test
+    public void aftersaleDeliverTest2()throws Exception{
         AftersaleDeliverVo vo=new AftersaleDeliverVo();
         vo.setShopLogSn("20201203");
         String aftersaleJson = JacksonUtil.toJson(vo);
@@ -644,12 +644,13 @@ public class AftersaleControllerTest {
     }
 
 
-    /*
-    店家寄出维修好（调换）的货物
-    售后单不存在
+    /**
+     * 店家寄出货物
+     *     售后单不存在
+     * @throws Exception
      */
     @Test
-    public void aftersaleDeliverTest2()throws Exception{
+    public void aftersaleDeliverTest3()throws Exception{
         AftersaleDeliverVo vo=new AftersaleDeliverVo();
         vo.setShopLogSn("20201203");
         String aftersaleJson = JacksonUtil.toJson(vo);
@@ -678,11 +679,11 @@ public class AftersaleControllerTest {
 
 
     /*
-    店家寄出维修好（调换）的货物
+    店家寄出货物
     没有权限修改
      */
     @Test
-    public void aftersaleDeliverTest3()throws Exception{
+    public void aftersaleDeliverTest4()throws Exception{
         AftersaleDeliverVo vo=new AftersaleDeliverVo();
         vo.setShopLogSn("20201203");
         String aftersaleJson = JacksonUtil.toJson(vo);
@@ -710,10 +711,44 @@ public class AftersaleControllerTest {
     }
 
 
+    /**
+     * 卖家寄出维修货物
+     * 运单信息为空
+     * @throws Exception
+     */
+    @Test
+    public void aftersaleDeliverTest5()throws Exception{
+        AftersaleDeliverVo vo=new AftersaleDeliverVo();
+        vo.setShopLogSn(null);
+        String aftersaleJson = JacksonUtil.toJson(vo);
 
-    /*
-    买家取消售后单
-    成功
+        String token=creatTestToken(1L,0L,100);
+
+        String expectedResponse = "";
+        String responseString = null;
+
+        try{
+            responseString=this.mvc.perform(put("/aftersale/shops/1/aftersales/4/deliver").header("authorization",token).contentType("application/json;charset=UTF-8").content(aftersaleJson))
+                    .andExpect(status().isOk())
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        expectedResponse = "{\"errno\":505,\"errmsg\":\"操作的资源id不是自己的对象\"}";
+        try {
+            JSONAssert.assertEquals(expectedResponse, responseString, true);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * 买家取消售后单
+     *     成功
+     * @throws Exception
      */
     @Test
     public void aftersaleCancelTest()throws Exception{
@@ -741,10 +776,103 @@ public class AftersaleControllerTest {
     }
 
 
+    /**
+     * 买家取消售后单
+     * 售后单已取消
+     * @throws Exception
+     */
+    @Test
+    public void aftersaleCancelTest1()throws Exception{
+        String token=creatTestToken(1L,-2L,100);
+        String responseString=null;
+        String expectedString="";
 
-    /*
-    买家删除售后单
-    成功
+        try{
+            responseString=this.mvc.perform(delete("/aftersale/aftersales/1").header("authorization",token))
+                    .andExpect(status().isOk())
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        expectedString="{\"errno\":0,\"errmsg\":\"成功\"}";
+        try{
+            JSONAssert.assertEquals(expectedString,responseString,false);
+            AftersaleServicePo po=aftersalePoMapper.selectByPrimaryKey(1L);
+            Assert.state(Aftersale.State.getTypeByCode(po.getState().intValue()).equals(Aftersale.State.CANCEL),"取消售后单失败");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * 买家取消售后单
+     * 售后单已删除
+     * @throws Exception
+     */
+    @Test
+    public void aftersaleCancelTest2()throws Exception{
+        String token=creatTestToken(1L,-2L,100);
+        String responseString=null;
+        String expectedString="";
+
+        try{
+            responseString=this.mvc.perform(delete("/aftersale/aftersales/1").header("authorization",token))
+                    .andExpect(status().isOk())
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        expectedString="{\"errno\":0,\"errmsg\":\"成功\"}";
+        try{
+            JSONAssert.assertEquals(expectedString,responseString,false);
+            AftersaleServicePo po=aftersalePoMapper.selectByPrimaryKey(1L);
+            Assert.state(Aftersale.State.getTypeByCode(po.getState().intValue()).equals(Aftersale.State.CANCEL),"取消售后单失败");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * 买家取消售后单
+     * 售后状态禁止
+     * @throws Exception
+     */
+    @Test
+    public void aftersaleCancelTest3()throws Exception{
+        String token=creatTestToken(1L,-2L,100);
+        String responseString=null;
+        String expectedString="";
+
+        try{
+            responseString=this.mvc.perform(delete("/aftersale/aftersales/1").header("authorization",token))
+                    .andExpect(status().isOk())
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        expectedString="{\"errno\":0,\"errmsg\":\"成功\"}";
+        try{
+            JSONAssert.assertEquals(expectedString,responseString,false);
+            AftersaleServicePo po=aftersalePoMapper.selectByPrimaryKey(1L);
+            Assert.state(Aftersale.State.getTypeByCode(po.getState().intValue()).equals(Aftersale.State.CANCEL),"取消售后单失败");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * 买家删除售后单
+     *     成功
+     * @throws Exception
      */
     @Test
     public void aftersaleDeleteTest()throws Exception{
@@ -772,9 +900,72 @@ public class AftersaleControllerTest {
     }
 
 
-    /*
-    管理员同意售后
-    成功
+    /**
+     * 买家删除售后单
+     * 售后单已删除
+     * @throws Exception
+     */
+    @Test
+    public void aftersaleDeleteTest1()throws Exception{
+        String token=creatTestToken(3L,-2L,100);
+        String responseString=null;
+        String expectedString="";
+
+        try{
+            responseString=this.mvc.perform(delete("/aftersale/aftersales/7").header("authorization",token))
+                    .andExpect(status().isOk())
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        expectedString="{\"errno\":0,\"errmsg\":\"成功\"}";
+        try{
+            JSONAssert.assertEquals(expectedString,responseString,false);
+            AftersaleServicePo po=aftersalePoMapper.selectByPrimaryKey(7L);
+            Assert.state(po.getBeDeleted().intValue()==1,"删除售后单失败");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * 买家删除售后单
+     * 售后状态禁止
+     * @throws Exception
+     */
+    @Test
+    public void aftersaleDeleteTest2()throws Exception{
+        String token=creatTestToken(3L,-2L,100);
+        String responseString=null;
+        String expectedString="";
+
+        try{
+            responseString=this.mvc.perform(delete("/aftersale/aftersales/7").header("authorization",token))
+                    .andExpect(status().isOk())
+                    .andExpect(content().contentType("application/json;charset=UTF-8"))
+                    .andReturn().getResponse().getContentAsString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        expectedString="{\"errno\":0,\"errmsg\":\"成功\"}";
+        try{
+            JSONAssert.assertEquals(expectedString,responseString,false);
+            AftersaleServicePo po=aftersalePoMapper.selectByPrimaryKey(7L);
+            Assert.state(po.getBeDeleted().intValue()==1,"删除售后单失败");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * 管理员同意售后
+     *     成功
+     * @throws Exception
      */
     @Test
     public void aftersaleComfirmByShopTest()throws Exception{
@@ -808,16 +999,16 @@ public class AftersaleControllerTest {
     }
 
 
-
-    /*
-    管理员不同意售后
-    成功
+    /**
+     * 管理员不同意售后
+     *     成功
+     * @throws Exception
      */
     @Test
     public void aftersaleConfirmByShopTest()throws Exception{
         AftersaleConfirmVo vo=new AftersaleConfirmVo();
         vo.setConfirm(false);
-        vo.setPrice(20);
+        vo.setPrice(20L);
         vo.setType(0);
         vo.setConclusion("不同意");
         String aftersaleJson=JacksonUtil.toJson(vo);

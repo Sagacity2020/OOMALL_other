@@ -20,4 +20,8 @@ public class OrderAftersaleDTO implements Serializable {
     String orderSn;
 
     Long shopId;
+
+    Long customerId;
+
+    Long actualPaidPrice;
 }

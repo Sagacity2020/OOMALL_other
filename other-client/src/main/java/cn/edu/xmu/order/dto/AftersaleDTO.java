@@ -27,4 +27,7 @@ public class AftersaleDTO implements Serializable {
     String message;
 
     Long orderItemId;
+
+    Long customerId;
+
 }

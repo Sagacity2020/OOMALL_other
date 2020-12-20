@@ -187,7 +187,9 @@ public class Aftersale implements VoObject {
         AftersaleServicePo po = new AftersaleServicePo();
 
         po.setId(id);
-        po.setShopLogSn(vo.getShopLogSn());
+        if(vo!=null) {
+            po.setShopLogSn(vo.getShopLogSn());
+        }
         po.setState(State.DELIVERING.getCode().byteValue());
         po.setOrderId(orderId);
         po.setGmtCreate(null);
@@ -220,7 +222,12 @@ public class Aftersale implements VoObject {
         if(vo.getConfirm().equals(true)){
             po.setState(State.SENDBACKWAIT.getCode().byteValue());
             po.setRefund(vo.getPrice().longValue());
-            po.setType(vo.getType().byteValue());
+            if(vo.getType()!=null) {
+                po.setType(vo.getType().byteValue());
+            }
+            else{
+                po.setType(type);
+            }
         }
         else {
             po.setState(State.DISAGREE.getCode().byteValue());

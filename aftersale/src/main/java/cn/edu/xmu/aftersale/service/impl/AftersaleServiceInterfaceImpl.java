@@ -37,7 +37,7 @@ public class AftersaleServiceInterfaceImpl implements AftersaleServiceInterface 
         if(po==null){
             return null;
         }
-        AftersaleRefundDTO aftersaleRefundDTO=new AftersaleRefundDTO();
+        AftersaleRefundDTO aftersaleRefundDTO = new AftersaleRefundDTO();
         aftersaleRefundDTO.setId(po.getId());
         aftersaleRefundDTO.setCustomerId(po.getCustomerId());
         aftersaleRefundDTO.setBeDeleted(po.getBeDeleted());
