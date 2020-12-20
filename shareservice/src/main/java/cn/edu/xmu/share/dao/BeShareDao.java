@@ -155,19 +155,19 @@ public class BeShareDao {
             criteria.andGoodsSkuIdEqualTo(goodsSkuId);
         if(beginTime != null)
             criteria.andGmtCreateGreaterThanOrEqualTo(beginTime);
+
         if(endTime != null)
             criteria.andGmtCreateLessThanOrEqualTo(endTime);
         //?
         PageHelper.startPage(pageNum, pageSize);
         logger.debug("page = " + pageNum + "pageSize = " + pageSize);
-        List<BeSharePo> retBeSharePos = null;
-
-        retBeSharePos = beSharePoMapper.selectByExample(example);
+        List<BeSharePo> retBeSharePos = beSharePoMapper.selectByExample(example);
         List<BeShare> ret = new ArrayList<>(retBeSharePos.size());
 
         for (BeSharePo po : retBeSharePos) {
             BeShare beShare = new BeShare(po);
             ret.add(beShare);
+            System.out.println(beShare.getId());
         }
         PageInfo<BeSharePo> beSharePoPage = PageInfo.of(retBeSharePos);
         PageInfo<BeShare> beSharePage = PageInfo.of(ret);
