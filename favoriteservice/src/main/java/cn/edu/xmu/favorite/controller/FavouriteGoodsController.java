@@ -12,6 +12,7 @@ import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
@@ -73,18 +74,27 @@ public class FavouriteGoodsController {
     @ApiOperation(value = "收藏商品", produces = "application/json")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
-            @ApiImplicitParam(name = "skuId", required = true, dataType = "Long", paramType = "path")
+            @ApiImplicitParam(paramType = "path", dataType = "Long",name = "skuId", value="skuId",required = true)
     })
     @ApiResponses({
             @ApiResponse(code = 0, message = "成功")
     })
     @Audit
     @PostMapping("/favorites/goods/{skuId}")
-    public Object insertFavouriteGoods(@LoginUser @ApiIgnore @RequestParam Long customerId, @PathVariable("skuId") Long skuId)
+    public Object insertFavouriteGoods(@LoginUser @ApiIgnore @RequestParam(required = false) Long customerId, @PathVariable("skuId") Long skuId)
     {
+        System.out.println("post FavouriteGoods: customer = " + customerId +"skuId"+skuId);
+        logger.info("post FavouriteGoods: customer = " + customerId +"skuId"+skuId);
         ReturnObject<VoObject> retObject =  favouriteGoodsService.insertFavouriteGoods(customerId,skuId);
         logger.debug("getSelfFavouriteGoods: customer = " + customerId );
-        return Common.decorateReturnObject(retObject);
+        logger.info("post FavouriteGoods: customer = " + customerId );
+        if (retObject.getData() != null) {
+            httpServletResponse.setStatus(HttpStatus.CREATED.value());
+            return Common.getRetObject(retObject);
+        } else {
+            return Common.getNullRetObj(new ReturnObject<>(retObject.getCode(), retObject.getErrmsg()), httpServletResponse);
+        }
+
     }
 
     /**
@@ -105,10 +115,10 @@ public class FavouriteGoodsController {
     })
     @Audit
     @DeleteMapping("/favorites/{id}")
-    public Object deleteFavouriteGoods(@PathVariable("id") Long id)
+    public Object deleteFavouriteGoods(@LoginUser @ApiIgnore @RequestParam(required = false) Long customerId, @PathVariable("id") Long id)
     {
         //System.out.println("****"+customerId);
-        ReturnObject<Object> retObject =  favouriteGoodsService.deleteFavouriteGoods(id);
+        ReturnObject<Object> retObject =  favouriteGoodsService.deleteFavouriteGoods(customerId,id);
         logger.debug("deleteSelfFavouriteGoods: id = " + id );
         return Common.decorateReturnObject(retObject);
     }

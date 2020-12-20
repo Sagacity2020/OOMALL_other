@@ -38,9 +38,6 @@ public class IShareServiceImpl implements ShareServiceInterface {
     private ShareActivityDao shareActivityDao;
 
     @DubboReference(version = "0.0.1")
-    AftersaleServiceInterface aftersaleServiceInterface;
-
-    @DubboReference(version = "0.0.1")
     CustomerServiceInterface customerServiceInterface;
 
     /**
@@ -146,5 +143,17 @@ public class IShareServiceImpl implements ShareServiceInterface {
     public Boolean isShared(Long shopId, Long goodsSkuId)
     {
         return shareActivityDao.isShared(shopId, goodsSkuId);
+    }
+
+    /**
+     * 根据分享id获得skuid
+     * @author zxh
+     * @param sid 分享id
+     * @return Long skuId
+     * @Date 2020/12/20 19:40
+     */
+    public Long getSkuIdByShareId(Long sid)
+    {
+        return shareDao.getSkuIdByShareId(sid);
     }
 }

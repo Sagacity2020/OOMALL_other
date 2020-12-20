@@ -174,6 +174,11 @@ public class AddressController {
         if(returnObject!=null) {
             return returnObject;
         }
+        if(vo.getConsignee().isEmpty()||vo.getDetail().isEmpty()||vo.getMobile().isEmpty()||vo.getRegionId()==null||vo.getMobile().length()<11){
+            httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+            logger.debug("某一个字段为空");
+            return Common.getRetObject(new ReturnObject<>(ResponseCode.FIELD_NOTVALID));
+        }
         Address address=vo.createAddress();
         address.setCustomer_id(userId);
         address.setId(id);

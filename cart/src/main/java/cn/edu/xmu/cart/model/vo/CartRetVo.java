@@ -2,11 +2,12 @@ package cn.edu.xmu.cart.model.vo;
 
 import cn.edu.xmu.cart.model.bo.Cart;
 import cn.edu.xmu.goods.dto.CouponActivityDTO;
+import lombok.Data;
 
 
 import java.time.LocalDateTime;
 import java.util.List;
-
+@Data
 public class CartRetVo {
     private Long id;
     private Long goodsSkuId;

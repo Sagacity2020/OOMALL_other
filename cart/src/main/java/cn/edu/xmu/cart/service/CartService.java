@@ -62,16 +62,16 @@ public class CartService {
                 e.printStackTrace();
             }
             cart.setCouponActivity(couponActivityDTOS);
-//            logger.error(couponActivityDTOS.toString());
-//            GoodsSkuInfo goodsSkuInfo =null;
-//            try {
-//                goodsSkuInfo = goodsService.getGoodsSkuInfoAlone(cart.getGoodsSkuId());
-//            }catch (Exception e){
-//                e.printStackTrace();
-//            }
-//            cart.setSkuName(goodsSkuInfo.getSkuName());
+            logger.error(couponActivityDTOS.toString());
+            GoodsSkuInfo goodsSkuInfo =null;
+            try {
+                goodsSkuInfo = goodsService.getGoodsSkuInfoAlone(cart.getGoodsSkuId());
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            cart.setSkuName(goodsSkuInfo.getSkuName());
 //            cart.setPrice(goodsSkuInfo.getPrice());
-//            logger.error(goodsSkuInfo.getSkuName()+goodsSkuInfo.getPrice());
+            logger.error(goodsSkuInfo.getSkuName()+goodsSkuInfo.getPrice());
             carts.add(cart);
         }
         PageInfo<VoObject> returnObject=new PageInfo<>(carts);
@@ -159,7 +159,13 @@ public class CartService {
         Boolean ret=goodsService.anbleChange(vo.getGoodsSkuId(),shoppingCartPo.getGoodsSkuId());
         logger.debug(ret.toString());
         if(ret==true){
-            return cartDao.changeCartInfo(id,userId,vo);
+            Cart cart=new Cart();
+            cart.setId(id);
+            cart.setCustomerId(userId);
+            cart.setGoodsSkuId(vo.getGoodsSkuId());
+            cart.setQuantity(vo.getQuantity());
+            cart.setPrice(goodsService.getGoodsSkuInfoAlone(vo.getGoodsSkuId()).getPrice());
+            return cartDao.changeCartInfo(cart);
         }
         else{
             return new ReturnObject(ResponseCode.FIELD_NOTVALID,String.format("不属于一个spu商品"));

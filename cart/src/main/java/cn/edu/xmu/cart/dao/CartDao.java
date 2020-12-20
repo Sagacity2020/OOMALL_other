@@ -6,6 +6,7 @@ import cn.edu.xmu.cart.model.bo.Cart;
 import cn.edu.xmu.cart.model.po.ShoppingCartPo;
 import cn.edu.xmu.cart.model.po.ShoppingCartPoExample;
 import cn.edu.xmu.cart.model.vo.CartVo;
+import cn.edu.xmu.goods.dto.GoodsSkuInfo;
 import cn.edu.xmu.goods.service.CouponServiceInterface;
 import cn.edu.xmu.goods.service.GoodsServiceInterface;
 import cn.edu.xmu.ooad.model.VoObject;
@@ -36,6 +37,10 @@ public class CartDao {
     @Autowired
     ShoppingCartPoMapper shoppingCartPoMapper;
 
+    @DubboReference(version = "0.0.1")
+    public GoodsServiceInterface goodsService;
+
+
 
     public PageInfo<ShoppingCartPo> seleteByUserId(Long userId, Integer page, Integer pageSize) {
         logger.error("userId="+userId);
@@ -59,32 +64,9 @@ public class CartDao {
         ShoppingCartPoExample example=new ShoppingCartPoExample();
         ShoppingCartPoExample.Criteria criteria=example.createCriteria();
         criteria.andCustomerIdEqualTo(userId);
-        List<ShoppingCartPo> shoppingCartPos=null;
-
-        try {
-            shoppingCartPos=shoppingCartPoMapper.selectByExample(example);
-            if(shoppingCartPos==null){
-                return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("购物车为空"));
-
-            }
-        }catch (DataAccessException e){
-            logger.error("deleteAllCarts: DataAccessException:" + e.getMessage());
-            return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
-        }
-        catch (Exception e) {
-            // 其他Exception错误
-            logger.error("other exception : " + e.getMessage());
-            return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
-        }
         try{
             int ret=shoppingCartPoMapper.deleteByExample(example);
-            if(ret==0){
-                logger.debug("Cars is null");
-                return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("购物车为空"));
-            }
-            else{
-                return new ReturnObject(ResponseCode.OK);
-            }
+
         }catch (DataAccessException e){
             logger.error("deleteAllCarts: DataAccessException:" + e.getMessage());
             return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("数据库错误：%s", e.getMessage()));
@@ -94,6 +76,8 @@ public class CartDao {
             logger.error("other exception : " + e.getMessage());
             return new ReturnObject(ResponseCode.INTERNAL_SERVER_ERR, String.format("发生了严重的数据库错误：%s", e.getMessage()));
         }
+        return new ReturnObject(ResponseCode.OK);
+
 
     }
 
@@ -225,17 +209,16 @@ public class CartDao {
     /**
      * @Created at 12/13 21:20
      * @author zrh
-     * @param id
-     * @param userId
-     * @param vo
+     * @param cart
      * @return
      */
-    public ReturnObject changeCartInfo(Long id, Long userId, CartVo vo) {
+    public ReturnObject changeCartInfo(Cart cart) {
 
         try {
-            ShoppingCartPo po=shoppingCartPoMapper.selectByPrimaryKey(id);
-            po.setGoodsSkuId(vo.getGoodsSkuId());
-            po.setQuantity(vo.getQuantity());
+            ShoppingCartPo po=shoppingCartPoMapper.selectByPrimaryKey(cart.getId());
+            po.setGoodsSkuId(cart.getGoodsSkuId());
+            po.setQuantity(cart.getQuantity());
+            po.setPrice(cart.getPrice());
             int ret=shoppingCartPoMapper.updateByPrimaryKeySelective(po);
             if(ret==0){
                 return new ReturnObject(ResponseCode.RESOURCE_ID_NOTEXIST,String.format("购物车商品不存在"));

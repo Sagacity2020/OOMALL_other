@@ -1,6 +1,8 @@
 package cn.edu.xmu.address.service;
 
+import cn.edu.xmu.address.model.bo.AddressPage;
 import cn.edu.xmu.address.model.bo.Region;
+import cn.edu.xmu.address.model.po.AddressPo;
 import cn.edu.xmu.address.model.vo.RegionVo;
 import cn.edu.xmu.ooad.model.VoObject;
 import cn.edu.xmu.ooad.util.ResponseCode;
@@ -9,6 +11,7 @@ import cn.edu.xmu.address.dao.AddressDao;
 import cn.edu.xmu.address.model.bo.Address;
 
 import cn.edu.xmu.other.service.RegionServiceInterface;
+import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.slf4j.Logger;
@@ -42,7 +45,7 @@ public class AddressService implements RegionServiceInterface {
     public ReturnObject insertAddress(Address address)
     {
         ReturnObject<Boolean> booleanReturnObject=addressDao.isRegion(address.getRegionId());
-        if(booleanReturnObject.getCode()==ResponseCode.REGION_OBSOLETE||booleanReturnObject.getCode()==ResponseCode.RESOURCE_ID_NOTEXIST){
+        if(booleanReturnObject.getCode()==ResponseCode.RESOURCE_ID_NOTEXIST){
             return new ReturnObject(ResponseCode.FIELD_NOTVALID);
         }
         if(booleanReturnObject.getData()==null){
@@ -62,8 +65,20 @@ public class AddressService implements RegionServiceInterface {
      * @return
      */
     public ReturnObject<PageInfo<VoObject>> selectAllAddreses(Long userId, Integer page, Integer pageSize) {
-        ReturnObject<PageInfo<VoObject>> returnObject= addressDao.selectAllAddress(userId,page,pageSize);
-        return returnObject;
+        PageHelper.startPage(page, pageSize);
+        ReturnObject<PageInfo<AddressPo>> returnObject= addressDao.selectAllAddress(userId,page,pageSize);
+        PageInfo<AddressPo> addressPoPageInfo=returnObject.getData();
+        List<VoObject> ret=new ArrayList<>(addressPoPageInfo.getList().size());
+        for(AddressPo po:addressPoPageInfo.getList()){
+            AddressPage addressPage=new AddressPage(po);
+            ret.add(addressPage);
+        }
+        PageInfo<VoObject> addressPage=new PageInfo<>(ret);
+        addressPage.setPages(addressPoPageInfo.getPages());
+        addressPage.setPageNum(addressPoPageInfo.getPageNum());
+        addressPage.setPageSize(addressPoPageInfo.getPageSize());
+        addressPage.setTotal(addressPoPageInfo.getTotal());
+        return new ReturnObject<>(addressPage);
     }
 
 
@@ -96,7 +111,7 @@ public class AddressService implements RegionServiceInterface {
      */
     public ReturnObject updateAddress(Address address) {
         ReturnObject<Boolean> returnObject=addressDao.isRegion(address.getRegionId());
-        if(returnObject.getCode()==ResponseCode.REGION_OBSOLETE||returnObject.getCode()==ResponseCode.RESOURCE_ID_NOTEXIST){
+        if(returnObject.getCode()==ResponseCode.RESOURCE_ID_NOTEXIST){
             return new ReturnObject(ResponseCode.FIELD_NOTVALID);
         }
         if(returnObject.getData()==null){

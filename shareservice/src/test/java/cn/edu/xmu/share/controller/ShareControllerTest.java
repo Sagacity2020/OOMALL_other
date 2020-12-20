@@ -205,13 +205,19 @@ public class ShareControllerTest {
 
         String token = creatTestToken(2L,1L,100);
 
-        String responseString = this.mvc.perform(get("/beshared?beginTime=2020-12-22:00:00&endTime=2019-12-44 :00:00").header("authorization",token))
+        String responseString = this.mvc.perform(get("/share/beshared?beginTime=2020-12-22:00:00&endTime=2019-12-44 :00:00&page=1&pageSize=1").header("authorization",token))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andReturn().getResponse().getContentAsString();
 
         String expectedResponse = "{\n" +
-                "    \"errno\": 503\n" +
+                "    \"errno\": 0,\n" +
+                "    \"data\": {\n" +
+                "        \"pageSize\": 1,\n" +
+                "        \"page\": 1,\n" +
+                "        \"list\": []\n" +
+                "    },\n" +
+                "    \"errmsg\": \"成功\"\n" +
                 "}";
 
 
