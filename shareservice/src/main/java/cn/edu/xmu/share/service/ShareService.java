@@ -286,15 +286,19 @@ public class ShareService {
     @Transactional
     public ReturnObject createShareActivity(Long shopId, Long skuId, ShareActivityVo vo)
     {
+        //System.out.println("7成功");
         if(!goodsServiceInterface.hasGoodsSku(skuId))
             return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, "skuId不存在");
+        //System.out.println("8成功");
         if(shopId != 0L)
         {
+            //System.out.println("5成功");
             Long temp = goodsServiceInterface.getShopIdBySkuId(skuId);
             if(temp.longValue() != shopId.longValue())
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_OUTSCOPE, "该商品不属于该商店");
         }
         ShareActivity bo = new ShareActivity(vo);
+        //System.out.println("6成功");
         return shareActivityDao.createShareActivity(shopId, skuId, bo);
     }
 

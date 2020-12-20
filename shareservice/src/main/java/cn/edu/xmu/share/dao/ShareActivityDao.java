@@ -173,7 +173,7 @@ public class ShareActivityDao {
         if(bo.getEndTime() == null)
             return new ReturnObject<>(ResponseCode.Log_END_NULL, String.format("结束时间不能为空"));
         if(bo.getBeginTime().isAfter(bo.getEndTime()))
-            return new ReturnObject<>(ResponseCode.Log_Bigger, String.format("开始时间大于结束时间"));
+            return new ReturnObject<>(ResponseCode.FIELD_NOTVALID, String.format("开始时间大于结束时间"));
         try{
             ShareActivityPo po = new ShareActivityPo();
             po.setShopId(shopId);
@@ -184,16 +184,18 @@ public class ShareActivityDao {
             po.setStrategy(bo.getStrategy());
             po.setGmtCreate(LocalDateTime.now());
             po.setGmtModified(LocalDateTime.now());
-            if(isConflict(po))
-                return new ReturnObject<>(ResponseCode.SHAREACT_CONFLICT, "分享活动时段冲突");
+//            if(isConflict(po))
+//                return new ReturnObject<>(ResponseCode.SHAREACT_CONFLICT, "分享活动时段冲突");
             int flag = shareActivityPoMapper.insert(po);
             if(flag == 0)
             {
+                //System.out.println("4成功");
                 logger.debug("createShareActivity: create shareActivity fail  shopId= " + shopId +"goodsSkuId= " + skuId);
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, String.format("新建分享活动失败"));
             }
             else
             {
+                //System.out.println("成功");
                 logger.debug("createShareActivity: create shareActivity success  shopId= " + shopId +"goodsSkuId= " + skuId);
                 return new ReturnObject<VoObject>(new ShareActivity(po));
             }
@@ -226,7 +228,7 @@ public class ShareActivityDao {
             ShareActivityPo po = shareActivityPoMapper.selectByPrimaryKey(shareActivityId);
             if(po == null)
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
-            if(po.getShopId() != shopId)
+            if(shopId != 0L && po.getShopId() != shopId)
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_OUTSCOPE,"该分享活动不属于该商铺");
             //logger.debug("hhhhhhh "+shareActivityId);
             //分享活动已生效或者未设置
@@ -239,10 +241,10 @@ public class ShareActivityDao {
             if(bo.getStrategy() != null)
                 po.setStrategy(bo.getStrategy());
             if(po.getBeginTime().isAfter(po.getEndTime()))
-                return new ReturnObject<>(ResponseCode.Log_Bigger, String.format("开始时间大于结束时间"));
+                return new ReturnObject<>(ResponseCode.FIELD_NOTVALID, String.format("开始时间大于结束时间"));
             po.setGmtModified(LocalDateTime.now());
-            if(isConflict(po))
-                return new ReturnObject<>(ResponseCode.SHAREACT_CONFLICT, "分享活动时段冲突");
+//            if(isConflict(po))
+//                return new ReturnObject<>(ResponseCode.SHAREACT_CONFLICT, "分享活动时段冲突");
             int flag = shareActivityPoMapper.updateByPrimaryKeySelective(po);
             if(flag == 0)
             {
@@ -319,7 +321,7 @@ public class ShareActivityDao {
             ShareActivityPo po = shareActivityPoMapper.selectByPrimaryKey(shareActivityId);
             if(po == null)
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST,"分享活动Id不存在");
-            if(po.getShopId() != shopId)
+            if(shopId != 0L && po.getShopId() != shopId)
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_OUTSCOPE,"该分享活动不属于该商铺");
 //            //改错误码
 //            if(po.getState() != null && po.getState() == (byte) 0)
@@ -385,7 +387,7 @@ public class ShareActivityDao {
     {
         ShareActivityPoExample example = new ShareActivityPoExample();
         ShareActivityPoExample.Criteria criteria = example.createCriteria();
-//        criteria.andStateEqualTo((byte) 1);
+        criteria.andStateEqualTo((byte) 1);
         criteria.andShopIdEqualTo(po.getShopId());
         if(po.getShopId() != 0L)
             criteria.andGoodsSkuIdEqualTo(po.getGoodsSkuId());
@@ -427,7 +429,7 @@ public class ShareActivityDao {
             //System.out.println(po.getShopId() + "  "+po.getBeginTime()+"  "+po.getEndTime()+"  "+po.getGoodsSkuId());
             if(po == null)
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST,"分享活动Id不存在");
-            if(po.getShopId() != shopId)
+            if(shopId != 0L && po.getShopId() != shopId)
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_OUTSCOPE,"该分享活动不属于该商铺");
 //            //改错误码
 //            if(po.getState() != null && po.getState() == (byte) 1)
