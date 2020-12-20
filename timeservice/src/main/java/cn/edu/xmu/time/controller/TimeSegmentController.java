@@ -128,6 +128,7 @@ public class TimeSegmentController {
     public Object deleteAdTimeSegment(@PathVariable("id") Long id) {
         //logger.debug("delete role");
 
+        System.out.println("删除时间段");
         ReturnObject<Object> returnObject = timeSegmentService.deleteAdTimeSegment(id);
         return Common.decorateReturnObject(returnObject);
     }
@@ -220,6 +221,7 @@ public class TimeSegmentController {
     @DeleteMapping("/shops/{did}/flashsale/timesegments/{id}")
     public Object deleteFlTimeSegment(@PathVariable("id") Long id) {
         //logger.debug("delete role");
+        System.out.println("删除时间段");
         ReturnObject<Object> returnObject = timeSegmentService.deleteFlTimeSegment(id);
         return Common.decorateReturnObject(returnObject);
     }

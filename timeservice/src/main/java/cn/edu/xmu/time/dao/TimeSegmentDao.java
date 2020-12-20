@@ -162,6 +162,10 @@ public class TimeSegmentDao {
         try {
             System.out.println("删除时间段");
             TimeSegmentPo po =timeSegmentPoMapper.selectByPrimaryKey(id);
+            if(po==null)
+            {
+                return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, String.format("时间段id不存在：" + id));
+            }
             if(!po.getType().equals((byte)0))
             {
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_OUTSCOPE,String.format("该时间段不是广告时段"));
@@ -315,9 +319,13 @@ public class TimeSegmentDao {
     @Transactional
     public ReturnObject<Object> deleteFlTimeSegment(Long id) {
         ReturnObject<Object> retObj = null;
-
+        System.out.println("删除时间段");
         try {
             TimeSegmentPo po =timeSegmentPoMapper.selectByPrimaryKey(id);
+            if(po==null)
+            {
+                return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, String.format("时间段id不存在：" + id));
+            }
             if(!po.getType().equals((byte)1))
             {
                 return new ReturnObject<>(ResponseCode.RESOURCE_ID_OUTSCOPE,String.format("该时间段不是秒杀时段"));
