@@ -167,6 +167,21 @@ public class Common {
             case RESOURCE_ID_NOTEXIST:
                 httpServletResponse.setStatus(HttpStatus.NOT_FOUND.value());
                 return ResponseUtil.fail(returnObject.getCode());
+            case Log_Bigger:
+                httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+                return ResponseUtil.fail(returnObject.getCode());
+            case FIELD_NOTVALID:
+                httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+                return ResponseUtil.fail(returnObject.getCode());
+            case Log_BEGIN_NULL:
+                httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+                return ResponseUtil.fail(returnObject.getCode());
+            case Log_END_NULL:
+                httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+                return ResponseUtil.fail(returnObject.getCode());
+            case RESOURCE_ID_OUTSCOPE:
+                httpServletResponse.setStatus(HttpStatus.FORBIDDEN.value());
+                return ResponseUtil.fail(returnObject.getCode());
             default:
                 return ResponseUtil.fail(returnObject.getCode(), returnObject.getErrmsg());
         }
@@ -189,8 +204,28 @@ public class Common {
                 return new ResponseEntity(
                         ResponseUtil.fail(returnObject.getCode(), returnObject.getErrmsg()),
                         HttpStatus.INTERNAL_SERVER_ERROR);
-                //602：地区已废弃
+            //602：地区已废弃
             case REGION_OBSOLETE:
+                return new ResponseEntity(
+                        ResponseUtil.fail(returnObject.getCode(), returnObject.getErrmsg()),
+                        HttpStatus.BAD_REQUEST);
+            //503：字段不合法
+            case FIELD_NOTVALID:
+                return new ResponseEntity(
+                        ResponseUtil.fail(returnObject.getCode(), returnObject.getErrmsg()),
+                        HttpStatus.BAD_REQUEST);
+                //610：开始时间大于结束时间
+            case Log_Bigger:
+                return new ResponseEntity(
+                        ResponseUtil.fail(returnObject.getCode(), returnObject.getErrmsg()),
+                        HttpStatus.BAD_REQUEST);
+            //611：开始时间不能为空
+            case Log_BEGIN_NULL:
+                return new ResponseEntity(
+                        ResponseUtil.fail(returnObject.getCode(), returnObject.getErrmsg()),
+                        HttpStatus.BAD_REQUEST);
+            //612：结束时间不能为空
+            case Log_END_NULL:
                 return new ResponseEntity(
                         ResponseUtil.fail(returnObject.getCode(), returnObject.getErrmsg()),
                         HttpStatus.BAD_REQUEST);
