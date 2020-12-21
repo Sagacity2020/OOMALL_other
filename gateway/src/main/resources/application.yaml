@@ -1,14 +1,18 @@
 other-ip:
-  customer: localhost:8081
-  address: localhost:8082
-  advertisement: localhost:8083
-  aftersale: localhost:8084
-  cart: localhost:8085
-  favorite: localhost:8086
-  footprint: localhost:8087
-  share: localhost:8088
-  timesegment: localhost:8089
-
+  customer: 172.16.2.214:8081
+  address: 172.16.0.69:8082
+  advertisement: 172.16.2.96:8083
+  aftersale: 172.16.0.69:8084
+  cart: 172.16.1.64:8085
+  favorite: 172.16.1.250:8086
+  footprint: 172.16.1.250:8087
+  share: 172.16.0.69:8088
+  timesegment: 172.16.2.96:8089
+order-ip:
+  order: 172.16.3.169:8084
+  payment: 172.16.3.169:8085
+  freight: 172.16.3.169:8083
+goods-ip: 172.16.1.181:8080
 server:
   port: 8080
 
@@ -37,10 +41,17 @@ spring:
           filters:
             - PrefixPath=/user
 
+        - id: adminuser
+            uri: http://${other-ip.customer}
+            predicates:
+              - Path=/users/state
+            filters:
+              - PrefixPath=/user
+
         - id: adminusers
           uri: http://${other-ip.customer}
           predicates:
-            - Path=/users,/users/logout,users/password/**
+            - Path=/users,/users/logout,/users/password/reset,/users/password
           filters:
             - PrefixPath=/user
             - Auth=authorization
@@ -100,6 +111,113 @@ spring:
           filters:
             - PrefixPath=/favorite
             - Auth=authorization
+
+        - id: user-freight
+          uri: http://${order-ip.freight}
+          predicates:
+            - Path=/region/{rid}/price
+          filters:
+            - PrefixPath=/freight
+            - Auth=authorization
+
+        - id: all-order
+          uri: http://${order-ip.order}
+          predicates:
+            - Path=/orders/states
+          filters:
+            - PrefixPath=/order
+
+        - id: user-order
+          uri: http://${order-ip.order}
+          predicates:
+            - Path=/orders,/orders/{id},/orders/{id}/confirm,/orders/{id}/groupon-normal
+          filters:
+            - PrefixPath=/order
+            - Auth=authorization
+
+        - id: all-payment
+          uri: http://${order-ip.payment}
+          predicates:
+            - Path=/payments/states,/payments/patterns
+          filters:
+            - PrefixPath=/payment
+
+        - id: user-payment
+          uri: http://${order-ip.payment}
+          predicates:
+            - Path=/orders/{id}/payments,/aftersales/{id}/payments,/orders/{id}/refunds,/aftersales/{id}/refunds
+          filters:
+            - Auth=authorization
+            - PrefixPath=/payment
+
+        - id: shop-no-login
+          uri: http://${goods-ip}/
+          predicates:
+            - Path=/shops/states
+
+        - id: groupon-no-login
+          uri: http://${goods-ip}/
+          predicates:
+            - Path=/groupons/states
+
+        - id: groupon-user
+          uri: http://${goods-ip}/
+          predicates:
+            - Path=/groupons
+          filters:
+            - Auth=authorization
+
+        - id: presales-no-login
+          uri: http://${goods-ip}/
+          predicates:
+            - Path=/presales/states,/presales
+
+        - id: flash-no-login
+          uri: http://${goods-ip}/
+          predicates:
+            - Path=/timesegments/{id}/flashsales,/flashsales/current
+
+        - id: goods-no-login
+          uri: http://${goods-ip}/
+          predicates:
+            - Path=/skus/states,/skus,/skus/{id},/spus/{id}
+
+        - id: goods-user
+          uri: http://${goods-ip}/
+          predicates:
+            - Path=/share/{sid}/skus/{id}
+          filters:
+            - Auth=authorization
+
+        - id: comments-no-login
+          uri: http://${goods-ip}/
+          predicates:
+            - Path=/comments/states,/skus/{id}/comments
+
+        - id: comments-user
+          uri: http://${goods-ip}/
+          predicates:
+            - Path=/orderitems/{id}/comments,/comments
+          filters:
+            - Auth=authorization
+
+        - id: category-no-login
+          uri: http://${goods-ip}/
+          predicates:
+            - Path=/categories/{id}/subcategories,/brands
+
+        - id: coupon-no-login
+          uri: http://${goods-ip}/
+          predicates:
+            - Path=/coupons/states,/couponactivities,/couponactivities/{id}/skus
+
+        - id: coupon-user
+          uri: http://${goods-ip}/
+          predicates:
+            - Path=/shops/{shopId}/couponactivities/{id},/coupons,/couponactivities/{id}/usercoupons
+          filters:
+            - Auth=authorization
+
   redis:
     host: 172.16.2.67
       # Redis服务器连接端口
