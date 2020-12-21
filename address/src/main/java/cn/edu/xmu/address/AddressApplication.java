@@ -14,7 +14,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @author zrh
  * @Created at 12/7 23:51
  */
-@EnableDubbo(scanBasePackages = "cn.edu.xmu.address,service")
+@EnableDubbo(scanBasePackages = "cn.edu.xmu.address.service")
 @SpringBootApplication(scanBasePackages = {"cn.edu.xmu.address","cn.edu.xmu.ooad"})
 @MapperScan("cn.edu.xmu.address.mapper")
 @EnableDiscoveryClient

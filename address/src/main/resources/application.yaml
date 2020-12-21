@@ -16,12 +16,16 @@ spring:
     name: address-service
   profiles:
     active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 172.16.2.199:8848
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     initialization-mode: never
-    schema: classpath:schema.sql
-    data: classpath:data.sql
+#    schema: classpath:schema.sql
+#    data: classpath:data.sql
     druid:
       #初始化时建立物理连接的个数
       initial-size: 3
@@ -66,7 +70,7 @@ dubbo:
   scan:
     base-packages: cn.edu.xmu.address.service
   registry:
-    address: nacos://192.168.43.34:8848
+    address: nacos://172.16.2.199:8848
   # 设置协议-协议由提供方指定消费方被动接受
   protocol:
     name: dubbo

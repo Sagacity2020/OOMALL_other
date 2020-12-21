@@ -17,7 +17,7 @@ dubbo:
   scan:
      base-packages: cn.edu.xmu.cart.service
   registry:
-     address: nacos://192.168.43.34:8848
+     address: nacos://172.16.2.199:8848
   protocol:
      name: dubbo
      port: -1
@@ -35,8 +35,8 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     initialization-mode: never
-    schema: classpath:schema.sql
-    data: classpath:date.sql
+#    schema: classpath:schema.sql
+#    data: classpath:date.sql
     druid:
       #初始化时建立物理连接的个数
       initial-size: 3

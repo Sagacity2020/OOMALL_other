@@ -664,4 +664,19 @@ public class AddressDao {
         }
         return new ReturnObject<>(regions);
     }
+    public Long getParentRegionIdByChildId(Long regionId){
+        try{
+            if(regionId != null){
+                RegionPo regionPo = regionPoMapper.selectByPrimaryKey(regionId);
+                if(regionPo != null && regionPo.getState() == (byte)0){
+                    return regionPo.getPid() == null ? 0L : regionPo.getPid();
+                }
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

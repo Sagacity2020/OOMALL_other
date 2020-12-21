@@ -1,5 +1,5 @@
 server:
-  port: 8091
+  port: 8080
 
 spring:
   application:
@@ -19,20 +19,13 @@ spring:
               - OPTIONS
       routes:
         - id: login
-          uri: http://localhost:8090/
+          uri: http://localhost:8081/
           predicates:
             - Path=/users/login,/users
             - Method=POST
           filters:
             - PrefixPath=/user
 
-        - id: adminusers
-          uri: http://localhost:8090/
-          predicates:
-            - Path=/users,/users/logout,users/password/**
-          filters:
-            - PrefixPath=/user
-            - Auth=authorization
 
         - id: aftersales
           uri: http://localhost:8084/
@@ -40,6 +33,23 @@ spring:
             - Path=/aftersales/states
           filters:
             - PrefixPath=/aftersale
+
+        - id: adminusers
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/users,/users/logout,users/password/**
+          filters:
+            - PrefixPath=/user
+            - Auth=authorization
+
+
+#        - id: aftersale
+#          uri: http://localhost:8084/
+#          predicates:
+#            - Path=/orderitems/{id}/aftersales,/aftersales,/aftersales/{id},/aftersales/{id}/**
+#          filters:
+#            - PrefixPath=/aftersale
+#            - Auth=authorization
 
 
         - id: aftersale

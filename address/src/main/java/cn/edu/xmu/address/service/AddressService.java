@@ -201,15 +201,8 @@ public class AddressService implements RegionServiceInterface {
 
     @Override
     public Long getParentRegionIdByChildId(Long regionId) {
-        ReturnObject<Region> returnObject=addressDao.queryPreRegion(regionId);
-        if(returnObject.getCode()== ResponseCode.REGION_OBSOLETE){
-            return  null;
-        }
-        Region region=returnObject.getData();
-        if(region!=null){
-            return region.getId();
-        }
-        return 0L;
+        logger.error(regionId.toString());
+        return addressDao.getParentRegionIdByChildId(regionId);
     }
 
 }

@@ -5,7 +5,7 @@ management:
         include: "*"
 
 server:
-  port: 8090
+  port: 8081
   tomcat:
     threads:
       max: 1000
@@ -21,7 +21,7 @@ dubbo:
   scan:
     base-packages: cn.edu.xmu.customer.service.impl
   registry:
-    address: nacos://192.168.43.34:8848
+    address: nacos://172.16.2.199:8848
   # 设置协议-协议由提供方指定消费方被动接受
   protocol:
     name: dubbo
@@ -39,7 +39,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
-    initialization-mode: always
+    initialization-mode: never
 
     druid:
       #初始化时建立物理连接的个数
@@ -59,7 +59,7 @@ spring:
       validation-query: select 1
     sql-script-encoding: UTF-8
   redis:
-    host: localhost
+    host: 172.16.2.67
       # Redis服务器连接端口
     port: 6379
     # Redis数据库索引（默认为0）

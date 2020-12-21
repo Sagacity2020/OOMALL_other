@@ -21,7 +21,7 @@ dubbo:
   scan:
     base-packages: cn.edu.xmu.share.service.impl
   registry:
-    address: nacos://192.168.43.34:8848
+    address: nacos://172.16.2.199:8848
   # 设置协议-协议由提供方指定消费方被动接受
   protocol:
     name: dubbo
@@ -46,7 +46,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
-    initialization-mode: always
+    initialization-mode: never
 
     druid:
       #初始化时建立物理连接的个数
