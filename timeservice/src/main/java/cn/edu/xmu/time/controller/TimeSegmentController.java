@@ -100,6 +100,9 @@ public class TimeSegmentController {
             httpServletResponse.setStatus(HttpStatus.CREATED.value());
             return Common.getRetObject(retObject);
         } else {
+            if(retObject.getCode()==ResponseCode.TIMESEG_CONFLICT){
+                httpServletResponse.setStatus(HttpStatus.Ok.value());
+            }
             return Common.getNullRetObj(new ReturnObject<>(retObject.getCode(), retObject.getErrmsg()), httpServletResponse);
         }
 //        httpServletResponse.setStatus(HttpStatus.CREATED.value());
