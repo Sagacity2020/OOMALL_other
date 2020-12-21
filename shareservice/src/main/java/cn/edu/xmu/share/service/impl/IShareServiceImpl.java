@@ -148,12 +148,30 @@ public class IShareServiceImpl implements ShareServiceInterface {
     /**
      * 根据分享id获得skuid
      * @author zxh
-     * @param sid 分享id
-     * @return Long skuId
+     * @param shareId 分享id
+     * @param customerId
+     * @param skuId
      * @Date 2020/12/20 19:40
      */
-    public Long getSkuIdByShareId(Long sid)
+    public Boolean getSkuIdByShareId(Long shareId, Long customerId, Long skuId)
     {
-        return shareDao.getSkuIdByShareId(sid);
+        try
+        {
+            SharePo sharePo = shareDao.getShareById(shareId);
+            if(sharePo == null)
+                return false;
+            if(sharePo.getGoodsSkuId().longValue() != skuId.longValue())
+                return false;
+            return beShareDao.creatBeShare(sharePo, customerId);
+        }
+        catch (DataAccessException e){
+            logger.error("createBeShare: DataAccessException:" + e.getMessage());
+            return false;
+        }
+        catch (Exception e) {
+            // 其他Exception错误
+            logger.error("other exception : " + e.getMessage());
+            return false;
+        }
     }
 }

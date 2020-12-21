@@ -7,6 +7,7 @@ import cn.edu.xmu.ooad.util.ReturnObject;
 
 import cn.edu.xmu.share.mapper.BeSharePoMapper;
 import cn.edu.xmu.share.model.bo.BeShare;
+import cn.edu.xmu.share.model.bo.Share;
 import cn.edu.xmu.share.model.po.BeSharePo;
 import cn.edu.xmu.share.model.po.BeSharePoExample;
 import cn.edu.xmu.share.model.po.SharePo;
@@ -155,7 +156,6 @@ public class BeShareDao {
             criteria.andGoodsSkuIdEqualTo(goodsSkuId);
         if(beginTime != null)
             criteria.andGmtCreateGreaterThanOrEqualTo(beginTime);
-
         if(endTime != null)
             criteria.andGmtCreateLessThanOrEqualTo(endTime);
         //?
@@ -167,7 +167,6 @@ public class BeShareDao {
         for (BeSharePo po : retBeSharePos) {
             BeShare beShare = new BeShare(po);
             ret.add(beShare);
-            System.out.println(beShare.getId());
         }
         PageInfo<BeSharePo> beSharePoPage = PageInfo.of(retBeSharePos);
         PageInfo<BeShare> beSharePage = PageInfo.of(ret);
@@ -308,6 +307,60 @@ public class BeShareDao {
             // 其他Exception错误
             logger.error("other exception : " + e.getMessage());
             return null;
+        }
+    }
+    
+    /**
+    * 用户点击分享链接
+    *
+    * @author zxh
+    * @param sharePo SharePo
+    * @param customerId
+    * @return Boolean
+    * @Date 2020/12/21 7:41
+    */
+    public Boolean creatBeShare(SharePo sharePo, Long customerId) throws Exception
+    {
+        BeSharePoExample example = new BeSharePoExample();
+        BeSharePoExample.Criteria criteria = example.createCriteria();
+        criteria.andCustomerIdEqualTo(customerId);
+        criteria.andShareIdEqualTo(sharePo.getId());
+        try{
+            List<BeSharePo> retBeSharePo = beSharePoMapper.selectByExample(example);
+            if(retBeSharePo == null || retBeSharePo.isEmpty())
+            {
+                BeSharePo po = new BeSharePo();
+                po.setCustomerId(customerId);
+                po.setGoodsSkuId(sharePo.getGoodsSkuId());
+                po.setShareId(sharePo.getId());
+                po.setSharerId(sharePo.getSharerId());
+                po.setShareActivityId(sharePo.getShareActivityId());
+                po.setGmtCreate(LocalDateTime.now());
+                po.setGmtModified(LocalDateTime.now());
+                int flag = beSharePoMapper.insertSelective(po);;
+                if(flag == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        catch (DataAccessException e){
+            logger.error("createBeShare: DataAccessException:" + e.getMessage());
+            throw e;
+        }
+        catch (Exception e) {
+            // 其他Exception错误
+            logger.error("other exception : " + e.getMessage());
+            throw e;
         }
     }
 
