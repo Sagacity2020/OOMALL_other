@@ -1,3 +1,14 @@
+other-ip:
+  customer: localhost:8081
+  address: localhost:8082
+  advertisement: localhost:8083
+  aftersale: localhost:8084
+  cart: localhost:8085
+  favorite: localhost:8086
+  footprint: localhost:8087
+  share: localhost:8088
+  timesegment: localhost:8089
+
 server:
   port: 8080
 
@@ -19,41 +30,31 @@ spring:
               - OPTIONS
       routes:
         - id: login
-          uri: http://localhost:8081/
+          uri: http://${other-ip.customer}
           predicates:
             - Path=/users/login,/users
             - Method=POST
           filters:
             - PrefixPath=/user
 
-
-        - id: aftersales
-          uri: http://localhost:8084/
-          predicates:
-            - Path=/aftersales/states
-          filters:
-            - PrefixPath=/aftersale
-
         - id: adminusers
-          uri: http://localhost:8081/
+          uri: http://${other-ip.customer}
           predicates:
             - Path=/users,/users/logout,users/password/**
           filters:
             - PrefixPath=/user
             - Auth=authorization
 
-
-#        - id: aftersale
-#          uri: http://localhost:8084/
-#          predicates:
-#            - Path=/orderitems/{id}/aftersales,/aftersales,/aftersales/{id},/aftersales/{id}/**
-#          filters:
-#            - PrefixPath=/aftersale
-#            - Auth=authorization
+        - id: aftersales
+          uri: http://${other-ip.aftersale}
+          predicates:
+            - Path=/aftersales/states
+          filters:
+            - PrefixPath=/aftersale
 
 
         - id: aftersale
-          uri: http://localhost:8084/
+          uri: http://${other-ip.aftersale}
           predicates:
             - Path=/orderitems/{id}/aftersales,/aftersales,/aftersales/{id},/aftersales/{id}/**
           filters:
@@ -62,14 +63,14 @@ spring:
 
 
         - id: advertise
-          uri: http://localhost:8085/
+          uri: http://${other-ip.advertisement}
           predicates:
             - Path=/advertisement/current,/advertisement/states
           filters:
             - PrefixPath=/advertise
 
         - id: address
-          uri: http://localhost:8082/
+          uri: http://${other-ip.address}
           predicates:
             - Path=/addresses,/addresses/{id}/default,/addresses/{id},/region/{id}/ancestor
           filters:
@@ -77,7 +78,7 @@ spring:
             - Auth=authorization
 
         - id: cart
-          uri: http://localhost:8085/
+          uri: http://${other-ip.cart}
           predicates:
             - Path=/carts,/carts/{id}
           filters:
@@ -85,7 +86,7 @@ spring:
             - Auth=authorization
 
         - id: share
-          uri: http://localhost:8088/
+          uri: http://${other-ip.share}
           predicates:
             - Path=/shares,/skus/{id}/shares,/beshared,/shareactivities
           filters:
@@ -93,18 +94,17 @@ spring:
             - Auth=authorization
 
         - id: favorite
-          uri: http://localhost:8086/
+          uri: http://${other-ip.favorite}
           predicates:
             - Path=/favorites,/favorites/{id},/favorites/goods/{skuId}
           filters:
             - PrefixPath=/favorite
             - Auth=authorization
-
-
   redis:
-    host: localhost
+    host: 172.16.2.67
       # Redis服务器连接端口
     port: 6379
+    password: 123456
     # Redis数据库索引（默认为0）
     database: 0
     #连接池最大连接数（使用负值表示没有限制）
@@ -119,6 +119,7 @@ spring:
         max-wait: -1
     # 连接超时时间（毫秒）
     timeout: 5000
+
 
 management:
   endpoint:
