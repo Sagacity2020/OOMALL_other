@@ -45,7 +45,7 @@ public class AuthFilter implements GatewayFilter, Ordered {
         logger.info("filter: token = " + token);
 
         if (StringUtil.isNullOrEmpty(token)){
-            return getErrorResponse(HttpStatus.UNAUTHORIZED,ResponseCode.AUTH_INVALID_JWT,response,"token为空");
+            return getErrorResponse(HttpStatus.UNAUTHORIZED,ResponseCode.AUTH_NEED_LOGIN,response,"token为空");
         }
         // 判断token是否合法
         JwtHelper.UserAndDepart userAndDepart = new JwtHelper().verifyTokenAndGetClaims(token);
