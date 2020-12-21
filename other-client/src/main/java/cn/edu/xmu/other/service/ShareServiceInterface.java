@@ -40,9 +40,11 @@ public interface ShareServiceInterface {
     /**
      * 根据分享id获得skuid
      * @author zxh
-     * @param sid 分享id
+     * @param shareId 分享id
+     * @param customerId
+     * @param skuId
      * @return Long skuId
      * @Date 2020/12/20 19:40
      */
-    Long getSkuIdByShareId(Long sid);
+    Boolean getSkuIdByShareId(Long shareId, Long customerId, Long skuId);
 }
