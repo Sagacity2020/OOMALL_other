@@ -1,5 +1,6 @@
 package cn.edu.xmu.customer;
 
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -9,7 +10,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication(scanBasePackages = {"cn.edu.xmu.ooad","cn.edu.xmu.customer"})
 @MapperScan(basePackages = {"cn.edu.xmu.customer.mapper"})
-@EnableDiscoveryClient
+@EnableDubbo
 public class CustomerApplication implements ApplicationRunner {
 
     public static void main(String[] args) {
