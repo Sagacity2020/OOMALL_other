@@ -78,14 +78,15 @@ public class FavouriteGoodsDao {
     public ReturnObject<FavouriteGoods> insertFavouriteGoods(Long customerId,Long goodsSkuId,FavouriteGoods favouriteGoods)
     {
         FavouriteGoodsPo fPo=favouriteGoodsPoMapper.selectByPrimaryKey(favouriteGoods.getGoodsSkuId());
-
         FavouriteGoodsPoExample example = new FavouriteGoodsPoExample();
         FavouriteGoodsPoExample.Criteria criteria = example.createCriteria();
         criteria.andCustomerIdEqualTo(customerId);
         criteria.andGoodsSkuIdEqualTo(goodsSkuId);
         List<FavouriteGoodsPo> selectList= favouriteGoodsPoMapper.selectByExample(example);
-        if(selectList!=null)
+        System.out.println(selectList);
+        if(!(selectList==null||selectList.isEmpty()||selectList.size()==0))
         {
+            System.out.println("not null dao");
             FavouriteGoodsPo retPo=selectList.get(0);
             FavouriteGoods retbo=new FavouriteGoods(retPo);
             return new ReturnObject<>(retbo);
@@ -101,6 +102,7 @@ public class FavouriteGoodsDao {
                 logger.info(" insert favouriteGoods = " + favouriteGoodsPo.toString());
                 System.out.println(" insert favouriteGoods = " + favouriteGoodsPo.toString());
                 favouriteGoods.setId(favouriteGoodsPo.getId());
+                System.out.println("dao 4");
                return new ReturnObject<>(favouriteGoods);
             }
         }
