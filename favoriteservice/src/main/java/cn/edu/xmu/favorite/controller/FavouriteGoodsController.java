@@ -1,9 +1,7 @@
 package cn.edu.xmu.favorite.controller;
 
 import cn.edu.xmu.favorite.service.FavouriteGoodsService;
-import cn.edu.xmu.ooad.annotation.Audit;
-
-import cn.edu.xmu.ooad.annotation.LoginUser;
+import cn.edu.xmu.ooad.annotation.*;
 import cn.edu.xmu.ooad.model.VoObject;
 import cn.edu.xmu.ooad.util.Common;
 import cn.edu.xmu.ooad.util.ReturnObject;
@@ -39,6 +37,7 @@ public class FavouriteGoodsController {
      * @Date:  2020/12/6 21:27
      */
     @ApiOperation(value = "查看收藏列表", produces = "application/json")
+    @Audit
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
             @ApiImplicitParam(paramType = "query", dataType = "Integer", name = "page", value = "页码", required = false),
@@ -48,17 +47,16 @@ public class FavouriteGoodsController {
     @ApiResponses({
             @ApiResponse(code = 0, message = "成功")
     })
-    @Audit
     @GetMapping("/favorites")
-    public Object getSelfFavouriteGoods(@LoginUser @ApiIgnore @RequestParam(required = false) Long customerId, @RequestParam(required = false) Integer page, @RequestParam(required = false) Integer pageSize)
+    public Object getSelfFavouriteGoods(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId, @RequestParam(required = false) Integer page, @RequestParam(required = false) Integer pageSize)
     {
         //
-        System.out.println("controller"+customerId);
+        System.out.println("controller"+userId);
 
         page = (page == null)?1:page;
         pageSize = (pageSize == null)?10:pageSize;
-        ReturnObject<PageInfo<VoObject>> returnObject =  favouriteGoodsService.getSelfFavouriteGoods(page, pageSize,customerId);
-        logger.debug("getSelfFavouriteGoods: customer = " + customerId );
+        ReturnObject<PageInfo<VoObject>> returnObject =  favouriteGoodsService.getSelfFavouriteGoods(page, pageSize,userId);
+        logger.debug("getSelfFavouriteGoods: customer = " + userId );
 
         return Common.getPageRetObject(returnObject);
     }
@@ -90,6 +88,7 @@ public class FavouriteGoodsController {
         logger.debug("getSelfFavouriteGoods: customer = " + customerId );
         logger.error("post FavouriteGoods: customer = " + customerId );
         System.out.println("return"+retObject.toString());
+
         System.out.println("return"+retObject.getData());
 
         if (retObject.getData() != null) {

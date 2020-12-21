@@ -29,17 +29,17 @@ public class FootPrintControllerTest {
         return token;
     }
 
-    @Test
-    public void insertFootprintTest()throws Exception{
-        String token = creatTestToken(1L, 0L, 100);
-        String responseString=this.mvc.perform(post("/footprint/skus/660/footprints").header("authorization", token))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType("application/json;charset=UTF-8"))
-                .andExpect(jsonPath("$.errno").value(ResponseCode.OK.getCode()))
-                .andExpect(jsonPath("$.errmsg").value("成功"))
-                .andReturn().getResponse().getContentAsString();
-
-    }
+//    @Test
+//    public void insertFootprintTest()throws Exception{
+//        String token = creatTestToken(1L, 0L, 100);
+//        String responseString=this.mvc.perform(post("/footprint/skus/660/footprints").header("authorization", token))
+//                .andExpect(status().isOk())
+//                .andExpect(content().contentType("application/json;charset=UTF-8"))
+//                .andExpect(jsonPath("$.errno").value(ResponseCode.OK.getCode()))
+//                .andExpect(jsonPath("$.errmsg").value("成功"))
+//                .andReturn().getResponse().getContentAsString();
+//
+//    }
 
     @Test
     public void getFootprintTest()throws Exception{

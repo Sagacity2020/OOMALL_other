@@ -5,6 +5,7 @@ import cn.edu.xmu.goods.dto.GoodsSkuDTO;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+
 import java.time.LocalDateTime;
 
 @Data

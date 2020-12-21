@@ -36,21 +36,21 @@ public class FootprintController {
     @Autowired
     private FootprintService footprintService;
 
-    @ApiOperation(value = "增加足迹", produces = "application/json")
-    @Audit
-    @ApiImplicitParams({
-            @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
-            @ApiImplicitParam(paramType = "path", dataType = "integer", name = "goodsSkuId", value = "skuId", required = true)
-    })
-    @ApiResponses({
-            @ApiResponse(code = 0, message = "成功"),
-    })
-    @PostMapping("skus/{id}/footprints")
-    public Object insertFootprint(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId, @PathVariable("id") Long goodsSkuId){
-        logger.debug("insert Footprint userId:" + userId);
-        ReturnObject<VoObject> retObject = footprintService.insertFootprint(userId, goodsSkuId);
-        return Common.decorateReturnObject(retObject);
-    }
+//    @ApiOperation(value = "增加足迹", produces = "application/json")
+//    @Audit
+//    @ApiImplicitParams({
+//            @ApiImplicitParam(paramType = "header", dataType = "String", name = "authorization", value = "Token", required = true),
+//            @ApiImplicitParam(paramType = "path", dataType = "integer", name = "goodsSkuId", value = "skuId", required = true)
+//    })
+//    @ApiResponses({
+//            @ApiResponse(code = 0, message = "成功"),
+//    })
+//    @PostMapping("skus/{id}/footprints")
+//    public Object insertFootprint(@LoginUser @ApiIgnore @RequestParam(required = false) Long userId, @PathVariable("id") Long goodsSkuId){
+//        logger.debug("insert Footprint userId:" + userId);
+//        ReturnObject<VoObject> retObject = footprintService.insertFootprint(userId, goodsSkuId);
+//        return Common.decorateReturnObject(retObject);
+//    }
 
     @ApiOperation(value = "管理员查看浏览记录", produces = "application/json")
     //@Audit

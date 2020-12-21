@@ -24,8 +24,8 @@ public class FavoriteServiceApplication implements ApplicationRunner{
     /**
      * 是否初始化，生成signature和加密
      */
-    @Value("${Otherservice.initialization}")
-    private Boolean initialization;
+//    @Value("${Otherservice.initialization}")
+//    private Boolean initialization;
 
     @Autowired
     private FavouriteGoodsDao favouriteGoodsDao;

@@ -73,6 +73,7 @@ public class AftersaleService{
 
         OrderAftersaleDTO orderAftersaleDTO=orderServiceInterface.getAftersaleInfo(id);
 
+        logger.error("2");
         if(orderAftersaleDTO==null){
             return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST);
         }

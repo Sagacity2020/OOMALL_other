@@ -57,7 +57,8 @@ public class FootprintDao {
         return retObj;
     }
 
-    public PageInfo<FootPrintPo> getFootprint(Long userId,String beginTime,String endTime,Integer page,Integer pagesize){
+
+    public PageInfo<FootPrintPo> getFootprint(Long userId,String beginTime,String endTime){
         FootPrintPoExample example=new FootPrintPoExample();
         FootPrintPoExample.Criteria criteria=example.createCriteria();
         if(userId!=null){

@@ -87,7 +87,7 @@ public class FavouriteGoodsService {
         favouriteGoods.setGoodsSkuId(skuId);
         favouriteGoods.setCustomerId(customerId);
         favouriteGoods.setGmtCreate(LocalDateTime.now());
-        ReturnObject<FavouriteGoods> retObj =favouriteGoodsDao.insertFavouriteGoods(favouriteGoods);
+        ReturnObject<FavouriteGoods> retObj =favouriteGoodsDao.insertFavouriteGoods(customerId,skuId,favouriteGoods);
         System.out.println("service4"+retObj.toString());
         ReturnObject<VoObject> retFavouriteGoods=null;
         if(retObj.getCode().equals(ResponseCode.OK)){

@@ -75,20 +75,33 @@ public class FavouriteGoodsDao {
      * @Date:  2020/12/6 21:49
      */
 
-    public ReturnObject<FavouriteGoods> insertFavouriteGoods(FavouriteGoods favouriteGoods)
+    public ReturnObject<FavouriteGoods> insertFavouriteGoods(Long customerId,Long goodsSkuId,FavouriteGoods favouriteGoods)
     {
-        FavouriteGoodsPo favouriteGoodsPo=favouriteGoods.gotFavouriteGoodsPo();
+        FavouriteGoodsPo fPo=favouriteGoodsPoMapper.selectByPrimaryKey(favouriteGoods.getGoodsSkuId());
+
+        FavouriteGoodsPoExample example = new FavouriteGoodsPoExample();
+        FavouriteGoodsPoExample.Criteria criteria = example.createCriteria();
+        criteria.andCustomerIdEqualTo(customerId);
+        criteria.andGoodsSkuIdEqualTo(goodsSkuId);
+        List<FavouriteGoodsPo> selectList= favouriteGoodsPoMapper.selectByExample(example);
+        if(selectList!=null)
+        {
+            FavouriteGoodsPo retPo=selectList.get(0);
+            FavouriteGoods retbo=new FavouriteGoods(retPo);
+            return new ReturnObject<>(retbo);
+        }
+            FavouriteGoodsPo favouriteGoodsPo=favouriteGoods.gotFavouriteGoodsPo();
         ReturnObject<FavouriteGoods> retObj =null;
         try{
             int ret = favouriteGoodsPoMapper.insertSelective(favouriteGoodsPo);
             if(ret==0){
                 logger.debug("insert fail");
-                retObj=new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, String.format("收藏商品失败：" + favouriteGoodsPo.getGoodsSkuId()));
+                return new ReturnObject<>(ResponseCode.RESOURCE_ID_NOTEXIST, String.format("收藏商品失败：" + favouriteGoodsPo.getGoodsSkuId()));
             }else{
                 logger.info(" insert favouriteGoods = " + favouriteGoodsPo.toString());
                 System.out.println(" insert favouriteGoods = " + favouriteGoodsPo.toString());
                 favouriteGoods.setId(favouriteGoodsPo.getId());
-                retObj=new ReturnObject<>(favouriteGoods);
+               return new ReturnObject<>(favouriteGoods);
             }
         }
         catch(DataAccessException e){

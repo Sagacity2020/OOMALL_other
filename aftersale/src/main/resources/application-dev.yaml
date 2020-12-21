@@ -6,8 +6,8 @@ spring:
         url: http://localhost:8084
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/oomall?serverTimezone=GMT%2B8
-    username: root
-    password: xzqbjt
+    username: dbuser
+    password: 123456
     druid:
       stat-view-servlet:
         login-username: admin
