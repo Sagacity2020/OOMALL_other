@@ -9,6 +9,11 @@ server:
   tomcat:
     threads:
       max: 1000
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
 
 dubbo:
   # 配置服务信息
